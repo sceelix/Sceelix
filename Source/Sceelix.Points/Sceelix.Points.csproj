@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BE90A6A7-A7EA-4BD2-A50D-6B04BCFFE0A6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Points</RootNamespace>
+    <AssemblyName>Sceelix.Points</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsEngine>true</IsEngine>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\PointEntity.cs" />
+    <Compile Include="Data\PointSetEntity.cs" />
+    <Compile Include="Parameters\CreateFromPointsParameter.cs" />
+    <Compile Include="Procedures\PointsCreateProcedure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{EC8DCA01-51C6-4057-B83F-233BCD3C287D}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17D451D4-B445-4F61-ADFE-963F42D702B0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693A506A-559B-4DA6-B460-852ECBB8BD9A}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Meshes\Sceelix.Meshes.csproj">
+      <Project>{76CF0233-8942-4A49-AF32-F7E0552E6EB7}</Project>
+      <Name>Sceelix.Meshes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Paths\Sceelix.Paths.csproj">
+      <Project>{1C586989-D629-4EED-A934-B62446B4E7BA}</Project>
+      <Name>Sceelix.Paths</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Surfaces\Sceelix.Surfaces.csproj">
+      <Project>{7E086C85-0185-4271-B3D7-4FDBC44084A1}</Project>
+      <Name>Sceelix.Surfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

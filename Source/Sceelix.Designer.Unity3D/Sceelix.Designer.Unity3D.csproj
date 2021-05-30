@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{89CEDC64-F7EE-4AE3-9C59-9EA4F9C10CED}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Unity3D</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Unity3D</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CreateDocumentation>true</CreateDocumentation>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="DotNetZip, Version=1.10.1.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Json.NET 9.0.1\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameObjects\Components\PhysicsComponent.cs" />
+    <Compile Include="GameObjects\Components\TextComponent.cs" />
+    <Compile Include="GUI\UnityExportConfiguration.cs" />
+    <Compile Include="GUI\UnityExportConfigurationDocumentControl.cs" />
+    <Compile Include="GUI\UnityExportConfigurationFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\GraphExecutionFinishedConverter.cs" />
+    <Compile Include="Settings\UnityConnectionSettings.cs" />
+    <Compile Include="Translators\ComponentTranslator.cs" />
+    <Compile Include="Translators\DefaultComponentTranslator.cs" />
+    <Compile Include="Translators\MeshComponentTranslator.cs" />
+    <Compile Include="Translators\PhysicsComponentTranslator.cs" />
+    <Compile Include="GameObjects\Components\StaticSceneComponent.cs" />
+    <Compile Include="Translators\UnityEntityTranslator.cs" />
+    <Compile Include="UnityDesignerService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{EC8DCA01-51C6-4057-B83F-233BCD3C287D}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17D451D4-B445-4F61-ADFE-963F42D702B0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Actors\Sceelix.Designer.Actors.csproj">
+      <Project>{E0D59531-D67C-402F-83A8-7292B6F911A3}</Project>
+      <Name>Sceelix.Designer.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Graphs\Sceelix.Designer.Graphs.csproj">
+      <Project>{24C93587-F297-4FED-978B-017E81FF2657}</Project>
+      <Name>Sceelix.Designer.Graphs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Meshes\Sceelix.Designer.Meshes.csproj">
+      <Project>{A2BDA9E7-C67B-4B7A-BBB9-94A477B6F229}</Project>
+      <Name>Sceelix.Designer.Meshes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.ProjectExplorer\Sceelix.Designer.ProjectExplorer.csproj">
+      <Project>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</Project>
+      <Name>Sceelix.Designer.ProjectExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Renderer3D\Sceelix.Designer.Renderer3D.csproj">
+      <Project>{984E654C-44DE-4A73-9FC6-914B4C968A21}</Project>
+      <Name>Sceelix.Designer.Renderer3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693A506A-559B-4DA6-B460-852ECBB8BD9A}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Meshes\Sceelix.Meshes.csproj">
+      <Project>{76CF0233-8942-4A49-AF32-F7E0552E6EB7}</Project>
+      <Name>Sceelix.Meshes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Unity\Sceelix.Unity.csproj">
+      <Project>{480627ca-076c-4188-88f4-658724825157}</Project>
+      <Name>Sceelix.Unity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Support\Packaged\Unity Plugin.zip">
+      <Link>Content\Unity Plugin.zip</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\Game_16x16.png" />
+    <EmbeddedResource Include="Resources\Game_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

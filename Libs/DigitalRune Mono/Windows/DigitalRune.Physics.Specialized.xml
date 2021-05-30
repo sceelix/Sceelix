@@ -1,0 +1,1543 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalRune.Physics.Specialized</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalRune.Physics.Specialized.DynamicCharacterController">
+            <summary>
+            Controls the movement of a game character.
+            </summary>
+            <remarks>
+            <para>
+            The character is represented by an upright capsule. When the character moves, it will slide 
+            along obstacles to create a smooth movement. The character can move on light slopes, but will 
+            be stopped by steep slopes (see <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.SlopeLimit"/>). The character will automatically 
+            step over small obstacles. 
+            </para>
+            <para>
+            A single <see cref="T:DigitalRune.Physics.RigidBody"/> (see property <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Body"/>) is created for the
+            character capsule and added to a <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Simulation"/>, which is specified when the
+            character controller is created. The <see cref="T:DigitalRune.Physics.RigidBody"/> can be used to set the collision
+            group and collision filtering. The <see cref="T:DigitalRune.Physics.RigidBody"/> is automatically added to the 
+            <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Simulation"/> when the character controller is created and removed from the 
+            <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Simulation"/> when the character controller is disabled.
+            </para>
+            <para>
+            To teleport the character to a new position, simply set the property <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Position"/> 
+            directly. 
+            </para>
+            <para>
+            The character controller applies gravity itself and the <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Body"/> should be excluded
+            from global force effects like gravity and damping.
+            </para>
+            <para>
+            To move the character <see cref="M:DigitalRune.Physics.Specialized.DynamicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)"/> must be called. This will set the velocity of the
+            <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Body"/>. The body will be moved by the simulation. Therefore, the position is only 
+            final after the simulation was updated.
+            </para>
+            <para>
+            General notes: In first person shooters character speeds up to 10 m/s are used. This is about
+            twice as fast as normal human movement. For this high speed, the gravity is often set to a 
+            higher than normal value, like 16 m/s², to account for this unnatural speed.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Simulation">
+            <summary>
+            Gets or sets the simulation.
+            </summary>
+            <value>The simulation.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this character controller is enabled.
+            </summary>
+            <value>
+            <see langword="true"/> if the character controller is enabled; otherwise, 
+            <see langword="false"/>. The default value is <see langword="true"/>.
+            </value>
+            <remarks>
+            The rigid body (see <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Body"/>) is automatically added/removed from
+            the simulation when the character is enabled/disabled. 
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Body">
+            <summary>
+            Gets or sets the body.
+            </summary>
+            <value>The body.</value>
+            <remarks>
+            <para>
+            The body is automatically added to or removed from the <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Simulation"/> when the 
+            character is enabled/disabled (see <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Enabled"/> ).
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.CollisionGroup">
+            <summary>
+            Gets or sets the collision group.
+            </summary>
+            <value>The collision group.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Height">
+            <summary>
+            Gets or sets the height.
+            </summary>
+            <value>The height. The default is 1.8.</value>
+            <remarks>
+            This property assumes that the character's shape is a <see cref="T:DigitalRune.Geometry.Shapes.CapsuleShape"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Width">
+            <summary>
+            Gets or sets the width.
+            </summary>
+            <value>The width. The default is 0.8.</value>
+            <remarks>
+            This property assumes that the character's shape is a <see cref="T:DigitalRune.Geometry.Shapes.CapsuleShape"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Position">
+            <summary>
+            Gets or sets the position of the character.
+            </summary>
+            <value>The position of the character.</value>
+            <remarks>
+            The <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Position"/> is the bottom position (the lowest point of the character's 
+            body).
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Gravity">
+            <summary>
+            Gets or sets the gravity.
+            </summary>
+            <value>The gravity.The default is 9.81.</value>
+            <remarks>
+            The gravity is always acting in -y direction. This value is the magnitude of the gravity 
+            (which is an acceleration). If the gravity is 0, then the character is free-flying.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.SlopeLimit">
+            <summary>
+            Gets or sets the slope limit (in radians).
+            </summary>
+            <value>The slope limit. The default is the π/4 (= 45°).</value>
+            <remarks>
+            The character can move up inclined planes. If the inclination is higher than this value the
+            character will not move up.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.IsClimbing">
+            <summary>
+            Gets or sets a value indicating whether this instance is climbing.
+            </summary>
+            <value>
+            <see langword="true"/> if this instance is climbing; otherwise, <see langword="false"/>.
+            </value>
+            <remarks>
+            If this property is set to <see langword="true"/>, gravity is not applied and the 
+            character can move up (e.g. on a ladder or a climbable wall).
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.HasGroundContact">
+            <summary>
+            Gets a value indicating whether this character has ground contact.
+            </summary>
+            <value>
+            <see langword="true"/> if character has ground contact; otherwise, <see langword="false"/>.
+            </value>
+            <remarks>
+            If this value is <see langword="true"/>, the character stands on a plane with allowed
+            inclination. 
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.DynamicCharacterController.#ctor(DigitalRune.Physics.Simulation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController"/> class.
+            </summary>
+            <param name="simulation">The simulation.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="simulation" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.DynamicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)">
+            <summary>
+            Moves the character to a new position while avoiding penetrations and sliding along 
+            obstacles.
+            </summary>
+            <param name="moveVelocity">The desired linear walk or fly velocity.</param>
+            <param name="jumpVelocity">
+            The jump velocity. Set a velocity vector to let the character jump. The character will only
+            jump if it starts on the ground. If gravity is turned off, the character will fly into the
+            given direction.
+            </param>
+            <param name="deltaTime">The size of the time step.</param>
+            <remarks>
+            <para>
+            This method does nothing if the character controller is disabled.
+            </para>
+            <para>
+            This method tries to move with the given <paramref name="moveVelocity"/>. It will
+            slide on obstacles and it will be affected by gravity. If the gravity is non-zero, the 
+            character is "walking". It will not walk up planes that are steeper than the 
+            <see cref="P:DigitalRune.Physics.Specialized.DynamicCharacterController.SlopeLimit"/>. 
+            </para>
+            <para>
+            If the <paramref name="moveVelocity"/> is a zero vector, only gravity will be applied. 
+            </para>
+            </remarks>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.CharacterControllerForceEffect">
+            <summary>
+            Applies gravity and push forces to bodies touched by the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController"/> 
+            and handles traction when standing on moving platforms.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.CharacterControllerForceEffect.#ctor(DigitalRune.Physics.Specialized.KinematicCharacterController)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.CharacterControllerForceEffect"/> class.
+            </summary>
+            <param name="characterController">The character controller.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="characterController" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.KinematicCharacterController">
+            <summary>
+            Controls the movement of a game character.
+            </summary>
+            <remarks>
+            <para>
+            The character is represented by an upright capsule. When the character moves, it will slide 
+            along obstacles to create a smooth movement. The character can move on light slopes, but will 
+            be stopped by steep slopes (see <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.SlopeLimit"/>). The character will automatically 
+            step over obstacles and climb onto steps up to a certain height limit (see 
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.StepHeight"/>). 
+            </para>
+            <para>
+            A single <see cref="T:DigitalRune.Physics.RigidBody"/> (see property <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Body"/>) is created for the
+            character capsule and added to a <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation"/>, which is specified when the
+            character controller is created. The <see cref="T:DigitalRune.Physics.RigidBody"/> can be used to set the collision
+            group and collision filtering. The <see cref="T:DigitalRune.Physics.RigidBody"/> is automatically added to the 
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation"/> when the character controller is created and removed from the 
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation"/> when the character controller is disabled.
+            </para>
+            <para>
+            To teleport the character to a new position, simply set the property <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Position"/> 
+            directly. 
+            </para>
+            <para>
+            The character controller applies gravity itself and the <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Body"/> should be excluded
+            from global force effects like gravity and damping.
+            </para>
+            <para>
+            To move the character <see cref="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)"/> must be called. This will immediately compute a 
+            new position. But the <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation"/> can also move the character, for example,
+            when it is pushed by kinematic objects. Therefore, the position is only final after
+            the simulation was updated.
+            </para>
+            <para>
+            General notes: In first person shooters character speeds up to 10 m/s are used. This is about
+            twice as fast as normal human movement. For this high speed, the gravity is often set to a 
+            higher than normal value, like 16 m/s², to account for this unnatural speed.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation">
+            <summary>
+            Gets or sets the simulation.
+            </summary>
+            <value>The simulation.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this character controller is enabled.
+            </summary>
+            <value>
+            <see langword="true"/> if the character controller is enabled; otherwise, 
+            <see langword="false"/>. The default value is <see langword="true"/>.
+            </value>
+            <remarks>
+            The rigid body (see <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Body"/>) is automatically added/removed from
+            the simulation when the character is enabled/disabled. When disabled the character
+            will not move when <see cref="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)"/> or <see cref="M:DigitalRune.Physics.Specialized.KinematicCharacterController.ResolvePenetrations"/> are called.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Gravity">
+            <summary>
+            Gets or sets the gravity.
+            </summary>
+            <value>The gravity.The default is 9.81.</value>
+            <remarks>
+            The gravity is always acting in -<see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.UpVector"/> direction. This value is the
+            magnitude of the gravity (which is an acceleration). If the gravity is 0, then the 
+            character is free-flying.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.MaxVelocity">
+            <summary>
+            Gets or sets the maximum velocity of the character.
+            </summary>
+            <value>
+            The maximum velocity of the character. The default value is 20.</value>
+            <remarks>
+            The velocity of the character is limited to this value.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="value"/> is negative.
+            </exception>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Velocity">
+            <summary>
+            Gets the current velocity of the character controller.
+            </summary>
+            <value>
+            The current velocity of the character controller.
+            </value>
+            <remarks>
+            This property is updated in <see cref="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.PushForce">
+            <summary>
+            Gets or sets the maximal push force with which the character pushes other objects.
+            </summary>
+            <value>The maximal push force. The default value is 10000.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.SlopeLimit">
+            <summary>
+            Gets or sets the slope limit (in radians).
+            </summary>
+            <value>The slope limit. The default is the π/4 (= 45°).</value>
+            <remarks>
+            The character can move up inclined planes. If the inclination is higher than this value the
+            character will not move up.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.StepHeight">
+            <summary>
+            Gets or sets the height of the step.
+            </summary>
+            <value>The height of the step. The default value is 0.4.</value>
+            <remarks>
+            <para>
+            <strong>Up steps:</strong> The character automatically tries to move up low obstacles/steps.
+            To move up onto a step it is necessary that the obstacle is not higher than this value and
+            that there is enough space for the character to stand on. 
+            </para>
+            <para>
+            <strong>Down steps:</strong> If the character loses contact with the ground it tries to step
+            down onto solid ground. If it cannot find ground within the step height, it will simply fall
+            in a ballistic curve (defined by gravity). Here is an example why down-stepping is 
+            necessary: If the character moves horizontally on a down inclined plane, it will always
+            touch the plane. But, if the step height is set to <c>0</c>, the character will not try to
+            step down and instead will "bounce" down the plane on short ballistic curves.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.IsClimbing">
+            <summary>
+            Gets or sets a value indicating whether this instance is climbing.
+            </summary>
+            <value>
+            <see langword="true"/> if this instance is climbing; otherwise, <see langword="false"/>.
+            </value>
+            <remarks>
+            If this property is set to <see langword="true"/>, gravity is not applied and the 
+            character can move up (e.g. on a ladder or a climbable wall).
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.JumpManeuverability">
+            <summary>
+            Gets or sets the jump maneuverability.
+            </summary>
+            <value>
+            The jump maneuverability in the range [0, 1]. The default is 0.05 (5%).
+            </value>
+            <remarks>
+            If this value is 0, the character cannot change direction during a jump. Values greater 
+            than 0, give the player more control. When this property is set to 1, the character has 
+            full control over its movement direction while jumping. 
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.#ctor(DigitalRune.Physics.Simulation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController"/> class.
+            </summary>
+            <param name="simulation">The simulation.</param>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.#ctor(DigitalRune.Physics.Simulation,DigitalRune.Mathematics.Algebra.Vector3F)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController"/> class.
+            </summary>
+            <param name="simulation">The simulation.</param>
+            <param name="upVector">The normalized up vector.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="simulation" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)">
+            <summary>
+            Moves the character to a new position while avoiding penetrations and sliding along 
+            obstacles.
+            </summary>
+            <param name="moveVelocity">The desired linear walk or fly velocity.</param>
+            <param name="jumpVelocity">
+            The jump velocity. Set a velocity vector to let the character jump. The character will only
+            jump if it starts on the ground. If gravity is turned off, the character will fly into the
+            given direction.
+            </param>
+            <param name="deltaTime">The size of the time step.</param>
+            <remarks>
+            <para>
+            This method does nothing if the character controller is disabled.
+            </para>
+            <para>
+            This method tries to move with the given <paramref name="moveVelocity"/>. It will slide on 
+            obstacles, it will try to step up/down obstacles, and it will be affected by gravity. If the
+            gravity is non-zero, the character is "walking". It will not walk up planes that are steeper
+            than the <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.SlopeLimit"/>. It will try to follow upward/downward steps within the 
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.StepHeight"/>. If the gravity is <c>0</c>, the character is "flying" and the 
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.SlopeLimit"/> and <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.StepHeight"/> are not applied. 
+            </para>
+            <para>
+            If the <paramref name="moveVelocity"/> is a zero vector, only gravity will be applied. 
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Body">
+            <summary>
+            Gets or sets the body.
+            </summary>
+            <value>The body.</value>
+            <remarks>
+            <para>
+            The body is automatically added to or removed from the <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation"/> when the 
+            character is enabled/disabled (see <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Enabled"/> ).
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.CollisionGroup">
+            <summary>
+            Gets or sets the collision group.
+            </summary>
+            <value>The collision group.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.UpVector">
+            <summary>
+            Gets the vector that points into the "up" direction.
+            </summary>
+            <value>The normalized up vector.</value>
+            <remarks>
+            This vector is normalized and defines the direction of the character capsule. Gravity will
+            act against this direction.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Height">
+            <summary>
+            Gets or sets the height.
+            </summary>
+            <value>The height. The default is 1.8.</value>
+            <remarks>
+            This property assumes that the character's shape is a <see cref="T:DigitalRune.Geometry.Shapes.CapsuleShape"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Width">
+            <summary>
+            Gets or sets the width.
+            </summary>
+            <value>The width. The default is 0.8.</value>
+            <remarks>
+            This property assumes that the character's shape is a <see cref="T:DigitalRune.Geometry.Shapes.CapsuleShape"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Position">
+            <summary>
+            Gets or sets the position of the character.
+            </summary>
+            <value>The position of the character.</value>
+            <remarks>
+            The <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Position"/> is the bottom position (the lowest point of the character's body).
+            </remarks>
+        </member>
+        <member name="F:DigitalRune.Physics.Specialized.KinematicCharacterController.OppositeContactLimit">
+            <summary>
+            Contacts at the bottom cap of the capsule are considered "opposite" if the angle between the
+            contacts is greater than a given angle. (In <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.HasGroundContact"/> we compare the
+            dot-product with the cosine of this angle.)
+            </summary>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.HasGroundContact">
+            <summary>
+            Gets a value indicating whether this character has ground contact.
+            </summary>
+            <value>
+            <see langword="true"/> if character has ground contact; otherwise, <see langword="false"/>.
+            </value>
+            <remarks>
+            If this value is <see langword="true"/>, the character stands on a plane with allowed
+            inclination or on several contacts that give enough support (e.g. pinched between 2 or
+            more contacts). 
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.BackupContacts">
+            <summary>
+            Stores a copy of the contacts.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.RollbackContacts">
+            <summary>
+            Restores the contacts to the last copy made with <see cref="M:DigitalRune.Physics.Specialized.KinematicCharacterController.BackupContacts"/>.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.CollectObstacles(System.Single)">
+            <summary>
+            Searches for possible obstacles in the movement radius. A contact set is created 
+            for each found object.
+            </summary>
+            <param name="radius">The radius.</param>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.UpdateContacts">
+            <summary>
+            Updates the contact sets with the obstacles and stores the contacts.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.AddBounds(DigitalRune.Mathematics.Algebra.Vector3F)">
+            <summary>
+            Stores all current boundary planes of the character in a list.
+            </summary>
+            <param name="position">The current character position.</param>
+            <returns>The number of new boundary planes added.</returns>
+            <remarks>
+            Duplicate planes are not added.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.HasUnallowedContact(DigitalRune.Mathematics.Algebra.Vector3F)">
+            <summary>
+            Determines whether the specified current movement has a forbidden contact.
+            </summary>
+            <param name="currentMovement">The current movement.</param>
+            <returns>
+            <see langword="true"/> if the specified current movement has a forbidden contact; otherwise,
+            <see langword="false"/>.
+            </returns>
+            <remarks>
+            If the penetration depth of a contact is within the 
+            <see cref="P:DigitalRune.Physics.Settings.ConstraintSettings.AllowedPenetration"/> depth or if the character controller is 
+            moving out of a contact, then this contact is "allowed". This method reports 
+            <see langword="true"/> if there are "forbidden" contacts, which are contacts where the
+            contact normal points against the movement direction and where the penetration depth is
+            above the allowed limit.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.IsAllowedSlope(DigitalRune.Mathematics.Algebra.Vector3F)">
+            <summary>
+            Determines whether the given normal belongs to a plane where the character can stand on.
+            </summary>
+            <param name="normal">The normal.</param>
+            <returns>
+            <see langword="true"/> if the slope is in the allowed range; otherwise, 
+            <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.NumberOfSlideIterations">
+            <summary>
+            Gets or sets the number of slide iterations.
+            </summary>
+            <value>The number of slide iterations in the range [1, ∞[. The default value is 4.</value>
+            <remarks>
+            The character controller will slide from contact to the next contact until it finds a 
+            position near the target position. <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.NumberOfSlideIterations"/> is the maximal
+            iteration limit. Setting this property to a lower value can make the movement less smooth
+            and the character controller could stop at small obstacles and steps.
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="value"/> is negative or 0.
+            </exception>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.NumberOfSolverIterations">
+            <summary>
+            Gets or sets the number of solver iterations.
+            </summary>
+            <value>The number of solver iterations in the range [1, ∞[. The default value is 4.</value>
+            <remarks>
+            <para>
+            In each slide movement the character controller gathers bounding planes that form a convex
+            space in which it may move. An iterative solver is used to find a valid position in this
+            convex space that is nearest to the target position.
+            </para>
+            <para>
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.NumberOfSolverIterations"/> is the maximal iteration limit. Setting this 
+            property to a lower value can make the movement less smooth and the character controller 
+            could stop at small obstacles and steps.
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="value"/> is negative or 0.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.ResolvePenetrations">
+            <summary>
+            Tries to move the character to the nearest position where it does not penetrate other
+            objects.
+            </summary>
+            <returns>
+            <see langword="true"/> if the character is in or moved to a non-penetrating position;
+            otherwise, <see langword="false"/> if the penetrations could not be resolved.
+            </returns>
+            <remarks>
+            This method does nothing if the character controller is disabled. For deep interpenetrations
+            this method might not find a solution. Penetrations are only removed up to the 
+            penetration depth (see <see cref="P:DigitalRune.Physics.Settings.ConstraintSettings.AllowedPenetration"/>).
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Fly">
+            <summary>
+            Flies to a new position.
+            </summary>
+            <remarks>
+            When flying the character will smoothly slide along all slopes it encounters. The 
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.SlopeLimit"/> is not applied.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Slide(System.Boolean)">
+            <summary>
+            Slides to a new position.
+            </summary>
+            <param name="stopAtObstacle">
+            if set to <see langword="true"/> the slide stops at the first obstacle that is no
+            ground plane.
+            </param>
+            <returns>
+            <see langword="true"/> if the movement was finished.
+            <see langword="false"/> if the movement was stopped at an obstacle.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.StepUp">
+            <summary>
+            Tries to step up onto an obstacle.
+            </summary>
+            <returns>
+            <see langword="true"/> if a step was made; otherwise <see langword="false"/> if the
+            <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Position"/> was not changed.
+            </returns>
+            <remarks>
+            This method does not change the position if no up-step can be made.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.StepDown(System.Boolean)">
+            <summary>
+            Tries to move the <see cref="P:DigitalRune.Physics.Specialized.KinematicCharacterController.StepHeight"/> downwards.
+            </summary>
+            <param name="onlyOntoAllowedSlopes">
+            If set to <see langword="true"/>, the character will only step down if it touches an
+            allowed slope at the end of the step. If set to <see langword="false"/>, the character
+            will step down as long as it touches anything on the capsule bottom.
+            </param>
+            <returns>
+            <see langword="true"/> if a valid ground was found.
+            </returns>
+            <remarks>
+            The step ends on the first contact. If there is no contact found within the step height,
+            this method does nothing.
+            </remarks>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.NamespaceDoc">
+            <summary>
+            The <see cref="N:DigitalRune.Physics.Specialized"/> namespace provides types for specialized
+            tasks in physics simulation, such as character controllers, vehicle physics, etc.
+            </summary>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.Ragdoll">
+            <summary>
+            Represents a ragdoll of a 3D animated character.
+            </summary>
+            <remarks>
+            <para>
+            A ragdoll represents a 3D animated character in the physics engine. To define a ragdoll you
+            need several <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies"/> that represent the limbs of a character. In many cases,
+            rigid bodies are only created for the important bones of the character skeleton. The rigid
+            bodies are connected using constraints, e.g. <see cref="T:DigitalRune.Physics.Constraints.BallJoint"/>s, 
+            <see cref="T:DigitalRune.Physics.Constraints.HingeJoint"/>s, etc. See property <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Joints"/>. <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Limits"/> are
+            constraints that restrict the relative movement of limbs to avoid unrealistic poses.
+            <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors"/> can be used to control the ragdoll pose. 
+            </para>
+            <para>
+            The <see cref="T:DigitalRune.Physics.Specialized.Ragdoll"/> class is a container for all the parts of a ragdoll (bodies, joints,
+            limits, motors, etc.). When <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.AddToSimulation(DigitalRune.Physics.Simulation)"/> is called, all relevant parts are
+            added to the physics <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Simulation"/> and the ragdoll simulation starts. 
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.RemoveFromSimulation"/> must be called to stop the ragdoll simulation and/or when
+            the ragdoll is no longer needed. 
+            </para>
+            <para>
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)"/> takes a skeleton and moves the ragdoll
+            bodies so that they match the skeleton pose. This method instantly moves ("teleports") the 
+            bodies to their new positions. When this method is used, the bodies do not smoothly interact
+            with other physics objects. This method is usually only used to initialize the rigid body
+            positions when the ragdoll is added to the simulation.
+            </para>
+            <para>
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)"/> animates a <see cref="T:DigitalRune.Animation.Character.SkeletonPose"/> so that it
+            matches the ragdoll posture. If a skeleton should be animated by the physics system, then this
+            method must be called in each frame.
+            </para>
+            <para>
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)"/> uses motors to control the movement of the 
+            bodies. This method must be used if the ragdoll should interact with other physics objects, or
+            if an animation should be blended with the physically-based movement.
+            </para>
+            <para>
+            While a ragdoll is added to a simulation, it is not allowed to add or remove
+            <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies"/>, <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Joints"/>, <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Limits"/> or <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors"/>.
+            </para>
+            <para>
+            <strong>Ragdoll creation:</strong><br/>
+            The ragdoll does not contain helper methods for ragdoll creation. To create the ragdoll rigid
+            bodies must be added to <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies"/>. The order of the rigid bodies is important
+            because the index in this list determines with which skeleton bone the body will be 
+            associated. This list can contain <see langword="null"/> entries (often bodies are only
+            created for important bones). It is allowed that this list has less or more entries than the
+            number of bones. Offsets can be added to <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.BodyOffsets"/>. The order of 
+            <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.BodyOffsets"/> is the same as for <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies"/>. If no offsets are set the
+            bodies are centered at the bone origins.
+            </para>
+            <para>
+            Constraints that connect the rigid bodies should be added to the <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Joints"/> list.
+            The joints in this list can have any order. Typically, a <see cref="T:DigitalRune.Physics.Constraints.BallJoint"/> is created at
+            each bone origin to connect the body of a bone with the body of the parent bone.
+            </para>
+            <para>
+            Constraints that restrict the allowed relative body movement should be added to the
+            <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Limits"/> list. The limits in this list can have any order.
+            </para>
+            <para>
+            Motors that control body movement should be added to <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors"/>. The motors in this
+            list can have any order.
+            </para>
+            <para>
+            <strong>Ragdoll usage scenarios:</strong><br/>
+            <list type="bullet">
+            <item>
+            <i>Collision detection only:</i> A ragdoll can be used to detect collisions with an animated
+            character. In this scenario, <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)"/> 
+            is called in each frame to set the rigid bodies to the pose of the skeleton. The physics 
+            <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Simulation"/> can be used to detect collision of other rigid bodies with the
+            ragdoll.
+            </item>
+            <item>
+            <i>Death animations:</i> The ragdoll is activated when the character is dead. The bodies are
+            simulated to create a falling animation. <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)"/> is called in
+            each frame. The physics simulation controls the skeleton animation.
+            </item>
+            <item>
+            <i>Character can push other bodies:</i> The ragdoll bodies are 
+            <see cref="F:DigitalRune.Physics.MotionType.Kinematic"/>. Motors are used to move the rigid bodies to the skeleton
+            position. In each frame <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)"/> must be called. If the 
+            rigid bodies collide with other obstacles, they move the obstacles. This is a one way 
+            interaction - the ragdoll does not react to collisions with other objects.
+            </item>
+            <item>
+            <i>Blending animation and physics:</i> The ragdoll is controlled by the simulation and
+            constraint motors are used to drive the bodies to a target skeleton pose. This can be used to 
+            let the ragdoll fall (simulated by the physics engine) and at the same time the character 
+            tries to obtain a defensive posture. In this scenario, 
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)"/> must be called to set the motor target position.
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)"/> must be called in each frame to update the skeleton of 
+            the visible model. 
+            </item>
+            </list>
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Pose">
+            <summary>
+            Gets or sets the pose (position and orientation) of the character in world space.
+            </summary>
+            <value>The pose (position and orientation) of the character in world space.</value>
+            <remarks>
+            <para>
+            This pose is used in <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)"/> and 
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)"/>. A <see cref="T:DigitalRune.Animation.Character.SkeletonPose"/> is relative to model 
+            space, but rigid bodies are always positioned relative to world space. Basically, the 
+            <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Pose"/> converts from model space to world space. It defines the offset of the 
+            root bone/body.
+            </para>
+            <para>
+            Changing the pose does not have an immediate effect. The new pose will be used in the next 
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)"/> or 
+            <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)"/> call. The ragdoll only reads this value but will
+            never modify it.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Simulation">
+            <summary>
+            Gets the simulation to which this ragdoll was added.
+            </summary>
+            <value>
+            The simulation to which this ragdoll was added. Can be <see langword="null"/> if the
+            ragdoll has not been added to a simulation yet.
+            </value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies">
+            <summary>
+            Gets the rigid bodies that represent the ragdoll limbs.
+            </summary>
+            <value>The bodies. Per default this collection is empty.</value>
+            <remarks>
+            This collection can have any number of entries. It can contain <see langword="null"/> 
+            entries. The order of the bodies in this collection is important. The index in this list 
+            determines the bone index that will be used for the body.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.BodyOffsets">
+            <summary>
+            Gets the body offsets.
+            </summary>
+            <value>The body offsets. Per default this collection is empty.</value>
+            <remarks>
+            Each entry in this collection is associated with an entry in <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies"/>. The
+            offset is a pose that converts from local body space to local bone space. If an offset is 
+            <see cref="F:DigitalRune.Geometry.Pose.Identity"/>, the associated body is centered at the bone origin. 
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Joints">
+            <summary>
+            Gets the joints.
+            </summary>
+            <value>The joints. Per default this collection is empty.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Limits">
+            <summary>
+            Gets the limits.
+            </summary>
+            <value>The limits. Per default this collection is empty.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Motors">
+            <summary>
+            Gets the motors.
+            </summary>
+            <value>The motors. Per default this collection is empty.</value>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.Ragdoll"/> class.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.AddToSimulation(DigitalRune.Physics.Simulation)">
+            <summary>
+            Adds all parts of the ragdoll to a simulation. 
+            </summary>
+            <param name="simulation">The simulation.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="simulation"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            The ragdoll cannot be added to the simulation because it has already been added to another 
+            simulation.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.RemoveFromSimulation">
+            <summary>
+            Removes all ragdoll parts from the simulation.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.EnableJoints">
+            <summary>
+            Enables all joints.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DisableJoints">
+            <summary>
+            Disables all joints.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.EnableLimits">
+            <summary>
+            Enables all limits.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DisableLimits">
+            <summary>
+            Disables all limits.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.EnableMotors">
+            <summary>
+            Enables all motors.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DisableMotors">
+            <summary>
+            Disables all motors.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.TimeSpan)">
+            <overloads>
+            <summary>
+            Drives the ragdoll bodies to the target pose using the <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors"/>.
+            </summary>
+            </overloads>
+            
+            <summary>
+            Drives the ragdoll bodies to the target pose using the <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors"/>.
+            </summary>
+            <param name="skeletonPose">The target skeleton pose.</param>
+            <param name="deltaTime">The current time step.</param>
+            <remarks>
+            This method controls the motors. If the ragdoll does not have any motors, this method does 
+            nothing. The ragdoll bodies are not changed by this method. The bodies will move the next 
+            time the simulation is updated (see method <see cref="M:DigitalRune.Physics.Simulation.Update(System.TimeSpan)"/>)
+            is called.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="skeletonPose"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Ragdoll was not added to a simulation.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)">
+            <summary>
+            Drives the ragdoll bodies to the target pose using the <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors"/>.
+            </summary>
+            <param name="skeletonPose">The target skeleton pose.</param>
+            <param name="deltaTime"> The time step (in seconds). See remarks.</param>
+            <remarks>
+            <para>
+            This method controls the motors. If the ragdoll does not have any motors, this method does 
+            nothing. The ragdoll bodies are not changed by this method. The bodies will move the next 
+            time the simulation is updated (see method <see cref="M:DigitalRune.Physics.Simulation.Update(System.TimeSpan)"/>)
+            is called.
+            </para>
+            <para>
+            The parameter <paramref name="deltaTime"/> is only necessary for velocity motors 
+            (<see cref="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Velocity"/>). The parameter must specify the time step size
+            of the next physics update. 
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="skeletonPose"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.InvalidOperationException">
+            Ragdoll was not added to a simulation.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)">
+            <summary>
+            Updates the bone transforms of the skeleton pose, so that the bones match the ragdoll 
+            bodies.
+            </summary>
+            <param name="skeletonPose">The skeleton pose that is modified.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="skeletonPose" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)">
+            <summary>
+            Updates the poses of the bodies, so that the bodies match the bone transforms of the given 
+            skeleton pose.
+            </summary>
+            <param name="skeletonPose">The skeleton pose.</param>
+            <remarks>
+            The poses of the rigid bodies are changed instantly. The bodies will "teleport" instantly to
+            the target positions. They will not interact correctly with other physics objects. The 
+            velocities of the rigid bodies are set to zero. The bodies will be positioned relative to 
+            the world space pose defined by <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Pose"/>.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="skeletonPose" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodyFromSkeleton(DigitalRune.Animation.Character.SkeletonPose,System.Int32)">
+            <summary>
+            Updates the pose of a single body, so that the bodies match the bone transforms of the given
+            bone.
+            </summary>
+            <param name="skeletonPose">The skeleton pose.</param>
+            <param name="boneIndex">The index of the bone.</param>
+            <remarks>
+            See also <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)"/>.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="skeletonPose" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.RagdollMotor">
+            <summary>
+            Drives a body of a ragdoll to a target position.
+            </summary>
+            <remarks>
+            <para>
+            Ragdolls without motors react to collisions, but are passive. Motors can be used to actively 
+            move the limbs to a target position. 
+            </para>
+            <para>
+            A ragdoll motor is either a velocity motor or a constraint motor, see <see cref="P:DigitalRune.Physics.Specialized.RagdollMotor.Mode"/>. See 
+            the description of <see cref="T:DigitalRune.Physics.Specialized.RagdollMotorMode"/> for more information.
+            </para>
+            <para>
+            A constraint motor controls the orientation of a bone relative to its parent bone. Usually,
+            the parent of a bone can be determined using the <see cref="T:DigitalRune.Animation.Character.Skeleton"/> (see method 
+            <see cref="M:DigitalRune.Animation.Character.Skeleton.GetParent(System.Int32)"/>). But often a ragdoll does not have a rigid body for each
+            bone of the skeleton - some bones are "skipped" for performance reasons. For a ragdoll motor
+            the parent bone should be set to the bone to which the controlled bone is connected.
+            </para>
+            <para>
+            <strong>Damping only:</strong><br/>
+            Constraint motors with a positive <see cref="P:DigitalRune.Physics.Specialized.RagdollMotor.ConstraintDamping"/> value and a 
+            <see cref="P:DigitalRune.Physics.Specialized.RagdollMotor.ConstraintSpring"/> of 0 can be used to create a passive, damped ragdoll. Damping 
+            is very helpful to bring jittering ragdolls to rest.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.Ragdoll">
+            <summary>
+            Gets the ragdoll.
+            </summary>
+            <value>The ragdoll.</value>
+            <remarks>
+            This value is automatically set when the <see cref="T:DigitalRune.Physics.Specialized.RagdollMotor"/> is added to a 
+            <see cref="P:DigitalRune.Physics.Specialized.RagdollMotor.Ragdoll"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.BoneIndex">
+            <summary>
+            Gets or sets the index of the controlled bone.
+            </summary>
+            <value>The index of the controlled bone.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.ParentIndex">
+            <summary>
+            Gets or sets the index of the parent bone to which the controlled bone is connected.
+            </summary>
+            <value>The index of the parent bone to which the controlled bone is connected.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.Mode">
+            <summary>
+            Gets or sets the motor mode.
+            </summary>
+            <value>The motor mode. The default value is <see cref="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Velocity"/>.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this motor is enabled.
+            </summary>
+            <value>
+            <see langword="true"/> if enabled; otherwise, <see langword="false"/>.
+            The default is <see langword="true"/>.
+            </value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.ConstraintSpring">
+            <summary>
+            Gets or sets the spring constant of a constraint motor.
+            </summary>
+            <value>The spring constant of a constraint motor. The default value is 1e7.</value>
+            <remarks>
+            This property is not used by velocity motors.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.ConstraintDamping">
+            <summary>
+            Gets or sets the damping constant of a constraint motor.
+            </summary>
+            <value>The damping constant of a constraint motor. The default value is 1e6.</value>
+            <remarks>
+            This property is not used by velocity motors.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.MaxConstraintForce">
+            <summary>
+            Gets or sets the maximal force that is applied by a constraint motor.
+            </summary>
+            <value>
+            The maximal force of a constraint motor. The default value is +∞.
+            </value>
+            <remarks>
+            This property defines the maximal force that the constraint motor can apply.
+            This property is not used by velocity motors.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.RagdollMotor.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.RagdollMotor"/> class.
+            </summary>
+            <param name="boneIndex">The index of the controlled bone.</param>
+            <param name="parentIndex">
+            The index of the parent bone to which the controlled bone is connected.
+            (Only relevant for constraint motors.)
+            </param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            <paramref name="boneIndex"/> is negative.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.RagdollMotor.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)">
+            <summary>
+            Drives the controlled body.
+            </summary>
+            <param name="skeletonPose">The target skeleton pose.</param>
+            <param name="deltaTime">The time step.</param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="skeletonPose" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.RagdollMotorMode">
+            <summary>
+            Defines the type of <see cref="T:DigitalRune.Physics.Specialized.RagdollMotor"/>.
+            </summary>
+            <remarks>
+            <para>
+            A ragdoll motor can either directly set the velocities of the controlled ragdoll bodies or it
+            can use <see cref="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Constraint"/>s to influence the bodies. 
+            </para>
+            <para>
+            <strong>Velocity Motors:</strong><br/>
+            Velocity motors directly set the velocities (<see cref="P:DigitalRune.Physics.RigidBody.LinearVelocity"/> and 
+            <see cref="P:DigitalRune.Physics.RigidBody.AngularVelocity"/>) of the controlled rigid bodies. If velocity motors
+            are used, <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)"/> must be called in each frame. 
+            Velocity motors drive the ragdoll to an absolute world space pose. This means that velocity 
+            motors cannot be used if different ragdoll movements should be blended (e.g. a hurled ragdoll 
+            moves its limbs into a defensive pose). Forces acting on the ragdoll and collisions will also 
+            have little impact. Velocity motors can be used to drive the root bone of a ragdoll.
+            </para>
+            <para>
+            <strong>Constraint Motors:</strong><br/>
+            Constraint motors use <see cref="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Constraint"/>s to control the movement of the ragdoll bodies.
+            It is only necessary to call <see cref="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)"/> if the 
+            target skeleton pose has changed. Constraints can be used to blend key-frame animation and 
+            physically-based animation (reaction to collisions). A constraint motor acts similar to a 
+            damped spring that connects a bone with its parent bone. Constraint motors cannot be used to 
+            drive the root bone of a ragdoll.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Velocity">
+            <summary>
+            A velocity motor directly sets the linear and angular velocity of controlled ragdoll bodies. 
+            </summary>
+        </member>
+        <member name="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Constraint">
+            <summary>
+            Constraint motors use <see cref="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Constraint"/>s to influence the controlled ragdoll bodies.
+            </summary>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.Vehicle">
+            <summary>
+            Represents a simulated vehicle.
+            </summary>
+            <remarks>
+            <para>
+            A vehicle consists of one rigid body for the <see cref="P:DigitalRune.Physics.Specialized.Vehicle.Chassis"/> and several 
+            <see cref="P:DigitalRune.Physics.Specialized.Vehicle.Wheels"/>. 
+            </para>
+            <para>
+            <strong>Using rays for wheels: </strong>
+            Each wheel is a ray that samples the ground. This is very efficient and allows for tuning and 
+            artificial behavior. It is also more stable, because there are no constraints between the car 
+            and wheel bodies which could be violated. The disadvantage is that the wheel movement is not 
+            smooth when moving over non-smooth terrain (e.g. steps).
+            </para>
+            <para>
+            The forward direction of the vehicle is the -z direction.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Vehicle.Simulation">
+            <summary>
+            Gets the simulation.
+            </summary>
+            <value>The simulation.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Vehicle.Chassis">
+            <summary>
+            Gets or sets the chassis.
+            </summary>
+            <value>The chassis.</value>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="value" /> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Vehicle.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this vehicle is enabled.
+            </summary>
+            <value>
+            <see langword="true"/> if the vehicle is enabled; otherwise, <see langword="false"/>. 
+            The default value is <see langword="false"/>.
+            </value>
+            <remarks>
+            All simulation objects are automatically added to or removed from the simulation and
+            collision domain when the vehicle is enabled or disabled.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Vehicle.Wheels">
+            <summary>
+            Gets the wheels.
+            </summary>
+            <value>The wheels. The default is an empty collection.</value>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Vehicle.#ctor(DigitalRune.Physics.Simulation,DigitalRune.Physics.RigidBody)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.Vehicle"/> class.
+            </summary>
+            <param name="simulation">The simulation.</param>
+            <param name="chassis">The rigid body for the chassis.</param>
+            <remarks>
+            The car will NOT be automatically enabled! The property <see cref="P:DigitalRune.Physics.Specialized.Vehicle.Enabled"/> needs to be 
+            set.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="simulation"/> or <paramref name="chassis"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Vehicle.OnWheelsChanged(System.Object,DigitalRune.Collections.CollectionChangedEventArgs{DigitalRune.Physics.Specialized.Wheel})">
+            <summary>
+            Called when the <see cref="P:DigitalRune.Physics.Specialized.Vehicle.Wheels"/> collection is modified.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="eventArgs">
+            The <see cref="T:DigitalRune.Collections.CollectionChangedEventArgs`1"/> instance containing the event data.
+            </param>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Vehicle.SetCarSteeringAngle(System.Single,DigitalRune.Physics.Specialized.Wheel,DigitalRune.Physics.Specialized.Wheel,DigitalRune.Physics.Specialized.Wheel,DigitalRune.Physics.Specialized.Wheel)">
+            <summary>
+            Sets the steering angles for a standard 4 wheel car.
+            </summary>
+            <param name="steeringAngle">The steering angle.</param>
+            <param name="frontLeft">The front left wheel.</param>
+            <param name="frontRight">The front right wheel.</param>
+            <param name="backLeft">The back left wheel.</param>
+            <param name="backRight">The back right wheel.</param>
+            <remarks>
+            In a real car, the steerable front wheels do not always have the same steering angle. Have a
+            look at http://www.asawicki.info/Mirror/Car%20Physics%20for%20Games/Car%20Physics%20for%20Games.html
+            (section "Curves") for an explanation. The steering angle defines the angle of the inner
+            wheel. The outer wheel is adapted. This works only for 4 wheels in a normal car setup.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="frontLeft"/>, <paramref name="frontRight"/>, <paramref name="backLeft"/>, or
+            <paramref name="backRight"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.VehicleForceEffect">
+            <summary>
+            Updates a vehicle and applies suspension, motor and friction forces.
+            </summary>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.VehicleForceEffect.Vehicle">
+            <summary>
+            Gets or sets the vehicle.
+            </summary>
+            <value>The vehicle.</value>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.VehicleForceEffect.#ctor(DigitalRune.Physics.Specialized.Vehicle)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.VehicleForceEffect"/> class.
+            </summary>
+            <param name="vehicle">The vehicle.</param>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.VehicleForceEffect.OnApply">
+            <summary>
+            Called when the simulation wants this force effect to apply forces to rigid bodies.
+            </summary>
+        </member>
+        <member name="T:DigitalRune.Physics.Specialized.Wheel">
+            <summary>
+            Represents a single wheel of a <see cref="P:DigitalRune.Physics.Specialized.Wheel.Vehicle"/>.
+            </summary>
+            <remarks>
+            <para>
+            The wheel is modeled as a short ray that samples the ground. The ray is attached to the car 
+            where the suspension is fixed. It shoots down (-y in vehicle space). The ray length is equal 
+            to the suspension rest length + the wheel radius. If the <see cref="P:DigitalRune.Physics.Specialized.Wheel.SteeringAngle"/> is 0, the 
+            wheel rotates (rolls) around the x-axis in vehicle space.
+            </para>
+            <para>
+            Each wheel can only be attached to one <see cref="P:DigitalRune.Physics.Specialized.Wheel.Vehicle"/>
+            </para>
+            <para>
+            The wheel has a lot of parameters. Careful tuning is necessary to achieve the desired driving 
+            and sliding behavior.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Vehicle">
+            <summary>
+            Gets (or sets) the vehicle to which the wheel is attached.
+            </summary>
+            <value>The vehicle to which the wheel is attached.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Radius">
+            <summary>
+            Gets or sets the radius of the wheel. 
+            </summary>
+            <value>The radius of the wheel.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionRestLength">
+            <summary>
+            Gets or sets the rest length of the suspension.
+            </summary>
+            <value>The length of the suspension when no forces are acting on the wheel.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.MinSuspensionLength">
+            <summary>
+            Gets or sets the minimal suspension length.
+            </summary>
+            <value>
+            The minimal suspension length. This can be any positive or negative value.
+            If it is set to a large negative value, the minimal suspension length limit is effectively
+            disabled. The default value is -infinity, which means the min suspension limit is disabled.
+            </value>
+            <remarks>
+            <para>
+            When a force (e.g. ground impact) pushes the wheel upwards, the suspension will dynamically
+            compress. The suspension can be compressed up to this limit. This limit is a hard limit
+            that stops the wheel from penetrating (moving into) the chassis body.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionStiffness">
+            <summary>
+            Gets or sets the suspension stiffness.
+            </summary>
+            <value>The suspension stiffness.</value>
+            <remarks>
+            This value is independent of the car mass. (The car mass is internally multiplied to this
+            value to compute the suspension spring constant.) Typical values are in the range [5, 50].
+            Normal cars use lower values. Off road cars use higher values. Sports cars have the highest
+            values.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionRelaxationDamping">
+            <summary>
+            Gets or sets the suspension damping during relaxation.
+            </summary>
+            <value>The suspension damping during relaxation.</value>
+            <remarks>
+            This damping value is used when the suspension spring is extending. Typical values are
+            10 - 50 % of the <see cref="P:DigitalRune.Physics.Specialized.Wheel.SuspensionStiffness"/>. This values is typically lower than
+            the <see cref="P:DigitalRune.Physics.Specialized.Wheel.SuspensionCompressionDamping"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionCompressionDamping">
+            <summary>
+            Gets or sets the suspension damping during compression.
+            </summary>
+            <value>The suspension damping during compression.</value>
+            <remarks>
+            This damping value is used when the suspension spring is compressing. Typical values are
+            10 - 50 % of the <see cref="P:DigitalRune.Physics.Specialized.Wheel.SuspensionStiffness"/>. This values is typically higher than
+            the <see cref="P:DigitalRune.Physics.Specialized.Wheel.SuspensionRelaxationDamping"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.MaxSuspensionForce">
+            <summary>
+            Gets or sets the max suspension force.
+            </summary>
+            <value>The max suspension force.</value>
+            <remarks>
+            When the suspension is compressed, it executes a force onto the chassis body. This 
+            suspension force is limited by the <see cref="P:DigitalRune.Physics.Specialized.Wheel.MaxSuspensionForce"/>. This limit 
+            does not apply when the <see cref="P:DigitalRune.Physics.Specialized.Wheel.MinSuspensionLength"/> is reached because then
+            a larger force can be applied to the chassis to stop the wheel from moving further
+            into the chassis body.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.RollingFrictionForce">
+            <summary>
+            Gets or sets the rolling friction force.
+            </summary>
+            <value>The rolling friction force.</value>
+            <remarks>
+            If this value is 0, the car does not stop rolling when the motor is turned off.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Friction">
+            <summary>
+            Gets or sets the friction.
+            </summary>
+            <value>The friction.</value>
+            <remarks>
+            This friction constant determines how easily this wheel starts sliding. Front and rear
+            wheels can use different friction values to create "understeering" and "oversteering"
+            behaviors.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.RollReduction">
+            <summary>
+            Gets or sets the roll reduction.
+            </summary>
+            <value>The roll reduction.</value>
+            <remarks>
+            This value is usually in the range [0, 1]. Values greater than 0 stop the car from rolling 
+            in tight curves. 
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Offset">
+            <summary>
+            Gets or sets the wheel offset.
+            </summary>
+            <value>The wheel offset.</value>
+            <remarks>
+            This is a position offset in the local space of the vehicle. It determines where
+            the suspension (the ray origin) is fixed on the car.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SteeringAngle">
+            <summary>
+            Gets or sets the steering angle.
+            </summary>
+            <value>The steering angle.</value>
+            <remarks>
+            This angle is 0 to drive forward. It is greater than 0 to drive left and less than 0
+            to drive right.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.MotorForce">
+            <summary>
+            Gets or sets the motor force.
+            </summary>
+            <value>The motor force.</value>
+            <remarks>
+            Values greater than 0 will make the car drive into the steering direction. Values less
+            than 0 will make the car drive backwards.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.BrakeForce">
+            <summary>
+            Gets or sets the brake force.
+            </summary>
+            <value>The brake force. (Must be positive.)</value>
+            <remarks>
+            A value greater than 0 makes the car slow down. 
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Ray">
+            <summary>
+            Gets the ray.
+            </summary>
+            <value>The ray.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.GeometricObject">
+            <summary>
+            Gets the geometric object that defines the pose of the ray.
+            </summary>
+            <value>The geometric object of the ray.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.CollisionObject">
+            <summary>
+            Gets the collision object that defines collision detection behavior of the ray.
+            </summary>
+            <value>The collision object of the ray.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Enabled">
+            <summary>
+            Gets or sets a value indicating whether this <see cref="T:DigitalRune.Physics.Specialized.Wheel"/> is enabled.
+            </summary>
+            <value>
+            <see langword="true"/> if enabled; otherwise, <see langword="false"/>.
+            </value>
+            <remarks>
+            If the wheel is disabled, all simulation objects are removed from the simulation and
+            collision domain. 
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.GroundPosition">
+            <summary>
+            Gets the position where the wheel touches the ground.
+            </summary>
+            <value>The ground position.</value>
+            <remarks>
+            This value is only up-to-date and valid if <see cref="P:DigitalRune.Physics.Specialized.Wheel.HasGroundContact"/> is 
+            <see langword="true"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.GroundNormal">
+            <summary>
+            Gets the normal vector of the ground at the <see cref="P:DigitalRune.Physics.Specialized.Wheel.GroundPosition"/>.
+            </summary>
+            <value>The ground normal vector.</value>
+            <remarks>
+            This value is only up-to-date and valid if <see cref="P:DigitalRune.Physics.Specialized.Wheel.HasGroundContact"/> is 
+            <see langword="true"/>.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.HasGroundContact">
+            <summary>
+            Gets a value indicating whether this wheel has ground contact.
+            </summary>
+            <value>
+            <see langword="true"/> if this wheel has ground contact; otherwise, 
+            <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionLength">
+            <summary>
+            Gets the current suspension length.
+            </summary>
+            <value>The length of the suspension.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.PreviousSuspensionLength">
+            <summary>
+            Gets or sets the length of the suspension in the last frame.
+            </summary>
+            <value>The previous suspension length.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.TouchedBody">
+            <summary>
+            Gets the touched body (= the ground object).
+            </summary>
+            <value>
+            The touched body or <see langword="null"/> if <see cref="P:DigitalRune.Physics.Specialized.Wheel.HasGroundContact"/> is 
+            <see langword="false"/>.
+            </value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.Pose">
+            <summary>
+            Gets the pose of the wheel in world space.
+            </summary>
+            <value>The pose of the wheel in world space.</value>
+            <remarks>
+            This property returns the current pose of the wheel center.
+            </remarks>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.AngularVelocity">
+            <summary>
+            Gets or sets the angular velocity of the wheel about the rotation axis.
+            </summary>
+            <value>The angular velocity.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.RotationAngle">
+            <summary>
+            Gets or sets the rotation angle about the rolling axis.
+            </summary>
+            <value>The rotation angle.</value>
+        </member>
+        <member name="P:DigitalRune.Physics.Specialized.Wheel.SkidEnergy">
+            <summary>
+            Gets or sets the skid energy.
+            </summary>
+            <value>The skid energy.</value>
+            <remarks>
+            <para>
+            The skid energy represents the energy converted to heat if the car tire slides. A skid 
+            energy of 0 indicates that the wheel has grip and is not sliding. Values greater than 0
+            indicate that the wheel is sliding. The skid energy can be used to control skid related 
+            effects (skid marks, smoke, sounds).
+            </para>
+            <para>
+            In the currently implementation the skid energy is only valid when the car is moving (rapid 
+            acceleration, braking, sliding in turns). It is not correct when external constraints are
+            blocking the movement. For example, when a car is pushing against a wall the skid energy is
+            0 - even if all wheels are sliding.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.Physics.Specialized.Wheel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.Wheel"/> class.
+            </summary>
+        </member>
+    </members>
+</doc>

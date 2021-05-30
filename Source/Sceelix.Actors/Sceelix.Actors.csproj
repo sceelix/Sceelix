@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC8DCA01-51C6-4057-B83F-233BCD3C287D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Actors</RootNamespace>
+    <AssemblyName>Sceelix.Actors</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsEngine>true</IsEngine>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversions\MaterialConversion.cs" />
+    <Compile Include="Data\GenericMaterial.cs" />
+    <Compile Include="Parameters\DirectionSelectionChoiceParameter.cs" />
+    <Compile Include="Resolution\ActorTransformResolver.cs" />
+    <Compile Include="Data\ActorGroup.cs" />
+    <Compile Include="Data\IActor.cs" />
+    <Compile Include="Data\Material.cs" />
+    <Compile Include="Parameters\ActorPropertyParameter.cs" />
+    <Compile Include="Procedures\ActorGroupProcedure.cs" />
+    <Compile Include="Procedures\ActorInsertProcedure.cs" />
+    <Compile Include="Procedures\ActorScopeProcedure.cs" />
+    <Compile Include="Procedures\ActorRotateProcedure.cs" />
+    <Compile Include="Procedures\ActorScaleProcedure.cs" />
+    <Compile Include="Procedures\ActorTranslateProcedure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17D451D4-B445-4F61-ADFE-963F42D702B0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693a506a-559b-4da6-b460-852ecbb8bd9a}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9c62325d-2d13-45c8-aca5-ec17de0ed835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Updaters\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

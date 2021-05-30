@@ -1,0 +1,834 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalRune.ServiceLocation</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalRune.ServiceLocation.CreationPolicy">
+            <summary>
+            Specifies when and how a service will be instantiated.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.CreationPolicy.Shared">
+            <summary>
+            Specifies that a single shared instance of the associated service will be created by the
+            <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> and shared by all requests. The service instance is also
+            reused by all child containers.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.CreationPolicy.LocalShared">
+            <summary>
+            Specifies that a single instance of the associated service will be created by the
+            <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> and shared locally (per container) by all requests. The
+            service instance is created per container and is not reused by child containers.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.CreationPolicy.NonShared">
+            <summary>
+            Specifies that a new non-shared instance of the associated service will be created by
+            the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> for every request.
+            </summary>
+        </member>
+        <member name="T:DigitalRune.ServiceLocation.DisposalPolicy">
+            <summary>
+            Specifies when a service instance will be disposed.
+            </summary>
+            <remarks>
+            The <see cref="T:DigitalRune.ServiceLocation.DisposalPolicy"/> is only relevant for services that implement 
+            <see cref="T:System.IDisposable"/>.
+            </remarks>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.DisposalPolicy.Automatic">
+            <summary>
+            Specifies that the service instance will automatically be disposed when the service is
+            removed from the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> or when the
+            <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> is disposed. (The service's lifetime is bound to the
+            lifetime of the container.)
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.DisposalPolicy.Manual">
+            <summary>
+            Specifies that the service instance is not automatically disposed when the
+            <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> is disposed. (The service is owned by an external object,
+            which is responsible for disposing the instance.)
+            </summary>
+        </member>
+        <member name="T:DigitalRune.ServiceLocation.NamespaceDoc">
+            <summary>
+            The <see cref="N:DigitalRune.ServiceLocation"/> namespace provides <i>service location</i> and
+            <i>inversion of control</i> (IoC) features.
+            </summary>
+        </member>
+        <member name="T:DigitalRune.ServiceLocation.ServiceContainer">
+            <summary>
+            Implements a simple <i>inversion of control</i> (IoC) container.
+            </summary>
+            <remarks>
+            <para>
+            The <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> supports basic dependency injection:
+            <list type="bullet">
+            <item>
+            <description>
+            <strong>Constructor Injection:</strong> When a new instance is created in
+            <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type,System.String)"/> all dependencies defined via constructor
+            parameters are automatically resolved. (The <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> automatically
+            chooses the constructor with the max number of arguments. The method
+            <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.SelectConstructor(System.Type)"/> can be overridden in derived classes if a different strategy
+            for choosing a constructor should be applied.)
+            </description>
+            </item>
+            <item>
+            <description>
+            <strong>Property Injection:</strong> The method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.ResolveProperties(System.Object)"/> can be
+            called to inject dependencies into properties of a given instance. Note that, property
+            injection is not applied automatically. The method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.ResolveProperties(System.Object)"/> needs to
+            be called explicitly, if property injection is required.
+            </description>
+            </item>
+            </list>
+            </para>
+            <para>
+            <strong>Named Services:</strong> Services can be registered under a name (key). The name can
+            be <see langword="null"/>, which is interpreted by the container as the "default" instance
+            of the service. A string of length 0 is considered to be different from
+            <see langword="null"/>. Any service where the key is not <see langword="null"/> is called a
+            "named" service. When the method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type,System.String)"/> or its
+            overloads are called without a key or with a <see langword="null"/> key, the default
+            (unnamed) instance is returned or <see langword="null"/> if there is no default instance.
+            And when the method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type,System.String)"/> or its overloads are
+            called with a key that is not <see langword="null"/>, the matching named instance is
+            returned or <see langword="null"/> if there is no matching named instance (even if there is
+            a default instance).
+            </para>
+            <para>
+            When registering multiple services of the same type and with the same name (key), the
+            previous entries will be overwritten.
+            </para>
+            <para>
+            <strong>IEnumerable&lt;TService&gt;:</strong> The method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetAllInstances(System.Type)"/>
+            returns all named instances of a given type. The method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type)"/>
+            and its overloads behave the same as <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetAllInstances(System.Type)"/> when the specified type
+            is an <see cref="T:System.Collections.Generic.IEnumerable`1"/>. For example, 
+            <c>GetInstance(typeof(IEnumerable&lt;IServiceXyz&gt;))</c> in C# returns all named instances
+            of type <c>IServiceXyz</c>.
+            </para>
+            <para>
+            <strong>Func&lt;TService&gt;:</strong> The method <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type,System.String)"/>
+            and its overloads can also be used to get a delegate method that resolves an instance of
+            type <i>T</i>. The type parameter must be a <see cref="T:System.Func`1"/>. For example, 
+            <c>GetInstance(typeof(Func&lt;IServiceXyz&gt;))</c> in C# returns a delegate that can be
+            used to get an instance of type <i>IServiceXyz</i>.
+            </para>
+            <para>
+            <strong>Cyclic Service References:</strong> When services are registered by type (e.g. using
+            <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Type)"/>) the service container will
+            automatically create an instance when needed and inject the necessary parameter in the
+            constructor. Services that are registered by type must not have cyclic dependencies, for
+            example, where service A needs service B in its constructor and B needs A in its
+            constructor). Cyclic dependencies must be broken, for example, by changing the constructor
+            of B to expect a <strong>Func</strong> of A (e.g. <c>Func&lt;A&gt;</c> in C# instead of an
+            instance of A).
+            </para>
+            <para>
+            <strong>Registered Default Services:</strong> The service container itself is registered in
+            the container by default and can be retrieved using, for example
+            <c>GetInstance&lt;ServiceContainer&gt;()</c> (in C#).
+            </para>
+            <para>
+            <strong>Compatibility:</strong> If required, this class can be replaced by a more advanced
+            IoC container implementing the <see cref="T:Microsoft.Practices.ServiceLocation.IServiceLocator"/> interface. For more
+            information: See <see href="http://commonservicelocator.codeplex.com/">Microsoft patterns
+            &amp; practices - Common Service Locator Library</see>.
+            </para>
+            <para>
+            <strong>Thread-Safety:</strong> The <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> is thread-safe and can be
+            accessed from multiple threads simultaneously.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through all registered services.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through all available 
+            services in the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/>.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetAllInstances(System.Type)">
+            <overloads>
+            <summary> Gets all named instances of a given service type. </summary>
+            </overloads>
+            
+            <summary>
+            Gets all named instances of the given service type currently registered in the
+            container.
+            </summary>
+            <param name="serviceType">The type of the service requested.</param>
+            <returns>
+            A sequence of instances of the requested <paramref name="serviceType"/>.
+            </returns>
+            <remarks>
+            This method returns only "named" instances. An instance is "named" if it was registered
+            with a key that is not <see langword="null"/> (see method
+            <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Object)"/> and its overloads).
+            </remarks>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving the service instance.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetAllInstances``1">
+            <summary>
+            Gets all named instances of the given service type currently registered in the
+            container.
+            </summary>
+            <typeparam name="TService">The type of the service requested.</typeparam>
+            <returns>
+            A sequence of instances of the requested <typeparamref name="TService"/>.
+            </returns>
+            <remarks>
+            This method returns only "named" instances. An instance is "named" if it was registered
+            with a key that is not <see langword="null"/> (see method
+            <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Object)"/> and its overloads).
+            </remarks>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving the service instance.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type)">
+            <overloads>
+            <summary> 
+            Gets an instance of the given service type.
+            </summary>
+            </overloads>
+            <summary>
+            Get an instance of the given service type.
+            </summary>
+            <param name="serviceType">The type of the service requested.</param>
+            <returns>
+            The requested service instance or <see langword="null"/> if the service has not been
+            registered.
+            </returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving the service instance.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance(System.Type,System.String)">
+            <summary>
+            Gets a named instance of the given service type.
+            </summary>
+            <param name="serviceType">The type of the service requested.</param>
+            <param name="key">
+            The name the object was registered with. Can be <see langword="null"/> or empty. 
+            </param>
+            <returns>
+            The requested service instance or <see langword="null"/> if the service has not been 
+            registered.
+            </returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving the service instance.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance``1">
+            <summary>
+            Gets an instance of the given service type.
+            </summary>
+            <typeparam name="TService">The type of the service requested.</typeparam>
+            <returns>
+            The requested service instance or <see langword="null"/> if the service has not been 
+            registered.
+            </returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving the service instance.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetInstance``1(System.String)">
+            <summary>
+            Gets a named instance of the given service type.
+            </summary>
+            <typeparam name="TService">The type of the service requested.</typeparam>
+            <param name="key">
+            The name the object was registered with. Can be <see langword="null"/> or empty. 
+            </param>
+            <returns>
+            The requested service instance or <see langword="null"/> if the service has not been 
+            registered.
+            </returns>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving the service instance.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetService(System.Type)">
+            <summary>
+            Gets the service instance of the specified type.
+            </summary>
+            <param name="serviceType">
+            An object that specifies the type of service object to get.
+            </param>
+            <returns>
+            A service instance of type <paramref name="serviceType"/>. Or <see langword="null"/> if 
+            there is no service instance of type <paramref name="serviceType"/>.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Object)">
+            <summary>
+            Registers the specified service instance.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="instance">The service instance to be registered.</param>
+            <remarks>
+            <para>
+            The service instance will be shared by the container and all child containers (creation
+            policy <see cref="F:DigitalRune.ServiceLocation.CreationPolicy.Shared"/>) and will not be disposed when the container
+            is disposed (disposal policy <see cref="F:DigitalRune.ServiceLocation.DisposalPolicy.Manual"/>).
+            </para>
+            <para>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="instance"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="instance"/> is not a class (or subclass) of
+            <paramref name="serviceType"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Type)">
+            <summary>
+            Registers the specified service type.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="instanceType">The type implementing the service.</param>
+            <remarks>
+            The service instance will be shared by the container and all child containers (creation
+            policy <see cref="F:DigitalRune.ServiceLocation.CreationPolicy.Shared"/>) and will be automatically disposed when the
+            container is disposed (disposal policy <see cref="F:DigitalRune.ServiceLocation.DisposalPolicy.Automatic"/>).
+            </remarks>
+            <remarks>
+            <para>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="instanceType"/> is
+            <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="instanceType"/> is not compatible with the
+            <paramref name="serviceType"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Type,DigitalRune.ServiceLocation.CreationPolicy)">
+            <summary>
+            Registers the specified service type using a certain creation policy.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="instanceType">The type implementing the service.</param>
+            <param name="creationPolicy">
+            The creation policy that specifies when and how a service will be instantiated.
+            </param>
+            <remarks>
+            <para>
+            The service instance will be automatically disposed when the container is disposed
+            (disposal policy <see cref="F:DigitalRune.ServiceLocation.DisposalPolicy.Automatic"/>).
+            </para>
+            <para>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="instanceType"/> is
+            <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="instanceType"/> is not compatible with the
+            <paramref name="serviceType"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Type,DigitalRune.ServiceLocation.CreationPolicy,DigitalRune.ServiceLocation.DisposalPolicy)">
+            <summary>
+            Registers the specified service type using a certain creation and disposal policy.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="instanceType">The type implementing the service.</param>
+            <param name="creationPolicy">
+            The creation policy that specifies when and how a service will be instantiated.
+            </param>
+            <param name="disposalPolicy">
+            The disposal policy that specifies when a service instance will be disposed. (Only
+            relevant if the service instance implements <see cref="T:System.IDisposable"/>.)
+            </param>
+            <remarks>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="instanceType"/> is
+            <see langword="null"/>.
+            </exception>
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="instanceType"/> is not compatible with the
+            <paramref name="serviceType"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Func{DigitalRune.ServiceLocation.ServiceContainer,System.Object})">
+            <summary>
+            Registers a services using a custom factory method.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="createInstance">
+            The factory method responsible for serving the requests from the container.
+            </param>
+            <remarks>
+            <para>
+            The service instance will be shared by the container and all child containers (creation
+            policy <see cref="F:DigitalRune.ServiceLocation.CreationPolicy.Shared"/>) and will be automatically disposed when the
+            container is disposed (disposal policy <see cref="F:DigitalRune.ServiceLocation.DisposalPolicy.Automatic"/>).
+            </para>
+            <para>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="createInstance"/> is
+            <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Func{DigitalRune.ServiceLocation.ServiceContainer,System.Object},DigitalRune.ServiceLocation.CreationPolicy)">
+            <summary>
+            Registers a services using a custom factory method and a certain creation policy.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="createInstance">
+            The factory method responsible for serving the requests from the container.
+            </param>
+            <param name="creationPolicy">
+            The creation policy that specifies when and how a service will be instantiated.
+            </param>
+            <remarks>
+            <para>
+            The service instance will be automatically disposed when the container is disposed
+            (disposal policy <see cref="F:DigitalRune.ServiceLocation.DisposalPolicy.Automatic"/>).
+            </para>
+            <para>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="createInstance"/> is
+            <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="P:DigitalRune.ServiceLocation.ServiceContainer.IsDisposed">
+            <summary>
+            Gets a value indicating whether this instance has been disposed of.
+            </summary>
+            <value>
+            <see langword="true"/> if this instance has been disposed of; otherwise,
+            <see langword="false"/>.
+            </value>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> class.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Dispose">
+            <overloads>
+            <summary>
+            Releases all resources used by an instance of the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> class.
+            </summary>
+            </overloads>
+            
+            <summary>
+            Releases all resources used by an instance of the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> class.
+            </summary>
+            <remarks>
+            This method calls the virtual <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.Dispose(System.Boolean)"/> method, passing in 
+            <see langword="true"/>, and then suppresses finalization of the instance.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by an instance of the
+            <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/> class and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">
+            <see langword="true"/> to release both managed and unmanaged resources;
+            <see langword="false"/> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.ThrowIfDisposed">
+            <summary>
+            Throws an <see cref="T:System.ObjectDisposedException"/> if the service container has already
+            been disposed.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.CreateChildContainer">
+            <summary>
+            Creates a new child container.
+            </summary>
+            <returns>The child container.</returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.OnCreateChildContainer">
+            <summary>
+            Called when a new child container needs to be created.
+            </summary>
+            <returns>The child container.</returns>
+            <remarks>
+            <strong>Notes to Inheritors:</strong> Derived classes can override this method to create
+            a new child container of a certain type. The base implementation creates a child
+            container of type <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/>.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.StoreInstance(DigitalRune.ServiceLocation.ServiceEntry,System.Object)">
+            <summary>
+            Stores the shared service instance, or keeps track of disposable instances for automatic
+            disposal.
+            </summary>
+            <param name="entry">The service entry in the registry.</param>
+            <param name="instance">The service instance. (Can be <see langword="null"/>.)</param>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.DisposeInstances(DigitalRune.ServiceLocation.ServiceEntry)">
+            <summary>
+            Disposes of objects whose lifetime is controlled by the service container.
+            </summary>
+            <param name="entry">The service entry in the registry.</param>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetRegistrations">
+            <summary>
+            Gets all service registrations for the current container up to the root container.
+            </summary>
+            <returns>The service registrations. (May include duplicate items.)</returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.GetRegistrations(System.Type)">
+            <summary>
+            Gets all registrations of a given service type for the current container up to the root
+            container.
+            </summary>
+            <returns>
+            The registration of the given service type. (May include duplicate items.)
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Clear">
+            <summary>
+            Resets the container and removes all locally registered service types.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Register(System.Type,System.String,System.Func{DigitalRune.ServiceLocation.ServiceContainer,System.Object},DigitalRune.ServiceLocation.CreationPolicy,DigitalRune.ServiceLocation.DisposalPolicy)">
+            <overloads>
+            <summary>
+            Registers a service.
+            </summary>
+            </overloads>
+            
+            <summary>
+            Registers a service using a custom factory method and certain creation and disposal
+            policies.
+            </summary>
+            <param name="serviceType">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+            <param name="createInstance">
+            The factory method responsible for serving the requests from the container.
+            </param>
+            <param name="creationPolicy">
+            The creation policy that specifies when and how a service will be instantiated.
+            </param>
+            <param name="disposalPolicy">
+            The disposal policy that specifies when a service instance will be disposed. (Only
+            relevant if the service instance implements <see cref="T:System.IDisposable"/>.)
+            </param>
+            <remarks>
+            If a service with the same type and name is already registered, the existing entry will
+            be replaced.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> or <paramref name="createInstance"/> is
+            <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Unregister(System.Type)">
+            <overloads>
+            <summary>
+            Unregisters a service.
+            </summary>
+            </overloads>
+            
+            <summary>
+            Unregisters all services of the given service type.
+            </summary>
+            <param name="serviceType">The type of service to be removed.</param>
+            <remarks>
+            The method removes all services (named and unnamed) that match the given type.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.Unregister(System.Type,System.String)">
+            <summary>
+            Unregisters the service with the specified name.
+            </summary>
+            <param name="serviceType">The type of service to be removed.</param>
+            <param name="key">
+            The name the object was registered with. Can be <see langword="null"/> or empty. 
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="serviceType"/> is <see langword="null"/>.
+            </exception>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.CreateInstance(System.Type)">
+            <summary>
+            Creates an instance the given type and satisfies the constructor dependencies.
+            </summary>
+            <param name="type">The type to instantiate.</param>
+            <returns>A new instance of the requested type.</returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.SelectConstructor(System.Type)">
+            <summary>
+            Selects the constructor to be used for activating the given type.
+            </summary>
+            <param name="type">The type to be activated.</param>
+            <returns>The constructor that should be used.</returns>
+            <remarks>
+            <strong>Notes to Inheritors:</strong> This method can be overridden in derived classes
+            if a certain strategy for choosing the constructor should be applied. The base
+            implementation chooses the constructor with the max number of parameters.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.OnCreateInstance(System.Type,System.Object[])">
+            <summary>
+            Creates an instance of the type with the specified constructor arguments.
+            </summary>
+            <param name="type">The type of the instance.</param>
+            <param name="args">The constructor arguments.</param>
+            <returns>A new instance of the requested type.</returns>
+            <remarks>
+            <strong>Notes to Inheritors:</strong> When overriding <see cref="M:DigitalRune.ServiceLocation.ServiceContainer.OnCreateInstance(System.Type,System.Object[])"/> be
+            sure to throw an exception if the activation fails. The method must not return
+            <see langword="null"/>.
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceContainer.ResolveProperties(System.Object)">
+            <summary>
+            Tries to resolve all property dependencies of the given instance.
+            </summary>
+            <param name="instance">The instance to build up.</param>
+            <remarks>
+            This method inspects the properties of the given <paramref name="instance"/>. It will
+            initialize the property with an instance from this container if the property has a
+            public setter, if the property type is found in the container, and if the property type
+            is a reference type (not a value type).
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="instance"/> is <see langword="null"/>.
+            </exception>
+            <exception cref="T:Microsoft.Practices.ServiceLocation.ActivationException">
+            An error occurred while resolving a service instance.
+            </exception>
+        </member>
+        <member name="T:DigitalRune.ServiceLocation.ServiceEntry">
+            <summary>
+            Represents an entry in the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/>.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.ServiceEntry.CreationPolicy">
+            <summary>
+            Specifies when and how a new instance of the service is created.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.ServiceEntry.DisposalPolicy">
+            <summary>
+            Specifies when an instance of the service is disposed.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.ServiceEntry.CreateInstance">
+            <summary>
+            The factory method that creates a new instance of the service.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.ServiceEntry.Instances">
+            <summary>
+            The cached service instance(s). See remarks.
+            </summary>
+            <remarks>
+            <para>
+            The field stores:
+            </para>
+            <list type="bullet">
+            <item>
+            The cached service instance if the scope is
+            <see cref="F:DigitalRune.ServiceLocation.CreationPolicy.Shared"/> or
+            <see cref="F:DigitalRune.ServiceLocation.CreationPolicy.LocalShared"/>.
+            </item>
+            <item>
+            A WeakReference or WeakCollection to the instances if they are disposable and the scope
+            is <see cref="F:DigitalRune.ServiceLocation.CreationPolicy.NonShared"/> and
+            <see cref="F:DigitalRune.ServiceLocation.DisposalPolicy.Automatic"/>.
+            </item>
+            </list>
+            </remarks>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceEntry.#ctor(System.Func{DigitalRune.ServiceLocation.ServiceContainer,System.Object},DigitalRune.ServiceLocation.CreationPolicy,DigitalRune.ServiceLocation.DisposalPolicy)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.ServiceLocation.ServiceEntry"/> class.
+            </summary>
+            <param name="createInstance">The factory method.</param>
+            <param name="creationPolicy">The creation policy.</param>
+            <param name="disposalPolicy">The disposal policy.</param>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceEntry.#ctor(DigitalRune.ServiceLocation.ServiceEntry)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.ServiceLocation.ServiceEntry"/> class by copying the settings
+            of an existing service entry.
+            </summary>
+            <param name="entry">The <see cref="T:DigitalRune.ServiceLocation.ServiceEntry"/> from which to copy the settings.</param>
+        </member>
+        <member name="T:DigitalRune.ServiceLocation.ServiceFactoryFactory`1">
+            <summary>
+            Creates a <see cref="T:System.Func`1"/> which returns a service instance.
+            </summary>
+            <typeparam name="T">The type of the service.</typeparam>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceFactoryFactory`1.Create(DigitalRune.ServiceLocation.ServiceContainer,System.String)">
+            <summary>
+            Creates a factory method for services of type <typeparamref name="T"/> and a specific
+            container.
+            </summary>
+            <param name="container">The <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/>.</param>
+            <param name="key">
+            The name the service was registered with. Can be <see langword="null"/> or empty. 
+            </param>
+            <returns>The factory method.</returns>
+        </member>
+        <member name="T:DigitalRune.ServiceLocation.ServiceRegistration">
+            <summary>
+            Identifies an entry in the <see cref="T:DigitalRune.ServiceLocation.ServiceContainer"/>.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.ServiceRegistration.Type">
+            <summary>
+            The type of the service.
+            </summary>
+        </member>
+        <member name="F:DigitalRune.ServiceLocation.ServiceRegistration.Key">
+            <summary>
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.#ctor(System.Type,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/> struct.
+            </summary>
+            <param name="type">The type of the service.</param>
+            <param name="key">
+            The name under which the object should be registered. Can be <see langword="null"/> or
+            empty.
+            </param>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.Equals(System.Object)">
+            <overloads>
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to the current
+            <see cref="T:System.Object"/>.
+            </summary>
+            </overloads>
+            
+            <summary>
+            Determines whether the specified <see cref="T:System.Object"/> is equal to the current
+            <see cref="T:System.Object"/>.
+            </summary>
+            <param name="obj">
+            The <see cref="T:System.Object"/> to compare with the current <see cref="T:System.Object"/>.
+            </param>
+            <returns>
+            <see langword="true"/> if the specified <see cref="T:System.Object"/> is equal to the current
+            <see cref="T:System.Object"/>; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.Equals(DigitalRune.ServiceLocation.ServiceRegistration)">
+            <summary>
+            Determines whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            <see langword="true"/> if the current object is equal to the other parameter; otherwise,
+            <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.op_Equality(DigitalRune.ServiceLocation.ServiceRegistration,DigitalRune.ServiceLocation.ServiceRegistration)">
+            <summary>
+            Compares two <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/> objects to determine whether they are the
+            same.
+            </summary>
+            <param name="obj1">The first <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/>.</param>
+            <param name="obj2">The second <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/>.</param>
+            <returns>
+            <see langword="true"/> if the <paramref name="obj1"/> and <paramref name="obj2"/> are
+            the same; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.op_Inequality(DigitalRune.ServiceLocation.ServiceRegistration,DigitalRune.ServiceLocation.ServiceRegistration)">
+            <summary>
+            Compares two <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/> objects to determine whether they are
+            different.
+            </summary>
+            <param name="obj1">The first <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/>.</param>
+            <param name="obj2">The second <see cref="T:DigitalRune.ServiceLocation.ServiceRegistration"/>.</param>
+            <returns>
+            <see langword="true"/> if the <paramref name="obj1"/> and <paramref name="obj2"/> are
+            different; otherwise, <see langword="false"/>.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>
+            A 32-bit signed integer that is the hash code for this instance.
+            </returns>
+        </member>
+        <member name="M:DigitalRune.ServiceLocation.ServiceRegistration.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+    </members>
+</doc>

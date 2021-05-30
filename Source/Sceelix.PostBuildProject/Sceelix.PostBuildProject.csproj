@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{FB1D9033-47B4-4E65-B31F-C45068089AD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.PostBuildProject</RootNamespace>
+    <AssemblyName>Sceelix.PostBuildProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <PropertyGroup>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChangeLog.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--Move the extra, necessary files to the main folder, and delete the "Extras" folder. -->
+  <PropertyGroup>
+    <PostBuildEvent>
+	del "$(TargetPath)"
+	XCOPY "$(TargetDir)Extras\*.*" "$(TargetDir)" /s /i /y
+	rmdir /s /q "$(TargetDir)Extras\"
+		</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'MacOS' And $(Steam) != 'True' ">
+    <PostBuildEvent>$(PostBuildEvent)
+	MOVE /Y "$(TargetDir)MacOS\Sceelix.Designer.Binary" "$(TargetDir)MacOS\Sceelix.Designer"
+		</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(BuildingInsideVisualStudio)' == 'True' And '$(Platform)' == 'Linux' ">
+    <PostBuildEvent>$(PostBuildEvent)
+	XCOPY "$(TargetDir)." "$(DropboxMultiplatformFolder)\Debugs\Linux\Bin"  /s /i /y
+	COPY "$(SolutionDir)..\Publishing\Sceelix.Installer.sh" "$(DropboxMultiplatformFolder)\Debugs\Linux\Sceelix.sh" /Y
+	</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(BuildingInsideVisualStudio)' == 'True' And '$(Platform)' == 'MacOS' ">
+    <MacAppContentFolder>$(DropboxMultiplatformFolder)\Debugs\MacOs\Sceelix.Designer.app\Contents</MacAppContentFolder>
+    <PostBuildEvent>$(PostBuildEvent)
+		rmdir "$(MacAppContentFolder)" /s /q
+		XCOPY "$(TargetDir)." "$(MacAppContentFolder)\MonoBundle" /s /i /y	
+		mkdir "$(MacAppContentFolder)\Resources"	
+		MOVE /Y "$(MacAppContentFolder)\MonoBundle\Content" "$(MacAppContentFolder)\Resources\Content"
+		MOVE /Y "$(MacAppContentFolder)\MonoBundle\MainMenu.nib" "$(MacAppContentFolder)\Resources"
+        MOVE /Y "$(MacAppContentFolder)\MonoBundle\libassimp.dylib" "$(MacAppContentFolder)\Resources"		
+		MOVE /Y "$(MacAppContentFolder)\MonoBundle\SceelixIcon.icns" "$(MacAppContentFolder)\Resources" 
+		MOVE /Y "$(MacAppContentFolder)\MonoBundle\Info.plist" "$(MacAppContentFolder)"	
+		MOVE /Y "$(MacAppContentFolder)\MonoBundle\MacOS" "$(MacAppContentFolder)\MacOS"
+		if exist "$(MacAppContentFolder)\MonoBundle\CSteamworks.bundle" MOVE /Y "$(MacAppContentFolder)\MonoBundle\CSteamworks.bundle" "$(MacAppContentFolder)\Resources\CSteamworks.bundle"
+		
+		</PostBuildEvent>
+  </PropertyGroup>
+  <!--For Linux and MacOS versions, we need to test it. So, to make this easier, move the files directly to the Dropbox, so that
+  they can be tested.-->
+  <!--PropertyGroup Condition=" '$(BuildingInsideVisualStudio)' == 'True' And '$(Platform)' == 'MacOS' ">
+	<MacAppContentFolder>$(DropboxMultiplatformFolder)\Debugs\MacOs\Sceelix.Designer.app\Contents</MacAppContentFolder>
+    <PostBuildEvent>$(PostBuildEvent)
+	rmdir "$(MacAppContentFolder)" /s /q
+	XCOPY "$(TargetDir)." "$(MacAppContentFolder)\MonoBundle" /s /i /y	
+	mkdir "$(MacAppContentFolder)\Resources"	
+	MOVE /Y "$(MacAppContentFolder)\MonoBundle\Content" "$(MacAppContentFolder)\Resources\Content"
+	MOVE /Y "$(MacAppContentFolder)\MonoBundle\MainMenu.nib" "$(MacAppContentFolder)\Resources" 
+	MOVE /Y "$(MacAppContentFolder)\MonoBundle\SceelixIcon.icns" "$(MacAppContentFolder)\Resources" 
+	MOVE /Y "$(MacAppContentFolder)\MonoBundle\Info.plist" "$(MacAppContentFolder)"	
+	MOVE /Y "$(MacAppContentFolder)\MonoBundle\MacOS" "$(MacAppContentFolder)\MacOS"
+	if exist "$(MacAppContentFolder)\MonoBundle\CSteamworks.bundle" MOVE /Y "$(MacAppContentFolder)\MonoBundle\CSteamworks.bundle" "$(MacAppContentFolder)\Resources\CSteamworks.bundle"
+	)
+	</PostBuildEvent>
+  </PropertyGroup-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

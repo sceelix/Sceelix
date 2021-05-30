@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- This file was generated automatically by the DigitalRune Model Content Processor. -->
+
+<Material>
+  <!--Pass Name="Material" Effect="BasicEffect" Profile="Any">
+    <Parameter Name="Alpha" Value="1" />
+    <Parameter Name="DiffuseColor" Value="0.4784314,0.4784314,0.6" />
+    <Parameter Name="EmissiveColor" Value="0,0,0" />
+    <Parameter Name="SpecularColor" Value="0.33,0.33,0.33" />
+    <Parameter Name="SpecularPower" Value="20" />
+    <Parameter Name="VertexColorEnabled" Value="False" />
+    <Texture Name="Texture" File="BuildingsHighRise0290_1_S.jpg" />
+  </Pass-->
+
+<!--  Add other application-dependent passes here, for example:-->
+  <Pass Name="ShadowMap" Effect="DigitalRune/Materials/ShadowMap" Profile="HiDef"/>
+  <Pass Name="GBuffer" Effect="DigitalRune/Materials/GBufferNormal" Profile="HiDef">
+    <Parameter Name="SpecularPower" Value="20" />
+  </Pass>
+  <Pass Name="Material" Effect="DigitalRune/Materials/MaterialEmissive" Profile="HiDef">
+    <Parameter Name="DiffuseColor" Value="0.4784314,0.4784314,0.6" />
+    <Parameter Name="SpecularColor" Value="0.33,0.33,0.33" />
+	<Parameter Name="EmissiveColor" Value="0.33,0.33,0.33" />
+    <Texture Name="DiffuseTexture" File="BuildingsHighRise0290_1_S.jpg" />
+  </Pass>
+  <!--Pass Name="Material" Effect="BasicEffect" Profile="HiDef">
+    <Parameter Name="Alpha" Value="1" />
+    <Parameter Name="DiffuseColor" Value="0.4784314,0.4784314,0.6" />
+    <Parameter Name="EmissiveColor" Value="0,0,0" />
+    <Parameter Name="SpecularColor" Value="0.33,0.33,0.33" />
+    <Parameter Name="SpecularPower" Value="20" />
+    <Parameter Name="TextureEnabled" Value="True" />
+	<Parameter Name="LightingEnabled" Value="True" />	
+    <Texture Name="Texture" File="BuildingsHighRise0290_1_S.jpg" />
+  </Pass-->
+
+<!-- See the DigitalRune Graphics documentation for a full list of material definition options. -->
+
+</Material>

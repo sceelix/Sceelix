@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{E31344C0-D202-4314-86A6-D32F82F66BB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Surfaces</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Surfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CreateDocumentation>true</CreateDocumentation>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Translators\Materials\BlendColorSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\ColorSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\OtherSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\ISurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\MultiTextureSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\FurTextureSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\DefaultSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\SingleTextureSurfaceMaterialTranslator.cs" />
+    <Compile Include="Translators\SurfaceTranslator.cs" />
+    <Compile Include="Translators\Materials\SurfaceMaterialTranslator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\SurfaceCollisionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{ec8dca01-51c6-4057-b83f-233bcd3c287d}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17D451D4-B445-4F61-ADFE-963F42D702B0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Actors\Sceelix.Designer.Actors.csproj">
+      <Project>{e0d59531-d67c-402f-83a8-7292b6f911a3}</Project>
+      <Name>Sceelix.Designer.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.ProjectExplorer\Sceelix.Designer.ProjectExplorer.csproj">
+      <Project>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</Project>
+      <Name>Sceelix.Designer.ProjectExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Renderer3D\Sceelix.Designer.Renderer3D.csproj">
+      <Project>{984E654C-44DE-4A73-9FC6-914B4C968A21}</Project>
+      <Name>Sceelix.Designer.Renderer3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693a506a-559b-4da6-b460-852ecbb8bd9a}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Meshes\Sceelix.Meshes.csproj">
+      <Project>{76cf0233-8942-4a49-af32-f7e0552e6eb7}</Project>
+      <Name>Sceelix.Meshes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Surfaces\Sceelix.Surfaces.csproj">
+      <Project>{7E086C85-0185-4271-B3D7-4FDBC44084A1}</Project>
+      <Name>Sceelix.Surfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Forward_Terrain.mgfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Material_Terrain.mgfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

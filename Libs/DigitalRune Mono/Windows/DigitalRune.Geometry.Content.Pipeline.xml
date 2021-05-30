@@ -1,0 +1,1084 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalRune.Geometry.Content.Pipeline</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableFWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.DirectionalLookupTableF`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of data stored in the lookup table.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableFWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableFWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableFWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.DirectionalLookupTableF{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableUInt16FWriter">
+            <exclude />
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableUInt16FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableUInt16FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DirectionalLookupTableUInt16FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.DirectionalLookupTableUInt16F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.GeometricObjectWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.GeometricObject"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.GeometricObjectWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.GeometricObjectWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.GeometricObjectWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.GeometricObject)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.TriangleMeshWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Meshes.TriangleMesh"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleMeshWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleMeshWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleMeshWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Meshes.TriangleMesh)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.VertexAdjacencyWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Meshes.VertexAdjacency"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.VertexAdjacencyWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.VertexAdjacencyWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.VertexAdjacencyWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Meshes.VertexAdjacency)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.NamespaceDoc">
+            <summary>
+            The <see cref="N:DigitalRune.Geometry.Content.Pipeline"/> namespace provides the content
+            pipeline for DigitalRune Geometry. (Only available in XNA/MonoGame compatible builds.)
+            </summary>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.AabbTreeWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Partitioning.AabbTree`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of the item in the spatial partition.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AabbTreeWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AabbTreeWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AabbTreeWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Partitioning.AabbTree{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.AdaptiveAabbTreeWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Partitioning.AdaptiveAabbTree`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of the items in the spatial partition.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AdaptiveAabbTreeWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AdaptiveAabbTreeWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AdaptiveAabbTreeWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Partitioning.AdaptiveAabbTree{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.CompressedAabbTreeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Partitioning.CompressedAabbTree"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CompressedAabbTreeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CompressedAabbTreeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CompressedAabbTreeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Partitioning.CompressedAabbTree)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.DualPartitionWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Partitioning.DualPartition`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of the items in the spatial partition.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DualPartitionWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DualPartitionWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DualPartitionWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Partitioning.DualPartition{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.DynamicAabbTreeWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Partitioning.DynamicAabbTree`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of the items in the spatial partition.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DynamicAabbTreeWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DynamicAabbTreeWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.DynamicAabbTreeWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Partitioning.DynamicAabbTree{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.SweepAndPruneSpaceWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Partitioning.SweepAndPruneSpace`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of the items in the spatial partition.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.SweepAndPruneSpaceWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.SweepAndPruneSpaceWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.SweepAndPruneSpaceWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Partitioning.SweepAndPruneSpace{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.PoseDWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.PoseD"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PoseDWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PoseDWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PoseDWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.PoseD)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.PoseWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Pose"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PoseWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PoseWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PoseWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Pose)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.AabbWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.Aabb"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AabbWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AabbWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.AabbWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.Aabb)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.BoxShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.BoxShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.BoxShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.BoxShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.BoxShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.BoxShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.CapsuleShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.CapsuleShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CapsuleShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CapsuleShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CapsuleShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.CapsuleShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.CircleShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.CircleShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CircleShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CircleShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CircleShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.CircleShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.CompositeShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.CompositeShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CompositeShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CompositeShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CompositeShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.CompositeShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.ConeShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.ConeShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConeShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConeShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConeShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.ConeShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfPointsWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.ConvexHullOfPoints"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfPointsWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfPointsWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfPointsWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.ConvexHullOfPoints)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfShapesWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.ConvexHullOfShapes"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfShapesWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfShapesWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexHullOfShapesWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.ConvexHullOfShapes)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.ConvexPolyhedronWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.ConvexPolyhedron"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexPolyhedronWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexPolyhedronWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ConvexPolyhedronWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.ConvexPolyhedron)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.CylinderShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.CylinderShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CylinderShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CylinderShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.CylinderShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.CylinderShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.EmptyShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.EmptyShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.EmptyShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.EmptyShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.EmptyShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.EmptyShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.HeightFieldWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.HeightField"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.HeightFieldWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.HeightFieldWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.HeightFieldWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.HeightField)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.InfiniteShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.InfiniteShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.InfiniteShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.InfiniteShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.InfiniteShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.InfiniteShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.LineSegmentShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.LineSegmentShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.LineSegmentShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.LineSegmentShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.LineSegmentShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.LineSegmentShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.LineShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.LineShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.LineShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.LineShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.LineShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.LineShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.MinkowskiDifferenceShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.MinkowskiDifferenceShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.MinkowskiDifferenceShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.MinkowskiDifferenceShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.MinkowskiDifferenceShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.MinkowskiDifferenceShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.MinkowskiSumShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.MinkowskiSumShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.MinkowskiSumShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.MinkowskiSumShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.MinkowskiSumShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.MinkowskiSumShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.OrthographicViewVolumeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.OrthographicViewVolume"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.OrthographicViewVolumeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.OrthographicViewVolumeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.OrthographicViewVolumeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.OrthographicViewVolume)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.PerspectiveViewVolumeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.PerspectiveViewVolume"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PerspectiveViewVolumeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PerspectiveViewVolumeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PerspectiveViewVolumeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.PerspectiveViewVolume)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.PlaneShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.PlaneShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PlaneShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PlaneShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PlaneShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.PlaneShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.PointShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.PointShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PointShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PointShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.PointShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.PointShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.RayShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.RayShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.RayShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.RayShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.RayShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.RayShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.RectangleShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.RectangleShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.RectangleShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.RectangleShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.RectangleShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.RectangleShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.ScaledConvexShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.ScaledConvexShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ScaledConvexShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ScaledConvexShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.ScaledConvexShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.ScaledConvexShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.SphereShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.SphereShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.SphereShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.SphereShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.SphereShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.SphereShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.TransformedShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.TransformedShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TransformedShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TransformedShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TransformedShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.TransformedShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.TriangleMeshShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.TriangleMeshShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleMeshShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleMeshShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleMeshShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.TriangleMeshShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Geometry.Content.Pipeline.TriangleShapeWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Geometry.Shapes.TriangleShape"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleShapeWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleShapeWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Geometry.Content.Pipeline.TriangleShapeWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Geometry.Shapes.TriangleShape)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+    </members>
+</doc>

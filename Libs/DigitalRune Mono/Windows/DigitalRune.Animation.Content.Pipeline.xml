@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalRune.Animation.Content.Pipeline</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.BlendGroupWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Animation.BlendGroup"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.BlendGroupWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.BlendGroupWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.BlendGroupWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Animation.BlendGroup)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.KeyFrameCollectionWriter`1">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Animation.KeyFrameCollection`1"/> to binary format.
+            </summary>
+            <typeparam name="T">The type of the animation value.</typeparam>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.KeyFrameCollectionWriter`1.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.KeyFrameCollectionWriter`1.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.KeyFrameCollectionWriter`1.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Animation.KeyFrameCollection{`0})">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.NamespaceDoc">
+            <summary>
+            The <see cref="N:DigitalRune.Animation.Content.Pipeline"/> namespace provides the content
+            pipeline for DigitalRune Animation. (Only available in XNA/MonoGame compatible builds.)
+            </summary>
+        </member>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.SkeletonKeyFrameAnimationWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Animation.Content.Pipeline.SkeletonKeyFrameAnimationWriter"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SkeletonKeyFrameAnimationWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SkeletonKeyFrameAnimationWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SkeletonKeyFrameAnimationWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Animation.Character.SkeletonKeyFrameAnimation)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.SkeletonWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Animation.Character.Skeleton"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SkeletonWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SkeletonWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SkeletonWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Animation.Character.Skeleton)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.SrtTransformWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Animation.Character.SrtTransform"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SrtTransformWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SrtTransformWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.SrtTransformWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Animation.Character.SrtTransform)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Animation.Content.Pipeline.TimelineGroupWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Animation.TimelineGroup"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.TimelineGroupWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.TimelineGroupWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Animation.Content.Pipeline.TimelineGroupWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Animation.TimelineGroup)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+    </members>
+</doc>

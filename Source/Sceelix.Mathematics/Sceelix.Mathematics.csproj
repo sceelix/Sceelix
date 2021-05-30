@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{693A506A-559B-4DA6-B460-852ECBB8BD9A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Mathematics</RootNamespace>
+    <AssemblyName>Sceelix.Mathematics</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsEngine>true</IsEngine>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Json.NET 9.0.1\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conversions\BitmapConversions.cs" />
+    <Compile Include="Data\CoordinateBounds.cs" />
+    <Compile Include="Geometry\LineSegment2D.cs" />
+    <Compile Include="Helpers\CurvesHelper.cs" />
+    <Compile Include="Helpers\Plane3DHelper.cs" />
+    <Compile Include="Helpers\UnitHelper.cs" />
+    <Compile Include="Parameters\ColorRandomParameter.cs" />
+    <Compile Include="Parameters\Vector2DRandomParameters.cs" />
+    <Compile Include="Parameters\Vector3DRandomParameters.cs" />
+    <Compile Include="Resolution\ParameterResolver.cs" />
+    <Compile Include="Serialization\ColorConverter.cs" />
+    <Compile Include="Serialization\Vector2DConverter.cs" />
+    <Compile Include="Serialization\Vector3DConverter.cs" />
+    <Compile Include="Serialization\Vector4DConverter.cs" />
+    <Compile Include="Spatial\BoundingPlanes.cs" />
+    <Compile Include="Spatial\GenericOctTree.cs" />
+    <Compile Include="Spatial\GenericPartitionTree.cs" />
+    <Compile Include="Spatial\GenericPartitionTree.Section.cs">
+      <DependentUpon>GenericPartitionTree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Spatial\GenericQuadTree.cs" />
+    <Compile Include="Geometry\Line2D.cs" />
+    <Compile Include="Geometry\Line3D.cs" />
+    <Compile Include="Geometry\LineSegment3D.cs" />
+    <Compile Include="Spatial\ObjectOctTree.cs" />
+    <Compile Include="Spatial\ObjectQuadTree.cs" />
+    <Compile Include="Spatial\PointOctTree.cs" />
+    <Compile Include="Geometry\Plane3D.cs" />
+    <Compile Include="Data\BoxScope.cs" />
+    <Compile Include="Data\Color.cs" />
+    <Compile Include="Data\Coordinate.cs" />
+    <Compile Include="Data\Matrix.cs" />
+    <Compile Include="Data\Rectangle.cs" />
+    <Compile Include="Data\Vector2D.cs" />
+    <Compile Include="Data\Vector3D.cs" />
+    <Compile Include="Data\Vector4D.cs" />
+    <Compile Include="Conversions\BoxScopeConversions.cs" />
+    <Compile Include="Conversions\ColorConversions.cs" />
+    <Compile Include="Conversions\SceeListConversions.cs" />
+    <Compile Include="Conversions\StringConversions.cs" />
+    <Compile Include="Conversions\Vector2DConversions.cs" />
+    <Compile Include="Conversions\Vector3DConversions.cs" />
+    <Compile Include="Graphs\Functions\ColorFunctions.cs" />
+    <Compile Include="Graphs\Functions\VectorFunctions.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="Noise\PerlinNoise2D.cs" />
+    <Compile Include="Noise\SimplexNoise.cs" />
+    <Compile Include="Parameters\BoxScopeParameter.cs" />
+    <Compile Include="Parameters\ColorParameter.cs" />
+    <Compile Include="Parameters\Infos\ColorParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\Vector2DParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\Vector3DParameterInfo.cs" />
+    <Compile Include="Parameters\RectangleParameter.cs" />
+    <Compile Include="Parameters\Vector2DParameter.cs" />
+    <Compile Include="Parameters\Vector3DParameter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spatial\BoundingBox.cs" />
+    <Compile Include="Spatial\BoundingRectangle.cs" />
+    <Compile Include="Spatial\BoundingSphere.cs" />
+    <Compile Include="Spatial\SegmentQuadTree.cs" />
+    <Compile Include="Spatial\PointQuadTree.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17d451d4-b445-4f61-adfe-963f42d702b0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9c62325d-2d13-45c8-aca5-ec17de0ed835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Curves.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

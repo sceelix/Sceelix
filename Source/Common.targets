@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!--If we are building this project from the Visual Studio, include these extra configurations. -->
+	<Import Condition=" '$(BuildingInsideVisualStudio)' == 'True' " Project="VisualStudio.targets" />
+	
+  <!-- Common properties for all configurations -->
+	<PropertyGroup>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<LangVersion>6</LangVersion>
+	</PropertyGroup>	
+	
+	<!-- Define appropriate paths and Constants for each target platform. -->
+	<PropertyGroup Condition=" '$(Platform)' == 'Windows32' ">
+		<LibraryType>Windows</LibraryType>
+		<DefineConstants>WINDOWS;WINDOWS32</DefineConstants>	
+		<OutputPath>..\..\Build\Windows32\$(Configuration)\Bin</OutputPath>		
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Platform)' == 'Windows64' ">
+		<LibraryType>Windows</LibraryType>
+		<DefineConstants>WINDOWS;WINDOWS64</DefineConstants>	
+		<OutputPath>..\..\Build\Windows64\$(Configuration)\Bin</OutputPath>		
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Platform)' == 'Linux' ">
+		<LibraryType>Linux</LibraryType>
+		<DefineConstants>LINUX</DefineConstants>	
+		<OutputPath>..\..\Build\Linux\$(Configuration)\Bin</OutputPath>		
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Platform)' == 'MacOS' ">
+		<LibraryType>MacOS</LibraryType>
+		<DefineConstants>MACOS</DefineConstants>
+		<OutputPath>..\..\Build\MacOS\$(Configuration)\Sceelix.Designer.app\Contents\MonoBundle</OutputPath>
+	</PropertyGroup>
+	
+	<!-- Libraries should be compiled with AnyCPU (done by default). The .exe will be build explicitly as x86 ou x64, depending on the platform. 
+		Because Mono does not work with x64 for now, both Linux and MacOS will be compiled for 32 bit.
+	-->
+	<Choose>
+		<When Condition=" '$(OutputType)' == 'WinExe' Or '$(OutputType)' == 'Exe' ">
+			<PropertyGroup Condition=" '$(Platform)' == 'Windows32' Or '$(Platform)' == 'Linux' Or '$(Platform)' == 'MacOS' ">
+				<PlatformTarget>x86</PlatformTarget>
+			</PropertyGroup>
+			<PropertyGroup Condition=" '$(Platform)' == 'Windows64' ">
+				<PlatformTarget>x64</PlatformTarget>
+			</PropertyGroup>
+		</When>
+	</Choose>
+
+	<!-- Depending if it is Debug, Release or Licensed, we are activating debug or optimization flags on or off. -->
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<DebugType>none</DebugType>
+		<Optimize>true</Optimize>
+		<UseVSHostingProcess>false</UseVSHostingProcess>
+		<DefineConstants>$(DefineConstants);TRACE</DefineConstants>
+	</PropertyGroup>
+
+  <!-- If the Steam property is true, add the extra compilation symbol. -->
+	<PropertyGroup Condition=" '$(Steam)' == 'True' ">
+		<DefineConstants>$(DefineConstants);STEAM</DefineConstants>
+	</PropertyGroup>
+	
+	<!-- For ProcedureLibrary dlls (Engine ones), the XML documentation file should also be produced, but the annoying "Non-documented" warnings ignored. -->
+	<PropertyGroup Condition="$(IsEngine) == 'True' Or $(CreateDocumentation) == 'True'">
+		<NoWarn>1591,1572,1571,1573,1587,1570</NoWarn>
+		<DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+	</PropertyGroup>
+
+  <!--The Steam configuration needs these extra symbols-->
+	<Choose>
+		<When Condition=" '$(Steam)' == 'True' ">
+			<Choose>
+				<When Condition="'$(LibraryType)' == 'Windows'">
+					<PropertyGroup>		
+						<DefineConstants>$(DefineConstants);STEAMWORKS_WIN</DefineConstants>
+					</PropertyGroup>
+				</When>
+				<Otherwise>
+					<PropertyGroup>		
+						<DefineConstants>$(DefineConstants);STEAMWORKS_LIN_OSX</DefineConstants>
+					</PropertyGroup>
+				</Otherwise>
+			</Choose>
+		</When>
+	</Choose>
+
+	<!--Tool shortcuts go here-->
+	<PropertyGroup>
+		<Libz>"$(MSBuildProjectDirectory)\..\..\Tools\LibZ\libz.exe"</Libz>
+	</PropertyGroup>
+	
+	
+	<!--Target Name="SpicNSpan" AfterTargets="Clean" Condition=" '$(Configuration)' == 'Licensed' " >
+		<RemoveDir Directories="$(OUTDIR)"/>
+	</Target-->
+</Project>

@@ -1,0 +1,992 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin\Windows\Content
+/intermediateDir:obj
+/platform:Windows
+/config:
+/profile:HiDef
+/compress:True
+
+#-------------------------------- References --------------------------------#
+
+/reference:..\Libs\DigitalRune Mono\Windows\DigitalRune.Animation.Content.Pipeline.dll
+/reference:..\Libs\DigitalRune Mono\Windows\DigitalRune.Game.UI.Content.Pipeline.dll
+/reference:..\Libs\DigitalRune Mono\Windows\DigitalRune.Geometry.Content.Pipeline.dll
+/reference:..\Libs\DigitalRune Mono\Windows\DigitalRune.Graphics.Content.Pipeline.dll
+/reference:..\Libs\DigitalRune Mono\Windows\DigitalRune.Mathematics.Content.Pipeline.dll
+
+#---------------------------------- Content ---------------------------------#
+
+#begin Textures/Copy of Dot.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Copy of Dot.png
+
+#begin Textures/Dot.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/Dot.png
+
+#begin Graphs/DisabledSign.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/DisabledSign.png
+
+#begin Graphs/MouseArrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/MouseArrow.png
+
+#begin Graphs/RectangleSimple.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/RectangleSimple.png
+
+#begin Graphs/RectangleSimpleShadow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/RectangleSimpleShadow.png
+
+#begin Graphs/Selection/Dot.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Selection/Dot.png
+
+#begin Graphs/Selection/SelectionRectangleBorder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Selection/SelectionRectangleBorder.png
+
+#begin Graphs/Selection/SelectionRectangleFill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Selection/SelectionRectangleFill.png
+
+#begin Graphs/Nodes/CircleBorder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/CircleBorder.png
+
+#begin Graphs/Nodes/CircleFill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/CircleFill.png
+
+#begin Graphs/Nodes/EdgeDot.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/EdgeDot.png
+
+#begin Graphs/Nodes/OutputBorder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/OutputBorder.png
+
+#begin Graphs/Nodes/OutputFill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/OutputFill.png
+
+#begin Graphs/Nodes/Rectangle01Border.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle01Border.png
+
+#begin Graphs/Nodes/Rectangle01Fill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle01Fill.png
+
+#begin Graphs/Nodes/Rectangle02Border.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle02Border.png
+
+#begin Graphs/Nodes/Rectangle02Fill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle02Fill.png
+
+#begin Graphs/Nodes/Rectangle03Border.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle03Border.png
+
+#begin Graphs/Nodes/Rectangle03Fill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle03Fill.png
+
+#begin Graphs/Nodes/Rectangle04Border.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle04Border.png
+
+#begin Graphs/Nodes/Rectangle04Fill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle04Fill.png
+
+#begin Graphs/Nodes/Rectangle05Border.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle05Border.png
+
+#begin Graphs/Nodes/Rectangle05Fill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/Rectangle05Fill.png
+
+#begin Graphs/Nodes/RectangleBorder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/RectangleBorder.png
+
+#begin Graphs/Nodes/RectangleBorder2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/RectangleBorder2.png
+
+#begin Graphs/Nodes/RectangleFill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/RectangleFill.png
+
+#begin Graphs/Nodes/RectangleRecticle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/RectangleRecticle.png
+
+#begin Graphs/Nodes/SquareBorder.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/SquareBorder.png
+
+#begin Graphs/Nodes/SquareFill.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/Nodes/SquareFill.png
+
+#begin Water/Foam.xnb
+/copy:Water/Foam.xnb
+
+#begin Water/Underwater.xnb
+/copy:Water/Underwater.xnb
+
+#begin Water/wave0.xnb
+/copy:Water/wave0.xnb
+
+#begin Water/wave1.xnb
+/copy:Water/wave1.xnb
+
+#begin Deferred/FogSphere.xnb
+/copy:Deferred/FogSphere.xnb
+
+#begin Deferred/VolumetricLight.xnb
+/copy:Deferred/VolumetricLight.xnb
+
+#begin Deferred/Water/Foam.xnb
+/copy:Deferred/Water/Foam.xnb
+
+#begin Deferred/Water/Underwater.xnb
+/copy:Deferred/Water/Underwater.xnb
+
+#begin Deferred/Water/wave0.xnb
+/copy:Deferred/Water/wave0.xnb
+
+#begin Deferred/Water/wave1.xnb
+/copy:Deferred/Water/wave1.xnb
+
+#begin Deferred/Reticle.xnb
+/copy:Deferred/Reticle.xnb
+
+#begin Deferred/Sky2.xnb
+/copy:Deferred/Sky2.xnb
+
+#begin Deferred/LensFlare/AnamorphicFlare.xnb
+/copy:Deferred/LensFlare/AnamorphicFlare.xnb
+
+#begin Deferred/LensFlare/LensFlares.xnb
+/copy:Deferred/LensFlare/LensFlares.xnb
+
+#begin Deferred/Ground/Checker_0.xnb
+/copy:Deferred/Ground/Checker_0.xnb
+
+#begin Deferred/Ground/checker_1.xnb
+/copy:Deferred/Ground/checker_1.xnb
+
+#begin Deferred/Ground/Ground.xnb
+/copy:Deferred/Ground/Ground.xnb
+
+#begin Fonts/Arial18.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/Arial18.spritefont
+
+#begin Fonts/ArialSmall.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/ArialSmall.spritefont
+
+#begin Effects/GraphShadow.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Optimize
+/build:Effects/GraphShadow.fx
+
+#begin UI Themes/Sceelix/ThemeGreen.xml
+/importer:ThemeImporter
+/processor:ThemeProcessor
+/processorParam:NN=
+/build:UI Themes/Sceelix/ThemeGreen.xml
+
+#begin UI Themes/Sceelix/ThemeRed.xml
+/importer:ThemeImporter
+/processor:ThemeProcessor
+/processorParam:NN=
+/build:UI Themes/Sceelix/ThemeRed.xml
+
+#begin Textures/GridPatternGround.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=True
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/GridPatternGround.png
+
+#begin Deferred/SpriteFont1.xnb
+/copy:Deferred/SpriteFont1.xnb
+
+#begin Graphs/GraphBackground.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=True
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Graphs/GraphBackground.jpg
+
+#begin Materials/MaterialPom_0.xnb
+/copy:Materials/MaterialPom_0.xnb
+
+#begin Materials/GBufferPom_0.xnb
+/copy:Materials/GBufferPom_0.xnb
+
+#begin Materials/Fur_0.xnb
+/copy:Materials/Fur_0.xnb
+
+#begin Materials/Fur_1.xnb
+/copy:Materials/Fur_1.xnb
+
+#begin Materials/Fur_2.xnb
+/copy:Materials/Fur_2.xnb
+
+#begin Textures/SkyTexCube01.dds
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/SkyTexCube01.dds
+
+#begin Materials/Ground.xnb
+/copy:Materials/Ground.xnb
+
+#begin Materials/Normal_0.xnb
+/copy:Materials/Normal_0.xnb
+
+#begin Materials/Foam.xnb
+/copy:Materials/Foam.xnb
+
+#begin Materials/Underwater.xnb
+/copy:Materials/Underwater.xnb
+
+#begin Materials/wave0.xnb
+/copy:Materials/wave0.xnb
+
+#begin Materials/wave1.xnb
+/copy:Materials/wave1.xnb
+
+#begin Materials/MaterialReflective_0.xnb
+/copy:Materials/MaterialReflective_0.xnb
+
+#begin Materials/Marble_0.xnb
+/copy:Materials/Marble_0.xnb
+
+#begin Materials/Marble_Diffuse_0.xnb
+/copy:Materials/Marble_Diffuse_0.xnb
+
+#begin Materials/Marble_Normal_0.xnb
+/copy:Materials/Marble_Normal_0.xnb
+
+#begin Materials/Material.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Materials/Material.fx
+
+#begin Deferred/Sky/MilkyWay.xnb
+/copy:Deferred/Sky/MilkyWay.xnb
+
+#begin Deferred/Sky/Moon.xnb
+/copy:Deferred/Sky/Moon.xnb
+
+#begin Deferred/Sky/Stars.bin
+/copy:Deferred/Sky/Stars.bin
+
+#begin Deferred/Campfire/FireParticles.xnb
+/copy:Deferred/Campfire/FireParticles.xnb
+
+#begin Deferred/Campfire/Smoke2.xnb
+/copy:Deferred/Campfire/Smoke2.xnb
+
+#begin Textures/WhiteSquare.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=True
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Textures/WhiteSquare.png
+
+#begin UI Themes/Sceelix/ThemeDark.xml
+/importer:ThemeImporter
+/processor:ThemeProcessor
+/processorParam:NN=
+/build:UI Themes/Sceelix/ThemeDark.xml
+
+#begin Renderer/MyFile.fbx
+/importer:FbxImporter
+/processor:DRModelProcessor
+/processorParam:CreateMissingModelDescription=True
+/processorParam:CreateMissingMaterialDefinition=True
+/build:Renderer/MyFile.fbx
+
+#begin UI Themes/BlendBlue/Theme.xml
+/importer:ThemeImporter
+/processor:ThemeProcessor
+/processorParam:NN=
+/build:UI Themes/BlendBlue/Theme.xml
+
+#begin DigitalRune/Decals/GBuffer.xnb
+/copy:DigitalRune/Decals/GBuffer.xnb
+
+#begin DigitalRune/Decals/GBufferAlphaTest.xnb
+/copy:DigitalRune/Decals/GBufferAlphaTest.xnb
+
+#begin DigitalRune/Decals/GBufferAlphaTestNormal.xnb
+/copy:DigitalRune/Decals/GBufferAlphaTestNormal.xnb
+
+#begin DigitalRune/Decals/GBufferNormal.xnb
+/copy:DigitalRune/Decals/GBufferNormal.xnb
+
+#begin DigitalRune/Decals/Material.xnb
+/copy:DigitalRune/Decals/Material.xnb
+
+#begin DigitalRune/Decals/MaterialAlphaTest.xnb
+/copy:DigitalRune/Decals/MaterialAlphaTest.xnb
+
+#begin DigitalRune/Decals/MaterialAlphaTestEmissive.xnb
+/copy:DigitalRune/Decals/MaterialAlphaTestEmissive.xnb
+
+#begin DigitalRune/Decals/MaterialEmissive.xnb
+/copy:DigitalRune/Decals/MaterialEmissive.xnb
+
+#begin DigitalRune/Deferred/AmbientLight.xnb
+/copy:DigitalRune/Deferred/AmbientLight.xnb
+
+#begin DigitalRune/Deferred/CascadedShadowMask.xnb
+/copy:DigitalRune/Deferred/CascadedShadowMask.xnb
+
+#begin DigitalRune/Deferred/ClearGBuffer.xnb
+/copy:DigitalRune/Deferred/ClearGBuffer.xnb
+
+#begin DigitalRune/Deferred/CubeMapShadowMask.xnb
+/copy:DigitalRune/Deferred/CubeMapShadowMask.xnb
+
+#begin DigitalRune/Deferred/DirectionalLight.xnb
+/copy:DigitalRune/Deferred/DirectionalLight.xnb
+
+#begin DigitalRune/Deferred/Fog.xnb
+/copy:DigitalRune/Deferred/Fog.xnb
+
+#begin DigitalRune/Deferred/ImageBasedLight.xnb
+/copy:DigitalRune/Deferred/ImageBasedLight.xnb
+
+#begin DigitalRune/Deferred/PointLight.xnb
+/copy:DigitalRune/Deferred/PointLight.xnb
+
+#begin DigitalRune/Deferred/ProjectorLight.xnb
+/copy:DigitalRune/Deferred/ProjectorLight.xnb
+
+#begin DigitalRune/Deferred/RebuildZBuffer.xnb
+/copy:DigitalRune/Deferred/RebuildZBuffer.xnb
+
+#begin DigitalRune/Deferred/Spotlight.xnb
+/copy:DigitalRune/Deferred/Spotlight.xnb
+
+#begin DigitalRune/Deferred/StandardShadowMask.xnb
+/copy:DigitalRune/Deferred/StandardShadowMask.xnb
+
+#begin DigitalRune/Materials/Forward.xnb
+/copy:DigitalRune/Materials/Forward.xnb
+
+#begin DigitalRune/Materials/ForwardEnv.xnb
+/copy:DigitalRune/Materials/ForwardEnv.xnb
+
+#begin DigitalRune/Materials/ForwardMorphSkinned.xnb
+/copy:DigitalRune/Materials/ForwardMorphSkinned.xnb
+
+#begin DigitalRune/Materials/ForwardTwoSided.xnb
+/copy:DigitalRune/Materials/ForwardTwoSided.xnb
+
+#begin DigitalRune/Materials/GBuffer.xnb
+/copy:DigitalRune/Materials/GBuffer.xnb
+
+#begin DigitalRune/Materials/GBufferAlphaTest.xnb
+/copy:DigitalRune/Materials/GBufferAlphaTest.xnb
+
+#begin DigitalRune/Materials/GBufferAlphaTestNormal.xnb
+/copy:DigitalRune/Materials/GBufferAlphaTestNormal.xnb
+
+#begin DigitalRune/Materials/GBufferMorphNormalSkinned.xnb
+/copy:DigitalRune/Materials/GBufferMorphNormalSkinned.xnb
+
+#begin DigitalRune/Materials/GBufferMorphSkinned.xnb
+/copy:DigitalRune/Materials/GBufferMorphSkinned.xnb
+
+#begin DigitalRune/Materials/GBufferNormal.xnb
+/copy:DigitalRune/Materials/GBufferNormal.xnb
+
+#begin DigitalRune/Materials/GBufferNormalSkinned.xnb
+/copy:DigitalRune/Materials/GBufferNormalSkinned.xnb
+
+#begin DigitalRune/Materials/GBufferNormalTransparent.xnb
+/copy:DigitalRune/Materials/GBufferNormalTransparent.xnb
+
+#begin DigitalRune/Materials/GBufferSkinned.xnb
+/copy:DigitalRune/Materials/GBufferSkinned.xnb
+
+#begin DigitalRune/Materials/GBufferTransparent.xnb
+/copy:DigitalRune/Materials/GBufferTransparent.xnb
+
+#begin DigitalRune/Materials/Matcap.xnb
+/copy:DigitalRune/Materials/Matcap.xnb
+
+#begin DigitalRune/Materials/MatcapNormal.xnb
+/copy:DigitalRune/Materials/MatcapNormal.xnb
+
+#begin DigitalRune/Materials/MatcapNormalSkinned.xnb
+/copy:DigitalRune/Materials/MatcapNormalSkinned.xnb
+
+#begin DigitalRune/Materials/MatcapSkinned.xnb
+/copy:DigitalRune/Materials/MatcapSkinned.xnb
+
+#begin DigitalRune/Materials/Material.xnb
+/copy:DigitalRune/Materials/Material.xnb
+
+#begin DigitalRune/Materials/MaterialAlphaTest.xnb
+/copy:DigitalRune/Materials/MaterialAlphaTest.xnb
+
+#begin DigitalRune/Materials/MaterialAlphaTestEmissive.xnb
+/copy:DigitalRune/Materials/MaterialAlphaTestEmissive.xnb
+
+#begin DigitalRune/Materials/MaterialEmissive.xnb
+/copy:DigitalRune/Materials/MaterialEmissive.xnb
+
+#begin DigitalRune/Materials/MaterialEmissiveSkinned.xnb
+/copy:DigitalRune/Materials/MaterialEmissiveSkinned.xnb
+
+#begin DigitalRune/Materials/MaterialMorphSkinned.xnb
+/copy:DigitalRune/Materials/MaterialMorphSkinned.xnb
+
+#begin DigitalRune/Materials/MaterialSkinned.xnb
+/copy:DigitalRune/Materials/MaterialSkinned.xnb
+
+#begin DigitalRune/Materials/MaterialTransparent.xnb
+/copy:DigitalRune/Materials/MaterialTransparent.xnb
+
+#begin DigitalRune/Materials/Occluder.xnb
+/copy:DigitalRune/Materials/Occluder.xnb
+
+#begin DigitalRune/Materials/OccluderSkinned.xnb
+/copy:DigitalRune/Materials/OccluderSkinned.xnb
+
+#begin DigitalRune/Materials/ShadowMap.xnb
+/copy:DigitalRune/Materials/ShadowMap.xnb
+
+#begin DigitalRune/Materials/ShadowMapAlphaTest.xnb
+/copy:DigitalRune/Materials/ShadowMapAlphaTest.xnb
+
+#begin DigitalRune/Materials/ShadowMapAlphaTestSkinned.xnb
+/copy:DigitalRune/Materials/ShadowMapAlphaTestSkinned.xnb
+
+#begin DigitalRune/Materials/ShadowMapMorphSkinned.xnb
+/copy:DigitalRune/Materials/ShadowMapMorphSkinned.xnb
+
+#begin DigitalRune/Materials/ShadowMapSkinned.xnb
+/copy:DigitalRune/Materials/ShadowMapSkinned.xnb
+
+#begin DigitalRune/PostProcessing/BloomFilter.xnb
+/copy:DigitalRune/PostProcessing/BloomFilter.xnb
+
+#begin DigitalRune/PostProcessing/Blur.xnb
+/copy:DigitalRune/PostProcessing/Blur.xnb
+
+#begin DigitalRune/PostProcessing/CameraMotionBlur.xnb
+/copy:DigitalRune/PostProcessing/CameraMotionBlur.xnb
+
+#begin DigitalRune/PostProcessing/CieSkyFilter.xnb
+/copy:DigitalRune/PostProcessing/CieSkyFilter.xnb
+
+#begin DigitalRune/PostProcessing/ColorCorrectionFilter.xnb
+/copy:DigitalRune/PostProcessing/ColorCorrectionFilter.xnb
+
+#begin DigitalRune/PostProcessing/ColorEncoder.xnb
+/copy:DigitalRune/PostProcessing/ColorEncoder.xnb
+
+#begin DigitalRune/PostProcessing/CopyFilter.xnb
+/copy:DigitalRune/PostProcessing/CopyFilter.xnb
+
+#begin DigitalRune/PostProcessing/DepthOfFieldFilter.xnb
+/copy:DigitalRune/PostProcessing/DepthOfFieldFilter.xnb
+
+#begin DigitalRune/PostProcessing/DownsampleFilter.xnb
+/copy:DigitalRune/PostProcessing/DownsampleFilter.xnb
+
+#begin DigitalRune/PostProcessing/EdgeFilter.xnb
+/copy:DigitalRune/PostProcessing/EdgeFilter.xnb
+
+#begin DigitalRune/PostProcessing/FxaaFilter.xnb
+/copy:DigitalRune/PostProcessing/FxaaFilter.xnb
+
+#begin DigitalRune/PostProcessing/GodRayFilter.xnb
+/copy:DigitalRune/PostProcessing/GodRayFilter.xnb
+
+#begin DigitalRune/PostProcessing/GrainFilter.xnb
+/copy:DigitalRune/PostProcessing/GrainFilter.xnb
+
+#begin DigitalRune/PostProcessing/HdrFilter.xnb
+/copy:DigitalRune/PostProcessing/HdrFilter.xnb
+
+#begin DigitalRune/PostProcessing/HorizontalBlur.xnb
+/copy:DigitalRune/PostProcessing/HorizontalBlur.xnb
+
+#begin DigitalRune/PostProcessing/KawaseBlur.xnb
+/copy:DigitalRune/PostProcessing/KawaseBlur.xnb
+
+#begin DigitalRune/PostProcessing/LuminanceFilter.xnb
+/copy:DigitalRune/PostProcessing/LuminanceFilter.xnb
+
+#begin DigitalRune/PostProcessing/MadFilter.xnb
+/copy:DigitalRune/PostProcessing/MadFilter.xnb
+
+#begin DigitalRune/PostProcessing/NormalMapDistortionFilter.xnb
+/copy:DigitalRune/PostProcessing/NormalMapDistortionFilter.xnb
+
+#begin DigitalRune/PostProcessing/ObjectMotionBlur.xnb
+/copy:DigitalRune/PostProcessing/ObjectMotionBlur.xnb
+
+#begin DigitalRune/PostProcessing/RadialBlur.xnb
+/copy:DigitalRune/PostProcessing/RadialBlur.xnb
+
+#begin DigitalRune/PostProcessing/SaoFilter.xnb
+/copy:DigitalRune/PostProcessing/SaoFilter.xnb
+
+#begin DigitalRune/PostProcessing/SaturationFilter.xnb
+/copy:DigitalRune/PostProcessing/SaturationFilter.xnb
+
+#begin DigitalRune/PostProcessing/SepiaFilter.xnb
+/copy:DigitalRune/PostProcessing/SepiaFilter.xnb
+
+#begin DigitalRune/PostProcessing/SharpeningFilter.xnb
+/copy:DigitalRune/PostProcessing/SharpeningFilter.xnb
+
+#begin DigitalRune/PostProcessing/SimpleMotionBlur.xnb
+/copy:DigitalRune/PostProcessing/SimpleMotionBlur.xnb
+
+#begin DigitalRune/PostProcessing/SmaaAreaTexDX9.xnb
+/copy:DigitalRune/PostProcessing/SmaaAreaTexDX9.xnb
+
+#begin DigitalRune/PostProcessing/SmaaFilter.xnb
+/copy:DigitalRune/PostProcessing/SmaaFilter.xnb
+
+#begin DigitalRune/PostProcessing/SmaaSearchTex.xnb
+/copy:DigitalRune/PostProcessing/SmaaSearchTex.xnb
+
+#begin DigitalRune/PostProcessing/SsaoFilter.xnb
+/copy:DigitalRune/PostProcessing/SsaoFilter.xnb
+
+#begin DigitalRune/PostProcessing/UnsharpMaskingFilter.xnb
+/copy:DigitalRune/PostProcessing/UnsharpMaskingFilter.xnb
+
+#begin DigitalRune/PostProcessing/UpsampleFilter.xnb
+/copy:DigitalRune/PostProcessing/UpsampleFilter.xnb
+
+#begin DigitalRune/Sky/CloudLayer.xnb
+/copy:DigitalRune/Sky/CloudLayer.xnb
+
+#begin DigitalRune/Sky/GradientSky.xnb
+/copy:DigitalRune/Sky/GradientSky.xnb
+
+#begin DigitalRune/Sky/GradientTextureSky.xnb
+/copy:DigitalRune/Sky/GradientTextureSky.xnb
+
+#begin DigitalRune/Sky/ScatteringSky.xnb
+/copy:DigitalRune/Sky/ScatteringSky.xnb
+
+#begin DigitalRune/Sky/Skybox.xnb
+/copy:DigitalRune/Sky/Skybox.xnb
+
+#begin DigitalRune/Sky/SkyObject.xnb
+/copy:DigitalRune/Sky/SkyObject.xnb
+
+#begin DigitalRune/Sky/Starfield.xnb
+/copy:DigitalRune/Sky/Starfield.xnb
+
+#begin DigitalRune/Terrain/TerrainClearLayer.xnb
+/copy:DigitalRune/Terrain/TerrainClearLayer.xnb
+
+#begin DigitalRune/Terrain/TerrainDecalLayer.xnb
+/copy:DigitalRune/Terrain/TerrainDecalLayer.xnb
+
+#begin DigitalRune/Terrain/TerrainGBuffer.xnb
+/copy:DigitalRune/Terrain/TerrainGBuffer.xnb
+
+#begin DigitalRune/Terrain/TerrainGBufferHoles.xnb
+/copy:DigitalRune/Terrain/TerrainGBufferHoles.xnb
+
+#begin DigitalRune/Terrain/TerrainGBufferHolesPom.xnb
+/copy:DigitalRune/Terrain/TerrainGBufferHolesPom.xnb
+
+#begin DigitalRune/Terrain/TerrainGBufferPom.xnb
+/copy:DigitalRune/Terrain/TerrainGBufferPom.xnb
+
+#begin DigitalRune/Terrain/TerrainGeometryLayer.xnb
+/copy:DigitalRune/Terrain/TerrainGeometryLayer.xnb
+
+#begin DigitalRune/Terrain/TerrainHoleLayer.xnb
+/copy:DigitalRune/Terrain/TerrainHoleLayer.xnb
+
+#begin DigitalRune/Terrain/TerrainMaterial.xnb
+/copy:DigitalRune/Terrain/TerrainMaterial.xnb
+
+#begin DigitalRune/Terrain/TerrainMaterialHoles.xnb
+/copy:DigitalRune/Terrain/TerrainMaterialHoles.xnb
+
+#begin DigitalRune/Terrain/TerrainMaterialHolesPom.xnb
+/copy:DigitalRune/Terrain/TerrainMaterialHolesPom.xnb
+
+#begin DigitalRune/Terrain/TerrainMaterialLayer.xnb
+/copy:DigitalRune/Terrain/TerrainMaterialLayer.xnb
+
+#begin DigitalRune/Terrain/TerrainMaterialPom.xnb
+/copy:DigitalRune/Terrain/TerrainMaterialPom.xnb
+
+#begin DigitalRune/Terrain/TerrainRoadLayer.xnb
+/copy:DigitalRune/Terrain/TerrainRoadLayer.xnb
+
+#begin DigitalRune/Terrain/TerrainShadowMap.xnb
+/copy:DigitalRune/Terrain/TerrainShadowMap.xnb
+
+#begin DigitalRune/Terrain/TerrainShadowMapHoles.xnb
+/copy:DigitalRune/Terrain/TerrainShadowMapHoles.xnb
+
+#begin DigitalRune/Water/Ocean.xnb
+/copy:DigitalRune/Water/Ocean.xnb
+
+#begin DigitalRune/Water/Water.xnb
+/copy:DigitalRune/Water/Water.xnb
+
+#begin DigitalRune/Billboard.xnb
+/copy:DigitalRune/Billboard.xnb
+
+#begin DigitalRune/Line.xnb
+/copy:DigitalRune/Line.xnb
+
+#begin DigitalRune/NormalsFittingTexture.xnb
+/copy:DigitalRune/NormalsFittingTexture.xnb
+
+#begin DigitalRune/OcclusionCulling.xnb
+/copy:DigitalRune/OcclusionCulling.xnb
+
+#begin DigitalRune/SpriteEffect.xnb
+/copy:DigitalRune/SpriteEffect.xnb
+
+#begin Textures/SimpleSky.dds
+/importer:DRTextureImporter
+/processor:DRTextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=False
+/processorParam:GenerateMipmaps=True
+/processorParam:InputGamma=2.2
+/processorParam:OutputGamma=2.2
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:Format=Dxt
+/processorParam:ReferenceAlpha=0.9
+/processorParam:ScaleAlphaToCoverage=False
+/build:Textures/SimpleSky.dds
+
+#begin Textures/Sky2.dds
+/importer:DRTextureImporter
+/processor:DRTextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=False
+/processorParam:GenerateMipmaps=True
+/processorParam:InputGamma=2.2
+/processorParam:OutputGamma=2.2
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:Format=Dxt
+/processorParam:ReferenceAlpha=0.9
+/processorParam:ScaleAlphaToCoverage=False
+/build:Textures/Sky2.dds
+
+#begin Effects/Vignette.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Effects/Vignette.fx
+
+#begin Effects/ColorCorrection.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Optimize
+/build:Effects/ColorCorrection.fx
+
+#begin Effects/HDR.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/build:Effects/HDR.fx
+

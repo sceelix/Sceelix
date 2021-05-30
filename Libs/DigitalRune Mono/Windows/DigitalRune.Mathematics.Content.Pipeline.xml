@@ -1,0 +1,638 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DigitalRune.Mathematics.Content.Pipeline</name>
+    </assembly>
+    <members>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Curve2FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Interpolation.Curve2F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Curve2FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Curve2FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Curve2FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Interpolation.Curve2F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.CurveKey2FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Interpolation.CurveKey2F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.CurveKey2FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.CurveKey2FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.CurveKey2FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Interpolation.CurveKey2F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Matrix22DWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Matrix22D"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix22DWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix22DWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix22DWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Matrix22D)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Matrix22FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Matrix22F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix22FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix22FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix22FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Matrix22F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Matrix33DWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Matrix33D"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix33DWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix33DWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix33DWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Matrix33D)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Matrix33FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Matrix33F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix33FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix33FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix33FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Matrix33F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Matrix44DWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Matrix44D"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix44DWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix44DWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix44DWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Matrix44D)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Matrix44FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Matrix44F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix44FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix44FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Matrix44FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Matrix44F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.MatrixDWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.MatrixD"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.MatrixDWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.MatrixDWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.MatrixDWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.MatrixD)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.MatrixFWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.MatrixF"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.MatrixFWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.MatrixFWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.MatrixFWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.MatrixF)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.NamespaceDoc">
+            <summary>
+            The <see cref="N:DigitalRune.Mathematics.Content.Pipeline"/> namespace provides the content
+            pipeline for DigitalRune Mathematics. (Only available in XNA/MonoGame compatible builds.)
+            </summary>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Path2FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Interpolation.Path2F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Path2FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Path2FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Path2FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Interpolation.Path2F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Path3FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Interpolation.Path3F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Path3FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Path3FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Path3FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Interpolation.Path3F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.PathKey2FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Interpolation.PathKey2F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.PathKey2FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.PathKey2FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.PathKey2FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Interpolation.PathKey2F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.PathKey3FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Interpolation.PathKey3F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.PathKey3FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.PathKey3FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.PathKey3FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Interpolation.PathKey3F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.QuaternionDWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.QuaternionD"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.QuaternionDWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.QuaternionDWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.QuaternionDWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.QuaternionD)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.QuaternionFWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.QuaternionF"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.QuaternionFWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.QuaternionFWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.QuaternionFWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.QuaternionF)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Vector2DWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector2D"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector2DWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector2DWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector2DWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Vector2D)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Vector2FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector2F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector2FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector2FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector2FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Vector2F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Vector3DWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector3D"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector3DWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector3DWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector3DWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Vector3D)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Vector3FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector3FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector3FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector3FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Vector3F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Vector4DWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector4D"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector4DWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector4DWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector4DWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Vector4D)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.Vector4FWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector4F"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector4FWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector4FWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.Vector4FWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.Vector4F)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.VectorDWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.VectorD"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.VectorDWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.VectorDWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.VectorDWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.VectorD)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+        <member name="T:DigitalRune.Mathematics.Content.Pipeline.VectorFWriter">
+            <summary>
+            Writes a <see cref="T:DigitalRune.Mathematics.Algebra.VectorF"/> to binary format.
+            </summary>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.VectorFWriter.GetRuntimeType(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime target type.
+            </summary>
+            <param name="targetPlatform">The target platform.</param>
+            <returns>The qualified name.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.VectorFWriter.GetRuntimeReader(Microsoft.Xna.Framework.Content.Pipeline.TargetPlatform)">
+            <summary>
+            Gets the assembly qualified name of the runtime loader for this type.
+            </summary>
+            <param name="targetPlatform">Name of the platform.</param>
+            <returns>Name of the runtime loader.</returns>
+        </member>
+        <member name="M:DigitalRune.Mathematics.Content.Pipeline.VectorFWriter.Write(Microsoft.Xna.Framework.Content.Pipeline.Serialization.Compiler.ContentWriter,DigitalRune.Mathematics.Algebra.VectorF)">
+            <summary>
+            Compiles a strongly typed object into binary format.
+            </summary>
+            <param name="output">The content writer serializing the value.</param>
+            <param name="value">The value to write.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,725 @@
+﻿Sceelix 1.0.0 (Xth May 2021)
+
+Minor additions and bug fixes:
+  * CHANGED:    
+    * Replaced all sample project textures to ensure only CC0-licensed resources were used.
+    * Replaced commercial versions of DigitalRune dependencies with their open source versions.
+    * Adopted semantic versioning from this version on.
+  * FIXED:
+    * Sceelix Designer process would not close properly under some Windows versions.
+    * Surface inversion would not properly calculate minimum and maximum values before the inversion, hence producing incorrect results.
+  * REMOVED:
+    * "Early Access" denomination is no longer used.
+    * Authentication and registration processes/windows, since Sceelix accounts are no longer needed for use.
+    * EULA acceptance window, since Sceelix has moved to Open Source licenses.
+    * Feedback submission window, since email support is no longer available
+    * Deprecated nodes from previous versions have been definitely removed.
+
+
+Sceelix 0.8.8.0 (27th March 2021)
+
+Major introductions:
+  * ADDED:
+	* Added several new Surface operations, such as Cropping and Splitting, as well as new options for Surface loading, saving, texturing and modification.
+    * Mesh Create now features generation of Octahedron, Icosahedron and Dodecahedron primitives.
+    * Implemented support for dragging and dropping external files into the Project Explorer (Windows Platform only).
+	* Implemented 3D model viewer in the designer's project explorer that allows for preview of popular file formats (obj, fbx, 3ds, etc).
+  * CHANGED:
+    * Updated Unity Plugin to Unity 2019.3 and to its new Terrain format, while also supporting tree instancing.
+  * FIXED:
+    * Several issues on the Linux and MacOS versions of the Designer have been addressed.
+  
+
+Minor additions and bug fixes:
+  * ADDED:
+    * Entities can now be set as attributes of other entities, while allowing access to their subattributes.
+    * Path Modify's suboperation "Edge Cleanup" now provides a new "Angle Tolerance" parameter that allows better tuning of the cleanup process. Its default value is now 3 degrees.
+    * Graph control will now show an "Updating" message on the bottom-left corner when it is being reloaded.
+    * Surface Paint Procedure has now new parameter "Uniform" that can paint the whole terrain with the same value.
+    * Several Surface Paint parameters now have a function parameter (that allows for smooth transitions).
+    * Expression function "Print", which can be used in expressions to debug its content.
+    * Expression function "Exists", which checks if a given file path exists.
+    * Expression functions "NextPowerOf2", "PreviousPowerOf2" and "ClosestPowerOf2", for rounding to the next, previous or closest power of two of a given number.
+    * Expression functions "IsOdd" and "IsEven", to avoid having people repeat the same formula.
+    * Folder and File parameter editors now provide a "R" button which allows absolute paths to relative ones (relative to the project).
+    * Surface multitexture rendering inside the Designer 3D window supports drawing of up to 8 textures (instead of 4).
+    * Actor insert now supports the option "None" for all three coordinates, in case the transformation is not to be applied to a subset of coordinates.
+    * Surface Save procedure now supports the option to export metadata (cellsize, minimum value, maximum, etc.) as json or txt file.
+    * Surface Modify now features a new parameter "Resolution", which allows number of columns/rows of the surface to be changed.
+	* Added Unity Component Modify Procedure which allows for addition of terrain tree instances to surface components. 
+    * Added Surface Crop procedure that works similar to an image cropping operation, allowing for surface size increases/decreases by clamping, mirroring or repeating patterns.
+    * Added Surface Split procedure that, like the mesh split operation, splits surfaces along a given axis.
+    * Surface Smooth operation in "Surface Modify" procedure now features the "intensity", "skip" and "border" parameters, which allows better control over the smoothness on each iteration, as well as its boundaries of operation.
+	* Project Explorer now provides an option "Reload folder" for folders, which allows all files in that folder to be imported to the project.
+    * Added visibility over all possible attribute metas in the attribute control.
+    * Path Modify now features a "Simplify" parameter that, similarly to the Mesh version, simplifies paths by removing vertices which do not introduce a noticeable detail.
+	* Path Modify now features a "Trim" parameter that will cut leaf edges by a given amount.
+    * PathEntity conversion/rendering is now supported by the Unity Plugin (drawn using GL lines).
+    * Point conversion/rendering is now supported by the Unity Plugin (drawn using gameobjects with billboard components).
+	* Textboxes in the Sceelix Designer now all support a context menu for Cut/Copy/Paste.
+	* Added F2 keyboard shortcut for renaming files in the project explorer window.
+	* "Ramp" Parameter of the "Surface Create" procedure now features several new options, such as for choosing among different shapes and  curves, as well as to control their size, offset and continuity.
+	* Settings Window now supports property "preview", i.e. triggering some settings will immediately trigger a visible change (e.g. the sky or filters in the Render 3D Window), while canceling will rollback all changes. 
+	* Introduced listing of entity properties in the Inspector and Data Explorer windows, making it easier to inspect generated entities without having to save them using the Property node first.
+	* Renderer3D top menu now displays some illustrative icons in its menu entries.
+  * CHANGED:
+    * Mesh materials will no longer throw errors if all paths are not defined. Instead, a default texture will be shown.
+    * File and Folder parameters now store the guid of project paths, which can be used to track the original file/folder location if it changes, hence replacing the need for the explicit refactoring system.
+    * Added option for multi-surface input in SurfacePaint, SurfacePlace and SurfaceSampleProcedure, to facilitate operations with tiled surfaces.
+    * IProcedureEnvironment and ProcedureEnvironment API has changed to support a wider range of services, which are now accessible via GetService functions.
+	* 'Empty' parameter of Surface Create procedure now provides the "Interpolation" parameter, like the other surface creation options do.
+    * Updated API Sample libraries, having adjusted them to the new API and fixed several issues that would cause errors on their load by the designer.
+    * Unity Plugin moved its CreateOrGetTexture function to Texture2dExtensions.  
+    * MacOS installer now bundles with Mono version 6.8, which addresses several issues.
+	* Tooltips for log error details have been enlarged to support longer messages.
+	* Changelog now has its features displayed with sublists, grouped by sections ("Added", "Changed"...), instead of having it repeated on each line. This should improve readability.
+	* Renderer3D's screenshot feature will now save to the "Screenshots" folder (typically the Application Data or the root folder for portable versions) with a more readable date/time format. 
+	* Improved node search algorithm in graph editor, so that the categories are ordered by best match and so are the procedures inside each category. 
+	* Changed look and feel of the Inspector Window content when Entities are inspected, now property sorting, key/value copy, better text presentation and more compact view. 
+	* "New Sceelix Project" and "Add New Item" windows will now show up with the contents of their name textbox fully selected, so that it can be easier to replace the suggested name.
+  * FIXED:
+    * Added caching method for loading system nodes, making graph loading much smoother and faster. 
+    * In the document area window, closing a tab when many are opened will now switch to a more logical one.
+    * In the document area window, closing tabs no longer reloads the first tab, which could cause unnecessary loading/processing times.
+    * Color Picker had Blue and Green input boxes switched, so their values would appear in the other box.
+    * Bug where local attribute assignment in an attribute parameter of a component node would erroneously cause the attribute assignment to occur in the scope of the subgraph.
+    * "Licenses" folder is no longer created in the app settings directory (it was a remnant of old versions).
+    * File parameters now indicate the file path in error messages when it is not found.
+    * Unity Entities (and their components) are now properly copied inside graphs.
+    * Surface painting was not performing alpha blending correctly, applying a different pattern of the same texture could lead to black painting.
+    * MultiTexture Surface Material application now leads to the creation of all its necessary blend layers.
+    * Painting of mesh over surface will now correctly paint, even if the mesh is only partially overlapping the surface.
+    * When importing files that were already on the project (with the same path), the prompt window would appear in some situations and cause an error and trying to import.
+    * Errors could occur when closing windows featuring treeview controls, if certain tree items were selected.
+    * Several surface modification/transformation procedures were not properly copying attribute and material data.
+	* Improved performance of several surface transformations involving the heightlayer.
+    * Importing folders could lead to recursive loading of folders, this has been addressed.
+    * Attribute parameter control would not properly save the /replace meta definition if added via the >> or << button.
+    * Replacing an attribute with a similar name but different metas would only affect the value, but not the key, even if it had different meta configurations.
+    * Errors related to node parameters can now be traced by double clicking the error message, just like with other errors.
+    * Actor group size calculation in the Property node was returning the count of all subentities, not the entities within.
+    * Mesh Split would sometimes produce repeated faces when slicing faces below the slicing plane.
+    * Actor group was would produce an error when evaluating criteria.
+    * Entity quantity mismatches in ports would not be properly cleaned after the node execution.
+    * Path Create now passes on attributes and scope of source mesh.
+	* Cases of component graphs featuring gates but no executable nodes will throw a clearer error message to facilitate its correction. 
+    * Ungroup parameter of group procedure was returning more subentities than it should.
+    * Updated Tutorial project according to the latest node changes, while also adding missing resources and fixing small issues with models.
+    * Linux version of the Designer now closes properly when the program is exited.
+    * Linux version of the Designer now shows the correct application icon when running.
+    * MacOS and Linux versions of the Designer now open urls and folder paths from the main menu and settings windows properly.
+    * MacOS and Linux versions of the Designer will no longer face the "Sceelix.Core.Attributes.AttributeCollection" exception when running graphs (which would appear under some Mono versions).
+	* Component nodes will now automatically have their cache invalidated if the underlying graph changes.
+	* Data explorer selection color has been change to a light gray, improving constrast towards the text color, especially for the attribute's orange color.
+	* Unity plugin now converts texture pixels to premultipled format, which will yield better looking results for textures with alpha cutouts.
+	* Greatly improved CPU and memory performance of passing terrain data from Sceelix to Unity though the provided plugin.
+    * Linux versions will now show node documentation when browsing the node list or when hovering over the nodes on a graph.
+
+Sceelix 0.8.7.1 (20th March 2020)
+
+Major introductions:
+  * FIXED:
+    * Sceelix Designer's recent issues when connecting to the server (for login and registration) have been addressed.
+
+
+Sceelix 0.8.7.0 (16th January 2018)
+
+Major introductions:
+
+  * ADDED:
+    * Introduced new expression writing system, including syntax highlighting, undo-redo and an advanced expression editor for a better writing experience.
+    * Vignette, HDR and Color Correction post-processing effects to the 3D Viewer.
+    * New mesh primitives in the Mesh Create Node: L-Shape, T-Shape, U-Shape, Z-Shape and Cross.
+    * Unity plugin has new options, including the possibility to save the result to prefab.
+  * CHANGED:
+    * As a result of Sceelix becoming FREE, a new licensing system was introduced, removing the need for licenses and development keys. 
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * .Tiff image file extension can now be selected in all image-based file parameters.  
+    * Project Explorer now allows all file types to be opened, using the text editor by default.
+    * Quick graph parameter creator (accessible via the expression box) now allows the choice of the parameter type and default value. 
+    * Project file selection window now supports extensions filters, similar to the system file dialogs.
+    * Added isNull() and regex functions.
+    * New "Is Self-Intersecting?" property to the "Mesh" parameter of the Property node, which verifies of the input mesh has self-intersecting geometries.
+    * Node execution errors will no longer stop the graph execution, but instead just show the error and proceed to the next round or node, if data is available.
+    * Missing texture files now longer cause meshes not to appear in the 3D Viewer - instead, a default purple texture is applied.
+    * New "Reset Absolute Paths" parameter in "mesh load" will help loading 3D models with invalid absolute paths.
+    * Unity plugin support for emissive materials.
+    * When creating Unity Entities from other actor types, the attributes from the original actors are copied to the new Unity Entity.
+    * New button in graph editor allows the procedure cache to be cleared.  
+    * New Random parameters for generating random 2D and 3D vectors between given minimum and maximum values.
+    * OSM Load procedure can now load multipolygon features.
+    * Unity Entities are now viewable in the 3D Renderer.
+    * Log Window entries can now be right-clicked for a menu, allowing for message copy and redirection to the source of the log.
+    * Log Window has now changeable settings for aggregating messages of the same type (enabled by default) and for storing the log details to file.
+    * Data Explorer Window entries can now be right-clicked for a menu, allowing for data copy.
+    * Compound parameters can now arrange their primitive subparameters into a single line, by enabling the "Arrange In Single Line" option.
+    * New String functions can now be used in parameter expressions.
+    * Visualization of path edge direction can now be toggled in the 3D Viewer options.
+    * Added full word/number selection possibility - using mouse double-click - to all text boxes.
+    * 3D Renderer will now show the scope orientation of points, when clicked.
+    * StochasticProcedure has a new parameter "Method" that introduces different ways for handling the defined probabilities.
+    * Unity Entity creation now offers a new parameter "Positioning" that allows the prefab pivot to be matched to the entity translation, instead of the prefab minimum.
+    * Source nodes have a new option "Disable in Subgraphs" which discards them from execution inside subgraphs - if so intended (since sometime source nodes are meant to be used just as dummy test data sources) - reducing necessary processing. Such nodes will have the text slightly grayed out.
+    * New "From Points" parameter in Create Path allows paths to be create from a list of point entities using different possible methods: Cross, Sequence, Delaunay and Voronoi.
+    * New PathEntityHelper class that contains quick access to some path entity procedures.
+    * New "Round" parameter in "Path Modify" procedure allows vertex position coordinates to be rounded, to fix mathematical precision problems.
+    * Undo-Redo functionality to all text boxes.
+    * Unity plugin can now process entity and actor groups, which are manifested into simple game objects with children, which is very useful to organize objects.
+    * Unity plugin now process attributes "Name", "Tag","Enabled", "Static" and"Layer" from supported entities, as long as the attributes has the "Unity" meta applied. 
+    * Node and Graph parameters can now be organized into "Sections" by simply assigning a value to the "Section" field. This creates a titled separator which is helpful to group parameters.
+    * Graph parameter editor window has now tooltip information on the parameter configuration fields.
+  * CHANGED:
+    * Altered some ambient and directional lighting parameters on the 3D Viewer to improve overall object visualization.
+    * Graph Control now indicates when the graph is being prepared with a "Preparing" message, just before execution.  
+    * In cases of edge divergence from an output port, if the destination port is an impulse, only a copy of the entity attributes will be performed, instead of the whole entity, improving performance.
+    * Numeric fields will no longer enforce strict decimal digits limitation (other then the precision of the data type itself) unless specifically indicated in the "Decimal Digits" property.
+    * Unity plugin has new cleanup function, which is more effective in finding dependencies, but slower, so its call is now optional (can be called either automatically or manually).
+    * RandomProcedure and EntityCreateProcedure parameters that perform file or folder listing will now return relative or absolute paths, depending on the case, not only absolute paths.
+    * Vertex and Edge types were removed from the Type parameter from the Conditional node, as there was no particular need and would only extend the size of the list.
+    * Log entries are now grouped by their message content, type and source.  
+    * Unity entity create has now the "Static" option enabled by default.
+    * Indexing operator in expressions will perform null propagation, meaning that, instead of errors, the access to a non-existent subfield will return null.
+    * Parameter value conversions for basic types (int, bool, double) will now convert null to default values (0,false, 0.0, respectively) instead of issuing an error.
+  * FIXED:
+    * Fixed parallax occlusion materials rendering on the 3D Viewer.
+    * GIS nodes were placed under two different categories "Gis" and "GIS" and now have been merged into one - GIS.
+    * IsWithinRadius functions of Vector2D and Vector4D were returning wrong values.
+    * Applied the latest tooltip style to some remaining controls. 
+    * Expression textbox colors had issues with text contrast, especially when selected, so both background and text colors have been changed.
+    * Problem when creating graph parameters of type object would cause problems when reloading the graph.
+    * File to graph dragging is now more robust, not crashing if the imported graph has problems.
+    * Duplicating a file with a non-supported extension does no longer cause problems/errors.
+    * Auto-complete window no longer remains open if the expression textbox loses focus (using the TAB key, for instance).
+    * Graph execution nodes no longer keep round entity data stored in its inputs, which would result in major memory leaks.
+    * Improved mouse double click detection, which should improve detection in situations where input lag would normally occur (low FPS, for instance).
+    * File and Folder parameter editors will now trigger the "graph modified" asterisk if its value was changed.  
+    * Empty file extensions/filters are now properly parsed and show in the file selection dialogs.
+    * Sorted type names in Conditional "Type" parameter.
+    * Improved robustness of OSMLoad Node, in case the input data has ways or relations referencing nodes that are not included.
+    * Export to Unity could fail for references of the same material.
+    * Graph refactoring process can now be properly canceled.
+    * When converting path vertices to joints, the attributes are passed over to the faces.
+    * Mesh from Path procedure was not generating the intended mesh shapes from exact 90º crossings.
+    * Textures already loaded into the 3D Viewer cache will detect if the original file has been modified and automatically refreshed.
+    * "Execute" option in the context menu of the graph control will now trigger the debug mode as well, just like the double-click option.
+    * "From Path" parameter in the "Points Create" will now pass along the attributes of the path vertices.
+    * "Actor Insert" could, in some cases, wrongly modify the source object, causing invalid actor insertions.
+    * Mesh From Path was producing an incorrect result when working on edges with different width values, which was especially visible on edge crosses.
+    * Unity plugin will no longer throw an exception if the creation of a null asset (for example, a material) is attempted.
+    * When encapsulating sets of nodes into new graphs, ports that were already gates with labels will not have their labels changed.
+    * Repeated library assemblies (which may be located in different folders) will no longer be loaded multiple times, avoiding loading problems on startup.
+    * Entity evaluation parameters would not properly run the same data transformation/merge as a standard expression evaluation, which could result in different values than expected.
+    * Fixed issue on Unity plugin that would not properly handle references for repeated material and mesh instantiation if prefab instantiation was involved.
+    * Added "None" option to scaling in Unity Entity Create procedure in case no prefab scaling is desired during instantiation.
+    * Unity Plugin has an improved bound detection and positioning of prefabs with transformed children.
+    * Mesh Instance Entity would not appear in the 3D renderer if one the sizes was 0 (for example, for 2D meshes).
+    * Orientation processes (in Actor Rotate and Actor Scope procedures) would make actors disappear if the requested orientation would be the same as the current one.
+    * List parameters will now issue a proper informative message when trying to assign values whose keys are not valid.
+    * Data explorer would not always focus the right item if some items before in the list were expanded.
+    * Engine samples are now updated for handling the new surface structure (as layers) and the removal of the initialization function.
+    * Color Picker had its green and blue spin fields switched, and the alpha field was not being correctly processed in the final color.
+    * Extract Window does no longer resize for each file name, instead sticking with the width of longest file name. The message and the title have also been corrected.
+    * More erroneous cases are now covered/cleaned by the Edge Cleanup parameter in Path Modify procedure. 
+    * Resource loading functions are now thread-safe, solving errors that could occur when resources would be loaded for both Unity connection and 3D renderer.
+    * Path Cleanup procedure now complements the merged vertex attributes to the resulting vertex, so that information is not lost.
+    * Expressions containing boolean values (true,false) would be capitalized after editing, possibly causing interpretation as a Parameter name. 
+    * Surface scope translation reflects the actual z coordinate (instead of using the minimum z), fixing several positioning issues (for example, in Unity).
+    * Procedures and Parameters will now properly verify, on startup, if there are repeated names among the subparameters, inputs or outputs.
+    * The checkmark icon of the menu items below the "Window" menu of the Designer was not being hidden when a window was closed.
+  * REMOVED: 
+    * Printscreen option from GraphEditor, as it wasn't producing a proper image, so it wasn't useful anyway.
+    * GameEntity libraries had little or no functionality, especially now that the Unity Entities are viewable in the 3D Renderer.
+    * ISubEntity interface ended up having no particular purpose, as their manipulation possibilities were the same as a standard entity.
+
+
+Sceelix 0.8.6.0 (22th May 2017)
+
+Major introductions:
+  * ADDED:
+    * New Point Entity that represents a single location in 3D space. Together with the new "Point Create", it provides the base for many new generation possibilities, especially for building random or pattern-based distributions of objects.
+    * New "GIS Load" and "Osm Load" nodes for reading Esri Shapefiles and Openstreetmap files, respectively, into Sceelix point, path and mesh entities.
+    * Data Explorer now offers the possibility to select items from the list, highlighting the object in the 3D Renderer. Objects selected on the 3D renderer are also highlighted on the data explorer.
+    * Graph files can now be drag and dropped into a graph canvas so as to add component nodes.
+    * Entity count can now be viewed next to the node ports, indicating how many entities have come in (for input ports) or come out (for output ports) in the last graph execution.
+    * New Surface manipulation operations, including Surface Subselection and Surface Division. Added surface inversion and average function for surface combination. 
+  * CHANGED:
+    * Redesigned Surface Library, introducing a layer-based approach, much more extensible and powerful. Almost all previous surface nodes have been deprecated and replaced with new ones.
+  
+
+Minor additions and bug fixes:
+  * ADDED: 
+    * New option "Close" in Project Explorer "Open" menu, to close the current project.
+    * Actor insert now supports different kinds of input combinations, allowing one-to-one, one-to-many and many-to-many operations easily.
+    * Actor insert now supports a new "Custom" alignment, which gives further freedom in actor manipulation.
+    * Project Explorer can now track (zoom to) the currently active file in the Document Area Tab (option can be disabled in new Project Explorer options)  
+    * Data explorer entity items can now be double-clicked to force the camera on the 3D Renderer to zoom on them.
+    * DataExplorer Window now displays the count of subitems below each item group.
+    * Specializations of the List parameter: Select (for selecting a subparameter from a combobox) and Optional (for choosing to enable a subparameter). Before, one would have to use the ListParameter with the MaxSize property.
+    * New Path Subselect procedure, with a similar purpose and working as the Mesh Subselect.
+    * New Path Divide procedure, with a similar purpose and working as the Mesh Divide.
+    * New "Mesh" option under the "Surface Painting" procedure, which allows mesh shapes to be drawn on a terrain, similar to the "Path" option.
+    * New "Stepify" parameter under the "Surface Modify" procedure, which creates a "step-like" effect on surfaces.
+    * New "Result" parameter under the "Surface Combine" procedure, which allows the control of the resulting surface area.
+    * Paths and Actor groups now show their scope orientation when selected (either on the 3D view or on the Data Explorer).
+    * Current camera position is now being displayed in the bottom right corner or the 3D Viewer.
+    * The Actor Scale node now supports, through its "Absolute" scaling option, the possibility to set up to 2 coordinates to proportional to the others, by setting negative values.
+  * CHANGED:
+    * Renaming of "Surface Placement" and "Surface Painting" to "Surface Place" and "Surface Paint", respectively.
+    * Ground grid plane size now extends to infinity.
+    * Ordering of several node parameters, according to their semantics.
+    * Default value of Actor insert parameters from Stretch to Center.
+    * Divided "Actor Transform" procedure into separate "Actor Translate", "Actor Rotate" and "Actor Scale" nodes.
+    * Grid option in Path Create procedure now has larger values as default (10 for both column and row count).
+    * "Check for Updates" and "Update" buttons no longer appear in the Steam versions, as the updating is automatically performed by the platform.
+    * Updated samples project, with a new structure, new examples and demos.
+  * FIXED:
+    * Improved performance of path rendering, being now capable or visualizing large path quantities without much overhead.
+    * Introduced a more user-friendly error message when references to non-existing attributes are written in expressions.
+    * Several parameter documentation/comments that contained typos.
+    * Reintroduced graph saving of edge connectivity to through the port indices (in addition to labels). Useful to keep connections to invalid nodes intact.
+    * Alt-clicking an edge for toggling its state would not be marked as a graph modification (and consequently would not show the asterisk on the graph tab or trigger a re-execution).
+    * Moving a file into its own folder does not longer cause issues.
+    * Occasional crash could happen after encapsulating nodes into a subgraph.
+    * Log message originated from nodes will now be properly tracked. 
+    * Corrected several typos in designer messages.
+    * Image files were not being properly loaded by their supposed viewers.  
+    * Selection boxes no longer show an empty choice - it assumes the first by default if none has been defined.
+    * Deselecting all objects from the 3D Renderer now clears all coloring from the graph nodes.
+    * Changing expression text (or toggling between expression and fixed state) in node parameters would not mark the respective graph tab as changed (the asterisk).
+    * Assemblies loading now overrides the Windows security verification when assemblies have been downloaded from the Web (and therefore would be blocked).
+    * Centroid Property calculation for Meshes was yielding an incorrect value.
+    * Edge tooltips now show the display names of the entities, not their C# class names.
+    * Settings properties order has been fixed as they were in previous versions.
+    * Mesh Unify -> Unify Planar Faces now has a better unification margin and does not require the vertices to be unified first.
+    * Window close button tooltips now have a style more consistent with the remaining UI tooltips.
+    * Folder path parameters were not being correctly updated, if a matching resource folder's name was changed.
+    * Storing relative paths at the project history does not cause graph loading issues anymore. 
+    * Source node caching was not functioning properly with expressions based on graph parameters. It was also not triggering the node coloring.
+    * Link to documentation in the Window portable versions was still directing to an old link.
+    * Fixed documentation of Mesh Divide's "Groups" field.
+    * Actor groups are now being properly scaled and the actor scope operations are now working as documented.
+  * REMOVED: 
+    * Very old, deprecated node 'Place Shape On Surface Procedure' has been removed.
+  
+
+
+Sceelix 0.8.5.0 (28th March 2017)
+
+Major introductions:
+
+  * ADDED:
+    * New Documentation tooltips with html.
+    * All nodes and their parameters have been documented.
+    * Changelog is now distributed with the application.
+    * New graph feature: optional ports, which do not mandate data to be received in order for the node to be executed. This is very useful for building nodes that may or may not receive data in some inputs. These ports appear with a dotted border.
+  * CHANGED:
+    * Access to expression mode is now more intuitive, since the parameter text will be underlined, indicating that an interaction is possible.
+    * Improved overall node and port rendering quality and changed rendering of edges, now displayed as bezier splines and disabled ones are displayed with a dotted pattern.
+    * Log messages are shown in case obsolete nodes are found or input data is left unprocessed. Also, log entries caused by nodes can be double-clicked to understand which one has sent it.
+    * Library structure (introduced Sceelix.Meshes, Sceelix.Actors, Sceelix.Mathematics) and several class names/namespaces have changed.
+  
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * New "Frame New Data" setting for the 3D Renderer (enabled by default) that will zoom to the result of a new source/graph.
+    * New parameter Path->Length to the Property node, which calculates the total length of all the path edges.
+    * Obsolete definitions on nodes now issue a warning or an error when graphs are executed.
+    * Sceelix Libraries/Plugins can now be placed in a "Plugins" folder, which is generated automatically in the Sceelix Documents folder (or in the main folder, for the portable versions). This compensates for the fact that the install locations of Sceelix (such as Program Files) may not have write permissions.
+    * More robust visualization for empty paths - now only returning a warning message instead of an impeding error.
+    * New option in Renderer3D settings, which allows the connectivity information for path vertices to be toggle on or off.
+    * Refactoring Progress Window now gives some feedback when graph references are being updated, instead of just hanging the UI.
+    * Path Merge now offers the same criteria enumeration and input choice flexibility as the Mesh Merge.
+    * Mesh Subselect has now extra options in the direction subselection: horizontal, lateral and vertical.
+    * More informative error message when trying to assign an associative list to a compound parameter with keys that do not exist in the compound parameter.
+  * CHANGED:
+    * The "Recent" option in the Project Explorer can now be found under the "Open" button, together with the access to the Tutorial Samples, which were moved from the Help menu.
+    * Default segment size for Circle, Cone, Cylinder and Sphere creation (at the "Mesh Create" node) were set to 10, so as to return a more round shape by default.
+    * Defined minimum values to several parameters of the "Mesh Create" node (e.g. Radius, Width, Height from parameters such as Cube, Box, Circle, Cone, etc..)
+    * Light direction on the white sky configuration of the 3D Renderer now faces the opposite direction.
+    * Mesh scope now appears at the origin of the scope, showing direction even if size is 0.
+    * Made "From Path" operation of "Mesh Create" node more robust, so as they can return faces even if problems with some edges are met.
+    * System procedures are now being loaded uniquely by their Guids, making it completely safe for libraries to make changes to their names and namespaces.
+    * Graph files do not store the long fully qualified names for their types (since they are loaded by their guids) and, together with other improvements, newly saved graphs should expect a file size reduction by 25%.
+    * EntityInfoAttribute class has been renamed to EntityAttribute.
+    * Made library loading much more robust, being able to fail the loading of certain types and libraries without affecting the remaining ones.
+    * Logging is performing via the Logger property and now introduces the "Debug" log type, while the "Question" type has been removed.
+    * Edge connections are now stored by label/name, instead of index, which should minimize problems when changing ports in the subgraphs (which happens very often).
+    * Improved performance of surface construction process in the 3D Renderer.
+  * FIXED:
+    * Refactoring process on file/folder rename/move now does proper graph update, but only when it finds references.
+    * Scrollviewer of new File Creation Window would cause content to disappear on mouse scroll.
+    * Reflective Material in 3D Renderer was returning an error, when shown.
+    * Selection Rectangle in Graph Renderer was not redrawing properly.
+    * Mesh Divide issue - parameter Size, option Vertices that would cause an error if a value higher than the number of input vertices was inserted.
+    * Issue with "Send Feedback" window - screen capture now considers the content of the window only and does not fail if the Sceelix window is positioned in monitors other than the main one.
+    * Camera in the 3D Renderer would go haywire if the Sceelix UI was scaled in any way.
+    * Creating lists with Choice, String, File or Folder parameters would cause errors because their internal values would not be initialized.
+    * Deleting folders would not remove opened files in the document window, causing strange error messages.
+    * "Tileable" Surface generation had their borders not fitting properly.
+    * Path Modify's "Cleanup" operation, which was creating vertices with invalid edges.
+    * Compound parameters were always having their fields set by index, instead of by name, which could cause problems if the order of the parameters would change.
+    * When editing graph parameters of type int, float or double, the increment value was being incorrectly set to the same value as the defined maximum.
+    * When using the mouse scroll inside the Inspector Window showing Graph Parameters, very weird scaling problems could occur when the scrollbar wasn't visible.
+    * Project explorer was only listing file types and not the file extensions.
+    * Messages logged to the Log Window now appear on the written logs, too.
+    * MeshEntity created by the "Mesh Create"->"From Path" now inherits the scope orientation from the Path Entity.
+    * Deleted nodes would sometimes remain on the graph canvas until it would be refreshed manually with a user action.
+    * When copy-pasting nodes, their expressions would wrongly create a "_1" suffix. This has been addressed, and only happens if the new node has a reference to a parameter with the same name but different type.
+    * Expression evaluation bug (yielding the "Sequence contains no elements") that would occur sometimes when trying to access certain attributes.
+    * BoundingRectangle Center property has been fixed.
+    * Lists with a single item model were wrongly creating new entries when its items were drag/dropped/sorted.
+    * Coloring of ports and edges during graph execution will now only happen if they carry data. This avoids confusion when trying to understand the real flow of data.
+    * Path subentities, namely Vertex and Edges, now are show with these names (instead of just "Entity") in the Data Explorer/Inspector.  
+  * REMOVED: 
+    * "Answers" option is no longer part of the Help Menu, as it has been deactivated. We encourage users to post all their questions to the forums.
+    * "Clear All?" parameter is no longer part of the LogProcedure. It has lost its usefulness due to the "Clear logs on execution" option of the Graph Editor.
+    * Removed component options from "Game Entity Component" for those components that are still not supported in this version.
+  
+  
+
+Sceelix 0.8.4.0 (31st January 2017)
+
+
+Major introductions:
+
+  * ADDED:
+    * Implemented selective execution, which makes it possible to limit the execution of the graph up until a certain node or port by simply double-clicking it.
+    * Changes to the graph design: hovering and selection of edges and visual ports now affect their shape, instead of their color. Colors are used to demonstrate what parts of the graph are running or have been executed.
+    * Implemented "entity trailing", which highlights the nodes, edges and ports that a certain selected entity (in the 3D Viewer) has gone through.
+    * "Cache" option to source nodes, which stores their result and avoids reexecution, improving graph execution performance.
+    * Implemented new operations: "Skeleton" option for "Prismify" parameter (in the Mesh Modify node), new "Mesh Clip" node, new "Size" parameter for "Mesh Divide" and new primitives "Star" and "Cone" for "Mesh Create".
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * New possibility to indicate URLs for files and textures.
+    * New "Cap" option to "Pyramidize" node at the "Mesh Modify" node now controls whether a flipped bottom face should be added to the final result.
+    * New option for Mesh Merge to provide two single input ports (in addition to the collective input), which facilitates merges of single objects.
+    * Implemented ActorEntityHelper and MeshEntityHelper in Sceelix.Geometry3D library, at the Sceelix.Geometry3D.Helpers namespace, which facilitate access to several node functionalities using the C# API.
+  * CHANGED:
+    * Graph definition has been simplified, not storing information about node parameter types, which were unused anyway. This results in graph file size reductions up to 40%.
+    * Attribute type of "Scope" in parameter "Actor" of the "Property" node has been change to "Sceelist" (instead of BoxScope) to ease the access to its members.
+    * C# API - LoadEnvironment resource loading has been completely virtualized, so that it can be decided by the underlying system. So use LoadEnvironment.LoadResource<TypeOfData>(path) to load files from project/disk.
+    * C# API - changed overloaded function Set of class Parameter and ParameterReference to Set/SetExpression to avoid compiler ambiguity in overload choice (since setting a value as Object may lead to this).
+    * C# API - renamed InputReference's  "Add" to "Enqueue", while the OutputReference's "Pop" and "PopAll" was renamed to "Dequeue" and "DequeueAll", respectively. This makes the handling out Procedures (from the caller's side) more consistent.
+    * C# API - renamed Input's  "Get" to "Read", while the Output's "WriteAll" was renamed to "Write". This makes the development of Procedures simpler and more consistent.
+  * FIXED:
+    * Camera Handling: Now 360º rotations can be performed in the vertical direction and panning will always move in a perpendicular direction to the current mouse view.
+    * Node release action would not be performed when dragging nodes out of the graph canvas.
+    * Directional extrude "bendTop" option could produce invalid geometries.
+    * 3D Renderer would not allow proper object picking if any of the objects produced an invalid collision shape.
+    * Connection with the Unity Plugin could cause gameobjects with 0 as a scale value to be created, leading to strangely looking objects.
+    * Bar and Context Menus caused erroneous highlight of back objects and had inconsistent reaction to the Escape key.
+    * Categories of Path Decompose and Mesh Loft nodes.
+    * Adding a non-source node to the graph would trigger an execution if the "Live Execution" mode would be on.
+    * Expression parsing would not allow arithmetical (and logical) expressions inside array indexers.
+    * Wrong number of inputs and outputs would be created if defined inside parameters. 
+    * Reintroduced VRML Mesh Save option, which had been lost after the previous Mesh Save procedure had been deprecated.
+  * REMOVED: 
+    * Since long deprecated procedures: ExtrudeProcedure, RotateShapeProcedure, RotateShapeScopeProcedure and TranslateShapeProcedure.
+
+
+Sceelix 0.8.3.0 (21st December 2016)
+
+Major introductions:
+
+  * ADDED:
+    * The export from Sceelix is now not limited to Game Object only - all kinds of entities (Meshes, Surfaces, Billboards, Mesh Instances) are now supported and sent to Unity as long as the connection is active. Game objects can still be created to control naming, tags, layers, etc., as well as instantiate components and prefabs. Several fixes to occasional wrong rotations and flat terrain incompatibility were added.
+    * New materials were introduced (bump, parallax, transparency) and updated so as to use unity standard shader.  
+    * Unity Plugin is now more extensible: Processing new messages, entities, materials and components can be easily implemented with simple function implementations. By simply declaring certain [*Processor] attributes, it is possible to add or even override default handlers (using a priority value), without the need to alter the plugin code directly. These can be added anywhere in the Unity project and will be automatically compiled.
+  * CHANGED:
+    * Redesign of the Unity Plugin, now in the form of a Unity Window, allowing for a better view of the connection status, as well as the customization of connection properties and generated items. The socket connection between Sceelix and Unity is now more robust, reconnecting automatically if interrupted and disconnecting automatically in order to prevent Unity hangs. Code has been better organized, so that it easier to follow. Engine and editor references are now better managed to avoid project build issues.
+    * Generated data from Sceelix to Unity is now grouped under a parent item with the graph name. By default, re-executing a graph will cause this item and its children to be removed and replaced with a new set of objects. A result can be persisted by simply unchecking the "Remove on Regeneration" flag of the parent object. Physical asset generation (Textures, Materials, Meshes) is now optional - by default these assets are instantiated and stored at the scene itself (instead of the SceelixAssets folder), making the whole instantiation process way faster when data is received on Unity.
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * functions Ifbool and IfNull, equivalent to the ? and != null, respectively, in other languages. Also added the Null() function, as a means to build comparisons with null.
+    * "Mesh" parameter on Surface Placement node, which sets every mesh vertex on the terrain with more accuracy.
+    * Implemented Surface Modify -> "Change Cell Size", which can increase or decrease the precision/number of cells of a surface grid.
+    * warning when creating unity terrains with properties that are not compatible with Unity's terrain model (max. resolution value, need to be power of 2, square shape).
+    * "Is Static" parameter to Unity Create, which sets the corresponding flag in Game Objects.
+    * Mesh Material now supports a "Custom" and "Other" Material, which is used to map to particular platform implementations of materials.
+    * Mesh Save node has been replaced with a new version, providing a collective input (by default) as a means to export several meshes at once to a single file.
+    * New expression functions to get the path to the Desktop and Documents folder.
+    * FBX exporter now exports vertex tangent and binormal information.
+  * CHANGED:
+    * Changed PasswordChar to IsPassword check in StringParameter, and its value is now also encrypted when storing the graph definition.
+    * The entity data text boxes at the inspector were made focusable, so that data can be selected and copy-pasted out of them.
+    * Parallax Occlusion material now has its "Specular" component as optional.
+    * Improved robustness of Mesh Load procedure when handling possible invalid geometries.
+    * Improved robustness and fixed slice size calculation of the Mesh Split procedure.
+  * FIXED:
+    * "Invalid IL Code" error that was occurring in MacOS/Linux versions.
+    * Actor Transform had issues when operations over groups (there were problems at the BoxScope class).
+    * Int, Double and Float Parameters now enforce their constraints (min and max values), even if set outside of the Designer (or set through expressions).
+    * StringParameter now enforces the MaxLength constraint (even if set outside of the Designer or set through expressions)  
+    * Made node parameter value loading more robust - an error on a specific parameter is now identified, while the remaining ones are loaded, if possible.
+    * Directory separators of file paths would be incorrectly handled, ultimately leading to problems when exporting to Unity.
+    * The "Flat" parameter of the "Surface Create" node was creating surfaces without the last column and row.
+    * OnClose function of the LibraryAttributes is now being called on Application Exit.
+    * File selector at the parallax material parameter had wrong file extensions.
+    * Expressions would not be persist the null-conditional operator of @@ attributes.
+    * API samples were still outdated since the change to the LoadEnvironment class.
+  
+  
+
+Sceelix 0.8.2.0 (11th November 2016)
+
+Major introductions:
+
+  * ADDED:
+    * Implemented new "Edge Cleanup" procedure (under Path Modify) that is able to fix problematic edge connections.
+    * Developed a new Offset procedure (accessible under Mesh Modify -> Offset (Advanced)) which produces much better results (the standard offset has some issues on some extreme cases).
+    * Developed a new Surface Adjust node that allows Meshes and Paths to be beautifully placed on surfaces.
+    * Extended the Surface Paint node, which is now capable on "painting" paths on terrain.
+    * Developed new "Shared Inset" operation (accessible under Mesh Modify) that performs insets for boundary edges only (useful to create sidewalks on road meshes, for instance).
+    * New Samples for the mentioned novel operations.
+  * CHANGED:
+    * Reimplemented the Create Mesh->From Path operation, which now produces much better results, such as for the creation (and texturing) of roads/streets.
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * Introduced warning message when data quantity mismatch occurs in graph nodes.
+    * Introduced limits for graph zoom (both in and out), since the lack of constraints could cause control issues on some sensible mouse/trackpads (or even cause graphical glitches on MacOS).
+  * CHANGED:
+    * Replaced "Path Decompose" with a version that outputs the original path, too.
+    * Parallax Occlusion Material now accepts the various texture layers (Diffuse, Normal, Specular and Height) as input.
+    * Improved performance of Mesh Entity copying process (up to 3x as fast now).
+    * Renamed "Mesh Select" to "Mesh Subselect" as an attempt to reduce confusion about the procedure's real intent to select subparts of meshes.
+    * Extrude operations now copy all their vertex attribute data (such as texture coordinates, tangents, etc.) to the generated top faces.
+  * FIXED:
+    * Categories for nodes "Mesh Load", "Surface Merge" and "Surface Combine" were wrongly labeled as "Other".
+    * "Increase Precision" operation for Paths was causing edge information/attributes to be lost.
+    * Cleared assertion errors that could occur in some extreme triangulation cases, which would cause the whole application to crash.
+    * Triangles with holes would not be properly rendered.
+    * FBX exporter was exporting with a erroneous default translation.
+    * File Open/Save dialog that was not displaying the files when the option "Supported Files" was chosen (or any set of extensions).
+    * Error was occurring when saving a new layout, causing the layout menu not to update.
+    * Sometimes changes in parameter lists would not trigger the graph execution.
+    * Path edges/vertices now perform proper attribute inheritance when copying.
+    * "From Mesh" parameter of the "Path Create" procedure, which was still featuring a "Name" parameter and would not consider mesh holes.
+    * TriangulateParameter could cause new faces and vertices to lose material and attribute information.
+    * Crashes could occur if a key would be pressed during a window closing animation.
+    * Parking Lot sample had an issue where the imported car model parts were not joined and therefore empty wheels would appear in the parking spots.
+    * Basic Game Entity visualization in the Designer has been reenabled, contemplating Mesh and Physics, the rest will come in a future release.
+    * Graph Control framing would zoom out too much.
+  * REMOVED: 
+    * "Name" field is not part of the Path Vertex class, as it was part of an old definition. Same can be achieved using attributes.
+
+
+Sceelix 0.8.1.0 (5th October 2016)
+
+Major introductions:
+
+  * ADDED:
+    * Introduced several new 3D import formats in a new Mesh Load Node: FBX, 3DS, Collada (DAE), AutoCAD (.dxf), Direct X (.X), Blend (.blend), and many, many more. The full list can be consulted in the new "Mesh Load" node.
+  * CHANGED:
+    * Greatly Improved CPU and Memory performance when processing generated data for visualization in the 3D Renderer.
+    * Cleaned up Log Window and the Entity Properties Inspector, introducing better look, better performance, better organization (and sorting) and better handling of large quantities of messages or properties/attributes.
+    * Improved Project Explorer Window: it now includes an "Exclude" option, clean icons, as well as the possibility to use the "Add Existing Folder and Contents" option on the source folder to refresh its contents from the file system.
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * Introduced option in graph execution to clear the log Window on execution (enabled by default).
+    * Surface Placement node features now the possibility to "Adjust Terrain" for Paths, improving path placement on terrain. 
+    * Zoom in capability in graph control using the same alt + right-mouse button configuration in the 3D Viewer.
+    * Authorized Steam versions will now automatically overwrite existing trial licenses.
+    * "Activate New License" option under the "Help" menu allows new a new license to be loaded.
+    * FBX Exporter can now export meshes with Color material.
+    * New Designer Option controls which File/Folder names/extensions to exclude when mass importing existing Folders and Contents.
+    * More informative messages when certain UI errors (for example, missing texture file) occur.
+  * FIXED:
+    * Some dialogs would appear non-centered after the last update.
+    * Project Explorer Window would not be marked as closed in the Windows menu.
+    * Vector3 function would return a wrong vector (the Y coordinate was being used instead of the Z coordinate)
+    * Water Material would not cause Render window to refresh and therefore would not move unless refreshed through other means.
+    * Fire prop would not cause Render window to refresh and would appear rotated.  
+    * Camera direction would flip if the mouse scroll would be used beyond a certain point.
+    * "EntityEvaluation" flag would not be stored in graph parameters.
+
+  
+
+
+
+Sceelix 0.8.0.0  (6th September 2016)
+
+Major introductions:
+
+  * ADDED:
+    * Released Steam version of Sceelix (Available only through steam).
+    * New registration and license loading features to the Designer Loading Screens.
+    * New GUI Scaling Feature to the Sceelix Designer. Like a "Zoom" feature in a browser, this increases or decreases the working resolution of the Designer, which is useful to compensate for smaller resolution monitors or very large ones (like 4K).
+    * Send Feedback window allows instant feedback to be sent from the users to Sceelix.
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * "Recent" button to the project explorer allows easy switch between recently loaded projects.
+    * Warning window is shown on MacOS versions, alerting to the fact that the first-time loading/caching process may take several minutes to finish.
+    * Created designer option to retain only a small number of recent log files, whereas the oldest log files are deleted.
+    * Two more code samples are now in the API zip, illustrating how paths, meshes and surfaces can be accessed and manipulated.
+  * CHANGED:
+    * Inverted log file date nomenclature, so that they are more easily ordered.
+    * As our Unity Plugin as been released on the Unity Store as well, we updated the location of the Sceelix menu options, so as to abide to the defined standards. These options can now be found under Tools/Sceelix.
+  * FIXED: 
+    * MacOS window resizing would lead to erroneous layout adaptation.
+    * "Mesh from Path" parameter at the "Mesh Create" procedure would not properly create blocks in certain street configurations.
+
+
+Sceelix 0.7.2.0 (28th July 2016)
+
+Major introductions:
+
+  * ADDED:
+    * Introduced two new export formats, fbx and vrml (available in the "Mesh Save" node) for mesh saving.
+    * Create path management functions (GetFileNameWithoutExtension, ChangeExtension, ChangeFileName, etc.) for the expression function list.
+  * CHANGED:
+    * Improved camera navigation within the 3D Rendering Window, introducing panning and rotation around objects, with a new mouse and key configurations.
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * Menu links to the Sceelix Forums and Answers sections to the Help menu.
+    * Obj save procedure now has an option to not export the material.
+    * Improved Node search function, so as the items that match the name have higher priority in selection than those that match only the tags.
+  * CHANGED:
+    * Windows Installers and Uninstallers are now digitally signed.
+    * Refactored Unity Plugin, reducing it to a self-contained folder and fixing reference-related errors that would occur when building the Unity application.
+    * The Data Explorer Window has been heavily optimized, not causing slowdown or freeze for large amounts of listed items.
+    * The "Complete" layout has been changed and is now the default layout.
+    * Now the graph properties are shown when the graph canvas is clicked.
+    * Logs now store more loading information which is useful to understand possible reasons for crashes and other issues.
+  * FIXED:
+    * MacOS version would crash if the 60Fps limit setting would be changed (and the Windows version would mention a need for restart).
+    * Graph Parameters would not be correctly copied, even though they were referenced by the copied nodes.  
+    * "+" button in the expression box for parameters would not allow Parameter Labels (with spacings) to be introduced.
+    * Layout menu would show several checkmarks (indicating the selected layout) simultaneously. Now only the one selected is left checked.
+
+
+Sceelix 0.7.1.0 (22nd June 2016)
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * first timers, tutorial samples are always loaded by default. For previous users, the question is asked to the user.
+  * CHANGED:
+    * Surface created from a splatmap will have their material default to "Color", so that the splatmap is immediately shown.
+  * FIXED:
+    * Very annoying keyboard bug which would sometimes cause the Shift and Ctrl keys to write some "stuck" characters.
+    * Graph would sometimes not trigger the automatic execution (Port state toggle, edge connection, etc).
+    * Graph Control would sometimes not be refreshed after changing port states.
+    * Voronoi path creation would cause invalid edges to be created and lonely points to be rendered.
+    * A mention to the "advanced expression editor" would appear in the expression tooltips. This is not yet fully implemented, so it has been removed.
+  
+
+
+Sceelix 0.7.0.0 (15th June 2016)
+
+Major introductions:
+  
+  * ADDED:
+    * Introduced support for the Mac Operating System.
+    * Introduced setup executables that install Sceelix and all its dependencies (.NET framework, DirectX) on the Windows platform.
+    * Introduced structured and standardized storage of the Sceelix binaries, configurations and extras. These are separated properly in the Program Files folder, AppData folder and MyDocuments folder (and corresponding folder in Mac OS).
+    * Introduced default Sceelix layouts, included in the application, in contrast to user layouts, which do not conflict with the default ones.
+    * Extras, such as the samples, the API and the Unity Plugin are now extracted through the GUI when accessed for the first time.
+  * CHANGED:
+    * Adjusted the already existing portable/zip version of Sceelix for Windows. This keeps all the configurations and extras contained in the original Sceelix folder. Useful to carry around in flash drives.
+  
+
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * New Messagebox on crash that will inform of the reason for it, instead of just closing silently.
+    * New options in help menu provide access online documentation and several folders, such as the API.
+    * Check for existing projects is performed when new ones are created.
+  * CHANGED:
+    * Made surface mesh creation more robust by allowing surface with great sizes to be created (by dividing them into submeshes, according to the capacity of the platform).
+    * File extensions for several configuration files, for consistency.
+    * For Cross-platform compatibility, graphs will now be saved with the forward slash to reference paths.  
+    * "Disconnect" option does not appear in graphs anymore if the selected nodes are not connected.
+    * Mouse scroll speed in 3D Viewer adjusted, now controlled by "Mouse Speed" option in settings.
+    * Updated API function calls that were still referencing an old version.
+  * FIXED:
+    * Reverted layout control algorithm that was limiting the size of some controls, causing some strange asterisks (*) to appear.
+    * Automatically encapsulated graphs, added to the project, would show a warning message because the file had not been created.
+
+
+Sceelix 0.6.2.0 (23rd May 2016)
+
+Major introductions:
+
+  * ADDED:
+    * "Remote Material" option to Mesh Materials, so that materials that exist on a target platform can be used. For now, this allows Unity materials existing on the target project to be applied.
+    * "Iterations" parameter to Surface Smooth in Surface Modify, which allows higher smoothing effect to be achieved in one go.
+    * Surface Combine procedure, that allows surface properties (height, normals and colors) to be added, set or subtracted.
+    * Surface Merge procedure that allows translated surfaces to be joined into single ones.
+  * CHANGED:
+    * The Log Procedure (and the LoadEnvironment.Log function) can now accept a type of log (warning, error, question and information), which is now displayed differently in the Log window. This makes it possible to distinguish the meaning of a message without actually having to throw exceptions that terminate the procedure.
+
+
+Minor additions and bug fixes:
+  
+  * ADDED:
+    * New example for Surface Join/Merge and moved sampling example to the new "03 - Surfaces and Trees" example set.
+    * Lists now support setting of IEnumerable<String,Object> or IEnumerable<Object>.
+  * CHANGED:
+    * Improved keyboard text input, now allowing special characters (accents and tildes on vowels, for instance).
+    * The default material of Surfaces is no longer the color one, but a black/white grid.
+  * FIXED:
+    * Unity Export would not allow empty tags to be used.
+    * Loading window would add multiple licensing information if a previous license failed to load.
+    * 3D Window was not being refreshes after setting changes such as on sky, daylight, ground or filter applications.
+    * Strange content disappearance effect on Logging Window that would sometimes occur on mouse scroll events.
+    * Miscalculation of the cell size after surface transformations.
+    * Small bug that was causing problems transforming flat surfaces (height = 0).
+    * logging window layout has its message text more properly aligned and there is no overlap with the message counter.
+  * REMOVED: Limit on mesh split slices.
+
+
+Sceelix 0.6.1.0 (4th May 2016)
+
+Major introductions:
+
+  * ADDED:
+    * API samples for external application usage of the Sceelix Engine.
+    * API samples for developing a new Engine Library.
+    * "Sampling" example to the Sample Project
+  * CHANGED:
+    * Sceelix Software License Agreement Updated.
+
+Minor additions and bug fixes:
+
+  * ADDED:
+    * Comments to several API functions.
+    * Inputs/Outputs are now displaying their descriptions on the graph editor (if available).
+    * Parameter/Input/Outputs descriptions are now only being loaded from comments if not directly defined before in their fields.
+  * CHANGED:
+    * "Color" function is now more tolerant to different types.
+    * Refactored AttributeCollection, which will allow most flexible attribute definition and access.
+    * Slight performance increase in graph execution due to in vertex property access.
+  * FIXED:
+    * Relative project paths stored at the ProjectHistory (such as the Samples Project) would lead to resource loading errors in graphs.
+    * Non-public parameters where not accessible by the graph itself.
+    * Value type attributes were not being cloned.
+    * Fixed issue with Pyramidize and Spherify not copying the material to all new faces.
+
+
+Sceelix 0.6.0.0 (26th April 2016)
+
+  * Sceelix Early Access version was launched.

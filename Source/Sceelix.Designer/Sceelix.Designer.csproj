@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F1686765-D326-4671-ACA1-DE384A2972C1}</ProjectGuid>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer</RootNamespace>
+    <AssemblyName>Sceelix.Designer</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <MonoGamePlatform>DesktopGL</MonoGamePlatform>
+    <NuGetPackageImportStamp>3f05a858</NuGetPackageImportStamp>
+    <NeedsLicensing>True</NeedsLicensing>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <CreateDocumentation>true</CreateDocumentation>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- If it is a Window application, start it as a WinExe, otherwise as an Exe. -->
+  <PropertyGroup Condition=" '$(Platform)' == 'Windows32' Or '$(Platform)' == 'Windows64' ">
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'Linux' Or '$(Platform)' == 'MacOS' ">
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Linux'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|MacOS'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Linux'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|MacOS'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Windows32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Windows64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Steam|Linux'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Steam|MacOS'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Steam|Windows32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Steam|Windows64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <PropertyGroup>
+    <ApplicationIcon>LogoWhite.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\ApplicationSettingsAttribute.cs" />
+    <Compile Include="Annotations\DesignerServiceAttribute.cs" />
+    <Compile Include="Extensions\ColorExtension.cs" />
+    <Compile Include="Extensions\EditableTexture2D.cs" />
+    <Compile Include="Extensions\Texture2DExtender.cs" />
+    <Compile Include="GUI\MenuHandling\ContextMenuManager.cs" />
+    <Compile Include="GUI\MenuHandling\MenuEntry.cs" />
+    <Compile Include="GUI\UndoRedo\DelegateUndoRedoOperation.cs" />
+    <Compile Include="GUI\UndoRedo\UndoBufferExtensions.cs" />
+    <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="Login\ILoginManager.cs" />
+    <Compile Include="GUI\Controls\ExtendedTextbox.cs" />
+    <Compile Include="GUI\MenuHandling\BarMenuService.cs" />
+    <Compile Include="GUI\PluginViewWindow.cs" />
+    <Compile Include="GUI\Controls\OverlayingStackPanel.cs" />
+    <Compile Include="GUI\Controls\LineContainer.cs" />
+    <Compile Include="GUI\Controls\SyntaxHighlightingTextbox.cs" />
+    <Compile Include="Login\SteamLoginManager.cs" />
+    <Compile Include="Managers\ExitManager.cs" />
+    <Compile Include="Managers\LoadingManager.cs" />
+    <Compile Include="Login\StandardLoginManager.cs" />
+    <Compile Include="Managers\WindowChangeManager.cs" />
+    <Compile Include="Managers\ExtendedInputManager.cs" />
+    <Compile Include="Managers\ExtendedUIRenderer.cs" />
+    <Compile Include="Managers\FpsCounter.cs" />
+    <Compile Include="GUI\AboutWindow.cs" />
+    <Compile Include="GUI\Controls\ColorPickerControl.cs" />
+    <Compile Include="GUI\Controls\DoubleContentControl.cs" />
+    <Compile Include="GUI\Controls\EnumDropDownButton.cs" />
+    <Compile Include="GUI\Controls\EqualStackPanel.cs" />
+    <Compile Include="GUI\Controls\LinkTextBlock.cs" />
+    <Compile Include="GUI\Controls\ListView.cs" />
+    <Compile Include="GUI\Controls\MultiSampleRenderTargetControl.cs" />
+    <Compile Include="GUI\Controls\PopupWindow.cs" />
+    <Compile Include="Managers\CursorManager.cs" />
+    <Compile Include="GUI\Dialogs\OXDialogs.cs" />
+    <Compile Include="GUI\ExtractFolderWindow.cs" />
+    <Compile Include="GUI\MenuHandling\BarMenuEntry.cs" />
+    <Compile Include="GUI\MenuHandling\BarMenuManager.cs" />
+    <Compile Include="Managers\UIZoomManager.cs" />
+    <Compile Include="Managers\WindowAnimator.cs" />
+    <Compile Include="Managers\WindowDragHandler.cs" />
+    <Compile Include="Managers\FpsSettingsManager.cs" />
+    <Compile Include="Messaging\ClientSizeChanged.cs" />
+    <Compile Include="Messaging\DesignerLoaded.cs" />
+    <Compile Include="Messaging\FileDragDrop.cs" />
+    <Compile Include="Messaging\FileDragEnter.cs" />
+    <Compile Include="Utils\BuildDistribution.cs" />
+    <Compile Include="Utils\BuildPlatform.cs" />
+    <Compile Include="Utils\DigitalRuneUtils.cs" />
+    <Compile Include="Utils\MouseHelper.cs" />
+    <Compile Include="GUI\LoadingWindow.cs" />
+    <Compile Include="GUI\MenuControls\BarMenu.cs" />
+    <Compile Include="GUI\MenuControls\CheckMenuChild.cs" />
+    <Compile Include="GUI\MenuControls\VerticalScrollViewer.cs" />
+    <Compile Include="GUI\MenuControls\MenuChild.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GUI\MenuControls\SeparatorControl.cs" />
+    <Compile Include="GUI\Controls\NumericSpinControl.cs" />
+    <Compile Include="Managers\SceelixFocusManager.cs" />
+    <Compile Include="GUI\TreeViewControls\ObjectTreeView.Column.cs">
+      <DependentUpon>ObjectTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TreeViewControls\ObjectTreeView.ItemControl.cs">
+      <DependentUpon>ObjectTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\TreeViewControls\ObjectTreeView.ItemHolder.cs">
+      <DependentUpon>ObjectTreeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managers\GraphicsWindowManager.cs" />
+    <Compile Include="GUI\Windows\ProgressWindow.cs" />
+    <Compile Include="Interfaces\IUpdateableElement.cs" />
+    <Compile Include="Logging\LoggingManager.cs" />
+    <Compile Include="Messaging\CompoundMessage.cs" />
+    <Compile Include="Interfaces\IServiceable.cs" />
+    <Compile Include="Services\IServiceLocator.cs" />
+    <Compile Include="Utils\DelayedEventRunner.cs" />
+    <Compile Include="Utils\LightHttpServer.cs" />
+    <Compile Include="Utils\SystemInfoManager.cs" />
+    <Compile Include="Managers\MainMenuManager.cs" />
+    <Compile Include="GUI\Controls\ToolTipControl.cs" />
+    <Compile Include="GUI\Controls\TransparentCanvasImage.cs" />
+    <Compile Include="GUI\TreeViewControls\ObjectTreeView.cs" />
+    <Compile Include="GUI\TreeViewControls\LayoutTreeView.cs" />
+    <Compile Include="GUI\TreeViewControls\OptionalControl.cs" />
+    <Compile Include="GUI\TreeViewControls\SelectableTreeViewItem.cs" />
+    <Compile Include="GUI\TreeViewControls\SelectableTreeViewItemContent.cs" />
+    <Compile Include="GUI\TreeViewControls\LayoutControl.cs" />
+    <Compile Include="GUI\TreeViewControls\SuperTreeView.cs" />
+    <Compile Include="Extensions\UIControlExtension.cs" />
+    <Compile Include="GUI\Windows\InputWindow.cs" />
+    <Compile Include="GUI\Windows\AnimatedWindow.cs" />
+    <Compile Include="GUI\Controls\FlexibleStackPanel.cs" />
+    <Compile Include="GUI\Controls\IconMenuStrip.cs" />
+    <Compile Include="GUI\Controls\ImageButton.cs" />
+    <Compile Include="GUI\Controls\IRenderableComponent.cs" />
+    <Compile Include="GUI\TreeViewControls\ITreeViewControl.cs" />
+    <Compile Include="GUI\MenuControls\MultiContextMenu.cs" />
+    <Compile Include="GUI\MenuControls\IMenuControl.cs" />
+    <Compile Include="GUI\Controls\RenderTargetControl.cs" />
+    <Compile Include="GUI\Controls\RenderTargetGraphicsScreen.cs" />
+    <Compile Include="GUI\Controls\TextButton.cs" />
+    <Compile Include="GUI\TreeViewControls\TreeView.cs" />
+    <Compile Include="GUI\TreeViewControls\TreeViewItem.cs" />
+    <Compile Include="GUI\Windows\DialogWindow.cs" />
+    <Compile Include="GUI\Windows\MessageWindow.cs" />
+    <Compile Include="GUI\ZipStreamStorage.cs" />
+    <Compile Include="Layouts\LayoutManager.cs" />
+    <Compile Include="Layouts\WindowLocation.cs" />
+    <Compile Include="Logging\DesignerLogger.cs" />
+    <Compile Include="Messaging\ProcessExiting.cs" />
+    <Compile Include="Messaging\ExceptionThrown.cs" />
+    <Compile Include="Messaging\MessageManager.cs" />
+    <Compile Include="Messaging\ScreenshotRequest.cs" />
+    <Compile Include="Messaging\Subscriber.cs" />
+    <Compile Include="Settings\SettingsRegistry.cs" />
+    <Compile Include="Settings\Types\ChoiceApplicationField.cs" />
+    <Compile Include="Helpers\ClipboardHelper.cs" />
+    <Compile Include="Utils\FileDialogExtender.cs" />
+    <Compile Include="Utils\SceelixApplicationInfo.cs" />
+    <Compile Include="Utils\OSVersionInfo.cs" />
+    <Compile Include="Annotations\DesignerLibraryAttribute.cs" />
+    <Compile Include="Plugins\PluginManager.cs" />
+    <Compile Include="Annotations\DesignerWindowAttribute.cs" />
+    <Compile Include="SceelixGame.cs" />
+    <Compile Include="Managers\ScreenManager.cs" />
+    <Compile Include="GUI\Controls\FpsTextBox.cs" />
+    <Compile Include="Services\ServiceManager.cs" />
+    <Compile Include="Settings\ApplicationField.cs" />
+    <Compile Include="Settings\ApplicationSettings.cs" />
+    <Compile Include="Layouts\Layout.cs" />
+    <Compile Include="DesignerProgram.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\Types\DoubleApplicationField.cs" />
+    <Compile Include="Settings\Types\FloatApplicationField.cs" />
+    <Compile Include="Settings\Types\StringApplicationField.cs" />
+    <Compile Include="Settings\Types\IntApplicationField.cs" />
+    <Compile Include="Settings\DesignerSettings.cs" />
+    <Compile Include="Settings\PrimitiveApplicationField.cs" />
+    <Compile Include="Settings\Types\BoolApplicationField.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Settings\SettingsWindow.cs" />
+    <Compile Include="Settings\Types\TimeApplicationField.cs" />
+    <Compile Include="Utils\GDIExtender.cs" />
+    <Compile Include="Utils\EmbeddedResources.cs" />
+    <Compile Include="Conversions\SceeListExtender.cs" />
+    <Compile Include="Utils\SceelixWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Synchronizer.cs" />
+    <Compile Include="Helpers\ValidationHelper.cs" />
+    <Compile Include="Helpers\WindowHelper.cs" />
+  </ItemGroup>
+  <!--Use intellilock for License enforcement versions -->
+  <!--For Steam versions, include these extra libraries and files -->
+  <Choose>
+    <When Condition=" '$(Steam)' == 'True' ">
+      <ItemGroup>
+        <Reference Include="Steamworks.NET">
+          <HintPath>..\..\Libs\Steamworks\$(Platform)\Steamworks.NET.dll</HintPath>
+        </Reference>
+        <None Include="..\..\Libs\Steamworks\steam_appid.txt">
+          <Link>Extras\steam_appid.txt</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+          <TargetDirectory>Other</TargetDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition=" '$(Steam)' == 'True' And '$(Platform)' == 'Windows32' ">
+      <ItemGroup>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\CSteamworks.dll">
+          <Link>Extras\CSteamworks.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\steam_api.dll">
+          <Link>Extras\steam_api.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(Steam)' == 'True' And '$(Platform)' == 'Windows64' ">
+      <ItemGroup>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\CSteamworks.dll">
+          <Link>Extras\CSteamworks.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\steam_api64.dll">
+          <Link>Extras\steam_api64.dll</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(Steam)' == 'True' And '$(Platform)' == 'Linux' ">
+      <ItemGroup>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\libCSteamworks.so">
+          <Link>Extras\libCSteamworks.so</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\libsteam_api.so">
+          <Link>Extras\libsteam_api.so</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(Steam)' == 'True' And '$(Platform)' == 'MacOS'">
+      <ItemGroup>
+        <None Include="..\..\Libs\Steamworks\$(Platform)\Steamworks.NET.dll.config">
+          <Link>Extras\Steamworks.NET.dll.config</Link>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <!--Steam includes end here -->
+  <Choose>
+    <When Condition=" '$(Platform)' == 'Windows32' Or '$(Platform)' == 'Windows64' ">
+      <ItemGroup>
+        <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\Libs\HtmlRenderer\Windows\HtmlRenderer.dll</HintPath>
+        </Reference>
+        <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\Libs\HtmlRenderer\Windows\HtmlRenderer.WinForms.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="HtmlRenderer, Version=1.5.0.5, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\Libs\HtmlRenderer\Mono\HtmlRenderer.dll</HintPath>
+        </Reference>
+        <Reference Include="HtmlRenderer.WinForms, Version=1.5.0.6, Culture=neutral, processorArchitecture=MSIL">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\Libs\HtmlRenderer\Mono\HtmlRenderer.WinForms.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="DotNetZip">
+      <HintPath>..\..\Packages\DotNetZip.1.10.1\lib\net20\DotNetZip.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ImageProcessor, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\ImageProcessor.2.3.2.0\lib\net40\ImageProcessor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\Packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Json.NET 9.0.1\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NVorbis, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\DigitalRune Mono\Linux\NVorbis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ClipboardCopy_16x16.png" />
+    <EmbeddedResource Include="Resources\ClipboardCut_16x16.png" />
+    <EmbeddedResource Include="Resources\ClipboardPaste_16x16.png" />
+    <EmbeddedResource Include="Resources\LogoWhite_64x64.png" />
+    <EmbeddedResource Include="Resources\BaseHtml.html" />
+    <EmbeddedResource Include="Resources\TransparentSquares.png" />
+    <EmbeddedResource Include="Resources\CursorHotSpots.xml" />
+    <EmbeddedResource Include="Resources\GoOut_48x48.png" />
+    <Content Include="LogoBlue.ico" />
+    <EmbeddedResource Include="LogoWhite.ico" />
+    <EmbeddedResource Include="Resources\ColorHueArrow.png" />
+    <EmbeddedResource Include="Resources\ColorAim.png" />
+    <EmbeddedResource Include="Resources\ColorGradient.png" />
+    <EmbeddedResource Include="Resources\HueGradient.png" />
+    <EmbeddedResource Include="Resources\CheckmarkGrey.png" />
+    <EmbeddedResource Include="Resources\Checkmark.png" />
+    <EmbeddedResource Include="Resources\Info_32x32.png" />
+    <EmbeddedResource Include="Resources\Question_32x32.png" />
+    <EmbeddedResource Include="Resources\Cancel_32x32.png" />
+    <EmbeddedResource Include="Resources\Exclamation_32x32.png" />
+    <Content Include="..\..\..\Support\Packaged\API.zip">
+      <Link>Content\API.zip</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="..\..\Content\bin\Windows\Content.zip">
+      <Link>Resources\Content.zip</Link>
+    </EmbeddedResource>
+    <None Include="Extras\log4net.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <EmbeddedResource Include="Resources\Layouts.zip" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Platform)' == 'Linux' ">
+    <None Include="Extras\SDL.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\SDL_mixer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\Sceelix.Designer.Linux.exclude">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\OpenTK.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(LibraryType)' == 'Windows' ">
+    <None Include="Extras\Sceelix.Designer.Windows.exclude">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Platform)' == 'MacOS' ">
+    <None Include="Extras\Info.plist">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\MacOS\Sceelix.Designer.Binary">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\SceelixIcon.icns">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\MainMenu.nib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Extras\Sceelix.Designer.MacOS.exclude">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!--include the installer for the steam releases-->
+  <ItemGroup Condition=" '$(Platform)' == 'MacOS' And '$(Steam)' == 'True' ">
+    <None Include="Extras\MacOS\Sceelix.Designer">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'MacOS' ">
+    <PostBuildEvent>$(PostBuildEvent)
+	XCOPY "$(ProjectDir)..\..\Libs\Steamworks\MacOS\CSteamworks.bundle" "$(TargetDir)CSteamworks.bundle" /s /i /y</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

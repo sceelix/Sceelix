@@ -1,0 +1,64 @@
+#!/usr/bin/env sh
+#
+# http://stackoverflow.com/a/677212
+#
+#unset LD_LIBRARY_PATH
+
+ARGS=("$@")
+HERE_DIR=$(dirname "$0")
+
+# won't work with symlinks...
+SCRIPT_NAME=`basename "$0"`
+
+MONO="/usr/local/bin/mono"
+MONO_MSG="You are missing the Mono Framework dependency! To execute Sceelix, you need to install it first. Do you want to launch Mono installation?"
+MONO_INSTALLER_LOCATION="../Resources/Content/MonoInstaller.pkg"
+
+printf '%s\n\n' "$SCRIPT_NAME: This is Sceelix shell launcher script for MacOS!"
+printf '%s\n' "Moving us into $HERE_DIR"
+cd "$HERE_DIR"
+
+run_sceelix() {
+  printf '\n%s\n' "Now launching Sceelix Mono Binary with args: $ARGS"
+  printf '%s\n\n' "Cya Soon!"
+  chmod +x Sceelix.Designer.Binary
+  ./Sceelix.Designer.Binary $ARGS
+}
+
+printf '%s\n' "Determining if Mono is installed..."
+mono_exec=$(command -v $MONO)
+if [[ -x "$mono_exec" ]]
+then
+  printf '%s\n' "Mono seems to be installed"
+  run_sceelix
+else
+  printf '%s\n' "Mono does not seem to be installed! Now asking for permission to install Mono..."
+  user_action_result=$(osascript<<EOF
+  tell app "System Events"
+    activate
+    display dialog "$MONO_MSG" buttons {"Cancel", "OK"} cancel button "Cancel" default button "OK" with icon caution with title "Mono Framework Dependency"
+  end tell
+EOF
+  )
+  printf '%s\n' "The dialog result is: $user_action_result $tal"
+  if [[ $user_action_result == *"OK" ]]
+  then
+    printf '%s\n' "The user wants to initiate the Mono Framework installation... now launching Mono Installation!"
+    open -W "$MONO_INSTALLER_LOCATION"
+    mono_exec=$(command -v $MONO)
+    if [[ -x "$mono_exec" ]]
+    then
+      run_sceelix
+    else
+      printf '%s\n' "It seems something went wrong with Mono Installer... bye bye!"
+      last_user_input=$(osascript -e 'tell app "System Events" to display dialog "Something went wrong with Mono Installer!" buttons {"Exit"}')
+      exit -1
+    fi
+
+  else
+    printf '%s\n' "Ooops, the user does not want to install Mono... bye bye!"
+    last_user_input=$(osascript -e 'tell app "System Events" to display dialog "Mono is not installed! Sceelix will now exit!" buttons {"Exit"}')
+    exit -1
+  fi
+fi
+

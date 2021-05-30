@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{17D451D4-B445-4F61-ADFE-963F42D702B0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Core</RootNamespace>
+    <AssemblyName>Sceelix.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsEngine>true</IsEngine>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Antlr\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Json.NET 9.0.1\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\EngineLibraryComponentAttribute.cs" />
+    <Compile Include="Annotations\EntityAttribute.cs" />
+    <Compile Include="Annotations\EntityPropertyAttribute.cs" />
+    <Compile Include="Annotations\ExpressionFunctionsAttribute.cs" />
+    <Compile Include="Annotations\ParameterAttribute.cs" />
+    <Compile Include="Annotations\SectionAttribute.cs" />
+    <Compile Include="Annotations\OrderAttribute.cs" />
+    <Compile Include="Annotations\ProcedureAttribute.cs" />
+    <Compile Include="Annotations\EngineLibraryAttribute.cs" />
+    <Compile Include="Annotations\SubEntityAttribute.cs" />
+    <Compile Include="Attributes\AttributeKeyManager.cs" />
+    <Compile Include="Attributes\FieldKey.cs" />
+    <Compile Include="Attributes\GlobalAttributeKey.cs" />
+    <Compile Include="Attributes\HighlightMetaParser.cs" />
+    <Compile Include="Attributes\IMetaParser.cs" />
+    <Compile Include="Annotations\MetaManagerAttribute.cs" />
+    <Compile Include="Attributes\LocalAttributeKey.cs" />
+    <Compile Include="Attributes\MetaParserManager.cs" />
+    <Compile Include="Attributes\ReplaceMeta.cs" />
+    <Compile Include="Attributes\ReplaceMetaParser.cs" />
+    <Compile Include="Attributes\SystemKey.cs" />
+    <Compile Include="Caching\CacheData.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\MemoryCacheManager.cs" />
+    <Compile Include="Code\CodeBuilder.cs" />
+    <Compile Include="Data\EntityManager.cs" />
+    <Compile Include="ExpressionParsing\ExpressionParser.cs" />
+    <Compile Include="ExpressionParsing\SceelixGrammarLexer.cs" />
+    <Compile Include="ExpressionParsing\SceelixGrammarParser.cs" />
+    <Compile Include="Extensions\MethodExtension.cs" />
+    <Compile Include="Graphs\Execution\IDataChannel.cs" />
+    <Compile Include="Graphs\Execution\MultiDataChannel.cs" />
+    <Compile Include="Graphs\Execution\OutputDataChannel.cs" />
+    <Compile Include="Graphs\Functions\DebugFunctions.cs" />
+    <Compile Include="Graphs\Functions\RegexFunctions.cs" />
+    <Compile Include="Graphs\Functions\StringFunctions.cs" />
+    <Compile Include="Handles\IVisualHandleManager.cs" />
+    <Compile Include="Parameters\OptionalListParameter.cs" />
+    <Compile Include="Parameters\Infos\OptionalListParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\SelectListParameterInfo.cs" />
+    <Compile Include="Parameters\TypedParameterReference.cs" />
+    <Compile Include="Procedures\SourceProcedure.cs" />
+    <Compile Include="Resources\AssemblyResourceManager.cs" />
+    <Compile Include="Attributes\AttributeMetaManager.cs" />
+    <Compile Include="Attributes\HighlightMeta.cs" />
+    <Compile Include="Attributes\MergeMeta.cs" />
+    <Compile Include="Data\GraphTrail.cs" />
+    <Compile Include="Resources\IResourceManager.cs" />
+    <Compile Include="Messages\EmptyMessenger.cs" />
+    <Compile Include="Bindings\EmptyBinding.cs" />
+    <Compile Include="Environments\IProcedureEnvironment.cs" />
+    <Compile Include="Environments\ProcedureEnvironment.cs" />
+    <Compile Include="Exceptions\GraphException.cs" />
+    <Compile Include="Conversions\StreamConversions.cs" />
+    <Compile Include="Conversions\StringConversions.cs" />
+    <Compile Include="Procedures\SystemProcedureManager.cs" />
+    <Compile Include="Messages\IMessenger.cs" />
+    <Compile Include="Parameters\ParameterManager.cs" />
+    <Compile Include="Resources\ResourceLoaderExtension.cs" />
+    <Compile Include="Resolution\NodeResolver.cs" />
+    <Compile Include="Resolution\NodeResolverAttribute.cs" />
+    <Compile Include="Resolution\NodeResolverManager.cs" />
+    <Compile Include="EngineManager.cs" />
+    <Compile Include="Utils\EntityDataManager.cs" />
+    <Compile Include="Data\EntityGroup.cs" />
+    <Compile Include="Data\IEntityGroup.cs" />
+    <Compile Include="Extensions\EntityExtension.cs" />
+    <Compile Include="Graphs\Functions\BasicFunctions.cs" />
+    <Compile Include="Graphs\Functions\Conversions.cs" />
+    <Compile Include="Graphs\Functions\IOFunctions.cs" />
+    <Compile Include="Graphs\Functions\SceeListFunctions.cs" />
+    <Compile Include="Graphs\Functions\TimeFunctions.cs" />
+    <Compile Include="Graphs\Expressions\InternalAttributeExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\LocalAttributeExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\IndexExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\DirectFunctionExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\KeyValueExpressionNode.cs" />
+    <Compile Include="Graphs\Functions\MathFunctions.cs" />
+    <Compile Include="Graphs\Functions\FunctionManager.cs" />
+    <Compile Include="Graphs\Functions\ArrayFunctions.cs" />
+    <Compile Include="Attributes\AttributeKey.cs" />
+    <Compile Include="Parameters\Infos\AttributeParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\ListParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\CompoundParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\PrimitiveParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\BoolParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\ChoiceParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\DoubleParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\FloatParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\ParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\FolderParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\FileParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\StringParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\IntParameterInfo.cs" />
+    <Compile Include="Parameters\Infos\ObjectParameterInfo.cs" />
+    <Compile Include="Parameters\InputChoiceParameter.cs" />
+    <Compile Include="Parameters\ParameterCollection.cs" />
+    <Compile Include="Parameters\AttributeParameter.cs" />
+    <Compile Include="Parameters\Parameter.cs" />
+    <Compile Include="Parameters\ParameterReferenceCollection.cs" />
+    <Compile Include="Parameters\CompoundParameter.cs" />
+    <Compile Include="Parameters\EnumChoiceParameter.cs" />
+    <Compile Include="Parameters\ChoiceParameter.cs" />
+    <Compile Include="Parameters\DoubleParameter.cs" />
+    <Compile Include="Parameters\FloatParameter.cs" />
+    <Compile Include="Parameters\IntParameter.cs" />
+    <Compile Include="Parameters\PrimitiveParameter.cs" />
+    <Compile Include="Parameters\FolderParameter.cs" />
+    <Compile Include="Parameters\FileParameter.cs" />
+    <Compile Include="Parameters\BoolParameter.cs" />
+    <Compile Include="Parameters\ObjectParameter.cs" />
+    <Compile Include="Parameters\Infos\RecursiveParameterInfo.cs" />
+    <Compile Include="Parameters\ListParameter.cs" />
+    <Compile Include="Parameters\SelectListParameter.cs" />
+    <Compile Include="Parameters\StringParameter.cs" />
+    <Compile Include="Attributes\AttributeCollection.cs" />
+    <Compile Include="Graphs\Expressions\ExpressionHelper.cs" />
+    <Compile Include="Graphs\Functions\PrimitiveOperators.cs" />
+    <Compile Include="Data\Entity.cs" />
+    <Compile Include="Exceptions\EntityTypeException.cs" />
+    <Compile Include="Exceptions\ExpressionParsingException.cs" />
+    <Compile Include="Graphs\Expressions\ArrayExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\AttributeExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\BinaryExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ConstantExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\DoubleExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ErrorExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\FloatExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\FunctionExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\MemberExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ObjectDataExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ParameterExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ParenthesisExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\ParsedExpression.cs" />
+    <Compile Include="Graphs\Expressions\PropertyExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\StringExpressionNode.cs" />
+    <Compile Include="Graphs\Expressions\UnaryExpressionNode.cs" />
+    <Compile Include="Graphs\Execution\DataChannel.cs" />
+    <Compile Include="Graphs\Execution\ExecutionNode.cs" />
+    <Compile Include="Procedures\GraphProcedure.cs" />
+    <Compile Include="Bindings\IExecutionBinding.cs" />
+    <Compile Include="Procedures\IndependentGraphProcedure.cs" />
+    <Compile Include="Graphs\Edge.cs" />
+    <Compile Include="Graphs\Graph.cs" />
+    <Compile Include="Graphs\GraphLoad.cs" />
+    <Compile Include="Graphs\GraphSave.cs" />
+    <Compile Include="Graphs\InputPort.cs" />
+    <Compile Include="Graphs\Node.cs" />
+    <Compile Include="Graphs\OutputPort.cs" />
+    <Compile Include="Graphs\Point.cs" />
+    <Compile Include="Graphs\Port.cs" />
+    <Compile Include="Graphs\ComponentNode.cs" />
+    <Compile Include="Graphs\InvalidNode.cs" />
+    <Compile Include="Graphs\SystemNode.cs" />
+    <Compile Include="Handles\VisualHandle.cs" />
+    <Compile Include="Data\IEntity.cs" />
+    <Compile Include="IO\InputReference.cs" />
+    <Compile Include="IO\InputCollection.cs" />
+    <Compile Include="IO\OutputReference.cs" />
+    <Compile Include="Parameters\ParameterReference.cs" />
+    <Compile Include="IO\OutputCollection.cs" />
+    <Compile Include="Procedures\AttributeProcedure.cs" />
+    <Compile Include="Procedures\CopyProcedure.cs" />
+    <Compile Include="Procedures\NoteProcedure.cs" />
+    <Compile Include="Procedures\ForCycleProcedure.cs" />
+    <Compile Include="Procedures\GroupProcedure.cs" />
+    <Compile Include="Procedures\InvalidProcedure.cs" />
+    <Compile Include="Resources\ResourceManager.cs" />
+    <Compile Include="Messages\ClearVisualHandles.cs" />
+    <Compile Include="Messages\AddVisualHandle.cs" />
+    <Compile Include="Messages\EntityDataReady.cs" />
+    <Compile Include="Procedures\ConditionalProcedure.cs" />
+    <Compile Include="Procedures\Procedure.cs" />
+    <Compile Include="IO\Input.cs" />
+    <Compile Include="IO\CollectiveInput.cs" />
+    <Compile Include="IO\SingleInput.cs" />
+    <Compile Include="IO\InputReferenceCollection.cs" />
+    <Compile Include="IO\InputData.cs" />
+    <Compile Include="IO\Output.cs" />
+    <Compile Include="IO\OutputReferenceCollection.cs" />
+    <Compile Include="Procedures\CombinatorialProcedure.cs" />
+    <Compile Include="Procedures\CollectionProcedure.cs" />
+    <Compile Include="Procedures\LogProcedure.cs" />
+    <Compile Include="Procedures\EntityCreateProcedure.cs" />
+    <Compile Include="Procedures\PropertyProcedure.cs" />
+    <Compile Include="Procedures\RandomProcedure.cs" />
+    <Compile Include="Procedures\SequenceProcedure.cs" />
+    <Compile Include="Procedures\StochasticProcedure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Graphs\Functions\Rand.cs" />
+    <Compile Include="Graphs\Functions\SRand.cs" />
+    <Compile Include="Procedures\SystemProcedure.cs" />
+    <Compile Include="Procedures\TransferProcedure.cs" />
+    <Compile Include="Utils\FileExtensionInfo.cs" />
+    <Compile Include="Resources\MemoryStorage.cs" />
+    <Compile Include="Utils\ProcedureParameterHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9c62325d-2d13-45c8-aca5-ec17de0ed835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ExpressionParsing\SceelixGrammar.g" />
+    <None Include="ExpressionParsing\SceelixGrammar.tokens" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

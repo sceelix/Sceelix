@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<Reference Include="DigitalRune">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Animation">
+			<HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Animation.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Game">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Game.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Game.Input">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Game.Input.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Game.UI">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Game.UI.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Geometry">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Geometry.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Graphics">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Graphics.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Mathematics">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Mathematics.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Particles">
+			<HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Particles.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Physics">
+			<HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Physics.dll</HintPath>
+		</Reference>
+		<Reference Include="DigitalRune.Physics.Specialized">
+			<HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\DigitalRune.Physics.Specialized.dll</HintPath>
+		</Reference>
+		<Reference Include="MonoGame.Framework">
+		  <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\MonoGame.Framework.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+  <Choose>
+    <When Condition=" '$(Platform)' == 'MacOS' ">
+      <ItemGroup>
+        <Reference Include="OpenTK">
+          <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\OpenTK.dll</HintPath>
+        </Reference>
+        <Reference Include="MonoMac">
+          <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\MonoMac.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition=" '$(Platform)' == 'Linux' ">
+      <ItemGroup>	
+        <Reference Include="OpenTK">
+          <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\OpenTK.dll</HintPath>
+        </Reference>
+        <Reference Include="Tao.Sdl">
+          <HintPath>..\..\Libs\DigitalRune Mono\$(LibraryType)\Tao.Sdl.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+
+</Project>

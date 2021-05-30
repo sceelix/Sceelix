@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{E0D59531-D67C-402F-83A8-7292B6F911A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Actors</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Actors</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActorGroupTranslator.cs" />
+    <Compile Include="Annotations\MaterialTranslatorAttribute.cs" />
+    <Compile Include="Components\ScopeHighlightComponent.cs" />
+    <Compile Include="Materials\MaterialTranslator.cs" />
+    <Compile Include="ParameterEditors\ColorParameterEditor.cs" />
+    <Compile Include="ParameterEditors\Vector2DParameterEditor.cs" />
+    <Compile Include="ParameterEditors\Vector3DParameterEditor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\BoxScopeUtils.cs" />
+    <Compile Include="Utils\DigitalRuneConvert.cs" />
+    <Compile Include="Utils\XNAConvert.cs" />
+    <Compile Include="VertexTypes\VertexPosition.cs" />
+    <Compile Include="VertexTypes\VertexPositionNormalColor2Texture.cs" />
+    <Compile Include="VertexTypes\VertexPositionNormalTextureTangents.cs" />
+    <Compile Include="VertexTypes\VertexPositionTexture.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{EC8DCA01-51C6-4057-B83F-233BCD3C287D}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17D451D4-B445-4F61-ADFE-963F42D702B0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Graphs\Sceelix.Designer.Graphs.csproj">
+      <Project>{24C93587-F297-4FED-978B-017E81FF2657}</Project>
+      <Name>Sceelix.Designer.Graphs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.ProjectExplorer\Sceelix.Designer.ProjectExplorer.csproj">
+      <Project>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</Project>
+      <Name>Sceelix.Designer.ProjectExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Renderer3D\Sceelix.Designer.Renderer3D.csproj">
+      <Project>{984E654C-44DE-4A73-9FC6-914B4C968A21}</Project>
+      <Name>Sceelix.Designer.Renderer3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693A506A-559B-4DA6-B460-852ECBB8BD9A}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

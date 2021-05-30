@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{AD47278B-A1B0-461A-B4F1-20CF96B61C7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Props</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Props</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\OceanComponent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Translators\FireTranslator.cs" />
+    <Compile Include="Translators\OceanTranslator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{ec8dca01-51c6-4057-b83f-233bcd3c287d}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17d451d4-b445-4f61-adfe-963f42d702b0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Actors\Sceelix.Designer.Actors.csproj">
+      <Project>{E0D59531-D67C-402F-83A8-7292B6F911A3}</Project>
+      <Name>Sceelix.Designer.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Renderer3D\Sceelix.Designer.Renderer3D.csproj">
+      <Project>{984E654C-44DE-4A73-9FC6-914B4C968A21}</Project>
+      <Name>Sceelix.Designer.Renderer3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693a506a-559b-4da6-b460-852ecbb8bd9a}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Props\Sceelix.Props.csproj">
+      <Project>{B2454D82-44CC-4086-9689-FD7ECF85D26B}</Project>
+      <Name>Sceelix.Props</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9c62325d-2d13-45c8-aca5-ec17de0ed835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A2BDA9E7-C67B-4B7A-BBB9-94A477B6F229}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Meshes</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Meshes</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <CreateDocumentation>true</CreateDocumentation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ModelViewer3DControl.cs" />
+    <Compile Include="Controls\ModelViewer3DSettings.cs" />
+    <Compile Include="Controls\ModelViewerDocumentControl.cs" />
+    <Compile Include="GameObjects\OrbitCameraObject.cs" />
+    <Compile Include="Handlers\Model3DHandler.cs" />
+    <Compile Include="Handlers\ObjMtlHandler.cs" />
+    <Compile Include="SceneNodes\MeshRenderNode.cs" />
+    <Compile Include="SceneNodes\MeshRenderNodeFactory.cs" />
+    <Compile Include="Translators\BillboardTranslator.cs" />
+    <Compile Include="Components\MeshDrawComponent.cs" />
+    <Compile Include="Components\MeshWireFrameRenderComponent.cs" />
+    <Compile Include="Handles\NumericSizerHandleObject.cs" />
+    <Compile Include="Handles\NumericSizerHandleFactory.cs" />
+    <Compile Include="Translators\Materials\ColorMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\EmissiveMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\FurMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\IMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\ImportedMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\MeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\OtherMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\ParallaxMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\ReflectiveMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\ReflectiveMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\RemoteMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\SingleTextureMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\TextureAndBumpMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\TransparentMeshMaterialTranslator.cs" />
+    <Compile Include="Translators\Materials\WaterMaterialTranslator.cs" />
+    <Compile Include="Translators\MeshInstanceTranslator.cs" />
+    <Compile Include="Translators\MeshTranslator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\MeshTranslationHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{ec8dca01-51c6-4057-b83f-233bcd3c287d}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17d451d4-b445-4f61-adfe-963f42d702b0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Actors\Sceelix.Designer.Actors.csproj">
+      <Project>{e0d59531-d67c-402f-83a8-7292b6f911a3}</Project>
+      <Name>Sceelix.Designer.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Graphs\Sceelix.Designer.Graphs.csproj">
+      <Project>{24c93587-f297-4fed-978b-017e81ff2657}</Project>
+      <Name>Sceelix.Designer.Graphs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.ProjectExplorer\Sceelix.Designer.ProjectExplorer.csproj">
+      <Project>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</Project>
+      <Name>Sceelix.Designer.ProjectExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{f1686765-d326-4671-aca1-de384a2972c1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Renderer3D\Sceelix.Designer.Renderer3D.csproj">
+      <Project>{984e654c-44de-4a73-9fc6-914b4c968a21}</Project>
+      <Name>Sceelix.Designer.Renderer3D</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693a506a-559b-4da6-b460-852ecbb8bd9a}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Meshes\Sceelix.Meshes.csproj">
+      <Project>{76cf0233-8942-4a49-af32-f7e0552e6eb7}</Project>
+      <Name>Sceelix.Meshes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Attach_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cube_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cube_48x48.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

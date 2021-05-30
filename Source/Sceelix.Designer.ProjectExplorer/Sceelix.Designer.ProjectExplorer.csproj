@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.ProjectExplorer</RootNamespace>
+    <AssemblyName>Sceelix.Designer.ProjectExplorer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CreateDocumentation>true</CreateDocumentation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Linux'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|MacOS'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Linux'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|MacOS'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Windows32'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Windows64'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\Packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\ProjectExplorerServiceAttribute.cs" />
+    <Compile Include="FileHandlers\DefaultFileHandler.cs" />
+    <Compile Include="FileHandlers\FileCreationHelper.cs" />
+    <Compile Include="FileHandlers\FileHandlerManager.cs" />
+    <Compile Include="FileHandlers\FileCreator.cs" />
+    <Compile Include="FileHandlers\IFileHandler.cs" />
+    <Compile Include="FileHandlers\Images\ImageHandler.cs" />
+    <Compile Include="FileHandlers\Images\ImageDocumentControl.cs" />
+    <Compile Include="FileHandlers\Text\TextHandler.cs" />
+    <Compile Include="GUI\DocumentControl.cs" />
+    <Compile Include="GUI\DocumentTabControl.cs" />
+    <Compile Include="GUI\LogWindowEntry.cs">
+      <DependentUpon>LogWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LogWindow.cs" />
+    <Compile Include="GUI\DocumentAreaWindow.cs" />
+    <Compile Include="GUI\DocumentTabItem.cs" />
+    <Compile Include="GUI\ImportFilesWindow.cs" />
+    <Compile Include="GUI\CreateFileWindow.cs" />
+    <Compile Include="GUI\ProjectExplorerWindow.cs" />
+    <Compile Include="GUI\NewProjectWindow.cs" />
+    <Compile Include="FileHandlers\Text\TextEditorDocumentControl.cs" />
+    <Compile Include="GUI\ProjectTreeItem.cs" />
+    <Compile Include="Logging\LogWindowLogger.cs" />
+    <Compile Include="Management\FileItem.cs" />
+    <Compile Include="Management\FolderItem.cs" />
+    <Compile Include="Management\LogSettings.cs" />
+    <Compile Include="Management\Project.cs" />
+    <Compile Include="Management\ProjectExplorerSettings.cs" />
+    <Compile Include="Management\ProjectHistorySettings.cs" />
+    <Compile Include="Management\ProjectIO.cs" />
+    <Compile Include="Management\ProjectItem.cs" />
+    <Compile Include="Messages\CorruptFileContent.cs" />
+    <Compile Include="Messages\DelayedMessage.cs" />
+    <Compile Include="Messages\DocumentActivated.cs" />
+    <Compile Include="Messages\FileContentChanged.cs" />
+    <Compile Include="Messages\FileCreated.cs" />
+    <Compile Include="Messages\FileDeleted.cs" />
+    <Compile Include="Messages\FileImported.cs" />
+    <Compile Include="Messages\LogMessageSent.cs" />
+    <Compile Include="Messages\ProjectItemMoved.cs" />
+    <Compile Include="Messages\OpenFile.cs" />
+    <Compile Include="Messages\FileOpened.cs" />
+    <Compile Include="Messages\FileRenamed.cs" />
+    <Compile Include="Messages\FileSaved.cs" />
+    <Compile Include="Messages\GenericMessage.cs" />
+    <Compile Include="Messages\LogMessageClear.cs" />
+    <Compile Include="Messages\OpenDocumentForm.cs" />
+    <Compile Include="Messages\OwnerClosed.cs" />
+    <Compile Include="Messages\PanelResized.cs" />
+    <Compile Include="Messages\ProjectInfoDispatch.cs" />
+    <Compile Include="Messages\ProjectInfoRequest.cs" />
+    <Compile Include="Messages\ProjectItemsDropped.cs" />
+    <Compile Include="Messages\ProjectLoaded.cs" />
+    <Compile Include="Messages\ReloadGraphRequest.cs" />
+    <Compile Include="Messages\ShowPropertiesRequest.cs" />
+    <Compile Include="LogPersistenceService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FileFolderMenuManager.cs" />
+    <Compile Include="Services\MiscProjectService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17D451D4-B445-4F61-ADFE-963F42D702B0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693a506a-559b-4da6-b460-852ecbb8bd9a}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Exclamation_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\arrowdown24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\arrowup24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\boundary16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cancel_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\clone16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\computer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\document new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\documentnew_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\dots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\exclamation_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\export16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\folder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Folder48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\frameall16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\frameone16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\gear.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\gear16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\go in16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\go out16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\graph1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\import16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\introbanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\introbannersmall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\layout16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\layout48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\refresh16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\rename16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Rename48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\save16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\showfolders16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\sidebanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\tag_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TextLarge16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\TextLarge48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Picture16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Import48x48.png" />
+    <EmbeddedResource Include="Resources\GoOut_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Trash_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Exclamation_24x24.png" />
+    <EmbeddedResource Include="Resources\Info_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Luggage_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Question_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\Support\Packaged\Samples.zip">
+      <Link>Content\Samples.zip</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Resources\LogDebug_16x16.png" />
+    <EmbeddedResource Include="Resources\Wizard_16x16.png" />
+    <EmbeddedResource Include="Resources\ClipboardCopy_16x16.png" />
+    <EmbeddedResource Include="Resources\Plus_16x16.png" />
+    <EmbeddedResource Include="Resources\LogWarning_16x16.png" />
+    <EmbeddedResource Include="Resources\LogError_16x16.png" />
+    <EmbeddedResource Include="Resources\LogInfo_16x16.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

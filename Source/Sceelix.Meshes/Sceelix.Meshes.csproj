@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{76CF0233-8942-4A49-AF32-F7E0552E6EB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Meshes</RootNamespace>
+    <AssemblyName>Sceelix.Meshes</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsEngine>true</IsEngine>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <ItemGroup>
+    <Compile Include="Algorithms\Clipper.cs" />
+    <Compile Include="Data\BillboardEntity.cs" />
+    <Compile Include="Data\MeshEntity.cs" />
+    <Compile Include="Data\MeshInstanceEntity.cs" />
+    <Compile Include="Exceptions\InvalidGeometryException.cs" />
+    <Compile Include="Extensions\AssimpExtension.cs" />
+    <Compile Include="Extensions\ClipperExtension.cs" />
+    <Compile Include="Data\Edge.cs" />
+    <Compile Include="Data\Face.cs" />
+    <Compile Include="Data\FaceTriangle.cs" />
+    <Compile Include="Data\HalfEdge.cs" />
+    <Compile Include="Data\HalfVertex.cs" />
+    <Compile Include="Data\Triangle.cs" />
+    <Compile Include="Data\Vertex.cs" />
+    <Compile Include="Handles\NumericSizerHandle.cs" />
+    <Compile Include="Helpers\ActorEntityHelper.cs" />
+    <Compile Include="Helpers\MeshEntityHelper.cs" />
+    <Compile Include="IO\CustomIOSystem.cs" />
+    <Compile Include="Materials\ColorMaterial.cs" />
+    <Compile Include="Materials\CustomMaterial.cs" />
+    <Compile Include="Materials\EmissiveMaterial.cs" />
+    <Compile Include="Materials\FurMaterial.cs" />
+    <Compile Include="Materials\ImportedMaterial.cs" />
+    <Compile Include="Materials\MeshMaterial.cs" />
+    <Compile Include="Materials\ParallaxOcclusionMaterial.cs" />
+    <Compile Include="Materials\ReflectiveMaterial.cs" />
+    <Compile Include="Materials\RemoteMaterial.cs" />
+    <Compile Include="Materials\ResourcePath.cs" />
+    <Compile Include="Materials\SingleTextureMaterial.cs" />
+    <Compile Include="Materials\TextureAndBumpMaterial.cs" />
+    <Compile Include="Materials\TextureSlot.cs" />
+    <Compile Include="Materials\TransparentMaterial.cs" />
+    <Compile Include="Materials\WaterMaterial.cs" />
+    <Compile Include="Operations\DivideAndConquerTriangulation.cs" />
+    <Compile Include="Operations\Projection.cs" />
+    <Compile Include="Operations\Triangulation.cs" />
+    <Compile Include="Parameters\MeshPropertyParameter.cs" />
+    <Compile Include="Parameters\MeshSeparateParameter.cs" />
+    <Compile Include="Procedures\BillboardCreateProcedure.cs" />
+    <Compile Include="Procedures\MeshClipProcedure.cs" />
+    <Compile Include="Procedures\MeshCreateProcedure.cs" />
+    <Compile Include="Procedures\MeshDecomposeProcedure.cs" />
+    <Compile Include="Procedures\MeshDivideProcedure.cs" />
+    <Compile Include="Procedures\MeshFlipProcedure.cs" />
+    <Compile Include="Procedures\MeshInstanceCreateProcedure.cs" />
+    <Compile Include="Procedures\MeshLoftProcedure.cs" />
+    <Compile Include="Procedures\MeshMaterialProcedure.cs" />
+    <Compile Include="Procedures\MeshMergeProcedure.cs" />
+    <Compile Include="Procedures\MeshModifyProcedure.cs" />
+    <Compile Include="Procedures\MeshSplitProcedure.cs" />
+    <Compile Include="Procedures\MeshSubselectProcedure.cs" />
+    <Compile Include="Procedures\MeshUnifyProcedure.cs" />
+    <Compile Include="Procedures\MeshUVMapProcedure.cs" />
+    <Compile Include="Procedures\MeshLoadProcedure.cs" />
+    <Compile Include="Procedures\MeshSaveProcedure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'Windows32'">
+    <None Include="..\..\Libs\Assimp\Windows32\Assimp32.dll">
+      <Link>Extras\Assimp32.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'Windows64'">
+    <None Include="..\..\Libs\Assimp\Windows64\Assimp64.dll">
+      <Link>Extras\Assimp64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'Linux'">
+    <None Include="..\..\Libs\Assimp\Linux\libassimp.so">
+      <Link>Extras\libassimp.so</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Platform)' == 'MacOS'">
+    <None Include="..\..\Libs\Assimp\MacOS\Resources\libassimp.dylib">
+      <Link>Extras\libassimp.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet, Version=3.3.1.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Assimp\$(Platform)\AssimpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="LibTessDotNet">
+      <HintPath>..\..\Libs\LibTessDotNet\LibTessDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="StraightSkeletonNet, Version=1.0.6200.31566, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\StraightSkeleton\StraightSkeletonNet.dll</HintPath>
+    </Reference>
+    <ProjectReference Include="..\Sceelix.Actors\Sceelix.Actors.csproj">
+      <Project>{ec8dca01-51c6-4057-b83f-233bcd3c287d}</Project>
+      <Name>Sceelix.Actors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17d451d4-b445-4f61-adfe-963f42d702b0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Mathematics\Sceelix.Mathematics.csproj">
+      <Project>{693a506a-559b-4da6-b460-852ecbb8bd9a}</Project>
+      <Name>Sceelix.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9c62325d-2d13-45c8-aca5-ec17de0ed835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

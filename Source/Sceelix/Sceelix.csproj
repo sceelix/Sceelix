@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix</RootNamespace>
+    <AssemblyName>Sceelix</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <NeedsLicensing>True</NeedsLicensing>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows64'">
+    <DocumentationFile>..\..\Build\Windows64\Debug\Bin\Sceelix.XML</DocumentationFile>
+    <NoWarn>1591,1572,1571,1573,1587,1570</NoWarn>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\Json.NET 9.0.1\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\AssemblyIconAttribute.cs" />
+    <Compile Include="Annotations\AssemblyEmailAttribute.cs" />
+    <Compile Include="Annotations\AssemblyAuthorAttribute.cs" />
+    <Compile Include="Annotations\AssemblyNativeReferences.cs" />
+    <Compile Include="Annotations\AssemblyTagsAttribute.cs" />
+    <Compile Include="Annotations\AssemblyWebsiteAttribute.cs" />
+    <Compile Include="Annotations\JsonContractResolver.cs" />
+    <Compile Include="Annotations\SimpleAttributeReader.cs" />
+    <Compile Include="Collections\PriorityQueue.cs" />
+    <Compile Include="Data\ShortGuid.cs" />
+    <Compile Include="Extensions\DictionaryExtension.cs" />
+    <Compile Include="Extensions\XmlExtension.cs" />
+    <Compile Include="Helpers\ParallelHelper.cs" />
+    <Compile Include="Logging\ConsoleLogger.cs" />
+    <Compile Include="Logging\EmptyLogger.cs" />
+    <Compile Include="Logging\ILogger.cs" />
+    <Compile Include="Resolution\ITypeResolver.cs" />
+    <Compile Include="Resolution\TypeResolverAttribute.cs" />
+    <Compile Include="Annotations\StringKeyAttributeReader.cs" />
+    <Compile Include="Collections\CircularList.cs" />
+    <Compile Include="Collections\IDeepCloneable.cs" />
+    <Compile Include="Collections\IMergeable.cs" />
+    <Compile Include="Collections\NotifyProperty.cs" />
+    <Compile Include="Collections\ObjectEqualityComparer.cs" />
+    <Compile Include="Collections\SceeList.cs" />
+    <Compile Include="Conversion\ConversionSet.cs" />
+    <Compile Include="Conversion\ConvertHelper.cs" />
+    <Compile Include="Extensions\BitmapExtension.cs" />
+    <Compile Include="Extensions\ExceptionExtension.cs" />
+    <Compile Include="Extensions\FloatExtension.cs" />
+    <Compile Include="Extensions\StringBuilderExtension.cs" />
+    <Compile Include="Extensions\ListExtension.cs" />
+    <Compile Include="Annotations\SceelixLibraryAttribute.cs" />
+    <Compile Include="Annotations\AttributeReader.cs" />
+    <Compile Include="Loading\CommentLoader.cs" />
+    <Compile Include="Helpers\CompressionHelper.cs" />
+    <Compile Include="Annotations\StringKeyAttribute.cs" />
+    <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Helpers\DataProtectionHelper.cs" />
+    <Compile Include="Extensions\ArrayExtension.cs" />
+    <Compile Include="Extensions\AssemblyExtension.cs" />
+    <Compile Include="Extensions\EnumerableExtension.cs" />
+    <Compile Include="Extensions\LinkedListExtension.cs" />
+    <Compile Include="Extensions\ObjectExtension.cs" />
+    <Compile Include="Extensions\QueueExtension.cs" />
+    <Compile Include="Extensions\RandomExtension.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Extensions\TypeExtension.cs" />
+    <Compile Include="Extensions\XmlNodeExtension.cs" />
+    <Compile Include="Loading\SceelixDomain.cs" />
+    <Compile Include="Network\NetworkClient.cs" />
+    <Compile Include="Network\NetworkMessage.cs" />
+    <Compile Include="Network\NetworkServer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Helpers\QuickProfilingHelper.cs" />
+    <Compile Include="Annotations\TypeKeyAttributeReader.cs" />
+    <Compile Include="Annotations\TypeKeyAttribute.cs" />
+    <Compile Include="Resolution\TypeResolverManager.cs" />
+    <Compile Include="Extensions\JsonReaderExtension.cs" />
+    <Compile Include="Annotations\StandardJsonConverterAttribute.cs" />
+    <Compile Include="Serialization\IUniqueIdGenerator.cs" />
+    <Compile Include="Serialization\JsonSerialization.cs" />
+    <Compile Include="Serialization\JsonSerializerExtension.cs" />
+    <Compile Include="Serialization\ServiceReferenceResolver.cs" />
+    <Compile Include="Serialization\StandardContractResolver.cs" />
+    <Compile Include="Serialization\SequentialIdGenerator.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Reactor_Enabled="0" Reactor_Commands="" Reactor_Project="" Reactor_Configuration="ALL" Reactor_Output="" Reactor_Deploy="0" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- In Mac OS, we had some issues with dll embedding, so let's not delete the original dlls -->
+  <!--Target Condition=" '$(LibraryType)' == 'Windows'" AfterTargets="AfterBuild;NonWinFodyTarget" Name="CleanReferenceCopyLocalPaths">
+    <Delete Files="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename)%(Extension)')" />
+  </Target-->
+  <PropertyGroup>
+    <PreBuildEvent>RMDIR /S /Q "$(TargetDir)""</PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

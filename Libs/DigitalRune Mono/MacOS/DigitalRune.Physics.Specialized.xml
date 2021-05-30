@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DigitalRune.Physics.Specialized</name>
+  </assembly>
+  <members>
+    <member name="T:DigitalRune.Physics.Specialized.DynamicCharacterController">
+      <summary>
+            Controls the movement of a game character.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.DynamicCharacterController.#ctor(DigitalRune.Physics.Simulation)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController" /> class.
+            </summary>
+      <param name="simulation">The simulation.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="simulation" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Body">
+      <summary>
+            Gets or sets the body.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.CollisionGroup">
+      <summary>
+            Gets or sets the collision group.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this character controller is enabled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Gravity">
+      <summary>
+            Gets or sets the gravity.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.HasGroundContact">
+      <summary>
+            Gets a value indicating whether this character has ground contact.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Height">
+      <summary>
+            Gets or sets the height.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.IsClimbing">
+      <summary>
+            Gets or sets a value indicating whether this instance is climbing.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.DynamicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)">
+      <summary>
+            Moves the character to a new position while avoiding penetrations and sliding along 
+            obstacles.
+            </summary>
+      <param name="moveVelocity">The desired linear walk or fly velocity.</param>
+      <param name="jumpVelocity">
+            The jump velocity. Set a velocity vector to let the character jump. The character will only
+            jump if it starts on the ground. If gravity is turned off, the character will fly into the
+            given direction.
+            </param>
+      <param name="deltaTime">The size of the time step.</param>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Position">
+      <summary>
+            Gets or sets the position of the character.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Simulation">
+      <summary>
+            Gets or sets the simulation.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.SlopeLimit">
+      <summary>
+            Gets or sets the slope limit (in radians).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.DynamicCharacterController.Width">
+      <summary>
+            Gets or sets the width.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Physics.Specialized.KinematicCharacterController">
+      <summary>
+            Controls the movement of a game character.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.#ctor(DigitalRune.Physics.Simulation)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController" /> class.
+            </summary>
+      <param name="simulation">The simulation.</param>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.#ctor(DigitalRune.Physics.Simulation,DigitalRune.Mathematics.Algebra.Vector3F)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.KinematicCharacterController" /> class.
+            </summary>
+      <param name="simulation">The simulation.</param>
+      <param name="upVector">The normalized up vector.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="simulation" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Body">
+      <summary>
+            Gets or sets the body.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.CollisionGroup">
+      <summary>
+            Gets or sets the collision group.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this character controller is enabled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Gravity">
+      <summary>
+            Gets or sets the gravity.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.HasGroundContact">
+      <summary>
+            Gets a value indicating whether this character has ground contact.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Height">
+      <summary>
+            Gets or sets the height.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.IsClimbing">
+      <summary>
+            Gets or sets a value indicating whether this instance is climbing.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.JumpManeuverability">
+      <summary>
+            Gets or sets the jump maneuverability.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.MaxVelocity">
+      <summary>
+            Gets or sets the maximum velocity of the character.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="value" /> is negative.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.Move(DigitalRune.Mathematics.Algebra.Vector3F,System.Single,System.Single)">
+      <summary>
+            Moves the character to a new position while avoiding penetrations and sliding along 
+            obstacles.
+            </summary>
+      <param name="moveVelocity">The desired linear walk or fly velocity.</param>
+      <param name="jumpVelocity">
+            The jump velocity. Set a velocity vector to let the character jump. The character will only
+            jump if it starts on the ground. If gravity is turned off, the character will fly into the
+            given direction.
+            </param>
+      <param name="deltaTime">The size of the time step.</param>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.NumberOfSlideIterations">
+      <summary>
+            Gets or sets the number of slide iterations.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="value" /> is negative or 0.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.NumberOfSolverIterations">
+      <summary>
+            Gets or sets the number of solver iterations.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="value" /> is negative or 0.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Position">
+      <summary>
+            Gets or sets the position of the character.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.PushForce">
+      <summary>
+            Gets or sets the maximal push force with which the character pushes other objects.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.KinematicCharacterController.ResolvePenetrations">
+      <summary>
+            Tries to move the character to the nearest position where it does not penetrate other
+            objects.
+            </summary>
+      <returns>
+        <see langword="true" /> if the character is in or moved to a non-penetrating position;
+            otherwise, <see langword="false" /> if the penetrations could not be resolved.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Simulation">
+      <summary>
+            Gets or sets the simulation.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.SlopeLimit">
+      <summary>
+            Gets or sets the slope limit (in radians).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.StepHeight">
+      <summary>
+            Gets or sets the height of the step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.UpVector">
+      <summary>
+            Gets the vector that points into the "up" direction.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Velocity">
+      <summary>
+            Gets the current velocity of the character controller.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.KinematicCharacterController.Width">
+      <summary>
+            Gets or sets the width.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Physics.Specialized.Ragdoll">
+      <summary>
+            Provides helper methods for working with ragdolls.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.Ragdoll" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.AddToSimulation(DigitalRune.Physics.Simulation)">
+      <summary>
+            Adds all parts of the ragdoll to a simulation. 
+            </summary>
+      <param name="simulation">The simulation.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="simulation" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            The ragdoll cannot be added to the simulation because it has already been added to another 
+            simulation.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Bodies">
+      <summary>
+            Gets the rigid bodies that represent the ragdoll limbs.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.BodyOffsets">
+      <summary>
+            Gets the body offsets.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.CreateAvatarRagdoll(DigitalRune.Animation.Character.AvatarPose,DigitalRune.Physics.Simulation)">
+      <summary>
+            Creates a <see cref="T:DigitalRune.Physics.Specialized.Ragdoll" /> for an Xbox LIVE Avatar. (Only available on Xbox 360.)
+            </summary>
+      <param name="avatarPose">The avatar pose.</param>
+      <param name="simulation">The simulation.</param>
+      <returns>The avatar ragdoll.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="avatarPose" /> or <paramref name="simulation" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.CreateAvatarRagdoll(DigitalRune.Animation.Character.Skeleton,DigitalRune.Physics.Simulation)">
+      <summary>
+            Creates a <see cref="T:DigitalRune.Physics.Specialized.Ragdoll" /> for an Xbox LIVE Avatar. (Only available on Xbox 360.)
+            </summary>
+      <param name="skeleton">The skeleton of the Xbox LIVE Avatar.</param>
+      <param name="simulation">The simulation.</param>
+      <returns>The avatar ragdoll.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="skeleton" /> or <paramref name="simulation" /> is 
+            <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DisableJoints">
+      <summary>
+            Disables all joints.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DisableLimits">
+      <summary>
+            Disables all limits.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DisableMotors">
+      <summary>
+            Disables all motors.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.Single)">
+      <summary>
+            Drives the ragdoll bodies to the target pose using the <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors" />.
+            </summary>
+      <param name="skeletonPose">The target skeleton pose.</param>
+      <param name="deltaTime"> The time step (in seconds). See remarks.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="skeletonPose" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            Ragdoll was not added to a simulation.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.DriveToPose(DigitalRune.Animation.Character.SkeletonPose,System.TimeSpan)">
+      <summary>
+            Drives the ragdoll bodies to the target pose using the <see cref="P:DigitalRune.Physics.Specialized.Ragdoll.Motors" />.
+            </summary>
+      <param name="skeletonPose">The target skeleton pose.</param>
+      <param name="deltaTime">The current time step.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="skeletonPose" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            Ragdoll was not added to a simulation.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.EnableJoints">
+      <summary>
+            Enables all joints.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.EnableLimits">
+      <summary>
+            Enables all limits.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.EnableMotors">
+      <summary>
+            Enables all motors.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Joints">
+      <summary>
+            Gets the joints.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Limits">
+      <summary>
+            Gets the limits.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Motors">
+      <summary>
+            Gets the motors.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Pose">
+      <summary>
+            Gets or sets the pose (position and orientation) of the character in world space.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.RemoveFromSimulation">
+      <summary>
+            Removes all ragdoll parts from the simulation.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Ragdoll.Simulation">
+      <summary>
+            Gets the simulation to which this ragdoll was added.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodiesFromSkeleton(DigitalRune.Animation.Character.SkeletonPose)">
+      <summary>
+            Updates the poses of the bodies, so that the bodies match the bone transforms of the given 
+            skeleton pose.
+            </summary>
+      <param name="skeletonPose">The skeleton pose.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="skeletonPose" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateBodyFromSkeleton(DigitalRune.Animation.Character.SkeletonPose,System.Int32)">
+      <summary>
+            Updates the pose of a single body, so that the bodies match the bone transforms of the given
+            bone.
+            </summary>
+      <param name="skeletonPose">The skeleton pose.</param>
+      <param name="boneIndex">The index of the bone.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="skeletonPose" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Ragdoll.UpdateSkeletonFromBodies(DigitalRune.Animation.Character.SkeletonPose)">
+      <summary>
+            Updates the bone transforms of the skeleton pose, so that the bones match the ragdoll 
+            bodies.
+            </summary>
+      <param name="skeletonPose">The skeleton pose that is modified.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="skeletonPose" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="T:DigitalRune.Physics.Specialized.RagdollMotor">
+      <summary>
+            Drives a body of a ragdoll to a target position.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.RagdollMotor.#ctor(System.Int32,System.Int32)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.RagdollMotor" /> class.
+            </summary>
+      <param name="boneIndex">The index of the controlled bone.</param>
+      <param name="parentIndex">
+            The index of the parent bone to which the controlled bone is connected.
+            (Only relevant for constraint motors.)
+            </param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="boneIndex" /> is negative.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.BoneIndex">
+      <summary>
+            Gets or sets the index of the controlled bone.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.ConstraintDamping">
+      <summary>
+            Gets or sets the damping constant of a constraint motor.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.ConstraintSpring">
+      <summary>
+            Gets or sets the spring constant of a constraint motor.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this motor is enabled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.MaxConstraintForce">
+      <summary>
+            Gets or sets the maximal force that is applied by a constraint motor.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.Mode">
+      <summary>
+            Gets or sets the motor mode.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.ParentIndex">
+      <summary>
+            Gets or sets the index of the parent bone to which the controlled bone is connected.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.RagdollMotor.Ragdoll">
+      <summary>
+            Gets the ragdoll.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Physics.Specialized.RagdollMotorMode">
+      <summary>
+            Defines the type of <see cref="T:DigitalRune.Physics.Specialized.RagdollMotor" />.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Velocity">
+      <summary>
+            A velocity motor directly sets the linear and angular velocity of controlled ragdoll bodies. 
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Constraint">
+      <summary>
+            Constraint motors use <see cref="F:DigitalRune.Physics.Specialized.RagdollMotorMode.Constraint" />s to influence the controlled ragdoll bodies.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Physics.Specialized.Vehicle">
+      <summary>
+            Represents a simulated vehicle.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Vehicle.#ctor(DigitalRune.Physics.Simulation,DigitalRune.Physics.RigidBody)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.Vehicle" /> class.
+            </summary>
+      <param name="simulation">The simulation.</param>
+      <param name="chassis">The rigid body for the chassis.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="simulation" /> or <paramref name="chassis" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Vehicle.Chassis">
+      <summary>
+            Gets or sets the chassis.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Vehicle.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this vehicle is enabled.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Vehicle.SetCarSteeringAngle(System.Single,DigitalRune.Physics.Specialized.Wheel,DigitalRune.Physics.Specialized.Wheel,DigitalRune.Physics.Specialized.Wheel,DigitalRune.Physics.Specialized.Wheel)">
+      <summary>
+            Sets the steering angles for a standard 4 wheel car.
+            </summary>
+      <param name="steeringAngle">The steering angle.</param>
+      <param name="frontLeft">The front left wheel.</param>
+      <param name="frontRight">The front right wheel.</param>
+      <param name="backLeft">The back left wheel.</param>
+      <param name="backRight">The back right wheel.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="frontLeft" />, <paramref name="frontRight" />, <paramref name="backLeft" />, or
+            <paramref name="backRight" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Vehicle.Simulation">
+      <summary>
+            Gets the simulation.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Vehicle.Wheels">
+      <summary>
+            Gets the wheels.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Physics.Specialized.Wheel">
+      <summary>
+            Represents a single wheel of a <see cref="P:DigitalRune.Physics.Specialized.Wheel.Vehicle" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Physics.Specialized.Wheel.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Physics.Specialized.Wheel" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.AngularVelocity">
+      <summary>
+            Gets or sets the angular velocity of the wheel about the rotation axis.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.BrakeForce">
+      <summary>
+            Gets or sets the brake force.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.CollisionObject">
+      <summary>
+            Gets the collision object that defines collision detection behavior of the ray.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.Friction">
+      <summary>
+            Gets or sets the friction.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.GeometricObject">
+      <summary>
+            Gets the geometric object that defines the pose of the ray.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.GroundNormal">
+      <summary>
+            Gets the normal vector of the ground at the <see cref="P:DigitalRune.Physics.Specialized.Wheel.GroundPosition" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.GroundPosition">
+      <summary>
+            Gets the position where the wheel touches the ground.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.HasGroundContact">
+      <summary>
+            Gets a value indicating whether this wheel has ground contact.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.MaxSuspensionForce">
+      <summary>
+            Gets or sets the max suspension force.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.MinSuspensionLength">
+      <summary>
+            Gets or sets the minimal suspension length.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.MotorForce">
+      <summary>
+            Gets or sets the motor force.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.Offset">
+      <summary>
+            Gets or sets the wheel offset.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.Pose">
+      <summary>
+            Gets the pose of the wheel in world space.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.Radius">
+      <summary>
+            Gets or sets the radius of the wheel. 
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.Ray">
+      <summary>
+            Gets the ray.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.RollingFrictionForce">
+      <summary>
+            Gets or sets the rolling friction force.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.RollReduction">
+      <summary>
+            Gets or sets the roll reduction.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.RotationAngle">
+      <summary>
+            Gets or sets the rotation angle about the rolling axis.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SkidEnergy">
+      <summary>
+            Gets or sets the skid energy.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SteeringAngle">
+      <summary>
+            Gets or sets the steering angle.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionCompressionDamping">
+      <summary>
+            Gets or sets the suspension damping during compression.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionLength">
+      <summary>
+            Gets the current suspension length.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionRelaxationDamping">
+      <summary>
+            Gets or sets the suspension damping during relaxation.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionRestLength">
+      <summary>
+            Gets or sets the rest length of the suspension.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.SuspensionStiffness">
+      <summary>
+            Gets or sets the suspension stiffness.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.TouchedBody">
+      <summary>
+            Gets the touched body (= the ground object).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Physics.Specialized.Wheel.Vehicle">
+      <summary>
+            Gets (or sets) the vehicle to which the wheel is attached.
+            </summary>
+    </member>
+  </members>
+</doc>

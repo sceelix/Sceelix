@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CursorHotSpots>
+  <CursorHotSpot Name="Arrow" Value="0,0" />
+  <CursorHotSpot Name="ArrowCarry" Value="0,0" />
+  <CursorHotSpot Name="Cross" Value="15,15" />
+  <CursorHotSpot Name="IBeam" Value="15,15" />
+  <CursorHotSpot Name="SizeAll" Value="15,15" />
+  <CursorHotSpot Name="SizeNESW" Value="15,15" />
+  <CursorHotSpot Name="SizeNS" Value="15,15" />
+  <CursorHotSpot Name="SizeNWSE" Value="15,15" />
+  <CursorHotSpot Name="SizeWE" Value="15,15" />
+  <CursorHotSpot Name="Wait" Value="16,16" />
+</CursorHotSpots>

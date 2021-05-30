@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!--Visual Studio only allows us to set the Configuration and Platform properties.-->
+	<!--This file, to be imported only if BuildingInsideVisualStudio is true, allows us to define custom properties, for testing purposes. -->
+	<PropertyGroup>
+		<DropboxMultiplatformFolder>D:\Dropbox\Sceelix Multiplatform Test</DropboxMultiplatformFolder>
+		<Steam>False</Steam>
+	</PropertyGroup>
+</Project>

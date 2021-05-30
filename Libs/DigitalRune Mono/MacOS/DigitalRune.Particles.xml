@@ -1,0 +1,2361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DigitalRune.Particles</name>
+  </assembly>
+  <members>
+    <member name="T:DigitalRune.Particles.IParticleParameter">
+      <summary>
+            Represents a named parameter of a particle, like "Color" or "Position".
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.IParticleParameter.IsUniform">
+      <summary>
+            Gets a value indicating whether this particle parameter is a uniform parameter or a varying parameter.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.IParticleParameter`1">
+      <summary>
+            Represents a named, typed parameter of a particle, like "Color" or "Position".
+            </summary>
+      <typeparam name="T">The type of the particle parameter.</typeparam>
+    </member>
+    <member name="P:DigitalRune.Particles.IParticleParameter`1.DefaultValue">
+      <summary>
+            Gets or sets the default value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.IParticleParameter`1.Values">
+      <summary>
+            Gets the particle parameter array that contains one value per particle.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.IParticleSystemService">
+      <summary>
+            Manages a collection of particle systems.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.IParticleSystemService.ParticleSystems">
+      <summary>
+            Gets the particle systems.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleEffector">
+      <summary>
+            Manipulates a particle system and/or its particles.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when the particle system begins its update.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.Clone">
+      <summary>
+            Creates a new <see cref="T:DigitalRune.Particles.ParticleEffector" /> that is a clone of the current instance.
+            </summary>
+      <returns>
+            A new <see cref="T:DigitalRune.Particles.ParticleEffector" /> that is a clone of the current instance.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleEffector.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this <see cref="T:DigitalRune.Particles.ParticleEffector" /> is enabled.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.EndUpdate(System.TimeSpan)">
+      <summary>
+            Called when the particle system finishes its update.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.Initialize">
+      <summary>
+            Initializes this particle effector.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.InitializeParticles(System.Int32,System.Int32,System.Object)">
+      <summary>
+            Initializes new particles.
+            </summary>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+      <param name="emitter">
+            The emitter that triggered the particle creation. This can be an effector, another object or
+            <see langword="null" />.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleEffector.Name">
+      <summary>
+            Gets the name of this particle effector.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            Cannot change the name because the particle effector has already been added to a particle 
+            system.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnEndUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnInitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Initialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnInitializeParticles(System.Int32,System.Int32,System.Object)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.InitializeParticles(System.Int32,System.Int32,System.Object)" /> was called.
+            </summary>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+      <param name="emitter">
+            The emitter that triggered the particle creation. This can be an effector, another object or
+            <see langword="null" />.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleEffector.ParticleSystem">
+      <summary>
+            Gets or sets the particle system.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.RequeryParameters">
+      <summary>
+            Requeries the particle parameters.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.Uninitialize">
+      <summary>
+            Uninitializes this particle effector.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Updates particles.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleEffectorCollection">
+      <summary>
+            Manages a collection of <see cref="T:DigitalRune.Particles.ParticleEffector" />s.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleEffectorCollection.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleEffectorCollection" /> class.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleHelper">
+      <summary>
+            Provides helper methods and extension methods for particle systems.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleHelper.GetPoseWorld(DigitalRune.Particles.ParticleSystem)">
+      <summary>
+            Gets the world space pose of the particle system, which is obtained by concatenating the 
+            poses of the given and all parent particle systems.
+            </summary>
+      <param name="particleSystem">The particle system.</param>
+      <returns>The world space pose of the particle system.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="particleSystem" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleHelper.GetValue``1(DigitalRune.Particles.IParticleParameter{``0},System.Int32)">
+      <summary>
+            Gets the value of a uniform or a varying particle parameter.
+            </summary>
+      <param name="parameter">The particle parameter.</param>
+      <param name="index">
+            The index of the particle, or -1 to get the <see cref="P:DigitalRune.Particles.IParticleParameter`1.DefaultValue" />.
+            </param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>
+            The value of the particle at the given index if the particle parameter is varying and the
+            index is zero or positive; otherwise the <see cref="P:DigitalRune.Particles.IParticleParameter`1.DefaultValue" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleHelper.IsAlive(DigitalRune.Particles.ParticleSystem)">
+      <summary>
+            Determines whether the specified particle system is alive.
+            </summary>
+      <param name="particleSystem">The particle system.</param>
+      <returns>
+        <see langword="true" /> if the specified particle system is alive; otherwise, 
+            <see langword="false" />.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="particleSystem" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleHelper.SetValue``1(DigitalRune.Particles.IParticleParameter{``0},System.Int32,``0)">
+      <summary>
+            Sets the value of a uniform or varying particle parameter.
+            </summary>
+      <param name="parameter">The particle parameter.</param>
+      <param name="index">
+            The index of the particle, or -1 to set the <see cref="P:DigitalRune.Particles.IParticleParameter`1.DefaultValue" />.
+            </param>
+      <param name="value">The new value.</param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleParameterAttribute">
+      <summary>
+            Describes how a particle parameter is used.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterAttribute.#ctor(DigitalRune.Particles.ParticleParameterUsage)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleParameterAttribute" /> class.
+            </summary>
+      <param name="usage">The particle parameter usage.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleParameterAttribute.Optional">
+      <summary>
+            Gets or sets a value indicating whether this the particle parameter is optional.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleParameterAttribute.Usage">
+      <summary>
+            Gets or sets the particle parameter usage.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleParameterCollection">
+      <summary>
+            Manages a collection of particle parameters.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.AddUniform``1(System.String)">
+      <summary>
+            Adds a uniform particle parameter.
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>The existing or newly created particle parameter.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is empty.
+            </exception>
+      <exception cref="T:DigitalRune.Particles.ParticleSystemException">
+            A particle parameter with the given name was found but the parameter type cannot be cast to 
+            type <typeparamref name="T" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.AddVarying``1(System.String)">
+      <summary>
+            Adds a varying particle parameter.
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>The existing or newly created particle parameter.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is empty.
+            </exception>
+      <exception cref="T:DigitalRune.Particles.ParticleSystemException">
+            A particle parameter with the given name was found but the parameter type cannot be cast to 
+            type <typeparamref name="T" />.
+            </exception>
+    </member>
+    <member name="E:DigitalRune.Particles.ParticleParameterCollection.Changed">
+      <summary>
+            Event raised after the collection was modified.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.Clear">
+      <summary>
+            Removes all particle parameters in this collection.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.Contains(System.String)">
+      <summary>
+            Determines whether the collection contains a particle parameter with the given name.
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <returns>
+        <see langword="true" /> if a particle parameter with the given name exists; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.Get``1(System.String)">
+      <summary>
+            Gets a particle parameter with the specified type and name. (If the type is wrong an 
+            exception is thrown.)
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>
+            The particle parameter, or <see langword="null" /> if no particle parameter with the given 
+            <paramref name="name" /> was found.
+            </returns>
+      <exception cref="T:DigitalRune.Particles.ParticleSystemException">
+            A particle parameter with the given name was found, but the parameter type cannot be cast to 
+            type <typeparamref name="T" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.Get``1(System.String,System.Boolean)">
+      <summary>
+            Gets a particle parameter with the specified type and name. (If the type is wrong an
+            exception is thrown.)
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <param name="excludeInherited">
+            If set to <see langword="true" /> only parameters of this 
+            <see cref="T:DigitalRune.Particles.ParticleParameterCollection" /> are returned. If set to <see langword="false" />
+            the parent particle systems are also scanned for uniform particle parameters with the
+            specified name.
+            </param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>
+            The particle parameter, or <see langword="null" /> if no particle parameter with the given
+            <paramref name="name" /> was found.
+            </returns>
+      <exception cref="T:DigitalRune.Particles.ParticleSystemException">
+            A particle parameter with the given name was found, but the parameter type cannot be cast to
+            type <typeparamref name="T" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:DigitalRune.Particles.ParticleParameterCollection" />. 
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.Generic.List`1.Enumerator" /> for <see cref="T:DigitalRune.Particles.ParticleParameterCollection" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.GetUnchecked``1(System.String)">
+      <summary>
+            Gets a particle parameter with the specified type and name. (If the type is wrong 
+            <see langword="null" /> is returned.)
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>
+            The particle parameter, or <see langword="null" /> if no particle parameter with the given 
+            <paramref name="name" /> and type <typeparamref name="T" /> was found.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.GetUnchecked``1(System.String,System.Boolean)">
+      <summary>
+            Gets a particle parameter with the specified type and name. (If the type is wrong 
+            <see langword="null" /> is returned.)
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <param name="excludeInherited">
+            If set to <see langword="true" /> only parameters of this 
+            <see cref="T:DigitalRune.Particles.ParticleParameterCollection" /> are returned. If set to <see langword="false" />
+            the parent particle systems are also scanned for uniform particle parameters with the
+            specified name.
+            </param>
+      <typeparam name="T">The type of the parameter value.</typeparam>
+      <returns>
+            The particle parameter, or <see langword="null" /> if no particle parameter with the given
+            <paramref name="name" /> and type <typeparamref name="T" /> was found.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.OnChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Particles.ParticleParameterCollection.Changed" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:System.EventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleParameterCollection.ParticleSystem">
+      <summary>
+            Gets the particle system that owns this particle parameter collection.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.Remove(System.String)">
+      <summary>
+            Removes a particle parameter.
+            </summary>
+      <param name="name">The name of the parameter (e.g. "Color", "Position", etc.).</param>
+      <returns>
+        <see langword="true" /> if a particle parameter was found and removed; otherwise,
+            <see langword="false" /> if no particle parameter with the given name was found.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.System#Collections#Generic#IEnumerable{DigitalRune#Particles#IParticleParameter}#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:DigitalRune.Particles.ParticleParameterCollection" />. 
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.Generic.List`1.Enumerator" /> for <see cref="T:DigitalRune.Particles.ParticleParameterCollection" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleParameterCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:DigitalRune.Particles.ParticleParameterCollection" />. 
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.Generic.List`1.Enumerator" /> for <see cref="T:DigitalRune.Particles.ParticleParameterCollection" />.
+            </returns>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleParameterNames">
+      <summary>
+            Contains names of common particle parameters.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Alpha">
+      <summary>
+            The particle opacity (0 = transparent, 1 = opaque).<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.AlphaTest">
+      <summary>
+            The reference value used in the alpha test. The reference value is a value in the range
+            [0, 1]. If the alpha of a pixel is less than the reference alpha, the pixel is discarded.<br />
+            (Parameter type: uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Angle">
+      <summary>
+            The rotation angle in radians.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.AngularAcceleration">
+      <summary>
+            The angular acceleration that changes the <see cref="F:DigitalRune.Particles.ParticleParameterNames.AngularSpeed" />.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.AngularSpeed">
+      <summary>
+            The angular speed that changes the <see cref="F:DigitalRune.Particles.ParticleParameterNames.Angle" />.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.AnimationTime">
+      <summary>
+            The normalized animation time (0 = start of animation, 1 = end of animation), which selects
+            the current frame of an animated texture.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Axis">
+      <summary>
+            The axis vector of a particle.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.BillboardOrientation">
+      <summary>
+            The particle billboard orientation.<br />
+            (Parameter type: uniform, value type: depends on the used particle renderer)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.BlendMode">
+      <summary>
+            The blend mode that should be used by the renderer: 0 = additive blending, 1 = alpha 
+            blending<br />
+            (Parameter type: uniform, value type: depends on the used particle renderer)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.BlendState">
+      <summary>
+            The blend state that should be used by the renderer.<br />
+            (Parameter type: uniform, value type: depends on the used particle renderer)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Color">
+      <summary>
+            The particle color.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Damping">
+      <summary>
+            The damping factor that defines the strength of the damping. 0 means no damping. Higher 
+            values mean stronger damping.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Direction">
+      <summary>
+            The normalized direction vector that defines the movement direction.<br />
+            (Parameter type: varying, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.DrawOrder">
+      <summary>
+            The parameter that defines the draw order for particle systems on the same world space 
+            position. Particle systems with higher draw order value are drawn on top of particle systems 
+            with lower draw order.<br />
+            (Parameter type: uniform, value type: <see cref="T:System.Int32" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.EmissionRate">
+      <summary>
+            The emission rate that defines how many particles are generated in particles per second.<br />
+            (Parameter type: uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.EmitterVelocity">
+      <summary>
+            The emitter velocity vector, usually used to modify the start velocity of particles.<br />
+            (Parameter type: uniform, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Frame">
+      <summary>
+            The index of the frame in an animated texture (or the index of a texture in a texture 
+            atlas).<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Int32" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.IsDepthSorted">
+      <summary>
+            The parameter that indicates if the particles in the particle system should be rendered 
+            depth-sorted.<br />
+            (Parameter type: uniform, value type: <see cref="T:System.Boolean" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Lifetime">
+      <summary>
+            The lifetime of a particle in seconds.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.LinearAcceleration">
+      <summary>
+            The acceleration vector that changes the linear velocity (<see cref="F:DigitalRune.Particles.ParticleParameterNames.Direction" /> and 
+            <see cref="F:DigitalRune.Particles.ParticleParameterNames.LinearSpeed" />).<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.LinearSpeed">
+      <summary>
+            The linear (scalar) speed along the <see cref="F:DigitalRune.Particles.ParticleParameterNames.Direction" /> vector.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.LinkedIndex">
+      <summary>
+            The index of the next particle that this particle is connected to, for rendering ribbons 
+            (a.k.a. trails or lines).<br />
+            (Parameter type: varying, value type: <see cref="T:System.Int32" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Mass">
+      <summary>
+            The particle mass.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Normal">
+      <summary>
+            The normal vector of a particle.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.NormalizedAge">
+      <summary>
+            The normalized age in the range [0, 1]. This parameter is created and managed by the
+            <see cref="T:DigitalRune.Particles.ParticleSystem" /> class.<br />
+            (Parameter type: varying, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Position">
+      <summary>
+            The particle position.<br />
+            (Parameter type: varying, value type: <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Restitution">
+      <summary>
+            The coefficient of restitution (= bounciness) of a particle (0 = no bounce,
+            1 = full bounce, no energy is lost).<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Size">
+      <summary>
+            The particle size.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.SizeX">
+      <summary>
+            The particle size in x-direction.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.SizeY">
+      <summary>
+            The particle size in y-direction.<br />
+            (Parameter type: varying or uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Softness">
+      <summary>
+            The softness for rendering soft particles.<br />
+            (Parameter type: uniform, value type: <see cref="T:System.Single" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Texture">
+      <summary>
+            The particle texture.<br />
+            (Parameter type: varying or uniform, value type: depends on the used particle renderer)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.TextureTiling">
+      <summary>
+            For ribbons: Defines how a texture is applied to a particle ribbon ("tiling distance").<br />
+            0 = No tiling: The texture is stretched along the ribbon.<br />
+            1 = Tiling: The texture is repeated every particle.<br /><i>n</i> = Tiling with lower frequency: The texture is repeated every <i>n</i> particles.<br />
+            (Parameter type: uniform, value type: <see cref="T:System.Int32" />)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterNames.Type">
+      <summary>
+            The type of the particles, which determines whether particles are rendered as individual 
+            billboards, connected quad strips ("ribbons"), meshes, etc.<br />
+            (Parameter type: uniform, value type: depends on the used particle renderer)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleParameterUsage">
+      <summary>
+            Describes if a particle effector reads and/or writes a particle parameter.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterUsage.In">
+      <summary>
+            The particle parameter is read but not changed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterUsage.Out">
+      <summary>
+            The particle parameter is written. (Overwriting existing parameter values.)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleParameterUsage.InOut">
+      <summary>
+            The particle parameter is read and written.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleReferenceFrame">
+      <summary>
+            Defines which 3D coordinate system is used for vectors in particle parameters and particle
+            effector properties.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleReferenceFrame.World">
+      <summary>
+            All parameters are relative to world space (which is the space in which the root particle 
+            system is placed). 
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Particles.ParticleReferenceFrame.Local">
+      <summary>
+            All parameters are relative to the local space of the particle system.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleSystem">
+      <summary>
+            Represents a system of particles.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleSystem" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Aabb">
+      <summary>
+            Gets the axis-aligned bounding box (AABB).
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.AddParticles(System.Int32)">
+      <summary>
+            Creates a number of new particles.
+            </summary>
+      <param name="numberOfNewParticles">The number of particles to create.</param>
+      <returns>
+            The number of actually created particles. This number will be less than 
+            <paramref name="numberOfNewParticles" /> if the total number of particles in the particle
+            system would exceed <see cref="P:DigitalRune.Particles.ParticleSystem.MaxNumberOfParticles" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.AddParticles(System.Int32,System.Object)">
+      <summary>
+            Creates a number of new particles from the specified emitter.
+            </summary>
+      <param name="numberOfNewParticles">The number of particles to create.</param>
+      <param name="emitter">
+            Optional: The emitter that triggered the particle creation. This can be an effector, another
+            object, or <see langword="null" />. 
+            </param>
+      <returns>
+            The number of actually created particles. This number will be less than 
+            <paramref name="numberOfNewParticles" /> if the total number of particles in the particle
+            system would exceed <see cref="P:DigitalRune.Particles.ParticleSystem.MaxNumberOfParticles" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Children">
+      <summary>
+            Gets or sets the collection of child particle systems.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.Clone">
+      <summary>
+            Creates a new <see cref="T:DigitalRune.Particles.ParticleSystem" /> that is a clone of the current instance.
+            </summary>
+      <returns>
+            A new <see cref="T:DigitalRune.Particles.ParticleSystem" /> that is a clone of the current instance.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.CloneCore(DigitalRune.Particles.ParticleSystem)">
+      <summary>
+            Makes the instance a clone (deep copy) of the specified <see cref="T:DigitalRune.Particles.ParticleSystem" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleSystem" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.CurrentDelay">
+      <summary>
+            Gets or sets the current delay.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.DigitalRune#Animation#IAnimatableObject#GetAnimatableProperty``1(System.String)">
+      <summary>
+            Gets the property with given name and type which can be animated.
+            </summary>
+      <param name="name">The name of the property.</param>
+      <typeparam name="T">The type of the property.</typeparam>
+      <returns>
+            The <see cref="T:DigitalRune.Animation.IAnimatableProperty" /> that has the given name and type; otherwise, 
+            <see langword="null" /> if the object does not have an animatable property with this name or 
+            type.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.DigitalRune#Animation#IAnimatableObject#GetAnimatedProperties">
+      <summary>
+            Gets either the properties which are currently animated, or all properties which can be 
+            animated. (See remarks.)
+            </summary>
+      <returns>
+            The properties which are currently animated, or the all properties which can be animated.
+            (See remarks.)
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.DigitalRune#Geometry#IGeometricObject#Clone">
+      <summary>
+            Creates a new <see cref="T:DigitalRune.Geometry.IGeometricObject" /> that is a clone (deep copy) of the current
+            instance.
+            </summary>
+      <returns>
+            A new <see cref="T:DigitalRune.Geometry.IGeometricObject" /> that is a clone (deep copy) of the current instance.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.DigitalRune#Geometry#IGeometricObject#Scale">
+      <summary>
+            Gets the scale. - Always returns (1, 1, 1).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Effectors">
+      <summary>
+            Gets the particle effectors.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this <see cref="T:DigitalRune.Particles.ParticleSystem" /> is enabled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.EnableMultithreading">
+      <summary>
+            Gets or sets a value indicating whether multithreading is enabled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.InitialDelay">
+      <summary>
+            Gets or sets the initial delay.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.MaxNumberOfParticles">
+      <summary>
+            Gets the maximum number of particles.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="value" /> is negative.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Name">
+      <summary>
+            Gets the name of this particle system.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            Cannot change the name because the particle system has already been added to a particle 
+            system service or another particle system.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.NumberOfActiveParticles">
+      <summary>
+            Gets the number of active particles.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.NumberOfLivingParticles">
+      <summary>
+            Gets the number of living particles.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.OnPoseChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Particles.ParticleSystem.PoseChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:System.EventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.OnReset">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleSystem.Reset" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.OnShapeChanged(DigitalRune.Geometry.Shapes.ShapeChangedEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Particles.ParticleSystem.ShapeChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:DigitalRune.Geometry.Shapes.ShapeChangedEventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.OnUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleSystem.Update(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Parameters">
+      <summary>
+            Gets the particle parameters.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Parent">
+      <summary>
+            Gets the parent particle systems.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.ParticleStartIndex">
+      <summary>
+            Gets index of the first active particle in the particle parameter arrays.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Pose">
+      <summary>
+            Gets or sets the pose (position and orientation) of the particle system relative to the
+            <see cref="P:DigitalRune.Particles.ParticleSystem.Parent" /> or the world.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Particles.ParticleSystem.PoseChanged">
+      <summary>
+            Occurs when the <see cref="P:DigitalRune.Geometry.IGeometricObject.Pose" /> was changed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.PreloadDeltaTime">
+      <summary>
+            Gets or sets the preload delta time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.PreloadDuration">
+      <summary>
+            Gets or sets the preload duration.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Random">
+      <summary>
+            Gets or sets the random number generator used by the particle system.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.ReferenceFrame">
+      <summary>
+            Gets or sets which 3D reference frame is used for particle parameters and particle effector 
+            properties.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.RenderData">
+      <summary>
+            Gets or sets the render data.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.Reset">
+      <summary>
+            Resets the particle system to its initial state. All particle states are cleared.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Service">
+      <summary>
+            Gets the particle system service.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Shape">
+      <summary>
+            Gets or sets the bounding shape of the particle system.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="E:DigitalRune.Particles.ParticleSystem.ShapeChanged">
+      <summary>
+            Occurs when the <see cref="P:DigitalRune.Geometry.IGeometricObject.Shape" /> or <see cref="P:DigitalRune.Geometry.IGeometricObject.Scale" /> was changed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.Time">
+      <summary>
+            Gets the simulation time of the particle system.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.TimeScaling">
+      <summary>
+            Gets or sets the time scaling.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystem.Update(System.TimeSpan)">
+      <summary>
+            Advances the state of the particle system.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystem.UserData">
+      <summary>
+            Gets or sets the user data.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleSystemCollection">
+      <summary>
+            Represents a collection of named <see cref="T:DigitalRune.Particles.ParticleSystem" />s.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystemCollection.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleSystemCollection" /> class.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleSystemException">
+      <summary>
+            The exception that is thrown when an error in the particle library occurs.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystemException.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleSystemException" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystemException.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleSystemException" /> class with a 
+            specified error message.
+            </summary>
+      <param name="message">The message that describes the error.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystemException.#ctor(System.String,System.Exception)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleSystemException" /> class with a
+            specified error message and a reference to the inner exception that is the cause of this
+            exception.
+            </summary>
+      <param name="message">The message that describes the error.</param>
+      <param name="innerException">
+            The exception that is the cause of the current exception, or <see langword="null" /> if no
+            inner exception is specified.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystemException.ParticleEffector">
+      <summary>
+            Gets or sets the particle effector that caused the exception.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystemException.ParticleParameter">
+      <summary>
+            Gets or sets the particle parameter that caused the exception.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystemException.ParticleSystem">
+      <summary>
+            Gets or sets the particle system that caused the exception.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.ParticleSystemManager">
+      <summary>
+            Manages a collection of particle systems.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystemManager.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.ParticleSystemManager" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystemManager.EnableMultithreading">
+      <summary>
+            Gets or sets a value indicating whether multithreading is enabled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.ParticleSystemManager.ParticleSystems">
+      <summary>
+            Gets the particle systems.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.ParticleSystemManager.Update(System.TimeSpan)">
+      <summary>
+            Updates all particle systems.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.AngularVelocityEffector">
+      <summary>
+            Applies an angular velocity to an angle parameter.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.AngularVelocityEffector" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.AngularVelocityEffector.AngleParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the angle.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.AngularVelocityEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.AngularVelocityEffector.SpeedParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the rotation speed.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.FuncEffector`2">
+      <summary>
+            Evaluates a custom (delegate) function for a single input particle parameter and stores the 
+            result in another particle parameter.
+            </summary>
+      <typeparam name="T">The type of the function parameter.</typeparam>
+      <typeparam name="TResult">The return type of the function.</typeparam>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Particles.Effectors.FuncEffector`2</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`2.Func">
+      <summary>
+            Gets or sets the delegate function.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`2.InputParameter">
+      <summary>
+            Gets or sets the name of the input parameter.
+            (A varying or uniform parameter of type <typeparamref name="T" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`2.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`2.OutputParameter">
+      <summary>
+            Gets or sets the name of the output parameter.
+            (A varying or uniform parameter of type <typeparamref name="TResult" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.FuncEffector`3">
+      <summary>
+            Evaluates a custom (delegate) function for two input particle parameters and stores the result
+            in another particle parameter.
+            </summary>
+      <typeparam name="T1">The type of the first function parameter.</typeparam>
+      <typeparam name="T2">The type of the second function parameter.</typeparam>
+      <typeparam name="TResult">The return type of the function.</typeparam>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Particles.Effectors.FuncEffector`3</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`3.Func">
+      <summary>
+            Gets or sets the delegate function.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`3.InputParameter1">
+      <summary>
+            Gets or sets the name of the first input parameter.
+            (A varying or uniform parameter of type <typeparamref name="T1" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`3.InputParameter2">
+      <summary>
+            Gets or sets the name of the second input parameter.
+            (A varying or uniform parameter of type <typeparamref name="T2" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.FuncEffector`3.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.FuncEffector`3.OutputParameter">
+      <summary>
+            Gets or sets the name of the output parameter.
+            (A varying or uniform parameter of type <typeparamref name="TResult" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.LinearAccelerationEffector">
+      <summary>
+            Applies an acceleration to a particle parameter.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.LinearAccelerationEffector" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.LinearAccelerationEffector.AccelerationParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the acceleration vector.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.LinearAccelerationEffector.DirectionParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the movement direction.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearAccelerationEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.LinearAccelerationEffector.SpeedParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the movement speed.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.LinearVelocityEffector">
+      <summary>
+            Applies a linear velocity to a 3D position parameter.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.LinearVelocityEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.LinearVelocityEffector.DirectionParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the movement direction.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.LinearVelocityEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.LinearVelocityEffector.PositionParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the position.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.LinearVelocityEffector.SpeedParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the movement speed.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.ReserveParticleEffector">
+      <summary>
+            Kills old particles if the particle system reaches the 
+            <see cref="P:DigitalRune.Particles.ParticleSystem.MaxNumberOfParticles" /> limit.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.ReserveParticleEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.ReserveParticleEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.ReserveParticleEffector.Reserve">
+      <summary>
+            Gets or sets the number of particles to reserve.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.SingleDampingEffector">
+      <summary>
+            Applies a damping to a particle parameter of type <see cref="T:System.Single" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.SingleDampingEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleDampingEffector.DampingParameter">
+      <summary>
+            Gets or sets the name of the particle parameter that defines the strength of the damping.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleDampingEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleDampingEffector.ValueParameter">
+      <summary>
+            Gets or sets the name of the particle parameter that is damped.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.SingleFadeEffector">
+      <summary>
+            Fades a particle parameter of type <see cref="T:System.Single" /> in and out.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.SingleFadeEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.FadeInEnd">
+      <summary>
+            Gets or sets the threshold that defines when the fade-in ends.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.FadeInStart">
+      <summary>
+            Gets or sets the threshold that defines when the fade-in starts.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.FadeOutEnd">
+      <summary>
+            Gets or sets the threshold that defines when the fade-out ends.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.FadeOutStart">
+      <summary>
+            Gets or sets the threshold that defines when the fade-out starts.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleFadeEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.TargetValueParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the target value.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.TimeParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the progress of the fade-in/out.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleFadeEffector.ValueParameter">
+      <summary>
+            Gets or sets the name of the parameter that is faded in/out.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.SingleLerpEffector">
+      <summary>
+            Linearly interpolates a particle parameter of type <see cref="T:System.Single" /> between a start and an 
+            end value.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.SingleLerpEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLerpEffector.EndParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the end value.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLerpEffector.FactorParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the interpolation factor.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLerpEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLerpEffector.StartParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the start value.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLerpEffector.ValueParameter">
+      <summary>
+            Gets or sets the name of the parameter that stores the interpolation result.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector">
+      <summary>
+            Evaluates a piecewise linear function consisting of 3 segments and multiplies the result with 
+            a particle parameter.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.InputParameter">
+      <summary>
+            Gets or sets the name of the parameter that is multiplied with the value of the 
+            piecewise linear function. (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.OutputParameter">
+      <summary>
+            Gets or sets the name of the parameter that stores the result.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Time0">
+      <summary>
+            Gets or sets the time of the first data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Time1">
+      <summary>
+            Gets or sets the time of the second data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Time2">
+      <summary>
+            Gets or sets the time of the third data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Time3">
+      <summary>
+            Gets or sets the time of the last data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.TimeParameter">
+      <summary>
+            Gets or sets the name of the parameter that is the input for the piecewise linear function.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Value0">
+      <summary>
+            Gets or sets the value of the first data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Value1">
+      <summary>
+            Gets or sets the value of the second data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Value2">
+      <summary>
+            Gets or sets the value of the third data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector.Value3">
+      <summary>
+            Gets or sets the value of the last data point.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.StartDirectionEffector">
+      <summary>
+            Initializes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" /> particle parameter as a direction vector and applies the 
+            rotation of the <see cref="T:DigitalRune.Particles.ParticleSystem" />'s <see cref="P:DigitalRune.Particles.ParticleSystem.Pose" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.StartDirectionEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartDirectionEffector.DefaultValue">
+      <summary>
+            Gets or sets the start value that is used if <see cref="P:DigitalRune.Particles.Effectors.StartDirectionEffector.Distribution" /> is 
+            <see langword="null" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartDirectionEffector.Distribution">
+      <summary>
+            Gets or sets the random value distribution that is used to choose a start value for the 
+            parameter of a new particle. 
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.OnInitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Initialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.OnInitializeParticles(System.Int32,System.Int32,System.Object)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.InitializeParticles(System.Int32,System.Int32,System.Object)" /> was called.
+            </summary>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+      <param name="emitter">
+            The emitter that triggered the particle creation. This can be an effector, another object or
+            <see langword="null" />.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartDirectionEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartDirectionEffector.Parameter">
+      <summary>
+            Gets or sets the name of the particle parameter that is initialized.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.StartPositionEffector">
+      <summary>
+            Initializes a <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" /> particle parameter as a position vector and applies the 
+            transformation of the <see cref="T:DigitalRune.Particles.ParticleSystem" />'s <see cref="P:DigitalRune.Particles.ParticleSystem.Pose" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.StartPositionEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartPositionEffector.DefaultValue">
+      <summary>
+            Gets or sets the start value that is used if <see cref="P:DigitalRune.Particles.Effectors.StartPositionEffector.Distribution" /> is 
+            <see langword="null" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartPositionEffector.Distribution">
+      <summary>
+            Gets or sets the random value distribution that is used to choose a start value for the 
+            parameter of a new particle. 
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.OnInitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Initialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.OnInitializeParticles(System.Int32,System.Int32,System.Object)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.InitializeParticles(System.Int32,System.Int32,System.Object)" /> was called.
+            </summary>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+      <param name="emitter">
+            The emitter that triggered the particle creation. This can be an effector, another object or
+            <see langword="null" />.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartPositionEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartPositionEffector.Parameter">
+      <summary>
+            Gets or sets the name of the particle parameter that is initialized.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.StartValueEffector`1">
+      <summary>
+            Initializes a particle parameter.
+            </summary>
+      <typeparam name="T">The type of the particle parameter.</typeparam>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Particles.Effectors.StartValueEffector`1</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartValueEffector`1.DefaultValue">
+      <summary>
+            Gets or sets the start value that is set if <see cref="P:DigitalRune.Particles.Effectors.StartValueEffector`1.Distribution" /> is 
+            <see langword="null" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartValueEffector`1.Distribution">
+      <summary>
+            Gets or sets the random value distribution that is used to choose a start value for the 
+            parameter of a new particle. 
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.OnInitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Initialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.OnInitializeParticles(System.Int32,System.Int32,System.Object)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.InitializeParticles(System.Int32,System.Int32,System.Object)" /> was called.
+            </summary>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+      <param name="emitter">
+            The emitter that triggered the particle creation. This can be an effector, another object or
+            <see langword="null" />.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartValueEffector`1.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartValueEffector`1.Parameter">
+      <summary>
+            Gets or sets the name of the particle parameter that is initialized.
+            (A varying or uniform parameter of type <typeparamref name="T" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.StartVelocityBiasEffector">
+      <summary>
+            Adds a bias velocity to the start velocities of particles.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.StartVelocityBiasEffector" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.BiasVelocityParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the bias velocity vector.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.DirectionParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the movement direction.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.OnInitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Initialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.OnInitializeParticles(System.Int32,System.Int32,System.Object)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.InitializeParticles(System.Int32,System.Int32,System.Object)" /> was called.
+            </summary>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+      <param name="emitter">
+            The emitter that triggered the particle creation. This can be an effector, another object or
+            <see langword="null" />.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.SpeedParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the movement speed.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StartVelocityBiasEffector.Strength">
+      <summary>
+            Gets or sets a factor that is used to scale the bias velocity before adding it to the 
+            particle velocity.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.StreamEmitter">
+      <summary>
+            Creates particles at a configurable emission rate.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.StreamEmitter" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StreamEmitter.DefaultEmissionRate">
+      <summary>
+            Gets or sets the default emission rate that is used if the 
+            <see cref="P:DigitalRune.Particles.Effectors.StreamEmitter.EmissionRateParameter" /> is not found.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StreamEmitter.EmissionLimit">
+      <summary>
+            Gets or sets the maximum number of emitted particles.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.StreamEmitter.EmissionRateParameter">
+      <summary>
+            Gets or sets the name of the particle parameter that defines the emission rate (particles 
+            per second). (A uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.OnInitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Initialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.StreamEmitter.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.TimeToSingleEffector">
+      <summary>
+            Converts the particle system's <see cref="P:DigitalRune.Particles.ParticleSystem.Time" /> into a <see cref="T:System.Single" /> 
+            value and stores it in a particle parameter.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Particles.Effectors.TimeToSingleEffector</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.TimeToSingleEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.TimeToSingleEffector.Parameter">
+      <summary>
+            Gets or sets the name of the parameter that should store the time value.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.Vector3FLerpEffector">
+      <summary>
+            Linearly interpolates a particle parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" /> between a start and 
+            an end value.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.Vector3FLerpEffector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLerpEffector.EndParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the end value.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLerpEffector.FactorParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the interpolation factor.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLerpEffector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLerpEffector.StartParameter">
+      <summary>
+            Gets or sets the name of the parameter that defines the start value.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLerpEffector.ValueParameter">
+      <summary>
+            Gets or sets the name of the parameter that stores the interpolation result.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector">
+      <summary>
+            Evaluates 3 piecewise linear functions consisting of 3 segments and multiplies the result with
+            a particle parameter. (This effector is the <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" /> version of the 
+            <see cref="T:DigitalRune.Particles.Effectors.SingleLinearSegment3Effector" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.CloneCore(DigitalRune.Particles.ParticleEffector)">
+      <summary>
+            Makes the instance a clone of the specified <see cref="T:DigitalRune.Particles.ParticleEffector" />.
+            </summary>
+      <param name="source">The object to clone.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.CreateInstanceCore">
+      <summary>
+            When implemented in a derived class, creates a new instance of the 
+            <see cref="T:DigitalRune.Particles.ParticleEffector" /> derived class. 
+            </summary>
+      <returns>The new instance.</returns>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.InputParameter">
+      <summary>
+            Gets or sets the name of the parameter that is multiplied with the value of the piecewise 
+            linear function. (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.OnBeginUpdate(System.TimeSpan)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.BeginUpdate(System.TimeSpan)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.OnRequeryParameters">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.RequeryParameters" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.OnUninitialize">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.Uninitialize" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.OnUpdateParticles(System.TimeSpan,System.Int32,System.Int32)">
+      <summary>
+            Called when <see cref="M:DigitalRune.Particles.ParticleEffector.UpdateParticles(System.TimeSpan,System.Int32,System.Int32)" /> was called.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+      <param name="startIndex">The index of the first particle to initialize.</param>
+      <param name="count">The number of particles to initialize.</param>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.OutputParameter">
+      <summary>
+            Gets or sets the name of the parameter that stores the result.
+            (A varying or uniform parameter of type <see cref="T:DigitalRune.Mathematics.Algebra.Vector3F" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Time0">
+      <summary>
+            Gets or sets the time of the first data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Time1">
+      <summary>
+            Gets or sets the time of the second data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Time2">
+      <summary>
+            Gets or sets the time of the third data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Time3">
+      <summary>
+            Gets or sets the time of the last data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.TimeParameter">
+      <summary>
+            Gets or sets the name of the parameter that is the input for the piecewise linear function.
+            (A varying or uniform parameter of type <see cref="T:System.Single" />.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Value0">
+      <summary>
+            Gets or sets the value of the first data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Value1">
+      <summary>
+            Gets or sets the value of the second data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Value2">
+      <summary>
+            Gets or sets the value of the third data point.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Particles.Effectors.Vector3FLinearSegment3Effector.Value3">
+      <summary>
+            Gets or sets the value of the last data point.
+            </summary>
+    </member>
+  </members>
+</doc>

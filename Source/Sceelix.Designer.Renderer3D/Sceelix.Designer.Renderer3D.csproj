@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{984E654C-44DE-4A73-9FC6-914B4C968A21}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Renderer3D</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Renderer3D</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsEngine>true</IsEngine>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\Packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\Renderer3DServiceAttribute.cs" />
+    <Compile Include="Attributes\RendererMeta.cs" />
+    <Compile Include="Attributes\RendererMetaParser.cs" />
+    <Compile Include="GraphicsScreens\ICustomGraphicsScreen.cs" />
+    <Compile Include="Services\AnimationServiceManager.cs" />
+    <Compile Include="Services\ParticleManager.cs" />
+    <Compile Include="Services\PostProcessingManager.cs" />
+    <Compile Include="GraphicsScreens\SimpleGraphicsScreen.cs" />
+    <Compile Include="Interfaces\IInputHandlerElement.cs" />
+    <Compile Include="Services\ScreenshotManager.cs" />
+    <Compile Include="Services\SimulationManager.cs" />
+    <Compile Include="Services\SkyManager.cs" />
+    <Compile Include="Messages\GeometricObjectClick.cs" />
+    <Compile Include="Services\BaseSceneObjectManager.cs" />
+    <Compile Include="Services\DynamicNodeManager.cs" />
+    <Compile Include="Services\IRenderer3DService.cs" />
+    <Compile Include="Services\SceneManager.cs" />
+    <Compile Include="Translators\DefaultEntityTranslator.cs" />
+    <Compile Include="Data\GameObjectGroup.cs" />
+    <Compile Include="Translators\EntityTranslatorContainer.cs" />
+    <Compile Include="Translators\GroupTranslator.cs" />
+    <Compile Include="Data\EntityObjectDomain.cs" />
+    <Compile Include="GameObjects\CameraAnimator3D.cs" />
+    <Compile Include="GameObjects\EntityObject.cs" />
+    <Compile Include="GameObjects\Components\CollisionDrawComponent.cs" />
+    <Compile Include="GameObjects\Components\CollisionComponent.cs" />
+    <Compile Include="Loading\ContentLoader.cs" />
+    <Compile Include="Loading\TextureLoader.cs" />
+    <Compile Include="GraphicsScreens\CustomSceneQuery.cs" />
+    <Compile Include="GraphicsScreens\DeferredGraphicsDebugMode.cs" />
+    <Compile Include="GraphicsScreens\DeferredGraphicsScreen.cs" />
+    <Compile Include="GraphicsScreens\GBufferRenderer.cs" />
+    <Compile Include="GraphicsScreens\LightBufferRenderer.cs" />
+    <Compile Include="GraphicsScreens\PreprocessingSceneQuery.cs" />
+    <Compile Include="Translators\GraphEntityTranslationService.cs" />
+    <Compile Include="Translators\IEntityTranslator.cs" />
+    <Compile Include="GameObjects\FogSphere\FogSphereNode.cs" />
+    <Compile Include="GameObjects\FogSphere\FogSphereRenderer.cs" />
+    <Compile Include="GameObjects\AxisCross.cs" />
+    <Compile Include="GameObjects\CameraObject.cs" />
+    <Compile Include="GameObjects\CampfireComponent.cs" />
+    <Compile Include="GameObjects\Components\CollisionHighlightComponent.cs" />
+    <Compile Include="GameObjects\Components\DynamicSceneComponent.cs" />
+    <Compile Include="GameObjects\CustomGeometricObject.cs" />
+    <Compile Include="GameObjects\EntityObjectComponent.cs" />
+    <Compile Include="Interfaces\IDrawableElement.cs" />
+    <Compile Include="SceneNodes\DynamicNode.cs" />
+    <Compile Include="GameObjects\FogObject.cs" />
+    <Compile Include="GameObjects\Components\SceelixGameComponent.cs" />
+    <Compile Include="GameObjects\SceelixGameObject.cs" />
+    <Compile Include="GameObjects\Components\SelectableEntityComponent.cs" />
+    <Compile Include="GameObjects\Components\SceneNodeComponent.cs" />
+    <Compile Include="GameObjects\WhiteGroundObject.cs" />
+    <Compile Include="GameObjects\GroundObject.cs" />
+    <Compile Include="GameObjects\StaticWhiteSkyObject.cs" />
+    <Compile Include="GameObjects\StaticSkyObject.cs" />
+    <Compile Include="GUI\CollisionObjectPicker.cs" />
+    <Compile Include="GameObjects\DynamicSkyObject.cs" />
+    <Compile Include="GUI\Render3DInspectorControl.cs" />
+    <Compile Include="Messages\RenderDataReady.cs" />
+    <Compile Include="Settings\Renderer3DSettings.cs" />
+    <Compile Include="Handles\HandleTranslator.cs" />
+    <Compile Include="Handles\HandleTranslatorManager.cs" />
+    <Compile Include="GUI\Renderer3DWindow.cs" />
+    <Compile Include="GUI\Renderer3DControl.cs" />
+    <Compile Include="GraphicsScreens\PostProcessingGraphicsScreen.cs" />
+    <Compile Include="Messages\AddGameObject.cs" />
+    <Compile Include="PostProcessing\UnderwaterPostProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\Sky3DSettings.cs" />
+    <Compile Include="GameObjects\VolumetricLight\VolumetricLightNode.cs" />
+    <Compile Include="GameObjects\VolumetricLight\VolumetricLightRenderer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17d451d4-b445-4f61-adfe-963f42d702b0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.Graphs\Sceelix.Designer.Graphs.csproj">
+      <Project>{24c93587-f297-4fed-978b-017e81ff2657}</Project>
+      <Name>Sceelix.Designer.Graphs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.ProjectExplorer\Sceelix.Designer.ProjectExplorer.csproj">
+      <Project>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</Project>
+      <Name>Sceelix.Designer.ProjectExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GridPatternGround.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Photo_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Folder_16x16.png" />
+    <EmbeddedResource Include="Resources\Video_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Arrow1DownRight_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Trash_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FullScreen_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

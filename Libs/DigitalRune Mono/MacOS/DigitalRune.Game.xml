@@ -1,0 +1,2360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DigitalRune.Game</name>
+  </assembly>
+  <members>
+    <member name="T:DigitalRune.Game.DataStore`1">
+      <summary>
+            Stores data that can be accessed using an ID or index.
+            </summary>
+      <typeparam name="T">The type of the data items.</typeparam>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.DataStore`1" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.Clear">
+      <summary>
+            Removes all items from the data store.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.DataStore`1.Count">
+      <summary>
+            Gets the number of items in the data store.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.Get(System.Int32)">
+      <summary>
+            Gets the item for the given ID.
+            </summary>
+      <param name="id">The ID.</param>
+      <returns>
+            The data with the given ID, or the default value of <typeparamref name="T" /> if no 
+            data for the given <paramref name="id" /> is in the data store.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.GetByIndex(System.Int32)">
+      <summary>
+            Gets the item at the given index.
+            </summary>
+      <param name="index">The zero-based index of the data.</param>
+      <returns>
+            The data that is stored at the given index. If the index is out of range, the default value
+            of <typeparamref name="T" /> is returned.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.GetIdByIndex(System.Int32)">
+      <summary>
+            Gets the ID of the item at the given index.
+            </summary>
+      <param name="index">The index of the item.</param>
+      <returns>The ID of the data stored at the given index.</returns>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.IndexOf(`0)">
+      <summary>
+            Gets the index of the given item.
+            </summary>
+      <param name="data">The data.</param>
+      <returns>
+            The zero-based index of the given item; or -1 if the data is not in the data store.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.IndexOfId(System.Int32)">
+      <summary>
+            Searches for the index of the item with the given ID.
+            </summary>
+      <param name="id">The ID to search for.</param>
+      <returns>
+        <para>
+            The index of the specified item, if <paramref name="id" /> is found. 
+            </para>
+        <para>
+            If <paramref name="id" /> is not found and <paramref name="id" /> is less than one or more IDs
+            in the collection, a negative number which is the bitwise complement of the index of the
+            first ID that is larger. 
+            </para>
+        <para>
+            If <paramref name="id" /> is not found and <paramref name="id" /> is greater than any of the 
+            IDs in the collection, a negative number which is the bitwise complement of (the index of 
+            the last ID plus 1).
+            </para>
+      </returns>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.Remove(System.Int32)">
+      <summary>
+            Removes data with the given ID.
+            </summary>
+      <param name="id">The ID of the data that should be removed.</param>
+      <returns>
+        <see langword="true" /> if the data was removed; <see langword="false" /> if the data was not 
+            stored in the data store.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.RemoveAt(System.Int32)">
+      <summary>
+            Removes the item at the given index.
+            </summary>
+      <param name="index">The index of the data that should be removed.</param>
+    </member>
+    <member name="M:DigitalRune.Game.DataStore`1.Set(System.Int32,`0)">
+      <summary>
+            Adds the given item to the data store.
+            </summary>
+      <param name="id">The ID.</param>
+      <param name="data">The data.</param>
+    </member>
+    <member name="T:DigitalRune.Game.GameEvent`1">
+      <summary>
+            Represents event of a <see cref="T:DigitalRune.Game.GameObject" />.
+            </summary>
+      <typeparam name="T">The type of the <see cref="T:System.EventArgs" />.</typeparam>
+    </member>
+    <member name="P:DigitalRune.Game.GameEvent`1.DigitalRune#Game#IGameEvent#Metadata">
+      <summary>
+            Gets the event metadata.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.Equals(DigitalRune.Game.GameEvent{`0})">
+      <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+      <param name="other">An object to compare with this object.</param>
+      <returns>
+        <see langword="true" /> if the current object is equal to the <paramref name="other" /> 
+            parameter; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.Equals(System.Object)">
+      <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+      <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+      <returns>
+        <see langword="true" /> if the specified <see cref="T:System.Object" /> is equal to this instance; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="E:DigitalRune.Game.GameEvent`1.Event">
+      <summary>
+            The event.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.GetHashCode">
+      <summary>
+            Returns a hash code for this instance.
+            </summary>
+      <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures 
+            like a hash table. 
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameEvent`1.Metadata">
+      <summary>
+            Gets the event metadata.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameEvent`1.Name">
+      <summary>
+            Gets the name.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.op_Equality(DigitalRune.Game.GameEvent{`0},DigitalRune.Game.GameEvent{`0})">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GameEvent`1" />s to determine whether they are the same.
+            </summary>
+      <param name="event1">The first <see cref="T:DigitalRune.Game.GameEvent`1" />.</param>
+      <param name="event2">The second <see cref="T:DigitalRune.Game.GameEvent`1" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="event1" /> and 
+            <paramref name="event2" /> are the same; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.op_Inequality(DigitalRune.Game.GameEvent{`0},DigitalRune.Game.GameEvent{`0})">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GameEventCollection" />s to determine whether they are different.
+            </summary>
+      <param name="event1">The first <see cref="T:DigitalRune.Game.GameEvent`1" />.</param>
+      <param name="event2">The second <see cref="T:DigitalRune.Game.GameEvent`1" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="event1" /> and 
+            <paramref name="event2" /> are different; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameEvent`1.Owner">
+      <summary>
+            Gets the game object that owns this event.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.Raise">
+      <summary>
+            Raises the event with default arguments.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEvent`1.Raise(`0)">
+      <summary>
+            Raises the event with the given arguments.
+            </summary>
+      <param name="eventArgs">The event arguments.</param>
+    </member>
+    <member name="P:DigitalRune.Game.GameEvent`1.RaiseOnEvent">
+      <summary>
+            Event handler that automatically raises this game object event when another event occurs.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.GameEventCollection">
+      <summary>
+            Manages a collection of game object events.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Add``1(DigitalRune.Game.GameEventMetadata{``0})">
+      <summary>
+            Adds an event for the given metadata.
+            </summary>
+      <param name="metadata">The metadata of the event.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="metadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Add``1(System.Int32)">
+      <summary>
+            Adds an event with the given ID.
+            </summary>
+      <param name="id">The ID of the event.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> is invalid. Events must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" /> before they can be added.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Add``1(System.String)">
+      <summary>
+            Adds an event with the given name.
+            </summary>
+      <param name="name">The event name.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The event is not defined. Events must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" /> before they can be added.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Equals(DigitalRune.Game.GameEventCollection)">
+      <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+      <param name="other">An object to compare with this object.</param>
+      <returns>
+        <see langword="true" /> if the current object is equal to the <paramref name="other" /> 
+            parameter; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Equals(System.Object)">
+      <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+      <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+      <returns>
+        <see langword="true" /> if the specified <see cref="T:System.Object" /> is equal to this instance; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Get``1(DigitalRune.Game.GameEventMetadata{``0})">
+      <summary>
+            Gets the event for the given metadata.
+            </summary>
+      <param name="metadata">The metadata of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>The property</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="metadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Get``1(System.Int32)">
+      <summary>
+            Gets the event with the given ID.
+            </summary>
+      <param name="id">The ID of the event.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <returns>The event.</returns>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> is invalid. Events must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Get``1(System.String)">
+      <summary>
+            Gets the event with the given name.
+            </summary>
+      <param name="name">The name of the event.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <returns>The game object event.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The event is not defined. Events must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.Generic.IEnumerator`1" /> object that can be used to iterate through the collection.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.GetHashCode">
+      <summary>
+            Returns a hash code for this instance.
+            </summary>
+      <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures 
+            like a hash table. 
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.op_Equality(DigitalRune.Game.GameEventCollection,DigitalRune.Game.GameEventCollection)">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GameEventCollection" />s to determine whether they are the same.
+            </summary>
+      <param name="collection1">The first <see cref="T:DigitalRune.Game.GameEventCollection" />.</param>
+      <param name="collection2">The second <see cref="T:DigitalRune.Game.GameEventCollection" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="collection1" /> and 
+            <paramref name="collection2" /> are the same; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.op_Inequality(DigitalRune.Game.GameEventCollection,DigitalRune.Game.GameEventCollection)">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GameEventCollection" />s to determine whether they are different.
+            </summary>
+      <param name="collection1">The first <see cref="T:DigitalRune.Game.GameEventCollection" />.</param>
+      <param name="collection2">The second <see cref="T:DigitalRune.Game.GameEventCollection" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="collection1" /> and 
+            <paramref name="collection2" /> are different; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventCollection.Owner">
+      <summary>
+            Gets the game object that owns this collection.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Remove(DigitalRune.Game.IGameEventMetadata)">
+      <summary>
+            Removes the event for the given metadata.
+            </summary>
+      <param name="metadata">The metadata of the event.</param>
+      <returns>
+        <see langword="true" /> if the event was removed; otherwise, <see langword="false" />
+            if the event was not found.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="metadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Remove(System.Int32)">
+      <summary>
+            Removes the event with the given ID.
+            </summary>
+      <param name="id">The ID of the event.</param>
+      <returns>
+        <see langword="true" /> if the event was removed; otherwise, <see langword="false" />
+            if the event was not found.
+            </returns>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> is invalid. Events must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.Remove``1(System.String)">
+      <summary>
+            Removes the event with the given name.
+            </summary>
+      <param name="name">The name of the event.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <returns>
+        <see langword="true" /> if the event was removed; otherwise, <see langword="false" />
+            if the event was not found.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The event is not defined. Events must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameEventCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
+    </member>
+    <member name="T:DigitalRune.Game.GameEventMetadata`1">
+      <summary>
+            Identifies and describes a game object event.
+            </summary>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventMetadata`1.Category">
+      <summary>
+            Gets or sets the category.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventMetadata`1.DefaultEventArgs">
+      <summary>
+            Gets or sets the default event arguments.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventMetadata`1.Description">
+      <summary>
+            Gets or sets the description.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventMetadata`1.DigitalRune#Game#IGameEventMetadata#DefaultEventArgs">
+      <summary>
+            Gets the default event arguments.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventMetadata`1.Id">
+      <summary>
+            Gets the unique ID.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameEventMetadata`1.Name">
+      <summary>
+            Gets the name.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.GameObject">
+      <summary>
+            Represents an object of a game.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.GameObject" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.GameObject" /> class.
+            </summary>
+      <param name="name">The unique name.</param>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)">
+      <summary>
+            Defines a game object event.
+            </summary>
+      <param name="name">The name.</param>
+      <param name="category">The category.</param>
+      <param name="description">The description.</param>
+      <param name="defaultEventArgs">
+            The default event arguments that are used when the event is raised without custom event
+            arguments.
+            </param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <returns>The event metadata.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> must not be an empty string.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)">
+      <summary>
+            Defines a game object property.
+            </summary>
+      <param name="name">The name.</param>
+      <param name="category">The category.</param>
+      <param name="description">The description.</param>
+      <param name="defaultValue">The default value.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>The property metadata.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> must not be an empty string.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.DigitalRune#Animation#IAnimatableObject#GetAnimatableProperty``1(System.String)">
+      <summary>
+            Gets the property with given name and type which can be animated.
+            </summary>
+      <param name="name">The name of the property.</param>
+      <typeparam name="T">The type of the property.</typeparam>
+      <returns>
+            The <see cref="T:DigitalRune.Animation.IAnimatableProperty" /> that has the given name and type; otherwise, 
+            <see langword="null" /> if the object does not have an animatable property with this name or 
+            type.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.DigitalRune#Animation#IAnimatableObject#GetAnimatedProperties">
+      <summary>
+            Gets either the properties which are currently animated, or all properties which can be 
+            animated. (See remarks.)
+            </summary>
+      <returns>
+            The properties which are currently animated, or the all properties which can be animated.
+            (See remarks.)
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameObject.Events">
+      <summary>
+            Gets the game object events.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetEventMetadata">
+      <summary>
+            Gets the metadata of all game object events that were created with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" />.
+            </summary>
+      <returns>
+            The global collection of all created game object event metadata.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetEventMetadata``1(System.Int32)">
+      <summary>
+            Gets the metadata of the event with the given ID.
+            </summary>
+      <param name="id">The event ID.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <returns>
+            The event metadata, or <see langword="null" /> if no event with the given 
+            <paramref name="id" /> was defined with <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetEventMetadata``1(System.String)">
+      <summary>
+            Gets metadata for the event with the given name.
+            </summary>
+      <param name="name">The event name.</param>
+      <typeparam name="T">The type of the event arguments.</typeparam>
+      <returns>
+            The event metadata, or <see langword="null" /> if no event with the given 
+            <paramref name="name" /> was defined with <see cref="M:DigitalRune.Game.GameObject.CreateEvent``1(System.String,System.String,System.String,``0)" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetPropertyMetadata">
+      <summary>
+            Gets the metadata of all game object properties that were created with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" />.
+            </summary>
+      <returns>
+            The global collection of all created game object property metadata.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetPropertyMetadata``1(System.Int32)">
+      <summary>
+            Gets the metadata of the property with the given ID.
+            </summary>
+      <param name="id">The property ID.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>
+            The property metadata, or <see langword="null" /> if no property with the given 
+            <paramref name="id" /> was defined with <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetPropertyMetadata``1(System.String)">
+      <summary>
+            Gets the metadata of the property with the given name.
+            </summary>
+      <param name="name">The property name.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>
+            The property metadata, or <see langword="null" /> if no property with the given 
+            <paramref name="name" /> was defined with <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetValue``1(DigitalRune.Game.GamePropertyMetadata{``0})">
+      <summary>
+            Gets the value of the property with the given metadata.
+            </summary>
+      <param name="propertyMetadata">The metadata of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>
+            The value of the property.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="propertyMetadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetValue``1(System.Int32)">
+      <summary>
+            Gets the value of the property with the given ID.
+            </summary>
+      <param name="propertyId">The ID of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>
+            The value of the property.
+            </returns>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="propertyId" /> is invalid. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.GetValue``1(System.String)">
+      <summary>
+            Gets the value of the property with the given name.
+            </summary>
+      <param name="propertyName">The name of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>
+            The value of the property.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="propertyName" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="propertyName" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The property is not defined. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.GameObject.IsLoaded">
+      <summary>
+            Gets a value indicating whether the content of this object was loaded.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.Load">
+      <summary>
+            Loads the content of the game object.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameObject.Name">
+      <summary>
+            Gets or sets the name.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            Cannot change name of a game object because it is already loaded.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.NewFrame">
+      <summary>
+            Tells the game object to prepare itself for the next time step.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.OnLoad">
+      <summary>
+            Called when the game object should load its content.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.OnPropertyChanged``1(DigitalRune.Game.GameProperty{``0},``0,``0)">
+      <summary>
+            Is called after a game object property was changed.
+            </summary>
+      <param name="gameProperty">The game object property.</param>
+      <param name="oldValue">The old value.</param>
+      <param name="newValue">The new value.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.OnPropertyChanged(System.ComponentModel.PropertyChangedEventArgs)">
+      <summary>
+            Raises the <see cref="E:System.ComponentModel.INotifyPropertyChanged.PropertyChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:System.ComponentModel.PropertyChangedEventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.OnTemplateChanged(System.EventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.GameObject.TemplateChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:System.EventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.OnUnload">
+      <summary>
+            Called when the game object should unload its content.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.OnUpdate(System.TimeSpan)">
+      <summary>
+            Called when the game object should be updated.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last frame.</param>
+    </member>
+    <member name="P:DigitalRune.Game.GameObject.Properties">
+      <summary>
+            Gets the game object properties.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.GameObject.PropertyChanged">
+      <summary>
+            Occurs when a property value has changed.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.SetValue``1(DigitalRune.Game.GamePropertyMetadata{``0},``0)">
+      <summary>
+            Set the value of the property for the given metadata.
+            </summary>
+      <param name="propertyMetadata">The metadata of the property.</param>
+      <param name="value">The new value.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="propertyMetadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.SetValue``1(System.Int32,``0)">
+      <summary>
+            Sets the value of the property with the given ID.
+            </summary>
+      <param name="propertyId">The ID of the property.</param>
+      <param name="value">The new value.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="propertyId" /> is invalid. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.SetValue``1(System.String,``0)">
+      <summary>
+            Sets the value of the property with the given name.
+            </summary>
+      <param name="propertyName">The name of the property.</param>
+      <param name="value">The new value.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="propertyName" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="propertyName" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The property is not defined. Properties must be defined with
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="E:DigitalRune.Game.GameObject.System#ComponentModel#INotifyPropertyChanged#PropertyChanged">
+      <summary>
+            Occurs when a property value has changed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameObject.Template">
+      <summary>
+            Gets or sets the template.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.GameObject.TemplateChanged">
+      <summary>
+            Event raised after the <see cref="P:DigitalRune.Game.GameObject.Template" /> has changed.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.Unload">
+      <summary>
+            Unloads the content of the game object.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObject.Update(System.TimeSpan)">
+      <summary>
+            Updates this game object.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last frame.</param>
+    </member>
+    <member name="T:DigitalRune.Game.GameObjectCollection">
+      <summary>
+            Manages a collection of game objects.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectCollection.ClearItems">
+      <summary>
+            Removes all elements from the <see cref="T:DigitalRune.Game.GameObjectCollection" />. 
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectCollection.InsertItem(System.Int32,DigitalRune.Game.GameObject)">
+      <summary>
+            Inserts an element into the <see cref="T:DigitalRune.Game.GameObjectCollection" /> at the specified index.
+            </summary>
+      <param name="index">The zero-based index at which item should be inserted.</param>
+      <param name="item">The object to insert.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="item" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="item" /> is already loaded, probably belongs to another service. Or the name 
+            of the game object is not unique.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than 0, or <paramref name="index" /> is greater than 
+            <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectCollection.MoveItem(System.Int32,System.Int32)">
+      <summary>
+            Moves the item at the specified index to a new location in the collection.
+            </summary>
+      <param name="oldIndex">
+            The zero-based index specifying the location of the item to be moved. 
+            </param>
+      <param name="newIndex">
+            The zero-based index specifying the new location of the item.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the element at the specified index of the <see cref="T:DigitalRune.Game.GameObjectCollection" />.
+            </summary>
+      <param name="index">The index of the element to remove.</param>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectCollection.SetItem(System.Int32,DigitalRune.Game.GameObject)">
+      <summary>
+            Replaces the item at the specified index with the specified item.
+            </summary>
+      <param name="index">The zero-based index of the item to be replaced.</param>
+      <param name="item">The new item.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="item" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="item" /> is already loaded, probably belongs to another service. Or the name 
+            of the game object is not unique.
+            </exception>
+    </member>
+    <member name="T:DigitalRune.Game.GameObjectManager">
+      <summary>
+            Manages a collection of <see cref="T:DigitalRune.Game.GameObject" />s.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectManager.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.GameObjectManager" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameObjectManager.Objects">
+      <summary>
+            Gets the game objects.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameObjectManager.Update(System.TimeSpan)">
+      <summary>
+            Updates all game objects.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last frame.</param>
+    </member>
+    <member name="T:DigitalRune.Game.GameProperty`1">
+      <summary>
+            Represents a property of a <see cref="T:DigitalRune.Game.GameObject" /></summary>
+      <typeparam name="T">The type of the property value.</typeparam>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.AsAnimatable">
+      <summary>
+            Returns an <see cref="T:DigitalRune.Animation.IAnimatableProperty`1" /> that can be used to animate this
+            <see cref="T:DigitalRune.Game.GameProperty`1" />.
+            </summary>
+      <returns>
+            An <see cref="T:DigitalRune.Animation.IAnimatableProperty`1" /> instance that animates this game object property.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.Change">
+      <summary>
+            Event handler that automatically changes the value of the property.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.GameProperty`1.Changed">
+      <summary>
+            Event raised after the <see cref="P:DigitalRune.Game.GameProperty`1.Value" /> was changed.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.GameProperty`1.Changing">
+      <summary>
+            Event raised when the <see cref="P:DigitalRune.Game.GameProperty`1.Value" /> is about to change.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.DigitalRune#Game#IGameProperty#Metadata">
+      <summary>
+            Gets the property metadata.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.DigitalRune#Game#IGameProperty#Value">
+      <summary>
+            Gets or sets the value.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.Equals(DigitalRune.Game.GameProperty{`0})">
+      <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+      <param name="other">An object to compare with this object.</param>
+      <returns>
+        <see langword="true" /> if the current object is equal to the <paramref name="other" /> 
+            parameter; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.Equals(System.Object)">
+      <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+      <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+      <returns>
+        <see langword="true" /> if the specified <see cref="T:System.Object" /> is equal to this instance; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.GetHashCode">
+      <summary>
+            Returns a hash code for this instance.
+            </summary>
+      <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures 
+            like a hash table. 
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.HasLocalValue">
+      <summary>
+            Gets a value indicating whether this property has a local value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.Metadata">
+      <summary>
+            Gets the property metadata.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.Name">
+      <summary>
+            Gets the name.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.op_Equality(DigitalRune.Game.GameProperty{`0},DigitalRune.Game.GameProperty{`0})">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GameProperty`1" />s to determine whether they are the same.
+            </summary>
+      <param name="property1">The first <see cref="T:DigitalRune.Game.GameProperty`1" />.</param>
+      <param name="property2">The second <see cref="T:DigitalRune.Game.GameProperty`1" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="property1" /> and 
+            <paramref name="property2" /> are the same; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.op_Explicit(DigitalRune.Game.GameProperty{`0})~`0">
+      <summary>
+            Returns the value of the specified <see cref="T:DigitalRune.Game.GameProperty`1" />.
+            </summary>
+      <param name="property">The game object property.</param>
+      <returns>The value of the game object property.</returns>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.op_Inequality(DigitalRune.Game.GameProperty{`0},DigitalRune.Game.GameProperty{`0})">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GameProperty`1" />s to determine whether they are different.
+            </summary>
+      <param name="property1">The first <see cref="T:DigitalRune.Game.GameProperty`1" />.</param>
+      <param name="property2">The second <see cref="T:DigitalRune.Game.GameProperty`1" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="property1" /> and 
+            <paramref name="property2" /> are different; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.Owner">
+      <summary>
+            Gets the game object that owns this property.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.Parse(System.String)">
+      <summary>
+            Parses the specified string and updates the <see cref="P:DigitalRune.Game.GameProperty`1.Value" />.
+            </summary>
+      <param name="value">The value.</param>
+    </member>
+    <member name="M:DigitalRune.Game.GameProperty`1.Reset">
+      <summary>
+            Removes any local values and sets the property to its default value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GameProperty`1.Value">
+      <summary>
+            Gets or sets the value.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.GamePropertyCategories">
+      <summary>
+            Defines a set of standard categories for game object properties and events.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Appearance">
+      <summary>
+            Properties related to how an object appears.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Behavior">
+      <summary>
+            Properties related to how an object acts.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Common">
+      <summary>
+            Properties common among different objects.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Default">
+      <summary>
+            Properties that are grouped in a default category.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Input">
+      <summary>
+            Properties related to input.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Layout">
+      <summary>
+            Properties related to layout.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.GamePropertyCategories.Style">
+      <summary>
+            Properties related to styling.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.GamePropertyCollection">
+      <summary>
+            Manages a collection of game object properties.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Add``1(DigitalRune.Game.GamePropertyMetadata{``0})">
+      <summary>
+            Adds a property for the given metadata.
+            </summary>
+      <param name="metadata">The metadata of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="metadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Add``1(System.Int32)">
+      <summary>
+            Adds a property with the given ID.
+            </summary>
+      <param name="id">The ID of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> is invalid. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be added.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Add``1(System.String)">
+      <summary>
+            Adds a property with with the given name.
+            </summary>
+      <param name="name">The property name.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The property is not defined. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be added.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Equals(DigitalRune.Game.GamePropertyCollection)">
+      <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+      <param name="other">An object to compare with this object.</param>
+      <returns>
+        <see langword="true" /> if the current object is equal to the <paramref name="other" /> 
+            parameter; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Equals(System.Object)">
+      <summary>
+            Determines whether the specified <see cref="T:System.Object" /> is equal to this instance.
+            </summary>
+      <param name="obj">The <see cref="T:System.Object" /> to compare with this instance.</param>
+      <returns>
+        <see langword="true" /> if the specified <see cref="T:System.Object" /> is equal to this instance; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Get``1(DigitalRune.Game.GamePropertyMetadata{``0})">
+      <summary>
+            Gets the property for the given metadata.
+            </summary>
+      <param name="metadata">The metadata of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>The property</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="metadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Get``1(System.Int32)">
+      <summary>
+            Gets the property with the given ID.
+            </summary>
+      <param name="id">The ID of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>The property.</returns>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> is invalid. Note: Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Get``1(System.String)">
+      <summary>
+            Gets the property with the given name.
+            </summary>
+      <param name="name">The name of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>The property.</returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The property is not defined. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.Generic.IEnumerator`1" /> object that can be used to iterate through the collection.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.GetHashCode">
+      <summary>
+            Returns a hash code for this instance.
+            </summary>
+      <returns>
+            A hash code for this instance, suitable for use in hashing algorithms and data structures 
+            like a hash table. 
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.op_Equality(DigitalRune.Game.GamePropertyCollection,DigitalRune.Game.GamePropertyCollection)">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GamePropertyCollection" />s to determine whether they are the same.
+            </summary>
+      <param name="collection1">The first <see cref="T:DigitalRune.Game.GamePropertyCollection" />.</param>
+      <param name="collection2">The second <see cref="T:DigitalRune.Game.GamePropertyCollection" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="collection1" /> and 
+            <paramref name="collection2" /> are the same; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.op_Inequality(DigitalRune.Game.GamePropertyCollection,DigitalRune.Game.GamePropertyCollection)">
+      <summary>
+            Compares two <see cref="T:DigitalRune.Game.GamePropertyCollection" />s to determine whether they are different.
+            </summary>
+      <param name="collection1">The first <see cref="T:DigitalRune.Game.GamePropertyCollection" />.</param>
+      <param name="collection2">The second <see cref="T:DigitalRune.Game.GamePropertyCollection" />.</param>
+      <returns>
+        <see langword="true" /> if the <paramref name="collection1" /> and 
+            <paramref name="collection2" /> are different; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyCollection.Owner">
+      <summary>
+            Gets the game object that owns this collection.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Remove(DigitalRune.Game.IGamePropertyMetadata)">
+      <summary>
+            Removes the property for the given metadata.
+            </summary>
+      <param name="metadata">The metadata of the property.</param>
+      <returns>
+        <see langword="true" /> if the property was removed; otherwise, <see langword="false" /> if
+            the property was not found.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="metadata" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Remove(System.Int32)">
+      <summary>
+            Removes the property with the given ID.
+            </summary>
+      <param name="id">The ID of the property.</param>
+      <returns>
+        <see langword="true" /> if the property was removed; otherwise, <see langword="false" />
+            if the property was not found.
+            </returns>
+      <exception cref="T:System.ArgumentException">
+            The <paramref name="id" /> is invalid. Note: Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.Remove``1(System.String)">
+      <summary>
+            Removes the property with the given name.
+            </summary>
+      <param name="name">The name of the property.</param>
+      <typeparam name="T">The type of the property value.</typeparam>
+      <returns>
+        <see langword="true" /> if the property was removed; otherwise, <see langword="false" />
+            if the property was not found.
+            </returns>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="name" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="name" /> is an empty string.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+            The property is not defined. Properties must be defined with 
+            <see cref="M:DigitalRune.Game.GameObject.CreateProperty``1(System.String,System.String,System.String,``0)" /> before they can be used.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyCollection.System#Collections#IEnumerable#GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the collection.
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.IEnumerator" /> object that can be used to iterate through the collection.
+            </returns>
+    </member>
+    <member name="T:DigitalRune.Game.GamePropertyEventArgs">
+      <summary>
+            Provides data for the <see cref="E:DigitalRune.Game.GameProperty`1.Changing" /> and the 
+            <see cref="E:DigitalRune.Game.GameProperty`1.Changed" /> event of a game object property.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.GamePropertyEventArgs.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.GamePropertyEventArgs</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyEventArgs.Property">
+      <summary>
+            Gets the game object property.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.GamePropertyEventArgs`1">
+      <summary>
+            Provides data for the <see cref="E:DigitalRune.Game.GameProperty`1.Changing" /> and the 
+            <see cref="E:DigitalRune.Game.GameProperty`1.Changed" /> event of a game object property.
+            </summary>
+      <typeparam name="T">The type of the game object property value.</typeparam>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyEventArgs`1.CoercedValue">
+      <summary>
+            Gets or sets the coerced value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyEventArgs`1.NewValue">
+      <summary>
+            Gets the new value of the game object property.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyEventArgs`1.OldValue">
+      <summary>
+            Gets the old value of the game object property.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyEventArgs`1.Property">
+      <summary>
+            Gets the game object property.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.GamePropertyMetadata`1">
+      <summary>
+            Identifies and describes a game object property.
+            </summary>
+      <typeparam name="T">The type of the property value.</typeparam>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyMetadata`1.Category">
+      <summary>
+            Gets or sets the category.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyMetadata`1.DefaultValue">
+      <summary>
+            Gets or sets the default value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyMetadata`1.Description">
+      <summary>
+            Gets or sets the description.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyMetadata`1.DigitalRune#Game#IGamePropertyMetadata#DefaultValue">
+      <summary>
+            Gets the default value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyMetadata`1.Id">
+      <summary>
+            Gets the unique ID.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.GamePropertyMetadata`1.Name">
+      <summary>
+            Gets the name.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.IGameEvent">
+      <summary>
+            Base interface for <see cref="T:DigitalRune.Game.GameEvent`1" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameEvent.Metadata">
+      <summary>
+            Gets the event metadata.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameEvent.Owner">
+      <summary>
+            Gets the game object that owns this event.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.IGameEventMetadata">
+      <summary>
+            Identifies and describes a game object event.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameEventMetadata.Category">
+      <summary>
+            Gets or sets the category.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameEventMetadata.DefaultEventArgs">
+      <summary>
+            Gets the default event arguments.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameEventMetadata.Description">
+      <summary>
+            Gets or sets the description.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameEventMetadata.Id">
+      <summary>
+            Gets the unique ID.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.IGameObjectService">
+      <summary>
+            Manages <see cref="T:DigitalRune.Game.GameObject" />s.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameObjectService.Objects">
+      <summary>
+            Gets the game objects.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.IGameProperty">
+      <summary>
+            Base interface for <see cref="T:DigitalRune.Game.GameProperty`1" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameProperty.HasLocalValue">
+      <summary>
+            Gets a value indicating whether this property has a local value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameProperty.Metadata">
+      <summary>
+            Gets the property metadata.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameProperty.Owner">
+      <summary>
+            Gets the game object that owns this property.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.IGameProperty.Parse(System.String)">
+      <summary>
+            Parses the specified string and updates the <see cref="P:DigitalRune.Game.GameProperty`1.Value" />.
+            </summary>
+      <param name="value">The value.</param>
+    </member>
+    <member name="M:DigitalRune.Game.IGameProperty.Reset">
+      <summary>
+            Removes any local values and sets the property to its default value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGameProperty.Value">
+      <summary>
+            Gets or sets the value.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.IGamePropertyMetadata">
+      <summary>
+            Identifies and describes a game object property.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGamePropertyMetadata.Category">
+      <summary>
+            Gets or sets the category.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGamePropertyMetadata.DefaultValue">
+      <summary>
+            Gets the default value.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGamePropertyMetadata.Description">
+      <summary>
+            Gets or sets the description.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.IGamePropertyMetadata.Id">
+      <summary>
+            Gets the unique ID.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.States.State">
+      <summary>
+            Defines a state in a state machine.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.State.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.State" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.State.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.State" /> class.
+            </summary>
+      <param name="name">The name of this state.</param>
+    </member>
+    <member name="E:DigitalRune.Game.States.State.Enter">
+      <summary>
+            Event raised when the state is entered.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.States.State.Exit">
+      <summary>
+            Event raised when the state is exited.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.State.IsActive">
+      <summary>
+            Gets a value indicating whether this state is active.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.State.Name">
+      <summary>
+            Gets or sets the name of the state.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            Cannot change name of a state because it is already part of <see cref="T:DigitalRune.Game.States.StateCollection" />.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.States.State.OnEnter(DigitalRune.Game.States.StateEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.States.State.Enter" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:DigitalRune.Game.States.StateEventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.States.State.OnExit(DigitalRune.Game.States.StateEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.States.State.Exit" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:DigitalRune.Game.States.StateEventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.States.State.OnUpdate(DigitalRune.Game.States.StateEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.States.State.Update" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:DigitalRune.Game.States.StateEventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Game.States.State.Owner">
+      <summary>
+            Gets the state collection that owns this state.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.State.ParallelSubStates">
+      <summary>
+            Gets the parallel sub-state collections.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.State.Transitions">
+      <summary>
+            Gets the transitions.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.States.State.Update">
+      <summary>
+            Event raised when the state is updated.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.States.StateCollection">
+      <summary>
+            Manages a collection of <see cref="T:DigitalRune.Game.States.State" />s.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateCollection.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.StateCollection" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateCollection.ActiveState">
+      <summary>
+            Gets the active state.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateCollection.ClearItems">
+      <summary>
+            Removes all elements from the <see cref="T:System.Collections.ObjectModel.Collection`1" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateCollection.FinalState">
+      <summary>
+            Gets or sets the final state.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateCollection.GetEnumerator">
+      <summary>
+            Returns an enumerator that iterates through the <see cref="T:DigitalRune.Game.States.StateCollection" />. 
+            </summary>
+      <returns>
+            An <see cref="T:System.Collections.Generic.List`1.Enumerator" /> for <see cref="T:DigitalRune.Game.States.StateCollection" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateCollection.InitialState">
+      <summary>
+            Gets or sets the initial state.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateCollection.InsertItem(System.Int32,DigitalRune.Game.States.State)">
+      <summary>
+            Inserts an element into the <see cref="T:System.Collections.ObjectModel.Collection`1" /> at the specified index.
+            </summary>
+      <param name="index">
+            The zero-based index at which <paramref name="item" /> should be inserted.
+            </param>
+      <param name="item">
+            The object to insert. The value can be <see langword="null" /> for reference types.
+            </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="item" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="item" /> is already contained in the collection. Duplicate states are not 
+            allowed in the collection.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than zero. Or <paramref name="index" /> is greater than 
+            <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateCollection.Owner">
+      <summary>
+            Gets the state that owns this state collection.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the element at the specified index of the <see cref="T:System.Collections.ObjectModel.Collection`1" />.
+            </summary>
+      <param name="index">The zero-based index of the element to remove.</param>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than zero. Or <paramref name="index" /> is equal to or 
+            greater than <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateCollection.SaveHistory">
+      <summary>
+            Gets or sets a value indicating whether this state collection has a "history state".
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateCollection.SetItem(System.Int32,DigitalRune.Game.States.State)">
+      <summary>
+            Replaces the element at the specified index.
+            </summary>
+      <param name="index">The zero-based index of the element to replace.</param>
+      <param name="item">
+            The new value for the element at the specified index. The value can be 
+            <see langword="null" /> for reference types.
+            </param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="item" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="item" /> is already contained in the collection. Duplicate states are not 
+            allowed in the collection.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than zero.
+            Or <paramref name="index" /> is greater than <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />.
+            </exception>
+    </member>
+    <member name="T:DigitalRune.Game.States.StateEventArgs">
+      <summary>
+            Provides arguments for the <see cref="E:DigitalRune.Game.States.State.Enter" />, <see cref="E:DigitalRune.Game.States.State.Update" /> and
+            <see cref="E:DigitalRune.Game.States.State.Exit" /> events of a <see cref="T:DigitalRune.Game.States.State" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateEventArgs.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.StateEventArgs" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateEventArgs.#ctor(System.TimeSpan)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.StateEventArgs" /> class for the given time
+            step.
+            </summary>
+      <param name="deltaTime">The size of the current time step.</param>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateEventArgs.DeltaTime">
+      <summary>
+            Gets the size of the current time step.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.States.StateEventArgs.Empty">
+      <summary>
+            Represents an event with no event data.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.States.StateMachine">
+      <summary>
+            Represents a state machine.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateMachine.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.StateMachine" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.StateMachine.States">
+      <summary>
+            Gets the states.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.StateMachine.Update(System.TimeSpan)">
+      <summary>
+            Updates the state machine.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="T:DigitalRune.Game.States.SubStatesCollection">
+      <summary>
+            Manages the parallel sub-states of a <see cref="T:DigitalRune.Game.States.State" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.SubStatesCollection.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.SubStatesCollection" /> class.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.States.Transition">
+      <summary>
+            Defines a transition between two states.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.Transition.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.States.Transition</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="E:DigitalRune.Game.States.Transition.Action">
+      <summary>
+            Event raised when the transitions is performed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.Transition.Delay">
+      <summary>
+            Gets or sets the time delay.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.Transition.Fire">
+      <summary>
+            Fires this transition.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.Transition.Fire(System.Object,System.EventArgs)">
+      <summary>
+            Fires this transition. (Event handler signature)
+            </summary>
+      <param name="sender">The sender.</param>
+      <param name="eventArgs">
+            The <see cref="T:System.EventArgs" /> instance containing the event data.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Game.States.Transition.FireAlways">
+      <summary>
+            Gets or sets a value indicating whether this transition should fire always.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.Transition.Guard">
+      <summary>
+            Gets or sets the guard predicate.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.Transition.Name">
+      <summary>
+            Gets or sets the name of the state.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.Transition.OnAction(DigitalRune.Game.States.StateEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.States.Transition.Action" /> event.
+            </summary>
+      <param name="eventArgs">
+        <see cref="T:DigitalRune.Game.States.StateEventArgs" /> object that provides the arguments for the event.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Game.States.Transition.SourceState">
+      <summary>
+            Gets or sets the source state.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.Transition.TargetState">
+      <summary>
+            Gets or sets the target state.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.States.TransitionCollection">
+      <summary>
+            Manages the <see cref="T:DigitalRune.Game.States.Transition" />s of a <see cref="T:DigitalRune.Game.States.State" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.States.TransitionCollection.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.States.TransitionCollection" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.States.TransitionCollection.Item(System.String)">
+      <summary>
+            Gets the <see cref="T:DigitalRune.Game.States.Transition" /> with the specified name.
+            </summary>
+      <param name="name">The name of the transition.</param>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.FixedStepTimer">
+      <summary>
+            Controls the timing of a game or game component using fixed-sized time steps.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.FixedStepTimer.#ctor(DigitalRune.Game.Timing.IGameClock)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.Timing.FixedStepTimer" /> class.
+            </summary>
+      <param name="clock">The clock.</param>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.AccumulatedSteps">
+      <summary>
+            Gets the number of accumulated steps.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.AccumulatedTime">
+      <summary>
+            Gets the accumulated time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.AccumulateTimeSteps">
+      <summary>
+            Gets or sets a value indicating whether the time steps are accumulated.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.Clock">
+      <summary>
+            Gets or sets the clock.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.DeltaTime">
+      <summary>
+            Gets the elapsed game time since the last time step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.FrameCount">
+      <summary>
+            Gets the number of frames since the start of the timer (= the number of 
+            <see cref="E:DigitalRune.Game.Timing.IGameTimer.TimeChanged" /> events).
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.FixedStepTimer.Idle">
+      <summary>
+            Occurs when application is idle.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.IdleTime">
+      <summary>
+            Gets the idle time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.IsRunning">
+      <summary>
+            Gets a value indicating whether the timer is running.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.LostTime">
+      <summary>
+            Gets the amount of time dropped in the current time step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.MaxNumberOfSteps">
+      <summary>
+            Gets or sets the maximal number of sub-steps for one time step.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="value" /> is negative or 0.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.FixedStepTimer.OnIdle(DigitalRune.Game.Timing.GameTimerEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.Timing.FixedStepTimer.Idle" /> event.
+            </summary>
+      <param name="eventArgs">
+            The <see cref="T:DigitalRune.Game.Timing.GameTimerEventArgs" /> instance containing 
+            the event data.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.FixedStepTimer.OnTimeChanged(DigitalRune.Game.Timing.GameTimerEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.Timing.FixedStepTimer.TimeChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+            The <see cref="T:DigitalRune.Game.Timing.GameTimerEventArgs" /> instance containing the event data.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.PendingSteps">
+      <summary>
+            Gets the number of pending steps.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.FixedStepTimer.Reset">
+      <summary>
+            Stops the timer and resets the time to zero.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.Speed">
+      <summary>
+            Gets or sets the speed ratio at which the game time progresses.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.FixedStepTimer.Start">
+      <summary>
+            Starts/resumes the timer.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.StepSize">
+      <summary>
+            Gets or sets the minimal size of a time step.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="value" /> is negative or 0.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.FixedStepTimer.Stop">
+      <summary>
+            Pauses the timer.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.FixedStepTimer.Time">
+      <summary>
+            Gets the game time.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.FixedStepTimer.TimeChanged">
+      <summary>
+            Occurs when the game time has advanced.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.GameClockEventArgs">
+      <summary>
+            Provides arguments for a game clock's <see cref="E:DigitalRune.Game.Timing.IGameClock.TimeChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.GameClockEventArgs.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.Timing.GameClockEventArgs</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameClockEventArgs.DeltaTime">
+      <summary>
+            Gets the amount of time that has elapsed since the last <see cref="E:DigitalRune.Game.Timing.IGameClock.TimeChanged" />
+            event.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameClockEventArgs.GameTime">
+      <summary>
+            Gets the game time, which is the sum of all <see cref="P:DigitalRune.Game.Timing.GameClockEventArgs.DeltaTime" /> values.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameClockEventArgs.TotalTime">
+      <summary>
+            Gets the duration (wall clock time) for which the clock is running.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.GameTimerEventArgs">
+      <summary>
+            Provides arguments for a game timer's <see cref="E:DigitalRune.Game.Timing.IGameTimer.TimeChanged" /> event.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.GameTimerEventArgs.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.Timing.GameTimerEventArgs</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameTimerEventArgs.AccumulatedTime">
+      <summary>
+            Gets the accumulated time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameTimerEventArgs.DeltaTime">
+      <summary>
+            Gets the elapsed game time since the last time step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameTimerEventArgs.FrameCount">
+      <summary>
+            Gets the number of frames since the start of the timer (= the number of 
+            <see cref="E:DigitalRune.Game.Timing.IGameTimer.TimeChanged" /> events).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameTimerEventArgs.IdleTime">
+      <summary>
+            Gets the idle time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameTimerEventArgs.LostTime">
+      <summary>
+            Gets the lost time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.GameTimerEventArgs.Time">
+      <summary>
+            Gets the game time.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.HighPrecisionClock">
+      <summary>
+            Accurately measures the time by using the system's performance counter.
+            (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.Timing.HighPrecisionClock</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.HighPrecisionClock.DeltaTime">
+      <summary>
+            Gets the amount of time that has elapsed since the last <see cref="E:DigitalRune.Game.Timing.IGameClock.TimeChanged" />
+            event.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.HighPrecisionClock.GameTime">
+      <summary>
+            Gets the game time, which is the sum of all <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" /> values.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.HighPrecisionClock.IsRunning">
+      <summary>
+            Gets a value indicating whether the clock is running.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.OnTimeChanged(DigitalRune.Game.Timing.GameClockEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.Timing.HighPrecisionClock.TimeChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+            The <see cref="T:DigitalRune.Game.Timing.GameClockEventArgs" /> instance containing the event data.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.Reset">
+      <summary>
+            Stops the clock and resets all times to 0.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.ResetDeltaTime">
+      <summary>
+            Resets the time measurement for the current <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" />. The next 
+            <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" /> will be the time since <see cref="M:DigitalRune.Game.Timing.IGameClock.ResetDeltaTime" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.Start">
+      <summary>
+            Starts/resumes the clock.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.Stop">
+      <summary>
+            Pauses the clock.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.HighPrecisionClock.TimeChanged">
+      <summary>
+            Event raised when the time has changed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.HighPrecisionClock.TotalTime">
+      <summary>
+            Gets the duration (wall clock time) for which the clock is running.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.HighPrecisionClock.Update">
+      <summary>
+            Updates the time (needs to be called regularly).
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.IGameClock">
+      <summary>
+            Measures time and raises an event when time changes.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameClock.DeltaTime">
+      <summary>
+            Gets the amount of time that has elapsed since the last <see cref="E:DigitalRune.Game.Timing.IGameClock.TimeChanged" />
+            event.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameClock.GameTime">
+      <summary>
+            Gets the game time, which is the sum of all <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" /> values.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameClock.IsRunning">
+      <summary>
+            Gets a value indicating whether the clock is running.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameClock.Reset">
+      <summary>
+            Stops the clock and resets all times to 0.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameClock.ResetDeltaTime">
+      <summary>
+            Resets the time measurement for the current <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" />. The next 
+            <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" /> will be the time since <see cref="M:DigitalRune.Game.Timing.IGameClock.ResetDeltaTime" /> was called.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameClock.Start">
+      <summary>
+            Starts/resumes the clock.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameClock.Stop">
+      <summary>
+            Pauses the clock.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.IGameClock.TimeChanged">
+      <summary>
+            Event raised when the time has changed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameClock.TotalTime">
+      <summary>
+            Gets the duration (wall clock time) for which the clock is running.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.IGameTimer">
+      <summary>
+            Controls the timing of a game or a game component.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.AccumulatedTime">
+      <summary>
+            Gets the accumulated time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.Clock">
+      <summary>
+            Gets or sets the clock.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.DeltaTime">
+      <summary>
+            Gets the elapsed game time since the last time step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.FrameCount">
+      <summary>
+            Gets the number of frames since the start of the timer (= the number of 
+            <see cref="E:DigitalRune.Game.Timing.IGameTimer.TimeChanged" /> events).
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.IGameTimer.Idle">
+      <summary>
+            Occurs when application is idle.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.IdleTime">
+      <summary>
+            Gets the idle time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.IsRunning">
+      <summary>
+            Gets a value indicating whether the timer is running.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.LostTime">
+      <summary>
+            Gets the amount of time dropped in the current time step.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameTimer.Reset">
+      <summary>
+            Stops the timer and resets the time to zero.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.Speed">
+      <summary>
+            Gets or sets the speed ratio at which the game time progresses.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameTimer.Start">
+      <summary>
+            Starts/resumes the timer.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.IGameTimer.Stop">
+      <summary>
+            Pauses the timer.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.IGameTimer.Time">
+      <summary>
+            Gets the game time.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.IGameTimer.TimeChanged">
+      <summary>
+            Occurs when the game time has advanced.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.ManualClock">
+      <summary>
+            A simple game clock that needs to be updated manually.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.Timing.ManualClock</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.ManualClock.DeltaTime">
+      <summary>
+            Gets the amount of time that has elapsed since the last <see cref="E:DigitalRune.Game.Timing.IGameClock.TimeChanged" />
+            event.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.DigitalRune#Game#Timing#IGameClock#ResetDeltaTime">
+      <summary>
+            Not supported.
+            </summary>
+      <exception cref="T:System.NotSupportedException">
+            This method is called.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.ManualClock.GameTime">
+      <summary>
+            Gets the game time, which is the sum of all <see cref="P:DigitalRune.Game.Timing.IGameClock.DeltaTime" /> values.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.ManualClock.IsRunning">
+      <summary>
+            Gets a value indicating whether the clock is running.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.OnTimeChanged(DigitalRune.Game.Timing.GameClockEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.Timing.ManualClock.TimeChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+            The <see cref="T:DigitalRune.Game.Timing.GameClockEventArgs" /> instance containing the event data.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.Reset">
+      <summary>
+            Stops the clock and resets all times to 0.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.Start">
+      <summary>
+            Starts/resumes the clock.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.Stop">
+      <summary>
+            Pauses the clock.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.ManualClock.TimeChanged">
+      <summary>
+            Event raised when the time has changed.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.ManualClock.TotalTime">
+      <summary>
+            Gets the duration (wall clock time) for which the clock is running.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.ManualClock.Update(System.TimeSpan)">
+      <summary>
+            Increases the time by the specified time span if the clock is running. (This method needs to
+            be called regularly.)
+            </summary>
+      <param name="deltaTime">
+            The elapsed time since the last <see cref="M:DigitalRune.Game.Timing.ManualClock.Update(System.TimeSpan)" /> call.
+            </param>
+    </member>
+    <member name="T:DigitalRune.Game.Timing.VariableStepTimer">
+      <summary>
+            Controls the timing of a game or game component using variable time steps.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.VariableStepTimer.#ctor(DigitalRune.Game.Timing.IGameClock)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.Timing.VariableStepTimer" /> class.
+            </summary>
+      <param name="clock">The clock.</param>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.AccumulatedTime">
+      <summary>
+            Gets the accumulated time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.Clock">
+      <summary>
+            Gets or sets the clock.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.DeltaTime">
+      <summary>
+            Gets the elapsed game time since the last time step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.FrameCount">
+      <summary>
+            Gets the number of frames since the start of the timer (= the number of 
+            <see cref="E:DigitalRune.Game.Timing.IGameTimer.TimeChanged" /> events).
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.VariableStepTimer.Idle">
+      <summary>
+            Occurs when application is idle.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.IdleTime">
+      <summary>
+            Gets the idle time.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.IsRunning">
+      <summary>
+            Gets a value indicating whether the timer is running.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.LostTime">
+      <summary>
+            Gets the amount of time dropped in the current time step.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.MaxDeltaTime">
+      <summary>
+            Gets or sets the maximal amount of time for a time step.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="value" /> is negative or 0.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.MinDeltaTime">
+      <summary>
+            Gets or sets the minimal size of a time step.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="value" /> is negative.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.VariableStepTimer.OnIdle(DigitalRune.Game.Timing.GameTimerEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.Timing.VariableStepTimer.Idle" /> event.
+            </summary>
+      <param name="eventArgs">
+            The <see cref="T:DigitalRune.Game.Timing.GameTimerEventArgs" /> instance containing the event data.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.VariableStepTimer.OnTimeChanged(DigitalRune.Game.Timing.GameTimerEventArgs)">
+      <summary>
+            Raises the <see cref="E:DigitalRune.Game.Timing.VariableStepTimer.TimeChanged" /> event.
+            </summary>
+      <param name="eventArgs">
+            The <see cref="T:DigitalRune.Game.Timing.GameTimerEventArgs" /> instance containing the event data.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.VariableStepTimer.Reset">
+      <summary>
+            Stops the timer and resets the time to zero.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.Speed">
+      <summary>
+            Gets or sets the speed ratio at which the game time progresses.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.VariableStepTimer.Start">
+      <summary>
+            Starts/resumes the timer.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Timing.VariableStepTimer.Stop">
+      <summary>
+            Pauses the timer.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Timing.VariableStepTimer.Time">
+      <summary>
+            Gets the game time.
+            </summary>
+    </member>
+    <member name="E:DigitalRune.Game.Timing.VariableStepTimer.TimeChanged">
+      <summary>
+            Occurs when the game time has advanced.
+            </summary>
+    </member>
+  </members>
+</doc>

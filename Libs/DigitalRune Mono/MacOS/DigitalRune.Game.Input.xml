@@ -1,0 +1,1542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>DigitalRune.Game.Input</name>
+  </assembly>
+  <members>
+    <member name="T:DigitalRune.Game.Input.ConfigurableInputCommand">
+      <summary>
+            Represents an input command that supports a flexible input mapping.
+            <i>(Experimental: This class is experimental and subject to change.)</i></summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.ConfigurableInputCommand.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.Input.ConfigurableInputCommand" /> class.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.ConfigurableInputCommand.#ctor(System.String)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.Input.ConfigurableInputCommand" /> class.
+            </summary>
+      <param name="name">The name.</param>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.Description">
+      <summary>
+            Gets or sets the description of this command.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.Enabled">
+      <summary>
+            Gets or sets a value indicating whether this <see cref="T:DigitalRune.Game.Input.ConfigurableInputCommand" /> is 
+            enabled. If the command is not enabled, the <see cref="P:DigitalRune.Game.Input.ConfigurableInputCommand.Value" /> is always 0.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.InputService">
+      <summary>
+            Gets or sets the input service.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.LogicalPlayerIndex">
+      <summary>
+            Gets or sets the index of the logical player.
+            </summary>
+      <exception cref="T:System.ArgumentException">
+            Property is set to <see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.Name">
+      <summary>
+            Gets the name.
+            </summary>
+      <exception cref="T:System.InvalidOperationException">
+            It is not allowed to change the name of an input command while the command is added to an 
+            input service.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.PrimaryMapping">
+      <summary>
+            Gets or sets the primary input mapping that triggers the command.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.Scale">
+      <summary>
+            Gets or sets the scale that is applied to the <see cref="P:DigitalRune.Game.Input.ConfigurableInputCommand.Value" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.SecondaryMapping">
+      <summary>
+            Gets or sets the secondary input mapping that triggers the command.
+            This mapping is not evaluated if the <see cref="P:DigitalRune.Game.Input.ConfigurableInputCommand.PrimaryMapping" /> has influenced
+            the <see cref="P:DigitalRune.Game.Input.ConfigurableInputCommand.Value" />.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.Sensitivity">
+      <summary>
+            Gets or sets the sensitivity that is used for analog input.
+            </summary>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+            Sensitivity is negative or equal to 0.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.Input.ConfigurableInputCommand.Update(System.TimeSpan)">
+      <summary>
+            Updates internal values of this command. This method is called automatically in each frame 
+            by the input service.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="P:DigitalRune.Game.Input.ConfigurableInputCommand.Value">
+      <summary>
+            Gets the value.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.DeviceAxis">
+      <summary>
+            Describes an analog input source, like an axis of joystick.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.MouseXAbsolute">
+      <summary>
+            The x-coordinate of the absolute mouse position.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.MouseYAbsolute">
+      <summary>
+            The y-coordinate of the absolute mouse position.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.MouseXRelative">
+      <summary>
+            The x-coordinate of the mouse position change since the last frame.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.MouseYRelative">
+      <summary>
+            The y-coordinate of the mouse position change since the last frame.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.MouseWheel">
+      <summary>
+            The value of the mouse wheel.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.GamePadStickLeftX">
+      <summary>
+            The horizontal axis of the left thumb stick on a gamepad.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.GamePadStickLeftY">
+      <summary>
+            The vertical axis of the left thumb stick on a gamepad.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.GamePadStickRightX">
+      <summary>
+            The horizontal axis of the right thumb stick on a gamepad.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.GamePadStickRightY">
+      <summary>
+            The vertical axis of the right thumb stick on a gamepad.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.GamePadTriggerLeft">
+      <summary>
+            The value of the left trigger button on a gamepad.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.DeviceAxis.GamePadTriggerRight">
+      <summary>
+            The value of the right trigger button on a gamepad.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.IInputCommand">
+      <summary>
+            Defines a command that is activated by user input.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputCommand.InputService">
+      <summary>
+            Gets or sets the input service.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputCommand.Update(System.TimeSpan)">
+      <summary>
+            Updates internal values of this command. This method is called automatically in each frame 
+            by the input service.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputCommand.Value">
+      <summary>
+            Gets the value.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.IInputService">
+      <summary>
+            Manages user input from keyboard, mouse, Xbox 360 controllers and other devices.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.AccelerometerValue">
+      <summary>
+            Gets the accelerometer value. 
+            (Only available in XNA Windows Phone builds.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.Commands">
+      <summary>
+            Gets the input commands.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.EnableMouseCentering">
+      <summary>
+            Gets or sets a value indicating whether the mouse position is reset in each frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.Gestures">
+      <summary>
+            Gets the detected touch gestures. (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.GetGamePadState(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets the gamepad state for the given player.
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. (Note: 
+            <see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> is not allowed.)
+            </param>
+      <returns>The gamepad state of the current frame.</returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.GetGamePadState(Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Gets the gamepad state of the given game controller. (Not available in Silverlight.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>The gamepad state of the current frame.</returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.GetLogicalPlayer(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets the game controller assigned to the specified player. (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player.
+            </param>
+      <returns>
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller. Returns 
+            <see langword="null" />, if no game controller is assigned to <paramref name="player" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.GetPreviousGamePadState(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets the gamepad state of the last frame for the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            </param>
+      <returns>
+            The gamepad state of the last frame.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.GetPreviousGamePadState(Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Gets the gamepad state of the last frame of the given game controller. 
+            (Only available in XNA Windows Phone builds.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+            The gamepad state of the last frame.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.IsAccelerometerActive">
+      <summary>
+            Gets a value indicating whether an accelerometer is connected and can be used. 
+            (Only available in XNA Windows Phone builds.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.IsAccelerometerHandled">
+      <summary>
+            Gets or sets a value indicating whether accelerometer input has already been handled.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDoubleClick(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button has been double-clicked.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button has been double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDoubleClick(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button has been double-clicked by the given player.
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button has been double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDoubleClick(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button has been double-clicked on the given game 
+            controller. (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button has been double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDoubleClick(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key was double-clicked.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key was double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDown(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button is down.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDown(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button is down for the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDown(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button is down on the given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsDown(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key is down.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsGamePadHandled(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets a value indicating whether gamepad input of a given player has already been handled.
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check all of players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the input for the given <paramref name="player" /> was already 
+            handled. If <paramref name="player" /> is <see langword="LogicalPlayerIndex.Any" /><see langword="true" /> is returned if any game controller input was already handled.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsGamePadHandled(Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Gets a value indicating whether the input of a given game controller has already been 
+            handled. (Not available in Silverlight.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check all of players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the input for the given <paramref name="controller" /> was already 
+            handled.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.IsKeyboardHandled">
+      <summary>
+            Gets or sets a value indicating whether keyboard input has already been handled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.IsMouseOrTouchHandled">
+      <summary>
+            Gets or sets a value indicating whether mouse or touch input has already been handled.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsPressed(DigitalRune.Game.Input.MouseButtons,System.Boolean)">
+      <summary>
+            Determines whether the specified button was previously up and has been pressed.
+            </summary>
+      <param name="button">The button.</param>
+      <param name="useButtonRepetition">
+            If set to <see langword="true" /> physical and virtual button presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical button presses are
+            returned.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously up and has been pressed;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsPressed(Microsoft.Xna.Framework.Input.Buttons,System.Boolean,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button has been pressed by the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="useButtonRepetition">
+            If set to <see langword="true" /> physical and virtual button presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical button presses are
+            returned.
+            </param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously up and has been pressed; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsPressed(Microsoft.Xna.Framework.Input.Buttons,System.Boolean,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button has been pressed on the given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="useButtonRepetition">
+            If set to <see langword="true" /> physical and virtual button presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical button presses are
+            returned.
+            </param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously up and has been pressed;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsPressed(Microsoft.Xna.Framework.Input.Keys,System.Boolean)">
+      <summary>
+            Determines whether the specified key was previously up and has been pressed.
+            </summary>
+      <param name="key">The key.</param>
+      <param name="useKeyRepetition">
+            If set to <see langword="true" /> physical and virtual key presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical key presses are 
+            returned.
+            </param>
+      <returns>
+        <see langword="true" /> if <paramref name="key" /> was previously up and has been pressed;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsReleased(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button was previously down and has been released.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button was previously down and has been released;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsReleased(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary> 
+            Determines whether the specified button has been released by the given player.
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously down and has been released; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsReleased(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button has been released on the given game controller.
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously down and has been released;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsReleased(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key was previously down and has been released.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key was previously down and has been released;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsUp(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button is up.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsUp(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button is up for the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsUp(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button is up on the given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.IsUp(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key is up.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.KeyboardState">
+      <summary>
+            Gets the state of the current keyboard state.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MaxNumberOfPlayers">
+      <summary>
+            Gets the max number of players (= max number of game controllers that can be connected).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.ModifierKeys">
+      <summary>
+            Gets the pressed modifier keys.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MousePosition">
+      <summary>
+            Gets or sets the mouse position.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MousePositionDelta">
+      <summary>
+            Gets or sets the mouse position change since the last frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MousePositionDeltaRaw">
+      <summary>
+            Gets the raw mouse position change since the last frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MousePositionRaw">
+      <summary>
+            Gets the raw mouse position.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MouseState">
+      <summary>
+            Gets the state of the current mouse state.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.MouseWheelDelta">
+      <summary>
+            Gets a value representing the rotation change of the mouse wheel.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.PressedKeys">
+      <summary>
+            Gets the pressed keys.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.PreviousKeyboardState">
+      <summary>
+            Gets the keyboard state of the last frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.PreviousMouseState">
+      <summary>
+            Gets the mouse state of the last frame.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.SetAllHandled(System.Boolean)">
+      <summary>
+            Sets all "IsHandled" flags to the given value.
+            </summary>
+      <param name="value">The value for the flags.</param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.SetGamePadHandled(DigitalRune.Game.Input.LogicalPlayerIndex,System.Boolean)">
+      <summary>
+            Sets the <strong>IsGamePadHandled</strong> flags for the given player. (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to set the <strong>IsGamePadHandled</strong> flag of 
+            all players.)
+            </param>
+      <param name="value">
+            The new value for the <strong>IsGamePadHandled</strong> flag.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.SetGamePadHandled(Microsoft.Xna.Framework.PlayerIndex,System.Boolean)">
+      <summary>
+            Sets the <strong>IsGamePadHandled</strong> flags of a given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <param name="value">
+            The new value for the <strong>IsGamePadHandled</strong> flag.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.IInputService.SetLogicalPlayer(DigitalRune.Game.Input.LogicalPlayerIndex,System.Nullable{Microsoft.Xna.Framework.PlayerIndex})">
+      <summary>
+            Assigns a game controller to a player. (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player.
+            </param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller. (Can be 
+            <see langword="null" /> to remove the current assignment.)
+            </param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="player" /> is invalid.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.Settings">
+      <summary>
+            Gets or sets the settings that define input handling, timing, etc.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Input.IInputService.TouchCollection">
+      <summary>
+            Gets the touch collection. (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.InputCommandCollection">
+      <summary>
+            Manages a collection of <see cref="T:DigitalRune.Game.Input.IInputCommand" />s.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputCommandCollection.ClearItems">
+      <summary>
+            Removes all elements from the <see cref="T:DigitalRune.Game.Input.InputCommandCollection" />. 
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputCommandCollection.InsertItem(System.Int32,DigitalRune.Game.Input.IInputCommand)">
+      <summary>
+            Inserts an element into the <see cref="T:DigitalRune.Game.Input.InputCommandCollection" /> at the specified index.
+            </summary>
+      <param name="index">The zero-based index at which item should be inserted.</param>
+      <param name="item">The object to insert.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="item" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.ArgumentOutOfRangeException">
+        <paramref name="index" /> is less than 0, or <paramref name="index" /> is greater than 
+            <see cref="P:System.Collections.ObjectModel.Collection`1.Count" />.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            Cannot add command to input service. The command is already added to an input service.
+            </exception>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputCommandCollection.RemoveItem(System.Int32)">
+      <summary>
+            Removes the element at the specified index of the <see cref="T:DigitalRune.Game.Input.InputCommandCollection" />.
+            </summary>
+      <param name="index">The index of the element to remove.</param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputCommandCollection.SetItem(System.Int32,DigitalRune.Game.Input.IInputCommand)">
+      <summary>
+            Replaces the item at the specified index with the specified item.
+            </summary>
+      <param name="index">The zero-based index of the item to be replaced.</param>
+      <param name="item">The new item.</param>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="item" /> is <see langword="null" />.
+            </exception>
+      <exception cref="T:System.InvalidOperationException">
+            Cannot add command to input service. The command is already added to an input service.
+            </exception>
+    </member>
+    <member name="T:DigitalRune.Game.Input.InputManager">
+      <summary>
+            Manages user input from several devices. See <see cref="T:DigitalRune.Game.Input.IInputService" />.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.#ctor(System.Boolean)">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.Input.InputManager" /> class.
+            </summary>
+      <param name="gamerServicesEnabled">
+        <see langword="true" /> if the game uses the XNA gamer services component; otherwise, 
+            <see langword="false" />.
+            </param>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.AccelerometerValue">
+      <summary>
+            Gets the accelerometer value. 
+            (Only available in XNA Windows Phone builds.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.Commands">
+      <summary>
+            Gets the input commands.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.EnableMouseCentering">
+      <summary>
+            Gets or sets a value indicating whether the mouse position is reset in each frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.Gestures">
+      <summary>
+            Gets the detected touch gestures. (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.GetGamePadState(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets the gamepad state for the given player.
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. (Note: 
+            <see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> is not allowed.)
+            </param>
+      <returns>The gamepad state of the current frame.</returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.GetGamePadState(Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Gets the gamepad state of the given game controller. (Not available in Silverlight.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>The gamepad state of the current frame.</returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.GetLogicalPlayer(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets the game controller assigned to the specified player. (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player.
+            </param>
+      <returns>
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller. Returns 
+            <see langword="null" />, if no game controller is assigned to <paramref name="player" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.GetPreviousGamePadState(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets the gamepad state of the last frame for the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            </param>
+      <returns>
+            The gamepad state of the last frame.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.GetPreviousGamePadState(Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Gets the gamepad state of the last frame of the given game controller. 
+            (Only available in XNA Windows Phone builds.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+            The gamepad state of the last frame.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.IsAccelerometerActive">
+      <summary>
+            Gets a value indicating whether an accelerometer is connected and can be used. 
+            (Only available in XNA Windows Phone builds.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.IsAccelerometerHandled">
+      <summary>
+            Gets or sets a value indicating whether accelerometer input has already been handled.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDoubleClick(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button has been double-clicked.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button has been double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDoubleClick(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button has been double-clicked by the given player.
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button has been double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDoubleClick(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button has been double-clicked on the given game 
+            controller. (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button has been double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDoubleClick(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key was double-clicked.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key was double-clicked; otherwise, 
+            <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDown(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button is down.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDown(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button is down for the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDown(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button is down on the given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsDown(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key is down.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key is down; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsGamePadHandled(DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Gets a value indicating whether gamepad input of a given player has already been handled.
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check all of players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the input for the given <paramref name="player" /> was already 
+            handled. If <paramref name="player" /> is <see langword="LogicalPlayerIndex.Any" /><see langword="true" /> is returned if any game controller input was already handled.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsGamePadHandled(Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Gets a value indicating whether the input of a given game controller has already been 
+            handled. (Not available in Silverlight.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check all of players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the input for the given <paramref name="controller" /> was already 
+            handled.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.IsKeyboardHandled">
+      <summary>
+            Gets or sets a value indicating whether keyboard input has already been handled.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.IsMouseOrTouchHandled">
+      <summary>
+            Gets or sets a value indicating whether mouse or touch input has already been handled.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsPressed(DigitalRune.Game.Input.MouseButtons,System.Boolean)">
+      <summary>
+            Determines whether the specified button was previously up and has been pressed.
+            </summary>
+      <param name="button">The button.</param>
+      <param name="useButtonRepetition">
+            If set to <see langword="true" /> physical and virtual button presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical button presses are
+            returned.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously up and has been pressed;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsPressed(Microsoft.Xna.Framework.Input.Buttons,System.Boolean,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button has been pressed by the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="useButtonRepetition">
+            If set to <see langword="true" /> physical and virtual button presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical button presses are
+            returned.
+            </param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously up and has been pressed; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsPressed(Microsoft.Xna.Framework.Input.Buttons,System.Boolean,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button has been pressed on the given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="useButtonRepetition">
+            If set to <see langword="true" /> physical and virtual button presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical button presses are
+            returned.
+            </param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously up and has been pressed;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsPressed(Microsoft.Xna.Framework.Input.Keys,System.Boolean)">
+      <summary>
+            Determines whether the specified key was previously up and has been pressed.
+            </summary>
+      <param name="key">The key.</param>
+      <param name="useKeyRepetition">
+            If set to <see langword="true" /> physical and virtual key presses (see 
+            <see cref="T:DigitalRune.Game.Input.IInputService" />) are returned; otherwise, only physical key presses are 
+            returned.
+            </param>
+      <returns>
+        <see langword="true" /> if <paramref name="key" /> was previously up and has been pressed;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsReleased(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button was previously down and has been released.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button was previously down and has been released;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsReleased(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary> 
+            Determines whether the specified button has been released by the given player.
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously down and has been released; 
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsReleased(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button has been released on the given game controller.
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button was previously down and has been released;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsReleased(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key was previously down and has been released.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key was previously down and has been released;
+            otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsUp(DigitalRune.Game.Input.MouseButtons)">
+      <summary>
+            Determines whether the specified button is up.
+            </summary>
+      <param name="button">The button.</param>
+      <returns>
+        <see langword="true" /> if the specified button is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsUp(Microsoft.Xna.Framework.Input.Buttons,DigitalRune.Game.Input.LogicalPlayerIndex)">
+      <summary>
+            Determines whether the specified button is up for the given player. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to check the game controllers of all available 
+            players.)
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsUp(Microsoft.Xna.Framework.Input.Buttons,Microsoft.Xna.Framework.PlayerIndex)">
+      <summary>
+            Determines whether the specified button is up on the given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="button">The button.</param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <returns>
+        <see langword="true" /> if the specified button is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.IsUp(Microsoft.Xna.Framework.Input.Keys)">
+      <summary>
+            Determines whether the specified key is up.
+            </summary>
+      <param name="key">The key.</param>
+      <returns>
+        <see langword="true" /> if the specified key is up; otherwise, <see langword="false" />.
+            </returns>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.KeyboardState">
+      <summary>
+            Gets the state of the current keyboard state.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MaxNumberOfPlayers">
+      <summary>
+            Gets the max number of players (= max number of game controllers that can be connected).
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.ModifierKeys">
+      <summary>
+            Gets the pressed modifier keys.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MousePosition">
+      <summary>
+            Gets or sets the mouse position.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MousePositionDelta">
+      <summary>
+            Gets or sets the mouse position change since the last frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MousePositionDeltaRaw">
+      <summary>
+            Gets the raw mouse position change since the last frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MousePositionRaw">
+      <summary>
+            Gets the raw mouse position.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MouseState">
+      <summary>
+            Gets the state of the current mouse state.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.MouseWheelDelta">
+      <summary>
+            Gets a value representing the rotation change of the mouse wheel.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.PressedKeys">
+      <summary>
+            Gets the pressed keys.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.PreviousKeyboardState">
+      <summary>
+            Gets the keyboard state of the last frame.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.PreviousMouseState">
+      <summary>
+            Gets the mouse state of the last frame.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.SetAllHandled(System.Boolean)">
+      <summary>
+            Sets all "IsHandled" flags to the given value.
+            </summary>
+      <param name="value">The value for the flags.</param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.SetGamePadHandled(DigitalRune.Game.Input.LogicalPlayerIndex,System.Boolean)">
+      <summary>
+            Sets the <strong>IsGamePadHandled</strong> flags for the given player. (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player. 
+            (<see cref="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any" /> to set the <strong>IsGamePadHandled</strong> flag of 
+            all players.)
+            </param>
+      <param name="value">
+            The new value for the <strong>IsGamePadHandled</strong> flag.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.SetGamePadHandled(Microsoft.Xna.Framework.PlayerIndex,System.Boolean)">
+      <summary>
+            Sets the <strong>IsGamePadHandled</strong> flags of a given game controller. 
+            (Not available in Silverlight.)
+            </summary>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller.
+            </param>
+      <param name="value">
+            The new value for the <strong>IsGamePadHandled</strong> flag.
+            </param>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.SetLogicalPlayer(DigitalRune.Game.Input.LogicalPlayerIndex,System.Nullable{Microsoft.Xna.Framework.PlayerIndex})">
+      <summary>
+            Assigns a game controller to a player. (Not available in Silverlight.)
+            </summary>
+      <param name="player">
+            The <see cref="T:DigitalRune.Game.Input.LogicalPlayerIndex" /> that identifies the player.
+            </param>
+      <param name="controller">
+            The <see cref="T:Microsoft.Xna.Framework.PlayerIndex" /> that identifies the game controller. (Can be 
+            <see langword="null" /> to remove the current assignment.)
+            </param>
+      <exception cref="T:System.ArgumentException">
+        <paramref name="player" /> is invalid.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.Settings">
+      <summary>
+            Gets or sets the settings that define input handling, timing, etc.
+            </summary>
+      <exception cref="T:System.ArgumentNullException">
+        <paramref name="value" /> is <see langword="null" />.
+            </exception>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputManager.TouchCollection">
+      <summary>
+            Gets the touch collection. (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputManager.Update(System.TimeSpan)">
+      <summary>
+            Updates the input states. This method must be called once per frame.
+            </summary>
+      <param name="deltaTime">The elapsed time since the last update.</param>
+    </member>
+    <member name="T:DigitalRune.Game.Input.InputMapping">
+      <summary>
+            Defines a combination of keys, buttons and more that can be used to trigger an action.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputMapping.#ctor">
+      <summary>
+        <markup>
+          <include item="SMCAutoDocConstructor">
+            <parameter>DigitalRune.Game.Input.InputMapping</parameter>
+          </include>
+        </markup>
+      </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.Axis">
+      <summary>
+            Gets or sets the analog device input that controls the action.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.Invert">
+      <summary>
+            Gets or sets a value indicating whether the <see cref="P:DigitalRune.Game.Input.InputMapping.Axis" /> and the positive and negative
+            keys/buttons are inverted.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.ModifierButtons">
+      <summary>
+            Gets or sets the modifier buttons that must be down. Gamepad buttons do not trigger any 
+            actions if the modifier buttons are released. (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.ModifierKeys">
+      <summary>
+            Gets or sets the modifier keys that must be down. Keys and mouse buttons do not trigger
+            any actions if the modifier keys are released.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.NegativeButton">
+      <summary>
+            Gets or sets the gamepad button that triggers a negative action.
+            (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.NegativeDescription">
+      <summary>
+            Gets or sets the description that describes the result of the "negative" buttons,
+            e.g. "Move Left".
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.NegativeKey">
+      <summary>
+            Gets or sets the key that triggers a negative action.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.NegativeMouseButton">
+      <summary>
+            Gets or sets the mouse button that triggers a negative action.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.PositiveButton">
+      <summary>
+            Gets or sets the gamepad button that triggers a positive action.
+            (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.PositiveDescription">
+      <summary>
+            Gets or sets the description that describes the result of the "positive" buttons,
+            e.g. "Move Right".
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.PositiveKey">
+      <summary>
+            Gets or sets the key that triggers a positive action.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.PositiveMouseButton">
+      <summary>
+            Gets or sets the mouse button that triggers a positive action.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputMapping.PressType">
+      <summary>
+            Gets or sets the type of the key or button press that triggers the action.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.InputSettings">
+      <summary>
+            Defines settings for the input service.
+            </summary>
+    </member>
+    <member name="M:DigitalRune.Game.Input.InputSettings.#ctor">
+      <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Game.Input.InputSettings" /> class.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.DoubleClickSize">
+      <summary>
+            Gets or sets the dimensions, in pixels, of the area within which the 
+            user must click twice for the operating system to consider the two 
+            clicks a double-click.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.DoubleClickTime">
+      <summary>
+            Gets or sets the double click time interval which defines the time that is allowed between
+            two clicks to still count as a double click.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.GamePadDeadZone">
+      <summary>
+            Gets or sets the type of gamepad dead zone processing that is used for analog sticks
+            of the gamepads. (Not available in Silverlight.)
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.MouseCenter">
+      <summary>
+            Gets or sets the mouse center for the mouse centering.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.RepetitionDelay">
+      <summary>
+            Gets or sets the repetition start delay for virtual key or button presses.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.RepetitionInterval">
+      <summary>
+            Gets or sets the repetition interval for virtual key or button presses.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.ThumbstickThreshold">
+      <summary>
+            Gets or sets the thumbstick threshold for detecting thumbstick button presses.
+            </summary>
+    </member>
+    <member name="P:DigitalRune.Game.Input.InputSettings.TriggerThreshold">
+      <summary>
+            Gets or sets the trigger threshold for detecting button presses.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.LogicalPlayerIndex">
+      <summary>
+            Identifies a player.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.LogicalPlayerIndex.Any">
+      <summary>
+            Any logical player. Use this value to check input on any game controller. (Note: Only game
+            controllers that have been assigned to players are checked. Game controllers that are not
+            assigned to a player are ignored.)
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.LogicalPlayerIndex.One">
+      <summary>The first logical player.</summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.LogicalPlayerIndex.Two">
+      <summary>The second logical player.</summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.LogicalPlayerIndex.Three">
+      <summary>The third logical player.</summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.LogicalPlayerIndex.Four">
+      <summary>The fourth logical player.</summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.ModifierKeys">
+      <summary>
+            Describes the pressed modifier keys.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.None">
+      <summary>
+            No modifier key is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.Alt">
+      <summary>
+            Alt is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.Control">
+      <summary>
+            Control is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.Shift">
+      <summary>
+            Shift is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.Apple">
+      <summary>
+            Apple key is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.Windows">
+      <summary>
+            Windows key is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.ChatPadGreen">
+      <summary>
+            ChatPadGreen is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.ChatPadOrange">
+      <summary>
+            ChatPadOrange is pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.ShiftAlt">
+      <summary>
+            Shift and Alt are pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.ControlAlt">
+      <summary>
+            Control and Alt are pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.ControlShift">
+      <summary>
+            Control and Shift are pressed.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.ModifierKeys.ControlShiftAlt">
+      <summary>
+            Control, Shift and Alt are pressed.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.MouseButtons">
+      <summary>
+            Identifies a mouse button. 
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.MouseButtons.Left">
+      <summary>
+            The left mouse button.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.MouseButtons.Middle">
+      <summary>
+            The middle mouse button.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.MouseButtons.Right">
+      <summary>
+            The right mouse button.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.MouseButtons.XButton1">
+      <summary>
+            The first additional mouse button.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.MouseButtons.XButton2">
+      <summary>
+            The second additional mouse button.
+            </summary>
+    </member>
+    <member name="T:DigitalRune.Game.Input.PressType">
+      <summary>
+            Defines the type of a key or button press.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.PressType.Down">
+      <summary>
+            The button is currently held down. 
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.PressType.Press">
+      <summary>
+            The button was up in the previous frame and is pressed down in this frame.
+            </summary>
+    </member>
+    <member name="F:DigitalRune.Game.Input.PressType.DoubleClick">
+      <summary>
+            The button was pressed twice within a short time.
+            </summary>
+    </member>
+  </members>
+</doc>

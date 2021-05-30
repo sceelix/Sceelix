@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{24C93587-F297-4FED-978B-017E81FF2657}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.Designer.Graphs</RootNamespace>
+    <AssemblyName>Sceelix.Designer.Graphs</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CreateDocumentation>true</CreateDocumentation>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows64'">
+    <NoWarn>1591,1572,1571,1573,1587,1570</NoWarn>
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Windows32'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Linux'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|MacOS'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Windows64'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Windows32'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Linux'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|MacOS'">
+    <LangVersion>7</LangVersion>
+  </PropertyGroup>
+  <Import Project="..\Common.targets" />
+  <Import Project="..\DigitalRune.targets" />
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\..\Libs\Antlr\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Packages\log4net.2.0.5\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annotations\ParameterEditorAttribute.cs" />
+    <Compile Include="Entities\EntitySelectionManager.cs" />
+    <Compile Include="Extensions\TextureExtensions.cs" />
+    <Compile Include="Extensions\UnprocessedEntityExtensions.cs" />
+    <Compile Include="GUI\Execution\BenchmarkExecutionBinding.cs" />
+    <Compile Include="GUI\Execution\GraphExecutionManager.cs" />
+    <Compile Include="Inspector\Entities\PropertyController.cs" />
+    <Compile Include="Inspector\Entities\EntityInspectorControl.cs" />
+    <Compile Include="Inspector\Entities\GeneralController.cs" />
+    <Compile Include="Inspector\Entities\SubObjects\KeyValueInspectionInfo.cs" />
+    <Compile Include="Inspector\Entities\SubObjects\EntityGroupInspectionInfo.cs" />
+    <Compile Include="Inspector\Entities\SubObjects\EntityInspectionInfo.cs" />
+    <Compile Include="Inspector\Entities\SubObjects\IInspectionInfo.cs" />
+    <Compile Include="Inspector\Entities\SubObjects\PropertyGroupInspectionInfo.cs" />
+    <Compile Include="Logging\GraphDesignerLogger.cs" />
+    <Compile Include="Messages\EntityDeselected.cs" />
+    <Compile Include="Messages\EntityFocused.cs" />
+    <Compile Include="Messages\EntitySelected.cs" />
+    <Compile Include="Messaging\GraphDesignerMessenger.cs" />
+    <Compile Include="Extensions\MipEditableTexture2D.cs" />
+    <Compile Include="GUI\Execution\ExecutionOptions.cs" />
+    <Compile Include="GUI\Model\AmplifiedRenderHandler.cs" />
+    <Compile Include="GUI\Navigation\CameraAnimator.cs" />
+    <Compile Include="GUI\Toolbox\NodeToolboxWindow.cs" />
+    <Compile Include="ParameterEditors\Controls\ExpressionTextBox.cs" />
+    <Compile Include="ParameterEditors\Windows\ExpressionPopupWindow.cs" />
+    <Compile Include="Inspector\Ports\GeneralPortController.cs" />
+    <Compile Include="Inspector\Ports\PortInspectorControl.cs" />
+    <Compile Include="Inspector\Ports\StatePortController.cs" />
+    <Compile Include="Logging\NodeDesignerLogger.cs" />
+    <Compile Include="Logging\NodeLogMessage.cs" />
+    <Compile Include="Messages\FrameNodes.cs" />
+    <Compile Include="Messages\MarkEdge.cs" />
+    <Compile Include="Messages\MarkNode.cs" />
+    <Compile Include="Messages\MarkPort.cs" />
+    <Compile Include="ParameterEditors\AttributeParameterEditor.cs" />
+    <Compile Include="ParameterEditors\EditorTreeViewItem.cs" />
+    <Compile Include="ParameterEditors\OptionalListParameterEditor.cs" />
+    <Compile Include="ParameterEditorManager.cs" />
+    <Compile Include="ParameterEditors\SelectListParameterEditor.cs" />
+    <Compile Include="ParameterEditors\Windows\AdvancedExpressionWindow.cs" />
+    <Compile Include="ParameterEditors\Windows\ParameterCreateWindow.cs" />
+    <Compile Include="Projects\GraphFindManager.cs" />
+    <Compile Include="Tools\IProcedureItem.cs" />
+    <Compile Include="Inspector\Graphs\GraphParameterEditorWindow.cs" />
+    <Compile Include="Messages\ChangeParameterValue.cs" />
+    <Compile Include="Messages\ShowVisualHandles.cs" />
+    <Compile Include="ParameterEditors\ChoiceParameterEditor.cs" />
+    <Compile Include="ParameterEditors\BoolParameterEditor.cs" />
+    <Compile Include="ParameterEditors\DoubleParameterEditor.cs" />
+    <Compile Include="ParameterEditors\ParameterEditorTreeViewItem.cs" />
+    <Compile Include="ParameterEditors\IntParameterEditor.cs" />
+    <Compile Include="ParameterEditors\RecursiveParameterEditor.cs" />
+    <Compile Include="ParameterEditors\ListParameterEditor.cs" />
+    <Compile Include="ParameterEditors\CompoundParameterEditor.cs" />
+    <Compile Include="ParameterEditors\ObjectParameterEditor.cs" />
+    <Compile Include="ParameterEditors\ParameterEditor.cs" />
+    <Compile Include="ParameterEditors\ArgumentTreeViewItem.cs" />
+    <Compile Include="ParameterEditors\FloatParameterEditor.cs" />
+    <Compile Include="ParameterEditors\PrimitiveParameterEditor.cs" />
+    <Compile Include="ParameterEditors\FileParameterEditor.cs" />
+    <Compile Include="ParameterEditors\FolderParameterEditor.cs" />
+    <Compile Include="ParameterEditors\StringParameterEditor.cs" />
+    <Compile Include="ParameterEditors\Windows\FolderSelectorWindow.cs" />
+    <Compile Include="ParameterEditors\Windows\FileSelectorWindow.cs" />
+    <Compile Include="Extensions\PointExtension.cs" />
+    <Compile Include="GraphDesignerService.cs" />
+    <Compile Include="GUI\Basic\Animations\GrowAnimation.cs" />
+    <Compile Include="GUI\Basic\Animations\PortAnimation.cs" />
+    <Compile Include="GUI\Basic\Animations\RectangleAnimation.cs" />
+    <Compile Include="GUI\Basic\Animations\ShrinkAnimation.cs" />
+    <Compile Include="GUI\Basic\Animations\SpringAnimation.cs" />
+    <Compile Include="GUI\Basic\RectangleF.cs" />
+    <Compile Include="GUI\Basic\ExtensibleTexture.cs" />
+    <Compile Include="GUI\Basic\TransitionColor.cs" />
+    <Compile Include="GUI\Execution\GraphTrailExecutionBinding.cs" />
+    <Compile Include="GUI\Execution\GameThreadWorker.cs" />
+    <Compile Include="GUI\GraphControl.cs" />
+    <Compile Include="GUI\Interactions\ContextMenuHandler.cs" />
+    <Compile Include="GUI\Toolbox\ToolboxItemControl.cs" />
+    <Compile Include="GUI\Toolbox\NodeToolboxWindowOld.cs" />
+    <Compile Include="Handlers\GraphCreator.cs" />
+    <Compile Include="GUI\GraphDocumentControl.cs" />
+    <Compile Include="GUI\GraphEditorSettings.cs" />
+    <Compile Include="GUI\Interactions\EdgeDrawer.cs" />
+    <Compile Include="GUI\Interactions\GraphDropHandler.cs" />
+    <Compile Include="GUI\Interactions\InteractionHandler.cs" />
+    <Compile Include="GUI\Interactions\SelectionRectangleHandler.cs" />
+    <Compile Include="GUI\Model\Drawing\EdgeLine.cs" />
+    <Compile Include="GUI\Model\Drawing\NodeLabel.cs" />
+    <Compile Include="GUI\Model\Drawing\NodeRectangle.cs" />
+    <Compile Include="GUI\Model\Drawing\PortLabel.cs" />
+    <Compile Include="GUI\Model\Drawing\PortShape.cs" />
+    <Compile Include="GUI\Model\ISelectableUnit.cs" />
+    <Compile Include="GUI\Model\ShadowHandler.cs" />
+    <Compile Include="GUI\Model\VisualEdge.cs" />
+    <Compile Include="GUI\Model\VisualGraph.cs" />
+    <Compile Include="GUI\Model\VisualNode.cs" />
+    <Compile Include="GUI\Model\VisualPort.cs" />
+    <Compile Include="GUI\Navigation\Camera2D.cs" />
+    <Compile Include="Inspector\Graphs\GraphGeneralController.cs" />
+    <Compile Include="Inspector\Graphs\GraphInspectorControl.cs" />
+    <Compile Include="Inspector\Graphs\GraphParameterController.cs" />
+    <Compile Include="Inspector\Nodes\GeneralController.cs" />
+    <Compile Include="Inspector\InspectorWindow.cs" />
+    <Compile Include="Inspector\Nodes\NodeInspectorControl.cs" />
+    <Compile Include="Inspector\Nodes\ParameterController.cs" />
+    <Compile Include="Inspector\Nodes\PopUpInspectorWindow.cs" />
+    <Compile Include="Messages\GraphContentChanged.cs" />
+    <Compile Include="Messages\GraphExecutionFinished.cs" />
+    <Compile Include="Messages\NodeClicked.cs" />
+    <Compile Include="Messages\ProcedureExecutionFinished.cs" />
+    <Compile Include="Environments\DesignerResourceManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\ProcedureItemLoader.cs" />
+    <Compile Include="Tools\ComponentProcedureItem.cs" />
+    <Compile Include="Tools\SystemProcedureItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sceelix.Core\Sceelix.Core.csproj">
+      <Project>{17d451d4-b445-4f61-adfe-963f42d702b0}</Project>
+      <Name>Sceelix.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer\Sceelix.Designer.csproj">
+      <Project>{F1686765-D326-4671-ACA1-DE384A2972C1}</Project>
+      <Name>Sceelix.Designer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix.Designer.ProjectExplorer\Sceelix.Designer.ProjectExplorer.csproj">
+      <Project>{7FB98BC5-5A8F-41DA-9910-BB87F370DA66}</Project>
+      <Name>Sceelix.Designer.ProjectExplorer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sceelix\Sceelix.csproj">
+      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Name>Sceelix</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sceelix.Designer.Graphs.exclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cube_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Attach_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Graph16x16.png" />
+    <EmbeddedResource Include="Resources\Graph48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Graphs\DisabledSign.png" />
+    <EmbeddedResource Include="Resources\Graphs\MouseArrow.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\CircleBorder.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\CircleFill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\EdgeDot.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\OutputBorder.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\OutputFill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle01Border.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle01Fill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle02Border.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle02Fill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle03Border.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle03Fill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle04Border.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle04Fill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle05Border.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\Rectangle05Fill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\RectangleBorder.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\RectangleBorder2.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\RectangleFill.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\RectangleRecticle.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\SquareBorder.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\SquareFill.png" />
+    <EmbeddedResource Include="Resources\Graphs\RectangleSimple.png" />
+    <EmbeddedResource Include="Resources\Graphs\RectangleSimpleShadow.png" />
+    <EmbeddedResource Include="Resources\Graphs\Selection\Dot.png" />
+    <EmbeddedResource Include="Resources\Graphs\Selection\SelectionRectangleBorder.png" />
+    <EmbeddedResource Include="Resources\Graphs\Selection\SelectionRectangleFill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Photo_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Burn_16x16.png" />
+    <EmbeddedResource Include="Resources\Cancel.png" />
+    <EmbeddedResource Include="Resources\ClipboardCut_16x16.png" />
+    <EmbeddedResource Include="Resources\ClipboardPaste_16x16.png" />
+    <EmbeddedResource Include="Resources\Forbidden_16x16.png" />
+    <EmbeddedResource Include="Resources\Graph1.png" />
+    <EmbeddedResource Include="Resources\Loop_16x16.png" />
+    <EmbeddedResource Include="Resources\Mail_16x16.png" />
+    <EmbeddedResource Include="Resources\PlayerPlay_16x16.png" />
+    <EmbeddedResource Include="Resources\Plus16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ClipboardCopy_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\folder3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GraphBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GridPatternBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Arrow1Left_16x16.png" />
+    <EmbeddedResource Include="Resources\Arrow1Right_16x16.png" />
+    <EmbeddedResource Include="Resources\ArrowBi_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ArrowDropBottom.png" />
+    <EmbeddedResource Include="Resources\ArrowDropMiddle.png" />
+    <EmbeddedResource Include="Resources\ArrowDropTop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Player Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\A.png" />
+    <EmbeddedResource Include="Resources\F.png" />
+    <EmbeddedResource Include="Resources\P.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Gear_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Graphs\Nodes\EdgeCircle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Graphs\Nodes\EdgeCircleBold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Search_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Wizard_48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Graphs\Nodes\CircleBorderOptional.png" />
+    <EmbeddedResource Include="Resources\Graphs\Nodes\SquareBorderOptional.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Link_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Tree_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
