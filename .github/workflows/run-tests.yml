@@ -1,0 +1,20 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [ develop,main ]
+  pull_request:
+    branches: [ develop,main ]
+
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    steps:
+      - name: Get the sources
+        uses: actions/checkout@v1
+      - name: Run the build script
+        uses: cake-build/cake-action@v1
+        with:
+          target: Test
