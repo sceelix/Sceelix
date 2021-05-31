@@ -59,10 +59,22 @@ Task("Build")
 
 });
 
+Task("ZipSamples")
+.Does(() => {	
+	Zip("../Extras", "../Extras/Samples.zip", GetFiles("../Extras/Samples/**/*.*"));
+});
+
+Task("ZipAPI")
+.Does(() => {	
+	var files = GetFiles("../Extras/API/**/*.{sln|cs|zip|csproj}").Concat(GetFiles("../Extras/API/**/ReadMeFirst.txt"));
+	Zip("../Extras", "../Extras/API.zip", files);
+});
+
+
+
 Task("Test")
 .IsDependentOn("Build")
 .Does(() => {
-	//NUnit3($"./Sceelix.Points.Tests/bin/Release/net461/Sceelix.Points.Tests.dll");
 	NUnit3($"./*.Tests/bin/{configuration}/**/*Tests.dll");
 });
 
