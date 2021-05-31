@@ -3,7 +3,7 @@ module.exports = {
   title: 'Sceelix',
   tagline: 'The 3D Procedural Engine',
   url: 'https://sceelix.github.io',
-  baseUrl: '/Sceelix/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
