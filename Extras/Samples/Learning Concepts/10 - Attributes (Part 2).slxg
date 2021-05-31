@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="57b80c9d-9643-42b7-bf16-d5fe4e7af52b" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="1fffde71-88a8-4b5d-89ac-7c47d5c65623" NodeType="ComponentNode" NodeTypeGUID="b772fb4c-6ecf-4a93-8061-2c9df55a7c00" Position="243.4093 530.7468" RelativePath="Learning Concepts/09 - Gates.slxg">
+			<Arguments>
+				<Argument FixedValue="-1" Label="Offset Amount" />
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="3" />
+		</Node>
+		<Node Guid="41886833-8e33-43db-8d76-36069c0f7f31" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="130.1806 297.5963" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="5" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="53f70b9b-dd14-47b9-b06d-6c724f109dcf" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="351.0319 363.8427" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Count" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="261fb5f1-8542-45b9-8e67-20ff7d5d41ec" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-121.1943 -269.6642" Label="1. As you build graphs and encapsulate them inside others, it is normal for your entities to &#xA;    start accumulating attributes. Yet often, attributes are only relevant inside the graph &#xA;    where they were assigned." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="998c0abe-35a0-41a8-bddf-7bb646750e17" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="70.59558 -59.26486" Label="2. Keeping all these attributes is not only confusing, but&#xA;    also requires more memory to keep. It may also lead&#xA;    to conflicts between recurring names (like 'section', &#xA;   'name' or 'index')." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="2b5719aa-d5ab-42bf-a0ae-e6d4a9df213b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-364.8957 178.1992" Label="3. To avoid such issues, Sceelix &#xA;    differentiates between LOCAL&#xA;    and GLOBAL attributes. Local&#xA;    attributes start with a lowercase&#xA;    character (e.g. 'index', myName') &#xA;    and global with a capital letter&#xA;    (e.g. 'Name', 'MySize')." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="f16a47e0-bc16-40ab-99a5-9d40d9597c65" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="573.5222 239.3232" Label="4. Local attributes are only usable&#xA;    within the graph where they are&#xA;    defined and are deleted from the&#xA;     entities when the graph finishes.&#xA;    Names do not conflict with other &#xA;    local names from subgraphs." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8867e733-64a5-4432-a13e-5c6a4d7a0f1a" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-10.06949 676.7117" Label="(The faces of the meshes from the previous tutorial had local&#xA;and global attributes defined. If your execute this here, you &#xA;see that only the global attributes remain in the faces.)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="3fd0fc01-de5f-4c90-93cc-654b76ce5895" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="577.5148 481.7906" Label="5. Global attributes remain in  the entities&#xA;     unless  they are expressively deleted &#xA;     with the 'Attribute' node.." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="0#I#1" FromNode="2" ToNode="0" FromLabel="Entities" ToLabel="Input1" />
+	</Edges>
+</Graph>

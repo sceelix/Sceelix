@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="e7051808-8058-4fcb-a8e2-8b64081727c5" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="834294d0-1787-4970-802c-31e5a8633769" NodeType="SystemNode" NodeTypeGUID="e20f3064-d958-4d7c-841d-f6b39f3981c4" Position="877.6152 405.7972" ProcedureType="SurfaceLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="1" Label="Cell Size" />
+				<Argument Expanded="True" Label="Layers">
+					<Items>
+						<Item Expanded="True" Label="Blendmap">
+							<Fields>
+								<Field FixedValue="Examples/Surfaces/Resources/Heightmaps/River.png" Guid="8442ead4-521b-4299-a545-81df2221040c" Label="File" />
+								<Field FixedValue="0" Label="Texture Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ac80e068-c3b3-43da-b59d-8db159980c6f" NodeType="SystemNode" NodeTypeGUID="690a154f-5fa0-4f60-bf12-25f25d764db0" Position="707.5547 630.7236" ProcedureType="SurfacePaintProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Designs">
+					<Items>
+						<Item Expanded="True" Label="Surface">
+							<Fields>
+								<Field FixedValue="0" Label="Texture Index" />
+								<Field FixedValue="0" Label="Index" />
+								<Field Expanded="False" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="7a349d79-4c11-4d7f-956c-ac87fe85b279" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="579.8773 799.172" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Multi Texture">
+							<Fields>
+								<Field Expanded="True" Label="Textures">
+									<Items>
+										<Item FixedValue="Examples/Surfaces/Resources/Grass02.jpg" Guid="6dae7803-7df8-4615-8a6d-22d8ea9c72c6" Label="Texture" />
+										<Item FixedValue="Examples/Surfaces/Resources/Sand01.jpg" Guid="59641069-3448-4862-a7f3-4989e8d31d95" Label="Texture" />
+										<Item FixedValue="Examples/Surfaces/Resources/IceCracking01.jpg" Guid="0f0e5a57-e10f-4670-a5fb-f01709b56af0" Label="Texture" />
+										<Item FixedValue="Examples/Surfaces/Resources/CobbleStone01.jpg" Guid="69f2aad7-ff35-4d6c-ae09-509293a1db67" Label="Texture" />
+									</Items>
+								</Field>
+								<Field FixedValue="5,5" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Blend Color">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" />
+								<Field FixedValue="1,1" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b9112a86-1383-45b8-9b43-5405953bbe5a" NodeType="SystemNode" NodeTypeGUID="e20f3064-d958-4d7c-841d-f6b39f3981c4" Position="606.6667 293.708" ProcedureType="SurfaceLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="1" Label="Cell Size" />
+				<Argument Expanded="True" Label="Layers">
+					<Items>
+						<Item Expanded="True" Label="Splatmap">
+							<Fields>
+								<Field FixedValue="Examples/Surfaces/Resources/Splatmap01.jpg" Guid="8737dc69-b82b-4706-849f-08b8b1b8fbf0" Label="File" />
+								<Field FixedValue="0" Label="Texture Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3d165076-6484-4f29-8c84-2e3a3922f64f" NodeType="SystemNode" NodeTypeGUID="e7a1fccf-9331-4d76-8911-ce398b26217f" Position="507.6288 462.9631" ProcedureType="SurfaceMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f44fd4f4-1c89-41c2-ae2f-575ad124402a" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="187.4549 54.75871" Label="The Surface Load node will read image files into surface layers." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="02bb6d1f-c925-4ec5-9e1f-8a21b1c973b1" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-30.38519 442.0612" Label="You can load all layers at once in one&#xA;node, or load them in separate nodes&#xA;and then merge the layers, if needed." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="b5207bc1-7d70-43d7-a082-ca8d6a975661" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="310.0653 291.7238" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="10" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="88" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="3#O#0" ToPort="4#I#0" FromNode="3" ToNode="4" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="7#O#0" ToPort="4#I#0" FromNode="7" ToNode="4" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="0#O#0" ToPort="1#I#1" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Designs[0].Surface.Surface" />
+		<Edge FromPort="4#O#0" ToPort="1#I#0" FromNode="4" ToNode="1" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

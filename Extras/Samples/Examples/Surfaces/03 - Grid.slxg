@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="743e9cc4-eed4-453f-9163-efeff2ce9a48" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="4c26e791-caf1-41ce-9b0d-c6f4b5e46361" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="855.2703 303.699" HasImpulsePort="True" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="50" Label="Width" />
+								<Field FixedValue="50" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="3" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="column" Type="AttributeExpressionNode" AllowNull="False" />
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">50</ExprNode>
+											</ExprNode>
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="row" Type="AttributeExpressionNode" AllowNull="False" />
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">50</ExprNode>
+											</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Tileable">
+							<Fields>
+								<Field FixedValue="50" Label="Width" />
+								<Field FixedValue="50" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="3,3" Label="Frequency" />
+								<Field FixedValue="0" Label="Seed" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b1ae37d8-186f-45ec-8bbd-d51888689e26" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="966.1459 514.3243" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="150,0,0" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="column" Type="AttributeExpressionNode" AllowNull="False" />
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">50</ExprNode>
+											</ExprNode>
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="row" Type="AttributeExpressionNode" AllowNull="False" />
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">50</ExprNode>
+											</ExprNode>
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="329025dc-c2f4-4506-8a0a-50b1539c2548" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="713.3254 -4.167419" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="4" Label="Count" />
+								<Field FixedValue="column" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="44885266-241b-43a1-bd19-eef9b7f95e2b" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="759.0418 132.8006" HasImpulsePort="True" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="4" Label="Count" />
+								<Field FixedValue="row" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e9cef611-a356-49da-9c17-bc8d4bed3436" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="548.3716 -278.1134" Label="For many reason, we might want to divide our&#xA;terrain into several chunks, building a grid.&#xA;&#xA;Creating a grid of surfaces can be easily attained&#xA;using impulses!" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ad9d22a3-3a3d-4bd0-a666-1f2d88a5aa3f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="993.9543 37.4804" Label="This double &quot;entity create&quot; combination&#xA;will work as a double 'for loop', triggering&#xA;the execution of the surface create 16 times." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="d5122f9c-e9e2-49bb-95c8-7d94dd8233a1" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="412.2885 303.7758" Label="When calling the surface create,&#xA;we use the attributes &quot;column&quot; and&#xA;&quot;row&quot; to pass a different &quot;offset&quot;&#xA;to the noise function, to create the&#xA;seamless look." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="4c6792c8-d0ba-4a50-8240-63dc78ef6f41" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1201.395 514.8767" Label="We translate each surface&#xA;according to its column and&#xA;row, too!" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Entities" ToLabel="Impulse Port 1" />
+		<Edge FromPort="3#O#0" ToPort="0#I#0" FromNode="3" ToNode="0" FromLabel="Entities" ToLabel="Impulse Port 1" />
+		<Edge FromPort="0#O#0" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

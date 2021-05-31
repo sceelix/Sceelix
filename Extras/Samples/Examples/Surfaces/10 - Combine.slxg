@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="e015ebfc-7d26-41fa-a29c-ad5ef1e2e01d" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="4b168680-4543-43d8-9227-7578892453d5" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="468.8795 1015.999" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="2" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="65c42b95-dfb7-4506-9d4b-0642bbdc7b0f" NodeType="SystemNode" NodeTypeGUID="b2ce5c70-77de-4954-a025-6c7f50d1c99e" Position="261.8446 236.7881" ProcedureType="SurfaceCombineProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Dual">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Add" Label="Operation" />
+				<Argument FixedValue="First" Label="Result" />
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d4e66b54-af61-4c29-9098-4f07b3245ea3" NodeType="SystemNode" NodeTypeGUID="b2ce5c70-77de-4954-a025-6c7f50d1c99e" Position="405.616 432.1177" ProcedureType="SurfaceCombineProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Dual">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Subtract" Label="Operation" />
+				<Argument FixedValue="First" Label="Result" />
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="252da4cb-a197-431a-9ebe-72c3eb815079" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="607.6066 38.31186" Label="Load a mountain-like heightmap." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="86d0ee3b-3b7e-4b96-b94c-d18aed086779" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-166.4359 236.4058" Label="Adding both surfaces keeps the&#xA;features from both." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c644bd8b-1d50-4e4d-b685-cf3b99fa7327" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-47.07995 450.7331" Label="Subtracting both surfaces keeps the&#xA;features from both." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="183f2473-d672-4059-b48c-37c9d6a6e747" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="829.7063 221.6097" Label="Load a river-like heightmap." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="1479112a-750b-4d22-b24a-e45f440d8024" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="840.5871 651.2476" Label="One can easily copy surfaces, transform them&#xA;and recombine the results." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e484dfcf-ba74-47a3-a736-9262c2ede1dd" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="61.97223 889.8171" Label="Smoothing the terrain can &#xA;be useful to attenuate gaps&#xA;and sudden slopes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a8b9bad0-6803-41cf-b4f7-e9e99032afe2" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="10.87024 56.71753" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="200" Label="Width" />
+								<Field FixedValue="200" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="2" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="0" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="47bed9ed-8f6f-4209-a793-68ac8ad20837" NodeType="SystemNode" NodeTypeGUID="e20f3064-d958-4d7c-841d-f6b39f3981c4" Position="388.5708 73.32217" ProcedureType="SurfaceLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="2" Label="Cell Size" />
+				<Argument Expanded="True" Label="Layers">
+					<Items>
+						<Item Expanded="True" Label="Heightmap">
+							<Fields>
+								<Field FixedValue="Examples/Surfaces/Resources/Heightmaps/Mountain.jpg" Guid="3a4ec540-072f-40ce-9301-3417ee00c0fc" Label="File" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e247aa05-4ba4-44f1-ba42-9f156b0b0849" NodeType="SystemNode" NodeTypeGUID="e20f3064-d958-4d7c-841d-f6b39f3981c4" Position="603.9213 250.7604" ProcedureType="SurfaceLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="2" Label="Cell Size" />
+				<Argument Expanded="True" Label="Layers">
+					<Items>
+						<Item Expanded="True" Label="Heightmap">
+							<Fields>
+								<Field FixedValue="Examples/Surfaces/Resources/Heightmaps/River.png" Guid="8442ead4-521b-4299-a545-81df2221040c" Label="File" />
+								<Field FixedValue="20" Label="Height Scale" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6831e72c-d60f-4602-a745-8100e8c04c5c" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="583.8333 575.6624" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="100,100,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="397c9d81-825d-4896-a3c0-e72ae6d22577" NodeType="SystemNode" NodeTypeGUID="b2ce5c70-77de-4954-a025-6c7f50d1c99e" Position="416.3051 859.1618" ProcedureType="SurfaceCombineProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Dual">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Average" Label="Operation" />
+				<Argument FixedValue="First" Label="Result" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="5a079af1-e255-4e58-a495-51d831a6fb24" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="630.1047 709.2594" Label="Invert" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Invert">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d7f490c2-d7fb-4c87-9253-b70c5b5509f3" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="21 -192" Label="Combining is the process of adding, subtracting, averaging&#xA;or setting values of different surface layers. Only layers &#xA;of the same type will be combined.&#xA;&#xA;It requires  surfaces to (at least) intersect in 2D space." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="12#I#0" FromNode="2" ToNode="12" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="9#O#0" ToPort="1#I#0" FromNode="9" ToNode="1" FromLabel="Output" ToLabel="Input[0].Dual.First" />
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input[0].Dual.First" />
+		<Edge FromPort="10#O#0" ToPort="1#I#1" FromNode="10" ToNode="1" FromLabel="Output" ToLabel="Input[0].Dual.Second" />
+		<Edge FromPort="11#O#0" ToPort="2#I#1" FromNode="11" ToNode="2" FromLabel="Output" ToLabel="Input[0].Dual.Second" />
+		<Edge FromPort="2#O#0" ToPort="13#I#0" FromNode="2" ToNode="13" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="12#O#0" ToPort="14#I#0" FromNode="12" ToNode="14" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="0#I#0" FromNode="13" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="14#O#0" ToPort="13#I#0" FromNode="14" ToNode="13" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+	</Edges>
+</Graph>

@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="73309dd7-7902-4b5a-84d5-b180ada94e51" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="eefd3fd1-26fd-490a-8673-96918a4c33fd" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="108.4367 41.03785" Label="1. One of the most interesting and useful&#xA;    feature of Sceelix's graphs is ENCAPSULATION." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="906cf8e5-4ca0-4710-a472-dc8f2685df30" NodeType="ComponentNode" NodeTypeGUID="5bcdffe0-701b-49c3-aa1b-653405d5964f" Position="197.8546 246.5257" RelativePath="Learning Concepts/01 - Quick Start.slxg">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="4ffa9e58-d5d1-4d11-ada0-eb21e4ec6f86" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="535.2207 213.3639" Label="2. Encapsulation refers to the possibility&#xA;    of using full graphs as single, more&#xA;    complex operations, just like any&#xA;    other node.&#xA;&#xA;    That's what we are doing here with&#xA;    our first 3 tutorial nodes. You can add&#xA;    them like any other through the node&#xA;    list." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="b57462ad-433e-479d-80c9-7b873ed92ff7" NodeType="ComponentNode" NodeTypeGUID="d09f9222-a9b1-4b62-b231-7dc99d58df73" Position="351.4935 351.8166" RelativePath="Learning Concepts/02 - Ports.slxg">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e526649e-754a-4c71-86cf-1a7a0598ef0b" NodeType="ComponentNode" NodeTypeGUID="cb70050b-8b74-4f55-b9f6-4235123addd3" Position="169.2343 402.0132" RelativePath="Learning Concepts/03 - Flow.slxg">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="80e9611c-43fd-4153-86db-81945e6d4a29" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-17.18352 655.2748" Label="3. Still, in the examples above, the nodes have no&#xA;    parameters nor input/output ports." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="5846cb38-5158-4b78-8d09-d3fec152e382" NodeType="ComponentNode" NodeTypeGUID="64609b8f-29c4-457b-82b9-5ab70ea98809" Position="141.4092 851.6902" RelativePath="Learning Concepts/05 - Parameters.slxg">
+			<Arguments>
+				<Argument FixedValue="Learning Concepts/Resources/PersonClipart.png" Guid="0f90c79d-0f37-48a0-b452-630529dac079" Label="Image" />
+				<Argument FixedValue="1,1" Label="BaseSize" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="59566fca-2fb0-419c-886f-3f5997bd1da1" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="401.7191 793.6255" Label="4. This one has parameters - the very same that &#xA;    had been defined as its global graph parameters.&#xA;&#xA;    This means that those global graph parameters &#xA;    are turned into node parameters when the &#xA;    graph is encapsulated" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="353ac000-4335-49ba-ac24-6a34413a568c" NodeType="ComponentNode" NodeTypeGUID="b772fb4c-6ecf-4a93-8061-2c9df55a7c00" Position="520.9399 1254.508" RelativePath="Learning Concepts/09 - Gates.slxg">
+			<Arguments>
+				<Argument FixedValue="-0.1" Label="Offset Amount" />
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="3" />
+		</Node>
+		<Node Guid="12078137-e959-4a25-91a3-51b2bc068102" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-54.45179 1216.021" Label="5. The next tutorial shows how to define&#xA;    ports in encapsulated graphs. You can&#xA;    right-click the encapsulated node and    =&gt;&#xA;    select 'Open Subgraphs' to see it." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="f388134c-a29d-421a-93d6-9cd06012fa95" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="506.3772 1107.364" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="10#O#0" ToPort="8#I#0" FromNode="10" ToNode="8" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="10#O#0" ToPort="8#I#1" FromNode="10" ToNode="8" FromLabel="Output" ToLabel="Input1" />
+	</Edges>
+</Graph>

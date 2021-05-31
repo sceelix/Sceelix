@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="1215643f-2c6c-41bd-9693-7d8eb1a710a8" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="8e0fc760-8586-432b-961d-350a9b55ebc0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="84.05635 301.5237" Label="1. It is possible to assign and read custom data to entities in the form of ATTRIBUTES." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="7d4cb72d-d7ba-4707-9a6f-035fe3d934e8" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="350.0912 452.4104" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a81a4c33-2386-457b-aed5-e1e2848c9275" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="598.2222 574.3121" Label="2. You can create new attributes&#xA;    using the 'Attribute' Node. Here,&#xA;    you define what value to assign&#xA;    and what will be the name of the&#xA;    attribute." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="24ddcec1-ec23-4986-b6f0-a4231748607d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-94.05621 1890.919" Label="8. Finally, If you run this graph, and click on the resulting cube in the 3D Viewer, you'll be able to see the&#xA;    attributes set to that cube in the inspector window." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="7defe00f-afc3-4cb8-b484-64f075e9cf24" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-181.9601 712.8958" Label="3. Many other nodes can also create&#xA;    attributes. The 'Copy', which creates&#xA;    copies of entities, can save an index&#xA;    of the copy to an attribute, if you&#xA;    specify a name." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="7a18a7d8-e1f6-4d53-aee8-999c1d53abe9" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="575.0268 916.4221" Label="4. You can use attributes within&#xA;    expressions of parameters so&#xA;    as to achieve different &#xA;    transformations for each entity." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="95e38b7f-c972-490e-becf-4939ddde355a" NodeType="SystemNode" NodeTypeGUID="c29f89c9-5215-49cb-8270-663b2cbd4cd3" Position="353.7007 1159.328" ProcedureType="PropertyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Mesh">
+							<Fields>
+								<Field FixedValue="" Label="Area" />
+								<Field FixedValue="" Label="Axis Sizes" />
+								<Field FixedValue="centroid" Label="Centroid" />
+								<Field FixedValue="" Label="Edges" />
+								<Field FixedValue="" Label="Face Count" />
+								<Field FixedValue="" Label="Is Convex?" />
+								<Field FixedValue="" Label="Is Self-Intersecting?" />
+								<Field FixedValue="" Label="Perimeter" />
+								<Field FixedValue="" Label="Bounding Rectangle" />
+								<Field FixedValue="" Label="Vertex Count" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Entity">
+							<Fields>
+								<Field FixedValue="" Label="Attributes" />
+								<Field FixedValue="" Label="Hash Code" />
+								<Field FixedValue="" Label="Type" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field FixedValue="" Label="Scope" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e1e12ca4-8c1e-4656-a792-4dc32fabfe75" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-162.1166 1156.771" Label="5. Depending on its type, each entity&#xA;    will have particular PROPERTIES&#xA;    which are tied to their nature (area, &#xA;    material, position). To access them, &#xA;   you must assign them to attributes first." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="319aa919-e79f-494a-8d59-96629b18fbf5" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-127.2586 1644.132" Label="7. To replace the value on an attribute&#xA;    that may already exist, you should&#xA;    use the &quot;/replace&quot; opttion in the &#xA;    attribute name." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="caff8c42-8b46-4d0d-826e-da8c13ffaf48" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="533.7462 1446.883" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="Hue" Label="Type" />
+								<Field FixedValue="chosenColor" Label="Value" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="100" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="7a1eadb2-0aa2-48b8-ad7b-87e99fe57d82" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="505.5638 1566.872" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="chosenColor" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1b42b0db-9b8e-4e0b-8ad8-f2f81c055342" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="699.5458 1429.021" Label="6. To define and use random values,&#xA;    you use the same principle." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a8608113-f429-4bed-8a0b-836da42d54ff" NodeType="SystemNode" NodeTypeGUID="b3ee6334-f7cb-435c-ab3b-3802fc835e0a" Position="425.523 596.0991" ProcedureType="AttributeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operations">
+					<Items>
+						<Item Expanded="True" Label="Set">
+							<Fields>
+								<Field Expanded="True" Label="Origin">
+									<Items>
+										<Item Expanded="True" Label="Entity">
+											<Fields>
+												<Field FixedValue="System.Object" Label="Value" IsExpression="True">
+													<ParsedExpression>
+														<ExprNode Name="String" Type="StringExpressionNode">Hello</ExprNode>
+													</ParsedExpression>
+												</Field>
+												<Field Expanded="True" Label="Destination">
+													<Items>
+														<Item Expanded="True" Label="Self">
+															<Fields>
+																<Field FixedValue="MyNewAttribute" Label="Attribute" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3f1c90ac-adb3-4da7-820e-f60dd134855f" NodeType="SystemNode" NodeTypeGUID="b3ee6334-f7cb-435c-ab3b-3802fc835e0a" Position="411.5506 1721.841" ProcedureType="AttributeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operations">
+					<Items>
+						<Item Expanded="True" Label="Set">
+							<Fields>
+								<Field Expanded="True" Label="Origin">
+									<Items>
+										<Item Expanded="True" Label="Entity">
+											<Fields>
+												<Field FixedValue="System.Object" Label="Value" IsExpression="True">
+													<ParsedExpression>
+														<ExprNode Name="String" Type="StringExpressionNode">Hello New Value!</ExprNode>
+													</ParsedExpression>
+												</Field>
+												<Field Expanded="True" Label="Destination">
+													<Items>
+														<Item Expanded="True" Label="Self">
+															<Fields>
+																<Field FixedValue="MyNewAttribute /replace" Label="Attribute" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="eb05311f-7b7d-40f3-8ba8-b6b8b8d2ec04" NodeType="SystemNode" NodeTypeGUID="50c9a7c0-6f52-470d-8bb7-2c8b663c94b8" Position="344.6754 767.3047" ProcedureType="CopyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="10" Label="Number of Copies" />
+								<Field FixedValue="Clone" Label="Method" />
+								<Field FixedValue="myIndexAttribute" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bc486656-f4ca-47de-a7bf-aa44b01f93b9" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="348.8015 959.1089" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="myIndexAttribute" Type="AttributeExpressionNode" AllowNull="False" />
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">2</ExprNode>
+											</ExprNode>
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="myIndexAttribute" Type="AttributeExpressionNode" AllowNull="False" />
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">2</ExprNode>
+											</ExprNode>
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bd5f30ae-df69-4323-aa5c-64817dbd2876" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="377.5419 1292.872" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="1,1,1" Label="Amount" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="*" Type="BinaryExpressionNode">
+							<ExprNode Name="centroid" Type="AttributeExpressionNode" AllowNull="False" />
+							<ExprNode Name="Single" Type="FloatExpressionNode">0.021</ExprNode>
+						</ExprNode>
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="Additive" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="9#O#0" ToPort="10#I#0" FromNode="9" ToNode="10" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="12#I#0" FromNode="1" ToNode="12" FromLabel="Output" ToLabel="Operations[0].Set.Origin[0].Entity.Input" />
+		<Edge FromPort="10#O#0" ToPort="13#I#0" FromNode="10" ToNode="13" FromLabel="Output" ToLabel="Operations[0].Set.Origin[0].Entity.Input" />
+		<Edge FromPort="12#O#0" ToPort="14#I#0" FromNode="12" ToNode="14" FromLabel="Operations[0].Set.Origin[0].Entity.Output" ToLabel="Operation[0].Standard.Input" />
+		<Edge FromPort="14#O#0" ToPort="15#I#0" FromNode="14" ToNode="15" FromLabel="Operation[0].Standard.Output" ToLabel="Input" />
+		<Edge FromPort="15#O#0" ToPort="6#I#0" FromNode="15" ToNode="6" FromLabel="Output" ToLabel="Entity[0].Mesh.Input" />
+		<Edge FromPort="6#O#0" ToPort="16#I#0" FromNode="6" ToNode="16" FromLabel="Entity[0].Mesh.Output" ToLabel="Input" />
+		<Edge FromPort="16#O#0" ToPort="9#I#0" FromNode="16" ToNode="9" FromLabel="Output" ToLabel="Inputs[0].Collective.Collective" />
+	</Edges>
+</Graph>

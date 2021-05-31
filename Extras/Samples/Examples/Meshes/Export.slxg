@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="aca09380-28a3-44cd-b23a-47c1c68e1a65" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="5d3b64b6-9cb8-407a-a08c-07b0844445e5" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="69.57021 27.23382" Label="Data export in Sceelix is not a menu option, as in other tools. &#xA;                       It is done using graphs, too." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="0df9fa0a-1ba2-4642-9a94-57511aa0b717" NodeType="SystemNode" NodeTypeGUID="ac217afa-a4f7-4aec-bcd3-9eb26f8a4aae" Position="474.0229 762.1432" ProcedureType="MeshSaveProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Format">
+					<Items>
+						<Item Expanded="True" Label="Obj">
+							<Fields>
+								<Field FixedValue="True" Label="Flip Faces" />
+								<Field FixedValue="" Label="Group Name" />
+								<Field FixedValue="True" Label="Export Materials" />
+								<Field FixedValue="C:/Users/pedro/Desktop/MyFile.obj" Label="File Location" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="+" Type="BinaryExpressionNode">
+												<ExprNode Name="+" Type="BinaryExpressionNode">
+													<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+													<ExprNode Name="String" Type="StringExpressionNode">/MyLetter_</ExprNode>
+												</ExprNode>
+												<ExprNode Name="index" Type="AttributeExpressionNode" AllowNull="False" />
+											</ExprNode>
+											<ExprNode Name="String" Type="StringExpressionNode">.obj</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="True" Label="Flip YZ" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="420d4cd7-d68a-4c8b-8c85-d0b41e8e09b1" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="303.138 182.0013" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Text">
+							<Fields>
+								<Field FixedValue="Test" Label="Text" />
+								<Field FixedValue="Arial" Label="Font" />
+								<Field FixedValue="10" Label="Size" />
+								<Field FixedValue="Regular" Label="Style" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Random Face">
+							<Fields>
+								<Field FixedValue="0" Label="Seed" />
+								<Field FixedValue="10" Label="Size" />
+								<Field FixedValue="10" Label="Number of vertices" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="551c8a50-a31e-429a-ae8f-496343743920" NodeType="SystemNode" NodeTypeGUID="c08e468c-4d16-45c0-91f9-7d93320b7c89" Position="306.6332 307.8058" ProcedureType="MeshDivideProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Groups">
+					<Items />
+				</Argument>
+				<Argument Expanded="True" Label="Separate">
+					<Items>
+						<Item Expanded="True" Label="Separate">
+							<Fields>
+								<Field FixedValue="Parent and Face" Label="Attributes" />
+								<Field FixedValue="Parent" Label="Scope" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c8732f5a-fe44-4dd2-97ee-8cd6c15d18f4" NodeType="SystemNode" NodeTypeGUID="ac217afa-a4f7-4aec-bcd3-9eb26f8a4aae" Position="135.7185 601.6448" ProcedureType="MeshSaveProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Format">
+					<Items>
+						<Item Expanded="True" Label="Fbx">
+							<Fields>
+								<Field FixedValue="True" Label="Flip Faces" />
+								<Field FixedValue="C:/Users/pedro/Desktop/MyFile.fbx" Label="File Location" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+											<ExprNode Name="String" Type="StringExpressionNode">/MyText.fbx</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Obj">
+							<Fields>
+								<Field FixedValue="True" Label="Flip Faces" />
+								<Field FixedValue="" Label="Group Name" />
+								<Field FixedValue="True" Label="Export Materials" />
+								<Field FixedValue="C:/Users/pedro/Desktop/MyFile.obj" Label="File Location" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+											<ExprNode Name="String" Type="StringExpressionNode">/MyText.obj</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="True" Label="Flip YZ" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="71605e33-ea61-4277-ae5c-04788d347ac5" NodeType="SystemNode" NodeTypeGUID="3f477acc-ff16-4ceb-9f54-0b1404dc149b" Position="317.5763 432.1615" ProcedureType="CollectionProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Count">
+							<Fields>
+								<Field FixedValue="index" Label="Index" />
+								<Field FixedValue="" Label="Count" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8d697317-efb1-41c8-a3dd-ba58cd035a16" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-236.5136 209.2758" Label="In this example, we're creating&#xA;a mesh forming text and then&#xA;dividing each letter into a new mesh." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c9ad8e34-ef31-4e62-9000-3af7facaaaa8" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="587.3303 511.3333" Label="You can export meshes using the &quot;Mesh Save&quot;&#xA;node, where you specify the format, options&#xA;and destination path," ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="46b9134d-33bf-4a2e-a4f7-e0f3cddb4ead" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-174.8369 721.7626" Label="Choosing &quot;Collective&quot; as the value &#xA;for &quot;Input&quot; will save all the meshes&#xA;into a single file. Here, we use an&#xA;expression to point always to the&#xA;Desktop," ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="1cd30c4f-49a3-4622-a0c5-a3a0fdcdcb09" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="469.0809 880.2393" Label="Choosing &quot;Single&quot; as the value &#xA;for &quot;Input&quot; will force the node&#xA;to run separately for each mesh,&#xA;meaning each letter is saved to&#xA;a different file. A different path&#xA;is defined using an expression and&#xA;the index of each mesh.." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="5#I#0" FromNode="3" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="1#I#0" FromNode="5" ToNode="1" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="5#O#0" ToPort="4#I#0" FromNode="5" ToNode="4" FromLabel="Output" ToLabel="Inputs[0].Collective.Collective" />
+	</Edges>
+</Graph>

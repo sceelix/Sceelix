@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="cf51bef0-e5ea-4c22-abe5-a189a19c0e43" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="b3e68bf3-eba4-4ae0-9b1b-4acd44fa44fc" NodeType="SystemNode" NodeTypeGUID="926790d6-ec93-4f53-b87f-0b023d8177fc" Position="131.7805 770.0308" ProcedureType="SurfaceAdjustProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Mesh">
+							<Fields>
+								<Field FixedValue="0.1" Label="Height Offset" />
+								<Field FixedValue="False" Label="Create Base" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="d1fc2c5a-45a5-4448-bdd1-b8e56cd069cf" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="287.1279 495.2678" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Circle">
+							<Fields>
+								<Field FixedValue="30" Label="Radius" />
+								<Field FixedValue="10" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Star">
+							<Fields>
+								<Field FixedValue="5" Label="Points" />
+								<Field FixedValue="20" Label="Radius 1" />
+								<Field FixedValue="5" Label="Radius 2" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="9303403c-1667-4414-8444-a203c0aef234" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="3.03669 607.5732" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="-20" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8871dc45-aaa3-4b02-aa79-396c2c8b9cb9" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="270.2395 626.1832" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="50,50,16" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="Center" Label="X" />
+								<Field FixedValue="Center" Label="Y" />
+								<Field FixedValue="Center" Label="Z" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bbc546d3-a395-4d49-b0d2-0add6bca9b6d" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="447.7954 1516.835" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2eaa8b7f-1ca2-4f0b-ae87-4f1261c02c63" NodeType="SystemNode" NodeTypeGUID="fe4221f3-991c-4161-bbae-58f5a60f8d42" Position="638.5719 878.4854" ProcedureType="PathCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields>
+								<Field Expanded="True" Label="Points">
+									<Items>
+										<Item FixedValue="0,0,0" Label="Point" />
+										<Item FixedValue="10,10,0" Label="Point" />
+										<Item FixedValue="25,50,0" Label="Point" />
+										<Item FixedValue="75,25,0" Label="Point" />
+										<Item FixedValue="90,90,0" Label="Point" />
+										<Item FixedValue="100,100,0" Label="Point" />
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Grid">
+							<Fields>
+								<Field FixedValue="10" Label="Number of Columns" />
+								<Field FixedValue="10" Label="Number of Rows" />
+								<Field FixedValue="1" Label="Column Width" />
+								<Field FixedValue="1" Label="Row Height" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1de05368-cf34-4476-8034-85dfeaf06124" NodeType="SystemNode" NodeTypeGUID="83c5de12-e6e5-49d6-ad38-5bfe4c3dfff4" Position="489.0003 1135.863" ProcedureType="PathModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="10" Label="Smooth Steps" />
+								<Field FixedValue="1" Label="Bend" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2d12aa7d-573a-41fa-a43e-53bd8887605e" NodeType="SystemNode" NodeTypeGUID="926790d6-ec93-4f53-b87f-0b023d8177fc" Position="374.7972 1257.733" ProcedureType="SurfaceAdjustProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Path">
+							<Fields>
+								<Field FixedValue="5" Label="Width" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Mesh">
+							<Fields>
+								<Field FixedValue="0.1" Label="Height Offset" />
+								<Field FixedValue="True" Label="Create Base" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="ca2645ef-aea9-49e7-921c-d782a51a102b" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="565.4884 1011.596" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,9" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="360608a6-d844-4a69-b55e-2bd76017297d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-258.5688 286.005" Label="The &quot;Surface Adjust&quot; rises or lowers the terrain height &#xA;layer so as to adjust them to other shapes.&#xA;&#xA;This is useful to &quot;stamp&quot; effects on the terrain and&#xA;create more interesting surfaces." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="180fed62-6127-4dd8-a41a-b4ca268eca3b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="529.2721 515.8468" Label="1. First, we create a noise surface and&#xA;    a circle mesh. We The rise the mesh &#xA;    to the point that we want to flatten." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="50115777-6659-4d18-8ac5-47ca46870357" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-310.2474 770.9384" Label="2. With the &quot;Mesh&quot; option, we can&#xA;    simply connect the two." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="75676257-4d2a-4b16-8e42-fc72bd886d46" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-80.75198 1253.474" Label="Now, with the &quot;Path&quot; option, we can&#xA;lower the terrain, creating a valley&#xA;fit for a river." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="660bed19-6603-4f05-ac0e-3a61c3aca11d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="842.7014 939.4779" Label="We create a new path, &#xA;with a curvy look." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="dcdfdfff-7a6b-442e-b646-2ddc5707c3d0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="687.3583 1490.373" Label="Finally, we set some smoothing to&#xA;make the flattening less obvious.&#xA;We could add some noise, too." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="0#I#0" FromNode="2" ToNode="0" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="1#O#0" ToPort="3#I#0" FromNode="1" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="0#I#1" FromNode="3" ToNode="0" FromLabel="Output" ToLabel="Entity[0].Mesh.Mesh" />
+		<Edge FromPort="6#O#0" ToPort="7#I#1" FromNode="6" ToNode="7" FromLabel="Output" ToLabel="Entity[0].Path.Path" />
+		<Edge FromPort="0#O#0" ToPort="7#I#0" FromNode="0" ToNode="7" FromLabel="Surface" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="5#O#0" ToPort="8#I#0" FromNode="5" ToNode="8" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="8#O#0" ToPort="6#I#0" FromNode="8" ToNode="6" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="7#O#0" ToPort="4#I#0" FromNode="7" ToNode="4" FromLabel="Surface" ToLabel="Input" />
+	</Edges>
+</Graph>

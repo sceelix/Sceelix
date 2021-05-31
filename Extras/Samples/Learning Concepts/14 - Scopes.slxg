@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="00208242-c6de-40b1-b53c-66abf8d95aec" Author="pedro_000" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="eec4631f-c520-4937-8e4a-2337f895839a" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="161.1652 239.7111" Label="1. All entities that are positioned in 3D space (Actors) are enclosed within &#xA;    a SCOPE, which describes their base position and orientation." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="59d8be1e-b1b5-40bd-b9c0-9a5b69758c18" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="311.4485 426.3717" Label="2. Scopes are very important in Sceelix, because&#xA;    they allow many operations to perform based&#xA;    on coordinates and directions which are &#xA;    relative to each entity." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="3a3c8d05-e2fb-46e6-bc96-ccb4839521a2" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="346.9916 703.8431" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="5" Label="Horizontal Segments" />
+								<Field FixedValue="10" Label="Radius" />
+								<Field FixedValue="5" Label="Vertical Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b32a98cb-e04d-4bbe-9a29-77fea36d92fe" NodeType="SystemNode" NodeTypeGUID="c08e468c-4d16-45c0-91f9-7d93320b7c89" Position="409.5371 997.4083" ProcedureType="MeshDivideProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Groups">
+					<Items />
+				</Argument>
+				<Argument Expanded="True" Label="Separate">
+					<Items>
+						<Item Expanded="True" Label="Separate">
+							<Fields>
+								<Field FixedValue="Parent and Face" Label="Attributes" />
+								<Field FixedValue="Derived" Label="Scope" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b4b0a4f1-4750-486e-94e4-be2294cc7f98" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="676.5277 1139.665" Label="5. Meshes, when divided,can pass on&#xA;    their scope to the children meshes&#xA;    in several ways. You should take&#xA;    the time to try them all." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="034c0f25-99dc-4ff1-9ffe-0e419862911a" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="660.0782 863.9539" Label="4. Scopes can be modified, derived from parent &#xA;    actors, or placed into other actor's scopes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="9d527d88-c78a-4d50-996f-22f281beee69" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-92.86093 678.4311" Label="3. By default, scopes are oriented &#xA;    to the world axes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="91debada-d019-4215-9fdb-1a94701acd6b" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="614.7047 704.6381" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cylinder">
+							<Fields>
+								<Field FixedValue="10" Label="Height" />
+								<Field FixedValue="1" Label="Radius" />
+								<Field FixedValue="5" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ab83dccb-2755-4c2c-b403-ce433ab1573a" NodeType="SystemNode" NodeTypeGUID="4c7a38df-e3a0-4a77-abb0-599f275d414c" Position="433.264 870.9869" ProcedureType="ActorInsertProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="One to One">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on X-Axis">
+					<Items>
+						<Item Expanded="True" Label="Stretch">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Y-Axis">
+					<Items>
+						<Item Expanded="True" Label="Stretch">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Z-Axis">
+					<Items>
+						<Item Expanded="True" Label="Stretch">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="68bd7b32-c163-4754-868a-a320ae6da70a" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="288 1160" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,2" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="8#I#0" FromNode="2" ToNode="8" FromLabel="Output" ToLabel="Inputs[0].One to One.Source" />
+		<Edge FromPort="7#O#0" ToPort="8#I#1" FromNode="7" ToNode="8" FromLabel="Output" ToLabel="Inputs[0].One to One.Target" />
+		<Edge FromPort="8#O#0" ToPort="3#I#0" FromNode="8" ToNode="3" FromLabel="Source" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="9#I#0" FromNode="3" ToNode="9" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

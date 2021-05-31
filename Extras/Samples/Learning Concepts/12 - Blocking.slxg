@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="78fbde12-9df0-4e25-b995-55c6019d7a18" Author="pedro_000" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="bd56b4b6-3072-454c-b002-0a5607f61ac6" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-43.63232 -510.4561" Label="1. You can block/disable ports and edges to&#xA;    avoid data processing or transfer.&#xA;&#xA;    One of its  uses is debugging." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="799cc208-ea4c-460b-b141-8f1dc1d6ebb7" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="-67.2995 103.8032" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Pyramidize">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Prismify">
+							<Fields>
+								<Field Expanded="True" Label="Amount">
+									<Items>
+										<Item FixedValue="1" Label="Height" />
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Style">
+									<Items>
+										<Item FixedValue="1,1" Label="Overhang" />
+									</Items>
+								</Field>
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="57b95090-5b76-42d1-a53f-b47553f76045" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="127.7086 -328.5339" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2204d938-f3d7-42fa-b0a8-2dbc7ff03f1d" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="382.7587 217.3462" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Spherify">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="45" Label="Circle Section Angle" />
+								<Field FixedValue="5" Label="Segments" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Pyramidize">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="9e1a0527-73ad-4ad5-aa38-1c1a5a31df1d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-286.5508 317.906" Label="4. If you block inputs, the &#xA;    data is discarded once&#xA;    it arrives there." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="502eefcb-7e37-4040-a547-644e49e17ad7" NodeType="SystemNode" NodeTypeGUID="827e1ac6-ff43-4c26-b6d0-4e64b0c26d46" Position="132.5295 -69.36032" ProcedureType="MeshSubselectProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Mesh Selection">
+					<Items>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field Expanded="True" Label="Vector">
+									<Items>
+										<Item Expanded="True" Label="Top">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="45" Label="Angle Tolerance" />
+								<Field FixedValue="Scope" Label="Relative To" />
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field Expanded="True" Label="Vector">
+									<Items>
+										<Item Expanded="True" Label="Front">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Top">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="45" Label="Angle Tolerance" />
+								<Field FixedValue="Scope" Label="Relative To" />
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field Expanded="True" Label="Vector">
+									<Items>
+										<Item Expanded="True" Label="Back">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Top">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="45" Label="Angle Tolerance" />
+								<Field FixedValue="Scope" Label="Relative To" />
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="All">
+							<Fields>
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="4">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="8743e7fa-459e-4de0-8494-3486cd86f87e" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-239.0984 -94.86913" Label="2. If you block output ports,&#xA;    the data is discarded." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="de38ce4c-e2df-4b9b-989b-507b0330298d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="405.9512 -73.06458" Label="3. If a node is disabled, then &#xA;    it acts as if it would not exist. &#xA;    So the data from the output&#xA;    port will still send out data." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ce45376a-2d1b-40d2-a8ac-07423d496972" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-268.171 530.0644" Label="5. To block edges:&#xA;    Right-click them and choose 'Disable'&#xA;    or Alt+Left mouse click it." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8bf851f4-0e31-47b6-8344-bae510678dab" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="237.8708 532.4686" Label="6. To block ports:&#xA;    Click them and change the 'State' to 'Blocked' &#xA;    in the inspector menu or Alt+Left mouse click it." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="69599705-7a83-4574-8bce-dff47a7cea3f" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="117.6418 -198.2773" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,2" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="965c44cf-82f1-4946-82e5-8a1d7b790f7c" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="103.9806 337.6593" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="3,0,1" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Blocked" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="5#O#3" ToPort="3#I#0" Disabled="True" FromNode="5" ToNode="3" FromLabel="Mesh Selection[3].All.Output" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="1#I#0" FromNode="5" ToNode="1" FromLabel="Mesh Selection[0].Direction.Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="10#I#0" FromNode="2" ToNode="10" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="10#O#0" ToPort="5#I#0" FromNode="10" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="5#O#2" ToPort="11#I#0" FromNode="5" ToNode="11" FromLabel="Mesh Selection[2].Direction.Output" ToLabel="Input" />
+	</Edges>
+</Graph>

@@ -1,0 +1,10 @@
+This is a list of icons used in this sample:
+
+Restaurant Icon: https://icons8.com/web-app/611/restaurant
+Cafe Icon: https://icons8.com/web-app/37211/cafe
+Bar Icon: https://icons8.com/web-app/12694/bar
+Money Bag Icon: https://icons8.com/web-app/484/money-bag
+Bench Icon: https://icons8.com/web-app/5173/city-bench
+POI Icon: https://icons8.com/web-app/37075/point-objects
+P Icon: https://icons8.com/web-app/2049/p
+Phone Icon: https://icons8.com/web-app/9659/phone

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="821cacfc-9812-43fa-b318-a69925c5614b" Author="Sceelix" Description="Performs an extrusion, followed by a subselection into top and side faces, a commonly used combination." Color="ffffff" Category="Compound Utils" Version="1.0.0.0">
+	<Parameters>
+		<Parameter Increment="0.1" DecimalDigits="2" Label="Amount" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Amount to be extruded." Section="" FixedValue="1" />
+		<Parameter Label="Cap" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicate if the original face should be included in the final result as well" Section="" FixedValue="False" />
+		<Parameter MaxSize="1" Expanded="True" Label="Method" Type="Sceelix.Core.Parameters.Infos.SelectListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Extrusion method to be applied." Section="">
+			<ParameterModels>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Directional" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Extrudes along a given direction." Section="">
+					<Fields>
+						<Field Label="Direction" Type="Sceelix.Mathematics.Parameters.Infos.Vector3DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Direction of the extrusion." Section="" FixedValue="1,0,1" />
+						<Field Increment="0.1" DecimalDigits="2" Label="Offset" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Amount of offset at the end of the extrude. &#xD;&#xA;Positive values means the end will be larger, negative values means that it will be smaller." Section="" FixedValue="0" />
+						<Field Label="Relative To" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the operation should be relative to the scope's direction or to the world." Section="" FixedValue="Scope">
+							<Choices>
+								<Choice>Scope</Choice>
+								<Choice>World</Choice>
+							</Choices>
+						</Field>
+						<Field Label="Bend Top" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the top should be bent, making the top face's normal match the extruded direction." Section="" FixedValue="False" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Normal" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Extrudes along the face normals." Section="">
+					<Fields>
+						<Field Increment="0.1" DecimalDigits="2" Label="Offset" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Amount to offset at the end of the extrusion. &#xD;&#xA;Positive values means the end will be larger, negative values means that it will be smaller." Section="" FixedValue="0" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Shared" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Extrudes along the shared edges." Section="">
+					<Fields />
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Transform" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Extrudes along the face normals while performing scaling and rotation transformations." Section="">
+					<Fields>
+						<Field Increment="0.1" DecimalDigits="2" Label="Rotation Angle" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The angle to be rotated." Section="" FixedValue="45" />
+						<Field Label="Axis" Type="Sceelix.Mathematics.Parameters.Infos.Vector3DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The angle around which to rotate." Section="" FixedValue="1,0,0" />
+						<Field Label="Sizing" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The type of sizing to consider.&lt;br /&gt;&lt;b&gt;Radius&lt;/b&gt; means that the indicated value corresponds to the radius for rotation.&lt;br /&gt;&lt;b&gt;Length&lt;/b&gt; means that the indicated value corresponds to the length of the extrusion block." Section="" FixedValue="Length">
+							<Choices>
+								<Choice>Radius</Choice>
+								<Choice>Length</Choice>
+							</Choices>
+						</Field>
+						<Field Increment="0.1" DecimalDigits="2" Label="Scaling" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The amount of scaling to perform, from the bottom to the top." Section="" FixedValue="1" />
+						<Field Increment="1" Label="Segments" Type="Sceelix.Core.Parameters.Infos.IntParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The number of segments in which the extrusion should be divided." Section="" FixedValue="3" />
+					</Fields>
+				</ParameterModel>
+			</ParameterModels>
+			<Items>
+				<Item Expanded="True" ArrangeInSingleLine="False" Label="Normal" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Extrudes along the face normals." Section="">
+					<Fields>
+						<Field Increment="0.1" DecimalDigits="2" Label="Offset" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Amount to offset at the end of the extrusion. &#xD;&#xA;Positive values means the end will be larger, negative values means that it will be smaller." Section="" FixedValue="0" />
+					</Fields>
+				</Item>
+			</Items>
+		</Parameter>
+		<Parameter MaxSize="1" Expanded="True" Label="Separate" Type="Sceelix.Core.Parameters.Infos.OptionalListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="if true, each one of the faces of the mesh will be placed into a separate mesh entity." Section="">
+			<ParameterModels>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Separate" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Separation options." Section="">
+					<Fields>
+						<Field Label="Attributes" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines what the attributes of the individual meshes should be:&#xD;&#xA;if they should take the attributes of the parent, use the ones of the face&#xD;&#xA;or mix both." Section="" FixedValue="Parent and Face">
+							<Choices>
+								<Choice>Parent</Choice>
+								<Choice>Face</Choice>
+								<Choice>Parent and Face</Choice>
+							</Choices>
+						</Field>
+						<Field Label="Scope" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines how the 3D Scope of the individual meshes should be:&#xD;&#xA;if they should inherit from the parent mesh or assume new ones, adjusted&#xD;&#xA;to the orientation of the face." Section="" FixedValue="Parent">
+							<Choices>
+								<Choice>Parent</Choice>
+								<Choice>Derived</Choice>
+								<Choice>Face</Choice>
+							</Choices>
+						</Field>
+					</Fields>
+				</ParameterModel>
+			</ParameterModels>
+			<Items />
+		</Parameter>
+	</Parameters>
+	<Nodes>
+		<Node Guid="60a0ec43-9f14-4164-aa04-c2c82bd204ca" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="249.968 184.1703" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Amount" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Method" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Method" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Cap" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="section" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Convexify">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8f546de3-716c-498f-b66e-f58451466fec" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="249.6521 51.87338" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="efe6a032-84fe-496a-88d2-4347c9f683c7" NodeType="SystemNode" NodeTypeGUID="827e1ac6-ff43-4c26-b6d0-4e64b0c26d46" Position="251.3967 333.7424" ProcedureType="MeshSubselectProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Mesh Selection">
+					<Items>
+						<Item Expanded="True" Label="Custom">
+							<Fields>
+								<Field FixedValue="True" Label="Condition" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="==" Type="BinaryExpressionNode">
+											<ExprNode Name="section" Type="InternalAttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="String" Type="StringExpressionNode">Top</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Separate">
+									<Items>
+										<Item Expanded="True" Label="Separate">
+											<Fields>
+												<Field FixedValue="Parent and Face" Label="Attributes" />
+												<Field FixedValue="Derived" Label="Scope" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="All">
+							<Fields>
+								<Field Expanded="True" Label="Separate" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Separate" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="0" state="Gate" GateLabel="Top" />
+				<Port id="1" state="Gate" GateLabel="All" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="f43b866e-05e8-4770-975b-8f6c72a9fcff" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="162.593 507.3719" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="2#I#0" FromNode="0" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Mesh Selection[0].Custom.Output" ToLabel="Input" />
+	</Edges>
+</Graph>

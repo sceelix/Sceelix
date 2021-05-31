@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="c35075fc-fcc8-4e40-a97e-5f3da57da3c6" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="906fbb97-db24-43d4-91c8-6c2908c0678d" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="330.1835 675.7415" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Rectangle">
+							<Fields>
+								<Field FixedValue="2" Label="Width" />
+								<Field FixedValue="3" Label="Height" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="43b65dd1-2862-4a20-a49a-7afbecbc4214" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="351.0075 945.6841" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="X" Label="Axis" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.5" Label="Size" />
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="False" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0" Label="Size" />
+								<Field FixedValue="Absolute" Label="Sizing" />
+								<Field FixedValue="True" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="8d26a56d-b5b2-4a63-9e75-f2404541b1a9" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="497.9714 1521.766" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/02 - Detailed Buidling/Textures/WoodFine.jpg" Guid="3611ddbd-d547-4dd9-a71b-5c27e1f17c30" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="4b397e18-75b1-41fd-92a7-e3d9ddc4525c" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="262.0099 1758.439" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="113,163,159,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8e6f42fc-7d5e-4d62-acc8-1f615826f88c" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="547.5798 1960.941" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Window" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="70143090-3f71-4188-b398-723bc1c80677" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="263.1954 1246.625" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="Y" Label="Axis" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.5" Label="Size" />
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="True" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.05" Label="Size" />
+								<Field FixedValue="Absolute" Label="Sizing" />
+								<Field FixedValue="False" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.5" Label="Size" />
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="True" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="3" />
+		</Node>
+		<Node Guid="2f677db2-2613-48bd-9b26-e95048c72470" NodeType="ComponentNode" NodeTypeGUID="70988f3d-3c30-47c0-bf03-f65c9e63afe9" Position="319.4183 1082.872" RelativePath="Utils/Offset (Filtered).slxg">
+			<Arguments>
+				<Argument FixedValue="-0.1" Label="Amount" />
+				<Argument Expanded="True" Label="Separate">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="525a3855-f93b-4385-a38a-64943c8211b9" NodeType="ComponentNode" NodeTypeGUID="821cacfc-9812-43fa-b318-a69925c5614b" Position="52.93952 1451.03" RelativePath="Utils/Extrude (Filtered).slxg">
+			<Arguments>
+				<Argument FixedValue="-0.1" Label="Amount" />
+				<Argument FixedValue="False" Label="Cap" />
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Normal">
+							<Fields>
+								<Field FixedValue="0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Separate">
+					<Items>
+						<Item Expanded="True" Label="Separate">
+							<Fields>
+								<Field FixedValue="Parent and Face" Label="Attributes" />
+								<Field FixedValue="Parent" Label="Scope" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="f0846e9b-b2b9-41b5-a7ac-59c22b566998" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="302.9808 807.6149" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="Minimum" Label="X" />
+								<Field FixedValue="Minimum" Label="Y" />
+								<Field FixedValue="None" Label="Z" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="4#I#0" FromNode="2" ToNode="4" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="3#O#0" ToPort="4#I#0" FromNode="3" ToNode="4" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="5#O#1" ToPort="2#I#0" FromNode="5" ToNode="2" FromLabel="Slices[1].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="6#I#0" FromNode="1" ToNode="6" FromLabel="Slices[0].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="1#O#1" ToPort="6#I#0" FromNode="1" ToNode="6" FromLabel="Slices[1].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="6#O#0" ToPort="5#I#0" FromNode="6" ToNode="5" FromLabel="Inside" ToLabel="Input" />
+		<Edge FromPort="6#O#1" ToPort="2#I#0" FromNode="6" ToNode="2" FromLabel="Outside" ToLabel="Input" />
+		<Edge FromPort="7#O#1" ToPort="2#I#0" FromNode="7" ToNode="2" FromLabel="All" ToLabel="Input" />
+		<Edge FromPort="7#O#0" ToPort="3#I#0" FromNode="7" ToNode="3" FromLabel="Top" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="7#I#0" FromNode="5" ToNode="7" FromLabel="Slices[0].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="5#O#2" ToPort="7#I#0" FromNode="5" ToNode="7" FromLabel="Slices[2].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="8#I#0" FromNode="0" ToNode="8" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="8#O#0" ToPort="1#I#0" FromNode="8" ToNode="1" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

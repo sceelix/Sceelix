@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="7f4aae98-97a5-4fc2-900a-fd8b7d3c7825" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="01b9a2df-3032-4b7f-aa8a-229d09f18a53" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="380.1204 315.1507" Label="Note: This sample applies to the Sceelix-Unity plugin,&#xA;which should be installed and enabled first." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a095b7cb-7948-4ebf-b88b-f8f067e1c410" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="223.7442 188.0085" Label="This sample shows the possibilities regarding component instantiation that exist in Unity," ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="03614e34-7d13-4a6f-a590-e9c53e872bd7" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="554.787 586.4496" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Box">
+							<Fields>
+								<Field FixedValue="10" Label="Width" />
+								<Field FixedValue="10" Label="Length" />
+								<Field FixedValue="10" Label="Height" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="15" Label="Horizontal Segments" />
+								<Field FixedValue="5" Label="Radius" />
+								<Field FixedValue="15" Label="Vertical Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e6f1b834-14ae-46de-a9a0-a6d5ed00e899" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="183.7833 941.2505" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="Existing Components" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Mesh">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Translation" />
+								<Field FixedValue="0,0,0" Label="Rotation" />
+								<Field FixedValue="1,1,1" Label="Scale" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2ac7068f-6680-49d6-bf14-71c2baa60f84" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="779.3464 547.3035" Label="While many Sceelix entities are&#xA;automatically translatable to Unity,&#xA;there are advantages in creating&#xA;&quot;Unity Entities&quot; in Sceelix, because&#xA;it allows the definition of custom&#xA;names, tags and components." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="b85359ba-5d37-4aba-86c2-da208c978629" NodeType="SystemNode" NodeTypeGUID="f4ddf1f0-64b2-4846-84fd-b919b480c492" Position="156.2418 1072.32" ProcedureType="UnityEntityComponentProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Components">
+					<Items>
+						<Item Expanded="True" Label="Mesh Collider">
+							<Fields>
+								<Field FixedValue="True" Label="Is Convex" />
+								<Field FixedValue="True" Label="Is Trigger" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Rigidbody">
+							<Fields>
+								<Field FixedValue="1" Label="Mass" />
+								<Field FixedValue="0" Label="Drag" />
+								<Field FixedValue="0.05" Label="Angular Drag" />
+								<Field FixedValue="True" Label="Use Gravity" />
+								<Field FixedValue="False" Label="Is Kinematic" />
+								<Field FixedValue="None" Label="Interpolate" />
+								<Field FixedValue="Discrete" Label="Collision Detection" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2854efe1-348d-4d87-b47d-2ef68aced187" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-12.88562 1173.258" Label="Some default Unity components are&#xA;already implemented." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="2b8b477f-f8ee-4bf5-9c36-2c9dea2fe755" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="611.1275 930.7945" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="With Custom Component" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Mesh">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Translation" />
+								<Field FixedValue="0,0,0" Label="Rotation" />
+								<Field FixedValue="1,1,1" Label="Scale" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="440c9ea1-011e-4e22-9af3-ada5c1cf9c50" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="1098.364 933.2056" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="With Other Component" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Mesh">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Translation" />
+								<Field FixedValue="0,0,0" Label="Rotation" />
+								<Field FixedValue="1,1,1" Label="Scale" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f5700ede-b1ea-41ea-9e54-78a18da8722c" NodeType="SystemNode" NodeTypeGUID="f4ddf1f0-64b2-4846-84fd-b919b480c492" Position="583.6312 1068.142" ProcedureType="UnityEntityComponentProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Components">
+					<Items>
+						<Item Expanded="True" Label="Custom">
+							<Fields>
+								<Field FixedValue="Assets.Sceelix.Sample.MySimpleComponent" Label="Name" />
+								<Field Expanded="True" Label="Properties">
+									<Items>
+										<Item Expanded="True" Label="String">
+											<Fields>
+												<Field FixedValue="Name" Label="Name" />
+												<Field FixedValue="Boss" Label="Value" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Int">
+											<Fields>
+												<Field FixedValue="Level" Label="Name" />
+												<Field FixedValue="100" Label="Value" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Boolean">
+											<Fields>
+												<Field FixedValue="IsEnemy" Label="Name" />
+												<Field FixedValue="True" Label="Value" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Float">
+											<Fields>
+												<Field FixedValue="Strength" Label="Name" />
+												<Field FixedValue="250" Label="Value" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Double">
+											<Fields>
+												<Field FixedValue="Experience" Label="Name" />
+												<Field FixedValue="100000" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6a94ef33-1f31-43a3-8440-ae46ba1cfc24" NodeType="SystemNode" NodeTypeGUID="f4ddf1f0-64b2-4846-84fd-b919b480c492" Position="1071.066 1072.113" ProcedureType="UnityEntityComponentProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Components">
+					<Items>
+						<Item Expanded="True" Label="Other">
+							<Fields>
+								<Field FixedValue="MySimpleComponent" Label="Type" />
+								<Field Expanded="True" Label="Properties">
+									<Items>
+										<Item Expanded="True" Label="Boolean">
+											<Fields>
+												<Field FixedValue="IsBoss?" Label="Name" />
+												<Field FixedValue="True" Label="Value" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="String">
+											<Fields>
+												<Field FixedValue="Minions" Label="Name" />
+												<Field FixedValue="Kevin,Bob,Stuart" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="0f6b7fdd-dada-4de5-b0e5-393591fb219b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="535.2689 1184.837" Label="You can also instantiate your own&#xA;components by just indicating their&#xA;full name and their properties. This&#xA;works for public properties of simpler&#xA;types." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="793a8221-cb40-43f6-aa65-f49f4fa819de" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1045.866 1191.28" Label="If you are up to some C# coding,&#xA;you can also instanciate  any type of&#xA;components as long as you implement,&#xA;in your Unity project, the way  to &#xA;interpret this data.&#xA;&#xA;Check the &quot;'Samples&quot; folder of the Sceelix&#xA;Plugin for Unity to see how it's done." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Output" ToLabel="Options[0].From Mesh.Input" />
+		<Edge FromPort="3#O#0" ToPort="5#I#0" FromNode="3" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="7#I#0" FromNode="2" ToNode="7" FromLabel="Output" ToLabel="Options[0].From Mesh.Input" />
+		<Edge FromPort="2#O#0" ToPort="8#I#0" FromNode="2" ToNode="8" FromLabel="Output" ToLabel="Options[0].From Mesh.Input" />
+		<Edge FromPort="7#O#0" ToPort="9#I#0" FromNode="7" ToNode="9" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="8#O#0" ToPort="10#I#0" FromNode="8" ToNode="10" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

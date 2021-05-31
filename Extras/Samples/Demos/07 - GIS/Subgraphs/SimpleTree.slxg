@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="38d48593-2395-44f3-854c-ecc338959d7e" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="036b22be-2245-4058-9ead-d9cb68969610" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="39.97679 424.9767" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cylinder">
+							<Fields>
+								<Field FixedValue="5" Label="Height" />
+								<Field FixedValue="0.2" Label="Radius" />
+								<Field FixedValue="5" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="7dd17776-37fc-4433-877b-e0fca57dc66f" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="455.4418 200.1629" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="8" Label="Horizontal Segments" />
+								<Field FixedValue="2" Label="Radius" />
+								<Field FixedValue="8" Label="Vertical Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b3f14357-b145-414f-b9dc-bc341c158311" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="-31.31784 567.8218" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/07 - GIS/Textures/WoodFine.jpg" Guid="41d0c066-cf44-4532-9ea5-ba77aff64a6d" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Parallax Occlusion">
+							<Fields>
+								<Field FixedValue="" Label="Diffuse" />
+								<Field FixedValue="" Label="Height" />
+								<Field FixedValue="" Label="Normal" />
+								<Field FixedValue="" Label="Specular" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Cylinder UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b4843696-6bfa-4718-8dae-230514c28565" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="379.6744 660.4194" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/07 - GIS/Textures/Grass02.jpg" Guid="e84ac0c4-d076-468b-8e14-9ce1951b9a99" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Parallax Occlusion">
+							<Fields>
+								<Field FixedValue="" Label="Diffuse" />
+								<Field FixedValue="" Label="Height" />
+								<Field FixedValue="" Label="Normal" />
+								<Field FixedValue="" Label="Specular" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Cylinder UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d9742c2f-e9bf-435b-bd35-e3e965cc8946" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="176 845" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="Reset" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="efde736e-1c15-45f8-ae05-0c40c8dc77e8" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="414.7849 361.1488" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="None" Label="X" />
+								<Field FixedValue="None" Label="Y" />
+								<Field FixedValue="Minimum" Label="Z" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ff3c53f3-8a83-432a-9ab8-e4b9be21f063" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="413.7106 504.8323" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,2" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="None" Label="X" />
+								<Field FixedValue="None" Label="Y" />
+								<Field FixedValue="Minimum" Label="Z" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="2#I#0" FromNode="0" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="5#I#0" FromNode="1" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="6#O#0" ToPort="3#I#0" FromNode="6" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="6#I#0" FromNode="5" ToNode="6" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="4#I#0" FromNode="2" ToNode="4" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="3#O#0" ToPort="4#I#0" FromNode="3" ToNode="4" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+	</Edges>
+</Graph>

@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="cdf6ee47-15a2-4182-b9c1-a988bd40151d" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters>
+		<Parameter MinValue="-3.402823E+38" MaxValue="3.402823E+38" Increment="0.1" DecimalDigits="2" Label="Width" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="3" />
+		<Parameter MinValue="-3.402823E+38" MaxValue="3.402823E+38" Increment="0.1" DecimalDigits="2" Label="Height" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="4" />
+		<Parameter FileOperation="Load" Label="Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="Demos/03 - Nature/Textures/TreeBranch01.png" Guid="bcde16f2-cfb9-4729-84b7-3da44d55afb6">
+			<Extensions>
+				<Extension>.jpg</Extension>
+				<Extension>.jpeg</Extension>
+				<Extension>.bmp</Extension>
+				<Extension>.dds</Extension>
+				<Extension>.png</Extension>
+			</Extensions>
+		</Parameter>
+	</Parameters>
+	<Nodes>
+		<Node Guid="33f7d640-38c6-41e3-a668-404d44a1738c" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="214.5616 88.16125" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Rectangle">
+							<Fields>
+								<Field FixedValue="1" Label="Width" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Width" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="1" Label="Height" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Height" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1a400c00-d374-4705-8cac-9957e5ee2d1e" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="162.2814 345.3384" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/05 - Cards/Textures/Examples/03 - Trees/Branch/Branches0018_1_S.png" Label="Texture" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Texture" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="False" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="False" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="eb59fcc9-3c17-4d62-8fc8-a6f7ff09a8e7" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="259.7604 677.3916" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="36499ebe-d1f3-4b85-9d6d-0bd018e4a463" NodeType="SystemNode" NodeTypeGUID="a7a6544e-abff-44fe-9156-975fe0608718" Position="213.0405 224.2167" ProcedureType="ActorScopeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate Scope">
+							<Fields>
+								<Field FixedValue="90" Label="Angle" />
+								<Field FixedValue="0,1,0" Label="Axis" />
+								<Field FixedValue="World" Label="Relative To" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Reset Scope">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="9fdcdc4c-0c1b-4304-b2f2-5ea0c5774737" NodeType="SystemNode" NodeTypeGUID="8906cb79-297a-40a5-8e36-b5f12ddbb847" Position="18.10272 481.8825" ProcedureType="ActorRotateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate">
+							<Fields>
+								<Field FixedValue="90" Label="Angle" />
+								<Field Expanded="True" Label="Axis">
+									<Fields>
+										<Field FixedValue="1,0,0" Label="Direction" />
+										<Field FixedValue="World" Label="Relative To" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="Pivot">
+									<Fields>
+										<Field FixedValue="0,0,0" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+										<Field FixedValue="World" Label="Relative To" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="3#I#0" FromNode="0" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="1#I#0" FromNode="3" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="1#O#0" ToPort="4#I#0" FromNode="1" ToNode="4" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="2#I#0" FromNode="4" ToNode="2" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+	</Edges>
+</Graph>

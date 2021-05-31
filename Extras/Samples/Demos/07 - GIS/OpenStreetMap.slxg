@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="65fb6d2e-62ef-4cd6-a157-9b5106325f98" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="c6d8e826-c356-458a-a75c-37d3825a8ab5" NodeType="SystemNode" NodeTypeGUID="e20f3064-d958-4d7c-841d-f6b39f3981c4" Position="488.8216 -249.4825" ProcedureType="SurfaceLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="100" Label="Cell Size" />
+				<Argument Expanded="True" Label="Layers">
+					<Items>
+						<Item Expanded="True" Label="Heightmap">
+							<Fields>
+								<Field FixedValue="Demos/07 - GIS/Resources/PortoHeightmap.jpg" Guid="1253c265-70d6-47bd-bc7c-9a82ead2b828" Label="File" />
+								<Field FixedValue="90" Label="Height Scale" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8b2ef4fa-653d-4976-84fd-446d3279ded5" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="556.1995 -11.31464" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="-550,-200,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3d851c3b-0190-4585-b397-ddfa6c9d337a" NodeType="SystemNode" NodeTypeGUID="2dbcc442-f71a-43af-a11a-ece62ff48f81" Position="663.3519 272.7914" ProcedureType="SurfacePlaceProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field Expanded="True" Label="Sample Location">
+									<Fields>
+										<Field FixedValue="0,0,0" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="80593bc6-a009-4ea0-b6c1-7e62f3de12d2" NodeType="SystemNode" NodeTypeGUID="2dbcc442-f71a-43af-a11a-ece62ff48f81" Position="756.1373 469.804" ProcedureType="SurfacePlaceProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Mesh">
+							<Fields>
+								<Field FixedValue="True" Label="Keep Planar" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field Expanded="True" Label="Sample Location">
+									<Fields>
+										<Field FixedValue="0,0,0" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="67c64c0f-55c2-421a-8a8a-796eddefea6c" NodeType="SystemNode" NodeTypeGUID="8c5f1758-7567-41ef-9089-2e033169567d" Position="812.6058 752.6628" ProcedureType="ConditionalProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Check">
+					<Items>
+						<Item Expanded="True" Label="If...Else">
+							<Fields>
+								<Field Expanded="True" Label="Conditions">
+									<Items>
+										<Item FixedValue="False" Label="If" IsExpression="True">
+											<ParsedExpression>
+												<ExprNode Name="==" Type="BinaryExpressionNode">
+													<ExprNode Name="[" Type="IndexExpressionNode">
+														<ExprNode Name="MyTags" Type="AttributeExpressionNode" AllowNull="False" />
+														<ExprNode Name="String" Type="StringExpressionNode">building</ExprNode>
+													</ExprNode>
+													<ExprNode Name="Null" Type="DirectFunctionExpressionNode" />
+												</ExprNode>
+											</ParsedExpression>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Else">
+									<Fields />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="5f055de6-e85a-4d19-9056-7bfed95d3f67" NodeType="ComponentNode" NodeTypeGUID="821cacfc-9812-43fa-b318-a69925c5614b" Position="641.2839 906.6743" RelativePath="Utils/Extrude (Filtered).slxg">
+			<Arguments>
+				<Argument FixedValue="0.2" Label="Amount" />
+				<Argument FixedValue="False" Label="Cap" />
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Normal">
+							<Fields>
+								<Field FixedValue="0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Separate">
+					<Items>
+						<Item Expanded="True" Label="Separate">
+							<Fields>
+								<Field FixedValue="Parent and Face" Label="Attributes" />
+								<Field FixedValue="Parent" Label="Scope" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="10f16a70-80bc-4b4c-9879-07519f349715" NodeType="SystemNode" NodeTypeGUID="4c7a38df-e3a0-4a77-abb0-599f275d414c" Position="1212.074 711.6505" ProcedureType="ActorInsertProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="One to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to One">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on X-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Y-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Z-Axis">
+					<Items>
+						<Item Expanded="True" Label="Minimum">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="62377501-8c73-47ca-9b4f-30b7b6c9ab1d" NodeType="SystemNode" NodeTypeGUID="8c5f1758-7567-41ef-9089-2e033169567d" Position="1288.535 476.4872" ProcedureType="ConditionalProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Check">
+					<Items>
+						<Item Expanded="True" Label="If...Else">
+							<Fields>
+								<Field Expanded="True" Label="Conditions">
+									<Items>
+										<Item FixedValue="False" Label="If" IsExpression="True">
+											<ParsedExpression>
+												<ExprNode Name="==" Type="BinaryExpressionNode">
+													<ExprNode Name="[" Type="IndexExpressionNode">
+														<ExprNode Name="MyTags" Type="AttributeExpressionNode" AllowNull="False" />
+														<ExprNode Name="String" Type="StringExpressionNode">natural</ExprNode>
+													</ExprNode>
+													<ExprNode Name="String" Type="StringExpressionNode">tree</ExprNode>
+												</ExprNode>
+											</ParsedExpression>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Else">
+									<Fields />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="4035574f-7bda-4977-b18b-4d8791e4418b" NodeType="ComponentNode" NodeTypeGUID="38d48593-2395-44f3-854c-ecc338959d7e" Position="1071.82 536.4453" RelativePath="Demos/07 - GIS/Subgraphs/SimpleTree.slxg">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="5ac09bf9-949e-4f6a-9a9e-ebae31600e20" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="542.6655 1077.945" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/07 - GIS/Textures/CobbleFloor01.jpg" Guid="3485662f-92c4-4a60-bab2-68ff7f34635f" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f360ad24-24ec-4930-9b5a-6879eba2099f" NodeType="ComponentNode" NodeTypeGUID="308cb816-636d-4910-8c97-d88c7625a7b7" Position="936.1003 904.8761" RelativePath="Demos/07 - GIS/Subgraphs/Medium Houses.slxg">
+			<Arguments />
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d9c53ba4-e54c-486c-973c-ddce6caa7e76" NodeType="SystemNode" NodeTypeGUID="926790d6-ec93-4f53-b87f-0b023d8177fc" Position="742.2811 606.0641" ProcedureType="SurfaceAdjustProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Mesh">
+							<Fields>
+								<Field FixedValue="0" Label="Height Offset" />
+								<Field FixedValue="False" Label="Create Base" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="e1f98b88-904d-4240-8e24-5f68208a611c" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="512.6501 -135.4" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Change Cell Size">
+							<Fields>
+								<Field FixedValue="2" Label="Cell Size" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2d8f1c42-9a9e-425a-8271-ccab931a2f15" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="570.2003 124.143" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/07 - GIS/Textures/Asphalt01.jpg" Guid="54c96089-1ff4-4df2-b2b0-c15ff42c029e" Label="Texture" />
+								<Field FixedValue="10,10" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="26cf3026-a63e-4cba-807e-cb480fb4859b" NodeType="SystemNode" NodeTypeGUID="213ea21a-e13b-44ce-a4ec-75a048dfa0aa" Position="1000.489 -179.8708" ProcedureType="OsmLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/07 - GIS/Resources/Porto Aliados.osm" Guid="330769a7-5578-4c7d-84bd-b26a8582bf5e" Label="File" />
+				<Argument FixedValue="True" Label="Center Results" />
+				<Argument FixedValue="MyTags" Label="Tags" />
+				<Argument FixedValue="" Label="Meta" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c72d3d06-cc09-496b-9b7b-fa63bfe76572" NodeType="SystemNode" NodeTypeGUID="8c5f1758-7567-41ef-9089-2e033169567d" Position="990 -40" ProcedureType="ConditionalProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Check">
+					<Items>
+						<Item Expanded="True" Label="Type">
+							<Fields>
+								<Field Expanded="True" Label="Types">
+									<Items>
+										<Item FixedValue="Point" Label="Type" />
+										<Item FixedValue="Mesh" Label="Type" />
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Else">
+									<Fields />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="If...Else">
+							<Fields>
+								<Field Expanded="True" Label="Conditions">
+									<Items>
+										<Item FixedValue="False" Label="If" IsExpression="True">
+											<ParsedExpression>
+												<ExprNode Name="String" Type="ConstantExpressionNode"></ExprNode>
+											</ParsedExpression>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Else">
+									<Fields />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="3" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Surface" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="0#O#0" ToPort="12#I#0" FromNode="0" ToNode="12" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="5#I#0" FromNode="4" ToNode="5" FromLabel="Check[0].If...Else.Conditions[0].If.If" ToLabel="Input" />
+		<Edge FromPort="2#O#1" ToPort="7#I#0" FromNode="2" ToNode="7" FromLabel="Entity[0].Actor.Actor" ToLabel="Input" />
+		<Edge FromPort="8#O#0" ToPort="6#I#0" FromNode="8" ToNode="6" FromLabel="Output" ToLabel="Inputs[0].One to Many.Source" />
+		<Edge FromPort="7#O#0" ToPort="6#I#1" FromNode="7" ToNode="6" FromLabel="Check[0].If...Else.Conditions[0].If.If" ToLabel="Inputs[0].One to Many.Targets" />
+		<Edge FromPort="5#O#0" ToPort="9#I#0" FromNode="5" ToNode="9" FromLabel="Top" ToLabel="Input" />
+		<Edge FromPort="5#O#1" ToPort="9#I#0" FromNode="5" ToNode="9" FromLabel="All" ToLabel="Input" />
+		<Edge FromPort="4#O#1" ToPort="10#I#0" FromNode="4" ToNode="10" FromLabel="Check[0].If...Else.Else.Else" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="11#I#0" FromNode="3" ToNode="11" FromLabel="Surface" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="3#O#1" ToPort="11#I#1" FromNode="3" ToNode="11" FromLabel="Entity[0].Mesh.Mesh" ToLabel="Entity[0].Mesh.Mesh" />
+		<Edge FromPort="11#O#1" ToPort="4#I#0" FromNode="11" ToNode="4" FromLabel="Entity[0].Mesh.Mesh" ToLabel="Input" />
+		<Edge FromPort="12#O#0" ToPort="1#I#0" FromNode="12" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="13#I#0" FromNode="1" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="2#I#0" FromNode="13" ToNode="2" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="14#O#0" ToPort="15#I#0" FromNode="14" ToNode="15" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="15#O#1" ToPort="3#I#1" FromNode="15" ToNode="3" FromLabel="Check[0].Type.Types[1].Type.Type" ToLabel="Entity[0].Mesh.Mesh" />
+		<Edge FromPort="15#O#0" ToPort="2#I#1" FromNode="15" ToNode="2" FromLabel="Check[0].Type.Types[0].Type.Type" ToLabel="Entity[0].Actor.Actor" />
+	</Edges>
+</Graph>

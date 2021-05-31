@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Project>
+  <Author>pedro_000</Author>
+  <Company>Private</Company>
+  <Version>1.0.0.0</Version>
+  <Items>
+    <Item Path="Demos" Nature="Folder" Guid="b5f8b025-b276-4039-93f0-48ca4f65bcf7" Expanded="True">
+      <Item Path="01- City" Nature="Folder" Guid="2d4d7a83-8e94-4edb-9fa0-5335210dc875" Expanded="True">
+        <Item Path="Subparts" Nature="Folder" Guid="cfad1d10-1c84-4552-bafd-f175a14be328" Expanded="False">
+          <Item Path="Create Street.slxg" Nature="File" Guid="b6e47722-e1b0-4e6d-9c66-257cb054d5d5" />
+        </Item>
+        <Item Path="Textures" Nature="Folder" Guid="1578d1b9-12e2-4bc8-b9ed-518dba3f65e0" Expanded="False">
+          <Item Path="Facades" Nature="Folder" Guid="922a7c00-466e-4b56-a111-f61de58a2274" Expanded="False">
+            <Item Path="Facade001_1K_Color.jpg" Nature="File" Guid="c9872934-761b-4d75-b91c-3dfaa5b2d0f0" />
+            <Item Path="Facade002_1K_Color.jpg" Nature="File" Guid="dc74bfb9-799e-43bc-b760-cbe25b6296d9" />
+            <Item Path="Facade003_1K_Color.jpg" Nature="File" Guid="af6785c1-fc2a-41df-906a-e9a788274866" />
+            <Item Path="Facade004_1K_Color.jpg" Nature="File" Guid="6f9995e9-be79-4624-804d-44fda4bd31e0" />
+          </Item>
+          <Item Path="Ground" Nature="Folder" Guid="7b68d9ca-0ab6-4ff6-bb78-8c62326add2d" Expanded="False">
+            <Item Path="CobbleFloor02.jpg" Nature="File" Guid="c59378a8-7f1b-4674-9c60-280da47bb939" />
+            <Item Path="RoadTex01.jpg" Nature="File" Guid="95c8e450-30d7-4192-8d41-b4c5a490e425" />
+          </Item>
+          <Item Path="Rough Stone" Nature="Folder" Guid="e7f311f4-c393-4be6-96e7-b2d6d4460bb2" Expanded="False">
+            <Item Path="Gravel019_1K_Color.jpg" Nature="File" Guid="eae1c275-7553-43b6-badb-fd408394ac30" />
+            <Item Path="Ground039_1K_Color.jpg" Nature="File" Guid="34e7604b-11ce-43c8-b662-cb5d5b9c1ffa" />
+            <Item Path="Rocks022_1K_Color.jpg" Nature="File" Guid="497effb9-8f82-49e7-94ec-40f65bf3c58c" />
+          </Item>
+        </Item>
+        <Item Path="City.slxg" Nature="File" Guid="500cc66a-3107-4326-aefc-7273cce271a6" />
+        <Item Path="ReadMe.txt" Nature="File" Guid="1cf0af42-4410-460b-bb79-8b64b196bfd5" />
+        <Item Path="Unity Export.slxg" Nature="File" Guid="052aabaf-8aea-4f2a-9763-4e583e141368" />
+      </Item>
+      <Item Path="02 - Detailed Buidling" Nature="Folder" Guid="59e83ab1-5e52-4a5e-81c7-5c2440dc498e" Expanded="False">
+        <Item Path="Subparts" Nature="Folder" Guid="a8a2c1c3-1056-4e20-b68f-837143e6a7d6" Expanded="False">
+          <Item Path="Building.Entrance.slxg" Nature="File" Guid="5e6e6216-572f-4cb1-bb50-3f50caccf54d" />
+          <Item Path="Building.Ledge.slxg" Nature="File" Guid="90cbb51e-dc1b-41be-8ead-adfb100e265a" />
+          <Item Path="Building.Roof.slxg" Nature="File" Guid="b41b134a-fe6c-4a38-8f66-798eb4874ec8" />
+          <Item Path="Building.SideBricks.slxg" Nature="File" Guid="ea17e3d3-d23a-4550-9774-d567e5f60766" />
+          <Item Path="Building.Windows.slxg" Nature="File" Guid="f175f326-215b-435f-a5f6-bd0e572bd1ed" />
+          <Item Path="Stairs.slxg" Nature="File" Guid="e40ab6c8-deb5-44a3-979c-6ebf1a2d89e5" />
+          <Item Path="Window.slxg" Nature="File" Guid="c35075fc-fcc8-4e40-a97e-5f3da57da3c6" />
+        </Item>
+        <Item Path="Textures" Nature="Folder" Guid="08cc3724-9938-4d10-97cc-b92807142d77" Expanded="False">
+          <Item Path="DoorTexture01.jpg" Nature="File" Guid="0019554b-2135-4955-ae4f-d6923e32dd07" />
+          <Item Path="Roof01.jpg" Nature="File" Guid="24d6f2a7-e70b-4f4d-b34f-8631dd78f33e" />
+          <Item Path="WallTiles01.jpg" Nature="File" Guid="dd1a965d-0906-4582-8f39-888ac7a922b3" />
+          <Item Path="WoodFine.jpg" Nature="File" Guid="3611ddbd-d547-4dd9-a71b-5c27e1f17c30" />
+        </Item>
+        <Item Path="Building.slxg" Nature="File" Guid="318800e6-d496-4302-ad3d-b49be6d66d3d" />
+        <Item Path="ReadMe.txt" Nature="File" Guid="4f8c0068-369e-43ca-85d3-d8f72258ef7c" />
+      </Item>
+      <Item Path="03 - Nature" Nature="Folder" Guid="457b2222-13ab-430a-8216-b87807cde88e" Expanded="False">
+        <Item Path="Subparts" Nature="Folder" Guid="53a00473-d5a1-4d31-a5bd-5443dc6fc25f" Expanded="False">
+          <Item Path="Grass.slxg" Nature="File" Guid="c72951d5-4ea3-4b2d-8624-396b919a6bdf" />
+          <Item Path="Leaves.slxg" Nature="File" Guid="cdf6ee47-15a2-4182-b9c1-a988bd40151d" />
+          <Item Path="Tree.slxg" Nature="File" Guid="0a621ef9-285a-4fbb-909f-4f6d43207da4" />
+        </Item>
+        <Item Path="Textures" Nature="Folder" Guid="ab5261d5-762f-4ea5-a337-197fdbc90acf" Expanded="False">
+          <Item Path="Billboards" Nature="Folder" Guid="159e8f7a-05cd-4dbb-8d22-cb42aedf6b1e" Expanded="False">
+            <Item Path="gl-tree-01.png" Nature="File" Guid="f78a341d-1bb0-47ee-b6fb-fec5947ebfa9" />
+            <Item Path="gl-tree-02.png" Nature="File" Guid="31c873b9-8355-4353-b47b-ef27abc9eca8" />
+            <Item Path="gl-tree-03.png" Nature="File" Guid="06b123ed-3703-48a2-b945-d1dfd4debf68" />
+            <Item Path="gl-tree-04.png" Nature="File" Guid="b5e7a821-f33b-46d8-9917-cea8e2e72e19" />
+          </Item>
+          <Item Path="BranchYellow.png" Nature="File" Guid="0cd72f7d-802a-42d4-8ebb-76fcfc58c9fe" />
+          <Item Path="Colormap.png" Nature="File" Guid="5f93facb-930b-4432-a56c-e7ea5f77a739" />
+          <Item Path="Dirt01.jpg" Nature="File" Guid="e6713b62-6dc9-4731-bde2-730eddbaa919" />
+          <Item Path="Grass01.jpg" Nature="File" Guid="bf5f535a-8b50-4077-bd4d-4260bbb4ff17" />
+          <Item Path="GrassBill01.png" Nature="File" Guid="d385ab5e-87da-4826-be9b-82cf5c52e7d0" />
+          <Item Path="GrassBill02.png" Nature="File" Guid="0f3292f2-dc12-4b86-a0b0-fe147897d5a4" />
+          <Item Path="GrassBill03.png" Nature="File" Guid="d6f15f16-3a4e-4dda-a3c5-9dd5775b14cd" />
+          <Item Path="Rock01.jpg" Nature="File" Guid="f136cd6b-ef0f-4a91-8de0-0d23055fd361" />
+          <Item Path="Sceelix128BW.png" Nature="File" Guid="f8d2120a-109f-48f2-b638-45938562103a" />
+          <Item Path="Soil.jpg" Nature="File" Guid="41d408be-2ec9-49c5-8dc9-e47d373f10e4" />
+          <Item Path="TreeBark01.jpg" Nature="File" Guid="2303ce23-cca1-4b8d-86c0-20bf3a59524d" />
+          <Item Path="TreeBranch01.png" Nature="File" Guid="bcde16f2-cfb9-4729-84b7-3da44d55afb6" />
+          <Item Path="TreeBranch02.png" Nature="File" Guid="48cd7025-fa18-464f-928f-996b7e898fda" />
+        </Item>
+        <Item Path="Billboards.slxg" Nature="File" Guid="a6d58407-dd79-4c0a-9ff3-24ee9082a0ff" />
+        <Item Path="Model Instancing.slxg" Nature="File" Guid="9cbe02d5-f4c3-41df-89d8-4f551dc7d865" />
+        <Item Path="ReadMe.txt" Nature="File" Guid="9473c775-6aa7-481a-9dbf-fbe4492abe3b" />
+      </Item>
+      <Item Path="04 - Parking Lot" Nature="Folder" Guid="96d32217-3baf-4b22-b474-b395bd851a51" Expanded="False">
+        <Item Path="Cars Models" Nature="Folder" Guid="d3eff3de-f3d0-4626-8a1e-2042f4aa8e49" Expanded="False">
+          <Item Path="Textures" Nature="Folder" Guid="17191ca3-5427-4f44-928c-2746ebefbd06" Expanded="False">
+            <Item Path="07DAA177.jpg" Nature="File" Guid="2c69c66f-eae1-4567-a937-741dca1cb8d8" />
+            <Item Path="0EAE5E44.jpg" Nature="File" Guid="91806cd8-ecd1-4b89-b618-bd087430ecea" />
+            <Item Path="12682EE3.jpg" Nature="File" Guid="667ea981-0fe6-4583-8b07-5606e6dad33d" />
+            <Item Path="14EB49E2.jpg" Nature="File" Guid="61edbf8d-b6c4-4454-a70b-8933cd97528d" />
+            <Item Path="179454B9.jpg" Nature="File" Guid="2c5299b6-bdab-4b75-a6e3-0df8f5ab6b26" />
+            <Item Path="1BF32291.jpg" Nature="File" Guid="b883d4ef-95d7-497f-afce-bc25c41eefbc" />
+            <Item Path="261AD127.jpg" Nature="File" Guid="4f3f601d-2648-4bb8-b025-c8669c9d88a0" />
+            <Item Path="4471F13E.jpg" Nature="File" Guid="081ee037-019c-4aee-b444-d795ffba98a5" />
+            <Item Path="5E49A31F.jpg" Nature="File" Guid="1c79c2e4-297c-43a4-a306-efefe3c744cd" />
+            <Item Path="6B114070.jpg" Nature="File" Guid="c6cd7636-b5f0-4c1e-aeb7-d82c6109975b" />
+            <Item Path="8E1D248A.jpg" Nature="File" Guid="b46e7512-a26f-427a-8601-3b81b705817a" />
+            <Item Path="95E8E0D6.jpg" Nature="File" Guid="97638221-3652-4a93-9608-d3409d4fb594" />
+            <Item Path="AC5105C3.jpg" Nature="File" Guid="a173db96-becd-4cff-a686-bc2f9dc6a78e" />
+            <Item Path="AD07ADEB.jpg" Nature="File" Guid="2c628409-28af-4de1-997d-0e18103a6d3c" />
+            <Item Path="B78FC220.jpg" Nature="File" Guid="00d526bf-1d52-467b-95d1-76a82d357deb" />
+            <Item Path="car_b_taxi_tex.png" Nature="File" Guid="d0df2faf-f13b-4533-8eea-4f577a1b3e92" />
+            <Item Path="car_tex.png" Nature="File" Guid="9e184af5-f9bb-4f57-8dff-c52077161b5b" />
+            <Item Path="car_tex_blue.png" Nature="File" Guid="14ae9113-b19a-4578-8161-f3644a0147b4" />
+            <Item Path="DBAE1C85.jpg" Nature="File" Guid="5c26d1a3-e4e8-4b71-8b55-ad9d05671d0b" />
+            <Item Path="F0D3A11F.jpg" Nature="File" Guid="0d9cb8cc-3034-48cc-a183-f443a1f15456" />
+            <Item Path="rio green.png" Nature="File" Guid="b2a87fb8-0b8a-406c-b5e5-4bb70496479b" />
+            <Item Path="wheel_b_NM.png" Nature="File" Guid="b53ab748-9a41-4e90-b2fc-04e890692983" />
+            <Item Path="wheel_b_tex.png" Nature="File" Guid="dfb494dd-1be6-4461-bdd0-5e0497967beb" />
+            <Item Path="wheel_tex.png" Nature="File" Guid="c6a7ffbb-3c32-4653-ba74-cfc0f86b5be7" />
+          </Item>
+          <Item Path="CarBlue.mtl" Nature="File" Guid="b57b4914-8b7d-4521-b150-4740d959f1b6" />
+          <Item Path="CarBlue.obj" Nature="File" Guid="71f5f5e4-4d1f-44b1-85c7-3a76555f36cd" />
+          <Item Path="CarCollection.mtl" Nature="File" Guid="3e03e7ff-b857-4b97-87fa-50b681b880c2" />
+          <Item Path="CarCollection.obj" Nature="File" Guid="ce0f5095-fc72-4d30-8e2c-1720763380a0" />
+          <Item Path="CarRed.mtl" Nature="File" Guid="ab5d5574-18ae-48e4-a02f-babecfb2672e" />
+          <Item Path="CarRed.obj" Nature="File" Guid="695b238b-99e1-4051-b704-77a1c4232786" />
+          <Item Path="CarYellow.mtl" Nature="File" Guid="307bb951-9ae5-4a98-9a3c-db6162732464" />
+          <Item Path="CarYellow.obj" Nature="File" Guid="556d45db-2142-48b0-bbe3-91a743f55ff9" />
+          <Item Path="kia rio.mtl" Nature="File" Guid="d4b2340a-889a-460b-b50a-14080cef2596" />
+          <Item Path="kia rio.obj" Nature="File" Guid="169e7d04-51cc-434e-a344-9910ada78eec" />
+        </Item>
+        <Item Path="Textures" Nature="Folder" Guid="3804442d-f773-40aa-b348-974fed29b8b2" Expanded="False">
+          <Item Path="Asphalt01.jpg" Nature="File" Guid="2e339437-c4a9-432f-9c00-a945368bfa8b" />
+          <Item Path="Brick01.jpg" Nature="File" Guid="7bfdb7bc-f5a7-47f7-888a-b9c88af8700c" />
+          <Item Path="Grass01.jpg" Nature="File" Guid="bd6e1aea-33da-46a0-b2ae-c558c2ae6f94" />
+        </Item>
+        <Item Path="Load Cars.slxg" Nature="File" Guid="b95a5dff-9063-4b60-a566-f75ca3ef8b1d" />
+        <Item Path="Parking Lot.slxg" Nature="File" Guid="a2fc8319-1790-42a8-8d98-a5a12eda36c1" />
+        <Item Path="ReadMe.txt" Nature="File" Guid="80cd9e04-cf37-4216-9e0b-35b5256940c6" />
+      </Item>
+      <Item Path="05 - Cards" Nature="Folder" Guid="1c5a1acb-79f2-4069-b822-75d68371f87a" Expanded="False">
+        <Item Path="Subgraphs" Nature="Folder" Guid="33076bb1-f447-4242-a120-fcac8fa5735a" Expanded="False">
+          <Item Path="Card.slxg" Nature="File" Guid="ad1a4e5a-436c-490a-9349-56902e1bacf6" />
+          <Item Path="Deck.slxg" Nature="File" Guid="38aa77e1-2206-4124-b952-1165b756fca6" />
+        </Item>
+        <Item Path="Textures" Nature="Folder" Guid="758c1c5c-a7c8-4a3f-b922-747fbb5a1ae8" Expanded="False">
+          <Item Path="Front" Nature="Folder" Guid="bc142087-e503-42bb-bbc0-61a8265f6400" Expanded="False">
+            <Item Path="10_of_clubs.png" Nature="File" Guid="edc74ed4-72a9-4bbb-847d-f77397f8d53c" />
+            <Item Path="10_of_diamonds.png" Nature="File" Guid="8a9ea473-3bac-4658-9c50-cde0120e9b7b" />
+            <Item Path="10_of_hearts.png" Nature="File" Guid="463883de-c03b-4080-bc65-322cea0c8f0c" />
+            <Item Path="10_of_spades.png" Nature="File" Guid="e038da3b-9fa6-4b4e-a5c5-029b521a7d76" />
+            <Item Path="2_of_clubs.png" Nature="File" Guid="1c819585-ad21-41e7-9700-d36876bf9d57" />
+            <Item Path="2_of_diamonds.png" Nature="File" Guid="6d2a3ca7-a363-447d-a041-556f58e8cc0c" />
+            <Item Path="2_of_hearts.png" Nature="File" Guid="f948710d-6163-4337-ab9b-0551ced6cda3" />
+            <Item Path="2_of_spades.png" Nature="File" Guid="c6ad1b5e-0498-4827-acb4-b96c3d08bbf7" />
+            <Item Path="3_of_clubs.png" Nature="File" Guid="302df7c4-a9cf-4926-b7c2-173d9bd05fa4" />
+            <Item Path="3_of_diamonds.png" Nature="File" Guid="b68712d8-0fb7-4de6-b4cf-f744bbf9e877" />
+            <Item Path="3_of_hearts.png" Nature="File" Guid="07bfbd34-4aab-4afa-be6e-db9c7b9a4451" />
+            <Item Path="3_of_spades.png" Nature="File" Guid="ba16c6f1-2299-4ffe-bbba-f4f580a3694e" />
+            <Item Path="4_of_clubs.png" Nature="File" Guid="f7ecb7a8-78ee-48fa-8ff2-524f632210a7" />
+            <Item Path="4_of_diamonds.png" Nature="File" Guid="00b5ef72-648d-4a2a-9374-fcc3423c327c" />
+            <Item Path="4_of_hearts.png" Nature="File" Guid="c76a2f6d-32b8-496f-9d7a-ae2dabba94ef" />
+            <Item Path="4_of_spades.png" Nature="File" Guid="ede05693-3e5c-4832-934e-8e93fb8e6548" />
+            <Item Path="5_of_clubs.png" Nature="File" Guid="1f8bcc01-0425-4d92-82fb-5c2322f5040f" />
+            <Item Path="5_of_diamonds.png" Nature="File" Guid="4b0edc3b-ed41-432a-8f08-55d1d977f774" />
+            <Item Path="5_of_hearts.png" Nature="File" Guid="2540ef85-1d78-4dd1-ac58-bee9d755de42" />
+            <Item Path="5_of_spades.png" Nature="File" Guid="6fd4764d-f334-4eb4-866e-d9c28f5a5b87" />
+            <Item Path="6_of_clubs.png" Nature="File" Guid="c84fc9ea-c4e6-4547-be92-51e7f4fdba89" />
+            <Item Path="6_of_diamonds.png" Nature="File" Guid="5f424010-64d6-4c23-8dde-742ae53833b4" />
+            <Item Path="6_of_hearts.png" Nature="File" Guid="c05d356d-ab70-47e4-8afb-4cb9d0e6a9ef" />
+            <Item Path="6_of_spades.png" Nature="File" Guid="41287c7c-9f6b-4bf0-bfb5-deb4f7ae25f5" />
+            <Item Path="7_of_clubs.png" Nature="File" Guid="8559e78b-9b0f-49a0-83f7-2bfdef06a85b" />
+            <Item Path="7_of_diamonds.png" Nature="File" Guid="7e68db8b-4966-4ec0-9110-7ab4f9d33cda" />
+            <Item Path="7_of_hearts.png" Nature="File" Guid="7ab1c1a5-7625-4836-a9e4-5472cbe0e2b2" />
+            <Item Path="7_of_spades.png" Nature="File" Guid="c081b750-aba9-48d0-b6b0-a4166e2400ca" />
+            <Item Path="8_of_clubs.png" Nature="File" Guid="6ea16f20-f7a7-4d86-befd-064bc8066143" />
+            <Item Path="8_of_diamonds.png" Nature="File" Guid="82e6e9b9-6630-4430-af10-18053ad6ea62" />
+            <Item Path="8_of_hearts.png" Nature="File" Guid="a97a6ed1-a318-49a8-91d9-a1dddfc5cc80" />
+            <Item Path="8_of_spades.png" Nature="File" Guid="01295313-af05-486e-a721-155b24190a74" />
+            <Item Path="9_of_clubs.png" Nature="File" Guid="aa8b2927-07ac-4da8-8b10-b3da62f10f86" />
+            <Item Path="9_of_diamonds.png" Nature="File" Guid="aa8411f4-74f0-4982-85b1-2073bddbe7d2" />
+            <Item Path="9_of_hearts.png" Nature="File" Guid="e357b7a2-f4e6-4c25-a816-00fdcea2d29b" />
+            <Item Path="9_of_spades.png" Nature="File" Guid="176a9914-7c3f-401b-8c48-219487200791" />
+            <Item Path="ace_of_clubs.png" Nature="File" Guid="443b6732-e174-4fe1-a478-1397c37936b6" />
+            <Item Path="ace_of_diamonds.png" Nature="File" Guid="30b46050-f6d5-4067-bdcf-72e397957e39" />
+            <Item Path="ace_of_hearts.png" Nature="File" Guid="c52f394e-cc2f-4607-b253-3adddcf59755" />
+            <Item Path="ace_of_spades.png" Nature="File" Guid="07477e37-fc34-4947-9e39-03d44800bdc0" />
+            <Item Path="ace_of_spades2.png" Nature="File" Guid="5c2f16b3-6d69-43db-9d9a-790786962531" />
+            <Item Path="black_joker.png" Nature="File" Guid="31699445-4720-465f-b1a0-bec03f880ae4" />
+            <Item Path="jack_of_clubs.png" Nature="File" Guid="53c38987-ca4d-4132-afba-24d2081c60f4" />
+            <Item Path="jack_of_clubs2.png" Nature="File" Guid="8c9e6153-41e7-4f25-9a69-af33d2608875" />
+            <Item Path="jack_of_diamonds.png" Nature="File" Guid="66c5c589-70e7-4e40-a813-a251ed2ae879" />
+            <Item Path="jack_of_diamonds2.png" Nature="File" Guid="5e0e4e7a-6147-416a-889b-114470a1bf04" />
+            <Item Path="jack_of_hearts.png" Nature="File" Guid="152000a6-7311-4459-a431-4c01811bc56e" />
+            <Item Path="jack_of_hearts2.png" Nature="File" Guid="e702480b-c904-40e5-8a47-e3c7ff4f4a48" />
+            <Item Path="jack_of_spades.png" Nature="File" Guid="e61e5349-6b12-4dfd-8115-6c715dc0ec59" />
+            <Item Path="jack_of_spades2.png" Nature="File" Guid="233acb30-fd4b-4143-8480-eaada421fc09" />
+            <Item Path="king_of_clubs.png" Nature="File" Guid="4e8f6515-3724-4052-907f-654a1ec280b2" />
+            <Item Path="king_of_clubs2.png" Nature="File" Guid="54c03d26-f591-4567-925c-96f75ec2bd30" />
+            <Item Path="king_of_diamonds.png" Nature="File" Guid="c143076b-42eb-40f0-a35d-832530bc69ba" />
+            <Item Path="king_of_diamonds2.png" Nature="File" Guid="e07f6aba-7e0c-4d54-b53a-154695f42c6e" />
+            <Item Path="king_of_hearts.png" Nature="File" Guid="ddccfb57-91f6-4c53-93a6-23e6aa062cda" />
+            <Item Path="king_of_hearts2.png" Nature="File" Guid="40f5cbf0-4d8a-436e-abe4-fb8dc8b2d53a" />
+            <Item Path="king_of_spades.png" Nature="File" Guid="d6c2eb9e-9671-4d4f-8e54-5025cd46b3e0" />
+            <Item Path="king_of_spades2.png" Nature="File" Guid="66533ec4-5610-4857-ace7-a4f6db100f6d" />
+            <Item Path="queen_of_clubs.png" Nature="File" Guid="68aed247-92bf-4b91-9d3a-bcf6f9644d56" />
+            <Item Path="queen_of_clubs2.png" Nature="File" Guid="f659d9e2-6599-4a90-a63a-9ff3bb2cdb22" />
+            <Item Path="queen_of_diamonds.png" Nature="File" Guid="227d0b82-b69d-439e-86c3-c6605ee74d88" />
+            <Item Path="queen_of_diamonds2.png" Nature="File" Guid="dfa65bee-715b-4b9e-b963-9c5e100e6e81" />
+            <Item Path="queen_of_hearts.png" Nature="File" Guid="252d2c60-4a55-4946-b29e-04faf0ccabf4" />
+            <Item Path="queen_of_hearts2.png" Nature="File" Guid="53ac195e-aedc-4016-9d41-a98f36d55334" />
+            <Item Path="queen_of_spades.png" Nature="File" Guid="4e3582fb-851a-42f8-9076-02dcff5396ae" />
+            <Item Path="queen_of_spades2.png" Nature="File" Guid="395a6340-27ca-4cf2-86d4-cdecfa8447d1" />
+            <Item Path="red_joker.png" Nature="File" Guid="648f1146-8a24-4b8c-a594-543ebec48ebf" />
+          </Item>
+          <Item Path="CardBack.png" Nature="File" Guid="c16cfe83-27a3-4fac-8d0b-7defc91a39f6" />
+          <Item Path="TableFelt01.jpg" Nature="File" Guid="525467f1-e6c9-401d-861e-b61a7adc8a3e" />
+        </Item>
+        <Item Path="Deck Trick (Unity).slxg" Nature="File" Guid="b51ab5af-fbd9-4435-9ae5-786fd2cec177" />
+        <Item Path="ReadMe.txt" Nature="File" Guid="b078c164-375f-45b8-bd09-39b79426a94e" />
+      </Item>
+      <Item Path="06 - Surfaces and Paths" Nature="Folder" Guid="cffa77d6-ac5a-4c77-9cfb-3fa6e3ab316a" Expanded="False">
+        <Item Path="Textures" Nature="Folder" Guid="49e10ce8-bbb6-4dd2-b367-2d82ae331cd4" Expanded="False">
+          <Item Path="Dirt01.jpg" Nature="File" Guid="160e7be7-57d8-4e35-966c-7947a448463c" />
+          <Item Path="Grass01.jpg" Nature="File" Guid="8bba88a6-b953-49b3-b766-c9f7a179b398" />
+          <Item Path="RoadTex01.jpg" Nature="File" Guid="a2684030-ca02-4411-8166-3641a15086df" />
+          <Item Path="Rock01.jpg" Nature="File" Guid="569a3075-5ae5-44f7-bdb1-29607dc819af" />
+          <Item Path="Sand01.jpg" Nature="File" Guid="a4b84b99-7096-4581-8f29-ea0d0f22eecc" />
+          <Item Path="Snow01.jpg" Nature="File" Guid="24755b23-435e-4f09-b89d-81ba4430e3be" />
+        </Item>
+        <Item Path="Path Painted On Terrain.slxg" Nature="File" Guid="db19c540-5131-47f4-b6b1-54ec6503570a" />
+        <Item Path="Road On Terrain.slxg" Nature="File" Guid="b699428d-e7e9-4ea6-a603-e85cbbb4ace0" />
+      </Item>
+      <Item Path="07 - GIS" Nature="Folder" Guid="48628ed0-eb0e-43c0-8daa-be63fde7bf4a" Expanded="False">
+        <Item Path="Resources" Nature="Folder" Guid="cf92bf3f-fd2a-47be-badf-7d39d1cc244a" Expanded="False">
+          <Item Path="WorldData" Nature="Folder" Guid="4632a59d-e1da-4201-a03b-eae77c439955" Expanded="False">
+            <Item Path="Readme.txt" Nature="File" Guid="55fb79e5-15ca-4cca-97fb-e0a104e25ecd" />
+            <Item Path="TM_WORLD_BORDERS_SIMPL-0.3.dbf" Nature="File" Guid="505de715-8210-43dc-96c0-b41cf681c408" />
+            <Item Path="TM_WORLD_BORDERS_SIMPL-0.3.prj" Nature="File" Guid="cd16a5dd-e5dd-41e1-9895-99a5e4c3cc57" />
+            <Item Path="TM_WORLD_BORDERS_SIMPL-0.3.shp" Nature="File" Guid="e64801ed-2846-416d-a2b3-84e6d43aada7" />
+            <Item Path="TM_WORLD_BORDERS_SIMPL-0.3.shx" Nature="File" Guid="851d4f38-f5e2-477f-8ba5-33efbca5496c" />
+          </Item>
+          <Item Path="Downtown Porto.osm" Nature="File" Guid="beaf4236-e827-4113-94a3-90d214222ab3" />
+          <Item Path="Porto Aliados.osm" Nature="File" Guid="330769a7-5578-4c7d-84bd-b26a8582bf5e" />
+          <Item Path="PortoHeightmap.jpg" Nature="File" Guid="1253c265-70d6-47bd-bc7c-9a82ead2b828" />
+        </Item>
+        <Item Path="Subgraphs" Nature="Folder" Guid="67bf2d4a-71fe-49c1-af8c-bbf0666e5c59" Expanded="False">
+          <Item Path="Center Objects.slxg" Nature="File" Guid="f3a32963-a501-49ae-823d-6e53d4b5ce2e" />
+          <Item Path="Medium Houses.slxg" Nature="File" Guid="308cb816-636d-4910-8c97-d88c7625a7b7" />
+          <Item Path="SimpleTree.slxg" Nature="File" Guid="38d48593-2395-44f3-854c-ecc338959d7e" />
+        </Item>
+        <Item Path="Textures" Nature="Folder" Guid="e03cce0c-b9d5-4e8d-a73b-47f1d447fce5" Expanded="False">
+          <Item Path="Buildings" Nature="Folder" Guid="779210dc-f567-4bc6-91e8-f2498a11ab10" Expanded="False">
+            <Item Path="building_front2.png" Nature="File" Guid="2d59de6e-b2c6-4941-a3a1-05fca1e53fe6" />
+            <Item Path="building_h_windows.png" Nature="File" Guid="a85fe8ff-6102-40c7-9609-b8aa6a04c749" />
+            <Item Path="building_lb1.png" Nature="File" Guid="cb37c104-76cd-4eab-ba18-a28cc2bed0a8" />
+            <Item Path="building_office12.png" Nature="File" Guid="40213cf4-f795-4c75-8f0a-cef4a24b2082" />
+            <Item Path="building_x1.png" Nature="File" Guid="62ded696-ec95-4ef6-999e-8dfd520f61e1" />
+          </Item>
+          <Item Path="Icons" Nature="Folder" Guid="901cefa8-e0fe-438a-8cbd-d9888c016fef" Expanded="False">
+            <Item Path="Bar-100.png" Nature="File" Guid="cda49b3e-4443-4f4b-bd0b-1838478cb8d7" />
+            <Item Path="Cafe-100.png" Nature="File" Guid="1d9e8c1a-aa95-4071-ba35-5b05209f835d" />
+            <Item Path="City Bench-96.png" Nature="File" Guid="dd9d8d84-6250-4518-a343-8270523148cc" />
+            <Item Path="Icon Links.txt" Nature="File" Guid="72d93bb4-b077-45dd-83b1-c62c22bbb316" />
+            <Item Path="Money Bag-100.png" Nature="File" Guid="de460c0c-ec20-4fb2-875c-0a4ca80c68e0" />
+            <Item Path="P-104.png" Nature="File" Guid="071abae2-e7d8-42af-b7ae-f2262125c3a5" />
+            <Item Path="Phone-100.png" Nature="File" Guid="d7062397-d6e3-4e8a-99bb-4fdb3badf5c0" />
+            <Item Path="Point Objects-100.png" Nature="File" Guid="ef328d4e-c12a-4dc7-97f1-96a24c2cee70" />
+            <Item Path="Restaurant-100.png" Nature="File" Guid="0531546c-e113-4e0a-ba6e-75771476c5b9" />
+          </Item>
+          <Item Path="Roofs" Nature="Folder" Guid="ff34151b-c43e-4a0c-bd5f-c666f8535f4a" Expanded="False">
+            <Item Path="Roof01.png" Nature="File" Guid="c16eeeee-382d-41c5-8089-81ce1002bb3e" />
+            <Item Path="Roof02.png" Nature="File" Guid="30164966-4130-4530-a6f0-fd7960cb9ef9" />
+            <Item Path="Roof03.png" Nature="File" Guid="4b2c079d-e859-4239-ab94-bef97d0c3d27" />
+            <Item Path="Roof04.png" Nature="File" Guid="8ba19ae0-f563-4553-9243-6a5f07630232" />
+            <Item Path="Roof05.png" Nature="File" Guid="d8a9016e-2e11-4fb5-b6af-cc0fdd99f17b" />
+            <Item Path="Roof06.png" Nature="File" Guid="ab5c4d78-c413-4305-8807-f7b43ed4ad95" />
+          </Item>
+          <Item Path="Asphalt01.jpg" Nature="File" Guid="54c96089-1ff4-4df2-b2b0-c15ff42c029e" />
+          <Item Path="CobbleFloor01.jpg" Nature="File" Guid="3485662f-92c4-4a60-bab2-68ff7f34635f" />
+          <Item Path="Grass02.jpg" Nature="File" Guid="e84ac0c4-d076-468b-8e14-9ce1951b9a99" />
+          <Item Path="RoadsTex02.jpg" Nature="File" Guid="868b8377-abbb-40a8-8cfb-97ccbdb58678" />
+          <Item Path="WoodFine.jpg" Nature="File" Guid="41d0c066-cf44-4532-9ea5-ba77aff64a6d" />
+        </Item>
+        <Item Path="OpenStreetMap.slxg" Nature="File" Guid="65fb6d2e-62ef-4cd6-a157-9b5106325f98" />
+        <Item Path="ReadMe.txt" Nature="File" Guid="1a70fe3d-0273-43f1-9abd-b8418875c080" />
+        <Item Path="World.slxg" Nature="File" Guid="871e5bfb-30c9-46c8-9a01-518f8b5ac8fa" />
+      </Item>
+    </Item>
+    <Item Path="Examples" Nature="Folder" Guid="9f36a50e-aec0-4a5e-98c9-f41b4e534441" Expanded="False">
+      <Item Path="Billboards" Nature="Folder" Guid="df577306-01b1-463d-a51b-ee1113770183" Expanded="False">
+        <Item Path="Resources" Nature="Folder" Guid="8c093ff5-d6ea-4305-8286-910ceb09c992" Expanded="False">
+          <Item Path="PersonClipart.png" Nature="File" Guid="f5b72d57-120c-4907-bb56-d60c3bf61af8" />
+        </Item>
+        <Item Path="Create.slxg" Nature="File" Guid="95a60184-31c7-4c81-acae-c265fec5e914" />
+      </Item>
+      <Item Path="Groups" Nature="Folder" Guid="c69f8663-b686-456d-984d-c0e06eb4cec5" Expanded="False">
+        <Item Path="Actor Groups.slxg" Nature="File" Guid="fd107c3b-c9f1-446f-9de2-fd09770c298f" />
+      </Item>
+      <Item Path="Meshes" Nature="Folder" Guid="e4400912-5b1b-4692-9f59-9ee0802c4fb5" Expanded="False">
+        <Item Path="Export.slxg" Nature="File" Guid="aca09380-28a3-44cd-b23a-47c1c68e1a65" />
+      </Item>
+      <Item Path="Points" Nature="Folder" Guid="c909282a-4eb9-43ea-99fd-69f3f6f53906" Expanded="False">
+        <Item Path="Resources" Nature="Folder" Guid="8dd15b29-0c53-4ce5-832a-aeb226efdcfe" Expanded="False">
+          <Item Path="MetalBare03.jpg" Nature="File" Guid="c9cdb4d6-4e43-4799-8d61-1186e14d93e4" />
+        </Item>
+        <Item Path="Scattering.slxg" Nature="File" Guid="e1dbaa87-dfe7-4237-87b7-eeaa2db21dcf" />
+      </Item>
+      <Item Path="Surfaces" Nature="Folder" Guid="dbddd2e5-e95e-4303-8d37-6b6c7b92c612" Expanded="False">
+        <Item Path="Resources" Nature="Folder" Guid="10badced-bfeb-4273-8c8b-94c54136ae91" Expanded="False">
+          <Item Path="Heightmaps" Nature="Folder" Guid="ad7049fd-5ce0-4918-844a-937952a8b02f" Expanded="False">
+            <Item Path="Mountain.jpg" Nature="File" Guid="3a4ec540-072f-40ce-9301-3417ee00c0fc" />
+            <Item Path="River.png" Nature="File" Guid="8442ead4-521b-4299-a545-81df2221040c" />
+          </Item>
+          <Item Path="CobbleStone01.jpg" Nature="File" Guid="69f2aad7-ff35-4d6c-ae09-509293a1db67" />
+          <Item Path="Colormap.png" Nature="File" Guid="6e99b0a3-bb9e-48dd-81dd-3203c3edf63d" />
+          <Item Path="Grass02.jpg" Nature="File" Guid="6dae7803-7df8-4615-8a6d-22d8ea9c72c6" />
+          <Item Path="IceCracking01.jpg" Nature="File" Guid="0f0e5a57-e10f-4670-a5fb-f01709b56af0" />
+          <Item Path="Rock01.jpg" Nature="File" Guid="c3c2d315-88da-40a6-98da-ae5742f55baa" />
+          <Item Path="Sand01.jpg" Nature="File" Guid="59641069-3448-4862-a7f3-4989e8d31d95" />
+          <Item Path="Splatmap01.jpg" Nature="File" Guid="8737dc69-b82b-4706-849f-08b8b1b8fbf0" />
+          <Item Path="TreeBillboard01.png" Nature="File" Guid="e23c4aab-ccea-4316-9406-cb2b401f15b9" />
+        </Item>
+        <Item Path="01 - Create.slxg" Nature="File" Guid="4375059a-5459-4d0d-b6d3-a88d768ba84e" />
+        <Item Path="02 - Load.slxg" Nature="File" Guid="e7051808-8058-4fcb-a8e2-8b64081727c5" />
+        <Item Path="03 - Grid.slxg" Nature="File" Guid="743e9cc4-eed4-453f-9163-efeff2ce9a48" />
+        <Item Path="04 - Modify.slxg" Nature="File" Guid="b666cadb-c79d-4e2d-9653-a49cdb659c14" />
+        <Item Path="05 - Paint.slxg" Nature="File" Guid="d0250bd1-9f3d-46d9-aab6-ae1c97025de6" />
+        <Item Path="06 - Export.slxg" Nature="File" Guid="43614cd5-dd04-4c48-a040-019dbd50f05a" />
+        <Item Path="07 - Adjust.slxg" Nature="File" Guid="cf51bef0-e5ea-4c22-abe5-a189a19c0e43" />
+        <Item Path="08 - Scatter.slxg" Nature="File" Guid="65c5b9b3-2ed6-46e5-bad8-deaaa116154a" />
+        <Item Path="09 - Sampling.slxg" Nature="File" Guid="85498f07-17ed-47b2-856b-c9fa3af7dfd2" />
+        <Item Path="10 - Combine.slxg" Nature="File" Guid="e015ebfc-7d26-41fa-a29c-ad5ef1e2e01d" />
+      </Item>
+      <Item Path="Unity" Nature="Folder" Guid="729e527f-3b4c-4c9a-a6d6-fa8aefb418f8" Expanded="False">
+        <Item Path="Resources" Nature="Folder" Guid="a71026e9-fe42-41da-85f3-ee8454dc5563" Expanded="False">
+          <Item Path="Rust01.jpg" Nature="File" Guid="783b5a6f-7b93-4938-b600-b22b99640d38" />
+          <Item Path="Terrazzo01.jpg" Nature="File" Guid="9b40426c-5ac6-4578-a0c8-327a33036c06" />
+          <Item Path="Tiles01.jpg" Nature="File" Guid="ee7db3f8-d630-4ecb-9c5e-0d6850a124b5" />
+        </Item>
+        <Item Path="Instantiating Prefabs in Unity.slxg" Nature="File" Guid="aaf0878d-aff0-40f3-a4f5-d6c2df584a34" />
+        <Item Path="Use Advanced Unity Components.slxg" Nature="File" Guid="7f4aae98-97a5-4fc2-900a-fd8b7d3c7825" />
+        <Item Path="Use Advanced Unity Materials.slxg" Nature="File" Guid="47929664-c193-4c06-ad65-f9767a4198c6" />
+      </Item>
+    </Item>
+    <Item Path="Learning Concepts" Nature="Folder" Guid="042f8443-1886-4340-b6b7-b641597665d7" Expanded="False">
+      <Item Path="Resources" Nature="Folder" Guid="dc2bfa13-bb87-4ec9-bcc3-58c2cb711df4" Expanded="False">
+        <Item Path="PersonClipart.png" Nature="File" Guid="0f90c79d-0f37-48a0-b452-630529dac079" />
+        <Item Path="RockSurface01.jpg" Nature="File" Guid="558923dc-e492-4304-8ecf-2ce6711f1fe0" />
+      </Item>
+      <Item Path="01 - Quick Start.slxg" Nature="File" Guid="5bcdffe0-701b-49c3-aa1b-653405d5964f" />
+      <Item Path="02 - Ports.slxg" Nature="File" Guid="d09f9222-a9b1-4b62-b231-7dc99d58df73" />
+      <Item Path="03 - Flow.slxg" Nature="File" Guid="cb70050b-8b74-4f55-b9f6-4235123addd3" />
+      <Item Path="04 - Entity Types.slxg" Nature="File" Guid="3e3bb91f-04be-4513-8c02-f4bebe05ef22" />
+      <Item Path="05 - Parameters.slxg" Nature="File" Guid="64609b8f-29c4-457b-82b9-5ab70ea98809" />
+      <Item Path="06 - Attributes.slxg" Nature="File" Guid="1215643f-2c6c-41bd-9693-7d8eb1a710a8" />
+      <Item Path="07 - Subattributes.slxg" Nature="File" Guid="9a75b905-d9d4-449a-bf41-46ba02b27132" />
+      <Item Path="08 - Encapsulation.slxg" Nature="File" Guid="73309dd7-7902-4b5a-84d5-b180ada94e51" />
+      <Item Path="09 - Gates.slxg" Nature="File" Guid="b772fb4c-6ecf-4a93-8061-2c9df55a7c00" />
+      <Item Path="10 - Attributes (Part 2).slxg" Nature="File" Guid="57b80c9d-9643-42b7-bf16-d5fe4e7af52b" />
+      <Item Path="11 - Impulses.slxg" Nature="File" Guid="cdffe063-a4b6-4ec4-bd45-f856eb9d32f7" />
+      <Item Path="12 - Blocking.slxg" Nature="File" Guid="78fbde12-9df0-4e25-b995-55c6019d7a18" />
+      <Item Path="13 - Entity Types (Part 2).slxg" Nature="File" Guid="495979b7-1525-4cdf-9532-df728512fc77" />
+      <Item Path="14 - Scopes.slxg" Nature="File" Guid="00208242-c6de-40b1-b53c-66abf8d95aec" />
+      <Item Path="15 - Attributes (Part 3).slxg" Nature="File" Guid="82fe0b71-c35a-44ff-8c9b-a084a03bd8d5" />
+    </Item>
+    <Item Path="Utils" Nature="Folder" Guid="a4cb1b31-5243-4350-9f92-4fa0ea454e50" Expanded="False">
+      <Item Path="Extrude (Filtered).slxg" Nature="File" Guid="821cacfc-9812-43fa-b318-a69925c5614b" />
+      <Item Path="Mesh Material and UV.slxg" Nature="File" Guid="3039dded-0615-4789-8562-e61766deac11" />
+      <Item Path="Offset (Filtered).slxg" Nature="File" Guid="70988f3d-3c30-47c0-bf03-f65c9e63afe9" />
+      <Item Path="Organize.slxg" Nature="File" Guid="82df3e05-1c6c-4c7c-810f-1233b2fe3c10" />
+      <Item Path="ReadMe.txt" Nature="File" Guid="3f0e21f0-777b-4b18-9be0-25ced3cb7cee" />
+    </Item>
+    <Item Path="Readme.txt" Nature="File" Guid="7f2e22dc-2e48-4b2e-8c9f-b75461a6f3fe" />
+  </Items>
+</Project>

@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="82fe0b71-c35a-44ff-8c9b-a084a03bd8d5" Author="pedro_000" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="b6ee7f6e-154b-4cd5-94ea-9038b6ad8888" NodeType="SystemNode" NodeTypeGUID="3ec9e7df-c668-4b94-920c-143e01083414" Position="-4.22451 304.8159" ProcedureType="LogProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Information" Label="Type" />
+				<Argument Expanded="True" Label="Messages">
+					<Items>
+						<Item FixedValue="" Label="Text" IsExpression="True">
+							<ParsedExpression>
+								<ExprNode Name="+" Type="BinaryExpressionNode">
+									<ExprNode Name="String" Type="StringExpressionNode">Single data is:</ExprNode>
+									<ExprNode Name="myIndex" Type="AttributeExpressionNode" AllowNull="False" />
+								</ExprNode>
+							</ParsedExpression>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3a681536-8c39-4131-8c43-8c41dac9d1ab" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="272.5456 38.6674" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="5" Label="Count" />
+								<Field FixedValue="myIndex" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1283e12e-bd95-4cdc-a3d7-6448108f080b" NodeType="SystemNode" NodeTypeGUID="3ec9e7df-c668-4b94-920c-143e01083414" Position="214.2152 465.932" ProcedureType="LogProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Information" Label="Type" />
+				<Argument Expanded="True" Label="Messages">
+					<Items>
+						<Item FixedValue="" Label="Text" IsExpression="True">
+							<ParsedExpression>
+								<ExprNode Name="+" Type="BinaryExpressionNode">
+									<ExprNode Name="+" Type="BinaryExpressionNode">
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="String" Type="StringExpressionNode">List data is: </ExprNode>
+											<ExprNode Name="myIndex" Type="AttributeExpressionNode" AllowNull="False" />
+										</ExprNode>
+										<ExprNode Name="String" Type="StringExpressionNode"> and the third item is </ExprNode>
+									</ExprNode>
+									<ExprNode Name="[" Type="IndexExpressionNode">
+										<ExprNode Name="myIndex" Type="AttributeExpressionNode" AllowNull="False" />
+										<ExprNode Name="Int32" Type="ConstantExpressionNode">2</ExprNode>
+									</ExprNode>
+								</ExprNode>
+							</ParsedExpression>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bf49df3f-12c0-4322-a675-4d43ba0fc63c" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-231.6823 -224.5125" Label="1. Depending on the number of inputs ports, accessing an attribute may work differently, since we have to indicate &#xA;    which entity we are refering to." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a5fa4bd6-81a2-41bc-8a35-b35a3e5a7920" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-354.1261 -28.59119" Label="2. When you access an attribute&#xA;    (using the @name) in a one-single &#xA;    input port node, it returns the&#xA;    attribute with that name from&#xA;    the entity currently waiting to&#xA;    processed next by the node." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="19d7ca6f-cf70-4c71-861a-2d4e1d103ee0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-140.4688 574.6896" Label="3. In a one-collective input port node,&#xA;    it returns a list with all attributes &#xA;    with that name from all the&#xA;    the entities currently waiting to&#xA;    processed next by the node." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="1e4ac211-be25-4ef5-bfec-0f3b5b8c8427" NodeType="SystemNode" NodeTypeGUID="3ec9e7df-c668-4b94-920c-143e01083414" Position="648.7682 539.5057" ProcedureType="LogProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Information" Label="Type" />
+				<Argument Expanded="True" Label="Messages">
+					<Items>
+						<Item FixedValue="" Label="Text" IsExpression="True">
+							<ParsedExpression>
+								<ExprNode Name="+" Type="BinaryExpressionNode">
+									<ExprNode Name="+" Type="BinaryExpressionNode">
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="String" Type="StringExpressionNode">Port list of data is: </ExprNode>
+											<ExprNode Name="result" Type="AttributeExpressionNode" AllowNull="False" />
+										</ExprNode>
+										<ExprNode Name="String" Type="StringExpressionNode"> and the second item is </ExprNode>
+									</ExprNode>
+									<ExprNode Name="[" Type="IndexExpressionNode">
+										<ExprNode Name="[" Type="IndexExpressionNode">
+											<ExprNode Name="result" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+										</ExprNode>
+										<ExprNode Name="Int32" Type="ConstantExpressionNode">1</ExprNode>
+									</ExprNode>
+								</ExprNode>
+							</ParsedExpression>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="55a345d4-daf6-4fc6-be54-26a2cbff7e0b" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="674.9581 233.6266" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Count" />
+								<Field FixedValue="myIndex2" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="08567733-063a-4628-a453-2bc3f29999d6" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="586.1286 643.953" Label="4. In a multi-port node, it returns &#xA;    a list with the port names, each&#xA;    with a corresponding list with all &#xA;    attributes with that name from all the&#xA;    the entities currently waiting to be&#xA;    processed next by the node." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="4d714745-a792-4a0d-ab36-04af8f1d8072" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-137.2922 1018.638" Label="5. It may sound a bit confusing, but try running the example and see the output on the &quot;Log&quot; window.&#xA;   (enable and disable each edge at the time to see the difference)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="f5325b93-8bd6-4c7a-9c13-056509e989b6" NodeType="SystemNode" NodeTypeGUID="b3ee6334-f7cb-435c-ab3b-3802fc835e0a" Position="558.9178 380.1246" ProcedureType="AttributeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operations">
+					<Items>
+						<Item Expanded="True" Label="Set">
+							<Fields>
+								<Field Expanded="True" Label="Origin">
+									<Items>
+										<Item Expanded="True" Label="Entity Collection">
+											<Fields>
+												<Field FixedValue="System.Object" Label="Value" IsExpression="True">
+													<ParsedExpression>
+														<ExprNode Name="myIndex" Type="AttributeExpressionNode" AllowNull="True" />
+													</ParsedExpression>
+												</Field>
+												<Field Expanded="True" Label="Destination">
+													<Items>
+														<Item Expanded="True" Label="Other">
+															<Fields>
+																<Field FixedValue="result" Label="Attribute" />
+															</Fields>
+														</Item>
+														<Item Expanded="True" Label="Selves">
+															<Fields>
+																<Field FixedValue="" Label="Attribute" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Entity">
+											<Fields>
+												<Field FixedValue="System.Object" Label="Value" IsExpression="True">
+													<ParsedExpression>
+														<ExprNode Name="String" Type="ConstantExpressionNode"></ExprNode>
+													</ParsedExpression>
+												</Field>
+												<Field Expanded="True" Label="Destination">
+													<Items>
+														<Item Expanded="True" Label="Self">
+															<Fields>
+																<Field FixedValue="" Label="Attribute" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="0" state="Blocked" />
+			</OutputPorts>
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Entities" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Entities" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="1#O#0" ToPort="10#I#0" FromNode="1" ToNode="10" FromLabel="Entities" ToLabel="Operations[0].Set.Origin[0].Entity Collection.Input" />
+		<Edge FromPort="7#O#0" ToPort="10#I#1" FromNode="7" ToNode="10" FromLabel="Entities" ToLabel="Operations[0].Set.Origin[0].Entity Collection.Destination[0].Other.Input" />
+		<Edge FromPort="10#O#1" ToPort="6#I#0" FromNode="10" ToNode="6" FromLabel="Operations[0].Set.Origin[0].Entity Collection.Destination[0].Other.Output" ToLabel="Inputs[0].Single.Single" />
+	</Edges>
+</Graph>

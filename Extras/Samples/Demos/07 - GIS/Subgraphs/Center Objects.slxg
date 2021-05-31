@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="f3a32963-a501-49ae-823d-6e53d4b5ce2e" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="a4ca006f-3cba-42a0-83e4-595b5d2743aa" NodeType="SystemNode" NodeTypeGUID="c1722ebb-8bc2-45a1-a146-b3767d611cd1" Position="-224.6767 -289.3788" ProcedureType="ActorGroupProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Group">
+							<Fields>
+								<Field FixedValue="False" Label="Merge Attributes" />
+								<Field Expanded="True" Label="Criteria">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b42f6463-fd27-4a54-b376-d8a9fe03bb70" NodeType="SystemNode" NodeTypeGUID="c1722ebb-8bc2-45a1-a146-b3767d611cd1" Position="-213.1852 -4.700012" ProcedureType="ActorGroupProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Ungroup">
+							<Fields>
+								<Field FixedValue="Actor" Label="Attributes" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Group">
+							<Fields>
+								<Field FixedValue="True" Label="Merge Attributes" />
+								<Field Expanded="True" Label="Criteria">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="46130f17-d7ca-4459-b226-1bc4f00194f4" NodeType="SystemNode" NodeTypeGUID="a7a6544e-abff-44fe-9156-975fe0608718" Position="-258.4882 -430.514" ProcedureType="ActorScopeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset Scope">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="72f34f0d-8c86-4d5e-9197-12ed449546a8" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="-213.2952 -547.5112" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Collective Input">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6871efa6-d4a6-451e-a023-fcff28246098" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="-247.1225 -154.0587" DisableInSubgraphs="True" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="Center" Label="X" />
+								<Field FixedValue="Center" Label="Y" />
+								<Field FixedValue="None" Label="Z" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="4#I#0" FromNode="0" ToNode="4" FromLabel="Operation[0].Group.Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="1#I#0" FromNode="4" ToNode="1" FromLabel="Output" ToLabel="Operation[0].Ungroup.Input" />
+		<Edge FromPort="3#O#0" ToPort="2#I#0" FromNode="3" ToNode="2" FromLabel="Ports[1].Output.Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="0#I#0" FromNode="2" ToNode="0" FromLabel="Output" ToLabel="Operation[0].Group.Input" />
+	</Edges>
+</Graph>

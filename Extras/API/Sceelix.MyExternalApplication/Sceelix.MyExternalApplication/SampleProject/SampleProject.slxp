@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Project>
+  <Author>PedroSilva</Author>
+  <Company>Private</Company>
+  <Version>1.0.0.0</Version>
+  <Items>
+    <Item Path="Textures" Nature="Folder" Expanded="True">
+      <Item Path="10-Clubs.png" Nature="File" Guid="7115b891-b3c5-44a2-876c-4d6ac9878251" />
+      <Item Path="CardBack.png" Nature="File" Guid="4b0a8a8c-488e-47ef-a48a-5839344d1527" />
+    </Item>
+    <Item Path="Card.slxg" Nature="File" Guid="ad1a4e5a-436c-490a-9349-56902e1bacf6" />
+  </Items>
+</Project>

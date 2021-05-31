@@ -1,0 +1,72 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 25.10.2015 23:54:18
+
+newmtl carA_blue
+	Ns 0.0000
+	Ni 1.5000
+	d 0.9961
+	Tr 0.0039
+	Tf 0.9961 0.9961 0.9961 
+	illum 2
+	Ka 0.0000 0.0000 0.0000
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.8000 0.8000 0.8000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Textures\car_tex_blue.png
+	map_Kd Textures\car_tex_blue.png
+
+newmtl wheelrearleft
+	Ns 0.0000
+	Ni 1.5000
+	d 0.9961
+	Tr 0.0039
+	Tf 0.9961 0.9961 0.9961 
+	illum 2
+	Ka 0.2700 0.2700 0.2700
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1000 0.1000 0.1000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Textures\wheel_tex.png
+	map_Kd Textures\wheel_tex.png
+
+newmtl wheelfrontleft
+	Ns 0.0000
+	Ni 1.5000
+	d 0.9961
+	Tr 0.0039
+	Tf 0.9961 0.9961 0.9961 
+	illum 2
+	Ka 0.2700 0.2700 0.2700
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1000 0.1000 0.1000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Textures\wheel_tex.png
+	map_Kd Textures\wheel_tex.png
+
+newmtl wheelfrontright
+	Ns 0.0000
+	Ni 1.5000
+	d 0.9961
+	Tr 0.0039
+	Tf 0.9961 0.9961 0.9961 
+	illum 2
+	Ka 0.2700 0.2700 0.2700
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1000 0.1000 0.1000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Textures\wheel_tex.png
+	map_Kd Textures\wheel_tex.png
+
+newmtl wheelrearright
+	Ns 0.0000
+	Ni 1.5000
+	d 0.9961
+	Tr 0.0039
+	Tf 0.9961 0.9961 0.9961 
+	illum 2
+	Ka 0.2700 0.2700 0.2700
+	Kd 1.0000 1.0000 1.0000
+	Ks 0.1000 0.1000 0.1000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka Textures\wheel_tex.png
+	map_Kd Textures\wheel_tex.png

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="90cbb51e-dc1b-41be-8ead-adfb100e265a" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters>
+		<Parameter Increment="0.1" DecimalDigits="2" Label="Length" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="0.2" />
+	</Parameters>
+	<Nodes>
+		<Node Guid="82d5dd7f-a3a9-478f-808c-df3477a06f88" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="299.955 515.1261" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="dfba5d25-3d44-47a5-84e9-4aa65d1bde91" NodeType="SystemNode" NodeTypeGUID="a66e6c1f-3448-4813-a959-6c4fb3d01ea7" Position="347.8705 635.2253" ProcedureType="MeshUnifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operations">
+					<Items>
+						<Item Expanded="True" Label="Unify Vertices">
+							<Fields>
+								<Field FixedValue="0.01" Label="Tolerance" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="09dd0c83-0460-4202-bc30-b5fa0ceeb088" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="424.8878 761.6899" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Length" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Shared">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

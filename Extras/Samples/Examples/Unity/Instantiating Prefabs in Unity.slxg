@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="aaf0878d-aff0-40f3-a4f5-d6c2df584a34" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="c155cfa6-4f06-42b1-a0a2-2eeea14128ee" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="293.4925 272.4143" Label="Note: This sample applies to the Sceelix-Unity plugin,&#xA;which should be installed and enabled first." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="888ad390-bf9e-46f6-911b-8b19e74913a3" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="137.1163 145.2721" Label="This sample shows the possibilities regarding prefab instantiation in Unity. &#xA;This allows you to define your complex objects in Unity and then use Sceelix to distribute them.." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="491dfb2a-30a5-429b-8307-feca740b1480" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="655.139 437.1895" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Box">
+							<Fields>
+								<Field FixedValue="1" Label="Width" />
+								<Field FixedValue="1" Label="Length" />
+								<Field FixedValue="1" Label="Height" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="15" Label="Horizontal Segments" />
+								<Field FixedValue="5" Label="Radius" />
+								<Field FixedValue="15" Label="Vertical Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c0e60848-074c-471e-abe3-0b921aca637b" NodeType="SystemNode" NodeTypeGUID="9924b6f2-761d-4cfd-b06e-6ba5b7cf2072" Position="603.1677 571.1152" ProcedureType="MeshInstanceCreateProcedure">
+			<Arguments />
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c85a8eb1-8106-4f0c-ab70-2d39d7d3896d" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="667.325 839.9477" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="30" Label="Minimum" />
+								<Field FixedValue="230" Label="Maximum" />
+								<Field FixedValue="randX" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="30" Label="Minimum" />
+								<Field FixedValue="230" Label="Maximum" />
+								<Field FixedValue="randY" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="0.7" Label="Minimum" />
+								<Field FixedValue="10" Label="Maximum" />
+								<Field FixedValue="scale" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="0" Label="Minimum" />
+								<Field FixedValue="360" Label="Maximum" />
+								<Field FixedValue="rotation" Label="Value" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="1000" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="28574e70-7ee5-4966-82ba-7869aa7cfc1f" NodeType="SystemNode" NodeTypeGUID="50c9a7c0-6f52-470d-8bb7-2c8b663c94b8" Position="691.4905 706.0254" ProcedureType="CopyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="100" Label="Number of Copies" />
+								<Field FixedValue="Clone" Label="Method" />
+								<Field FixedValue="CopyIndex" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a0ef954f-48c1-4fe3-9d26-c6e4f5f95550" NodeType="SystemNode" NodeTypeGUID="2dbcc442-f71a-43af-a11a-ece62ff48f81" Position="413.2728 1394.66" ProcedureType="SurfacePlaceProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field Expanded="True" Label="Sample Location">
+									<Fields>
+										<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="096e00da-6d8f-450c-86d6-bf013cf22868" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="472.5798 1535.07" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="Sceelix Game Object" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="Assets/MyAsset" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Mesh Instance">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Translation" />
+								<Field FixedValue="0,0,0" Label="Rotation" />
+								<Field FixedValue="1,1,1" Label="Scale" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3ea5d3aa-90da-4530-9a6e-20f6df3df7c0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="90.94672 944.5284" Label="In this example, we are simply creating &#xA;100 placeholders for our objects, giving &#xA;random scales, rotations and positions&#xA;and then placing them on a surface." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="209f65fd-00be-416c-901d-fe6bd8525872" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="749.2449 1460.269" Label="The actual prefab instantiation&#xA;occurs here. We simply need to &#xA;indicate the path of the prefab&#xA;and it will be instantiated in&#xA;Unity. Simple!" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="24462856-5551-48c5-b5a0-ae4eca800d51" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="506.6884 1720.385" Label="Note: We only need the transform&#xA;of the placeholders, so you the&#xA;option &quot;From Actor&quot; should be selected.&#xA;Otherwise the original cube mesh (from&#xA;the first node) would also be included. " ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6e0c9359-9640-44b5-933e-94d1063c8a65" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="628.1647 1229.192" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="randX" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="randY" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="World" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8d0e8919-1032-4925-84b2-5a7087077a0b" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="633.1049 973.6042" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="1,1,1" Label="Amount" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="[]" Type="ArrayExpressionNode">
+							<ExprNode Name="scale" Type="AttributeExpressionNode" AllowNull="False" />
+							<ExprNode Name="scale" Type="AttributeExpressionNode" AllowNull="False" />
+							<ExprNode Name="scale" Type="AttributeExpressionNode" AllowNull="False" />
+						</ExprNode>
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="Relative" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0.5,0.5,0" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="4fc233a3-8105-433d-b943-b0e25e1aa248" NodeType="SystemNode" NodeTypeGUID="8906cb79-297a-40a5-8e36-b5f12ddbb847" Position="634.183 1098.404" ProcedureType="ActorRotateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate">
+							<Fields>
+								<Field FixedValue="0" Label="Angle" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="rotation" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Axis">
+									<Fields>
+										<Field FixedValue="0,0,1" Label="Direction" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="Pivot">
+									<Fields>
+										<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="96c4f840-a343-46fc-b5aa-45f224a1ab4f" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="274.5223 1213.472" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="256" Label="Width" />
+								<Field FixedValue="256" Label="Length" />
+								<Field FixedValue="20" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="0" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="4#O#0" ToPort="12#I#0" FromNode="4" ToNode="12" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="12#O#0" ToPort="13#I#0" FromNode="12" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="11#I#0" FromNode="13" ToNode="11" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="5#I#0" FromNode="3" ToNode="5" FromLabel="Output" ToLabel="Operation[0].Standard.Input" />
+		<Edge FromPort="5#O#0" ToPort="4#I#0" FromNode="5" ToNode="4" FromLabel="Operation[0].Standard.Output" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="11#O#0" ToPort="6#I#1" FromNode="11" ToNode="6" FromLabel="Output" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="6#O#1" ToPort="7#I#0" FromNode="6" ToNode="7" FromLabel="Entity[0].Actor.Actor" ToLabel="Options[0].From Actor.Input" />
+		<Edge FromPort="14#O#0" ToPort="6#I#0" FromNode="14" ToNode="6" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+	</Edges>
+</Graph>

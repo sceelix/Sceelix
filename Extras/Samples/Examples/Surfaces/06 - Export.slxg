@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="43614cd5-dd04-4c48-a040-019dbd50f05a" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="0f6a5ad3-ff14-4801-845e-d5f2234d5e39" NodeType="SystemNode" NodeTypeGUID="88daf46e-8bdb-408e-b445-3d0f633edf8c" Position="190.5143 583.8301" ProcedureType="SurfaceSaveProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Files">
+					<Items>
+						<Item Expanded="True" Label="Blendmap">
+							<Fields>
+								<Field FixedValue="C:/Users/pedro/Desktop/Blendmap.png" Label="File" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+											<ExprNode Name="String" Type="StringExpressionNode">/Blendmap.png</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Surface" Label="Resolution" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Splatmap">
+							<Fields>
+								<Field FixedValue="" Label="File" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+											<ExprNode Name="String" Type="StringExpressionNode">/Splatmap.png</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Surface" Label="Resolution" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Heightmap">
+							<Fields>
+								<Field FixedValue="" Label="File" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+											<ExprNode Name="String" Type="StringExpressionNode">/Heightmap.png</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Surface" Label="Resolution" />
+								<Field FixedValue="World" Label="Base Height" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Normalmap">
+							<Fields>
+								<Field FixedValue="" Label="File" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="DesktopPath" Type="DirectFunctionExpressionNode" />
+											<ExprNode Name="String" Type="StringExpressionNode">/Normalmap.png</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Surface" Label="Resolution" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b19ec594-c46f-4c23-a83d-b4f09639dc5d" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="284.2122 -10.6707" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="200" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="20" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="100" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3c8f0c88-1f12-4d65-b38e-7eb7a0aa72d8" NodeType="SystemNode" NodeTypeGUID="690a154f-5fa0-4f60-bf12-25f25d764db0" Position="289.5779 369.2965" ProcedureType="SurfacePaintProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Designs">
+					<Items>
+						<Item Expanded="True" Label="Height">
+							<Fields>
+								<Field FixedValue="0" Label="Texture Index" />
+								<Field Expanded="False" Label="Limits">
+									<Items>
+										<Item Expanded="True" Label="Absolute">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="100" Label="End" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="False" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="0.5" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field FixedValue="1" Label="Texture Index" />
+								<Field FixedValue="0,0,1" Label="Surface Normal" />
+								<Field FixedValue="45" Label="Max. Angle" />
+								<Field Expanded="True" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Height">
+							<Fields>
+								<Field FixedValue="2" Label="Texture Index" />
+								<Field Expanded="True" Label="Limits">
+									<Items>
+										<Item Expanded="True" Label="Relative">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="0.4" Label="End" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Absolute">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="100" Label="End" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="False" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ee877b96-e3a9-4e6c-acac-f7e90dec5e76" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="275.2684 247.0465" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Multi Texture">
+							<Fields>
+								<Field Expanded="True" Label="Textures">
+									<Items>
+										<Item FixedValue="Examples/Surfaces/Resources/Rock01.jpg" Guid="c3c2d315-88da-40a6-98da-ae5742f55baa" Label="Texture" />
+										<Item FixedValue="Examples/Surfaces/Resources/Grass02.jpg" Guid="6dae7803-7df8-4615-8a6d-22d8ea9c72c6" Label="Texture" />
+										<Item FixedValue="Examples/Surfaces/Resources/Sand01.jpg" Guid="59641069-3448-4862-a7f3-4989e8d31d95" Label="Texture" />
+									</Items>
+								</Field>
+								<Field FixedValue="5,5" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" />
+								<Field FixedValue="1,1" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c0e10696-972b-4c4a-8f8d-23671db43d54" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="282.3366 119.2155" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Recalculate Normals">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a36dab87-f791-478d-a55a-dd95910824d8" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="125.3748 -162.0012" Label="As in meshes, exporting surfaces is performed&#xA;by a proper node, which stores the layers (or&#xA;groups of them) into independent files." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8300f100-9334-470e-8672-964fdbeaee96" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="537.8777 348.6968" Label="In this case, we have built a surface that&#xA;has 1 height layer, 1 normal layer and&#xA;3 blend layers." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="f1498d2e-6958-405c-ab92-37f13b142384" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-302.7464 542.9818" Label="The surface save indicates what layers&#xA;are to be saved and where to." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="5f979a0f-a069-4389-bf80-32ee9ba981ca" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-116.9014 693.951" Label="In the case of blend layers, they can be stored to&#xA;a single splatmap file (up to 4) or to individual &#xA;graycale images." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="0#I#0" FromNode="2" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="4#I#0" FromNode="1" ToNode="4" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="2#I#0" FromNode="3" ToNode="2" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="4#O#0" ToPort="3#I#0" FromNode="4" ToNode="3" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

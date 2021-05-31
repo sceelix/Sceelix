@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="052aabaf-8aea-4f2a-9763-4e583e141368" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="1e5d6002-f5a2-4930-9892-f020574dfd45" NodeType="ComponentNode" NodeTypeGUID="500cc66a-3107-4326-aefc-7273cce271a6" Position="287.522 -221.6603" RelativePath="Demos/01- City/City.slxg">
+			<Arguments>
+				<Argument FixedValue="300" Label="Width" />
+				<Argument FixedValue="300" Label="Height" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="3" />
+		</Node>
+		<Node Guid="fc680797-c0bf-4827-8c23-1ed03e29f9b0" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="567.4057 -48.33104" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="Roads" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="Roads" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Mesh">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="838e02ea-61cc-42b5-b6c6-28be7fb01fa9" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="-22.71892 -1.157135" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="Sidewalks" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="Sidewalks" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Mesh">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="fc19e280-3ba3-4ba8-ac11-0365610be920" NodeType="SystemNode" NodeTypeGUID="eba3dca6-953c-4e64-9e1d-cbc934eea38c" Position="306.6177 74.78003" ProcedureType="UnityEntityCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="Buildings" Label="Name" />
+				<Argument FixedValue="True" Label="Enabled" />
+				<Argument FixedValue="False" Label="Static" />
+				<Argument FixedValue="" Label="Layer" />
+				<Argument FixedValue="" Label="Prefab" />
+				<Argument FixedValue="Minimum" Label="Positioning" />
+				<Argument FixedValue="Stretch To Fill" Label="Scale Mode" />
+				<Argument FixedValue="" Label="Tag" />
+				<Argument Expanded="True" Label="Options">
+					<Items>
+						<Item Expanded="True" Label="From Mesh">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="From Actor">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="2c60135a-ffe3-446d-a83b-34741be6e0c5" NodeType="SystemNode" NodeTypeGUID="f4ddf1f0-64b2-4846-84fd-b919b480c492" Position="281.0699 217.1299" ProcedureType="UnityEntityComponentProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Components">
+					<Items>
+						<Item Expanded="True" Label="Mesh Collider">
+							<Fields>
+								<Field FixedValue="False" Label="Is Convex" />
+								<Field FixedValue="False" Label="Is Trigger" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="48dc5a1e-c362-4b01-9395-c526de3a7988" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="73.84982 -447.4249" Label="The City graph can be run and imediately&#xA;exported to Unity. But if we would like to &#xA;customize the game object properties or&#xA;add new components (such as colliders), we&#xA;can use these Unity nodes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="3#O#0" ToPort="4#I#0" FromNode="3" ToNode="4" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="0#O#1" ToPort="3#I#0" FromNode="0" ToNode="3" FromLabel="Buildings" ToLabel="Options[0].From Mesh.Input" />
+		<Edge FromPort="0#O#2" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Roads" ToLabel="Options[0].From Mesh.Input" />
+		<Edge FromPort="0#O#0" ToPort="2#I#0" FromNode="0" ToNode="2" FromLabel="Sidewalks" ToLabel="Options[0].From Mesh.Input" />
+	</Edges>
+</Graph>

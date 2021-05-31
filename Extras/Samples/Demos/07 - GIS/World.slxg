@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="871e5bfb-30c9-46c8-9a01-518f8b5ac8fa" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="6b6d8238-8fa3-4c5f-8c43-fd7ca1686818" NodeType="SystemNode" NodeTypeGUID="a7c10a2b-5554-4210-a0d9-36ad20fc8795" Position="381.4321 498.9305" ProcedureType="GisLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/07 - GIS/Resources/WorldData/TM_WORLD_BORDERS_SIMPL-0.3.shp" Guid="e64801ed-2846-416d-a2b3-84e6d43aada7" Label="File" />
+				<Argument Expanded="True" Label="Reproject">
+					<Items />
+				</Argument>
+				<Argument FixedValue="" Label="Projection" />
+				<Argument FixedValue="data" Label="Data" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ba206c83-5ad3-403c-b2c5-5d5763f11f09" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="436.6016 615.6951" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="Hue" Label="Type" />
+								<Field FixedValue="color" Label="Value" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="1000" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ab25389c-8072-41ff-af55-3321784c416a" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="449.7368 731.7821" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="color" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="1" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="04dc9058-e76f-4f32-b596-17fcb46f443e" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="623.8152 1107.901" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="10" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="height" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c08435bb-6182-40fc-923b-f12fb1391296" NodeType="SystemNode" NodeTypeGUID="3f477acc-ff16-4ceb-9f54-0b1404dc149b" Position="510.5302 864.8248" ProcedureType="CollectionProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Aggregation">
+							<Fields>
+								<Field FixedValue="System.Object" Label="Value" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[" Type="IndexExpressionNode">
+											<ExprNode Name="data" Type="InternalAttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="String" Type="StringExpressionNode">POP2005</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Maximum" Label="Operation" />
+								<Field FixedValue="maxPopulation" Label="Aggregated Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Count">
+							<Fields>
+								<Field FixedValue="" Label="Index" />
+								<Field FixedValue="" Label="Count" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a5f128f3-aa7f-444e-abcd-55687d4ac128" NodeType="SystemNode" NodeTypeGUID="b3ee6334-f7cb-435c-ab3b-3802fc835e0a" Position="599.4774 986.0358" ProcedureType="AttributeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operations">
+					<Items>
+						<Item Expanded="True" Label="Set">
+							<Fields>
+								<Field Expanded="True" Label="Origin">
+									<Items>
+										<Item Expanded="True" Label="Entity">
+											<Fields>
+												<Field FixedValue="System.Object" Label="Value" IsExpression="True">
+													<ParsedExpression>
+														<ExprNode Name="*" Type="BinaryExpressionNode">
+															<ExprNode Name="()" Type="ParenthesisExpressionNode">
+																<ExprNode Name="/" Type="BinaryExpressionNode">
+																	<ExprNode Name="[" Type="IndexExpressionNode">
+																		<ExprNode Name="data" Type="AttributeExpressionNode" AllowNull="False" />
+																		<ExprNode Name="String" Type="StringExpressionNode">POP2005</ExprNode>
+																	</ExprNode>
+																	<ExprNode Name="float" Type="DirectFunctionExpressionNode">
+																		<ExprNode Name="maxPopulation" Type="AttributeExpressionNode" AllowNull="False" />
+																	</ExprNode>
+																</ExprNode>
+															</ExprNode>
+															<ExprNode Name="Single" Type="FloatExpressionNode">100</ExprNode>
+														</ExprNode>
+													</ParsedExpression>
+												</Field>
+												<Field Expanded="True" Label="Destination">
+													<Items>
+														<Item Expanded="True" Label="Self">
+															<Fields>
+																<Field FixedValue="height" Label="Attribute" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="4#O#0" ToPort="5#I#0" FromNode="4" ToNode="5" FromLabel="Output" ToLabel="Operations[0].Set.Origin[0].Entity.Input" />
+		<Edge FromPort="5#O#0" ToPort="3#I#0" FromNode="5" ToNode="3" FromLabel="Operations[0].Set.Origin[0].Entity.Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="4#I#0" FromNode="2" ToNode="4" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

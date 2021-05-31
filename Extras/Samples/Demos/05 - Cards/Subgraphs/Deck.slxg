@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="38aa77e1-2206-4124-b952-1165b756fca6" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="1dbd7f1a-b813-4c96-a81b-a4c31002eacb" NodeType="ComponentNode" NodeTypeGUID="ad1a4e5a-436c-490a-9349-56902e1bacf6" Position="138.9834 196.1714" HasImpulsePort="True" RelativePath="Demos/05 - Cards/Subgraphs/Card.slxg">
+			<Arguments>
+				<Argument FixedValue="Demos/05 - Cards/Textures/Front/10-Clubs.png" Guid="73812c56-5cfa-4e29-aecf-968365f4fccb" Label="Front_Texture" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="FrontTexture" Type="AttributeExpressionNode" AllowNull="False" />
+					</ParsedExpression>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Cards" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="7b4c0ed9-516a-44cd-b700-a7dd6d3aec1f" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="98.52418 30.7177" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Files">
+							<Fields>
+								<Field FixedValue="Demos/05 - Cards/Textures/Front" Guid="bc142087-e503-42bb-bbc0-61a8265f6400" Label="Folder" />
+								<Field FixedValue="FrontTexture" Label="File Name" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="List">
+							<Fields>
+								<Field FixedValue="System.Object" Label="List" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="String" Type="ConstantExpressionNode"></ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="" Label="Item" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Count" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Entities" ToLabel="Impulse Port 1" />
+	</Edges>
+</Graph>

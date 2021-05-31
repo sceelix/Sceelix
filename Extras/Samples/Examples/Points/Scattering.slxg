@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="e1dbaa87-dfe7-4237-87b7-eeaa2db21dcf" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="0ef7fbe7-add8-409a-88b1-8f1b8f63786f" NodeType="SystemNode" NodeTypeGUID="fbf27f2b-eee3-4bd6-85e0-f5d616912877" Position="288.738 352.2752" ProcedureType="PointsCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Random">
+							<Fields>
+								<Field FixedValue="1000" Label="Seed" />
+								<Field Expanded="True" Label="Area">
+									<Items>
+										<Item Expanded="True" Label="Mesh">
+											<Fields>
+												<Field FixedValue="1" Label="Distance" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Rectangle">
+											<Fields>
+												<Field FixedValue="10,10" Label="Size" />
+												<Field FixedValue="1" Label="Distance" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field Expanded="True" Label="Points">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="ffad304e-1cef-4dec-bae6-0ae80f11621f" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="389.7703 195.0438" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Text">
+							<Fields>
+								<Field FixedValue="Sceelix" Label="Text" />
+								<Field FixedValue="Book Antiqua" Label="Font" />
+								<Field FixedValue="50" Label="Size" />
+								<Field FixedValue="Bold" Label="Style" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="83f54732-3675-4197-8c25-9a65b22f3262" NodeType="SystemNode" NodeTypeGUID="4c7a38df-e3a0-4a77-abb0-599f275d414c" Position="88.19891 523.2137" ProcedureType="ActorInsertProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="One to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to One">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on X-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Y-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Z-Axis">
+					<Items>
+						<Item Expanded="True" Label="Minimum">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="c39ef237-6fe7-4d94-946a-6aea408a0cba" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="-206.1207 -216.3305" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cylinder">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="0.1" Label="Radius" />
+								<Field FixedValue="15" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="30dbad7d-a14d-4596-99a3-5a82353bb248" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="-364.1895 74.73297" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="0.2" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0.3" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1358504c-1436-489f-8c86-c760f236b3c1" NodeType="SystemNode" NodeTypeGUID="827e1ac6-ff43-4c26-b6d0-4e64b0c26d46" Position="-213.5553 -60.44606" ProcedureType="MeshSubselectProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Mesh Selection">
+					<Items>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field Expanded="True" Label="Vector">
+									<Items>
+										<Item Expanded="True" Label="Top">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Back">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="45" Label="Angle Tolerance" />
+								<Field FixedValue="Scope" Label="Relative To" />
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="All">
+							<Fields>
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="696d26e7-90ff-4934-9f83-623135ff6acc" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="-198.33 205.3281" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="59b960dc-f21e-4505-916f-df37075b6f9f" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="-161.0378 339.2438" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Examples/Points/Resources/MetalBare03.jpg" Guid="c9cdb4d6-4e43-4799-8d61-1186e14d93e4" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f8eb624d-eca4-43eb-9aaf-ea160d12827d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="110.3948 2.805359" Label="Points can be created in several ways,&#xA;one being the randomly from a shape. &#xA;In this case, the mesh faces act  as&#xA;boundaries for point creation." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c17ceb44-e7c8-40c4-801a-259482e526e0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-91.27516 637.4779" Label="The points are then fed to an actor insert &#xA;node which takes those points and places&#xA;nail-like objects in those locations." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="2#I#1" FromNode="0" ToNode="2" FromLabel="Output" ToLabel="Inputs[0].One to Many.Targets" />
+		<Edge FromPort="3#O#0" ToPort="5#I#0" FromNode="3" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="4#I#0" FromNode="5" ToNode="4" FromLabel="Mesh Selection[0].Direction.Output" ToLabel="Input" />
+		<Edge FromPort="5#O#1" ToPort="6#I#0" FromNode="5" ToNode="6" FromLabel="Mesh Selection[1].All.Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="4#O#0" ToPort="6#I#0" FromNode="4" ToNode="6" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="6#O#0" ToPort="7#I#0" FromNode="6" ToNode="7" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Output" ToLabel="Type[0].Random.Area[0].Mesh.Mesh" />
+		<Edge FromPort="7#O#0" ToPort="2#I#0" FromNode="7" ToNode="2" FromLabel="Output" ToLabel="Inputs[0].One to Many.Source" />
+	</Edges>
+</Graph>

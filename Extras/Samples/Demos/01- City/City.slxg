@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="500cc66a-3107-4326-aefc-7273cce271a6" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters>
+		<Parameter Increment="1" Label="Width" Type="Sceelix.Core.Parameters.Infos.IntParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="500" />
+		<Parameter Increment="1" Label="Height" Type="Sceelix.Core.Parameters.Infos.IntParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="500" />
+	</Parameters>
+	<Nodes>
+		<Node Guid="70ed981a-42b0-426c-a5b4-cb784640f890" NodeType="SystemNode" NodeTypeGUID="fe4221f3-991c-4161-bbae-58f5a60f8d42" Position="1014.58 184.2817" ProcedureType="PathCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Voronoi">
+							<Fields>
+								<Field FixedValue="100" Label="Height" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Height" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="100" Label="Width" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Width" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="60" Label="Spacing" />
+								<Field FixedValue="20" Label="Max Offset" />
+								<Field FixedValue="100" Label="Seed" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Grid">
+							<Fields>
+								<Field FixedValue="1" Label="Number of Columns" />
+								<Field FixedValue="1" Label="Number of Rows" />
+								<Field FixedValue="1" Label="Column Width" />
+								<Field FixedValue="1" Label="Row Height" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="19bc9fde-7f51-45fb-a55f-9ce36cdf688c" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1265.912 166.0769" Label="1. Creates a network that&#xA;    will be our streets." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="1b04af81-6689-4378-a6f3-9c407ec24714" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1264.976 342.4418" Label="2. Centers the whole network&#xA;    at the origin (0,0,0)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e8e4e7d9-aaf4-4c85-9625-61f4f073785b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="440.9957 603.8563" Label="4. The create street node already&#xA;    sets up uvs, so we just need to &#xA;   indicate the material." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="2da112dd-1ef5-4e7a-80cb-680934470265" NodeType="ComponentNode" NodeTypeGUID="821cacfc-9812-43fa-b318-a69925c5614b" Position="1195.111 782.291" RelativePath="Utils/Extrude (Filtered).slxg">
+			<Arguments>
+				<Argument FixedValue="0.1" Label="Amount" />
+				<Argument FixedValue="False" Label="Cap" />
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Normal">
+							<Fields>
+								<Field FixedValue="0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Separate">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="bfbb1485-cc02-45ea-9194-126ea5bc1816" NodeType="ComponentNode" NodeTypeGUID="70988f3d-3c30-47c0-bf03-f65c9e63afe9" Position="1098.008 993.1666" RelativePath="Utils/Offset (Filtered).slxg">
+			<Arguments>
+				<Argument FixedValue="-5" Label="Amount" />
+				<Argument Expanded="True" Label="Separate">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="735e0557-160f-43ae-a97c-a4658a1eff36" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="1371.165 1168.559" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/01- City/Textures/Ground/CobbleFloor02.jpg" Guid="c59378a8-7f1b-4674-9c60-280da47bb939" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d7a127fa-a6cf-4fb5-bc54-cdd7c461cf11" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="1422.337 1320.717" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Sidewalks" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="aec11ae9-c679-44b1-8251-3d54af96e57d" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="1025.688 1325.729" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Relative Axis">
+							<Fields>
+								<Field FixedValue="Intermediate" Label="Axis" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="X" Label="Axis" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Plane Normal">
+							<Fields>
+								<Field FixedValue="1,0,0" Label="Direction" />
+								<Field FixedValue="True" Label="Scope Relative" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="1" Label="Size" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="split1" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="False" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0" Label="Size" />
+								<Field FixedValue="Absolute" Label="Sizing" />
+								<Field FixedValue="True" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="862d991c-d040-4018-a799-366e35f4b39f" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="1036.813 1203.676" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="0.4" Label="Minimum" />
+								<Field FixedValue="0.6" Label="Maximum" />
+								<Field FixedValue="split1" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="0.3" Label="Minimum" />
+								<Field FixedValue="0.5" Label="Maximum" />
+								<Field FixedValue="split2" Label="Value" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="1000" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bcc2b3f7-b428-48f9-907f-8d3604ec0907" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="1020.552 1493.734" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Relative Axis">
+							<Fields>
+								<Field FixedValue="Maximum" Label="Axis" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="X" Label="Axis" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Plane Normal">
+							<Fields>
+								<Field FixedValue="1,0,0" Label="Direction" />
+								<Field FixedValue="True" Label="Scope Relative" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Repetitive Slice">
+							<Items>
+								<Item Expanded="True" Label="Slice">
+									<Fields>
+										<Field FixedValue="1" Label="Size" IsExpression="True">
+											<ParsedExpression>
+												<ExprNode Name="split2" Type="AttributeExpressionNode" AllowNull="False" />
+											</ParsedExpression>
+										</Field>
+										<Field FixedValue="Relative" Label="Sizing" />
+										<Field FixedValue="True" Label="Flexible" />
+										<Field FixedValue="False" Label="Cap" />
+									</Fields>
+								</Item>
+							</Items>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="689add07-7972-45db-8185-1179af37622d" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="1035.155 1663.316" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="File">
+							<Fields>
+								<Field FixedValue="Demos/01- City/Textures/Facades" Guid="922a7c00-466e-4b56-a111-f61de58a2274" Label="Folder" />
+								<Field FixedValue="FacadeTexture" Label="File Name" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="10" Label="Minimum" />
+								<Field FixedValue="80" Label="Maximum" />
+								<Field FixedValue="Height" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="File">
+							<Fields>
+								<Field FixedValue="Demos/01- City/Textures/Rough Stone" Guid="e7f311f4-c393-4be6-96e7-b2d6d4460bb2" Label="Folder" />
+								<Field FixedValue="TopTexture" Label="File Name" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="1000" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="81b30512-9d38-48ea-a5f1-ec3d48d62734" NodeType="ComponentNode" NodeTypeGUID="821cacfc-9812-43fa-b318-a69925c5614b" Position="988.2047 1843.062" RelativePath="Utils/Extrude (Filtered).slxg">
+			<Arguments>
+				<Argument FixedValue="2.6" Label="Amount" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="Height" Type="AttributeExpressionNode" AllowNull="False" />
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="False" Label="Cap" />
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Normal">
+							<Fields>
+								<Field FixedValue="0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Separate">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="b7566e76-c151-441e-b5cb-306d8c70ed3a" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="1180.637 2033.999" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="FacadeTexture" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Emissive">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="12" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="15" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="7073d533-f855-4cca-a0d0-7bb2d3bf9d2d" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="1027.851 2283.868" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Buildings" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="716cac10-4339-4c6f-8554-1ee674b823bf" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="754.9738 2044.196" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="TopTexture" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="4" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="4" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="4de099a9-dbbb-43f1-aceb-e275e5020070" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1511.788 770.7369" Label="6. Create an elevation for the &#xA;    sidewalks." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="dcdea102-ddae-42e1-baec-ee5bc58f7de0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="696.0044 982.0188" Label="7.  Define the actual sidewalk &#xA;      indentation." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="467ce45f-9529-4b78-8c72-a9db0472cb88" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1689.813 1230.47" Label="8. Apply materal to the sidewalks&#xA;     and merge them." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a73c500b-0617-449f-851d-383be79c752e" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="627.3739 1354.283" Label="9. Split the blocks horizontally&#xA;     and vertically with random&#xA;     sizes, so as to create the&#xA;     building lots." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="70362772-a80e-4660-8e4f-b7cd2e14b57f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="632.3593 1578.904" Label="10. For each building, assign&#xA;      random heights, facade&#xA;      textures and roof textures." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c0221b18-bd7a-4ea8-9fae-92904c19f252" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1262.227 1797.573" Label="11. Create the building solid,&#xA;      apply materials and merge." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8e279143-3060-4b1c-91d9-e129cb8eda25" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="277.7364 1965.111" Label="12. Create the building roof,&#xA;      apply materials and merge&#xA;      with the facades." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="d0887d25-db78-4c63-bd16-9c1c650500b8" NodeType="ComponentNode" NodeTypeGUID="b6e47722-e1b0-4e6d-9c66-257cb054d5d5" Position="1008.318 471.1871" RelativePath="Demos/01- City/Subparts/Create Street.slxg">
+			<Arguments>
+				<Argument FixedValue="4" Label="Width" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="92c1db87-44fe-4775-8e68-44256e25d737" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1262.112 501.8671" Label="3. A component node that creates a street &#xA;    mesh with the indicated width." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="26119c39-e69b-4fbc-94c5-988619dc8ac3" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="903.788 623.8727" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/01- City/Textures/Ground/RoadTex01.jpg" Guid="95c8e450-30d7-4192-8d41-b4c5a490e425" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Roads" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="8524d6ec-7165-474a-a234-e7413312a8ce" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="997.5642 330.2558" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="Center" Label="X" />
+								<Field FixedValue="Center" Label="Y" />
+								<Field FixedValue="Center" Label="Z" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="4#O#0" ToPort="5#I#0" FromNode="4" ToNode="5" FromLabel="Top" ToLabel="Input" />
+		<Edge FromPort="4#O#1" ToPort="6#I#0" FromNode="4" ToNode="6" FromLabel="All" ToLabel="Input" />
+		<Edge FromPort="6#O#0" ToPort="7#I#0" FromNode="6" ToNode="7" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="11#O#0" ToPort="12#I#0" FromNode="11" ToNode="12" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="12#O#1" ToPort="13#I#0" FromNode="12" ToNode="13" FromLabel="All" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="14#I#0" FromNode="13" ToNode="14" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="15#O#0" ToPort="14#I#0" FromNode="15" ToNode="14" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="9#O#0" ToPort="8#I#0" FromNode="9" ToNode="8" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="5#O#1" ToPort="6#I#0" FromNode="5" ToNode="6" FromLabel="Outside" ToLabel="Input" />
+		<Edge FromPort="8#O#0" ToPort="10#I#0" FromNode="8" ToNode="10" FromLabel="Slices[0].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="8#O#1" ToPort="10#I#0" FromNode="8" ToNode="10" FromLabel="Slices[1].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="23#O#1" ToPort="4#I#0" FromNode="23" ToNode="4" FromLabel="Blocks" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="9#I#0" FromNode="5" ToNode="9" FromLabel="Inside" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="23#O#0" ToPort="25#I#0" FromNode="23" ToNode="25" FromLabel="Path" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="26#I#0" FromNode="0" ToNode="26" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="26#O#0" ToPort="23#I#0" FromNode="26" ToNode="23" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="10#O#0" ToPort="11#I#0" FromNode="10" ToNode="11" FromLabel="Slices[0].Repetitive Slice[0].Slice.Output" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="12#O#0" ToPort="15#I#0" FromNode="12" ToNode="15" FromLabel="Top" ToLabel="Input" />
+	</Edges>
+</Graph>

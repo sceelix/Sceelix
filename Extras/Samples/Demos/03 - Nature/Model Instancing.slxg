@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="9cbe02d5-f4c3-41df-89d8-4f551dc7d865" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="6d9bae41-039f-47df-b8db-f7bda4b47b7d" NodeType="ComponentNode" NodeTypeGUID="0a621ef9-285a-4fbb-909f-4f6d43207da4" Position="64.50275 299.7487" RelativePath="Demos/03 - Nature/Subparts/Tree.slxg">
+			<Arguments>
+				<Argument FixedValue="5" Label="Branch Count" />
+				<Argument FixedValue="3" Label="Level Count" />
+				<Argument FixedValue="203" Label="Seed" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/TreeBranch01.png" Guid="bcde16f2-cfb9-4729-84b7-3da44d55afb6" Label="Leaf Texture" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6053e52f-dab7-46d1-8eb2-5814c45a279b" NodeType="SystemNode" NodeTypeGUID="9924b6f2-761d-4cfd-b06e-6ba5b7cf2072" Position="99.34845 478.6577" ProcedureType="MeshInstanceCreateProcedure">
+			<Arguments />
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d488df6b-758a-4524-b717-006aa6e71301" NodeType="ComponentNode" NodeTypeGUID="0a621ef9-285a-4fbb-909f-4f6d43207da4" Position="330.6953 305.5051" RelativePath="Demos/03 - Nature/Subparts/Tree.slxg">
+			<Arguments>
+				<Argument FixedValue="4" Label="Branch Count" />
+				<Argument FixedValue="5" Label="Level Count" />
+				<Argument FixedValue="103" Label="Seed" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/TreeBranch02.png" Guid="48cd7025-fa18-464f-928f-996b7e898fda" Label="Leaf Texture" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c2483b52-b814-44ad-9e8e-cd0b2e60e3ce" NodeType="ComponentNode" NodeTypeGUID="0a621ef9-285a-4fbb-909f-4f6d43207da4" Position="196.9854 258.5123" RelativePath="Demos/03 - Nature/Subparts/Tree.slxg">
+			<Arguments>
+				<Argument FixedValue="8" Label="Branch Count" />
+				<Argument FixedValue="4" Label="Level Count" />
+				<Argument FixedValue="9" Label="Seed" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/BranchYellow.png" Guid="0cd72f7d-802a-42d4-8ebb-76fcfc58c9fe" Label="Leaf Texture" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="177013d3-a90a-473c-bbf5-18cb3187705c" NodeType="ComponentNode" NodeTypeGUID="c72951d5-4ea3-4b2d-8624-396b919a6bdf" Position="-51.08272 887.0164" RelativePath="Demos/03 - Nature/Subparts/Grass.slxg">
+			<Arguments>
+				<Argument FixedValue="20000" Label="GrassCount" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/GrassBill01.png" Guid="d385ab5e-87da-4826-be9b-82cf5c52e7d0" Label="Texture" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="260d6003-ff91-44c4-a015-53690c0cb994" NodeType="ComponentNode" NodeTypeGUID="c72951d5-4ea3-4b2d-8624-396b919a6bdf" Position="-193.6998 816.9055" RelativePath="Demos/03 - Nature/Subparts/Grass.slxg">
+			<Arguments>
+				<Argument FixedValue="10000" Label="GrassCount" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/GrassBill02.png" Guid="0f3292f2-dc12-4b86-a0b0-fe147897d5a4" Label="Texture" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a1b6dd01-af8d-43a9-a7d7-40a9be420767" NodeType="ComponentNode" NodeTypeGUID="c72951d5-4ea3-4b2d-8624-396b919a6bdf" Position="-323.0378 909.1124" RelativePath="Demos/03 - Nature/Subparts/Grass.slxg">
+			<Arguments>
+				<Argument FixedValue="5000" Label="GrassCount" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/GrassBill03.png" Guid="d6f15f16-3a4e-4dda-a3c5-9dd5775b14cd" Label="Texture" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f55c88dc-e6b3-4914-af2f-ddd265612463" NodeType="SystemNode" NodeTypeGUID="2dbcc442-f71a-43af-a11a-ece62ff48f81" Position="-244.3995 1314.307" ProcedureType="SurfacePlaceProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field Expanded="True" Label="Sample Location">
+									<Fields>
+										<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="2b11b77d-dec5-4a50-bc3f-a8626edfb26b" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="161.4064 732.2487" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="10" Label="Minimum" />
+								<Field FixedValue="300" Label="Maximum" />
+								<Field FixedValue="randX" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="10" Label="Minimum" />
+								<Field FixedValue="300" Label="Maximum" />
+								<Field FixedValue="randY" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="0.7" Label="Minimum" />
+								<Field FixedValue="1.3" Label="Maximum" />
+								<Field FixedValue="scale" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="0" Label="Minimum" />
+								<Field FixedValue="360" Label="Maximum" />
+								<Field FixedValue="rotation" Label="Value" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="1000" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="30d0dadf-5d0b-44ff-a049-77b2a355231d" NodeType="SystemNode" NodeTypeGUID="50c9a7c0-6f52-470d-8bb7-2c8b663c94b8" Position="170.0056 598.4261" ProcedureType="CopyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="100" Label="Number of Copies" />
+								<Field FixedValue="Clone" Label="Method" />
+								<Field FixedValue="CopyIndex" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="7cd867c1-1f1c-48f3-96ff-365a8f7f5e2e" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="-589.8826 973.9403" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="300" Label="Width" />
+								<Field FixedValue="300" Label="Length" />
+								<Field FixedValue="20" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="0" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="75d2d83b-4025-4f6b-bfe2-99aa6d726a1b" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="170.2091 860.3259" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="1,1,1" Label="Amount" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="[]" Type="ArrayExpressionNode">
+							<ExprNode Name="scale" Type="AttributeExpressionNode" AllowNull="False" />
+							<ExprNode Name="scale" Type="AttributeExpressionNode" AllowNull="False" />
+							<ExprNode Name="scale" Type="AttributeExpressionNode" AllowNull="False" />
+						</ExprNode>
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="Relative" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0.5,0.5,0" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="78f78660-2bcc-4fe8-8d60-47281f5ba73c" NodeType="SystemNode" NodeTypeGUID="8906cb79-297a-40a5-8e36-b5f12ddbb847" Position="155.1161 1010.776" ProcedureType="ActorRotateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate">
+							<Fields>
+								<Field FixedValue="0" Label="Angle" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="rotation" Type="AttributeExpressionNode" AllowNull="False" />
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Axis">
+									<Fields>
+										<Field FixedValue="0,0,1" Label="Direction" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="Pivot">
+									<Fields>
+										<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="80d48157-1d5f-4a67-a403-02387cfa4c60" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="32.61667 1162.703" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="randX" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="randY" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="World" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1dd02912-aaab-482b-a388-528d753b7685" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="-473.4846 1124.838" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/03 - Nature/Textures/Dirt01.jpg" Guid="e6713b62-6dc9-4731-bde2-730eddbaa919" Label="Texture" />
+								<Field FixedValue="4,4" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="6#O#0" ToPort="7#I#1" FromNode="6" ToNode="7" FromLabel="Grass" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="5#O#0" ToPort="7#I#1" FromNode="5" ToNode="7" FromLabel="Grass" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="4#O#0" ToPort="7#I#1" FromNode="4" ToNode="7" FromLabel="Grass" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="0#O#0" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="1#I#0" FromNode="3" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="1#I#0" FromNode="2" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="9#I#0" FromNode="1" ToNode="9" FromLabel="Output" ToLabel="Operation[0].Standard.Input" />
+		<Edge FromPort="9#O#0" ToPort="8#I#0" FromNode="9" ToNode="8" FromLabel="Operation[0].Standard.Output" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="8#O#0" ToPort="11#I#0" FromNode="8" ToNode="11" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="11#O#0" ToPort="12#I#0" FromNode="11" ToNode="12" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="12#O#0" ToPort="13#I#0" FromNode="12" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="7#I#1" FromNode="13" ToNode="7" FromLabel="Output" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="10#O#0" ToPort="14#I#0" FromNode="10" ToNode="14" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="14#O#0" ToPort="7#I#0" FromNode="14" ToNode="7" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+	</Edges>
+</Graph>

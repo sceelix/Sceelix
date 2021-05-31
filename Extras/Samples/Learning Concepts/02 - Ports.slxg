@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="d09f9222-a9b1-4b62-b231-7dc99d58df73" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="824a4656-b5aa-42b3-af57-ca49e3b6ba7d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="156.1878 460.4829" Label="4. Other nodes will only be &#xA;    executed if they have data &#xA;    in ALL its inputs." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="58165584-66e6-402a-9e53-77c170ec9f3d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="449.4993 925.0612" Label="5. Inputs can be of 2 natures: &#xA;SINGLE or COLLECTIVE." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="85c37a68-14c6-4d42-8200-14de333aa7cf" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="148.0168 1189.135" Label="6. Single nodes are the most common.&#xA;    For each data element that is queued &#xA;    in it, the node is executed once." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="fd050e0c-7b60-45c1-bb7f-75745855a1e4" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="405.6173 274.4365" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cylinder">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="1" Label="Radius" />
+								<Field FixedValue="10" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6567ca68-ba6f-4fe9-87d2-f6e71cc8cf58" NodeType="SystemNode" NodeTypeGUID="3f477acc-ff16-4ceb-9f54-0b1404dc149b" Position="764.927 1073.862" ProcedureType="CollectionProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Count">
+							<Fields>
+								<Field FixedValue="" Label="Index" />
+								<Field FixedValue="" Label="Count" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1e31436b-9d71-45d5-9ffd-5739475ec74e" NodeType="SystemNode" NodeTypeGUID="fe4221f3-991c-4161-bbae-58f5a60f8d42" Position="179.6564 272.4416" ProcedureType="PathCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Grid">
+							<Fields>
+								<Field FixedValue="3" Label="Number of Columns" />
+								<Field FixedValue="3" Label="Number of Rows" />
+								<Field FixedValue="1" Label="Column Width" />
+								<Field FixedValue="1" Label="Row Height" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="60ac5784-d0da-43f4-b96f-dec60257c8f4" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="660.1641 1178.953" Label="7. Collective nodes will consume all&#xA;    elements at once, and execute &#xA;    only once. Useful to merge data &#xA;    or perform operations on sets of data." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="f9b42e58-5518-43fc-95dc-57637b423edc" NodeType="SystemNode" NodeTypeGUID="c29f89c9-5215-49cb-8270-663b2cbd4cd3" Position="310.6497 1077.456" ProcedureType="PropertyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Entity">
+							<Fields>
+								<Field FixedValue="" Label="Attributes" />
+								<Field FixedValue="" Label="Hash Code" />
+								<Field FixedValue="" Label="Type" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="55581091-bc6a-4cac-88f3-544361a7a44f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="170.5926 -175.3134" Label="1. Input and Outputs are the way for nodes to pass data between each other." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="5c557554-bcce-48fd-92cf-350b6f00dbaa" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="175.9994 -3.000488" Label="2. The most common type of nodes receives&#xA;     data in its inputs and reads, modifies, or &#xA;     transforms it, returning it through the &#xA;     output ports." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="15ad9b71-9969-4b1f-9b80-e65166d23066" NodeType="SystemNode" NodeTypeGUID="2dbcc442-f71a-43af-a11a-ece62ff48f81" Position="768.4981 39.50031" ProcedureType="SurfacePlaceProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field Expanded="True" Label="Sample Location">
+									<Fields>
+										<Field FixedValue="0,0,0" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="91a54800-4a5a-40d9-922b-7c8a459fb2aa" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="716.2493 249.914" Label="3. Nodes without inputs are&#xA;    called SOURCE nodes and&#xA;    are always executed once." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ab35145c-608c-4bbd-849b-5bfa37753db4" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="556.3747 502.7529" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Count" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e5b86304-89ed-47a4-b427-036b9068d5af" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="470.8726 754.7529" Label="(Will be executed)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="fb8669b7-86c6-4f19-872e-f15684072045" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="778.9415 495.3549" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Count" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="91304d12-19a9-475d-990e-bb947360c897" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="767.0338 751.0401" Label="(Will NOT be executed)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="3edfae91-5021-4f6f-ac39-8701beda6296" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="136.5954 1506.814" Label="8 . Finally: The result of a graph is &#xA;     the sum of all data coming from&#xA;    unconnected ports of the graph:" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="fbd3c804-eb03-4f8c-9dc6-90b577dda0ae" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="749.4195 1450.232" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="11" Label="Horizontal Segments" />
+								<Field FixedValue="5" Label="Radius" />
+								<Field FixedValue="11" Label="Vertical Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3f180b20-5ddb-46d2-a05d-6f9e91bdf910" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="763.0193 1564.323" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="X" Label="Axis" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.5" Label="Size" />
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="False" Label="Flexible" />
+								<Field FixedValue="True" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.5" Label="Size" />
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="False" Label="Flexible" />
+								<Field FixedValue="True" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="cf0919d8-bc88-4092-ae2f-bb1b88f387c0" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="606.2433 1814.71" Label="(Try executing the graph to see the result!)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="80ca1d31-1621-4e25-8847-2b47ee3ae46b" NodeType="SystemNode" NodeTypeGUID="50c9a7c0-6f52-470d-8bb7-2c8b663c94b8" Position="869.3911 643.1343" ProcedureType="CopyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Relation">
+							<Fields>
+								<Field Expanded="True" Label="Channels">
+									<Items>
+										<Item Expanded="True" Label="Channel">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Channel">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="Clone" Label="Method" />
+								<Field Expanded="True" Label="Type">
+									<Items>
+										<Item Expanded="True" Label="Clamp">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="10" Label="Number of Copies" />
+								<Field FixedValue="Clone" Label="Method" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="f646f8bc-c78d-4612-a143-29cd8f76314e" NodeType="SystemNode" NodeTypeGUID="50c9a7c0-6f52-470d-8bb7-2c8b663c94b8" Position="577.1289 633.9259" ProcedureType="CopyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Number of Copies" />
+								<Field FixedValue="Clone" Label="Method" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Relation">
+							<Fields>
+								<Field Expanded="True" Label="Channels">
+									<Items>
+										<Item Expanded="True" Label="Channel">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Channel">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="Clone" Label="Method" />
+								<Field Expanded="True" Label="Type">
+									<Items>
+										<Item Expanded="True" Label="Clamp">
+											<Fields />
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6b6ee6f5-8cf3-4a5d-8be5-34112211a14f" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="992.1454 1699.092" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="5,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a148705b-1fbc-4c20-8d80-0bc4e39abdbd" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="630.7462 1716.195" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="-5,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="17#O#0" ToPort="18#I#0" FromNode="17" ToNode="18" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="14#O#0" ToPort="20#I#0" FromNode="14" ToNode="20" FromLabel="Entities" ToLabel="Operation[0].Relation.Channels[0].Channel.Input" />
+		<Edge FromPort="12#O#0" ToPort="21#I#0" FromNode="12" ToNode="21" FromLabel="Entities" ToLabel="Operation[0].Standard.Input" />
+		<Edge FromPort="18#O#1" ToPort="22#I#0" FromNode="18" ToNode="22" FromLabel="Slices[1].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="18#O#0" ToPort="23#I#0" FromNode="18" ToNode="23" FromLabel="Slices[0].Slice.Output" ToLabel="Input" />
+	</Edges>
+</Graph>

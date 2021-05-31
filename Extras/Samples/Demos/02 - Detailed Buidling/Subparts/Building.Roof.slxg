@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="b41b134a-fe6c-4a38-8f66-798eb4874ec8" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters>
+		<Parameter Increment="0.1" DecimalDigits="2" Label="Height" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="3" />
+		<Parameter Increment="0.1" DecimalDigits="2" Label="Scale" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="1" />
+	</Parameters>
+	<Nodes>
+		<Node Guid="1d2a067d-12f4-496f-a339-a50097868199" NodeType="ComponentNode" NodeTypeGUID="3039dded-0615-4789-8562-e61766deac11" Position="-527.3895 458.0829" RelativePath="Utils/Mesh Material and UV.slxg">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Demos/02 - Detailed Buidling/Textures/Roof01.jpg" Guid="24d6f2a7-e70b-4f4d-b34f-8631dd78f33e" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="3" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="3" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="fa64ba18-20c0-4bf5-8921-10bc02c8abfe" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="-390.0538 312.0214" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Pyramidize">
+							<Fields>
+								<Field FixedValue="1" Label="Height" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Height" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3979dad7-d0b3-472a-93ba-8ab52a50ff36" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="-322.0769 103.5229" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="1,1,1" Label="Amount" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="Vector3" Type="DirectFunctionExpressionNode">
+							<ExprNode Name="Scale" Type="ParameterExpressionNode" />
+							<ExprNode Name="Scale" Type="ParameterExpressionNode" />
+							<ExprNode Name="Scale" Type="ParameterExpressionNode" />
+						</ExprNode>
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="Additive" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="1#I#0" FromNode="2" ToNode="1" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

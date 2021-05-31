@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="cdffe063-a4b6-4ec4-bd45-f856eb9d32f7" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="b3aba07a-5b00-4abc-b37f-dea551117647" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="274.2386 700.8351" HasImpulsePort="True" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="5" Label="Horizontal Segments" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="impulseIndex" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">2</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="1" Label="Radius" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="impulseIndex" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">1</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="5" Label="Vertical Segments" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="+" Type="BinaryExpressionNode">
+											<ExprNode Name="impulseIndex" Type="AttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">2</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="dd5ec89c-42f1-4dcc-9118-d98285f82dd7" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="272.8168 572.645" ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="10" Label="Count" />
+								<Field FixedValue="impulseIndex" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="702de281-4715-4c31-a028-c6d113e101eb" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="186.2109 -174.6486" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cylinder">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="1" Label="Radius" />
+								<Field FixedValue="5" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6e5f8e08-a359-4b18-bd64-a87d5d270824" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-217.0607 -198.9835" Label="1. Source Nodes like this one&#xA;    are only executed once per &#xA;    graph execution." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="4d73f7cc-fa35-44c9-81a7-13edef8a48ae" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-19.29585 25.64822" Label="2. What if we would like run such a node &#xA;    several times using different parameters?" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="045d043d-84d2-449c-9565-a35d62a45dd3" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="-86.44293 240.3063" HasImpulsePort="True" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cylinder">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="1" Label="Radius" />
+								<Field FixedValue="5" Label="Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="03da5376-f4a2-4460-8938-9d89808927a4" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="133.767 172.6021" Label="3. If you select such nodes,&#xA;    you'll see that they feature&#xA;    an option called &quot;Impulse&quot;&#xA;    that will make an input port&#xA;    appear." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="03d3eac4-ac5f-4e9d-a1c6-5b092e0d79c8" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-245.6635 431.2779" Label="4. Entities that comes into these inputs are discarded, but not without &#xA;    triggering the node first and passing on their attributes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="63edb101-6b7e-493e-98ac-7e1d4284581a" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-166.1689 642.9286" Label="5. In this example, empty&#xA;    entities are created (with &#xA;    an index attribute) to trigger&#xA;    the &quot;Mesh Create&quot; Node &#xA;    10 times, creating 10 spheres&#xA;    with different properties." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e00bee02-6291-4873-b905-7c680ae4849e" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="180.4051 954.1139" Label="(Try running the sample to see!)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="d63ef6ab-a1c8-4f57-91d9-6de456cc5e85" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="304.3221 825.1137" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="*" Type="BinaryExpressionNode">
+													<ExprNode Name="-" Type="UnaryExpressionNode">
+														<ExprNode Name="impulseIndex" Type="AttributeExpressionNode" AllowNull="False" />
+													</ExprNode>
+													<ExprNode Name="Int32" Type="ConstantExpressionNode">2</ExprNode>
+												</ExprNode>
+												<ExprNode Name="impulseIndex" Type="AttributeExpressionNode" AllowNull="False" />
+											</ExprNode>
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+											<ExprNode Name="Int32" Type="ConstantExpressionNode">0</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="0#I#0" FromNode="1" ToNode="0" FromLabel="Entities" ToLabel="Impulse Port 1" />
+		<Edge FromPort="0#O#0" ToPort="10#I#0" FromNode="0" ToNode="10" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>
