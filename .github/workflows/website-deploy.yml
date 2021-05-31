@@ -3,8 +3,6 @@ name: Website deploy with docusaurus
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
