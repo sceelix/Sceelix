@@ -270,7 +270,7 @@
     <EmbeddedResource Include="Resources\Question_24x24.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\..\Support\Packaged\Samples.zip">
+    <Content Include="..\..\Extras\Samples.zip">
       <Link>Content\Samples.zip</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
