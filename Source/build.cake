@@ -9,22 +9,6 @@ var configuration = Argument("configuration", "Release");
 var platform = Argument("platform", "Windows64");
 
 ///////////////////////////////////////////////////////////////////////////////
-// SETUP / TEARDOWN
-///////////////////////////////////////////////////////////////////////////////
-
-Setup(ctx =>
-{
-	// Executed BEFORE the first task.
-	Information("Running tasks...");
-});
-
-Teardown(ctx =>
-{
-	// Executed AFTER the last task.
-	Information("Finished running tasks.");
-});
-
-///////////////////////////////////////////////////////////////////////////////
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -56,7 +40,6 @@ Task("Build")
 		.SetVerbosity(Verbosity.Minimal)
 		.WithProperty("Platform", platform)
 		);
-
 });
 
 Task("ZipSamples")
@@ -70,7 +53,9 @@ Task("ZipAPI")
 	Zip("../Extras", "../Extras/API.zip", files);
 });
 
-
+Task("Setup")
+.IsDependentOn("ZipSamples")
+.IsDependentOn("ZipAPI");
 
 Task("Test")
 .IsDependentOn("Build")
