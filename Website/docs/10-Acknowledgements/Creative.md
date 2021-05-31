@@ -13,6 +13,9 @@ Several [Icons](http://www.axialis.com/free/icons) by the [Axialis Team](http://
 ## Samples
 
 Contains assets from https://www.CC0Textures.com, licensed under CC0 1.0 Universal.
+
 Contains textures from https://www.sharetextures.com, licensed as  CC0.
+
 Contains textures from https://texturehaven.com/, licensed as CC0.
-Card textures by Byron Knoll (http://code.google.com/p/vector-playing-cards) downloaded from https://opengameart.org/content/playing-cards-vector-png.
+
+Card textures by [Byron Knoll](http://code.google.com/p/vector-playing-cards), downloaded from [Open Game Art](https://opengameart.org/content/playing-cards-vector-png).
