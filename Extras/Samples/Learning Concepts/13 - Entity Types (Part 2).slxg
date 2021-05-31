@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="495979b7-1525-4cdf-9532-df728512fc77" Author="pedro_000" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="62db2ce9-0066-4272-981e-d7f95d114d3d" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="385.9644 -39.99658" Label="Entity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="83fe30e9-2b13-45ed-84e2-07c58bddfa01" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="389.4418 859.3348" Label="Mesh" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="911a40be-a813-4c6d-a8bf-b4b49a0f3af9" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="1360.68 -31.06122" Label="Surface" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="407812cd-ede5-4ec9-8b13-2bb3516df7c1" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="1357.077 406.41" Label="Path" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ea1d5514-eee9-44fb-bb91-ce76fec93d46" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="1346.02 815.6008" Label="Prop" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a2c6f360-3900-48a1-abf4-df34c95957f4" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="1343.133 593.8303" Label="Unity&#xA;Entity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e207dfb0-59a5-4073-9b9f-7561b5de6696" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="1353.664 149.9124" Label="Billboard" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="3797ab86-b823-4a7d-bc7e-36bc87d9abe0" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="365.4142 1029" Label="  Mesh &#xA;Instance" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="19f975ea-07f3-4356-94ec-efbc0ad31d02" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="376.3018 669.1253" Label="Subentity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6a7f6960-3c8d-4385-a8cc-89e3eb1656d0" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="392.5948 489.0314" Label="Actor&#xA;Group" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="dc422f03-e22f-49d5-9c3f-80e74f4da09c" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="561.1887 -75.08887" Label="- Superclass of all entities.&#xA;- Useful to carry attributes and trigger impulse ports&#xA;  (all entities can do this, of course)&#xA;- Does not have a visual representation" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="efe11fbb-c80c-42cf-9d90-0e8cab91fcf9" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="386.5662 308.9574" Label="Actor" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="fd4d5251-29a0-48d9-b734-e6625d611105" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="554.2043 307.0713" Label="- Superclass of all 3D data.&#xA;- Has a 3D scope, which defines a position, orientation&#xA;   and size in space" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="49af4dee-84ee-447e-ac37-d0b93de7b3cd" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="389.2242 138.3339" Label="Group" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items />
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="b81195c3-997f-43fe-9dc2-7c37897fc81b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="564.3801 141.389" Label="- Groups any kind of entities.&#xA;- Useful to organize entities before passing them to&#xA;  subgraphs" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="391c6691-f382-48e6-8377-bf3e838afb70" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="560.6181 667.8188" Label="- Entities that are, in fact, inside of other entities &#xA;  (e.g.Mesh faces, Path vertices)&#xA;- Useful to set custom attributes" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="516fa038-0a77-4e62-94f1-c75a418fb719" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="558.5674 489.2521" Label="- Groups any kind of actors.&#xA;- Useful to organize actors and perform transformations&#xA;  based on a common scope" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="08ec5b90-c3de-4f2f-a0f4-10d2c90bff50" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="564.0614 855.2874" Label="- Set of polygonal faces, connected by vertices&#xA;- The main entity to where standard 3D modeling is&#xA;  performed." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="355f3ab1-7817-41e1-82b4-7d9f76c6e840" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="561.5714 1035.731" Label="- A reference to a mesh, but that has a distinct translation,&#xA;  rotation or scale.&#xA;- Used to create multiple copies of the same 3d model, but&#xA;  in a more CPU and GPU performant way." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="a39da246-a922-40b1-9591-c3c16ea8ca5f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1547.291 -50.16586" Label="- A grid-based polygonal mesh, optimized for terrain &#xA;  generation" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="7694f9d7-71e0-4afc-b8fa-dcc819565657" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1551.761 140.6062" Label="- An image with a 3D positioning  which walways faces &#xA;  the camera.&#xA;- Useful for creating grass, trees and other objects at&#xA;  distances where geometric detail is not important, but&#xA;  a sheer number of instances is" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c3b63ed6-8d40-4005-aa8a-126fc1ab8f0e" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1539.691 382.4016" Label="- Line-based entity, connected by vertices&#xA;- Used to describe ways, paths, roads, etc. before they&#xA;  are transformed into meshes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c85ddad1-2b24-411a-aee4-f4561e386ae2" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1533.908 593.8881" Label="- A component-based entity with properties and behaviors&#xA;  for use inside Unity-based games&#xA;- When created in the Sceelix Desifner, they are &#xA;  automatically sent to a connected Unity Editor" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="835563eb-f837-43b7-ad85-f9bf3a18a140" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="1542.372 807.6055" Label="- An object that has a visual representation, useful to&#xA;  set up an environment in the Sceelix Designer only" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges />
+</Graph>

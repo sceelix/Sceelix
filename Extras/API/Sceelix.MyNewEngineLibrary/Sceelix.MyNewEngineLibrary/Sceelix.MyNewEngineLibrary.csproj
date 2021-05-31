@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFDAF78B-8EA9-44F3-829C-3DB7034FE53A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sceelix.MyNewEngineLibrary</RootNamespace>
+    <AssemblyName>Sceelix.MyNewEngineLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Build\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\..\..\Build\Bin\Sceelix.MyNewEngineLibrary.XML</DocumentationFile>
+    <NoWarn>1591,1572,1571,1573,1587,1570</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Sceelix">
+      <HintPath>..\..\..\Build\Bin\Sceelix.dll</HintPath>
+    </Reference>
+    <Reference Include="Sceelix.Actors, Version=0.8.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Build\Bin\Sceelix.Actors.dll</HintPath>
+    </Reference>
+    <Reference Include="Sceelix.Core">
+      <HintPath>..\..\..\Build\Bin\Sceelix.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Sceelix.Mathematics, Version=0.8.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Build\Bin\Sceelix.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Sceelix.Meshes, Version=0.8.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Build\Bin\Sceelix.Meshes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sceelix.Paths, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Build\Bin\Sceelix.Paths.dll</HintPath>
+    </Reference>
+    <Reference Include="Sceelix.Surfaces, Version=0.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Build\Bin\Sceelix.Surfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01 - Hello World\HelloWorldProcedure.cs" />
+    <Compile Include="02 - Hello IO\HelloIOProcedure.cs" />
+    <Compile Include="03 - Hello Parameters\HelloParametersProcedure.cs" />
+    <Compile Include="04 - Hello More Parameters\HelloMoreParametersProcedure.cs" />
+    <Compile Include="05 - Hello Attributes\HelloAttributesProcedure.cs" />
+    <Compile Include="06 - Hello New Entity\XMLEntityLoadProcedure.cs" />
+    <Compile Include="06 - Hello New Entity\XMLEntityMergeProcedure.cs" />
+    <Compile Include="06 - Hello New Entity\XMLEntity.cs" />
+    <Compile Include="07 - Hello Functions and Types\HelloFunctions.cs" />
+    <Compile Include="07 - Hello Functions and Types\SimpleType.cs" />
+    <Compile Include="08 - Hello Updates\MyObsoleteProcedure.cs" />
+    <Compile Include="09 - Hello Sceelix Entities\ActorOnSurfaceProcedure.cs" />
+    <Compile Include="09 - Hello Sceelix Entities\MeshToPathExampleProcedure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMeFirst.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

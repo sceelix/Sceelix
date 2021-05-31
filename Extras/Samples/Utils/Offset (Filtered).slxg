@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="70988f3d-3c30-47c0-bf03-f65c9e63afe9" Author="Sceelix" Description="Performs an offset, followed by a subselection into top and side faces, a commonly used combination." Color="ffffff" Category="Compound Utils" Version="1.0.0.0">
+	<Parameters>
+		<Parameter Increment="0.1" DecimalDigits="2" Label="Amount" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="-1" />
+		<Parameter MaxSize="1" Expanded="True" Label="Separate" Type="Sceelix.Core.Parameters.Infos.OptionalListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="if true, each one of the faces of the mesh will be placed into a separate mesh entity." Section="">
+			<ParameterModels>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Separate" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Separation options." Section="">
+					<Fields>
+						<Field Label="Attributes" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines what the attributes of the individual meshes should be:&#xD;&#xA;if they should take the attributes of the parent, use the ones of the face&#xD;&#xA;or mix both." Section="" FixedValue="Parent and Face">
+							<Choices>
+								<Choice>Parent</Choice>
+								<Choice>Face</Choice>
+								<Choice>Parent and Face</Choice>
+							</Choices>
+						</Field>
+						<Field Label="Scope" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines how the 3D Scope of the individual meshes should be:&#xD;&#xA;if they should inherit from the parent mesh or assume new ones, adjusted&#xD;&#xA;to the orientation of the face." Section="" FixedValue="Parent">
+							<Choices>
+								<Choice>Parent</Choice>
+								<Choice>Derived</Choice>
+								<Choice>Face</Choice>
+							</Choices>
+						</Field>
+					</Fields>
+				</ParameterModel>
+			</ParameterModels>
+			<Items />
+		</Parameter>
+	</Parameters>
+	<Nodes>
+		<Node Guid="2bfc67cf-62d4-4147-90eb-e9d43e97578a" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="103 67" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="10" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8c32b814-b835-49e6-a9f4-4ad11f02bb4f" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="104.5727 230.5944" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Offset (Advanced)">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Amount" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="Sharp" Label="Style" />
+								<Field FixedValue="True" Label="Keep Original" />
+								<Field FixedValue="section" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Offset">
+							<Fields>
+								<Field FixedValue="-0.8" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Amount" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="section" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e4ee09c1-759e-480d-a469-31950e611f10" NodeType="SystemNode" NodeTypeGUID="827e1ac6-ff43-4c26-b6d0-4e64b0c26d46" Position="105.9752 367.0216" ProcedureType="MeshSubselectProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Mesh Selection">
+					<Items>
+						<Item Expanded="True" Label="Custom">
+							<Fields>
+								<Field FixedValue="True" Label="Condition" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="==" Type="BinaryExpressionNode">
+											<ExprNode Name="section" Type="InternalAttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="String" Type="StringExpressionNode">Inside</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Separate">
+									<Items>
+										<Item Expanded="True" Label="Separate">
+											<Fields>
+												<Field FixedValue="Parent and Face" Label="Attributes" />
+												<Field FixedValue="Parent" Label="Scope" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="All">
+							<Fields>
+								<Field Expanded="True" Label="Separate" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Separate" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="0" state="Gate" GateLabel="Inside" />
+				<Port id="1" state="Gate" GateLabel="Outside" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="56981344-1bde-470d-8d89-538266817ccb" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="5.328171 513.8081" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8da2bbf6-6e20-439e-8a24-dc1bf6912cee" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="257.0984 523.2688" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,221,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Mesh Selection[0].Custom.Output" ToLabel="Input" />
+		<Edge FromPort="2#O#1" ToPort="4#I#0" FromNode="2" ToNode="4" FromLabel="Mesh Selection[1].All.Output" ToLabel="Input" />
+	</Edges>
+</Graph>

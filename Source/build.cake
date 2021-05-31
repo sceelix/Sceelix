@@ -9,22 +9,6 @@ var configuration = Argument("configuration", "Release");
 var platform = Argument("platform", "Windows64");
 
 ///////////////////////////////////////////////////////////////////////////////
-// SETUP / TEARDOWN
-///////////////////////////////////////////////////////////////////////////////
-
-Setup(ctx =>
-{
-	// Executed BEFORE the first task.
-	Information("Running tasks...");
-});
-
-Teardown(ctx =>
-{
-	// Executed AFTER the last task.
-	Information("Finished running tasks.");
-});
-
-///////////////////////////////////////////////////////////////////////////////
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -56,13 +40,26 @@ Task("Build")
 		.SetVerbosity(Verbosity.Minimal)
 		.WithProperty("Platform", platform)
 		);
-
 });
+
+Task("ZipSamples")
+.Does(() => {	
+	Zip("../Extras", "../Extras/Samples.zip", GetFiles("../Extras/Samples/**/*.*"));
+});
+
+Task("ZipAPI")
+.Does(() => {	
+	var files = GetFiles("../Extras/API/**/*.{sln|cs|zip|csproj}").Concat(GetFiles("../Extras/API/**/ReadMeFirst.txt"));
+	Zip("../Extras", "../Extras/API.zip", files);
+});
+
+Task("Setup")
+.IsDependentOn("ZipSamples")
+.IsDependentOn("ZipAPI");
 
 Task("Test")
 .IsDependentOn("Build")
 .Does(() => {
-	//NUnit3($"./Sceelix.Points.Tests/bin/Release/net461/Sceelix.Points.Tests.dll");
 	NUnit3($"./*.Tests/bin/{configuration}/**/*Tests.dll");
 });
 

@@ -375,7 +375,7 @@
     <EmbeddedResource Include="Resources\Question_32x32.png" />
     <EmbeddedResource Include="Resources\Cancel_32x32.png" />
     <EmbeddedResource Include="Resources\Exclamation_32x32.png" />
-    <Content Include="..\..\..\Support\Packaged\API.zip">
+    <Content Include="..\..\Extras\API.zip">
       <Link>Content\API.zip</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="b95a5dff-9063-4b60-a566-f75ca3ef8b1d" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="811610ea-715a-49df-bdda-f22acc74e38b" NodeType="SystemNode" NodeTypeGUID="9470e48f-5ee8-4d84-a371-949f27786f0f" Position="311.9885 351.3244" ProcedureType="MeshUVMapProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Flip UV">
+							<Fields>
+								<Field FixedValue="False" Label="Flip U" />
+								<Field FixedValue="True" Label="Flip V" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6305bbf5-cfa8-4610-abbc-e0ba9b0f89b5" NodeType="SystemNode" NodeTypeGUID="9470e48f-5ee8-4d84-a371-949f27786f0f" Position="673.8416 489.1604" ProcedureType="MeshUVMapProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Flip UV">
+							<Fields>
+								<Field FixedValue="False" Label="Flip U" />
+								<Field FixedValue="True" Label="Flip V" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1db1849b-b9b3-48b0-aff8-f18cdf0b62b9" NodeType="SystemNode" NodeTypeGUID="a7a6544e-abff-44fe-9156-975fe0608718" Position="788.8442 338.9498" ProcedureType="ActorScopeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset Scope">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="440c899d-7bb8-4344-a382-419bec358c3c" NodeType="SystemNode" NodeTypeGUID="a7a6544e-abff-44fe-9156-975fe0608718" Position="271.4364 219.3094" Label="Reset Scopes" ProcedureType="ActorScopeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset Scope">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b6f03738-8b0c-4acf-8714-1f7de2e185f0" NodeType="SystemNode" NodeTypeGUID="3b9b4a33-8538-4760-85b1-b5e58e6aa148" Position="226.1757 -38.75944" Label="Car Collection" ProcedureType="MeshLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/04 - Parking Lot/Cars Models/CarCollection.obj" Guid="ce0f5095-fc72-4d30-8e2c-1720763380a0" Label="File Name" />
+				<Argument FixedValue="False" Label="Rotate Axis" />
+				<Argument FixedValue="True" Label="Flip Faces" />
+				<Argument FixedValue="False" Label="Flip Texture" />
+				<Argument FixedValue="True" Label="Load Materials" />
+				<Argument FixedValue="False" Label="Reset Absolute Paths" />
+				<Argument FixedValue="" Label="Texture Folder" />
+				<Argument FixedValue="car" Label="Name" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="880efade-e753-4b2c-9242-bdc7fb47e902" NodeType="SystemNode" NodeTypeGUID="3b9b4a33-8538-4760-85b1-b5e58e6aa148" Position="536.6407 -193.4644" Label="Blue Car" ProcedureType="MeshLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/04 - Parking Lot/Cars Models/CarBlue.obj" Guid="71f5f5e4-4d1f-44b1-85c7-3a76555f36cd" Label="File Name" />
+				<Argument FixedValue="False" Label="Rotate Axis" />
+				<Argument FixedValue="True" Label="Flip Faces" />
+				<Argument FixedValue="False" Label="Flip Texture" />
+				<Argument FixedValue="True" Label="Load Materials" />
+				<Argument FixedValue="False" Label="Reset Absolute Paths" />
+				<Argument FixedValue="" Label="Texture Folder" />
+				<Argument FixedValue="" Label="Name" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="061b61a6-0d6c-4348-bc7e-ca998dd57674" NodeType="SystemNode" NodeTypeGUID="3b9b4a33-8538-4760-85b1-b5e58e6aa148" Position="746.5978 -200.705" Label="Red Car" ProcedureType="MeshLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/04 - Parking Lot/Cars Models/CarRed.obj" Guid="695b238b-99e1-4051-b704-77a1c4232786" Label="File Name" />
+				<Argument FixedValue="False" Label="Rotate Axis" />
+				<Argument FixedValue="True" Label="Flip Faces" />
+				<Argument FixedValue="False" Label="Flip Texture" />
+				<Argument FixedValue="True" Label="Load Materials" />
+				<Argument FixedValue="False" Label="Reset Absolute Paths" />
+				<Argument FixedValue="" Label="Texture Folder" />
+				<Argument FixedValue="" Label="Name" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8f03f1f2-61d4-4f4d-9e77-3d999a0f0c35" NodeType="SystemNode" NodeTypeGUID="3b9b4a33-8538-4760-85b1-b5e58e6aa148" Position="966.7369 -184.5734" Label="Yellow Car" ProcedureType="MeshLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/04 - Parking Lot/Cars Models/CarYellow.obj" Guid="556d45db-2142-48b0-bbe3-91a743f55ff9" Label="File Name" />
+				<Argument FixedValue="False" Label="Rotate Axis" />
+				<Argument FixedValue="True" Label="Flip Faces" />
+				<Argument FixedValue="False" Label="Flip Texture" />
+				<Argument FixedValue="True" Label="Load Materials" />
+				<Argument FixedValue="False" Label="Reset Absolute Paths" />
+				<Argument FixedValue="" Label="Texture Folder" />
+				<Argument FixedValue="" Label="Name" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="57cec6a1-645d-43bf-b164-2a6a5894a94d" NodeType="SystemNode" NodeTypeGUID="3b9b4a33-8538-4760-85b1-b5e58e6aa148" Position="1171.151 -198.4899" Label="Green Car" ProcedureType="MeshLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="Demos/04 - Parking Lot/Cars Models/kia rio.obj" Guid="169e7d04-51cc-434e-a344-9910ada78eec" Label="File Name" />
+				<Argument FixedValue="True" Label="Rotate Axis" />
+				<Argument FixedValue="True" Label="Flip Faces" />
+				<Argument FixedValue="False" Label="Flip Texture" />
+				<Argument FixedValue="True" Label="Load Materials" />
+				<Argument FixedValue="False" Label="Reset Absolute Paths" />
+				<Argument FixedValue="" Label="Texture Folder" />
+				<Argument FixedValue="" Label="Name" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6c06f995-f196-4553-9439-aed143552ac3" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="517.9617 -48.15009" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="889b5307-58a3-4d5c-8b0d-0c1c4b661a6c" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="725.0665 -48.02045" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8208c89d-6202-409a-bc6f-07d76ab454e0" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="958.3822 -47.90866" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ee6ecb5d-df61-4322-ae75-8eb8d64d8c02" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="1162.981 -46.91711" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f6a0a238-edb9-431f-859f-89308be6617f" NodeType="SystemNode" NodeTypeGUID="8906cb79-297a-40a5-8e36-b5f12ddbb847" Position="836.5563 179.2933" ProcedureType="ActorRotateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate">
+							<Fields>
+								<Field FixedValue="90" Label="Angle" />
+								<Field Expanded="True" Label="Axis">
+									<Fields>
+										<Field FixedValue="0,0,1" Label="Direction" />
+										<Field FixedValue="World" Label="Relative To" />
+									</Fields>
+								</Field>
+								<Field Expanded="False" Label="Pivot">
+									<Fields>
+										<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="505e9607-5c91-4b12-9e78-85efd77edd45" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="393.9115 491.7053" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="0.01,0.01,0.01" Label="Amount" />
+				<Argument FixedValue="Relative" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="089f56ab-9cea-4cbb-a96d-0fd3f81671ac" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="519.6395 682.3607" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="Center" Label="X" />
+								<Field FixedValue="Center" Label="Y" />
+								<Field FixedValue="Minimum" Label="Z" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="0,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Cars" />
+			</OutputPorts>
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="1#I#0" FromNode="2" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="0#I#0" FromNode="3" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="3#I#0" FromNode="4" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="9#I#0" FromNode="5" ToNode="9" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="6#O#0" ToPort="10#I#0" FromNode="6" ToNode="10" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="7#O#0" ToPort="11#I#0" FromNode="7" ToNode="11" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="8#O#0" ToPort="12#I#0" FromNode="8" ToNode="12" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="9#O#0" ToPort="13#I#0" FromNode="9" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="10#O#0" ToPort="13#I#0" FromNode="10" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="11#O#0" ToPort="13#I#0" FromNode="11" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="12#O#0" ToPort="13#I#0" FromNode="12" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="2#I#0" FromNode="13" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="14#I#0" FromNode="0" ToNode="14" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="14#O#0" ToPort="15#I#0" FromNode="14" ToNode="15" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="15#I#0" FromNode="1" ToNode="15" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

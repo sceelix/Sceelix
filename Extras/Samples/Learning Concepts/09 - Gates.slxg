@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="b772fb4c-6ecf-4a93-8061-2c9df55a7c00" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters>
+		<Parameter Increment="0.1" DecimalDigits="2" Label="Offset Amount" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="-0.1" />
+	</Parameters>
+	<Nodes>
+		<Node Guid="37050220-f3e9-4110-bbef-a603849de59f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="75.58514 -525.6031" Label="1. This is a graph that shows GATES work.&#xA;    (Used together with the previous tutorial)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6e057a7f-32e8-4646-bcc8-5d093663e650" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="152.2023 225.2912" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Rectangle">
+							<Fields>
+								<Field FixedValue="2.5" Label="Width" />
+								<Field FixedValue="2" Label="Height" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="9742978d-41c9-4069-a993-f1b889fb6bcf" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="250.1427 490.6579" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Offset">
+							<Fields>
+								<Field FixedValue="-0.1" Label="Amount" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="OffsetAmount" Type="ParameterExpressionNode" />
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="myLocalAttribute" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ed6a15d9-ed19-469f-88b7-8235fe7d2c9e" NodeType="SystemNode" NodeTypeGUID="827e1ac6-ff43-4c26-b6d0-4e64b0c26d46" Position="277.3538 617.0525" ProcedureType="MeshSubselectProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Mesh Selection">
+					<Items>
+						<Item Expanded="True" Label="Custom">
+							<Fields>
+								<Field FixedValue="True" Label="Condition" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="==" Type="BinaryExpressionNode">
+											<ExprNode Name="myLocalAttribute" Type="InternalAttributeExpressionNode" AllowNull="False" />
+											<ExprNode Name="String" Type="StringExpressionNode">Inside</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="All">
+							<Fields>
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="0" state="Gate" GateLabel="Glass" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="e8f75c08-7ff1-4cf6-ae3c-0ad4a0303024" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="425.2884 752.9574" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="0.1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="MyGlobalAttribute" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Frame" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="2be8248b-e7b7-49c0-ad42-c78e40ad6110" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="473.079 422.4253" Label="5. When this graph is encapsulated&#xA;    the data that arrives at this port&#xA;    is replaced by the data sent by&#xA;    the supergraph." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="78c0ae4e-d2b3-43f5-9fb8-3d57b6582e23" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-63.768 -378.3868" Label="2. Terminology: When a graph 'A' (like this one) is used inside a graph&#xA;     'B' (like the previous one), we say that 'A' is a SUBGRAPH of 'B' and&#xA;     'B' is a SUPERGRAPH of 'A'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6d14361f-a6c8-45c9-9aa5-2e6a9e7484f9" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-43.98469 -127.3165" Label="3. You can make into a port by &#xA;    selecting it and choosing &quot;Gate&quot;&#xA;    as the state. You can also Alt +&#xA;    mouse click it twice." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="50f152b2-4e53-4d0b-ab41-cdc5794e97b9" NodeType="SystemNode" NodeTypeGUID="c29f89c9-5215-49cb-8270-663b2cbd4cd3" Position="394.7282 -80.42572" ProcedureType="PropertyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Entity">
+							<Fields>
+								<Field FixedValue="" Label="Attributes" />
+								<Field FixedValue="" Label="Hash Code" />
+								<Field FixedValue="" Label="Type" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Mesh">
+							<Fields>
+								<Field FixedValue="" Label="Area" />
+								<Field FixedValue="" Label="Axis Sizes" />
+								<Field FixedValue="" Label="Centroid" />
+								<Field FixedValue="" Label="Edges" />
+								<Field FixedValue="" Label="Face Count" />
+								<Field FixedValue="" Label="Is Convex?" />
+								<Field FixedValue="" Label="Is Self-Intersecting?" />
+								<Field FixedValue="" Label="Perimeter" />
+								<Field FixedValue="" Label="Bounding Rectangle" />
+								<Field FixedValue="" Label="Vertex Count" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input1" />
+			</InputPorts>
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output2" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="fd194dfc-364d-478e-8de6-5347d1e48d8a" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-157.0221 654.3567" Label="6. The gate name is important&#xA;    to make a distinction between&#xA;    ports. If 2 ports of the same &#xA;    nature (input/output) and the&#xA;    same entity type have the same&#xA;    name, the ports will be joined." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="f5bec3c3-4704-478e-b75a-c3e51c426b7c" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="555.7861 -6.294006" Label="4. Gates become Ports in the supergraph.&#xA;    Gates have a distinct double border&#xA;    appearance in the subgraph." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="10dd3526-4db4-4e76-bb3a-1a3e3d391dcc" NodeType="SystemNode" NodeTypeGUID="8906cb79-297a-40a5-8e36-b5f12ddbb847" Position="186.2984 353.2708" DisableInSubgraphs="True" ProcedureType="ActorRotateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate">
+							<Fields>
+								<Field FixedValue="90" Label="Angle" />
+								<Field Expanded="True" Label="Axis">
+									<Fields>
+										<Field FixedValue="0,1,0" Label="Direction" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="Pivot">
+									<Fields>
+										<Field FixedValue="1,1,1" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+										<Field FixedValue="Scope" Label="Relative To" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="11#I#0" FromNode="1" ToNode="11" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="11#O#0" ToPort="2#I#0" FromNode="11" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="3#I#0" FromNode="2" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#1" ToPort="4#I#0" FromNode="3" ToNode="4" FromLabel="Mesh Selection[1].All.Output" ToLabel="Input" />
+	</Edges>
+</Graph>

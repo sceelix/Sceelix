@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="ea17e3d3-d23a-4550-9774-d567e5f60766" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="2407fdf0-0c4b-44c9-ace0-a43dc5cd1f96" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="383.0939 1350.017" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="Y" Label="Axis" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Repetitive Slice">
+							<Items>
+								<Item Expanded="True" Label="Slice">
+									<Fields>
+										<Field FixedValue="0.2" Label="Size" />
+										<Field FixedValue="Absolute" Label="Sizing" />
+										<Field FixedValue="True" Label="Flexible" />
+										<Field FixedValue="False" Label="Cap" />
+									</Fields>
+								</Item>
+								<Item Expanded="True" Label="Slice">
+									<Fields>
+										<Field FixedValue="0.2" Label="Size" />
+										<Field FixedValue="Absolute" Label="Sizing" />
+										<Field FixedValue="True" Label="Flexible" />
+										<Field FixedValue="False" Label="Cap" />
+									</Fields>
+								</Item>
+							</Items>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.2" Label="Size" />
+								<Field FixedValue="Absolute" Label="Sizing" />
+								<Field FixedValue="True" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="3" />
+		</Node>
+		<Node Guid="50d90033-2540-4fd3-8f3f-1d0c5b5ba2cf" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="536.7776 1526.131" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="X" Label="Axis" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0" Label="Size" />
+								<Field FixedValue="Absolute" Label="Sizing" />
+								<Field FixedValue="True" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Slice">
+							<Fields>
+								<Field FixedValue="0.7" Label="Size" />
+								<Field FixedValue="Relative" Label="Sizing" />
+								<Field FixedValue="False" Label="Flexible" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="0" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="87bc4a70-f358-47e1-a1df-8913d353cbb9" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="358.8085 1638.435" ProcedureType="MeshMergeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Criteria">
+					<Items />
+				</Argument>
+				<Argument FixedValue="First" Label="Scope Selection" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d8fb51be-f208-47b2-9523-35944c198020" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="464 1198" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Collective Input">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a5b260f9-7435-4338-a159-3a59ee5d25db" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="162.9746 1059.061" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Collective Input">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input*" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="eeadae0c-ccb4-4484-a4ac-d77172ce7722" NodeType="SystemNode" NodeTypeGUID="a7a6544e-abff-44fe-9156-975fe0608718" Position="207.2458 1207.816" ProcedureType="ActorScopeProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Rotate Scope">
+							<Fields>
+								<Field FixedValue="180" Label="Angle" />
+								<Field FixedValue="0,0,1" Label="Axis" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Reset Scope">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="71cfc25b-2c7c-4944-956f-058b129eb7eb" NodeType="SystemNode" NodeTypeGUID="a66e6c1f-3448-4813-a959-6c4fb3d01ea7" Position="440.9565 1779.661" ProcedureType="MeshUnifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operations">
+					<Items>
+						<Item Expanded="True" Label="Unify Vertices">
+							<Fields>
+								<Field FixedValue="0.01" Label="Tolerance" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d10cbf38-5cd6-4bd2-813a-692f7b86e666" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="486.5043 1924.021" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="0.1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Shared">
+											<Fields />
+										</Item>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#1" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Slices[0].Repetitive Slice[1].Slice.Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="2#I#0" FromNode="0" ToNode="2" FromLabel="Slices[0].Repetitive Slice[0].Slice.Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="1#O#1" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Slices[1].Slice.Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="0#O#2" ToPort="2#I#0" FromNode="0" ToNode="2" FromLabel="Slices[1].Slice.Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="3#O#0" ToPort="0#I#0" FromNode="3" ToNode="0" FromLabel="Ports[1].Output.Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="5#I#0" FromNode="4" ToNode="5" FromLabel="Ports[1].Output.Output" ToLabel="Input" />
+		<Edge FromPort="5#O#0" ToPort="0#I#0" FromNode="5" ToNode="0" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="6#I#0" FromNode="2" ToNode="6" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="6#O#0" ToPort="7#I#0" FromNode="6" ToNode="7" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

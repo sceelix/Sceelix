@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="3039dded-0615-4789-8562-e61766deac11" Author="Sceelix" Description="Performs a mesh material, followed by a mesh UV map, a commonly used combination." Color="ffffff" Category="Compound Utils" Version="1.0.0.0">
+	<Parameters>
+		<Parameter MaxSize="1" Expanded="True" Label="Material" Type="Sceelix.Core.Parameters.Infos.SelectListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The type of material to apply to the faces of this mesh." Section="">
+			<ParameterModels>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Bump" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a bump effect, using a diffuse, normal and specular texture." Section="">
+					<Fields>
+						<Field FileOperation="Load" Label="Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The diffuse texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field FileOperation="Load" Label="Bump Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The normal texture of the material." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field FileOperation="Load" Label="Specular Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Optional: The specular texture of the material." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Color" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a given color." Section="">
+					<Fields>
+						<Field Label="Color" Type="Sceelix.Mathematics.Parameters.Infos.ColorParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Color to render the faces with." Section="" FixedValue="255,0,0,255" />
+						<Field Increment="0.1" DecimalDigits="2" Label="Specular Power" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The specular power for lighting calculations (deprecated)." Section="" FixedValue="1" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Custom" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="A material that can have a different combination of properties, as defined by the platform where the material will be applied.&#xD;&#xA;By default, it will use some sort of reflection/meta approach to match the property values with the given property names." Section="">
+					<Fields>
+						<Field Label="Shader Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Name/Path of the shader." Section="" FixedValue="" />
+						<Field MaxSize="0" Expanded="True" Label="Properties" Type="Sceelix.Core.Parameters.Infos.ListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="List of custom properties of the material." Section="">
+							<ParameterModels>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Bool" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a boolean property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The boolean value." Section="" FixedValue="False" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Color" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a color property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Mathematics.Parameters.Infos.ColorParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The color value." Section="" FixedValue="255,255,255,255" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Float" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a floating-point property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Increment="0.1" DecimalDigits="2" Label="Value" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The floating-point value." Section="" FixedValue="0" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Int" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets an integer property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Increment="1" Label="Value" Type="Sceelix.Core.Parameters.Infos.IntParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The integer value." Section="" FixedValue="0" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="String" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a textual property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The string value." Section="" FixedValue="" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Texture" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a texture property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field FileOperation="Load" Label="Path" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The path to the texture." Section="" FixedValue="">
+											<Extensions>
+												<Extension>.jpg</Extension>
+												<Extension>.jpeg</Extension>
+												<Extension>.bmp</Extension>
+												<Extension>.png</Extension>
+												<Extension>.gif</Extension>
+												<Extension>.tiff</Extension>
+											</Extensions>
+										</Field>
+										<Field Label="Type" Type="Sceelix.Core.Parameters.Infos.ChoiceParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Type of texture/semantics." Section="" FixedValue="Diffuse">
+											<Choices>
+												<Choice>Ambient</Choice>
+												<Choice>Diffuse</Choice>
+												<Choice>Displacement</Choice>
+												<Choice>Emissive</Choice>
+												<Choice>Height</Choice>
+												<Choice>Lightmap</Choice>
+												<Choice>None</Choice>
+												<Choice>Normal</Choice>
+												<Choice>Opacity</Choice>
+												<Choice>Reflection</Choice>
+												<Choice>Shininess</Choice>
+												<Choice>Specular</Choice>
+												<Choice>Unknown</Choice>
+											</Choices>
+										</Field>
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Vector2" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a vector2 property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Mathematics.Parameters.Infos.Vector2DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The vector2 value." Section="" FixedValue="0,0" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Vector3" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a vector3 property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Mathematics.Parameters.Infos.Vector3DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The vector3 value." Section="" FixedValue="0,0,0" />
+									</Fields>
+								</ParameterModel>
+							</ParameterModels>
+							<Items />
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Emissive" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with an emissive color." Section="">
+					<Fields>
+						<Field Label="Color" Type="Sceelix.Mathematics.Parameters.Infos.ColorParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Color to render the faces with." Section="" FixedValue="255,0,0,255" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Fur" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a fur-looking effect to the mesh faces. Useful to simulate grass or otherwise furry materials." Section="">
+					<Fields>
+						<Field FileOperation="Load" Label="Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The underlying texture to set on the face." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field Increment="0.1" DecimalDigits="2" Label="Fur Density" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Density of the fur effect of the material." Section="" FixedValue="0.8" />
+						<Field Increment="0.1" DecimalDigits="2" Label="Jitter Map Scale" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The jitter map scale of the material effect." Section="" FixedValue="0.5" />
+						<Field Increment="0.1" DecimalDigits="2" Label="Max. Fur Length" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The maximum length of each fur hair." Section="" FixedValue="0.5" />
+						<Field Increment="0.1" DecimalDigits="2" Label="Self Shadow Strength" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The strength of the self shadowing effect." Section="" FixedValue="1" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Other" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="A material that may not exist by default in the target platform, unless explicitly interpreted/decoded/implement by the user." Section="">
+					<Fields>
+						<Field Label="Type" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The material type/name." Section="" FixedValue="" />
+						<Field MaxSize="0" Expanded="True" Label="Properties" Type="Sceelix.Core.Parameters.Infos.ListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="List of properties of the material." Section="">
+							<ParameterModels>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Bool" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a boolean property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The boolean value." Section="" FixedValue="False" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Color" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a color property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Mathematics.Parameters.Infos.ColorParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The color value." Section="" FixedValue="255,255,255,255" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Float" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets an floating-point property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Increment="0.1" DecimalDigits="2" Label="Value" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The floating-point value." Section="" FixedValue="0" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Int" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets an integer property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Increment="1" Label="Value" Type="Sceelix.Core.Parameters.Infos.IntParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The integer value." Section="" FixedValue="0" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="String" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a textural property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The string value." Section="" FixedValue="" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Texture" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a texture property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field FileOperation="Load" Label="Path" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The path to the texture." Section="" FixedValue="">
+											<Extensions>
+												<Extension>.jpg</Extension>
+												<Extension>.jpeg</Extension>
+												<Extension>.bmp</Extension>
+												<Extension>.png</Extension>
+												<Extension>.gif</Extension>
+												<Extension>.tiff</Extension>
+											</Extensions>
+										</Field>
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Vector2" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a vector2 property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Mathematics.Parameters.Infos.Vector2DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The vector2 value." Section="" FixedValue="0,0" />
+									</Fields>
+								</ParameterModel>
+								<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Vector3" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Sets a vector3 property on the material." Section="">
+									<Fields>
+										<Field Label="Name" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The property name." Section="" FixedValue="PropertyX" />
+										<Field Label="Value" Type="Sceelix.Mathematics.Parameters.Infos.Vector3DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The vector3 value." Section="" FixedValue="0,0,0" />
+									</Fields>
+								</ParameterModel>
+							</ParameterModels>
+							<Items />
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Parallax Occlusion" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with the parallax occlusion effect, using a diffuse, normal, height and specular texture." Section="">
+					<Fields>
+						<Field FileOperation="Load" Label="Diffuse" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The diffuse texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field FileOperation="Load" Label="Height" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The height texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field FileOperation="Load" Label="Normal" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The normal texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field FileOperation="Load" Label="Specular" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Optional: The specular texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Reflective" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a diffuse and normal texture with reflective properties (mirror-like rendering)." Section="">
+					<Fields>
+						<Field FileOperation="Load" Label="Diffuse Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The diffuse texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field FileOperation="Load" Label="Normal Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The normal/bump texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Remote" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a material that exists on the platform/application/engine where the meshes are deployed.&#xD;&#xA;For example, setting a path like &quot;Assets/Path/To/Material.mat&quot; in an engine like Unity would result in having the&#xD;&#xA;material in that path loaded." Section="">
+					<Fields>
+						<Field Label="Path" Type="Sceelix.Core.Parameters.Infos.StringParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Path to the material in the target platform." Section="" FixedValue="" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Texture" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a diffuse texture." Section="">
+					<Fields>
+						<Field FileOperation="Load" Label="Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The diffuse texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Transparent" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a diffuse texture with configurable transparency." Section="">
+					<Fields>
+						<Field FileOperation="Load" Label="Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The diffuse texture." Section="" FixedValue="">
+							<Extensions>
+								<Extension>.jpg</Extension>
+								<Extension>.jpeg</Extension>
+								<Extension>.bmp</Extension>
+								<Extension>.png</Extension>
+								<Extension>.gif</Extension>
+								<Extension>.tiff</Extension>
+							</Extensions>
+						</Field>
+						<Field MinValue="0" MaxValue="1" Increment="0.1" DecimalDigits="2" Label="Transparency" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The level of transparency." Section="" FixedValue="0.5" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Water" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a flowing water effect." Section="">
+					<Fields />
+				</ParameterModel>
+			</ParameterModels>
+			<Items>
+				<Item Expanded="True" ArrangeInSingleLine="False" Label="Color" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Renders the faces with a given color." Section="">
+					<Fields>
+						<Field Label="Color" Type="Sceelix.Mathematics.Parameters.Infos.ColorParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Color to render the faces with." Section="" FixedValue="255,0,0,255" />
+						<Field Increment="0.1" DecimalDigits="2" Label="Specular Power" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The specular power for lighting calculations (deprecated)." Section="" FixedValue="10" />
+					</Fields>
+				</Item>
+			</Items>
+		</Parameter>
+		<Parameter MaxSize="1" Expanded="True" Label="Operation" Type="Sceelix.Core.Parameters.Infos.SelectListParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The UV mapping operation/shape to apply." Section="">
+			<ParameterModels>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Box UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Applies UV mapping coordinates based on a surrounding box shape." Section="">
+					<Fields>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="U" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="V" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Cylinder UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Applies UV mapping coordinates based on a surrounding cylinder shape." Section="">
+					<Fields>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="U" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="V" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Face UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Applies UV mapping coordinates based on each face's surrounding plane scope shape." Section="">
+					<Fields>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="U" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="V" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Flip UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Flips the current UV mapping coordinates in the U or V axis." Section="">
+					<Fields>
+						<Field Label="Flip U" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the U coordinate should be flipped." Section="" FixedValue="True" />
+						<Field Label="Flip V" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the V coordinate should be flipped." Section="" FixedValue="True" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Scale UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale the UV coordinates." Section="">
+					<Fields>
+						<Field Label="Amount" Type="Sceelix.Mathematics.Parameters.Infos.Vector2DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="The value to multiply with the UV coordinates." Section="" FixedValue="1,1" />
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Scope UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Applies UV mapping coordinates based on the surrounding scope shape." Section="">
+					<Fields>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="U" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="V" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+					</Fields>
+				</ParameterModel>
+				<ParameterModel Expanded="True" ArrangeInSingleLine="False" Label="Sphere UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Applies UV mapping coordinates based on a surrounding sphere shape." Section="">
+					<Fields>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="U" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="V" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+					</Fields>
+				</ParameterModel>
+			</ParameterModels>
+			<Items>
+				<Item Expanded="True" ArrangeInSingleLine="False" Label="Face UV" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Applies UV mapping coordinates based on each face's surrounding plane scope shape." Section="">
+					<Fields>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="U" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+						<Field Expanded="True" ArrangeInSingleLine="False" Label="V" Type="Sceelix.Core.Parameters.Infos.CompoundParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Defines the coordinate sizing for the given coordinate." Section="">
+							<Fields>
+								<Field Increment="0.1" DecimalDigits="2" Label="Size" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Scale of the coordinate mapping." Section="" FixedValue="1" />
+								<Field Label="Absolute" Type="Sceelix.Core.Parameters.Infos.BoolParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Description="Indicates if the defined size is an absolute value (in world space), or relative to the chosen surrounding shape's size." Section="" FixedValue="True" />
+							</Fields>
+						</Field>
+					</Fields>
+				</Item>
+			</Items>
+		</Parameter>
+	</Parameters>
+	<Nodes>
+		<Node Guid="abe562c0-fd86-4897-9b37-c2c0e4bc4ced" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="38.19745 248.4547" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="Material" Type="ParameterExpressionNode" />
+					</ParsedExpression>
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Input" />
+			</InputPorts>
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="aefb0230-56a2-4be3-b50f-2bf57f642daf" NodeType="SystemNode" NodeTypeGUID="9470e48f-5ee8-4d84-a371-949f27786f0f" Position="109.2346 406.5491" ProcedureType="MeshUVMapProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="Operation" Type="ParameterExpressionNode" />
+					</ParsedExpression>
+					<Items>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1">
+				<Port id="0" state="Gate" GateLabel="Output" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="ce422173-2b04-4a06-9c5e-9f087253f63d" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="89.53606 99.26576" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="0#O#0" ToPort="1#I#0" FromNode="0" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="0#I#0" FromNode="2" ToNode="0" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

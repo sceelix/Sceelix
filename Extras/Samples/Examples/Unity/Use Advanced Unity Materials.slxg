@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="47929664-c193-4c06-ad65-f9767a4198c6" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="cd8cee53-115a-424f-ba5b-f3389ad22a5d" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-486.6257 502.4656" Label="The most common types&#xA;of materials are automatically&#xA;translated to Unity materials." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="78963cfb-130f-4d19-abd7-de48e1a90e93" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-16.54569 -228.4872" Label="Note: This sample applies to the Sceelix-Unity plugin,&#xA;which should be installed and enabled first." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="21c99af7-50c0-4855-a1cb-35842a386a6d" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="251.9551 -30.15239" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Sphere">
+							<Fields>
+								<Field FixedValue="15" Label="Horizontal Segments" />
+								<Field FixedValue="5" Label="Radius" />
+								<Field FixedValue="15" Label="Vertical Segments" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1c422cad-0be7-4af2-b1fb-3634da15bed5" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="-247.5756 368.4356" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="Examples/Unity/Resources/Rust01.jpg" Guid="783b5a6f-7b93-4938-b600-b22b99640d38" Label="Texture" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Remote">
+							<Fields>
+								<Field FixedValue="" Label="Path" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d044570a-5c24-46ec-95bb-09280196e052" NodeType="SystemNode" NodeTypeGUID="9470e48f-5ee8-4d84-a371-949f27786f0f" Position="244.6373 211.6539" ProcedureType="MeshUVMapProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Box UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Cylinder UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Sphere UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="False" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="2" Label="Size" />
+										<Field FixedValue="False" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Face UV">
+							<Fields>
+								<Field Expanded="True" Label="U">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+								<Field Expanded="True" Label="V">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="True" Label="Absolute" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="04e34c44-0f9a-452e-8b66-1a61b5da42f5" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="69.95899 531.0261" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Custom">
+							<Fields>
+								<Field FixedValue="Diffuse" Label="Shader Name" />
+								<Field Expanded="True" Label="Properties">
+									<Items>
+										<Item Expanded="True" Label="Texture">
+											<Fields>
+												<Field FixedValue="_MainTex" Label="Name" />
+												<Field FixedValue="Examples/Unity/Resources/Terrazzo01.jpg" Guid="9b40426c-5ac6-4578-a0c8-327a33036c06" Label="Path" />
+												<Field FixedValue="Diffuse" Label="Type" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Color">
+											<Fields>
+												<Field FixedValue="_Color" Label="Name" />
+												<Field FixedValue="83,62,193,255" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Other">
+							<Fields>
+								<Field FixedValue="" Label="Type" />
+								<Field Expanded="True" Label="Properties">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Remote">
+							<Fields>
+								<Field FixedValue="" Label="Path" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="441fafa1-f1d2-4337-b239-643fad898eec" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="531.6071 532.8163" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Other">
+							<Fields>
+								<Field FixedValue="MySpecialMaterial" Label="Type" />
+								<Field Expanded="True" Label="Properties">
+									<Items>
+										<Item Expanded="True" Label="String">
+											<Fields>
+												<Field FixedValue="Style" Label="Name" />
+												<Field FixedValue="Simple" Label="Value" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Texture">
+											<Fields>
+												<Field FixedValue="MyTexture" Label="Name" />
+												<Field FixedValue="Examples/Unity/Resources/Tiles01.jpg" Guid="ee7db3f8-d630-4ecb-9c5e-0d6850a124b5" Label="Path" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Remote">
+							<Fields>
+								<Field FixedValue="" Label="Path" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="8371af5b-da6d-4b5c-912b-3993478f7841" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="1056.607 532.0203" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Remote">
+							<Fields>
+								<Field FixedValue="Assets/New Material.mat" Label="Path" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Other">
+							<Fields>
+								<Field FixedValue="" Label="Type" />
+								<Field Expanded="True" Label="Properties">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="45bc97d0-8835-4699-ac1c-2d50371b0733" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-101.4893 -364.1332" Label="This sample shows the possibilities regarding material instantiation when&#xA;using Sceelix materials in Unity," ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ed9c9cb3-2f44-4df7-9e5b-6df2b0f9f479" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="8.948273 665.4316" Label="You can define your own&#xA;custom material by defining&#xA;the properties as they are&#xA;named in Unity (for the real&#xA;Unity names go to &quot;Edit&#xA;Shader&quot; at a Unity Material) " ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="4028d48a-2eda-481b-bcf4-52b70418e435" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="413.293 652.963" Label="You can define your very own&#xA; material by enumerating the&#xA;properties. This, however, &#xA;requires you to code a custom&#xA;material &quot;interpreter&quot; in Unity,&#xA;using C#. See the sample at the&#xA;Unity Plugin, at the &quot;Sample&quot; folder." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6ef92e08-60b5-477e-b33b-64181ebc3eb2" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="977.9506 660.088" Label="Finally, you can also instantiate&#xA;a material that you've defined in&#xA;your Unity project. You simply&#xA;need to indicate its path relative&#xA;to the Assets folder." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="16506311-e340-4d69-9be1-89ec1ee464fc" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="57.86536 390.9885" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="15,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bc51d916-c194-447a-a52f-c031ce0828c0" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="233.7072 88.31277" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Reset">
+							<Fields>
+								<Field FixedValue="None" Label="X" />
+								<Field FixedValue="None" Label="Y" />
+								<Field FixedValue="Minimum" Label="Z" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="11ddb00f-6d25-4ebe-ae5e-09d4047ea1aa" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="520.0568 393.8495" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="30,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c66c2737-df28-4aa6-a480-4aab2d9ba53c" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="1045.057 393.0531" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="45,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="13#I#0" FromNode="2" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="3#I#0" FromNode="4" ToNode="3" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="12#I#0" FromNode="4" ToNode="12" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="4#I#0" FromNode="13" ToNode="4" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="14#I#0" FromNode="4" ToNode="14" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="12#O#0" ToPort="5#I#0" FromNode="12" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="14#O#0" ToPort="6#I#0" FromNode="14" ToNode="6" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="15#O#0" ToPort="7#I#0" FromNode="15" ToNode="7" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="4#O#0" ToPort="15#I#0" FromNode="4" ToNode="15" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

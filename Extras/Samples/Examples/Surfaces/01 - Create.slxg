@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="4375059a-5459-4d0d-b6d3-a88d768ba84e" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="e21f2bff-59f7-4be3-81a8-93cacdf34e23" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="118.8392 226.5557" Label="Tileable Surface" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Tileable">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="3,3" Label="Frequency" />
+								<Field FixedValue="0" Label="Seed" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="2" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b261e266-6353-47db-8f3b-ffe780a059ca" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="376.3891 225.4347" Label="Perlin Noise Surface" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="200" Label="Length" />
+								<Field FixedValue="30" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="2" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="b24f96a0-3c8e-4d93-94e3-695ed805df3d" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="-188.3693 224.0054" Label="Flat, Empty Surface" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Empty" Guid="f2a491f6-1b28-4f21-8f51-9cb578e6c47c">
+							<Fields>
+								<Field FixedValue="75" Label="Width" />
+								<Field FixedValue="50" Label="Length" />
+								<Field FixedValue="10" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Tileable">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="3,3" Label="Frequency" />
+								<Field FixedValue="0" Label="Seed" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="2" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="896277e7-d888-4b20-bc9c-fb10e91cd395" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-49.12549 -69.91551" Label="Surfaces are used essentially for terrain building&#xA;and for providing a controlling for objects on a&#xA;2D level.&#xA;&#xA;Surfaces are made of layers, such as to store&#xA;heights, but also colors, numbers, etc." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ca35cd70-cb3d-4baf-8d79-b2e59b7ee853" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-58.06113 550.4335" Label="Creating surfaces is easy through the surface&#xA;create node. Some noise and tileable effects are&#xA;provided." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6983a7e5-1c39-447d-882e-16a8834276fd" NodeType="ComponentNode" NodeTypeGUID="82df3e05-1c6c-4c7c-810f-1233b2fe3c10" Position="118.2668 405.0901" RelativePath="Utils/Organize.slxg">
+			<Arguments>
+				<Argument FixedValue="0,0,5" Label="Origin" />
+				<Argument FixedValue="125,0,0" Label="Offset" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="2#O#0" ToPort="5#I#0" FromNode="2" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="5#I#0" FromNode="0" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="1#O#0" ToPort="5#I#0" FromNode="1" ToNode="5" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

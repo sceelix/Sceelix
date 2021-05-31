@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="64609b8f-29c4-457b-82b9-5ab70ea98809" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters>
+		<Parameter FileOperation="Load" Label="Image" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="Tutorials/Resources/man_billboard.png">
+			<Extensions>
+				<Extension>.jpg</Extension>
+				<Extension>.jpeg</Extension>
+				<Extension>.bmp</Extension>
+				<Extension>.png</Extension>
+			</Extensions>
+		</Parameter>
+		<Parameter Label="BaseSize" Type="Sceelix.Mathematics.Parameters.Infos.Vector2DParameterInfo, Sceelix.Mathematics, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Section="" FixedValue="1,1" />
+	</Parameters>
+	<Nodes>
+		<Node Guid="096c0500-db3e-4b4c-b700-7f141185fece" NodeType="SystemNode" NodeTypeGUID="fe4221f3-991c-4161-bbae-58f5a60f8d42" Position="82.98738 14.65146" Label="My Path Creator!" ProcedureType="PathCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Voronoi">
+							<Fields>
+								<Field FixedValue="200" Label="Height" />
+								<Field FixedValue="200" Label="Width" />
+								<Field FixedValue="10" Label="Spacing" />
+								<Field FixedValue="5" Label="Max Offset" />
+								<Field FixedValue="123" Label="Seed" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Grid">
+							<Fields>
+								<Field FixedValue="1" Label="Number of Columns" />
+								<Field FixedValue="1" Label="Number of Rows" />
+								<Field FixedValue="1" Label="Column Width" />
+								<Field FixedValue="1" Label="Row Height" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="27dc8337-3c2c-41c1-8def-b2949859774f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="458.95 246.5278" Label="2. There are parameters of several types&#xA;    such as integers, strings, floating-point,&#xA;    files, vectors, lists, etc." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8889f0d2-b08d-4b00-8f9d-0a084399e196" NodeType="SystemNode" NodeTypeGUID="ce1b6db6-6365-4221-acb2-d2fef8a29ccb" Position="278.8924 272.3974" ProcedureType="MeshSplitProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Split Axis">
+					<Items>
+						<Item Expanded="True" Label="Scope Axis">
+							<Fields>
+								<Field FixedValue="X" Label="Axis" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Slices">
+					<Items>
+						<Item Expanded="True" Label="Repetitive Slice">
+							<Items>
+								<Item Expanded="True" Label="Slice">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="Absolute" Label="Sizing" />
+										<Field FixedValue="True" Label="Flexible" />
+										<Field FixedValue="False" Label="Cap" />
+									</Fields>
+								</Item>
+								<Item Expanded="True" Label="Slice">
+									<Fields>
+										<Field FixedValue="1" Label="Size" />
+										<Field FixedValue="Absolute" Label="Sizing" />
+										<Field FixedValue="True" Label="Flexible" />
+										<Field FixedValue="False" Label="Cap" />
+									</Fields>
+								</Item>
+							</Items>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="" Label="Index" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="670cc5fd-e264-4667-9cce-e65c88df8b3f" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="88.71894 522.7577" Label="3. Parameters can be assigned fixed values&#xA;    but also mathematical EXPRESSIONS. &#xA;    Right-click on a parameter label to &#xA;    change the control to 'Expression'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="ed281d80-2350-47f8-b3c7-4c984f2ff1ee" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="249.3751 709.9451" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="*" Type="BinaryExpressionNode">
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">5</ExprNode>
+												<ExprNode Name="()" Type="ParenthesisExpressionNode">
+													<ExprNode Name="+" Type="BinaryExpressionNode">
+														<ExprNode Name="Int32" Type="ConstantExpressionNode">10</ExprNode>
+														<ExprNode Name="Int32" Type="ConstantExpressionNode">12</ExprNode>
+													</ExprNode>
+												</ExprNode>
+											</ExprNode>
+											<ExprNode Name="Cos" Type="DirectFunctionExpressionNode">
+												<ExprNode Name="Rad" Type="DirectFunctionExpressionNode">
+													<ExprNode Name="Int32" Type="ConstantExpressionNode">30</ExprNode>
+												</ExprNode>
+											</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6309367b-627a-4e8d-a32f-b571e9d65eb9" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="485.2913 707.3851" Label="4. As you see on the left, you can use &#xA;    math functions and arithmetic operations.&#xA;    A popup window will list existing functions." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="63e12872-5e68-4306-ab6b-f676cd008935" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="124.1758 970.782" Label="5. It is important to match the type &#xA;    of value to the parameter type.&#xA;    Still, if you write in a string and the &#xA;    type is float, the value will be &#xA;    converted automatically." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="125cb986-3db1-4873-8282-1ab2a5f2afe7" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="628.8116 1283.68" Label="6. You can also define global graph &#xA;    parameters and reference them&#xA;    in the nodes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8b301a22-30cf-463c-b768-fc52ab1c4a10" NodeType="SystemNode" NodeTypeGUID="f1dfcf18-2508-4669-8e83-e34fc75c11f0" Position="386.1344 1380.996" ProcedureType="BillboardCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="0,0,0,255" Label="Color" />
+				<Argument FixedValue="Learning Concepts/Resources/PersonClipart.png" Guid="0f90c79d-0f37-48a0-b452-630529dac079" Label="Image" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="Image" Type="ParameterExpressionNode" />
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="1,1" Label="Size" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="+" Type="BinaryExpressionNode">
+							<ExprNode Name="BaseSize" Type="ParameterExpressionNode" />
+							<ExprNode Name="Vector2" Type="DirectFunctionExpressionNode">
+								<ExprNode Name="Double" Type="DoubleExpressionNode">2.1</ExprNode>
+								<ExprNode Name="Int32" Type="ConstantExpressionNode">5</ExprNode>
+							</ExprNode>
+						</ExprNode>
+					</ParsedExpression>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="73f0d8ec-2074-42fc-a296-ec0d7ce206b1" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="357.881 5.745483" Label="1. Click the node to show its configuration on the&#xA;    INSPECTOR window. There, you can change &#xA;    the PARAMETERS that define what it does." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="6034604a-0689-4a4d-816e-8300bb102301" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-29.96553 1357.392" Label="7. To acess and change global&#xA;    graph parameters, right-click&#xA;    the blue canvas and choose&#xA;    'Graph Properties'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="5b482231-24fb-44a2-bd25-77480ccb0677" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="461.3699 1512.551" Label="8. The '+' button on the expression editor&#xA;    of each parameter automatically creates &#xA;    and refers a new global graph parameter &#xA;   with matching type.    " ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="b511117a-6bf6-4c97-8ffe-a2f0dc63cbe0" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="674.8862 1020.711" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="String" Type="StringExpressionNode">200</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="100" Label="Length" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="Double" Type="DoubleExpressionNode">20.34</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="String" Type="StringExpressionNode">1.5</ExprNode>
+									</ParsedExpression>
+								</Field>
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="0" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" IsExpression="True">
+									<ParsedExpression>
+										<ExprNode Name="[]" Type="ArrayExpressionNode">
+											<ExprNode Name="+" Type="BinaryExpressionNode">
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">1</ExprNode>
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">5</ExprNode>
+											</ExprNode>
+											<ExprNode Name="*" Type="BinaryExpressionNode">
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">20</ExprNode>
+												<ExprNode Name="Int32" Type="ConstantExpressionNode">8</ExprNode>
+											</ExprNode>
+										</ExprNode>
+									</ParsedExpression>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges />
+</Graph>

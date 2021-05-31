@@ -1,0 +1,818 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="a6d58407-dd79-4c0a-9ff3-24ee9082a0ff" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="45c22695-9a60-41b4-9241-e3b33b9cf0d0" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="-1067.594 -194.7377" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="512" Label="Width" />
+								<Field FixedValue="512" Label="Length" />
+								<Field FixedValue="100" Label="Height Scale" />
+								<Field FixedValue="2" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="2" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="150" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="c2b9cd34-257a-4dd1-85b2-3c2e8830ca77" NodeType="SystemNode" NodeTypeGUID="92d65cb9-ef76-40fa-ad69-32707b893e36" Position="-1156.733 222.1053" ProcedureType="RandomProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Attributes">
+					<Items>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="3" Label="Minimum" />
+								<Field FixedValue="8" Label="Maximum" />
+								<Field FixedValue="scaleX" Label="Value" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Float">
+							<Fields>
+								<Field FixedValue="3" Label="Minimum" />
+								<Field FixedValue="8" Label="Maximum" />
+								<Field FixedValue="scaleZ" Label="Value" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="1000" Label="Seed" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a1254f61-6016-43ba-882b-d888c80489a2" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="-1070.231 347.5905" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="1,1,1" Label="Amount" IsExpression="True">
+					<ParsedExpression>
+						<ExprNode Name="[]" Type="ArrayExpressionNode">
+							<ExprNode Name="scaleX" Type="AttributeExpressionNode" AllowNull="False" />
+							<ExprNode Name="Int32" Type="ConstantExpressionNode">1</ExprNode>
+							<ExprNode Name="scaleZ" Type="AttributeExpressionNode" AllowNull="False" />
+						</ExprNode>
+					</ParsedExpression>
+				</Argument>
+				<Argument FixedValue="Relative" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0,0,0" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3b6a1e26-63ec-4d08-b697-b48b302a10a8" NodeType="SystemNode" NodeTypeGUID="f1dfcf18-2508-4669-8e83-e34fc75c11f0" Position="-1391.371 52.68883" Label="Tree" ProcedureType="BillboardCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="120,120,120,255" Label="Color" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/Billboards/gl-tree-03.png" Guid="06b123ed-3703-48a2-b945-d1dfd4debf68" Label="Image" />
+				<Argument FixedValue="1,1" Label="Size" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f76bb87f-63f6-4779-a3b9-27107dd05d2a" NodeType="SystemNode" NodeTypeGUID="f1dfcf18-2508-4669-8e83-e34fc75c11f0" Position="-251.0426 142.6539" Label="Tree" ProcedureType="BillboardCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="123,123,123,255" Label="Color" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/Billboards/gl-tree-02.png" Guid="31c873b9-8355-4353-b47b-ef27abc9eca8" Label="Image" />
+				<Argument FixedValue="5,5" Label="Size" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="7094c0b5-5334-4b4e-b08f-589202698653" NodeType="SystemNode" NodeTypeGUID="4c7a38df-e3a0-4a77-abb0-599f275d414c" Position="-950.4844 485.1852" ProcedureType="ActorInsertProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Many to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to One">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on X-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Y-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Z-Axis">
+					<Items>
+						<Item Expanded="True" Label="Minimum">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="29947e2c-4383-46f1-a117-abfcd12b854a" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="-478.9473 -773.5783" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="512" Label="Width" />
+								<Field FixedValue="512" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="1" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="1" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Empty" Guid="f2a491f6-1b28-4f21-8f51-9cb578e6c47c">
+							<Fields>
+								<Field FixedValue="512" Label="Width" />
+								<Field FixedValue="512" Label="Length" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="063c72c3-f962-4030-af73-2cdd6823d008" NodeType="SystemNode" NodeTypeGUID="690a154f-5fa0-4f60-bf12-25f25d764db0" Position="-489.6185 -653.9688" ProcedureType="SurfacePaintProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Designs">
+					<Items>
+						<Item Expanded="True" Label="Height">
+							<Fields>
+								<Field FixedValue="0" Label="Texture Index" />
+								<Field Expanded="True" Label="Limits">
+									<Items>
+										<Item Expanded="True" Label="Relative">
+											<Fields>
+												<Field FixedValue="0.5" Label="Start" />
+												<Field FixedValue="1" Label="End" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Absolute">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="100" Label="End" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Height">
+							<Fields>
+								<Field FixedValue="1" Label="Texture Index" />
+								<Field Expanded="True" Label="Limits">
+									<Items>
+										<Item Expanded="True" Label="Relative">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="0.35" Label="End" />
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Absolute">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="100" Label="End" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="False" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f3ed955c-a44b-4a77-98cf-fb60d6cd8a9b" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="-608.0124 -500.4517" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Blend Color">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" />
+								<Field FixedValue="1,1" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d0f13d06-9d2e-4a1d-bc31-4be0688555fc" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="-775.3894 -150.8621" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Layer Convert">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field Expanded="True" Label="Type">
+									<Items>
+										<Item Expanded="True" Label="Blend to Height">
+											<Fields>
+												<Field FixedValue="50" Label="Scale" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Invert">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d2ed1362-4cf5-4848-bd6d-454068bdaf9c" NodeType="SystemNode" NodeTypeGUID="e21e7aed-61ae-435f-a11b-0028251ea898" Position="-688.9328 -347.9137" ProcedureType="SurfaceSubselectProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Selection">
+					<Items>
+						<Item Expanded="True" Label="Index">
+							<Fields>
+								<Field FixedValue="1" Label="Index" />
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Index">
+							<Fields>
+								<Field FixedValue="2" Label="Index" />
+								<Field Expanded="True" Label="Separate">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="fbddfbd6-685c-43f3-aaa1-699ae38e61fe" NodeType="SystemNode" NodeTypeGUID="b2ce5c70-77de-4954-a025-6c7f50d1c99e" Position="-935.532 -4.898682" ProcedureType="SurfaceCombineProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Average" Label="Operation" />
+				<Argument FixedValue="First" Label="Result" />
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e0de9728-6c62-489a-9572-dda82b2d2215" NodeType="SystemNode" NodeTypeGUID="fbf27f2b-eee3-4bd6-85e0-f5d616912877" Position="-629.2443 239.7182" ProcedureType="PointsCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Random">
+							<Fields>
+								<Field FixedValue="100" Label="Seed" />
+								<Field Expanded="True" Label="Area">
+									<Items>
+										<Item Expanded="True" Label="Surface">
+											<Fields>
+												<Field Expanded="True" Label="Distance">
+													<Items>
+														<Item Expanded="True" Label="Layer">
+															<Fields>
+																<Field FixedValue="0" Label="Index" />
+																<Field FixedValue="0.1" Label="Min. Threshold" />
+																<Field FixedValue="3" Label="Min. Distance" />
+																<Field FixedValue="20" Label="Max. Distance" />
+																<Field FixedValue="" Label="Distance" />
+															</Fields>
+														</Item>
+														<Item Expanded="True" Label="Fixed">
+															<Fields>
+																<Field FixedValue="8" Label="Distance" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Rectangle">
+											<Fields>
+												<Field FixedValue="10,10" Label="Size" />
+												<Field FixedValue="1" Label="Distance" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field Expanded="True" Label="Points">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="510ebafd-1f7d-48b9-ac0c-2544811d61f3" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="-98.13959 -492.0456" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="512,512,51" Label="Amount" />
+				<Argument FixedValue="Absolute" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0,0,0" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="09db2325-aee9-4219-afc6-5c5b4a207408" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="-703.6718 927.3331" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Multi Texture">
+							<Fields>
+								<Field Expanded="True" Label="Textures">
+									<Items>
+										<Item FixedValue="Demos/03 - Nature/Textures/Rock01.jpg" Guid="f136cd6b-ef0f-4a91-8de0-0d23055fd361" Label="Texture" />
+										<Item FixedValue="Demos/03 - Nature/Textures/Grass01.jpg" Guid="bf5f535a-8b50-4077-bd4d-4260bbb4ff17" Label="Texture" />
+										<Item FixedValue="Demos/03 - Nature/Textures/Dirt01.jpg" Guid="e6713b62-6dc9-4731-bde2-730eddbaa919" Label="Texture" />
+										<Item FixedValue="Demos/03 - Nature/Textures/Soil.jpg" Guid="41d408be-2ec9-49c5-8dc9-e47d373f10e4" Label="Texture" />
+									</Items>
+								</Field>
+								<Field FixedValue="10,10" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Blend Color">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" />
+								<Field FixedValue="1,1" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="d8bc53d6-bcac-46c3-ad52-d35fe786419c" NodeType="SystemNode" NodeTypeGUID="690a154f-5fa0-4f60-bf12-25f25d764db0" Position="-532.3514 1087.999" ProcedureType="SurfacePaintProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Designs">
+					<Items>
+						<Item Expanded="False" Label="Height">
+							<Fields>
+								<Field FixedValue="0" Label="Texture Index" />
+								<Field Expanded="False" Label="Limits">
+									<Items>
+										<Item Expanded="True" Label="Absolute">
+											<Fields>
+												<Field FixedValue="0" Label="Start" />
+												<Field FixedValue="100" Label="End" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field FixedValue="2" Label="Texture Index" />
+								<Field FixedValue="0,0,1" Label="Surface Normal" />
+								<Field FixedValue="90" Label="Max. Angle" />
+								<Field Expanded="False" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Direction">
+							<Fields>
+								<Field FixedValue="3" Label="Texture Index" />
+								<Field FixedValue="0,0,1" Label="Surface Normal" />
+								<Field FixedValue="30" Label="Max. Angle" />
+								<Field Expanded="True" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="0.5" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Surface">
+							<Fields>
+								<Field FixedValue="1" Label="Texture Index" />
+								<Field FixedValue="0" Label="Index" />
+								<Field Expanded="False" Label="Function">
+									<Items>
+										<Item Expanded="True" Label="Constant">
+											<Fields>
+												<Field FixedValue="1" Label="Value" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="c3232dd2-df92-4cba-9642-bad278ead754" NodeType="SystemNode" NodeTypeGUID="2dbcc442-f71a-43af-a11a-ece62ff48f81" Position="-765.6069 629.812" ProcedureType="SurfacePlaceProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Single">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Entity">
+					<Items>
+						<Item Expanded="True" Label="Actor">
+							<Fields>
+								<Field Expanded="True" Label="Sample Location">
+									<Fields>
+										<Field FixedValue="0,0,0" Label="Position" />
+										<Field FixedValue="Relative" Label="Offset" />
+									</Fields>
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="a44d3274-89f9-43b1-a171-0c0d622927e5" NodeType="SystemNode" NodeTypeGUID="b2ce5c70-77de-4954-a025-6c7f50d1c99e" Position="-451.8293 -142.6536" ProcedureType="SurfaceCombineProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Input">
+					<Items>
+						<Item Expanded="True" Label="Dual">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Collective">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument FixedValue="Subtract" Label="Operation" />
+				<Argument FixedValue="Union" Label="Result" />
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="0442c392-27ee-4e5c-8576-a9a051d3c751" NodeType="SystemNode" NodeTypeGUID="e20f3064-d958-4d7c-841d-f6b39f3981c4" Position="3.568787 -781.6946" ProcedureType="SurfaceLoadProcedure">
+			<Arguments>
+				<Argument FixedValue="1" Label="Cell Size" />
+				<Argument Expanded="True" Label="Layers">
+					<Items>
+						<Item Expanded="True" Label="Blendmap">
+							<Fields>
+								<Field FixedValue="Demos/03 - Nature/Textures/Sceelix128BW.png" Guid="f8d2120a-109f-48f2-b638-45938562103a" Label="File" />
+								<Field FixedValue="1" Label="Texture Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="e81acc7c-985e-4c4f-8fbb-7328eca653ab" NodeType="SystemNode" NodeTypeGUID="2ff832c1-bb04-4cc0-9b02-36d32a2c6e8b" Position="-71.75482 -613.0872" ProcedureType="SurfaceMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Blend Color">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Texture">
+							<Fields>
+								<Field FixedValue="" Label="Texture" />
+								<Field FixedValue="1,1" Label="UV" />
+								<Field FixedValue="True" Label="Absolute Sizing" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="ea8e6389-4600-4597-8d3c-7f882dea4008" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="-188.1951 -318.5499" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Invert">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="1ffd1936-b90b-45e7-af2d-5f20541d2f4c" NodeType="SystemNode" NodeTypeGUID="fbf27f2b-eee3-4bd6-85e0-f5d616912877" Position="-35.15179 76.84631" ProcedureType="PointsCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Random">
+							<Fields>
+								<Field FixedValue="100" Label="Seed" />
+								<Field Expanded="True" Label="Area">
+									<Items>
+										<Item Expanded="True" Label="Surface">
+											<Fields>
+												<Field Expanded="True" Label="Distance">
+													<Items>
+														<Item Expanded="True" Label="Layer">
+															<Fields>
+																<Field FixedValue="0" Label="Index" />
+																<Field FixedValue="0.1" Label="Min. Threshold" />
+																<Field FixedValue="3" Label="Min. Distance" />
+																<Field FixedValue="20" Label="Max. Distance" />
+																<Field FixedValue="" Label="Distance" />
+															</Fields>
+														</Item>
+														<Item Expanded="True" Label="Fixed">
+															<Fields>
+																<Field FixedValue="8" Label="Distance" />
+															</Fields>
+														</Item>
+													</Items>
+												</Field>
+											</Fields>
+										</Item>
+										<Item Expanded="True" Label="Rectangle">
+											<Fields>
+												<Field FixedValue="10,10" Label="Size" />
+												<Field FixedValue="1" Label="Distance" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field Expanded="True" Label="Points">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="a434cd01-9ea8-463e-8ea5-341fc11c6afc" NodeType="SystemNode" NodeTypeGUID="4c7a38df-e3a0-4a77-abb0-599f275d414c" Position="-116.3547 325.2207" ProcedureType="ActorInsertProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="Many to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to One">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on X-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Y-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Z-Axis">
+					<Items>
+						<Item Expanded="True" Label="Minimum">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="eef24038-d6f1-4cec-9d2f-9753ba9e959a" NodeType="SystemNode" NodeTypeGUID="c185cf6d-f351-48fc-b741-2fc53d2a5e77" Position="-746.9963 781.5609" ProcedureType="SurfaceModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Smooth">
+							<Fields>
+								<Field FixedValue="0" Label="Layer Index" />
+								<Field FixedValue="1" Label="Intensity" />
+								<Field FixedValue="1" Label="Iterations" />
+								<Field FixedValue="0" Label="Skip" />
+								<Field FixedValue="0" Label="Border" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Change Cell Size">
+							<Fields>
+								<Field FixedValue="0.5" Label="Cell Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="4707b48c-11fd-4902-8eb1-f2203d4042d5" NodeType="SystemNode" NodeTypeGUID="f1dfcf18-2508-4669-8e83-e34fc75c11f0" Position="-1177.773 61.75392" Label="Tree" ProcedureType="BillboardCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="120,120,120,255" Label="Color" />
+				<Argument FixedValue="Demos/03 - Nature/Textures/Billboards/gl-tree-01.png" Guid="f78a341d-1bb0-47ee-b6fb-fec5947ebfa9" Label="Image" />
+				<Argument FixedValue="1,1" Label="Size" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="2#I#0" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="5#I#0" FromNode="2" ToNode="5" FromLabel="Output" ToLabel="Inputs[0].Many to Many.Sources" />
+		<Edge FromPort="6#O#0" ToPort="7#I#0" FromNode="6" ToNode="7" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="7#O#0" ToPort="8#I#0" FromNode="7" ToNode="8" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="8#O#0" ToPort="10#I#0" FromNode="8" ToNode="10" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="10#O#0" ToPort="9#I#0" FromNode="10" ToNode="9" FromLabel="Selection[0].Index.Output" ToLabel="Input" />
+		<Edge FromPort="0#O#0" ToPort="11#I#0" FromNode="0" ToNode="11" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="9#O#0" ToPort="11#I#0" FromNode="9" ToNode="11" FromLabel="Output" ToLabel="Input[0].Collective.Collective" />
+		<Edge FromPort="17#O#0" ToPort="12#I#0" FromNode="17" ToNode="12" FromLabel="Output" ToLabel="Type[0].Random.Area[0].Surface.Surface" />
+		<Edge FromPort="18#O#0" ToPort="19#I#0" FromNode="18" ToNode="19" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="19#O#0" ToPort="13#I#0" FromNode="19" ToNode="13" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="13#O#0" ToPort="20#I#0" FromNode="13" ToNode="20" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="20#O#0" ToPort="17#I#1" FromNode="20" ToNode="17" FromLabel="Output" ToLabel="Input[0].Dual.Second" />
+		<Edge FromPort="10#O#1" ToPort="17#I#0" FromNode="10" ToNode="17" FromLabel="Selection[1].Index.Output" ToLabel="Input[0].Dual.First" />
+		<Edge FromPort="20#O#0" ToPort="21#I#0" FromNode="20" ToNode="21" FromLabel="Output" ToLabel="Type[0].Random.Area[0].Surface.Surface" />
+		<Edge FromPort="12#O#0" ToPort="5#I#1" FromNode="12" ToNode="5" FromLabel="Output" ToLabel="Inputs[0].Many to Many.Targets" />
+		<Edge FromPort="5#O#0" ToPort="16#I#1" FromNode="5" ToNode="16" FromLabel="Source" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="21#O#0" ToPort="22#I#1" FromNode="21" ToNode="22" FromLabel="Output" ToLabel="Inputs[0].Many to Many.Targets" />
+		<Edge FromPort="22#O#0" ToPort="16#I#1" FromNode="22" ToNode="16" FromLabel="Source" ToLabel="Entity[0].Actor.Actor" />
+		<Edge FromPort="4#O#0" ToPort="22#I#0" FromNode="4" ToNode="22" FromLabel="Output" ToLabel="Inputs[0].Many to Many.Sources" />
+		<Edge FromPort="3#O#0" ToPort="1#I#0" FromNode="3" ToNode="1" FromLabel="Output" ToLabel="Inputs[0].Collective.Collective" />
+		<Edge FromPort="23#O#0" ToPort="14#I#0" FromNode="23" ToNode="14" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="14#O#0" ToPort="15#I#0" FromNode="14" ToNode="15" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="11#O#0" ToPort="16#I#0" FromNode="11" ToNode="16" FromLabel="Output" ToLabel="Inputs[0].Single.Single" />
+		<Edge FromPort="16#O#0" ToPort="23#I#0" FromNode="16" ToNode="23" FromLabel="Surface" ToLabel="Input" />
+		<Edge FromPort="12#O#1" ToPort="15#I#1" FromNode="12" ToNode="15" FromLabel="Type[0].Random.Area[0].Surface.Surface" ToLabel="Designs[3].Surface.Surface" />
+		<Edge FromPort="24#O#0" ToPort="1#I#0" FromNode="24" ToNode="1" FromLabel="Output" ToLabel="Inputs[0].Collective.Collective" />
+	</Edges>
+</Graph>

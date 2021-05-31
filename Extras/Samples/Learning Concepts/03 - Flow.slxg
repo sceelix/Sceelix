@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="cb70050b-8b74-4f55-b9f6-4235123addd3" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="0b467096-b925-40da-a1c3-530f89bf9e9c" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-160.3616 940.1071" Label="If multiple edges go out from the&#xA;same port, the data is COPIED.      =&gt;" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="9c076ce8-1338-4705-a6ff-455d27d76259" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="232.274 1059.431" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Pyramidize">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Prismify">
+							<Fields>
+								<Field Expanded="True" Label="Amount">
+									<Items>
+										<Item FixedValue="1" Label="Height" />
+									</Items>
+								</Field>
+								<Field Expanded="True" Label="Style">
+									<Items>
+										<Item FixedValue="1,1" Label="Overhang" />
+									</Items>
+								</Field>
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="56b389ac-295c-4394-8b90-4f8543c3fc2d" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="381.4858 772.4012" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="a57f53e4-0052-49a8-8480-4d482a592e10" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="514.4288 1058.887" ProcedureType="MeshModifyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Extrude">
+							<Fields>
+								<Field FixedValue="1" Label="Amount" />
+								<Field Expanded="True" Label="Method">
+									<Items>
+										<Item Expanded="True" Label="Normal">
+											<Fields>
+												<Field FixedValue="0" Label="Offset" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+								<Field FixedValue="False" Label="Cap" />
+								<Field FixedValue="" Label="Section" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Spherify">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="45" Label="Circle Section Angle" />
+								<Field FixedValue="5" Label="Segments" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Pyramidize">
+							<Fields>
+								<Field FixedValue="1" Label="Height" />
+								<Field FixedValue="False" Label="Cap" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="de1a3551-fa9e-4f24-82bf-5db7be11b7a4" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="644.6906 1280.27" Label="&lt;=  If multiple edges go in to the &#xA;       same port, the data is QUEUED." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="d8d24822-924f-403a-9da1-6c372e1576c6" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="360.7761 1364.323" ProcedureType="MeshMaterialProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Material">
+					<Items>
+						<Item Expanded="True" Label="Color">
+							<Fields>
+								<Field FixedValue="255,0,0,255" Label="Color" />
+								<Field FixedValue="10" Label="Specular Power" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="dab3ec7f-0112-46fc-a822-a6a9f74f5e66" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="242.3169 87.58069" Label="1. The order of data flow is always top to bottom,&#xA;    from output port to input port, according to&#xA;    the node DEPENDENCIES." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="1b61fe5c-7c6e-4da7-8cd8-e1c72696be71" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="591.1548 771.9322" Label="&lt;= It all starts with &#xA;       the source node. " ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e8dc4452-ef31-43f1-abfe-df2f038279db" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-11.7761 264.1197" Label="2. If one node 'A' has a &#xA;    connection to 'B', 'A'&#xA;    is executed before 'B'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="fb46bbee-b06a-43e6-aab3-5384e00bad0f" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="399.0174 247.5534" Label="A" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="2" />
+		</Node>
+		<Node Guid="be12d869-763e-4b03-9248-a2e90c42c473" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="319.3083 392.5378" Label="B" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="6b283866-48aa-4e2d-9492-c410c3442cbb" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="616.1257 293.7457" Label="4. Order of output ports&#xA;    of 'A' also indicate order &#xA;    of execution. So 'B' is &#xA;    executed before 'C'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="d96697d3-ff4f-4568-8d6e-1656079af2f7" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="477.1156 393.2841" Label="C" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="aebd7c6b-4fe9-431f-83bf-ef5180ebf03b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="254.0536 1467.557" Label="This means that this last node&#xA;executes TWICE, once for each&#xA;created mesh." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="5f3d531f-573f-4062-8c35-b42073685764" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="223.0126 1664.342" Label="(Try executing the graph to see the result!)" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c4a36547-8e91-494b-8d58-0ecdd2ee7e4f" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="278.5657 542.285" Label="D" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="946c28d2-5d74-4f2e-84cc-be237bd4ee14" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-107.2587 516.5999" Label="3. Because the flow goes&#xA;    depth-first, 'D' is executed&#xA;    after 'B', but before 'C'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="153cb80a-e082-41d6-a110-fa896e816db5" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="195.2431 1197.344" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="3,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="54a75401-b09f-40de-a2e6-708342c2f4ca" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="528.6241 1190.238" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="-3,0,0" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="bf611fc9-1954-435b-99ce-29c31180f629" NodeType="SystemNode" NodeTypeGUID="bda91758-2aea-4aad-a607-cc4e76adbeae" Position="408.609 921.2354" ProcedureType="ActorScaleProcedure">
+			<Arguments>
+				<Argument FixedValue="2,2,2" Label="Amount" />
+				<Argument FixedValue="Relative" Label="Mode" />
+				<Argument FixedValue="Scope" Label="Relative To" />
+				<Argument Expanded="True" Label="Pivot">
+					<Fields>
+						<Field FixedValue="0.5,0.5,0.5" Label="Position" />
+						<Field FixedValue="Relative" Label="Offset" />
+						<Field FixedValue="Scope" Label="Relative To" />
+					</Fields>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="9#O#0" ToPort="10#I#0" FromNode="9" ToNode="10" FromLabel="Ports[0].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="9#O#1" ToPort="12#I#0" FromNode="9" ToNode="12" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="15#I#0" FromNode="10" ToNode="15" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="1#O#0" ToPort="17#I#0" FromNode="1" ToNode="17" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="17#O#0" ToPort="5#I#0" FromNode="17" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="3#O#0" ToPort="18#I#0" FromNode="3" ToNode="18" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="18#O#0" ToPort="5#I#0" FromNode="18" ToNode="5" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="2#O#0" ToPort="19#I#0" FromNode="2" ToNode="19" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="19#O#0" ToPort="1#I#0" FromNode="19" ToNode="1" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="19#O#0" ToPort="3#I#0" FromNode="19" ToNode="3" FromLabel="Output" ToLabel="Input" />
+	</Edges>
+</Graph>

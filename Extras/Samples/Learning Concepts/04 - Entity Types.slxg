@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="3e3bb91f-04be-4513-8c02-f4bebe05ef22" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="e7f46c16-5d60-4971-9cf4-913178c60b80" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="270.2049 191.7596" Label="1. Data that flows between nodes&#xA;    is organized in the form of ENTITIES." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="cd529676-ff63-457f-8197-ca0e07ccda23" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="140.7507 333.2086" Label="2. Right now, Sceelix supports several types of entities, such as:" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="77a3fc05-2307-43c3-a889-0e317f815c49" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="-85.84074 444.2599" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="38223a69-52e7-4ab2-a736-ebf941226db8" NodeType="SystemNode" NodeTypeGUID="f1dfcf18-2508-4669-8e83-e34fc75c11f0" Position="317.7864 445.027" ProcedureType="BillboardCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="0,0,0,255" Label="Color" />
+				<Argument FixedValue="Learning Concepts/Resources/PersonClipart.png" Guid="0f90c79d-0f37-48a0-b452-630529dac079" Label="Image" />
+				<Argument FixedValue="1,1" Label="Size" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="7a0c109c-3701-4840-b864-e46985e2069a" NodeType="SystemNode" NodeTypeGUID="fe4221f3-991c-4161-bbae-58f5a60f8d42" Position="124.5233 443.5719" ProcedureType="PathCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Grid">
+							<Fields>
+								<Field FixedValue="1" Label="Number of Columns" />
+								<Field FixedValue="1" Label="Number of Rows" />
+								<Field FixedValue="1" Label="Column Width" />
+								<Field FixedValue="1" Label="Row Height" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="63757d4f-8179-4a45-aa62-f4a3dee0c6d9" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="253.3497 659.921" Label="3. Entities are organized in a hierarchy:" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="abceb8ab-e4e3-4322-877e-f01b5ea0c665" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="376.6381 767.936" Label="Entity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="21f5f650-80ac-4a57-b946-e589de6f1e06" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="-283.065 1181.783" Label="Mesh" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="99216c33-4e5f-4578-9e63-88486dea514f" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="-138.5893 1182.394" Label="Surface" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="665aa43a-300c-42c7-8c1e-41e3646be344" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="396.3786 1179.564" Label="Path" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="04a0034e-d5d7-41cc-bbcd-7259138c61fb" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="375.1112 947.2557" Label="Actor" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f2905049-493c-4f4b-a244-58e7363b6ce0" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="531.9861 1182.212" Label="Prop" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="19cf0ba3-6491-41dc-801d-46a4a6d2e337" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="678.1788 1182.563" Label="Game&#xA;Entity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="836b6443-7eb7-4003-bf92-41aff46751e6" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="835.2053 1181.147" Label="Unity&#xA;Entity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="de4e35e2-2cfe-4484-b9d6-a3738f2b1b8a" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="18.77188 1182.553" Label="Billboard" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="7ad714de-8b28-4119-96a3-95dd90bb1f58" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="180.5126 1182.055" Label="Mesh Instance" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="40b5fb33-c55d-41d7-8a76-e63869d4a76b" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="595.1935 945.9368" Label="Group" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Output">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="4e0a90ed-f1a8-4bff-aa84-4f7fc242a5bc" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="179.6448 945.9366" Label="Subentity" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="8c15f856-b35f-495d-9296-d5bbf44ba45c" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-52.80103 1504.26" Label="5. This means that, for instance, ports&#xA;     that accept the type 'Entity', also&#xA;    accept Meshes, Billboards, Surfaces...&#xA;&#xA;               Like this example!" ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="674720f1-a913-40b5-8541-5138511fe169" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="480.0063 1502.091" ProcedureType="MeshCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Primitive">
+					<Items>
+						<Item Expanded="True" Label="Cube">
+							<Fields>
+								<Field FixedValue="1" Label="Size" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="83f4a65c-878a-4bb5-9b24-e693fb143757" NodeType="SystemNode" NodeTypeGUID="fe4221f3-991c-4161-bbae-58f5a60f8d42" Position="691.0476 1503.571" ProcedureType="PathCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Grid">
+							<Fields>
+								<Field FixedValue="1" Label="Number of Columns" />
+								<Field FixedValue="1" Label="Number of Rows" />
+								<Field FixedValue="1" Label="Column Width" />
+								<Field FixedValue="1" Label="Row Height" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3a1502a2-aeaa-435b-9681-9aeea400d623" NodeType="SystemNode" NodeTypeGUID="03899cac-fff4-46c1-8b67-fcea66165c8a" Position="1002.305 1101.776" Label="Actor&#xA;Group" ProcedureType="SequenceProcedure">
+			<Arguments>
+				<Argument FixedValue="Clone" Label="Copy Method" />
+				<Argument Expanded="True" Label="Ports">
+					<Items>
+						<Item Expanded="True" Label="Single Input">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="c86414cb-a31b-471c-b34d-9d2631f09f0c" NodeType="SystemNode" NodeTypeGUID="2ef7c2e5-c59f-464b-8557-c1e4e38216a9" Position="813.0464 447.0907" Label="..." ProcedureType="EntityCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Method">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="1" Label="Count" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="54e73d10-3ba6-4aa9-8b1f-dd3bdc5c6db8" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="-85.2923 1318.523" Label="4. So, for instance, 'Surface' and 'Mesh' are both subtypes of 'Actor', which, in turn, is a subtype of 'Entity'." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="e03548bd-705e-4209-97f3-c047bf3ddce9" NodeType="SystemNode" NodeTypeGUID="50c9a7c0-6f52-470d-8bb7-2c8b663c94b8" Position="693.5612 1804.743" ProcedureType="CopyProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Standard">
+							<Fields>
+								<Field FixedValue="3" Label="Number of Copies" />
+								<Field FixedValue="Clone" Label="Method" />
+								<Field FixedValue="" Label="Index" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="f81cb078-d533-45e7-a3e7-5a3e65938557" NodeType="SystemNode" NodeTypeGUID="e704d554-70d8-473d-b9ba-4f52782e1546" Position="564.2653 448.0928" ProcedureType="SurfaceCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Perlin">
+							<Fields>
+								<Field FixedValue="100" Label="Width" />
+								<Field FixedValue="100" Label="Length" />
+								<Field FixedValue="50" Label="Height Scale" />
+								<Field FixedValue="1" Label="Cell Size" />
+								<Field FixedValue="TopLeft" Label="Interpolation" />
+								<Field FixedValue="5" Label="Frequency" />
+								<Field FixedValue="5" Label="Roughness" />
+								<Field FixedValue="0" Label="Seed" />
+								<Field FixedValue="0,0" Label="Offset" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="fd6ca51f-50d6-4b52-8bc2-7d4ebadb8f1a" NodeType="SystemNode" NodeTypeGUID="930eb356-619d-4db7-b68a-016d9a6d1e97" Position="585.6985 1657.572" ProcedureType="ActorTranslateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Operation">
+					<Items>
+						<Item Expanded="True" Label="Translate">
+							<Fields>
+								<Field FixedValue="4,2,4" Label="Amount" />
+								<Field FixedValue="Scope" Label="Relative To" />
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="1" />
+			<OutputPorts Count="1" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="6#O#0" ToPort="10#I#0" FromNode="6" ToNode="10" FromLabel="Ports[0].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="7#I#0" FromNode="10" ToNode="7" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="8#I#0" FromNode="10" ToNode="8" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="9#I#0" FromNode="10" ToNode="9" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="11#I#0" FromNode="10" ToNode="11" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="12#I#0" FromNode="10" ToNode="12" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="13#I#0" FromNode="10" ToNode="13" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="14#I#0" FromNode="10" ToNode="14" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="15#I#0" FromNode="10" ToNode="15" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="6#O#0" ToPort="16#I#0" FromNode="6" ToNode="16" FromLabel="Ports[0].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="6#O#0" ToPort="17#I#0" FromNode="6" ToNode="17" FromLabel="Ports[0].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="10#O#0" ToPort="21#I#0" FromNode="10" ToNode="21" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="16#O#0" ToPort="21#I#0" FromNode="16" ToNode="21" FromLabel="Ports[1].Output.Output" ToLabel="Ports[0].Single Input.Input" />
+		<Edge FromPort="19#O#0" ToPort="26#I#0" FromNode="19" ToNode="26" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="20#O#0" ToPort="26#I#0" FromNode="20" ToNode="26" FromLabel="Output" ToLabel="Input" />
+		<Edge FromPort="26#O#0" ToPort="24#I#0" FromNode="26" ToNode="24" FromLabel="Output" ToLabel="Operation[0].Standard.Input" />
+	</Edges>
+</Graph>

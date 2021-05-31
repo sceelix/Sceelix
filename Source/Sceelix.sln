@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sceelix.Designer", "Sceelix.Designer\Sceelix.Designer.csproj", "{F1686765-D326-4671-ACA1-DE384A2972C1}"
 EndProject
@@ -67,6 +67,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sceelix.PostBuildProject", 
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Building", "Building", "{49BB6742-1825-4546-8087-AFFFCA9C6F42}"
+	ProjectSection(SolutionItems) = preProject
+		build.cake = build.cake
+		build.ps1 = build.ps1
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sceelix.Mathematics", "Sceelix.Mathematics\Sceelix.Mathematics.csproj", "{693A506A-559B-4DA6-B460-852ECBB8BD9A}"
 EndProject
@@ -515,5 +519,8 @@ Global
 		{AD47278B-A1B0-461A-B4F1-20CF96B61C7A} = {B37633E9-4774-423E-91B6-73A8AF2487EA}
 		{B2454D82-44CC-4086-9689-FD7ECF85D26B} = {3D4F5D0E-7908-410D-BE1C-7054E067548B}
 		{480627CA-076C-4188-88F4-658724825157} = {3D4F5D0E-7908-410D-BE1C-7054E067548B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4DE7039-7664-4CE9-948C-8EFF844FE961}
 	EndGlobalSection
 EndGlobal

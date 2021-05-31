@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="ad1a4e5a-436c-490a-9349-56902e1bacf6" Author="PedroSilva" Description="A standard graph procedure." Color="ffffff" OutputStyle="Standard" Tags="" Category="">
+  <Parameters>
+    <Parameter FileOperation="Load" Label="Front Texture" Type="Sceelix.Core.Parameters.Infos.FileParameterInfo, Sceelix.Core, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null" Description="" IsPublic="True" EntityEvaluation="False" FixedValue="Textures/10-Clubs.png">
+      <Extensions>
+        <Extension>.jpg</Extension>
+        <Extension>.jpeg</Extension>
+        <Extension>.bmp</Extension>
+        <Extension>.dds</Extension>
+        <Extension>.png</Extension>
+      </Extensions>
+    </Parameter>
+    <Parameter Increment="0.1" DecimalDigits="2" Label="Height" Type="Sceelix.Core.Parameters.Infos.FloatParameterInfo, Sceelix.Core, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null" Description="Amount to be extruded." IsPublic="True" EntityEvaluation="False" FixedValue="0.2" />
+  </Parameters>
+  <Nodes>
+    <Node Guid="91d8f270-bf8a-4385-9a79-9d3da19d0a5a" NodeType="SystemNode" NodeTypeGUID="74716153-9685-4a42-8409-a9c79de5f8c4" Position="104.7332 146.7332" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshCreateProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Primitive">
+          <Items>
+            <Item Expanded="True" Label="Rectangle">
+              <Fields>
+                <Field FixedValue="22" Label="Width" />
+                <Field FixedValue="31" Label="Height" />
+              </Fields>
+            </Item>
+            <Item Expanded="True" Label="Cube">
+              <Fields>
+                <Field FixedValue="1" Label="Size" />
+              </Fields>
+            </Item>
+          </Items>
+        </Argument>
+      </Arguments>
+      <InputPorts Count="0" />
+      <OutputPorts Count="1" />
+    </Node>
+    <Node Guid="f752190f-8bf8-49b7-a073-62b00924fa78" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="-165.8905 608.1179" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshMaterialProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Material">
+          <Items>
+            <Item Expanded="True" Label="Texture">
+              <Fields>
+                <Field FixedValue="Examples/05 - Cards/Textures/Front/10-Clubs.png" Label="Texture" IsExpression="True">
+                  <ParsedExpression>
+                    <ExprNode Name="FrontTexture" Type="ParameterExpressionNode" />
+                  </ParsedExpression>
+                </Field>
+              </Fields>
+            </Item>
+            <Item Expanded="True" Label="Color">
+              <Fields>
+                <Field FixedValue="255,0,0,255" Label="Color" />
+                <Field FixedValue="10" Label="Specular Power" />
+              </Fields>
+            </Item>
+          </Items>
+        </Argument>
+      </Arguments>
+      <InputPorts Count="1" />
+      <OutputPorts Count="1" />
+    </Node>
+    <Node Guid="975aa724-33e3-47db-8d44-d93a8cff517e" NodeType="SystemNode" NodeTypeGUID="ab33c263-352e-4917-a7ec-0686aebc078b" Position="79.28374 614.2386" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshMaterialProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Material">
+          <Items>
+            <Item Expanded="True" Label="Texture">
+              <Fields>
+                <Field FixedValue="Textures/CardBack.png" Label="Texture" />
+              </Fields>
+            </Item>
+            <Item Expanded="True" Label="Color">
+              <Fields>
+                <Field FixedValue="255,0,0,255" Label="Color" />
+                <Field FixedValue="10" Label="Specular Power" />
+              </Fields>
+            </Item>
+          </Items>
+        </Argument>
+      </Arguments>
+      <InputPorts Count="1" />
+      <OutputPorts Count="1" />
+    </Node>
+    <Node Guid="ceafd5f6-3842-4dab-bbd7-ef8403a05f11" NodeType="SystemNode" NodeTypeGUID="9470e48f-5ee8-4d84-a371-949f27786f0f" Position="8.735443 772.7682" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshUVMapProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Operation">
+          <Items>
+            <Item Expanded="True" Label="Face UV">
+              <Fields>
+                <Field Expanded="True" Label="U">
+                  <Fields>
+                    <Field FixedValue="1" Label="Size" />
+                    <Field FixedValue="False" Label="Absolute" />
+                  </Fields>
+                </Field>
+                <Field Expanded="True" Label="V">
+                  <Fields>
+                    <Field FixedValue="1" Label="Size" />
+                    <Field FixedValue="False" Label="Absolute" />
+                  </Fields>
+                </Field>
+              </Fields>
+            </Item>
+          </Items>
+        </Argument>
+      </Arguments>
+      <InputPorts Count="1" />
+      <OutputPorts Count="1" />
+    </Node>
+    <Node Guid="4180dbcd-a768-44e5-bd4d-6eba16c4e14a" NodeType="SystemNode" NodeTypeGUID="266f147e-064f-44dc-8a38-5c9b7dacca74" Position="360.8053 755.0046" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshMergeProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Input">
+          <Items>
+            <Item Expanded="True" Label="Collective">
+              <Fields />
+            </Item>
+          </Items>
+        </Argument>
+        <Argument FixedValue="First" Label="Scope Selection" />
+        <Argument Expanded="True" Label="Criteria">
+          <Items />
+        </Argument>
+      </Arguments>
+      <InputPorts Count="1" />
+      <OutputPorts Count="1">
+        <Port id="0" state="Gate" GateLabel="Card" />
+      </OutputPorts>
+    </Node>
+    <Node Guid="c3a9a68e-5f30-4559-9772-6c0d619cfb55" NodeType="SystemNode" NodeTypeGUID="75cdfc0b-7cdd-485a-85d2-8a781b3a79bc" Position="129.7827 287.8358" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshModifyProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Operation">
+          <Items>
+            <Item Expanded="True" Label="Extrude">
+              <Fields>
+                <Field FixedValue="0.2" Label="Amount" IsExpression="True">
+                  <ParsedExpression>
+                    <ExprNode Name="Height" Type="ParameterExpressionNode" />
+                  </ParsedExpression>
+                </Field>
+                <Field FixedValue="True" Label="Cap" />
+                <Field FixedValue="" Label="Section" />
+                <Field Expanded="True" Label="Method">
+                  <Items>
+                    <Item Expanded="True" Label="Normal">
+                      <Fields>
+                        <Field FixedValue="0" Label="Offset" />
+                      </Fields>
+                    </Item>
+                  </Items>
+                </Field>
+              </Fields>
+            </Item>
+          </Items>
+        </Argument>
+      </Arguments>
+      <InputPorts Count="1" />
+      <OutputPorts Count="1" />
+    </Node>
+    <Node Guid="fdd4d99d-71b1-4721-a683-5097e0034bbf" NodeType="SystemNode" NodeTypeGUID="827e1ac6-ff43-4c26-b6d0-4e64b0c26d46" Position="58.10361 430.1517" HasImpulsePort="False" UseCache="False" ProcedureType="Sceelix.Geometry3D.Procedures.MeshSubselectProcedure, Sceelix.Geometry3D, Version=0.8.4.0, Culture=neutral, PublicKeyToken=null">
+      <Arguments>
+        <Argument Expanded="True" Label="Mesh Selection">
+          <Items>
+            <Item Expanded="True" Label="Direction">
+              <Fields>
+                <Field Expanded="True" Label="Separate">
+                  <Items>
+                    <Item Expanded="True" Label="Separate">
+                      <Fields>
+                        <Field FixedValue="Derived" Label="Scope" />
+                        <Field FixedValue="Parent and Face" Label="Attributes" />
+                      </Fields>
+                    </Item>
+                  </Items>
+                </Field>
+                <Field Expanded="True" Label="Vector">
+                  <Items>
+                    <Item Expanded="True" Label="Top">
+                      <Fields />
+                    </Item>
+                  </Items>
+                </Field>
+                <Field FixedValue="Scope" Label="Relative To" />
+                <Field FixedValue="45" Label="Angle Tolerance" />
+              </Fields>
+            </Item>
+            <Item Expanded="True" Label="Direction">
+              <Fields>
+                <Field Expanded="True" Label="Separate">
+                  <Items>
+                    <Item Expanded="True" Label="Separate">
+                      <Fields>
+                        <Field FixedValue="Derived" Label="Scope" />
+                        <Field FixedValue="Parent and Face" Label="Attributes" />
+                      </Fields>
+                    </Item>
+                  </Items>
+                </Field>
+                <Field Expanded="True" Label="Vector">
+                  <Items>
+                    <Item Expanded="True" Label="Bottom">
+                      <Fields />
+                    </Item>
+                    <Item Expanded="True" Label="Top">
+                      <Fields />
+                    </Item>
+                  </Items>
+                </Field>
+                <Field FixedValue="Scope" Label="Relative To" />
+                <Field FixedValue="45" Label="Angle Tolerance" />
+              </Fields>
+            </Item>
+            <Item Expanded="True" Label="All">
+              <Fields>
+                <Field Expanded="True" Label="Separate">
+                  <Items />
+                </Field>
+              </Fields>
+            </Item>
+          </Items>
+        </Argument>
+      </Arguments>
+      <InputPorts Count="1" />
+      <OutputPorts Count="3" />
+    </Node>
+  </Nodes>
+  <Edges>
+    <Edge FromPort="1#O#0" ToPort="3#I#0" />
+    <Edge FromPort="2#O#0" ToPort="3#I#0" />
+    <Edge FromPort="3#O#0" ToPort="4#I#0" />
+    <Edge FromPort="0#O#0" ToPort="5#I#0" />
+    <Edge FromPort="5#O#0" ToPort="6#I#0" />
+    <Edge FromPort="6#O#0" ToPort="1#I#0" />
+    <Edge FromPort="6#O#1" ToPort="2#I#0" />
+    <Edge FromPort="6#O#2" ToPort="4#I#0" />
+  </Edges>
+</Graph>

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph Guid="95a60184-31c7-4c81-acae-c265fec5e914" Author="pedro" Description="A standard graph procedure." Color="ffffff" Version="1.0.0.0">
+	<Parameters />
+	<Nodes>
+		<Node Guid="3a0ed815-002b-4874-a355-90db76779e84" NodeType="SystemNode" NodeTypeGUID="f1dfcf18-2508-4669-8e83-e34fc75c11f0" Position="134 190" ProcedureType="BillboardCreateProcedure">
+			<Arguments>
+				<Argument FixedValue="0,0,0,255" Label="Color" />
+				<Argument FixedValue="Examples/Billboards/Resources/PersonClipart.png" Guid="f5b72d57-120c-4907-bb56-d60c3bf61af8" Label="Image" />
+				<Argument FixedValue="1.8,1.8" Label="Size" />
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="3a0fd08d-2a7b-4ae0-809a-db175d1ea37a" NodeType="SystemNode" NodeTypeGUID="fbf27f2b-eee3-4bd6-85e0-f5d616912877" Position="457 344" ProcedureType="PointsCreateProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Type">
+					<Items>
+						<Item Expanded="True" Label="Random">
+							<Fields>
+								<Field FixedValue="1000" Label="Seed" />
+								<Field Expanded="True" Label="Area">
+									<Items>
+										<Item Expanded="True" Label="Rectangle">
+											<Fields>
+												<Field FixedValue="100,100" Label="Size" />
+												<Field FixedValue="3" Label="Distance" />
+											</Fields>
+										</Item>
+									</Items>
+								</Field>
+							</Fields>
+						</Item>
+						<Item Expanded="True" Label="Simple">
+							<Fields>
+								<Field Expanded="True" Label="Points">
+									<Items />
+								</Field>
+							</Fields>
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="0" />
+			<OutputPorts Count="1" />
+		</Node>
+		<Node Guid="5dc25022-8192-4605-a0fc-fd7b6a31b06b" NodeType="SystemNode" NodeTypeGUID="4c7a38df-e3a0-4a77-abb0-599f275d414c" Position="358 472" ProcedureType="ActorInsertProcedure">
+			<Arguments>
+				<Argument Expanded="True" Label="Inputs">
+					<Items>
+						<Item Expanded="True" Label="One to Many">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="One to One">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on X-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Y-Axis">
+					<Items>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+				<Argument Expanded="True" Label="Alignment on Z-Axis">
+					<Items>
+						<Item Expanded="True" Label="Minimum">
+							<Fields />
+						</Item>
+						<Item Expanded="True" Label="Center">
+							<Fields />
+						</Item>
+					</Items>
+				</Argument>
+			</Arguments>
+			<InputPorts Count="2" />
+			<OutputPorts Count="2">
+				<Port id="1" state="Blocked" />
+			</OutputPorts>
+		</Node>
+		<Node Guid="ecfa72af-243d-432a-9b9d-1e6c69e687da" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="9 41" Label="Billboards are simple Actors with an&#xA;image that is always facing the camera." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+		<Node Guid="7182a87d-ac24-4676-b3a0-7483f5b67a3b" NodeType="SystemNode" NodeTypeGUID="edd445f0-2dcd-41bb-912f-39b2e2d9daf7" Position="450.4047 602.0963" Label="Billboards do not have any other&#xA;special manipulation nodes, but&#xA;can be manipulated like any other&#xA;actor, changing their position,  &#xA;scale and attributes." ProcedureType="NoteProcedure">
+			<Arguments />
+			<InputPorts Count="0" />
+			<OutputPorts Count="0" />
+		</Node>
+	</Nodes>
+	<Edges>
+		<Edge FromPort="1#O#0" ToPort="2#I#1" FromNode="1" ToNode="2" FromLabel="Output" ToLabel="Inputs[0].One to Many.Targets" />
+		<Edge FromPort="0#O#0" ToPort="2#I#0" FromNode="0" ToNode="2" FromLabel="Output" ToLabel="Inputs[0].One to Many.Source" />
+	</Edges>
+</Graph>
