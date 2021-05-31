@@ -29,11 +29,20 @@ Task("Content Build")
 
 Task("Clean")
 .Does(() => {
-	Information("Cleanup");
+	DeleteDirectory("../Build", new DeleteDirectorySettings {
+    Recursive = true,
+    Force = true
+	});
+});
+
+Task("RestoreNuget")
+.Does(() => {
+	NuGetRestore("./Sceelix.sln");
 });
 
 Task("Build")
 .IsDependentOn("Clean")
+.IsDependentOn("RestoreNuget")
 .Does(() => {
 	MSBuild("./Sceelix.sln", configurator =>
 		configurator.SetConfiguration(configuration)
