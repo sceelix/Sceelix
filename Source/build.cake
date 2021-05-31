@@ -12,12 +12,7 @@ var platform = Argument("platform", "Windows64");
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
 
-Task("Default")
-.Does(() => {
-	Information("Hello Cake!");
-});
-
-Task("Content Build")
+Task("ContentBuild")
 .Does(() => {
 	using(var process = StartAndReturnProcess("../Content/Sceelix.Content.Windows.bat", new ProcessSettings{ WorkingDirectory = "../Content/" }))
 	{
@@ -44,16 +39,6 @@ Task("RestoreNuget")
 	NuGetRestore("./Sceelix.sln");
 });
 
-Task("Build")
-.IsDependentOn("Clean")
-.IsDependentOn("RestoreNuget")
-.Does(() => {
-	MSBuild("./Sceelix.sln", configurator =>
-		configurator.SetConfiguration(configuration)
-		.SetVerbosity(Verbosity.Minimal)
-		.WithProperty("Platform", platform)
-		);
-});
 
 Task("ZipSamples")
 .Does(() => {	
@@ -70,10 +55,32 @@ Task("Setup")
 .IsDependentOn("ZipSamples")
 .IsDependentOn("ZipAPI");
 
+
+Task("Build")
+.Does(() => {
+	MSBuild("./Sceelix.sln", configurator =>
+		configurator.SetConfiguration(configuration)
+		.SetVerbosity(Verbosity.Minimal)
+		.WithProperty("Platform", platform)
+		);
+});
+
+Task("FullBuild")
+.IsDependentOn("Clean")
+.IsDependentOn("RestoreNuget")
+.IsDependentOn("ContentBuild")
+.IsDependentOn("Setup");
+.IsDependentOn("Build");
+
+
 Task("Test")
-.IsDependentOn("Build")
 .Does(() => {
 	NUnit3($"./*.Tests/bin/{configuration}/**/*Tests.dll");
 });
+
+
+Task("FullBuildAndTest")
+.IsDependentOn("FullBuild")
+.IsDependentOn("Test");
 
 RunTarget(target);

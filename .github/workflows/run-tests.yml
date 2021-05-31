@@ -18,6 +18,6 @@ jobs:
         uses: cake-build/cake-action@v1
         with:
           script-path: Source/build.cake
-          target: Test
+          target: FullBuildAndTest
           arguments: |
             configuration: Release
