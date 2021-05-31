@@ -29,10 +29,14 @@ Task("Content Build")
 
 Task("Clean")
 .Does(() => {
-	DeleteDirectory("../Build", new DeleteDirectorySettings {
-    Recursive = true,
-    Force = true
-	});
+	
+	var dir = "../Build";
+	if (DirectoryExists(dir)){
+		DeleteDirectory(dir, new DeleteDirectorySettings {
+		Recursive = true,
+		Force = true
+		});
+	};
 });
 
 Task("RestoreNuget")
