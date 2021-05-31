@@ -17,4 +17,7 @@ jobs:
       - name: Run the build script
         uses: cake-build/cake-action@v1
         with:
+          script-path: Source/build.cake
           target: Test
+          arguments: |
+            configuration: Release
