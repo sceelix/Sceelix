@@ -12,12 +12,7 @@ var platform = Argument("platform", "Windows64");
 // TASKS
 ///////////////////////////////////////////////////////////////////////////////
 
-Task("Default")
-.Does(() => {
-	Information("Hello Cake!");
-});
-
-Task("Content Build")
+Task("ContentBuild")
 .Does(() => {
 	using(var process = StartAndReturnProcess("../Content/Sceelix.Content.Windows.bat", new ProcessSettings{ WorkingDirectory = "../Content/" }))
 	{
@@ -29,18 +24,21 @@ Task("Content Build")
 
 Task("Clean")
 .Does(() => {
-	Information("Cleanup");
+	
+	var dir = "../Build";
+	if (DirectoryExists(dir)){
+		DeleteDirectory(dir, new DeleteDirectorySettings {
+		Recursive = true,
+		Force = true
+		});
+	};
 });
 
-Task("Build")
-.IsDependentOn("Clean")
+Task("RestoreNuget")
 .Does(() => {
-	MSBuild("./Sceelix.sln", configurator =>
-		configurator.SetConfiguration(configuration)
-		.SetVerbosity(Verbosity.Minimal)
-		.WithProperty("Platform", platform)
-		);
+	NuGetRestore("./Sceelix.sln");
 });
+
 
 Task("ZipSamples")
 .Does(() => {	
@@ -53,14 +51,44 @@ Task("ZipAPI")
 	Zip("../Extras", "../Extras/API.zip", files);
 });
 
+Task("ZipUnityPlugin")
+.Does(() => {
+	CopyDirectory("./Sceelix.External.Unity3D/Assets/Sceelix", "../Extras/Unity Plugin/Unity Plugin/Sceelix");
+	CopyFile("./Sceelix.External.Unity3D/Assets/ReadMe.txt", "../Extras/Unity Plugin/Unity Plugin/ReadMe.txt");
+	Zip("../Extras/Unity Plugin", "../Extras/Unity Plugin.zip");
+	DeleteDirectory("../Extras/Unity Plugin", new DeleteDirectorySettings { Recursive = true,Force = true});
+});
+
 Task("Setup")
 .IsDependentOn("ZipSamples")
-.IsDependentOn("ZipAPI");
+.IsDependentOn("ZipAPI")
+.IsDependentOn("ZipUnityPlugin");
+
+
+Task("Build")
+.Does(() => {
+	MSBuild("./Sceelix.sln", configurator =>
+		configurator.SetConfiguration(configuration)
+		.SetVerbosity(Verbosity.Minimal)
+		.WithProperty("Platform", platform)
+		);
+});
+
+Task("FullBuild")
+.IsDependentOn("Clean")
+.IsDependentOn("RestoreNuget")
+.IsDependentOn("Setup")
+.IsDependentOn("Build");
+
 
 Task("Test")
-.IsDependentOn("Build")
 .Does(() => {
 	NUnit3($"./*.Tests/bin/{configuration}/**/*Tests.dll");
 });
+
+
+Task("FullBuildAndTest")
+.IsDependentOn("FullBuild")
+.IsDependentOn("Test");
 
 RunTarget(target);
