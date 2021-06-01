@@ -51,9 +51,18 @@ Task("ZipAPI")
 	Zip("../Extras", "../Extras/API.zip", files);
 });
 
+Task("ZipUnityPlugin")
+.Does(() => {
+	CopyDirectory("./Sceelix.External.Unity3D/Assets/Sceelix", "../Extras/Unity Plugin/Unity Plugin/Sceelix");
+	CopyFile("./Sceelix.External.Unity3D/Assets/ReadMe.txt", "../Extras/Unity Plugin/Unity Plugin/ReadMe.txt");
+	Zip("../Extras/Unity Plugin", "../Extras/Unity Plugin.zip");
+	DeleteDirectory("../Extras/Unity Plugin", new DeleteDirectorySettings { Recursive = true,Force = true});
+});
+
 Task("Setup")
 .IsDependentOn("ZipSamples")
-.IsDependentOn("ZipAPI");
+.IsDependentOn("ZipAPI")
+.IsDependentOn("ZipUnityPlugin");
 
 
 Task("Build")
