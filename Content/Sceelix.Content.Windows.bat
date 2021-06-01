@@ -5,7 +5,7 @@ SETLOCAL
 "..\Libs\DigitalRune Mono\Windows\MGCB.exe" /incremental /@:Windows.mgcb || GOTO error
 
 :: ZIP content.
-"..\Libs\DigitalRune Mono\Tools\Pack.exe" --output "bin\Windows\Content.zip" --recursive --directory bin\Windows\Content *.* || GOTO error
+"..\Libs\DigitalRune Mono\Tools\Pack.exe" --output "Content.zip" --recursive --directory bin\Windows\Content *.* || GOTO error
 
 cd ..
 

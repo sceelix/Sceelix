@@ -377,7 +377,7 @@
       <Link>Content\API.zip</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="..\..\Content\bin\Windows\Content.zip">
+    <EmbeddedResource Include="..\..\Content\Content.zip">
       <Link>Resources\Content.zip</Link>
     </EmbeddedResource>
     <None Include="Extras\log4net.config">

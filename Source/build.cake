@@ -68,7 +68,6 @@ Task("Build")
 Task("FullBuild")
 .IsDependentOn("Clean")
 .IsDependentOn("RestoreNuget")
-.IsDependentOn("ContentBuild")
 .IsDependentOn("Setup")
 .IsDependentOn("Build");
 
