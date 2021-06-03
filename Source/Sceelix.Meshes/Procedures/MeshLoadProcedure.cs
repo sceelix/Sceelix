@@ -286,7 +286,7 @@ namespace Sceelix.Meshes.Procedures
 
             try
             {
-                AssimpLibrary.Instance.LoadLibrary(Path.Combine(targetDir, "libassimp.so"));
+                Assimp.Unmanaged.AssimpLibrary.Instance.LoadLibrary(Path.Combine(targetDir, "libassimp.so"));
                 /*AssimpLibrary.Instance.LoadLibrary(
                     Path.Combine(targetDir, "libassimp_32.so.3.0.1"),
                     Path.Combine(targetDir, "libassimp_64.so.3.0.1"));*/

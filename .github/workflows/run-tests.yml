@@ -14,10 +14,35 @@ jobs:
     steps:
       - name: Get the sources
         uses: actions/checkout@v1
-      - name: Run the build script
+      - name: Run the build and test script (Windows64)
         uses: cake-build/cake-action@v1
         with:
           script-path: Source/build.cake
           target: FullBuildAndTest
           arguments: |
+            platform: Windows64
             configuration: Release
+      - name: Run the build (Windows32)
+        uses: cake-build/cake-action@v1
+        with:
+          script-path: Source/build.cake
+          target: FullBuild
+          arguments: |
+            platform: Windows32
+            configuration: Release
+      - name: Run the build (Linux)
+        uses: cake-build/cake-action@v1
+        with:
+          script-path: Source/build.cake
+          target: FullBuild
+          arguments: |
+            platform: Linux
+            configuration: Release
+      - name: Run the build (MacOS)
+        uses: cake-build/cake-action@v1
+        with:
+          script-path: Source/build.cake
+          target: FullBuild
+          arguments: |
+            platform: MacOS
+            configuration: Release   

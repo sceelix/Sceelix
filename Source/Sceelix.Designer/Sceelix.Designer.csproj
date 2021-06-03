@@ -466,7 +466,7 @@
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'MacOS' ">
+  <PropertyGroup Condition=" '$(Platform)' == 'MacOS' And '$(Steam)' == 'True'">
     <PostBuildEvent>$(PostBuildEvent)
 	XCOPY "$(ProjectDir)..\..\Libs\Steamworks\MacOS\CSteamworks.bundle" "$(TargetDir)CSteamworks.bundle" /s /i /y</PostBuildEvent>
   </PropertyGroup>
