@@ -143,6 +143,12 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "..\Website\", "{
 		SlnRelativePath = "..\Website\"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{5374562C-801C-4231-B0CC-6C81FC9B117B}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\run-tests.yml = ..\.github\workflows\run-tests.yml
+		..\.github\workflows\website-deploy.yml = ..\.github\workflows\website-deploy.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Linux = Debug|Linux
@@ -738,6 +744,7 @@ Global
 		{3D742ED3-5134-4C4E-8421-D8492B8AF8C3} = {79FCF5A3-B034-4274-A896-BD05EC5CF773}
 		{0F21E7D8-8A14-4071-8285-80918FD05B60} = {79FCF5A3-B034-4274-A896-BD05EC5CF773}
 		{95CE4511-8092-45EB-B796-6848D6D32E5D} = {658B1D18-D08F-4134-AEA7-82713FDC128A}
+		{5374562C-801C-4231-B0CC-6C81FC9B117B} = {49BB6742-1825-4546-8087-AFFFCA9C6F42}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4DE7039-7664-4CE9-948C-8EFF844FE961}
