@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.12"
+#addin nuget:?package=Cake.Yarn&version=0.4.8
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
@@ -90,5 +91,10 @@ Task("Test")
 Task("FullBuildAndTest")
 .IsDependentOn("FullBuild")
 .IsDependentOn("Test");
+
+Task("WebsiteDev")
+.Does(() => {
+	Yarn.FromPath("../Website").RunScript("start");
+});
 
 RunTarget(target);
