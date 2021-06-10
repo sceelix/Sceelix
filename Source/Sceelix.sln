@@ -690,21 +690,13 @@ Global
 		{0F21E7D8-8A14-4071-8285-80918FD05B60}.Release|Windows64.ActiveCfg = Release|Any CPU
 		{0F21E7D8-8A14-4071-8285-80918FD05B60}.Release|Windows64.Build.0 = Release|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|Linux.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|Linux.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|MacOS.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|MacOS.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|Windows32.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|Windows32.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|Windows64.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Debug|Windows64.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Linux.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Linux.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|MacOS.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|MacOS.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Windows32.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Windows32.Build.0 = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Windows64.ActiveCfg = Debug|Any CPU
-		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Windows64.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
