@@ -56,6 +56,13 @@ module.exports = {
         }
       ],
     },
+    algolia: {
+        apiKey: 'YOUR_API_KEY',
+        indexName: 'YOUR_INDEX_NAME',
+
+        // Optional: see doc section below
+        contextualSearch: true
+    },
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
