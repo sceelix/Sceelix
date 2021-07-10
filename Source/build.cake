@@ -4,10 +4,15 @@
 
 #tool "nuget:?package=NUnit.ConsoleRunner&version=3.12"
 #addin nuget:?package=Cake.Yarn&version=0.4.8
+#addin "Cake.FileHelpers&version=4.0.1"
+
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 var platform = Argument("platform", "Windows64");
+var applicationVersion = "1.0.0.0";
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 // TASKS
@@ -96,5 +101,19 @@ Task("WebsiteDev")
 .Does(() => {
 	Yarn.FromPath("../Website").RunScript("start");
 });
+
+Task("SetVersion")
+   .Does(() => {
+	   ReplaceRegexInFiles("./**/AssemblyInfo.cs",
+						  "(?<=^\\[assembly: AssemblyVersion\\(\\\")(.+?)(?=\\\")",
+						  applicationVersion, 
+						   System.Text.RegularExpressions.RegexOptions.Multiline);
+
+	   ReplaceRegexInFiles("./**/AssemblyInfo.cs",
+						  "(?<=^\\[assembly: AssemblyFileVersion\\(\\\")(.+?)(?=\\\")",
+						  applicationVersion, 
+						   System.Text.RegularExpressions.RegexOptions.Multiline);
+   });
+
 
 RunTarget(target);
