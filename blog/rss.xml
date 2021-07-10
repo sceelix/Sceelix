@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Sceelix Blog</title>
+        <link>https://sceelix.github.io/blog</link>
+        <description>Sceelix Blog</description>
+        <lastBuildDate>Sun, 30 May 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Sceelix is now open source!]]></title>
+            <link>https://sceelix.github.io/blog/sceelix-open-source</link>
+            <guid>sceelix-open-source</guid>
+            <pubDate>Sun, 30 May 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Is has been a long journey developing Sceelix.]]></description>
+        </item>
+    </channel>
+</rss>
