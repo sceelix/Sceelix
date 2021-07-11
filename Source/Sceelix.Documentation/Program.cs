@@ -63,7 +63,7 @@ namespace Sceelix.Documentation
                 }
             }*/
 
-            File.WriteAllText(Path.Combine(destinationFolder, "toc.md"), stringBuilder.ToString());
+            //File.WriteAllText(Path.Combine(destinationFolder, "toc.md"), stringBuilder.ToString());
         }
     }
 }

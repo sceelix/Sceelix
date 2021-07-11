@@ -101,7 +101,7 @@ namespace Sceelix.Documentation
             //builder.AppendLine("<p><i class=\"warning\">Documentation is still under development. Many details are still incomplete or missing. </i></p>&nbsp;");
             //builder.AppendLine("<h2>" + attribute.Label + "</h2>");
             builder.AppendLine(ReplaceNewLinesWithBr(ProcedureAttribute.Description));
-            builder.AppendLine("<br/><br/>");
+            
 
             builder.AppendLine("![" + Path.GetFileNameWithoutExtension(imagePath) + "](" + imagePath + ")");
 
