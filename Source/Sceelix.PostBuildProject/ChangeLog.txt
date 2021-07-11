@@ -1,4 +1,4 @@
-﻿Sceelix 1.0.0 (Xth May 2021)
+﻿Sceelix 1.0.0 (31th May 2021)
 
 Minor additions and bug fixes:
   * CHANGED:    
