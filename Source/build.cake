@@ -115,5 +115,16 @@ Task("SetVersion")
 						   System.Text.RegularExpressions.RegexOptions.Multiline);
    });
 
+Task("GenerateNodeDocs")
+	.Does(() => {
+		using(var process = StartAndReturnProcess($"../Build/Tools/Sceelix.Documentation/{configuration}/Sceelix.Documentation.exe",  new ProcessSettings {
+			 Arguments = $"\"/bin:../Build/{platform}/{configuration}/Bin\" \"/destination:../Website/docs/07-Nodes/Nodes"
+		 }))
+		{
+			process.WaitForExit();
+			
+			Information("Exit code: {0}", process.GetExitCode());
+		}
+		});
 
 RunTarget(target);

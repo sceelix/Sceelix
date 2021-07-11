@@ -15,8 +15,8 @@ namespace Sceelix.Documentation
     {
         static void Main(string[] args)
         {
-            String binFolder = @"E:\Sceelix\Development\Build\Windows64\Release\Bin";
-            String destinationFolder = @"E:\Sceelix\Support\Docs\Node Reference";
+            String binFolder = @"";
+            String destinationFolder = @"Node Reference";
             
             for (int i = 0; i < args.Length; i++)
             {
