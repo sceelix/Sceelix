@@ -34,14 +34,10 @@
       <HintPath>..\..\Build\Windows64\Debug\Bin\Sceelix.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Sceelix.Designer">
-      <HintPath>..\..\Build\Windows64\Debug\Bin\Sceelix.Designer.exe</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
-	<Reference Include="System.Xml" />
-	<Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ProcedureDocumenter.cs" />
