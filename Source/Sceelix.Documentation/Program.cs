@@ -27,29 +27,20 @@ namespace Sceelix.Documentation
                     destinationFolder = args[i].SplitInTwo(':')[1];
             }
             
-
-            //dummy load - not needed because we are referencing a non-licensed version.
-            //LicenseManager.LoadLicenseFromFile("");
-
             //load the assemblies
             SceelixDomain.LoadAssembliesFrom(binFolder);
 
             //initialize the engine
             EngineManager.Initialize();
-
-            //we can now access the system procedures
-            StringBuilder stringBuilder = new StringBuilder();
+            
 
             var procedureDocumenters = SystemProcedureManager.SystemProcedureTypes.Select(type => new ProcedureDocumenter(type)).Where(documenter => !documenter.IsObsolete);
             var groups = procedureDocumenters.GroupBy(x => x.Category).OrderBy(x => x.Key);
             foreach (IGrouping<string, ProcedureDocumenter> documenters in groups)
             {
-
-                stringBuilder.AppendLine("# [" + documenters.Key + "]()");
                 foreach (ProcedureDocumenter procedureDocumenter in documenters)
                 {
-                    var tocEntry = procedureDocumenter.Generate(destinationFolder);
-                    stringBuilder.AppendLine("## " + tocEntry);
+                    procedureDocumenter.Generate(destinationFolder + "/" + documenters.Key);
                 }
             }
 
