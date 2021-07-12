@@ -55,3 +55,15 @@ img {
   margin-right: auto;
   display: block;
 }
+
+.treeview > .toggle {
+    pointer-events: all;
+    cursor: pointer;
+    color: #ffffff;
+    background: aliceblue;
+}
+
+.treeview > .toggle:hover {
+    color: #63b1de;
+    fill: #63b1de;
+}
