@@ -1,4 +1,4 @@
-﻿import Tree from 'react-animated-tree';
+﻿import {ParameterTree} from '@site/src/components/TreeContent'
 
 This is a simple test
 Groups or ungroups actor entities.
@@ -7,24 +7,22 @@ Groups or ungroups actor entities.
 
 Tags: Actors, Group, Ungroup
 
+
 ## Parameters
 
-export const Wow = ({children, name, type, description}) => (
-  <span style={{whiteSpace: 'normal'}}><b>{name}</b> [<i>{type}</i>]<br/>{description}</span>
+
+export const Parameters = ({children}) => (
+  <ParameterTree name="Operation" type="Select" open={true}>
+  <ParameterTree name="Hello" type="Compound" description='Orients the actor so that a given scope axis direction faces a certain direction. For instance, setting the axis direction "X" to face (0,0,1) will rotate the actor so that its X-axis arrow faces the Z-Up direction.'>
+      <ParameterTree name="hello" />
+      <ParameterTree name="sub-subtree with children">
+        <ParameterTree name="child 1"  />
+        <ParameterTree name="child 2"  />
+        <ParameterTree content="child 3"  />
+      </ParameterTree>
+      <ParameterTree name="hello" />
+    </ParameterTree>
+  </ParameterTree>
 );
 
-export const Highlight = ({children}) => (
-  <Tree content="Operation [Select]" open>
-  <Tree content={<Wow name='Hello' type='Compound' description='Orients the actor so that a given scope axis direction faces a certain direction. For instance, setting the axis direction "X" to face (0,0,1) will rotate the actor so that its X-axis arrow faces the Z-Up direction.'/>}>
-      <Tree content="hello" />
-      <Tree content="sub-subtree with children">
-        <Tree content="child 1" style={{ color: '#63b1de' }} />
-        <Tree content="child 2" style={{ color: '#63b1de' }} />
-        <Tree content="child 3" style={{ color: '#63b1de' }} />
-      </Tree>
-      <Tree content="hello" />
-    </Tree>
-  </Tree>
-);
-
-<Highlight />
+<Parameters />

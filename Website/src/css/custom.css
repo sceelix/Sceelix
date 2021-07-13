@@ -59,8 +59,7 @@ img {
 .treeview > .toggle {
     pointer-events: all;
     cursor: pointer;
-    color: #ffffff;
-    background: aliceblue;
+    fill: #1B4B70;
 }
 
 .treeview > .toggle:hover {
