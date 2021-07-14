@@ -10,19 +10,25 @@ Tags: Actors, Group, Ungroup
 
 ## Parameters
 
+[hello](#port1)
 
 export const Parameters = ({children}) => (
-  <ParameterTree name="Operation" type="Select" open={true}>
+  <ParameterTree name="Operation" type="Select" open={true} ports={[1,2]}>
   <ParameterTree name="Hello" type="Compound" description='Orients the actor so that a given scope axis direction faces a certain direction. For instance, setting the axis direction "X" to face (0,0,1) will rotate the actor so that its X-axis arrow faces the Z-Up direction.'>
-      <ParameterTree name="hello" />
+      <ParameterTree name="hello" type="Boolean" />
       <ParameterTree name="sub-subtree with children">
         <ParameterTree name="child 1"  />
         <ParameterTree name="child 2"  />
         <ParameterTree content="child 3"  />
       </ParameterTree>
-      <ParameterTree name="hello" />
+      <ParameterTree name="hello" type="Other" />
     </ParameterTree>
   </ParameterTree>
 );
 
 <Parameters />
+
+## Inputs
+
+* <a name="port1">[1]</a> Input [Collective | Actor]: Set of actors to be grouped.
+* <a name="port3">[3]</a> Input [Single | Actor Group]: Actor group to be ungrouped.
