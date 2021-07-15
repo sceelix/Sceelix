@@ -56,6 +56,13 @@ module.exports = {
         }
       ],
     },
+    algolia: {
+        apiKey: 'b7385d3870d994c74e1493fb1cc324e0',
+        indexName: 'sceelix',
+
+        // Optional: see doc section below
+        contextualSearch: true
+    },
     colorMode: {
       // "light" | "dark"
       defaultMode: 'dark',
