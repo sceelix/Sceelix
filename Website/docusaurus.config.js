@@ -57,8 +57,8 @@ module.exports = {
       ],
     },
     algolia: {
-        apiKey: 'YOUR_API_KEY',
-        indexName: 'YOUR_INDEX_NAME',
+        apiKey: 'b7385d3870d994c74e1493fb1cc324e0',
+        indexName: 'sceelix',
 
         // Optional: see doc section below
         contextualSearch: true
