@@ -218,32 +218,27 @@ namespace Sceelix.Documentation
         private void WritePorts(StringBuilder builder, String portType, List<Port> ports, List<PortReference> portDescriptions)
         {
             builder.AppendLine();
-            builder.AppendLine("<h2>" + portType + "</h2>");
+            builder.AppendLine("## " + portType );
 
             if (!ports.Any())
             {
                 builder.AppendLine("<i>This node has no native " + portType.ToLower() + ".</i>");
+                builder.AppendLine();
             }
             else
             {
-                builder.AppendLine("<ul id=\"ioContainer\">");
-
                 foreach (var port in ports)
-                    builder.Append(String.Format("<li>{0}</li>", GetMdxDocCode(port)));
+                    builder.AppendLine("* " + GetMdxDocCode(port));
 
-                builder.AppendLine("</ul>");
+                builder.AppendLine();
             }
 
             if (portDescriptions.Any())
             {
-                builder.AppendLine("<h3>Parameter " + portType + ":</h3>");
-
-                builder.AppendLine("<ul id=\"ioContainer\">");
+                builder.AppendLine("### Parameter " + portType + ":");
 
                 foreach (var portReference in portDescriptions)
-                    builder.Append(String.Format("<li><a name=\"port{0}\">[{0}]</a> {1}</li>", portReference.Id,portReference.Description));
-
-                builder.AppendLine("</ul>");
+                    builder.AppendLine(String.Format("* <a name=\"port{0}\">[{0}]</a> {1}", portReference.Id,portReference.Description));
             }
         }
 
