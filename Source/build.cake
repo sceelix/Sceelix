@@ -116,6 +116,7 @@ Task("SetVersion")
    });
 
 Task("GenerateNodeDocs")
+	.IsDependentOn("Build")
 	.Does(() => {
 		using(var process = StartAndReturnProcess($"../Build/Tools/Sceelix.Documentation/{configuration}/Sceelix.Documentation.exe",  new ProcessSettings {
 			 Arguments = $"\"/bin:../Build/{platform}/{configuration}/Bin\" \"/destination:../Website/docs/07-Nodes/Nodes"
