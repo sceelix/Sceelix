@@ -95,17 +95,6 @@ namespace Sceelix.Documentation
             builder.AppendLine();
 
             builder.AppendLine("import {ParameterTree} from '@site/src/components/TreeContent'").AppendLine();
-            
-
-            //builder.AppendLine("<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js\"></script>");
-            //builder.AppendLine("<script type=\"text/javascript\" src=\"" + JavascriptLocation + "\"></script>");
-
-            //"<link rel=\"stylesheet\" type=\"text/css\" href=\"" + StyleCssLocation + "\">"
-
-            //builder.AppendLine("<p><img src=\"" + imagePath + "\"></p>&nbsp;");
-
-            //builder.AppendLine("<p><i class=\"warning\">Documentation is still under development. Many details are still incomplete or missing. </i></p>&nbsp;");
-            //builder.AppendLine("<h2>" + attribute.Label + "</h2>");
             builder.AppendLine(ReplaceNewLinesWithBr(ProcedureAttribute.Description)).AppendLine();
             
 
@@ -121,9 +110,9 @@ namespace Sceelix.Documentation
 
             if (!String.IsNullOrWhiteSpace(ProcedureAttribute.Remarks))
             {
-                builder.AppendLine("<h2>Remarks</h2>");
+                builder.AppendLine("## Remarks");
                 builder.AppendLine(ReplaceNewLinesWithBr(ProcedureAttribute.Remarks));
-                builder.AppendLine("<br/>");
+                builder.AppendLine();
             }
 
 
@@ -159,7 +148,6 @@ namespace Sceelix.Documentation
             {
                 foreach (var parameter in parameters)
                 {
-                    //String description = String.IsNullOrWhiteSpace(parameter.Description) ? lorem : parameter.Description;
                     String description = parameter.Description;
 
                     List<int> portNumbers = new List<int>();
@@ -170,16 +158,6 @@ namespace Sceelix.Documentation
                     foreach (OutputPort outputPort in parameter.OutputPorts)
                         portNumbers.Add(CreatePortReference("Output", outputPort, portReferences));
                     
-                    //join the port names with commas
-                    /*var portData = String.Join(",", portNames);
-                    ;
-                    if (!String.IsNullOrWhiteSpace(portData))
-                        portData = " [<i>Adds Port" + (portNames.Count > 1 ? "s " : " ") + portData + "</i>]";*/
-
-                    //the first level must be expanded
-                    //string expanded = level == 0 && parameter.ItemModels.Any() ? " open={true} " : String.Empty;
-
-                    //builder.AppendLine(String.Format("<ParameterTree > <b>{1}</b> [<i>{2}</i>]{3}: <div class=\"paramDescription\">{4}</div>", expanded, parameter.Label, parameter.MetaType, portData, description));
                     for (int i = 0; i < level; i++)
                         builder.Append("\t");
 
