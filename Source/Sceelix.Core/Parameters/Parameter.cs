@@ -8,6 +8,7 @@ using Sceelix.Core.Messages;
 using Sceelix.Core.Parameters.Infos;
 using Sceelix.Core.Procedures;
 using Sceelix.Core.Resources;
+using Sceelix.Loading;
 using Sceelix.Logging;
 
 namespace Sceelix.Core.Parameters
@@ -27,11 +28,8 @@ namespace Sceelix.Core.Parameters
         String Group { get; }
     }*/
 
-    /// <summary>
-    /// An aspect that is used to control the outcome of the procedures.
-    /// Has a certain value by default, but can be changed when the owning procedure is used within another.
-    /// </summary>
-    public abstract class Parameter //: IParameter : Aspect
+
+    public abstract class Parameter
     {
         protected Func<IEntity, object> _entityExpression;
 
@@ -45,10 +43,9 @@ namespace Sceelix.Core.Parameters
 
         protected Parameter(string label)
         {
-            //if (!Regex.IsMatch(label, "^[a-zA-Z][a-zA-Z0-9\\s]*$"))
-            //    throw new ArgumentException("Label '" + label + "' is not valid for a parameter. Labels can only contain alphanumeric and whitespace characters and must start with a letter of the alphabet.");
-
+            
             Label = label;
+            Description = CommentLoader.GetComment(GetType()).Summary;
         }
 
 
