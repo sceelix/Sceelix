@@ -43,7 +43,7 @@
       <Name>Sceelix.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sceelix\Sceelix.csproj">
-      <Project>{9C62325D-2D13-45C8-ACA5-EC17DE0ED835}</Project>
+      <Project>{9c62325d-2d13-45c8-aca5-ec17de0ed835}</Project>
       <Name>Sceelix</Name>
     </ProjectReference>
   </ItemGroup>

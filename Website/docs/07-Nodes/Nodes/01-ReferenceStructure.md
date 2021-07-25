@@ -1,4 +1,6 @@
-﻿Since each node aggregates several different operations, their documentation is also structured in a particular way.
+﻿# Reference Structure
+
+Since each node aggregates several different operations, their documentation is also structured in a particular way.
 
 As mentioned before, nodes can have inputs, outputs and parameters. Parameters can have subparameters, some of which can be enumerated in lists or chosen from a limited set of options. Some inputs and outputs exist on the nodes, regardless of their configuration. However, some parameter value choices does indeed affect the number or type or inputs and outputs. For example, the “Mesh Subselect” creates a new output, which is the one through which the extracted mesh part will come though. The “Game Entity Create” node, on the other hand, can toggle the option to provide an input port to accept a mesh from which the game entity should be created.
 
