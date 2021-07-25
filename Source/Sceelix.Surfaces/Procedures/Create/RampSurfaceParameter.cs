@@ -9,6 +9,9 @@ using Sceelix.Surfaces.Data;
 
 namespace Sceelix.Surfaces.Procedures
 {
+    /// <summary>
+    /// Creates a ramp-looking surface, which can follow different shapes, methods and directions.
+    /// </summary>
     public class RampSurfaceParameter : SurfaceCreateParameter
     {
         /// <summary>

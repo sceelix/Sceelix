@@ -28,13 +28,34 @@ namespace Sceelix.Surfaces.Procedures
     [Procedure("ecd4b1a9-433f-4e94-a713-2de606b472c4", Label = "Surface Crop", Category = "Surface")]
     public class SurfaceCropProcedure : SystemProcedure
     {
+        /// <summary>
+        /// The surface to be cropped.
+        /// </summary>
         private readonly SingleInput<SurfaceEntity> _input = new SingleInput<SurfaceEntity>("Input");
+
+        /// <summary>
+        /// The cropped surface.
+        /// </summary>
         private readonly Output<SurfaceEntity> _output = new Output<SurfaceEntity>("Output");
 
+        /// <summary>
+        /// The anchor corner/location from which the surface will be resized.
+        /// </summary>
         private readonly EnumChoiceParameter<Anchor> _parameterAnchor = new EnumChoiceParameter<Anchor>("Anchor", Anchor.TopLeft);
+        
+        /// <summary>
+        /// The sampling method/pattern to apply when enlarging the surface.
+        /// </summary>
         private readonly EnumChoiceParameter<SampleMethod> _parameterMethod = new EnumChoiceParameter<SampleMethod>("Method", SampleMethod.Mirror);
 
+        /// <summary>
+        /// The new width of the resulting surface.
+        /// </summary>
         private readonly IntParameter _parameterWidth = new IntParameter("Width", 250) {MinValue = 0};
+        
+        /// <summary>
+        /// The new height of the resulting surface.
+        /// </summary>
         private readonly IntParameter _parameterHeight = new IntParameter("Height", 250) {MinValue = 0};
 
 

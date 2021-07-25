@@ -36,7 +36,7 @@ namespace Sceelix.Gis.Procedures
         private readonly FileParameter _parameterFile = new FileParameter("File", "", ".shp");
 
         /// <summary>
-        /// If checked, the data will be reprojected to the indicated projection.
+        /// If checked, the data will be reprojected to the indicated coordinate system.
         /// </summary>
         private readonly OptionalListParameter<ProjectionSelectParameter> _parameterReproject = new OptionalListParameter<ProjectionSelectParameter>("Reproject");
 

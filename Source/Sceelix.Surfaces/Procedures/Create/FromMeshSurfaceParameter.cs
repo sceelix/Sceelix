@@ -9,6 +9,9 @@ using Sceelix.Surfaces.Data;
 
 namespace Sceelix.Surfaces.Procedures
 {
+    /// <summary>
+    /// Creates a surface from a mesh by sampling it uniformly in the XY plane.
+    /// </summary>
     public class FromMeshSurfaceParameter : SurfaceCreateParameter
     {
         /// <summary>

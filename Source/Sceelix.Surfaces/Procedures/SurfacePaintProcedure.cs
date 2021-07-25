@@ -175,11 +175,14 @@ namespace Sceelix.Surfaces.Procedures
         #region Uniform Splatting
 
         /// <summary>
-        /// Paints the surface sections based on the direction of their normals.
+        /// Paints the surface with a uniform value.
         /// </summary>
         /// <seealso cref="SurfacePaintProcedure.SurfacePaintingParameter" />
         public class UniformPaintingParameter : SurfacePaintingParameter
         {
+            /// <summary>
+            /// Uniform value to paint.
+            /// </summary>
             private readonly FloatParameter _parameterValue = new FloatParameter("Value", 1);
 
 

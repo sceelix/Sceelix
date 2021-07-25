@@ -642,6 +642,9 @@ namespace Sceelix.Paths.Procedures
             /// </summary>
             private readonly FloatParameter _parameterDistance = new FloatParameter("Distance", 1) {EntityEvaluation = true};
 
+            /// <summary>
+            /// Indicates if the cleanup should only apply to path crossings (i.e. vertices with more than 2 edges)
+            /// </summary>
             private readonly BoolParameter _parameterCrossOnly = new BoolParameter("Cross Only", true) {EntityEvaluation = true};
 
 

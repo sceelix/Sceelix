@@ -18,7 +18,7 @@ namespace Sceelix.Surfaces.Procedures
         /// The textures of the material
         /// </summary>
         private readonly ListParameter _parameterTextures = new ListParameter("Textures",
-            () => new FileParameter("Texture", "") {ExtensionFilter = BitmapExtension.SupportedFileExtensions});
+            () => new FileParameter("Texture", "") {ExtensionFilter = BitmapExtension.SupportedFileExtensions, Description = "Texture of the material."});
 
         /// <summary>
         /// The UV sizing coordinates for texture mapping.
