@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -24,7 +23,7 @@ namespace Sceelix.Documentation
 
         private readonly Type _systemProcedureType;
         private readonly SystemNode _systemNode;
-        private Color _shadowColor = Color.FromArgb(255, 146, 155, 151);
+        private readonly Color _shadowColor = Color.FromArgb(255, 146, 155, 151);
 
 
 
@@ -124,13 +123,13 @@ namespace Sceelix.Documentation
                 builder.AppendLine("export const Parameters = ({children}) => (<>");
 
                 
-                WriteParameters(builder, 0, _systemNode.Parameters, portReferences);
+                WriteParameters(builder, _systemNode.DefaultLabel, 0, _systemNode.Parameters, portReferences);
 
                 builder.AppendLine("</>);").AppendLine();
                 builder.AppendLine("<Parameters />");
             }
 
-            WritePorts(builder, "Inputs", _systemNode.InputPorts.Where(x => !x.IsParameterPort).ToList(), portReferences.Where(x => x.Type == "Input").ToList());
+            WritePorts(builder, "Inputs",  _systemNode.InputPorts.Where(x => !x.IsParameterPort).ToList(), portReferences.Where(x => x.Type == "Input").ToList());
 
             builder.AppendLine("<br/>");
 
@@ -142,7 +141,7 @@ namespace Sceelix.Documentation
 
 
 
-        private void WriteParameters(StringBuilder builder, int level, List<ParameterInfo> parameters, List<PortReference> portReferences)
+        private void WriteParameters(StringBuilder builder, string systemNodeDefaultLabel, int level, List<ParameterInfo> parameters, List<PortReference> portReferences)
         {
             if (parameters.Any())
             {
@@ -172,7 +171,7 @@ namespace Sceelix.Documentation
 
 
                     if(String.IsNullOrWhiteSpace(description))
-                        Console.WriteLine($"WARN: Parameter {parameter.Label} does not have a description.");
+                        Console.WriteLine($"WARN: Parameter {parameter.Label} from {systemNodeDefaultLabel} does not have a description.");
                     else
                     {
                         builder.Append(" description={<>" + description.Replace("\"", "&quot;") + "</>}");
@@ -182,7 +181,7 @@ namespace Sceelix.Documentation
                     if (parameter.ItemModels.Any())
                     {
                         builder.AppendLine(">");
-                        WriteParameters(builder, level + 1, parameter.ItemModels, portReferences);
+                        WriteParameters(builder, systemNodeDefaultLabel, level + 1, parameter.ItemModels, portReferences);
                         builder.AppendLine("</ParameterTree>");
                     }
                     else
@@ -193,7 +192,7 @@ namespace Sceelix.Documentation
 
 
 
-        private void WritePorts(StringBuilder builder, String portType, List<Port> ports, List<PortReference> portDescriptions)
+        private void WritePorts(StringBuilder builder, string portType, List<Port> ports, List<PortReference> portDescriptions)
         {
             builder.AppendLine();
             builder.AppendLine("## " + portType );
