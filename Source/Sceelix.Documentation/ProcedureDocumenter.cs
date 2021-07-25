@@ -213,7 +213,7 @@ namespace Sceelix.Documentation
 
             if (portDescriptions.Any())
             {
-                builder.AppendLine("### Parameter " + portType + ":");
+                builder.AppendLine("### Parameter " + portType);
 
                 foreach (var portReference in portDescriptions)
                     builder.AppendLine(String.Format("* <a name=\"port{0}\">[{0}]</a> {1}", portReference.Id,portReference.Description));
