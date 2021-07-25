@@ -685,6 +685,9 @@ namespace Sceelix.Unity.Procedures
             /// <seealso cref="OtherComponentParameterType" />
             public class ColorComponentParameterType : OtherComponentParameterType
             {
+                /// <summary>
+                /// The color value.
+                /// </summary>
                 private readonly ColorParameter _parameterValue = new ColorParameter("Value", Color.White);
 
 

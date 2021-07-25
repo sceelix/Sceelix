@@ -14,7 +14,7 @@ namespace Sceelix.Gis.Parameters
         public ProjectionParameter(string label, CoordinateSystemCategory coordinateSystemCategory) : base(label)
         {
             _coordinateSystemCategory = coordinateSystemCategory;
-            _parameterChoiceProjection = new ChoiceParameter("Projection", coordinateSystemCategory.Names.First(), coordinateSystemCategory.Names);
+            _parameterChoiceProjection = new ChoiceParameter("Projection", coordinateSystemCategory.Names.First(), coordinateSystemCategory.Names){Description = "Choice of Projection."};
 
             ReadSubclassFields();
         }

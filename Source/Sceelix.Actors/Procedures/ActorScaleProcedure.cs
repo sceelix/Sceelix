@@ -41,7 +41,7 @@ namespace Sceelix.Actors.Procedures
         private readonly CompoundParameter _parameterPivot = new CompoundParameter("Pivot",
             new Vector3DParameter("Position", new Vector3D(0.5f, 0.5f, 0.5f)) {Description = "Position of the pivot."},
             new ChoiceParameter("Offset", "Relative", "Absolute", "Relative") {Description = "Indicates if the position is measured as absolute units or scope-size relative value (between 0 and 1)"},
-            new ChoiceParameter("Relative To", "Scope", "Scope", "World"));
+            new ChoiceParameter("Relative To", "Scope", "Scope", "World") {Description = "Indicates if the operation should be relative to the scope's direction or to the world."}  );
 
 
 

@@ -143,6 +143,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "github", "github", "{537456
 		..\.github\workflows\website-deploy.yml = ..\.github\workflows\website-deploy.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sceelix.Documentation", "Sceelix.Documentation\Sceelix.Documentation.csproj", "{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Linux = Debug|Linux
@@ -691,6 +693,22 @@ Global
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|MacOS.ActiveCfg = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Windows32.ActiveCfg = Debug|Any CPU
 		{95CE4511-8092-45EB-B796-6848D6D32E5D}.Release|Windows64.ActiveCfg = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|Linux.ActiveCfg = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|Linux.Build.0 = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|MacOS.ActiveCfg = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|MacOS.Build.0 = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|Windows32.ActiveCfg = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|Windows32.Build.0 = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|Windows64.ActiveCfg = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Debug|Windows64.Build.0 = Debug|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|Linux.ActiveCfg = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|Linux.Build.0 = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|MacOS.ActiveCfg = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|MacOS.Build.0 = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|Windows32.ActiveCfg = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|Windows32.Build.0 = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|Windows64.ActiveCfg = Release|Any CPU
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6}.Release|Windows64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -731,6 +749,7 @@ Global
 		{0F21E7D8-8A14-4071-8285-80918FD05B60} = {79FCF5A3-B034-4274-A896-BD05EC5CF773}
 		{95CE4511-8092-45EB-B796-6848D6D32E5D} = {658B1D18-D08F-4134-AEA7-82713FDC128A}
 		{5374562C-801C-4231-B0CC-6C81FC9B117B} = {49BB6742-1825-4546-8087-AFFFCA9C6F42}
+		{3C679A3A-0955-45FB-9CB5-98C5C545A8B6} = {658B1D18-D08F-4134-AEA7-82713FDC128A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D4DE7039-7664-4CE9-948C-8EFF844FE961}

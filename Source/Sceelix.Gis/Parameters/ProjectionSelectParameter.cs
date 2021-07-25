@@ -6,6 +6,9 @@ using Sceelix.Core.Parameters;
 
 namespace Sceelix.Gis.Parameters
 {
+    /// <summary>
+    /// Selection of data projection.
+    /// </summary>
     public class ProjectionSelectParameter : SelectListParameter
     {
         public ProjectionSelectParameter() : this("Projection")
@@ -15,8 +18,8 @@ namespace Sceelix.Gis.Parameters
 
 
         public ProjectionSelectParameter(string label) : base(label,
-            () => new SelectListParameter("Geographic", GetGeographic().ToArray()),
-            () => new SelectListParameter("Projected", GetProjected().ToArray()))
+            () => new SelectListParameter("Geographic", GetGeographic().ToArray()){Description = "Chooses a geographic coordinate system."},
+            () => new SelectListParameter("Projected", GetProjected().ToArray()){Description = "Chooses a projected coordinate system."})
         {
         }
 
@@ -31,7 +34,7 @@ namespace Sceelix.Gis.Parameters
             foreach (var geographicSystem in KnownCoordinateSystems.Geographic.Names)
             {
                 var system = geographicSystem;
-                yield return () => new ProjectionParameter(system, KnownCoordinateSystems.Geographic.GetCategory(system));
+                yield return () => new ProjectionParameter(system, KnownCoordinateSystems.Geographic.GetCategory(system)){Description = $"Geographic Coordinate System for {system}."};
             }
         }
 
@@ -42,7 +45,7 @@ namespace Sceelix.Gis.Parameters
             foreach (var geographicSystem in KnownCoordinateSystems.Projected.Names)
             {
                 var system = geographicSystem;
-                yield return () => new ProjectionParameter(system, KnownCoordinateSystems.Projected.GetCategory(system));
+                yield return () => new ProjectionParameter(system, KnownCoordinateSystems.Projected.GetCategory(system)){Description = $"Projected Coordinate System for {system}."};
             }
         }
     }

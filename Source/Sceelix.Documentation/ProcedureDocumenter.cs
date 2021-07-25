@@ -18,14 +18,12 @@ namespace Sceelix.Documentation
 {
     public class ProcedureDocumenter
     {
-        private const String JavascriptLocation = "https://www.sceelix.com/wp-content/themes/oneup-child/docs/collapsibletree.js";
-        private const String StyleCssLocation = "https://www.sceelix.com/wp-content/themes/oneup-child/docs/style.css";
 
         private static readonly Size _imageSize = new Size(700, 300);
 
         private readonly Type _systemProcedureType;
         private readonly SystemNode _systemNode;
-        private Color _shadowColor = Color.FromArgb(255, 146, 155, 151);
+        private readonly Color _shadowColor = Color.FromArgb(255, 146, 155, 151);
 
 
 
@@ -65,11 +63,11 @@ namespace Sceelix.Documentation
             if (!Directory.Exists(destinationFolder))
                 Directory.CreateDirectory(destinationFolder);
 
-            var fileName = _systemProcedureType.FullName.Replace(".", "-") + "_" + _systemNode.ProcedureAttribute.Guid + ".md";
+            var fileName = _systemProcedureType.FullName.Replace(".", "-") + "_" + _systemNode.ProcedureAttribute.Guid + ".mdx";
             var fileLocation = Path.Combine(destinationFolder, fileName);
             var imageFileLocation = "images/NodeImage_" + _systemNode.ProcedureAttribute.Guid + ".png";
 
-            File.WriteAllText(fileLocation, GetHtmlDocCode(imageFileLocation));
+            File.WriteAllText(fileLocation, GetMdxDocCode(imageFileLocation));
 
             //now, generate the image
             GenerateImage(Path.Combine(destinationFolder, imageFileLocation));
@@ -85,23 +83,19 @@ namespace Sceelix.Documentation
         }
 
 
-        private string GetHtmlDocCode(String imagePath)
+
+        private string GetMdxDocCode(String imagePath)
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine("# " + _systemNode.DefaultLabel);
+            builder.AppendLine("---");
+            builder.AppendLine("title: " + _systemNode.DefaultLabel);
+            builder.AppendLine("---");
+            builder.AppendLine();
 
-            //builder.AppendLine("<script type=\"text/javascript\" src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js\"></script>");
-            //builder.AppendLine("<script type=\"text/javascript\" src=\"" + JavascriptLocation + "\"></script>");
-
-            //"<link rel=\"stylesheet\" type=\"text/css\" href=\"" + StyleCssLocation + "\">"
-
-            //builder.AppendLine("<p><img src=\"" + imagePath + "\"></p>&nbsp;");
-
-            //builder.AppendLine("<p><i class=\"warning\">Documentation is still under development. Many details are still incomplete or missing. </i></p>&nbsp;");
-            //builder.AppendLine("<h2>" + attribute.Label + "</h2>");
-            builder.AppendLine(ReplaceNewLinesWithBr(ProcedureAttribute.Description));
-            builder.AppendLine("<br/><br/>");
+            builder.AppendLine("import {ParameterTree} from '@site/src/components/TreeContent'").AppendLine();
+            builder.AppendLine(ReplaceNewLinesWithBr(ProcedureAttribute.Description)).AppendLine();
+            
 
             builder.AppendLine("![" + Path.GetFileNameWithoutExtension(imagePath) + "](" + imagePath + ")");
 
@@ -109,16 +103,15 @@ namespace Sceelix.Documentation
 
             if (!String.IsNullOrWhiteSpace(tags))
             {
-                builder.AppendLine("<b>Tags:</b> " + tags);
-                builder.AppendLine("<br/>");
+                builder.AppendLine("<b>Tags:</b> " + tags).AppendLine();
             }
 
 
             if (!String.IsNullOrWhiteSpace(ProcedureAttribute.Remarks))
             {
-                builder.AppendLine("<h2>Remarks</h2>");
+                builder.AppendLine("## Remarks");
                 builder.AppendLine(ReplaceNewLinesWithBr(ProcedureAttribute.Remarks));
-                builder.AppendLine("<br/>");
+                builder.AppendLine();
             }
 
 
@@ -126,13 +119,17 @@ namespace Sceelix.Documentation
 
             if (_systemNode.Parameters.Any())
             {
-                builder.AppendLine("<h2>Parameters</h2>");
-                builder.AppendLine("<div id=\"listContainer\">");
-                WriteParameters(builder, 0, _systemNode.Parameters, portReferences);
-                builder.AppendLine("</div>");
+                builder.AppendLine("## Parameters").AppendLine();
+                builder.AppendLine("export const Parameters = ({children}) => (<>");
+
+                
+                WriteParameters(builder, _systemNode.DefaultLabel, 0, _systemNode.Parameters, portReferences);
+
+                builder.AppendLine("</>);").AppendLine();
+                builder.AppendLine("<Parameters />");
             }
 
-            WritePorts(builder, "Inputs", _systemNode.InputPorts.Where(x => !x.IsParameterPort).ToList(), portReferences.Where(x => x.Type == "Input").ToList());
+            WritePorts(builder, "Inputs",  _systemNode.InputPorts.Where(x => !x.IsParameterPort).ToList(), portReferences.Where(x => x.Type == "Input").ToList());
 
             builder.AppendLine("<br/>");
 
@@ -144,41 +141,87 @@ namespace Sceelix.Documentation
 
 
 
-        private void WritePorts(StringBuilder builder, String portType, List<Port> ports, List<PortReference> portDescriptions)
+        private void WriteParameters(StringBuilder builder, string systemNodeDefaultLabel, int level, List<ParameterInfo> parameters, List<PortReference> portReferences)
         {
-            builder.AppendLine();
-            builder.AppendLine("<h2>" + portType + "</h2>");
-
-            if (!ports.Any())
+            if (parameters.Any())
             {
-                builder.AppendLine("<i>This node has no native " + portType.ToLower() + ".</i>");
-            }
-            else
-            {
-                builder.AppendLine("<ul id=\"ioContainer\">");
+                foreach (var parameter in parameters)
+                {
+                    String description = parameter.Description;
 
-                foreach (var port in ports)
-                    builder.Append(String.Format("<li>{0}</li>", GetHtmlDocCode(port)));
+                    List<int> portNumbers = new List<int>();
 
-                builder.AppendLine("</ul>");
-            }
+                    foreach (InputPort inputPort in parameter.InputPorts)
+                        portNumbers.Add(CreatePortReference("Input",inputPort, portReferences));
+                        
+                    foreach (OutputPort outputPort in parameter.OutputPorts)
+                        portNumbers.Add(CreatePortReference("Output", outputPort, portReferences));
+                    
+                    for (int i = 0; i < level; i++)
+                        builder.Append("\t");
 
-            if (portDescriptions.Any())
-            {
-                builder.AppendLine("<h3>Parameter " + portType + ":</h3>");
+                    
+                    builder.Append("<ParameterTree name=" + parameter.Label.Quote() + " type=" + parameter.MetaType.Quote());
 
-                builder.AppendLine("<ul id=\"ioContainer\">");
+                    if (portNumbers.Any())
+                        builder.Append(" ports={[" + String.Join(",", portNumbers) + "]}");
 
-                foreach (var portReference in portDescriptions)
-                    builder.Append(String.Format("<li><a name=\"port{0}\">[{0}]</a> {1}</li>", portReference.Id,portReference.Description));
+                    if (level == 0)
+                        builder.Append(" open={true}");
 
-                builder.AppendLine("</ul>");
+
+                    if(String.IsNullOrWhiteSpace(description))
+                        Console.WriteLine($"WARN: Parameter {parameter.Label} from {systemNodeDefaultLabel} does not have a description.");
+                    else
+                    {
+                        builder.Append(" description={<>" + description.Replace("\"", "&quot;") + "</>}");
+                    }
+
+
+                    if (parameter.ItemModels.Any())
+                    {
+                        builder.AppendLine(">");
+                        WriteParameters(builder, systemNodeDefaultLabel, level + 1, parameter.ItemModels, portReferences);
+                        builder.AppendLine("</ParameterTree>");
+                    }
+                    else
+                        builder.AppendLine("/>");
+                }
             }
         }
 
 
 
-        private String GetHtmlDocCode(Port port)
+        private void WritePorts(StringBuilder builder, string portType, List<Port> ports, List<PortReference> portDescriptions)
+        {
+            builder.AppendLine();
+            builder.AppendLine("## " + portType );
+
+            if (!ports.Any())
+            {
+                builder.AppendLine("<i>This node has no native " + portType.ToLower() + ".</i>");
+                builder.AppendLine();
+            }
+            else
+            {
+                foreach (var port in ports)
+                    builder.AppendLine("* " + GetMdxDocCode(port));
+
+                builder.AppendLine();
+            }
+
+            if (portDescriptions.Any())
+            {
+                builder.AppendLine("### Parameter " + portType);
+
+                foreach (var portReference in portDescriptions)
+                    builder.AppendLine(String.Format("* <a name=\"port{0}\">[{0}]</a> {1}", portReference.Id,portReference.Description));
+            }
+        }
+
+
+
+        private String GetMdxDocCode(Port port)
         {
             if(port is InputPort)
                 return String.Format("<b>{0}</b> [{1} | <i>{2}</i>]: {3}", port.Label, port.Nature, Entity.GetDisplayName(port.ObjectType), port.Description);
@@ -187,69 +230,17 @@ namespace Sceelix.Documentation
         }
 
 
-        private void WriteParameters(StringBuilder builder, int level, List<ParameterInfo> parameters, List<PortReference> portReferences)
+
+        private int CreatePortReference(String type, Port port, List<PortReference> portReferences)
         {
-            if (parameters.Any())
-            {
-                if (level == 0)
-                {
-                    //include the expand all and collapse all buttons
-                    builder.AppendLine("<div class=\"listControl\"><a id=\"expandList\">+ All</a><a id=\"collapseList\">- All</a></div>");
-
-                    //add the indication of the type of list
-                    builder.AppendLine("<ul id=\"expList\">");
-                }
-                else
-                {
-                    //otherwise, it is just a standard ul
-                    builder.AppendLine("<ul>");
-                }
-
-
-                foreach (var parameter in parameters)
-                {
-                    //String description = String.IsNullOrWhiteSpace(parameter.Description) ? lorem : parameter.Description;
-                    String description = parameter.Description;
-
-                    List<String> portNames = new List<string>();
-
-                    foreach (InputPort inputPort in parameter.InputPorts)
-                        portNames.Add(CreatePortReference("Input",inputPort, portReferences));
-                        
-                    foreach (OutputPort outputPort in parameter.OutputPorts)
-                        portNames.Add(CreatePortReference("Output", outputPort, portReferences));
-                    
-                    //join the port names with commas
-                    var portData = String.Join(",", portNames);
-                    ;
-                    if (!String.IsNullOrWhiteSpace(portData))
-                        portData = " [<i>Adds Port" + (portNames.Count > 1 ? "s " : " ") + portData + "</i>]";
-
-                    //the first level must be expanded
-                    string expanded = level == 0 && parameter.ItemModels.Any() ? " class=\"open\"" : String.Empty;
-
-                    builder.AppendLine(String.Format("<li{0}> <b>{1}</b> [<i>{2}</i>]{3}: <div class=\"paramDescription\">{4}</div>", expanded, parameter.Label, parameter.MetaType, portData, description));
-                    WriteParameters(builder, level + 1, parameter.ItemModels, portReferences);
-                    builder.AppendLine("</li>");
-                }
-
-                //builder.AppendLine(level == 0 ? "<ul id=\"expList\">" : "<ul>");
-                builder.AppendLine("</ul>");
-            }
-        }
-
-
-
-        private String CreatePortReference(String type, Port port, List<PortReference> portReferences)
-        {
-            var description = GetHtmlDocCode(port);
+            var description = GetMdxDocCode(port);
 
             var portReference = portReferences.FirstOrDefault(x => x.Description == description);
             if(portReference == null)
                 portReferences.Add(portReference = new PortReference(type, description, portReferences.Count + 1));
 
             //return String.Format("{0}<a href=\"#port{1}\"><sup>[{1}]</sup></a>", port.Label, portReference.Id);
-            return String.Format("<a href=\"#port{0}\">{0}</a>", portReference.Id);
+            return portReference.Id; //String.Format("<a href=\"#port{0}\">{0}</a>", portReference.Id);
         }
 
 

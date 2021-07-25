@@ -64,6 +64,9 @@ namespace Sceelix.Points.Procedures
 
         #region Simple
 
+        /// <summary>
+        /// Creates points from a list of 3D locations. 
+        /// </summary>
         public class SimplePointsParameter : PointCreateParameter
         {
             /// <summary>
@@ -932,6 +935,9 @@ namespace Sceelix.Points.Procedures
         #endregion*/
 
 
+        /// <summary>
+        /// Scatters points on a surface.
+        /// </summary>
         public class SurfaceScatterPointsParameter : ScatterPointsParameter
         {
             /// <summary>

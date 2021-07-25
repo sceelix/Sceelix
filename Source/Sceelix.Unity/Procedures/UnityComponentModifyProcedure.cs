@@ -24,6 +24,9 @@ namespace Sceelix.Unity.Procedures
         public abstract void Run(List<UnityEntity> unityEntities);
     }
 
+    /// <summary>
+    /// Adds a tree instance (or of any other prefab) to the Unity Surface component.
+    /// </summary>
     public class AddSurfaceTreeModifyParameter : ComponentModifyParameter
     {
         /// <summary>
@@ -88,8 +91,10 @@ namespace Sceelix.Unity.Procedures
         }
     }
 
-
-    [Procedure("b5874617-2bc3-4da8-b9f5-d051ac46ee82", Label = "Unity Component Modify")]
+    /// <summary>
+    /// Modifies pre-existing Unity Components on Unity Entities.
+    /// </summary>
+    [Procedure("b5874617-2bc3-4da8-b9f5-d051ac46ee82", Label = "Unity Component Modify", Category = "Unity")]
     public class UnityComponentModifyProcedure : SystemProcedure
     {
         /// <summary>
