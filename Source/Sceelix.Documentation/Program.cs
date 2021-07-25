@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Sceelix.Core;
 using Sceelix.Core.Procedures;
 using Sceelix.Extensions;
-//using Sceelix.Licensing;
 using Sceelix.Loading;
 
 namespace Sceelix.Documentation
@@ -43,18 +39,6 @@ namespace Sceelix.Documentation
                     procedureDocumenter.Generate(destinationFolder + "/" + documenters.Key);
                 }
             }
-
-            /*foreach (Type systemProcedureType in SystemProcedureManager.SystemProcedureTypes)
-            {
-                var procedureDocumenter = new ProcedureDocumenter(systemProcedureType);
-                if (!procedureDocumenter.IsObsolete)
-                {
-                    var tocEntry = procedureDocumenter.Generate(destinationFolder);
-                    stringBuilder.AppendLine(tocEntry);
-                }
-            }*/
-
-            //File.WriteAllText(Path.Combine(destinationFolder, "toc.md"), stringBuilder.ToString());
         }
     }
 }
