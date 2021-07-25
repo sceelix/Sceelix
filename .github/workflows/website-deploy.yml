@@ -16,7 +16,7 @@ jobs:
         uses: cake-build/cake-action@v1
         with:
           script-path: Source/build.cake
-          target: GenerateNodeDocs
+          target: FullGenerateNodeDocs
           arguments: |
             platform: Windows64
             configuration: Release

@@ -115,6 +115,7 @@ Task("SetVersion")
 						   System.Text.RegularExpressions.RegexOptions.Multiline);
    });
 
+
 Task("GenerateNodeDocs")
 	.IsDependentOn("Build")
 	.Does(() => {
@@ -127,5 +128,10 @@ Task("GenerateNodeDocs")
 			Information("Exit code: {0}", process.GetExitCode());
 		}
 		});
+
+
+Task("FullGenerateNodeDocs")
+	.IsDependentOn("FullBuild")
+	.IsDependentOn("GenerateNodeDocs");
 
 RunTarget(target);
