@@ -111,9 +111,6 @@
   <!--Target Condition=" '$(LibraryType)' == 'Windows'" AfterTargets="AfterBuild;NonWinFodyTarget" Name="CleanReferenceCopyLocalPaths">
     <Delete Files="@(ReferenceCopyLocalPaths->'$(OutDir)%(DestinationSubDirectory)%(Filename)%(Extension)')" />
   </Target-->
-  <PropertyGroup>
-    <PreBuildEvent>RMDIR /S /Q "$(TargetDir)""</PreBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
