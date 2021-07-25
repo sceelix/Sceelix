@@ -6,13 +6,20 @@ on:
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: Run the build and run doc generation (Windows64)
+        uses: cake-build/cake-action@v1
+        with:
+          script-path: Source/build.cake
+          target: GenerateNodeDocs
+          arguments: |
+            platform: Windows64
+            configuration: Release
       - uses: webfactory/ssh-agent@v0.5.0
         with:
           ssh-private-key: ${{ secrets.GH_PAGES_DEPLOY }}
