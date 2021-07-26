@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Unity</name>
+    </assembly>
+    <members>
+        <member name="T:Sceelix.Unity.Procedures.AddSurfaceTreeModifyParameter">
+            <summary>
+            Adds a tree instance (or of any other prefab) to the Unity Surface component.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.AddSurfaceTreeModifyParameter._inputActor">
+            <summary>
+            Actors whose position will represent tree positions on the terrain component
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.AddSurfaceTreeModifyParameter._parameterPrefab">
+            <summary>
+            Tree prefab to be used.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.AddSurfaceTreeModifyParameter._parameterBendFactor">
+            <summary>
+            Bend factor of the tree prefab, as understood by Unity.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.AddSurfaceTreeModifyParameter._parameterRotation">
+            <summary>
+            Rotation of the tree prefab.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.AddSurfaceTreeModifyParameter._parameterScale">
+            <summary>
+            Scale of the tree prefab.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityComponentModifyProcedure">
+            <summary>
+            Modifies pre-existing Unity Components on Unity Entities.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityComponentModifyProcedure._input">
+            <summary>
+            Unity Entity whose component is to be modified.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityComponentModifyProcedure._output">
+            <summary>
+            Unity Entity whose component was modified.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityComponentModifyProcedure._parameterComponent">
+            <summary>
+            Component to be modified.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure">
+            <summary>
+            Adds Physical or Behavioral Unity Components to Unity Entities.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure._parameterUnityComponents">
+            <summary>
+            The components to add to the Unity Entity.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter">
+            <summary>
+            Adds a Unity light component to the game object.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.UnityComponentParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterType">
+            <summary>
+            The type of light, as interpreted by the Unity Engine.
+            
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterColor">
+            <summary>
+            Color of the light.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterIntensity">
+            <summary>
+            The light intensity, which is multiplied with the color.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterBounceIntensity">
+            <summary>
+            The multiplier that defines the strength of the bounce lighting.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterShadows">
+            <summary>
+            The shadow type, as interpreted by the Unity engine.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterRange">
+            <summary>
+            The range of the light.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.LightComponentParameter._parameterRenderMode">
+            <summary>
+            The render mode, as interpreted by the Unity engine.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter">
+            <summary>
+            Adds a Unity Camera component to the game object.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.UnityComponentParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterClearFlags">
+            <summary>
+            How the camera clears the background.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterBackground">
+            <summary>
+            The background color.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterFieldOfView">
+            <summary>
+            The parameter field of view
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterClippingPlane">
+            <summary>
+            The camera clipping planes.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterDepth">
+            <summary>
+            Camera's depth in the camera rendering order.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterRenderingPath">
+            <summary>
+            The rendering path that should be used, if possible.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterOcclusionCulling">
+            <summary>
+            Toggles occlusion culling.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CameraComponentParameter._parameterHdr">
+            <summary>
+            Toggles High dynamic range rendering.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter">
+            <summary>
+            Adds a Unity Rigidbody component to the game object.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.UnityComponentParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterMass">
+            <summary>
+            The mass of the rigidbody.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterDrag">
+            <summary>
+            The drag of the object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterAngularDrag">
+            <summary>
+            The angular drag of the object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterUseGravity">
+            <summary>
+            Controls whether gravity affects this rigidbody.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterIsKinematic">
+            <summary>
+            Controls whether physics affects the rigidbody.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterInterpolation">
+            <summary>
+            Allows smoothing out the effect of running physics at a fixed frame rate.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.RigidBodyComponentParameter._parameterCollisionDetectionMode">
+            <summary>
+            The Rigidbody's collision detection mode.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.MeshColliderComponentParameter">
+            <summary>
+            Adds a Unity Mesh Collider component to the game object.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.UnityComponentParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.MeshColliderComponentParameter._parameterIsConvex">
+            <summary>
+            Indicates if a convex collider from the mesh sould be used.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.MeshColliderComponentParameter._parameterIsTrigger">
+            <summary>
+            Indicates if this collider is a trigger?
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter">
+            <summary>
+            A component that can have a different combination of properties, as defined by the platform where the component will be applied.
+            By default, it will use some sort of reflection/meta approach to match the property values with the given property names. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter._parameterComponentName">
+            <summary>
+            Name of component to add to the object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter._parameterProperties">
+            <summary>
+            List of properties to assign to the component.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.CustomComponentParameterType._parameterName">
+            <summary>
+            The property name.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.StringComponentParameterType">
+            <summary>
+            Sets a textual property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.CustomComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.StringComponentParameterType._parameterValue">
+            <summary>
+            The string value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.BoolComponentParameterType">
+            <summary>
+            Sets a boolean property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.CustomComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.BoolComponentParameterType._parameterValue">
+            <summary>
+            The boolean value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.IntComponentParameterType">
+            <summary>
+            Sets an integer property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.CustomComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.IntComponentParameterType._parameterValue">
+            <summary>
+            The integer value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.FloatComponentParameterType">
+            <summary>
+            Sets a floating-point property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.CustomComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.FloatComponentParameterType._parameterValue">
+            <summary>
+            The single-precision value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.DoubleComponentParameterType">
+            <summary>
+            Sets a double-precision property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.CustomComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.CustomComponentParameter.DoubleComponentParameterType._parameterValue">
+            <summary>
+            The double-precision value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter">
+            <summary>
+            A component that may not exist by default in the target platform, unless explicity interpreted/decoded/implement by the user.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter._parameterComponentType">
+            <summary>
+            Type of component to add to the object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter._parameterProperties">
+            <summary>
+            List of properties to assign to the component.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType._parameterName">
+            <summary>
+            The property name.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.StringComponentParameterType">
+            <summary>
+             Sets a textual property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.StringComponentParameterType._parameterValue">
+            <summary>
+            The string value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.BoolComponentParameterType">
+            <summary>
+             Sets a boolean property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.BoolComponentParameterType._parameterValue">
+            <summary>
+            The boolean value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.IntComponentParameterType">
+            <summary>
+             Sets a integer property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.IntComponentParameterType._parameterValue">
+            <summary>
+            The integer value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.FloatComponentParameterType">
+            <summary>
+             Sets a floating-point property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.FloatComponentParameterType._parameterValue">
+            <summary>
+            The floating-point value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.DoubleComponentParameterType">
+            <summary>
+            Sets a double-precision property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.DoubleComponentParameterType._parameterValue">
+            <summary>
+            The double-precision value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.ColorComponentParameterType">
+            <summary>
+            Sets a color property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.ColorComponentParameterType._parameterValue">
+            <summary>
+            The color value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.Vector2ComponentParameterType">
+            <summary>
+            Sets a vector2D property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.Vector2ComponentParameterType._parameterValue">
+            <summary>
+            The vector2D value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.Vector3ComponentParameterType">
+            <summary>
+            Sets a vector2D property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.Vector3ComponentParameterType._parameterValue">
+            <summary>
+            The vector3D value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.ObjectComponentParameterType">
+            <summary>
+            Sets an object property on the component.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.OtherComponentParameterType" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityComponentProcedure.OtherComponentParameter.ObjectComponentParameterType._parameterValue">
+            <summary>
+            The object value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure">
+            <summary>
+            Creates Unity Entities (i.e. Game Objects) with given characteristics. 
+            Can load existing prefabs and carry mesh or Actor data.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterName">
+            <summary>
+            Name of the Game Object, as it appears in the "Hierarchy" panel.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterEnabled">
+            <summary>
+            Enabled flag that allows gameobject state to be toggled.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterIsStatic">
+            <summary>
+            IsStatic flag that allows gameobject drawing to be optimized.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterLayer">
+            <summary>
+            Layer of the Game Object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterPrefab">
+            <summary>
+            Path to the prefab, relative to the "Assets" folder.e.g. 
+            For example Assets/MyFolder/myprefab
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterPositioning">
+            <summary>
+            Defines how the prefab positioning should be placed within the Game Object scope.<br/>
+            <b>Minimum</b> means that prefab will be translated so that its minimum point will match the scope minimum.
+            <b>Pivot</b> means that the prefab will be translated so that its pivot point will match the scope minimum.<br/>
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterScaleMode">
+            <summary>
+            Defines how the prefab dimensions should be placed within the Game Object scope.<br/>
+            <b>None</b> means that prefabs will be left with its original scaling.
+            <b>Stretch To Fill</b> means that the prefab will stretched to fill the scope volume.<br/>
+            <b>Scale To Fit</b> means that the prefab will be scaled, maintaining aspect ratio, so it completely fits withing the scope volume.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterTag">
+            <summary>
+            Tag of the Game Object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure._parameterOptions">
+            <summary>
+            Other options for the creation of the Game Object.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.SimpleParameter">
+            <summary>
+            Defines the transformation of the unity object from the same Translation/Rotation/Scale vectors that Unity provides by default.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.UnityEntityCreateParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.SimpleParameter._parameterTranslation">
+            <summary>
+            Translation (in Unity Coordinates) or the Unity Entity.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.SimpleParameter._parameterRotation">
+            <summary>
+            Rotation (in Unity Coordinates) or the Unity Entity.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.SimpleParameter._parameterScale">
+            <summary>
+            Scale (in Unity Coordinates) or the Unity Entity.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromMeshParameter">
+            <summary>
+            Creates a unity entity from a given mesh, making use of its transform (translation/rotation/scale) and creating a mesh component (filter/renderer).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromMeshParameter._input">
+            <summary>
+            The mesh entity from which to create the unity object.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromBillboardParameter">
+            <summary>
+            Creates a unity entity from a given billboard, making use of its transform (translation/rotation/scale) and creating a billboard component.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromBillboardParameter._input">
+            <summary>
+            The billboard entity from which to create the unity game object.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromMeshInstanceParameter">
+            <summary>
+            Creates a unity entity from a given mesh instance, making use of its transform (translation/rotation/scale) and creating a mesh component  (filter/renderer).
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.UnityEntityCreateParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromMeshInstanceParameter._input">
+            <summary>
+            The mesh instance entity from which to create the unity game object.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromSurfaceParameter">
+            <summary>
+            Creates a unity entity from a given surface, making use of its transform (translation/rotation/scale) and creating a terrain component.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromSurfaceParameter._input">
+            <summary>
+            The surface entity from which to create the unity game object.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromActorParameter">
+            <summary>
+            Creates a unity entity from a given actor, making use of its transform (translation/rotation/scale) only.
+            </summary>
+            <seealso cref="T:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.UnityEntityCreateParameter" />
+        </member>
+        <member name="F:Sceelix.Unity.Procedures.UnityEntityCreateProcedure.FromActorParameter._input">
+            <summary>
+            The actor entity from which to create the unity game object.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Serialization.UnityContractResolver.UnityTypeMapping">
+            <summary>
+            The type mapping for unity types
+            </summary>
+        </member>
+        <member name="F:Sceelix.Unity.Serialization.UnityContractResolver.DefaultTypeMapping">
+            <summary>
+            The alternative type mapping.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,895 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Paths</name>
+    </assembly>
+    <members>
+        <member name="T:Sceelix.Paths.Data.StaticPathEdge">
+            <summary>
+            Define an edge connecting two street vertices.
+            It is called "static", because it precalculates a couple of measurements, assuming that the vertex positions are not changed.
+            This optimizes the process for many procedures.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.StaticPathEdge.CalculateIntersection(Sceelix.Paths.Data.StaticPathEdge,System.Boolean)">
+            <summary>
+            Introduces a new vertex into the street and returns the 2 new static street edges
+            </summary>
+            <param name="vNew"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Paths.Data.PathEdge">
+            <summary>
+            Defines a straight connection between 2 street vertices
+            </summary>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEdge.Direction">
+            <summary>
+            Vector indicating the direction of the pathedge, already normalized.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEdge.Marked">
+            <summary>
+            Just a standard boolean flag that may help in several algorithms.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEdge.Vertices">
+            <summary>
+            An enumeration of the edge's two vertices: source and target.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEdge.CoincidentWith(Sceelix.Paths.Data.PathEdge)">
+            <summary>
+            Indicates if the given edge is coincident with this edge, i.e. if they somehow connect the same two vertices.
+            </summary>
+            <param name="edge">Edge to compare to.</param>
+            <returns>True if the two edges connect the same two vertices, otherwise false.</returns>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEdge.Connects(Sceelix.Paths.Data.PathVertex,Sceelix.Paths.Data.PathVertex)">
+            <summary>
+            Indicates if this edge somehow connects the given two vertices (i.e. any of them being the source and the other the target).
+            </summary>
+            <param name="vertex1">The first vertex.</param>
+            <param name="vertex2">The second vertex.</param>
+            <returns>True if the two vertices are connected by this edge, otherwise false.</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Sceelix.Paths.Data.PathEdge.Contains(Sceelix.Paths.Data.PathVertex)" -->
+        <member name="M:Sceelix.Paths.Data.PathEdge.GetDirectionFrom(Sceelix.Paths.Data.PathVertex)">
+            <summary>
+            Determines the vector direction when starting from the given vertex. 
+            </summary>
+            <param name="pathVertex">Vertex where to start from (it assumes that the given vertex is one the edge's vertices).</param>
+            <returns>Direction from the given vertex.</returns>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEdge.HasPointInBetween(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Indicates if the given position lies on this edge.
+            </summary>
+            <param name="position">Position in 3D world to verify.</param>
+            <returns>True if the position lies on this edge, otherwise false.</returns>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEdge.IntroduceVertex(Sceelix.Paths.Data.PathVertex)">
+            <summary>
+            Introduces the new vertex in the edge, i.e. connects the source and target of this edge to this new vertex
+            and returns two new edges, with the same attributes. The edge detaches itself from the vertices it was attached to.
+            Important: If this is used for edges existing within an already created PathEntity, this edge should be removed and the
+            newly created ones added.
+            </summary>
+            <param name="newVertex">Vertex in the middle to connect to.</param>
+            <returns>Two new edges: one connecting source to the new vertex, and another connecting the new vertex to the new vertex.</returns>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEdge.ReplaceVertex(Sceelix.Paths.Data.PathVertex,Sceelix.Paths.Data.PathVertex)">
+            <summary>
+            Replaced the given vertex with a second one.
+            </summary>
+            <param name="currentVertex">Vertex to be replaced. It should be either the source or target vertex of this edge. If not, nothing will happen.</param>
+            <param name="replacementVertex">Vertex to replace the vertex with.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.#ctor(Sceelix.Paths.Data.PathEdge[])">
+            <summary>
+            Creates a path from a given set of edges.
+            </summary>
+            <param name="vertices">Edges from which the path should be created.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.#ctor(System.Collections.Generic.IEnumerable{Sceelix.Paths.Data.PathEdge})">
+            <summary>
+            Creates a path from a given set of edges.
+            </summary>
+            <param name="vertices">Edges from which the path should be created.</param>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEntity.BoundingBox">
+            <summary>
+            Calculates and returns a boundingbox with this entity's extent.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEntity.BoxScope">
+            <summary>
+            Box Scope that defines the size, orientation and 
+            </summary>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEntity.Edges">
+            <summary>
+            Edges of this path.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathEntity.Vertices">
+            <summary>
+            Enumeration of vertices in this path (obtained from traversing the edges).
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.AddEdge(Sceelix.Paths.Data.PathEdge)">
+            <summary>
+            Adds an edge to the path and updates the scope.
+            </summary>
+            <param name="edge">Edge to be added.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.AddEdges(System.Collections.Generic.IEnumerable{Sceelix.Paths.Data.PathEdge})">
+            <summary>
+            Adds a set of edges to the path and updates the scope.
+            </summary>
+            <param name="edges">Edges to be added.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.AddEdges(Sceelix.Paths.Data.PathEdge[])">
+            <summary>
+            Adds a set of edges to the path and updates the scope.
+            </summary>
+            <param name="edges">Edges to be added.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.AdjustScope">
+            <summary>
+            Maintains the orientation and recalculates the translation and sizes so that it encompasses the Entity.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.AdjustScope(Sceelix.Mathematics.Data.BoxScope)">
+            <summary>
+            Maintains the orientation of the parent and recalculates the translation and sizes so that it encompasses the current Entity.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.CleanConnections">
+            <summary>
+            Removes possible links/references to edges that may not be part of this path.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.CreateSequence(Sceelix.Mathematics.Data.Vector3D[])">
+            <summary>
+            Creates a path from a given set of positions, which are turned into vertices. Builds edges connecting them in the sequence that was given.
+            </summary>
+            <param name="vertices">Vertices from which the path should be created.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.CreateSequence(System.Collections.Generic.IEnumerable{Sceelix.Mathematics.Data.Vector3D})">
+            <summary>
+            Creates a path from a given set of positions, which are turned into vertices. Builds edges connecting them in the sequence that was given.
+            </summary>
+            <param name="vertices">Vertices from which the path should be created.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.CreateSequence(Sceelix.Paths.Data.PathVertex[])">
+            <summary>
+            Creates a path from a given set of vertices. Builds edges connecting them in the sequence that was given.
+            </summary>
+            <param name="vertices">Vertices from which the path should be created.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.CreateSequence(System.Collections.Generic.IEnumerable{Sceelix.Paths.Data.PathVertex})">
+            <summary>
+            Creates a path from a given set of vertices. Builds edges connecting them in the sequence that was given.
+            </summary>
+            <param name="vertices">Vertices from which the path should be created.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.GetEnumerator">
+            <summary>
+            Gets the enumerator of path edges.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.InsertInto(Sceelix.Mathematics.Data.BoxScope)">
+            <summary>
+            Transforms this entity to that it fits the given boxscope.
+            </summary>
+            <param name="target">Scope where to move the entity to.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.IntroduceVertex(Sceelix.Paths.Data.PathEdge,Sceelix.Paths.Data.PathVertex)">
+            <summary>
+            Creates a new vertex where an edge was standing. Removes that edge
+            and connects its source and target to the new vertex with two new edges. Uses the IntroduceVertex function from the pathedge,
+            but already adds and respective removes the edges internally.
+            </summary>
+            <param name="edge">Edges to be replaced.</param>
+            <param name="newMidVertex">Vertex in the middle to connect to.</param>
+            <returns>Two new edges: one connecting source to the new vertex, and another connecting the new vertex to the new vertex.</returns>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.RemoveEdge(Sceelix.Paths.Data.PathEdge,System.Boolean)">
+            <summary>
+            Removes the given edge from the path (and detaches it from its vertices).
+            </summary>
+            <param name="vertices">Edge to be removed.</param>
+            <param name="adjustScope">Indicates if the boxscope should be readjusted after the removal (see AdjustScope function).</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.RemoveEdges(System.Collections.Generic.IEnumerable{Sceelix.Paths.Data.PathEdge},System.Boolean)">
+            <summary>
+            Removes the given edges from the path.
+            </summary>
+            <param name="vertices">Edges to be removed.</param>
+            <param name="adjustScope">Indicates if the boxscope should be readjusted after the removal (see AdjustScope function).</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.RemoveVertex(Sceelix.Paths.Data.PathVertex,System.Boolean,System.Boolean)">
+            <summary>
+            Removes the give vertex from the path.
+            </summary>
+            <param name="vertices">Vertex to be removed.</param>
+            <param name="reconnect">Indicates if the previously connected vertices should be connected among them.</param>
+            <param name="adjustScope">Indicates if the boxscope should be readjusted after the removal (see AdjustScope function).</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathEntity.RemoveVertices(System.Collections.Generic.List{Sceelix.Paths.Data.PathVertex},System.Boolean,System.Boolean)">
+            <summary>
+            Removes the given vertices from the path.
+            </summary>
+            <param name="vertices">Vertices to be removed.</param>
+            <param name="reconnect">Indicates if the previously connected vertices should be connected among them.</param>
+            <param name="adjustScope">Indicates if the boxscope should be readjusted after the removal (see AdjustScope function).</param>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathVertex.Degree">
+            <summary>
+            Number of edges connected to this vertex.
+            </summary>
+            <value> The degree.</value>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathVertex.InDegree">
+            <summary>
+            Number of edges that arrive at this vertex (i.e. their Target is this vertex)
+            </summary>
+            <value>
+            Count of ingoing edges.
+            </value>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathVertex.IngoingEdges">
+            <summary>
+            Edges that arrive at this vertex (i.e. their Target is this vertex).
+            </summary>
+            <value> The ingoing edges. </value>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathVertex.OutDegree">
+            <summary>
+            Number of edges that depart from this vertex (i.e. their Source is this vertex)
+            </summary>
+            <value>Count of outgoing edges.
+            </value>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathVertex.OutgoingEdges">
+            <summary>
+            Edges that depart from this vertex (i.e. their Source is this vertex)
+            </summary>
+            <value>Outgoing edges.
+            </value>
+        </member>
+        <member name="P:Sceelix.Paths.Data.PathVertex.Position">
+            <summary>
+            3D coordinate of the vertex
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathVertex.CleanConnections(System.Collections.Generic.HashSet{Sceelix.Paths.Data.PathEdge})">
+            <summary>
+            Removes references to edges that are not in the indicated hashset of edges.
+            </summary>
+            <param name="edges">The edges.</param>
+        </member>
+        <member name="M:Sceelix.Paths.Data.PathVertex.GetOrderedEdges(Sceelix.Paths.Data.PathEdge,Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Gets the edges, ordered clockwise by angle, relative to the given firstEdge, around the given normal.
+            </summary>
+            <param name="firstEdge">The first edge. Must be connected to this vertex! </param>
+            <param name="normal">The normal around which to rotate.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Paths.Helpers.PathEntityHelper.Blend(Sceelix.Paths.Data.PathEntity)">
+            <summary>
+            Blends edges and vertices within paths. Intersecting edges result in shared vertices. Overlapping vertices are joined.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Paths.Helpers.PathEntityHelper.Round(Sceelix.Paths.Data.PathEntity,System.Int32)">
+            <summary>
+            Rounds the coordinate values of the path vertices, reducing possible mathematical errors in floating point values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.MeshOnSurfacePainting">
+            <summary>
+            Paints mesh faces on the surface.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfacePaintingParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshOnSurfacePainting._inputMesh">
+            <summary>
+            The meshes that are to be painted on the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshOnSurfacePainting._outputMesh">
+            <summary>
+            The meshes that were painted on the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshOnSurfacePainting._parameterValue">
+            <summary>
+            The intensity of the texture painting.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.PathSeparateParameter">
+            <summary>
+            Separation options.
+            </summary>
+            <seealso cref="T:Sceelix.Core.Parameters.CompoundParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathSeparateParameter._parameterAttributes">
+            <summary>
+            Defines what the attributes of the individual path entities should be:
+            if they should take the attributes of the parent, use the ones of the edge
+            or mix both.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathSeparateParameter._parameterScope">
+            <summary>
+            Defines how the 3D Scope of the individual path entities should be:
+            if they should inherit from the parent path or assume new ones, adjusted
+            to the orientation of the edge.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.PathOnSurfaceAdjustParameter">
+            <summary>
+            Adjusts the surface around paths.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceAdjustParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfaceAdjustParameter._input">
+            <summary>
+            Path entities around which the surface should be adjusted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfaceAdjustParameter._output">
+            <summary>
+            Path entities around which the surface was adjusted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfaceAdjustParameter._parameterWidth">
+            <summary>
+            The distance around the path that should be adjusted. This value can be set as an expression based on edge properties. 
+            The @@attributeName will refer to the attributes of each edge.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.PathOnSurfacePainting">
+            <summary>
+            Paints paths on the surface.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfacePaintingParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfacePainting._inputPath">
+            <summary>
+            The paths that are to be painted on the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfacePainting._outputPath">
+            <summary>
+            The paths that were painted on the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfacePainting._parameterWidth">
+            <summary>
+            The distance around the path that should be painted. This value can be set as an expression based on edge properties. 
+            The @@attributeName will refer to the attributes of each edge.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathOnSurfacePainting._parameterValue">
+            <summary>
+            The intensity of the texture painting.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.PathPropertyParameter">
+            <summary>
+            Reads/calculates properties from path entities.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPropertyParameter._input">
+            <summary>
+            Path entity from which to read the properties.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPropertyParameter._output">
+            <summary>
+            Path entity from which the properties were read.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPropertyParameter._parameterEdgeCount">
+            <summary>
+            Number of edges in the path.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPropertyParameter._parameterLength">
+            <summary>
+            Total length (sum of all edge sizes) of the path.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPropertyParameter._parameterVertexCount">
+            <summary>
+            Number of vertices in the path.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.MeshFromPathParameter">
+            <summary>
+            Creates a mesh from a path entity.
+            </summary>
+            <seealso cref="T:Sceelix.Meshes.Procedures.MeshCreateProcedure.PrimitiveMeshParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshFromPathParameter.AngleTolerance">
+            <summary>
+            Defines the +/- angle to add to the 180º special case
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshFromPathParameter._input">
+            <summary>
+            Path entity to be transformed into a mesh.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshFromPathParameter._parameterCloseInsides">
+            <summary>
+            Indicates if the insides of the closed paths should be transformed into faces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshFromPathParameter._parameterWidth">
+            <summary>
+            The width of the face created for each edge. Can be set as an expression based on the attributes of each edge using the @@attributeName notation.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.MeshFromPathParameter._attributeSectionType">
+            <summary>
+            Attribute that will store the name the name of the section in the face.
+            Values can be "Inside", "Joint" or "Path" and can be extracted with a "Mesh Subselect" node.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Parameters.MeshFromPathParameter.CloseInsideAreas(System.Collections.Generic.List{Sceelix.Meshes.Data.Face})">
+            <summary>
+            Closes the "holes" between the faces
+            </summary>
+            <param name="faces"></param>
+        </member>
+        <member name="M:Sceelix.Paths.Parameters.MeshFromPathParameter.GetAngle(Sceelix.Paths.Data.PathVertex,Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D,Sceelix.Paths.Data.PathEdge)">
+            <summary>
+            Function used in a ordering function to determine the angle around a vertex (and a given axis normal).
+            </summary>
+            <returns>The angle between that edge and the first edge direction.</returns>
+        </member>
+        <member name="T:Sceelix.Paths.Parameters.PathPlacementParameter">
+            <summary>
+            Places paths on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPlacementParameter._input">
+            <summary>
+            Paths to be placed on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Parameters.PathPlacementParameter._output">
+            <summary>
+            Paths that were placed on the surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathDivideProcedure">
+            <summary>
+            Divides paths into subpaths according to specific criteria.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure._input">
+            <summary>
+            The path to be divided.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure._output">
+            <summary>
+            The divided paths, according to the defined groups.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure._parameterDivideGroups">
+            <summary>
+            Criteria by which the path should be divided. If none is indicated, the whole set of edges will be considered.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure._parameterSeparate">
+            <summary>
+            If true, each one of the edges of the path will be placed into a separate path entity.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideAttributeSetParameter">
+            <summary>
+            Divides the paths by attribute value, i.e. building sets of edges that share the same value.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideAttributeSetParameter._parameterValue">
+            <summary>
+            Value to divide the paths by.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideDirectionSetParameter">
+            <summary>
+            Divides the paths into sets of edges that share the same (approximate) normal direction.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideParameter" />
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideAdjacencySetParameter">
+            <summary>
+            Divides the paths by their vertex connections.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideParameter" />
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideSizeParameter">
+            <summary>
+            Divides the paths by number of edges or vertices, so that they don't exceed the requested size.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideSizeParameter._parameterType">
+            <summary>
+            Type of element to divide by:<br/>
+            <b>Edges</b> means that the paths will not exceed the indicated edge count.<br/>
+            <b>Vertices</b> means that the paths will not exceed the indicated vertex count.<br/>
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDivideProcedure.PathDivideSizeParameter._parameterCount">
+            <summary>
+            The maximum allowed count of edges or vertices to keep in each resulting path.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathSubselectProcedure">
+            <summary>
+            Selects a subset of edges from a given path
+            creating new paths.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure._input">
+            <summary>
+            The path which to apply the subselection to.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure._parameterPathSelection">
+            <summary>
+            The edge selections to apply.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.PathSelectionParameter.Output">
+            <summary>
+            The path resulting from the edges that matched the respective selection.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.PathSelectionParameter.ParameterSeparate">
+            <summary>
+            if true, each one of the edges of the path will be placed into a separate path entity.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathSubselectProcedure.IndexSelectionParameter">
+            <summary>
+            Selects edges from the path by their index.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.IndexSelectionParameter.ParameterIndex">
+            <summary>
+            Index of the edge to select.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathSubselectProcedure.CustomSelectionParameter">
+            <summary>
+            Selects edges by a custom condition.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.CustomSelectionParameter._parameterCondition">
+            <summary>
+            Condition to evaluate for each edge. If true, the edge will be included in the resulting path.
+            Can access the attributes of each edge using the @@attributeName notation.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathSubselectProcedure.AllSelectionParameter">
+            <summary>
+            Selects all (remaining) edges.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathSubselectProcedure.DirectionSelectionParameter">
+            <summary>
+            Selects edges based on the direction of their normals.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.DirectionSelectionParameter._parameterDirectionSelection">
+            <summary>
+            The direction of the edges.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.DirectionSelectionParameter._parameterAngleTolerance">
+            <summary>
+            The angle tolerance which will be used for the comparison.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathSubselectProcedure.DirectionSelectionParameter._parameterRelativeTo">
+            <summary>
+            Indicates if the direction to compare to will be relative to the scope or the world.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathDecomposeProcedure">
+            <summary>
+            Decomposes a Path into vertices or edges, all without 
+            destroying the links between the path parts.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDecomposeProcedure._input">
+            <summary>
+            Path to be decomposed.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDecomposeProcedure._output">
+            <summary>
+            Path subentities (according to the selected "Entity Type" parameter).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDecomposeProcedure._outputOriginal">
+            <summary>
+            The original path.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathDecomposeProcedure._parameterSubEntities">
+            <summary>
+            The type of entities into which the path should be decomposed.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathCreateProcedure">
+            <summary>
+            Creates Paths of primitive patterns (grid, voronoi) or from other Entity types. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure._output">
+            <summary>
+            Path created according to the defined parameters and/or inputs.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure._parameterPrimitive">
+            <summary>
+            Type of path pattern/method to create.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathCreateProcedure.CreateSinglePathParameter">
+            <summary>
+            Creates a path from a sequence of points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateSinglePathParameter.Points">
+            <summary>
+            List of points that define the path.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathCreateProcedure.CreateGridPathParameter">
+            <summary>
+            Creates a path network with a grid shape.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateGridPathParameter._parameterColumns">
+            <summary>
+            Number of points in the X direction.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateGridPathParameter._parameterRows">
+            <summary>
+            Number of points in the Y direction.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateGridPathParameter._parameterColumnWidth">
+            <summary>
+            Spacing between column points (in X).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateGridPathParameter._parameterRowHeight">
+            <summary>
+            Spacing between row points (in Y).
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathCreateProcedure.CreateVoronoiPathParameter">
+            <summary>
+            Creates a path network with a cellular appearance using the Voronoi algorithm.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateVoronoiPathParameter._heightParameter">
+            <summary>
+            Height (size in Y) of the path network.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateVoronoiPathParameter._widthParameter">
+            <summary>
+            Width (size in X) of the path network.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateVoronoiPathParameter._spacingParameter">
+            <summary>
+            Average spacing between the path intersections.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateVoronoiPathParameter._maxOffsetParameter">
+            <summary>
+            Maximum offset of each path intersection.
+            A value of 0 will result in a grid-like appearance. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateVoronoiPathParameter._seedParameter">
+            <summary>
+            Seed that defines the randomness of the path.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathCreateProcedure.CreateFromMeshParameter">
+            <summary>
+            Creates a path from the given mesh edges.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathCreateProcedure.CreateFromMeshParameter._input">
+            <summary>
+            Mesh whose edges are to be extracted.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathMergeProcedure">
+            <summary>
+            Merges several paths into a single one.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathMergeProcedure._input">
+            <summary>
+            The type of input port. <br/>
+            Setting a <b>Single</b> (square) input means that the node will be executed once for all paths. Useful to merge any collection of paths at once. <br/>
+            Setting a <b>Dual</b> (circles) input means that the node will be executed once for each pair of paths. Useful to merge exactly two paths at once.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathMergeProcedure._output">
+            <summary>
+            The merged paths, according to the defined criteria.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathMergeProcedure._parameterCriteria">
+            <summary>
+            Criteria on which to group the paths. If none is defined, all the paths will be merged into one.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathMergeProcedure._parameterScopeMerge">
+            <summary>
+            How the scope for the merged paths should be defined.<br/>
+            <b>First</b>: The scope from the first path will be selected and adapted to the new mesh size.<br/>
+            <b>Reset</b>: The scope will be reset, meaning that it will be aligned to the world axes.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure">
+            <summary>
+            Applies sequences of transformations to the given input path.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure._parameterOperation">
+            <summary>
+            The operation to be applied to the mesh.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.IncreasePrecisionParameter">
+            <summary>
+            Increases the number of vertices in which the path is divided.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathModifyProcedure.PathModificationParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.IncreasePrecisionParameter._parameterMaxSize">
+            <summary>
+            The maximum size of each one of the path segments.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.SimplifyParameter">
+            <summary>
+            Simplifies paths by removing vertices which do not introduce a noticeable detail. Only affects vertices shared by two and only two edges.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.SimplifyParameter._parameterAngleTolerance">
+            <summary>
+            The angle tolerance, in degrees. Vertices whose edge angles differ less than this value from 180 degrees (meaning that they are rather straight) are removed.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.SmoothParameter">
+            <summary>
+            Smooths a path by introducing more vertices following a bezier function.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathModifyProcedure.PathModificationParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.SmoothParameter._parameterSmoothSteps">
+            <summary>
+            The number of smoothing steps to use. The higher, the smoother it can look.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.SmoothParameter._parameterBend">
+            <summary>
+            The intensity of the smoothing.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.RoundVerticesParameter">
+            <summary>
+            Rounds the coordinate values of the path vertices, reducing possible mathematical errors in floating point values.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathModifyProcedure.PathModificationParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.RoundVerticesParameter._parameterPrecision">
+            <summary>
+            Number of decimal cases to which the values should be rounded to.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.BlendParameter">
+            <summary>
+            Blends edges and vertices within paths. Intersecting edges result in shared vertices. Overlapping vertices are joined.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathModifyProcedure.PathModificationParameter" />
+        </member>
+        <member name="M:Sceelix.Paths.Procedures.PathModifyProcedure.BlendParameter.FindEdgeIntersections(Sceelix.Paths.Data.PathEntity)">
+            <summary>
+            Step 1
+            </summary>
+            <param name="network"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Paths.Procedures.PathModifyProcedure.BlendParameter.FixComplementaryEdges(Sceelix.Paths.Data.PathEntity)">
+            <summary>
+            Step 3
+            </summary>
+            <param name="network"></param>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.CleanupParameter">
+            <summary>
+            Performs path cleaning by grouping/merging vertices that are closer than a specified range. 
+            This avoids possible issues when, for instance, transforming the path into a mesh.
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathModifyProcedure.PathModificationParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.CleanupParameter._parameterDistance">
+            <summary>
+            Maximum distance between vertices allowed before a merge between them will take place.
+            (Entity Expression reads values from individual vertices) 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.CleanupParameter._parameterCrossOnly">
+            <summary>
+            Indicates if the cleanup should only apply to path crossings (i.e. vertices with more than 2 edges)
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.EdgeCleanupParameter">
+            <summary>
+            Performs edge cleanup by merging edges that are too close together. 
+            </summary>
+            <seealso cref="T:Sceelix.Paths.Procedures.PathModifyProcedure.PathModificationParameter" />
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.EdgeCleanupParameter._parameterWidth">
+            <summary>
+            Expected size around the edge that must be kept clean. Half of this size is used for each side of the edge. Evaluated per path edge.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.EdgeCleanupParameter._parameterAngleTolerance">
+            <summary>
+            Minimum angle tolerance (in degrees) between edges in order for them to be included in the cleanup. 
+            This value should only be lowered if very small angles are known to exist, otherwise it could result in mathematical precision problems.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Procedures.PathModifyProcedure.TrimParameter">
+            <summary>
+            Trims the paths leaf edges, i.e. those edges that contain non-shared vertices, by a certain amount.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Paths.Procedures.PathModifyProcedure.TrimParameter._parameterAmount">
+            <summary>
+            The amount to cut on the leaf edges.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Paths.Algorithms.Voronoi">
+            <summary>
+            Description of Voronoi.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Paths.Algorithms.Voronoi.GenerateVoronoi(System.Double[],System.Double[],System.Double,System.Double,System.Double,System.Double)">
+            
+            @param xValuesIn Array of X values for each site.
+            @param yValuesIn Array of Y values for each site. Must be identical length to yValuesIn
+            @param minX The minimum X of the bounding box around the voronoi
+            @param maxX The maximum X of the bounding box around the voronoi
+            @param minY The minimum Y of the bounding box around the voronoi
+            @param maxY The maximum Y of the bounding box around the voronoi
+            @return
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Points</name>
+    </assembly>
+    <members>
+        <member name="M:Sceelix.Points.Data.PointEntity.#ctor(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Initializes a new instance of <see cref="T:Sceelix.Points.Data.PointEntity"/> at the given location, oriented to the world.
+            </summary>
+            <param name="position">The position.</param>
+        </member>
+        <member name="P:Sceelix.Points.Data.PointEntity.Position">
+            <summary>
+            The position of the pointEntity. Same as the boxscope.translation.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Parameters.CrossPathConvertMethodParameter">
+            <summary>
+            Connects all pairs of points.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Parameters.SequencePathConvertMethodParameter">
+            <summary>
+            Connects all points in a sequence, in the same order as received in the input.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Parameters.DelaunayPathConvertMethodParameter">
+            <summary>
+            Connects all points into a delaunay triangle mesh.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Parameters.VoronoiPathConvertMethodParameter">
+            <summary>
+            Creates a voronoi pattern from the given points.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Parameters.CreateFromPointsParameter">
+            <summary>
+            Creates a path from a set of given points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Parameters.CreateFromPointsParameter._inputPoints">
+            <summary>
+            Points from which to create path vertices.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Parameters.CreateFromPointsParameter._parameterMethod">
+            <summary>
+            Method to connect the points into the path.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure">
+            <summary>
+            Creates points from primitive patterns (grid, random) or from other Entity types. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure._output">
+            <summary>
+            Points created according to the defined parameters and/or inputs.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure._parameterType">
+            <summary>
+            Type/style of points to create.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.SimplePointsParameter">
+            <summary>
+            Creates points from a list of 3D locations. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SimplePointsParameter._parameterPoints">
+            <summary>
+            List of locations of the points.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.GridPointsParameter">
+            <summary>
+            Creates a 3D grid of points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.GridPointsParameter._parameterColumns">
+            <summary>
+            Number of points in the X direction.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.GridPointsParameter._parameterRows">
+            <summary>
+            Number of points in the Y direction.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.GridPointsParameter._parameterLayers">
+            <summary>
+            Number of points in the Z direction.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.GridPointsParameter._parameterSpacing">
+            <summary>
+            The spacing in the X,Y,Z dimensions between each point.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.FromPathParameter">
+            <summary>
+            Extracts points from path vertices. Shared vertices are not repeated.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.FromPathParameter._inputPath">
+            <summary>
+            The path from which the points are to be extracted from.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.FromMeshParameter">
+            <summary>
+            Extracts points from mesh vertices. Shared vertices are not repeated.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.FromMeshParameter._inputMesh">
+            <summary>
+            The mesh from which the points are to be extracted from.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.FromSurfaceParameter">
+            <summary>
+            Extracts points from surface vertices.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.FromSurfaceParameter._inputSurface">
+            <summary>
+            The surface from which the points are to be extracted from.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.FromSurfaceParameter._attributeIndex">
+            <summary>
+            Attribute to store the surface-relative coordinates (column/row) of the vertices that originated the point.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.RectangleScatterPointsParameter">
+            <summary>
+            Scatters points within a 2D rectangular area.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.RectangleScatterPointsParameter._parameterSize">
+            <summary>
+            The size of the area where to scatter the points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.RectangleScatterPointsParameter._parameterMinDistance">
+            <summary>
+            The (minimum) distance between the points. <br/>
+            In practice, the value will vary between distance and 2 x distance. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.MeshScatterPointsParameter">
+            <summary>
+            Scatters points on a mesh surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.MeshScatterPointsParameter._input">
+            <summary>
+            The mesh on which to randomly scatter the points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.MeshScatterPointsParameter._output">
+            <summary>
+            The mesh on which the points were scattered.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.MeshScatterPointsParameter._parameterDistance">
+            <summary>
+            The (minimum) distance between the points. <br/>
+            In practice, the value will vary between distance and 2 x distance. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterFixedDistanceParameter">
+            <summary>
+            Sets a fixed distance between the points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterFixedDistanceParameter._parameterDistance">
+            <summary>
+            The (minimum) distance between the points. <br/>
+            In practice, the value will vary between distance and 2 x distance. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterLayerDistanceParameter">
+            <summary>
+            Sets a variable distance between the points, based on the intensity of a chosen layer.
+            The intensity values of the layer will be mapped to the generated point density.
+            Layer values below a certain threshold will be filtered so as to define areas where no points are generated.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterLayerDistanceParameter._parameterLayerIndex">
+            <summary>
+            Index of the layer which contains the intensity information. Should be a floating-point based layer, such as a height or blend layer.<br/>
+            By default, the index 0 means the height layer.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterLayerDistanceParameter._parameterThreshold">
+            <summary>
+            The layer value below which no points will be placed (in a 0-1 relative range). 
+            This works as a mask, meaning that, for instance, in those areas where the layer value is below this value, no points will be placed.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterLayerDistanceParameter._parameterMinDistance">
+            <summary>
+            The minimum distance between the generated points. This corresponds to the layer areas with highest values, creating therefore areas with higher point density.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterLayerDistanceParameter._parameterMaxDistance">
+            <summary>
+            The maximum distance between the generated points. This corresponds to the layer areas with lowest values, creating therefore areas with lower point density.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterLayerDistanceParameter._distanceAttribute">
+            <summary>
+            The actual distance calculated for the point.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterPointsParameter">
+            <summary>
+            Scatters points on a surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterPointsParameter._input">
+            <summary>
+            The surface on which to randomly scatter the points.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterPointsParameter._output">
+            <summary>
+            The surface on which the points were scattered.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterPointsParameter._parameterDistance">
+            <summary>
+            The (minimum) distance between the points. <br/>
+            In practice, the value will vary between distance and 2 x distance. 
+            </summary>
+        </member>
+        <member name="M:Sceelix.Points.Procedures.PointsCreateProcedure.SurfaceScatterPointsParameter.#ctor">
+            <summary>
+            The (minimum) distance between the points. <br/>
+            In practice, the value will vary between distance and 2 x distance. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Points.Procedures.PointsCreateProcedure.RandomPointsParameter">
+            <summary>
+            Creates randomly scattered points.
+            </summary>
+            <seealso cref="T:Sceelix.Points.Procedures.PointsCreateProcedure.PointCreateParameter" />
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.RandomPointsParameter._parameterSeed">
+            <summary>
+            The seed of the random point distribution.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Points.Procedures.PointsCreateProcedure.RandomPointsParameter._parameterScatter">
+            <summary>
+            Area on which the points are to be distributed.
+            </summary>
+        </member>
+    </members>
+</doc>

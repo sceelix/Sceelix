@@ -1,0 +1,1232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Mathematics</name>
+    </assembly>
+    <members>
+        <member name="M:Sceelix.Mathematics.Conversions.SceeListConversions.SceelistToColorConversion(Sceelix.Collections.SceeList)">
+            <summary>
+            Converts a List to a struct of type Color.
+            </summary>
+            <param name="sceelist"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Mathematics.Data.BoxScope">
+            <summary>
+            The BoxScope is used for keeping track of the location, adation and size of entities.
+            
+            Note: Due to being a struct, all the axes, sizes and translation are initialized
+            with Zero vectors when the default BoxScope() constructor is used. For most practical
+            matters, the BoxScope.Identity should be used.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.#ctor(Sceelix.Mathematics.Spatial.BoundingBox)">
+            <summary>
+            Creates an world axis oriented scope based on the given bounding box.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.#ctor(Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Creates a custom boxscope based on the given axis directions and translation.
+            Sizes are initialized to 0.
+            </summary>
+            <param name="xAxis"></param>
+            <param name="yAxis"></param>
+            <param name="zAxis"></param>
+            <param name="translation"></param>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.#ctor(System.Nullable{Sceelix.Mathematics.Data.Vector3D},System.Nullable{Sceelix.Mathematics.Data.Vector3D},System.Nullable{Sceelix.Mathematics.Data.Vector3D},System.Nullable{Sceelix.Mathematics.Data.Vector3D},System.Nullable{Sceelix.Mathematics.Data.Vector3D})">
+            <summary>
+            Creates a boxscope instance from a set of 
+            </summary>
+            <param name="xAxis">The x axis direction. If null, will be set to (1,0,0), unless the other two axes are not null, in which case it will be calculated from their cross product</param>
+            <param name="yAxis">The y axis direction. If null, will be set to (0,1,0), unless the other two axes are not null, in which case it will be calculated from their cross product</param>
+            <param name="zAxis">The z axis direction. If null, will be set to (0,0,1), unless the other two axes are not null, in which case it will be calculated from their cross product.</param>
+            <param name="translation">The boxscope offset/translation. If null, will be set to (0,0,0).</param>
+            <param name="sizes">The sizes of the 3 axes. If null, will be set to (0,0,0).</param>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.#ctor(System.Collections.Generic.IEnumerable{Sceelix.Mathematics.Data.Vector3D})">
+            <summary>
+            Creates an axis-oriented scope based on the given positions.
+            </summary>
+            <param name="positions"></param>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.Grow(System.Collections.Generic.IEnumerable{Sceelix.Mathematics.Data.Vector3D})">
+            <summary>
+            Grows the scope by, while keeping orientation, upgrades
+            the translation and sizes so as to incorporate the new
+            given points as well.
+            </summary>
+            <param name="positions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.Adjust(System.Collections.Generic.IEnumerable{Sceelix.Mathematics.Data.Vector3D})">
+            <summary>
+            Maintains the orientation, but resets the translation and sizes
+            and recalculates them based on the given set of points.
+            </summary>
+            <param name="positions"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.ToScopePosition(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Converts a coordinate in ABSOLUTE world coordinates into this scope's ABSOLUTE coordinates.
+            </summary>
+            <param name="position">The position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.ToRelativeScopePosition(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Converts a coordinate in ABSOLUTE world coordinates into this scope's RELATIVE coordinates (0 - 1 range, relative to the scope sizes).
+            </summary>
+            <param name="position">The position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.ToWorldPosition(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Converts a coordinate in ABSOLUTE scope coordinates into world ABSOLUTE coordinates.
+            </summary>
+            <param name="position">The position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.ToRelativeWorldPosition(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Converts a coordinate in RELATIVE scope coordinates into world ABSOLUTE coordinates.
+            </summary>
+            <param name="position">The position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.ToScopeDirection(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Converts a direction from world's orientation into this scope's orientation.
+            </summary>
+            <param name="direction">The direction.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.ToWorldDirection(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Converts a direction from this scope's orientation into world's orientation.
+            </summary>
+            <param name="scopeDirection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.BoxScope.OrientTo(Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Rotates the scope so that the first direction (in world space) will face the second direction (also in world space).
+            </summary>
+            <param name="firstDirection"></param>
+            <param name="secondDirection"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.BoxScope.CornerPositions">
+            <summary>
+            Gets the coordinates, in world space, of the 8 corners of the scope.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.BoxScope.BoundingBox">
+            <summary>
+            Gets a world-aligned bounding box that encloses this scope.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.BoxScope.Identity">
+            <summary>
+            A scope located at the origin, coincident with the world axes, and with unit sizes.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Color.#ctor(System.Single[])">
+            <summary>
+            Creates a color from 4-sized array of 0-1 values
+            </summary>
+            <param name="color"></param>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Color.R">
+            <summary>
+            Red value (0 to 255)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Color.G">
+            <summary>
+            Green Value (0 to 255)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Color.B">
+            <summary>
+            Blue Value (0 to 255)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Color.A">
+            <summary>
+            Alpha Value (0 to 255)
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Color.ToArray">
+            <summary>
+            Converts the color to an array of 0-255 byte values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Color.ToFloatArray">
+            <summary>
+            Converts the color to an array of 0-1 float values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Color.FromDoubles(System.Double,System.Double,System.Double)">
+            <summary>
+            Creates a Color from a set of 0-1 double values (assuming 
+            </summary>
+            <param name="r"></param>
+            <param name="g"></param>
+            <param name="b"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Color.FromHex(System.String)">
+            <summary>
+            Creates a color from a hexadecimal string, with or without the #(ex. #5972FF or 5972FF).
+            </summary>
+            <param name="hexString">Hexadecimal string, with or without the #</param>
+            <returns>Color corresponding to the hexstring.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Matrix.FindDeterminants(Sceelix.Mathematics.Data.Matrix@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@,System.Single@)">
+            <summary>
+            Helper method for using the Laplace expansion theorem using two rows expansions to calculate major and 
+            minor determinants of a 4x4 matrix. This method is used for inverting a matrix.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Matrix.CreateRotateX(System.Single)">
+            <summary>
+            Creates a matrix with 
+            </summary>
+            <param name="angle">Angle, in radians.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector2D.IsWithinRadius(Sceelix.Mathematics.Data.Vector2D,System.Single)">
+            <summary>
+            Determines if the given vector if within a certain radius (inclusive) of the current vector.
+            </summary>
+            <param name="b">Vector to compare to.</param>
+            <param name="radius">Radius for comparison.</param>
+            <returns>True if the vector b within the specified radius distance (inclusive) or false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector2D.WithinRadius(Sceelix.Mathematics.Data.Vector2D,Sceelix.Mathematics.Data.Vector2D,System.Single)">
+            <summary>
+            Determines if the given vector if within a certain radius (inclusive) of the current vector.
+            </summary>
+            <param name="b">Vector to compare to.</param>
+            <param name="radius">Radius for comparison.</param>
+            <returns>True if the vector b within the specified radius distance (inclusive) or false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector2D.AngleTo(Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Calculates the angle between this and the given vector.
+            </summary>
+            <param name="b">The vector against with the angle should be calculated.</param>
+            <returns>The angle between the 2 vectors, in radians.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector2D.Angle(Sceelix.Mathematics.Data.Vector2D,Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Calculates the angle between two vectors.
+            </summary>
+            <param name="a">The first vector</param>
+            <param name="b">The second vector</param>
+            <returns>The angle between the two vectors, in radians.</returns>
+        </member>
+        <member name="F:Sceelix.Mathematics.Data.Vector2D.Zero">
+            <summary>
+            2-Dimensional single-precision floating point zero vector.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Data.Vector2D.One">
+            <summary>
+            2-Dimensional single-precision floating point 1 vector (X = 1,Y = 1).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Data.Vector2D.XAxis">
+            <summary>
+            2-Dimensional single-precision floating point X-Axis vector.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Data.Vector2D.YAxis">
+            <summary>
+            2-Dimensional single-precision floating point Y-Axis vector.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector2D.X">
+            <summary>
+            The X-Coordinate of the Vector.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector2D.Y">
+            <summary>
+            The Y-Coordinate of the Vector
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector2D.PrecisionDigits">
+            <summary>
+            Precision Digits for error margin in calculations (for instance, 4 corresponds to 0.0001 margin).
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector2D.Precision">
+            <summary>
+            Precision/error margin in calculations
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.IsWithinRadius(Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Determines if the given vector b if within a certain radius (inclusive) of the current vector.
+            </summary>
+            <param name="b">Vector to compare to.</param>
+            <param name="radius">Radius for comparison.</param>
+            <returns>True if the vector b within the specified radius distance (inclusive) or false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.Dot(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Determines if the given vector if within a certain radius (inclusive) of the current vector.
+            </summary>
+            <param name="b">Vector to compare to.</param>
+            <param name="radius">Radius for comparison.</param>
+            <returns>True if the vector b within the specified radius distance (inclusive) or false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.AngleTo(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Calculates the angle, in radians, between this and the given vector.
+            </summary>
+            <param name="b">The vector against with the angle should be calculated.</param>
+            <returns>The angle between the 2 vectors, in radians.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.Scale(Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Multiplies the vector by the given scalar.
+            </summary>
+            <param name="v">The v.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.MakeValid(System.Single)">
+            <summary>
+            Replaces the components that might have Infinity or NaN as values and replaces them with the given value.
+            </summary>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.ReplaceValue(System.Single,System.Single)">
+            <summary>
+            Replaces the components that might have values equal to the given value and replaces them with a second value
+            </summary>
+            <param name="value"></param>
+            <param name="replacementValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.FlipXZYRight">
+            <summary>
+            x becomes y, y becomes z, z becomes x
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector3D.FlipXZYLeft">
+            <summary>
+            x becomes z, y becomes x, z becomes y
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.IsInfinity">
+            <summary>
+            Indicates if any of the 3 Coordinates evaluates to positive/negative infinity.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.IsInfinityOrNaN">
+            <summary>
+            Indicates if any of the 3 Coordinates evaluates to either positive/negative infinity or NaN.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.One">
+            <summary>
+            A vector with the three Components X,Y,Z set to 1.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.Zero">
+            <summary>
+            A vector with the three Components X,Y,Z set to 0.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.XVector">
+            <summary>
+            A vector with the X Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.YVector">
+            <summary>
+            A vector with the Y Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.ZVector">
+            <summary>
+            A vector with the Z Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.Infinity">
+            <summary>
+            A vector with the three Components X,Y,Z set to Positive Infinity.
+            Do not use this for comparison, instead use IsInfinity.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.NaN">
+            <summary>
+            A vector with the three Components X,Y,Z set to NaN.
+            /// Do not use this for comparison, instead use IsNaN.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.PrecisionDigits">
+            <summary>
+            Precision Digits for error margin in calculations (for instance, 4 corresponds to 0.0001 margin).
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector3D.Precision">
+            <summary>
+            Precision/error margin in calculations
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector4D.IsWithinRadius(Sceelix.Mathematics.Data.Vector4D,System.Single)">
+            <summary>
+            Determines if the given vector if within a certain radius (inclusive) of the current vector.
+            </summary>
+            <param name="b">Vector to compare to.</param>
+            <param name="radius">Radius for comparison.</param>
+            <returns>True if the vector b within the specified radius distance (inclusive) or false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector4D.WithinRadius(Sceelix.Mathematics.Data.Vector4D,Sceelix.Mathematics.Data.Vector4D,System.Single)">
+            <summary>
+            Determines if the given vector if within a certain radius (inclusive) of the current vector.
+            </summary>
+            <param name="b">Vector to compare to.</param>
+            <param name="radius">Radius for comparison.</param>
+            <returns>True if the vector b within the specified radius distance (inclusive) or false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector4D.AngleTo(Sceelix.Mathematics.Data.Vector4D)">
+            <summary>
+            Calculates the angle between this and the given vector.
+            </summary>
+            <param name="b">The vector against with the angle should be calculated.</param>
+            <returns>The angle between the 2 vectors, in radians.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector4D.Angle(Sceelix.Mathematics.Data.Vector4D,Sceelix.Mathematics.Data.Vector4D)">
+            <summary>
+            Calculates the angle between two vectors.
+            </summary>
+            <param name="a">The first vector</param>
+            <param name="b">The second vector</param>
+            <returns>The angle between the two vectors, in radians.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Data.Vector4D.MakeValid(System.Single)">
+            <summary>
+            Replaces the components that might have Infinity or NaN as values and replaces them with the given value.
+            </summary>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.IsInfinity">
+            <summary>
+            Indicates if any of the 3 Coordinates evaluates to positive/negative infinity.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.IsInfinityOrNaN">
+            <summary>
+            Indicates if any of the 3 Coordinates evaluates to either positive/negative infinity or NaN.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.One">
+            <summary>
+            A vector with the three Components X,Y,Z set to 1.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.Zero">
+            <summary>
+            A vector with the three Components X,Y,Z set to 0.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.XVector">
+            <summary>
+            A vector with the X Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.YVector">
+            <summary>
+            A vector with the Y Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.ZVector">
+            <summary>
+            A vector with the Z Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.WVector">
+            <summary>
+            A vector with the Z Component as 1 and the others as 0 .
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.Infinity">
+            <summary>
+            A vector with the three Components X,Y,Z set to Positive Infinity.
+            Do not use this for comparison, instead use IsInfinity.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.NaN">
+            <summary>
+            A vector with the three Components X,Y,Z set to NaN.
+            /// Do not use this for comparison, instead use IsNaN.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.PrecisionDigits">
+            <summary>
+            Precision Digits for error margin in calculations (for instance, 4 corresponds to 0.0001 margin).
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Data.Vector4D.Precision">
+            <summary>
+            Precision/error margin in calculations
+            </summary>
+        </member>
+        <member name="T:Sceelix.Mathematics.Geometry.LineSegment2D">
+            <summary>
+            Defines a line segment in 2D space.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment2D.Center">
+            <summary> 
+            Gets the center of this line segment
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment2D.Length">
+            <summary>
+            Gets the length of this <see cref="T:Sceelix.Mathematics.Geometry.LineSegment2D"/>.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment2D.LengthSquared">
+            <summary>
+            Gets the squared length of this <see cref="T:Sceelix.Mathematics.Geometry.LineSegment2D"/>.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment2D.Normal">
+            <summary> 
+            Gets the normal of the line Segment. 
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.LineSegment2D.ClosestPointOnLine(Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Find the closest point between <see cref="F:Sceelix.Mathematics.Geometry.LineSegment2D._start"/> and <see cref="F:Sceelix.Mathematics.Geometry.LineSegment2D._end"/>.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.LineSegment2D.MinDistanceTo(Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Find the minimum distance from this line segment to the given point.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.LineSegment2D.Offset(System.Single)">
+            <summary>
+            Moves this <see cref="T:Sceelix.Mathematics.Geometry.LineSegment2D"/> along its normal for the specified length.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Mathematics.Geometry.Line2D">
+            <summary>
+            Defines an infinite Line in 3D Euclidean space.
+            A line will be defined by a point P0 and a direction D, so that a point on the line has an equation P = P0 + m * D
+            
+            Explanation at: http://paulbourke.net/geometry/lineline3d/
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.Line2D.Item(System.Single)">
+            <summary>
+            Determines the point at the location m on the line, according to the line equation P = P0 + m * D
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Line2D.FindLineCircleIntersections(Sceelix.Mathematics.Data.Vector2D,System.Single)">
+            <summary>
+            Finds the intersection between this line and the given circle.
+            </summary>
+            <param name="circleCenter">The circle center.</param>
+            <param name="radius">The circle radius.</param>
+            <returns>The array of intersected locations. Could be empty (if there were no intersections), or have up to 2 elements/intersections.</returns>
+            <remarks>See http://csharphelper.com/blog/2014/09/determine-where-a-line-intersects-a-circle-in-c/ for original code.</remarks>
+        </member>
+        <member name="T:Sceelix.Mathematics.Geometry.Line3D">
+            <summary>
+            Defines an infinite Line in 3D Euclidean space.
+            A line will be defined by a point P0 and a direction D, so that a point on the line has an equation P = P0 + m * D
+            
+            Explanation at: http://paulbourke.net/geometry/lineline3d/
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Line3D.ShortestLineBetweenTwoLines(Sceelix.Mathematics.Geometry.Line3D)">
+            <summary>
+            Finds the shortest line segment between two infinite lines
+            Algorithm from: http://paulbourke.net/geometry/pointlineplane/
+            </summary>
+            <param name="line">The line to check for the distance</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Line3D.ClosestRelativeHit(Sceelix.Mathematics.Geometry.Line3D)">
+            <summary>
+            Finds the shortest line segment between two infinite lines
+            Algorithm from: http://paulbourke.net/geometry/pointlineplane/
+            </summary>
+            <param name="line">The line to check for the distance</param>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.Line3D.Item(System.Single)">
+            <summary>
+            Determines the point at the location m on the line, according to the line equation P = P0 + m * D
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Line3D.IntersectsPlane(Sceelix.Mathematics.Geometry.Plane3D)">
+            <summary>
+            Determines if the line intersects with the plane.
+            Algorithm based on: http://paulbourke.net/geometry/planeline/
+            </summary>
+            <param name="plane">Plane to calculate the intersection with.</param>
+            <returns>A value corresponding to m, in P = P0 + m * D. So to get the point, just use the [] operator. If the line is parallel or contained in the plane, then the result is null.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Line3D.FindSphereIntersectionPoints(Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Finds the intersection between this line and the given sphere.
+            </summary>
+            <param name="sphereCenter">The sphere center.</param>
+            <param name="radius">The sphere radius.</param>
+            <returns>The array of intersected locations. Could be empty (if there were no intersections), or have up to 2 elements/intersections.</returns>
+            <remarks>See http://csharphelper.com/blog/2014/09/determine-where-a-line-intersects-a-circle-in-c/ for original code.</remarks>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Line3D.FindSphereIntersectionValues(Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Finds the intersection between this line and the given sphere, returning values between 0 and 1 relative to the line's points.
+            </summary>
+            <param name="sphereCenter">The sphere center.</param>
+            <param name="radius">The sphere radius.</param>
+            <returns>The array of intersected t values (between 0 and 1). Could be empty (if there were no intersections), or have up to 2 elements/intersections.</returns>
+            <remarks>See http://csharphelper.com/blog/2014/09/determine-where-a-line-intersects-a-circle-in-c/ for original code.</remarks>
+        </member>
+        <member name="T:Sceelix.Mathematics.Geometry.LineSegment3D">
+            <summary>
+            Defines an limited Line Segment in 3D Euclidean space.
+            The segment defined by a point P0 a point P1
+            
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment3D.Direction">
+            <summary>
+            Non-normalized direction of the segment.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment3D.Middle">
+            <summary>
+            Calculated middle point between the start and the end points
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Geometry.LineSegment3D.Item(System.Single)">
+            <summary>
+            Determines the point at the location m on the line, according to the line equation P = P0 + m * D
+            </summary>
+            <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.LineSegment3D.MinDistanceTo(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Find the minimum distance from this line segment to the given point.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.LineSegment3D.FindSphereIntersectionPoints(Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Finds the intersection between this line and the given sphere.
+            </summary>
+            <param name="sphereCenter">The sphere center.</param>
+            <param name="radius">The sphere radius.</param>
+            <returns>The array of intersected locations. Could be empty (if there were no intersections), or have up to 2 elements/intersections.</returns>
+            <remarks>See http://csharphelper.com/blog/2014/09/determine-where-a-line-intersects-a-circle-in-c/ for original code.</remarks>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.LineSegment3D.IntersectsSphere(Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Indicates if this line segments intersects the sphere.
+            </summary>
+            <param name="sphereCenter">The sphere center.</param>
+            <param name="radius">The radius.</param>
+            <returns><c>true</c> if the line segment intersects the sphere, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="T:Sceelix.Mathematics.Geometry.Plane3D">
+            <summary>
+            Defines a Plane in 3D Euclidean space.
+            
+            In three-dimensional Euclidean space, we may exploit the following facts that do not hold in higher dimensions:
+            - Two planes are either parallel or they intersect in a line.
+            - A line is either parallel to a plane, intersects it at a single point, or is contained in the plane.
+            - Two lines perpendicular to the same plane must be parallel to each other.
+            - Two planes perpendicular to the same line must be parallel to each other.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Geometry.Plane3D._normal">
+            <summary>
+            A plane can be defined by its normal n = (A,B,C)... 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Geometry.Plane3D._point0">
+            <summary>
+            ...and any point on the plane P0 = (x0, y0, z0)
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.#ctor(Sceelix.Mathematics.Data.Vector3D,Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Creates an instance of a 3D Plane from a normal vector and a point.
+            </summary>
+            <param name="normal">Normal of the plane. Does not need to be normalized.</param>
+            <param name="point">Point of the plane.</param>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.PointInPlane(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Determines if a point lies on the plane.
+            </summary>
+            <param name="point">Point to be verified.</param>
+            <returns>True if it lies on the plane, false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.GetHeightAt(Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Determines the height at a given x,y location in world space.
+            </summary>
+            <param name="point">Location in world space where the height is to be determined.</param>
+            <returns>The height at that point, Infinity if infinite solutions are found or NaN if none is found</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.DistanceToPoint(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Determines the minimum distance from a point to this plane
+            http://paulbourke.net/geometry/pointline/
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.LocationToPlane(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Returns 0 if the point is located on the plane, -1 if it below the plane, 1 if above.
+            The definition of above concerns the direction of the normal.
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.GetBackPlane(System.Collections.Generic.IList{Sceelix.Mathematics.Data.Vector3D},Sceelix.Mathematics.Data.Vector3D,System.Single@)">
+            <summary>
+            Calculates a plane that is "behind" (at most touching) all the indicated points
+            </summary>
+            <param name="points"></param>
+            <param name="direction"></param>
+            <param name="maxDistance"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.Coincident(Sceelix.Mathematics.Geometry.Plane3D)">
+            <summary>
+            Indicates if this plane is overlapping a given plane (yet their directions may be opposite).
+            </summary>
+            <param name="plane"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.CoincidentAndWithSameDirection(Sceelix.Mathematics.Geometry.Plane3D)">
+            <summary>
+            Indicates if this plane is overlapping a given plane (and their directions are the same).
+            </summary>
+            <param name="plane"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Geometry.Plane3D.NormalDistanceToZero">
+            <summary>
+            This is an alternative method to distinguish 2 planes. If they have the same normal, they can be coincident.
+            To verify this is one step (for the sake of grouping)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Mathematics.Helpers.CurvesHelper">
+            <summary>
+            Easing curve collection. All functions expect a value in range [0,1] and output a value in the same range.
+            Originally found in: https://github.com/tweenjs/tween.js and converted to C#.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.Plane3DHelper.MovePlane(Sceelix.Mathematics.Geometry.Plane3D@,System.Collections.Generic.IEnumerable{Sceelix.Mathematics.Data.Vector3D})">
+            <summary>
+            Accepts a location in 3D space a
+            </summary>
+            <param name="plane"></param>
+            <param name="point"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.Plane3DHelper.MovePlane(Sceelix.Mathematics.Geometry.Plane3D@,Sceelix.Mathematics.Data.Vector3D,System.Single)">
+            <summary>
+            Moves the given plane so that it stays behind the given point. Returns the 
+            </summary>
+            <param name="plane"></param>
+            <param name="point"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Mathematics.Helpers.MathHelper">
+            <summary>
+            A class with several static mathematical functions - an extension to the "Math" class.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Helpers.MathHelper.Pi">
+            <summary>
+            The value of Pi.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Helpers.MathHelper.PiOver2">
+            <summary>
+            The value of Pi, divided by 2.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Helpers.MathHelper.PiOver4">
+            <summary>
+            The value of Pi, divided by 4.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.BarycentricMaxX(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Barycentric Interpolation, applicable to quads, assuming a division from (xMax,yMin) to (xMin, yMax).
+            </summary>
+            <param name="fractionX">The fraction x.</param>
+            <param name="fractionY">The fraction y.</param>
+            <param name="topLeft">The top left.</param>
+            <param name="topRight">The top right.</param>
+            <param name="bottomLeft">The bottom left.</param>
+            <param name="bottomRight">The bottom right.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.BarycentricMinX(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Barycentric Interpolation, applicable to quads, assuming a division from (xMin, yMin) to (xMax, yMax).
+            </summary>
+            <param name="fractionX">The fraction x.</param>
+            <param name="fractionY">The fraction y.</param>
+            <param name="topLeft">The top left.</param>
+            <param name="topRight">The top right.</param>
+            <param name="bottomLeft">The bottom left.</param>
+            <param name="bottomRight">The bottom right.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Billinear(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Performs bilinear interpolation between the indicated values.
+            </summary>
+            <param name="fractionX">The fraction x.</param>
+            <param name="fractionY">The fraction y.</param>
+            <param name="topLeft">The top left.</param>
+            <param name="topRight">The top right.</param>
+            <param name="bottomLeft">The bottom left.</param>
+            <param name="bottomRight">The bottom right.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Billinear(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Performs bilinear interpolation between the indicated values.
+            </summary>
+            <param name="fractionX">The fraction x.</param>
+            <param name="fractionY">The fraction y.</param>
+            <param name="topLeft">The top left.</param>
+            <param name="topRight">The top right.</param>
+            <param name="bottomLeft">The bottom left.</param>
+            <param name="bottomRight">The bottom right.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.CatmullRom(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Performs a Catmull-Rom interpolation.
+            </summary>
+            <param name="value1">The first value.</param>
+            <param name="value2">The second value.</param>
+            <param name="value3">The third value.</param>
+            <param name="value4">The fourth value.</param>
+            <param name="amount">Weighting factor.</param>
+            <returns>Interpolated value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Clamp(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Restricts a value to be within a specified range, clamping the value if outside that range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>Min, if value is lower than min. Max, if it is higher. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Clamp(System.Single,System.Single,System.Single)">
+            <summary>
+            Restricts a value to be within a specified range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>Min, if value is lower than min. Max, if it is higher. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Clamp(System.Double,System.Double,System.Double)">
+            <summary>
+            Restricts a value to be within a specified range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>Min, if value is lower than min. Max, if it is higher. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Hermite(System.Single,System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Performs a Hermite spline interpolation.
+            </summary>
+            <param name="value1">The first value.</param>
+            <param name="tangent1">Tangent for the first value.</param>
+            <param name="value2">The second value.</param>
+            <param name="tangent2">Tangent for the second value.</param>
+            <param name="amount">Weighting factor.</param>
+            <returns>Interpolated value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.IsPowerOfTwo(System.Int16)">
+            <summary>
+            Indicates if the given value is a power of two (2,4,8,16...).
+            </summary>
+            <param name="value">The value to be checked.</param>
+            <returns>True the value is a power of two, false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.IsPowerOfTwo(System.Int32)">
+            <summary>
+            Indicates if the given value is a power of two (2,4,8,16...).
+            </summary>
+            <param name="value">The value to be checked.</param>
+            <returns>True the value is a power of two, false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.IsPowerOfTwo(System.Int64)">
+            <summary>
+            Indicates if the given value is a power of two (2,4,8,16...).
+            </summary>
+            <param name="value">The value to be checked.</param>
+            <returns>True the value is a power of two, false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Lerp(System.Single,System.Single,System.Single)">
+            <summary>
+            Performs a linear interpolation between two values.
+            </summary>
+            <param name="value1">The first value.</param>
+            <param name="value2">The second value.</param>
+            <param name="amount">Weighting factor.</param>
+            <returns>Interpolated value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Mirror(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Restricts a value to be within a specified range, mirroring the value around the indicated min and max, if outside that range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>The mirrored value if outside the bounds. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Mirror(System.Single,System.Single,System.Single)">
+            <summary>
+            Restricts a value to be within a specified range, mirroring the value around the indicated min and max, if outside that range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>The mirrored value if outside the bounds. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Repeat(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Restricts a value to be within a specified range, repeating the value within the indicated min (inclusive) and max (exclusive), if outside that range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>The repeated value if outside the bounds. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.Repeat(System.Single,System.Single,System.Single)">
+            <summary>
+            Restricts a value to be within a specified range, repeating the value within the indicated min and max, if outside that range.
+            </summary>
+            <param name="value">The value to be checked against the limits.</param>
+            <param name="min">The lower limit.</param>
+            <param name="max">The upper limit.</param>
+            <returns>The repeated value if outside the bounds. Otherwise, returns back the value.</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.ToDegrees(System.Single)">
+            <summary>
+            Converts a value from radians to degrees.
+            </summary>
+            <param name="radians">Value in radians.</param>
+            <returns>Value in degrees</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Sceelix.Mathematics.Helpers.MathHelper.ToDegrees(System.Double)" -->
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.ToRadians(System.Single)">
+            <summary>
+            Converts a value from degrees to radians.
+            </summary>
+            <param name="degrees">Value in degrees.</param>
+            <returns>Value in radians</returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Helpers.MathHelper.ToRadians(System.Double)">
+            <summary>
+            Converts a value from degrees to radians.
+            </summary>
+            <param name="degrees">Value in degrees.</param>
+            <returns>Value in radians</returns>
+        </member>
+        <member name="T:Sceelix.Mathematics.Parameters.ColorRandomParameter">
+            <summary>
+            Generates random colors through different possible methods.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.ColorRandomParameter._parameterType">
+            <summary>
+            Type of color generation method to use.<br/>
+            <b>Standard</b> means that a random value will be set for each RGB component.<br/>
+            <b>Offset</b> means that the colors will differ from a chosen random offset. Returns more interesting results.<br/>
+            <b>Hue</b> means that a random hue will be chosen (with maximum saturation and value). Returns more colorful results.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.ColorRandomParameter._attributeValue">
+            <summary>
+            Attribute where to store the random color.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Mathematics.Parameters.Vector2DRandomParameters">
+            <summary>
+            Generates random 2D vectors within a specified range.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.Vector2DRandomParameters._parameterMin">
+            <summary>
+            Inclusive lower bound of the random vector returned.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.Vector2DRandomParameters._parameterMax">
+            <summary>
+            Exclusive upper bound of the random vector returned.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.Vector2DRandomParameters._attributeValue">
+            <summary>
+            Attribute where to store the random value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Mathematics.Parameters.Vector3DRandomParameters">
+            <summary>
+            Generates random 3D vectors within a specified range.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.Vector3DRandomParameters._parameterMin">
+            <summary>
+            Inclusive lower bound of the random vector returned.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.Vector3DRandomParameters._parameterMax">
+            <summary>
+            Exclusive upper bound of the random vector returned.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Mathematics.Parameters.Vector3DRandomParameters._attributeValue">
+            <summary>
+            Attribute where to store the random value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Mathematics.Resolution.ParameterResolver">
+            <summary>
+            Resolves parameter types after the refactoring at version 0.8.4.1.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingPlanes.Contains(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Determines whether the given point is behind or on the given planes.
+            </summary>
+            <param name="point">The point to check.</param>
+            <returns>
+              <c>true</c> if the point is behind or on the given planes; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.GenericPartitionTree`3.InitializeIfNecessary(`2)">
+            <summary>
+            Initializes if necessary.
+            </summary>
+            <param name="boundary">The boundary.</param>
+        </member>
+        <member name="T:Sceelix.Mathematics.Spatial.BoundingBox">
+            <summary>
+            This is a bounding box structure
+            </summary>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.#ctor">
+            <summary>
+            Constructor for a boundingbox with infinite inverted sizes (minimum is +Inf and maximum is -Inf).
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.BoundingSphere">
+            <summary>
+            Gets a bounding sphere that fits inside this bounding box.
+            </summary>
+            <value>
+            The bounding sphere.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Center">
+            <summary>
+            This property will translate the bounding box to the given center
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Corners">
+            <summary>
+            This will return the 8 corners
+            </summary>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Height">
+            <summary>
+            Gets the height (size in Z) of the boundingbox.
+            </summary>
+            <value>
+            The height.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Length">
+            <summary>
+            Gets the length (size in Y) of the bounding box.
+            </summary>
+            <value>
+            The length.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Max">
+            <summary>
+            Gets the maximum of the bounding box.
+            </summary>
+            <value>
+            The maximum.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Min">
+            <summary>
+            Gets the minimum of the bounding box.
+            </summary>
+            <value>
+            The minimum.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Size">
+            <summary>
+            Gets the size of the box in the 3 dimensions.
+            </summary>
+            <value>
+            The size.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Volume">
+            <summary>
+            Gets the volume of the box.
+            </summary>
+            <value>
+            The volume.
+            </value>
+        </member>
+        <member name="P:Sceelix.Mathematics.Spatial.BoundingBox.Width">
+            <summary>
+            Gets the width (size in X) of the bounding box.
+            </summary>
+            <value>
+            The width.
+            </value>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.AddPoint(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Expands the bounding box to as to contain the given point.
+            </summary>
+            <param name="point">The point which must be contained in the box after the expansion.</param>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.Contains(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            Checks whether a point is inside the box.
+            </summary>
+            <param name="point">The point to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.Contains(Sceelix.Mathematics.Spatial.BoundingBox)">
+            <summary>
+            Determines whether a given target bounding box is contained inside the current one.
+            </summary>
+            <param name="target">The target bounding box.</param>
+            <returns>
+              <c>true</c> if this bounding box contains the specified target; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.FullyContains(Sceelix.Mathematics.Spatial.BoundingBox)">
+            <summary>
+            Checks whether the box fully contains the target box
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.GetSubBox(System.Int32)">
+            <summary>
+            This function will return one of the 8 sub boxes
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.GetSubBoxIndex(Sceelix.Mathematics.Data.Vector3D)">
+            <summary>
+            this will return the index of the containing sub box
+            </summary>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.GetSubBoxIndexes(Sceelix.Mathematics.Spatial.BoundingBox)">
+            <summary>
+            this function will return the indexes touched by the target box
+            </summary>
+            <param name="box"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.Intersects(Sceelix.Mathematics.Spatial.BoundingBox)">
+            <summary>
+            Checks wether the box intersects the target. The boxes must be axis aligned
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.ToString">
+            <summary>
+            Always override this or the class will be boxed
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingBox.Union(Sceelix.Mathematics.Spatial.BoundingBox)">
+            <summary>
+            Merges the current boundingBox with the indicated one and returns a merged copy.
+            </summary>
+            <param name="boundingBox"></param>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingRectangle.Contains(Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Checks whether a point is inside the box
+            </summary>
+            <param name="point">The point to check</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Mathematics.Spatial.BoundingSphere.Intersects(Sceelix.Mathematics.Spatial.BoundingSphere)">
+            <summary>
+            Checks if this sphere intersects the target sphere
+            </summary>
+            <param name="target"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Mathematics.Noise.PerlinNoise2D">
+            <summary>
+            From the pseudocode of http://freespace.virgin.net/hugo.elias/models/m_perlin.htm
+            </summary>
+        </member>
+        <member name="T:Sceelix.Mathematics.Noise.SimplexNoise">
+            <summary>
+            Simplex Noise generator.
+            
+            Obtained from here: http://wiki.unity3d.com/index.php/Tileable_Noise
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Props</name>
+    </assembly>
+    <members>
+        <member name="T:Sceelix.Props.Procedures.PropCreateProcedure">
+            <summary>
+            Creates Sceelix Props, i.e. entities that only exist in
+            the Sceelix Designer to build a surrounding environment.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Props.Procedures.PropCreateProcedure.ParameterPrimitive">
+            <summary>
+            List of props to create.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Props.Procedures.PropCreateProcedure.OceanPropParameter">
+            <summary>
+            Creates an ocean plane at a given height, with infinite extents.
+            </summary>
+            <seealso cref="T:Sceelix.Props.Procedures.PropCreateProcedure.PropParameter" />
+        </member>
+        <member name="F:Sceelix.Props.Procedures.PropCreateProcedure.OceanPropParameter._output">
+            <summary>
+            The ocean prop that was created.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Props.Procedures.PropCreateProcedure.OceanPropParameter._heightParameter">
+            <summary>
+            Height of the water level.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Props.Procedures.PropCreateProcedure.OceanPropParameter._waterColorParameter">
+            <summary>
+            Color of the ocean water.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Props.Procedures.PropCreateProcedure.OceanPropParameter._waveScaleParameter">
+            <summary>
+            Scale of the ocean waves.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Props.Procedures.PropCreateProcedure.FirePropParameter">
+            <summary>
+            Creates an fire prop at the origin.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Props.Procedures.PropCreateProcedure.FirePropParameter._output">
+            <summary>
+            The fire prop that was created. 
+            </summary>
+        </member>
+    </members>
+</doc>

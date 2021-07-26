@@ -1,0 +1,857 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Designer</name>
+    </assembly>
+    <members>
+        <member name="M:Sceelix.Designer.Extensions.ColorExtension.HsvToRgb(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="h">Hue, 0 to 360</param>
+            <param name="s">Saturation, 0 to 1</param>
+            <param name="v">Value, 0 to 1</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.ColorExtension.HsvToRgb(System.Double[])">
+            <summary>
+            
+            </summary>
+            <param name="h">Hue, 0 to 360</param>
+            <param name="s">Saturation, 0 to 1</param>
+            <param name="v">Value, 0 to 1</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Designer.Extensions.EditableTexture2D">
+            <summary>
+            A texture2D that can be edited.
+            
+            This could inherit from Texture2D, but then every change on the [x,y] would have to set data.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Clone(Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Clones a texture.
+            </summary>
+            <param name="texture2D">Texture to be colored</param>
+            <param name="position"></param>
+            <returns>Colored texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Translate(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Colors a texture of a certain texture
+            </summary>
+            <param name="texture2D">Texture to be colored</param>
+            <param name="position"></param>
+            <returns>Colored texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Color(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Colors a texture of a certain texture
+            </summary>
+            <param name="texture2D">Texture to be colored</param>
+            <param name="color">Color to apply</param>
+            <returns>Colored texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Color2(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Color)">
+            <summary>
+            Colors a texture of a certain texture
+            </summary>
+            <param name="texture2D">Texture to be colored</param>
+            <param name="color">Color to apply</param>
+            <returns>Colored texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.ModifyHue(Microsoft.Xna.Framework.Graphics.Texture2D,System.Int32)">
+            <summary>
+            Changes the hue of a certain texture.
+            </summary>
+            <param name="texture2D">Texture whose hue is to be changed</param>
+            <param name="hue">Hue, inthe range 0..360</param>
+            <returns>Colored texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Join(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Graphics.Texture2D)">
+            <summary>
+            Joins a texture to another
+            </summary>
+            <param name="texture2D">First Texture</param>
+            <param name="texture2DToAdd">Texture to be added on top</param>
+            <returns>Joined texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Rotate(Microsoft.Xna.Framework.Graphics.Texture2D,System.Single)">
+            <summary>
+            Joins a texture to another
+            </summary>
+            <param name="texture2D">First Texture</param>
+            <param name="rotation"></param>
+            <returns>Rotated texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Resize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Point)">
+            <summary>
+            Resizes a texture
+            </summary>
+            <param name="texture2D">First Texture</param>
+            <param name="newSize"></param>
+            <returns>Resized texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Extensions.Texture2DExtender.Resize(Microsoft.Xna.Framework.Graphics.Texture2D,Microsoft.Xna.Framework.Vector2)">
+            <summary>
+            Resizes a texture
+            </summary>
+            <param name="texture2D">First Texture</param>
+            <param name="newPercentage"></param>
+            <returns>Resized texture</returns>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.MenuHandling.BarMenuEntry.#ctor(System.String,System.Action)">
+            <summary>
+            Creates a menu entry to add to the main (top) menu.
+            </summary>
+            <param name="path">The menu path, defining its structure, e.g. Tools/MyTool/Hello.</param>
+            <param name="action">The action to be performed on click.</param>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.MenuHandling.BarMenuEntry.#ctor(System.String,System.Action,System.String)">
+            <summary>
+            Creates a menu entry to add to the indicated menu.
+            </summary>
+            <param name="path">The menu path, defining its structure, e.g. Tools/MyTool/Hello.</param>
+            <param name="action">The action to be performed on click.</param>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.MenuHandling.BarMenuEntry.Menu">
+            <summary>
+            The menu where this entry will be placed.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.GUI.Controls.LineContainer">
+            <summary>
+            A control that shows an underlining effect on the passed textblock, when hovered.
+            </summary>
+            <seealso cref="T:DigitalRune.Game.UI.Controls.StackPanel" />
+        </member>
+        <member name="P:Sceelix.Designer.GUI.Controls.ColorPickerPopupContent.InternalSelectedColor">
+            <summary>
+            Sets color data without updating all the controls.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.Controls.ColorPickerPopupContent.SelectedColor">
+            <summary>
+            Sets color data and updates the corresponding controls.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.Controls.MultiSampleRenderTargetControl.ShouldRender">
+            <summary>
+            This should be overriden in the subclasses.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Controls.PopupWindow.Open(DigitalRune.Game.UI.Controls.UIScreen,DigitalRune.Mathematics.Algebra.Vector2F)">
+            <summary>
+            Opens the popup window at the indicated position.
+            </summary>
+            <param name="screen"></param>
+            <param name="screenMousePosition"></param>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Controls.PopupWindow.Open(DigitalRune.Game.UI.Controls.UIControl)">
+            <summary>
+            Opens the popup window directly below the passed uicontrol.
+            </summary>
+            <param name="uiControl"></param>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Controls.NumericSpinControl`1.ValidateValue">
+            <summary>
+            This function cleans up, validates and converts the input text into the required type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.Controls.TransparentCanvasImage.Texture">
+            <summary>
+            Gets or sets the texture with the image that should be displayed. 
+            This is a game object property.
+            </summary>
+            <value>The texture with the image that should be displayed.</value>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Controls.TransparentCanvasImage.OnMeasure(DigitalRune.Mathematics.Algebra.Vector2F)">
+            <inheritdoc/>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.Controls.RenderTargetControl.ShouldRender">
+            <summary>
+            This should be overriden in the subclasses.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ExtractFolderWindow.OnLoad">
+            <summary>
+            Drawing of the window with progressbar and such.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.MenuControls.BarMenu.MenuChildrenOnCollectionChanged(System.Object,DigitalRune.Collections.CollectionChangedEventArgs{Sceelix.Designer.GUI.MenuControls.MenuChild})">
+            <summary>
+            For the items on the main strip.
+            </summary>
+            <param name="sender"></param>
+            <param name="collectionChangedEventArgs"></param>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.MenuControls.BarMenu.SubMenuChildrenOnCollectionChanged(System.Object,DigitalRune.Collections.CollectionChangedEventArgs{Sceelix.Designer.GUI.MenuControls.MenuChild})">
+            <summary>
+            For the subitems.
+            </summary>
+            <param name="sender"></param>
+            <param name="collectionChangedEventArgs"></param>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.MenuControls.MenuChild.MenuParent">
+            <summary>
+            This is set when the item is added as a child of another MenuItemControl.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.MenuControls.MultiContextMenu.MenuChildrenOnCollectionChanged(System.Object,DigitalRune.Collections.CollectionChangedEventArgs{Sceelix.Designer.GUI.MenuControls.MenuChild})">
+            <summary>
+            For the items on the main strip.
+            </summary>
+            <param name="sender"></param>
+            <param name="collectionChangedEventArgs"></param>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.MenuControls.MultiContextMenu.SubMenuChildrenOnCollectionChanged(System.Object,DigitalRune.Collections.CollectionChangedEventArgs{Sceelix.Designer.GUI.MenuControls.MenuChild})">
+            <summary>
+            For the subitems.
+            </summary>
+            <param name="sender"></param>
+            <param name="collectionChangedEventArgs"></param>
+        </member>
+        <member name="E:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemPropertyChanged">
+            <summary>
+            Event that indicates when an item property (for instance, IsExpanded) is changed
+            </summary>
+        </member>
+        <member name="E:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemSelected">
+            <summary>
+            Event that indicates that an item has been clicked or selected with the keyboard.
+            </summary>
+        </member>
+        <member name="E:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemEntered">
+            <summary>
+            Event that indicates that an item has been double-clicked or pressed enter when selected.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemControl">
+            <summary>
+            Event that indicates that a cell has been clicked or selected with the keyboard.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemHolder.#ctor(Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView,System.Collections.Generic.List{Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemHolder})">
+            <summary>
+            Constructor for the root element.
+            </summary>
+            <param name="item">The item.</param>
+            <param name="objectTreeView">The object TreeView.</param>
+            <param name="itemHolders">The item holders.</param>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.ItemHolder.VisibleItemCount">
+            <summary>
+            Gets the number of items down the tree that are visible (meaning that the parents have children and are expanded).
+            </summary>
+            <value>
+            The visible item count.
+            </value>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.TreeViewControls.ObjectTreeView.Clear">
+            <summary>
+            Clears the item list and the contents of the treeview.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.GUI.TreeViewControls.LayoutControl._stackPanel">
+            <summary>
+            The items will be organized into an vertical stackpanel.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.TreeViewControls.LayoutControl.Item(System.Int32)">
+            <summary>
+            Acessor to get the rows of the Layoutcontrol
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.TreeViewControls.TreeViewItem.TotalPadding">
+            <summary>
+            Returns the total padding, ASSUMING that the padding 
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.TreeViewControls.TreeViewItem.IsViable">
+            <summary>
+            Indicates if the item or any its subitems should be updated.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.Windows.ProgressWindow.LargeIcon">
+            <summary>
+            Icon that appears on the left of the dialog. Expected size is 48x48 pixels.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Windows.ProgressWindow.OnLoad">
+            <summary>
+            Drawing of the window with progressbar and such.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.GUI.Windows.InputWindow">
+            <summary>
+            A Window with a message and text box.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Windows.AnimatedWindow.CenterToScreen">
+            <summary>
+            When the window is resized, unfortunately the screen object sizes are not update immediately.
+            Because of that we need this hack to compensate and adjust the loading window location.
+            </summary>
+            <param name="newWidth"></param>
+            <param name="newHeight"></param>
+        </member>
+        <member name="T:Sceelix.Designer.GUI.Windows.DialogWindow">
+            <summary>
+            The dialogWindow is a window that, besides having a default animation,
+            is always centered, it modal (i.e. will block the input on background items)
+            and puts on a darker shade on the background items.
+            </summary>
+        </member>
+        <member name="E:Sceelix.Designer.GUI.Windows.DialogWindow.Accepted">
+            <summary>
+            Event called on Window.Closed if the DialogResult is true.
+            </summary>
+        </member>
+        <member name="E:Sceelix.Designer.GUI.Windows.DialogWindow.Canceled">
+            <summary>
+            Event called on Window.Closed if the DialogResult is false.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Windows.DialogWindow.Accept">
+            <summary>
+            Accepts the result and closes the window, calling the Accepted event.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.Windows.DialogWindow.Cancel">
+            <summary>
+            Rejects the result and closes the window, calling the Canceled event.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.GUI.ZipStreamStorage">
+            <summary>
+            Provides access to the files stored in a ZIP archive.
+            </summary>
+            <remarks>
+            <para>
+            The <see cref="T:DigitalRune.Storages.ZipStorage"/> does not directly read the ZIP archive from the OS file system.
+            Instead, it opens the ZIP archive from another storage.
+            </para>
+            <para>
+            The <see cref="P:Sceelix.Designer.GUI.ZipStreamStorage.PasswordCallback"/> needs to be set to read encrypted ZIP archives. The
+            <see cref="T:DigitalRune.Storages.ZipStorage"/> supports ZipCrypto (all platforms) and AES-256 encryption (Windows
+            only).
+            </para>
+            <para>
+            <strong>Thread-Safety:</strong> The <see cref="T:DigitalRune.Storages.ZipStorage"/> is thread-safe. ZIP entries can
+            be read simultaneously from one or multiple threads.
+            </para>
+            </remarks>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.ZipStreamStorage.DirectorySeparator">
+            <inheritdoc/>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.ZipStreamStorage.FileName">
+            <summary>
+            Gets the file name (incl. path) of the ZIP archive.
+            </summary>
+            <value>The file name (incl. path) of the ZIP archive.</value>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.ZipStreamStorage.Storage">
+            <summary>
+            Gets the storage that provides the ZIP archive.
+            </summary>
+            <value>The storage that provides the ZIP archive.
+            </value>
+        </member>
+        <member name="P:Sceelix.Designer.GUI.ZipStreamStorage.PasswordCallback">
+            <summary>
+            Gets or sets the callback method that provides the password for encrypted ZIP file entries.
+            </summary>
+            <value>
+            The callback method that provides the password for encrypted ZIP file entries.
+            </value>
+            <remarks>
+            The callback is a function which takes one string argument and returns a string.
+            The function argument is the path of the entry that should be retrieved from the ZIP
+            archive. The function returns the password that was used to protect the entry in the ZIP
+            archive. The method may return any value (including <see langword="null"/> or ""), if the
+            ZIP entry is not encrypted.
+            </remarks>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.#ctor(DigitalRune.Storages.Storage,System.String,System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DigitalRune.Storages.ZipStorage"/> class.
+            </summary>
+            <param name="storage">The storage that contains the ZIP archive.</param>
+            <param name="fileName">The file name (incl. path) of the ZIP archive.</param>
+            <remarks>
+            An exception is raised if the ZIP archive could not be opened.
+            </remarks>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="storage"/> is null.
+            </exception>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.Dispose(System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by an instance of the <see cref="T:DigitalRune.Storages.ZipStorage"/> class
+            and optionally releases the managed resources.
+            </summary>
+            <param name="disposing">
+            <see langword="true"/> to release both managed and unmanaged resources;
+            <see langword="false"/> to release only unmanaged resources.
+            </param>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.GetRealPath(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.NormalizePath(System.String)">
+            <summary>
+            Validates and normalizes the path of a file in a storage.
+            </summary>
+            <param name="path">The path the file.</param>
+            <returns>The normalized path.</returns>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.SwitchDirectorySeparator(System.String,System.Char)">
+            <summary>
+            Switches the directory separator character in the specified path.
+            </summary>
+            <param name="path">The path.</param>
+            <param name="directorySeparator">The desired directory separator character.</param>
+            <returns>The path using only the specified directory separator.</returns>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.OpenFile(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sceelix.Designer.GUI.ZipStreamStorage.TryOpenFile(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Sceelix.Designer.Helpers.ClipboardHelper.Copy(System.String)">
+            <summary>
+            Cross-platform operation for clipboard copy.
+            </summary>
+            <param name="textToCopy">Text to copy to the clipboard.</param>
+        </member>
+        <member name="M:Sceelix.Designer.Helpers.ClipboardHelper.Paste">
+            <summary>
+             Cross-platform operation for clipboard paste.
+            </summary>
+            <returns>Pasted text.</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Helpers.ClipboardHelper.ContainsText">
+            <summary>
+             Cross-platform operation to verify if there is text at the clipboard
+            </summary>
+            <returns>True if there is text at the clipboard, false otherwise.</returns>
+        </member>
+        <member name="M:Sceelix.Designer.Login.SteamLoginManager.SteamCheck">
+            <summary>
+            Tips from Steam Forums:
+            1) if SteamAPI_RestartAppIfNecessary(): exit
+            2) if not SteamAPI_IsSteamRunning(): exit with message box "please start Steam client"
+            3) if not SteamAPI_Init(): exit with message box "init failed" (it does happen)
+            4) if not SteamApps()->BIsSubscribedApp(APPID): exit with message box "game not owned"
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Login.SteamLoginManager.ShowSteamNotConnectedDialog(System.String)">
+            <summary>
+            Error message when Steam is not able to connect/verify.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:Sceelix.Designer.Managers.ExtendedInputManager">
+            <summary>
+            This input manager is meant to compensate for some issues with the default input manager, especially
+            when a low framerate occurs.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Managers.ExtendedUIRenderer.GetContentBoundsRounded(DigitalRune.Game.UI.Controls.UIControl)">
+            <summary>
+            Gets the content bounds (= actual bounds - padding) snapped to pixels.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Managers.ExtendedUIRenderer.GetForeground(DigitalRune.Game.UI.Controls.UIControl,DigitalRune.Game.UI.Rendering.ThemeState,System.Single)">
+            <summary>
+            Gets the foreground with pre-multiplied alpha for the given opacity.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Managers.UIZoomManager.UIScreenOnInputProcessed(System.Object,DigitalRune.Game.UI.Controls.InputEventArgs)">
+            <summary>
+            Deactivated for now (was moved to DesignerWindow), but might be important again.
+            </summary>
+            <param name="sender"></param>
+            <param name="inputEventArgs"></param>
+        </member>
+        <member name="P:Sceelix.Designer.Managers.GraphicsWindowManager.IsReallyActive">
+            <summary>
+            We need this extra function because windows does not properly evaluate the IsActive flag when the user clicks on the taskbar.
+            In this situation the window becomes minimized but it is still considered active!
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.Messaging.ProcessExiting">
+            <summary>
+            Indicates that the process is exiting.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.Messaging.MessageManager">
+            <summary>
+            The message manager allows a simple, quick and decoupled way of sending commands, events and data among components.
+            A component can subscribe to a certain type of messages or send new ones without compromise.
+            
+            Messages are not bound to any special definition. They are simple objects, however they should represent meaningful actions/events.
+            Naming should be cared for. 
+            Messages that are meant to order something should be named with Verb + Noun (ex. PlaySound)
+            Messages that are meant to inform something should be named with Noun + Past Verb (ex. SoundPlayed)
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.Register``1(System.Action{``0})">
+            <summary>
+            Registers a subscription to a certain type of message, so that when messages of that type are send, they are
+            delivered and handled by the indicated delegate function.
+            </summary>
+            <typeparam name="T">Type of message to subscribe to.</typeparam>
+            <param name="actionToPerform">Action to perform.</param>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.Register(System.Type,System.Action{System.Object})">
+            <summary>
+            Registers a subscription to a certain type of message, so that when messages of that type are send, they are
+            delivered and handled by the indicated delegate function.
+            </summary>
+            <param name="actionToPerform">Action to perform.</param>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.Register``1(System.Action{``0},System.Predicate{``0})">
+            <summary>
+            Registers a subscription to a certain type of message, so that when messages of that type are send, they are
+            delivered and handled by the indicated delegate function.
+            </summary>
+            <typeparam name="T">Type of message to subscribe to.</typeparam>
+            <param name="actionToPerform">Action to perform.</param>
+            <param name="predicate">Condition based on the type of message.</param>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.Register(System.Type,System.Action{System.Object},System.Predicate{System.Object})">
+            <summary>
+            Registers a subscription to a certain type of message, so that when messages of that type are send, they are
+            delivered and handled by the indicated delegate function.
+            </summary>
+            <param name="messageType">Type of message to send.</param>
+            <param name="actionToPerform">Action to perform.</param>
+            <param name="predicate">Condition based on the type of message.</param>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.Publish(System.Object,System.Object[])">
+            <summary>
+            Publishes a message, sending it to all registered subscribers.
+            </summary>
+            <param name="message">Message to publish.</param>
+            <param name="ignoreSubscribers">Subscribers not to send the message. Useful to isolate the sender from the receivers, for instance</param>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.PublishSync(System.Object,System.Object[])">
+            <summary>
+            Publishes a message, sending it to all registered subscribers. 
+            Should be used if the message is sent from another thread to the main one the main thread.
+            </summary>
+            <param name="message">Message to publish.</param>
+            <param name="ignoreSubscribers">Subscribers not to send the message. Useful to isolate the sender from the receivers, for instance</param>
+        </member>
+        <member name="M:Sceelix.Designer.Messaging.MessageManager.CleanUp">
+            <summary>
+            Cleans ups "Type" entries for which the list of subscribers is empty.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.Utils.MouseHelper">
+            <summary>
+            This class is a temporary patch to a bigger problem, which is the GUI scaling. It should be used instead of the Mouse.SetPosition directly.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Utils.DelayedEventRunner.Run(System.Action,System.Double)">
+            <summary>
+            Schedules the execution of the action within [interval] milliseconds.
+            If an action was already scheduled, it is replaced with this one.
+            </summary>
+            <param name="action"></param>
+            <param name="interval"></param>
+        </member>
+        <member name="F:Sceelix.Designer.Utils.SceelixApplicationInfo._configurationFolder">
+            private static readonly string _userApplicationFolder;
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.IsPortable">
+            <summary>
+            Indicates if we are running the portable version or not.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.ConfigurationFolder">
+            <summary>
+            Folder where the configurations are stored (typically in the Application Data folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.SceelixExeFolder">
+            <summary>
+            Folder where the Sceelix.Designer.exe is located. (typically Bin folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.SceelixMainFolder">
+            <summary>
+            Folder where the Bin folder and the Sceelix.exe shortcut is located.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.SettingsFolder">
+            <summary>
+            Folder where the settings are stored (typically in the Config folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.LayoutsFolder">
+            <summary>
+            Folder where the layouts are stored (typically in the Config folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.LogsFolder">
+            <summary>
+            Folder where the logs are stored (typically in the Config folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.ExtrasFolder">
+            <summary>
+            Folder where the extras (api) are stored (typically in the Documents/Sceelix folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.ContentFolder">
+            <summary>
+            Folder where the assembly content is stored (typically inside the Bin folder)
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.DocumentsFolder">
+            <summary>
+            Folder inside the documents folder.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.PluginsFolder">
+            <summary>
+            Folder where the plugins should be deployed.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.SceelixApplicationInfo.CurrentVersion">
+            <summary>
+            Currently running version of Sceelix.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.Utils.OSVersionInfo">
+            <summary>
+            Provides detailed information about the host operating system.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.ServicePack">
+            <summary>
+            Gets the service pack information of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.ProgramBits">
+            <summary>
+            Determines if the current application is 32 or 64-bit.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.ProcessorBits">
+            <summary>
+            Determines if the current processor is 32 or 64-bit.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.Edition">
+            <summary>
+            Gets the edition of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.Name">
+            <summary>
+            Gets the name of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.BuildVersion">
+            <summary>
+            Gets the build version number of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.VersionString">
+            <summary>
+            Gets the full version string of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.Version">
+            <summary>
+            Gets the full version of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.MajorVersion">
+            <summary>
+            Gets the major version number of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.MinorVersion">
+            <summary>
+            Gets the minor version number of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Utils.OSVersionInfo.RevisionVersion">
+            <summary>
+            Gets the revision version number of the operating system running on this computer.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Utils.GDIExtender.ToFloatArray(System.Drawing.Bitmap)">
+            <summary>
+            Converts the the bitmap into a array of float values in the [0-1] range. Takes the Red values only.
+            Useful assuming a grayscale image.
+            </summary>
+            <param name="bitmap"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Designer.Utils.EmbeddedResources">
+            <summary>
+            Provides the means to load embedded resources from assemblies.
+            Converts the loaded stream to the requested types through the conversion helper.
+            </summary>
+            <seealso cref="T:Sceelix.Conversion.ConvertHelper" />
+        </member>
+        <member name="M:Sceelix.Designer.Utils.EmbeddedResources.Load(System.Type,System.String,System.Boolean)">
+            <summary>
+            Loads the specified resource from the calling assembly and converts it to the indicated type.
+            The resource should have been marked as "Embedded Resource" in the compilation options.
+            A conversion from "Stream" to T should have been registered at the ConvertHelper.
+            </summary>
+            <param name="type">Type to convert the resource to.</param>
+            <param name="resourceName">Path to the resource inside the assembly (e.g. MyResources/MyImage.png).</param>
+            <param name="allowCache">If set to <c>true</c>, it will attempt to load a cached resource. If false, a new object will be loaded.</param>
+            <returns>The loaded resource.</returns>
+            <exception cref="T:System.ArgumentException">If no conversion from stream to the requested type has been defined. </exception>
+            <exception cref="T:System.IO.FileNotFoundException">If the requested resource location does not exist. </exception>
+        </member>
+        <member name="M:Sceelix.Designer.Utils.EmbeddedResources.Load``1(System.String,System.Boolean)">
+            <summary>
+            Loads the specified resource from the calling assembly and converts it to the indicated type.
+            The resource should have been marked as "Embedded Resource" in the compilation options.
+            A conversion from "Stream" to T should have been registered at the ConvertHelper.
+            </summary>
+            <typeparam name="T">Type to convert the resource to.</typeparam>
+            <param name="resourceName">Path to the resource inside the assembly (e.g. MyResources/MyImage.png).</param>
+            <param name="allowCache">If set to <c>true</c>, it will attempt to load a cached resource. If false, a new object will be loaded.</param>
+            <returns>The loaded resource.</returns>
+            <exception cref="T:System.ArgumentException">If no conversion from stream to T has been defined. </exception>
+            <exception cref="T:System.IO.FileNotFoundException">If the requested resource location does not exist. </exception>
+        </member>
+        <member name="M:Sceelix.Designer.Utils.EmbeddedResources.Load``1(System.String,System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            Loads the specified resource from the indicated assembly and converts it to the indicated type.
+            The resource should have been marked as "Embedded Resource" in the compilation options.
+            A conversion from "Stream" to T should have been registered at the ConvertHelper.
+            </summary>
+            <typeparam name="T">Type to convert the resource to.</typeparam>
+            <param name="resourceName">Path to the resource inside the assembly (e.g. MyResources/MyImage.png).</param>
+            <param name="allowCache">If set to <c>true</c>, it will attempt to load a cached resource. If false, a new object will be loaded.</param>
+            <returns>The resource </returns>
+            <exception cref="T:System.ArgumentException">If no conversion from stream to T has been defined. </exception>
+            <exception cref="T:System.IO.FileNotFoundException">If the requested resource location does not exist. </exception>
+        </member>
+        <member name="M:Sceelix.Designer.Utils.EmbeddedResources.Load(System.Type,System.String,System.Reflection.Assembly,System.Boolean)">
+            <summary>
+            Loads the specified resource from the indicated assembly and converts it to the indicated type.
+            The resource should have been marked as "Embedded Resource" in the compilation options.
+            A conversion from "Stream" to the given type should have been registered at the ConvertHelper.
+            </summary>
+            <param name="type">Type to convert the resource to.</param>
+            <param name="resourceName">Path to the resource inside the assembly (e.g. MyResources/MyImage.png).</param>
+            <param name="allowCache">If set to <c>true</c>, it will attempt to load a cached resource. If false, a new object will be loaded.</param>
+            <returns>The resource </returns>
+            <exception cref="T:System.ArgumentException">If no conversion from stream to the requested type has been defined. </exception>
+            <exception cref="T:System.IO.FileNotFoundException">If the requested resource location does not exist. </exception>
+        </member>
+        <member name="M:Sceelix.Designer.Utils.Synchronizer.Update(System.Int32)">
+            <summary>
+            Resolves "count" elements from the queue.
+            </summary>
+            <param name="count"></param>
+        </member>
+        <member name="T:Sceelix.Designer.Logging.DesignerLogger">
+            <summary>
+            Default Logger for the designer, which writes to Log4Net class.
+            </summary>
+            <seealso cref="T:Sceelix.Logging.ILogger" />
+        </member>
+        <member name="M:Sceelix.Designer.Services.ServiceManager.GetService(System.Type)">
+            <summary>
+            Gets the service object of the specified type. Implementation of System.IServiceProvider.GetService(type). Same as Get(type).
+            </summary>
+            <param name="serviceType">An object that specifies the type of service object to get.</param>
+            <returns>
+            A service object of type <paramref name="serviceType" />.-or- null if there is no service object of type <paramref name="serviceType" />.
+            </returns>
+        </member>
+        <member name="M:Sceelix.Designer.Layouts.LayoutManager.RefreshAvailableLayouts">
+            <summary>
+            Looks up the layouts folder for available layout files.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Layouts.LayoutManager.LoadDefaultLayout">
+            <summary>
+            Loads the default layout
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Settings.ApplicationSettings.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="fileName">Name or path of the file. If left as relative path, it will be placed within the Settings folder. If left without extension, it will be added the default settings extension.</param>
+        </member>
+        <member name="F:Sceelix.Designer.Settings.DesignerSettings.ShowFps">
+            <summary>
+            Toggles Framerate on the application title.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.Settings.DesignerSettings.Use60FpsLimit">
+            <summary>
+            Toggles frame limiting to 60 frames per second.
+            If disabled, the highest possible framerates will be attempted, with its corresponding CPU overhead.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.Settings.DesignerSettings.UIScale">
+            <summary>
+            Determines how much the UI controls should be scaled. Same as using the CTRL + '+' or CTRL + '-'.
+            Changing the UI scale is probably advisable on monitors whose resolutions largely differ from the standard FullHD resolution (1920x1080).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.Settings.DesignerSettings.MaxLogFiles">
+            <summary>
+            Maximum number of log files that will be stored. Leave 0 to not remove log files.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.Settings.DesignerSettings.ImportExclusions">
+            <summary>
+            File and Folder names/extensions to exclude when mass importing existing Folders and Contents.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.Settings.DesignerSettings.LocalGuid">
+            <summary>
+            Used for identifying the source of statistical data. 
+            </summary>
+        </member>
+        <member name="P:Sceelix.Designer.Settings.PrimitiveApplicationField`1.AllowsPreview">
+             <summary>
+             Indicates if changing this option in the Settings Windows
+             should immediately trigger the change/changing event.
+            
+             The change is rolled back if the user presses "Cancel". If the user presses
+             "Okay", the events are NOT called again.
+             
+             This is disabled by default.
+             </summary>
+        </member>
+        <member name="T:Sceelix.Designer.SceelixGame">
+            <summary>
+            This is the main type for your game
+            </summary>
+        </member>
+        <member name="T:Sceelix.Designer.DesignerProgram">
+            <summary>
+            The main class.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.DesignerProgram.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+    </members>
+</doc>

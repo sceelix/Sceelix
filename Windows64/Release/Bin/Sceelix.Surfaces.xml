@@ -1,0 +1,1618 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Surfaces</name>
+    </assembly>
+    <members>
+        <member name="T:Sceelix.Surfaces.Data.BlendLayer">
+            <summary>
+            
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Data.FloatLayer" />
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.HeightLayer.CreateEmpty(System.Int32,System.Int32)">
+            <summary>
+            Creates an empty, zero-filled layer with the given number of columns and rows.
+            </summary>
+            <param name="numColumns">The number columns.</param>
+            <param name="numRows">The number rows.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.HeightLayer.GetPosition(Sceelix.Mathematics.Data.Coordinate)">
+            <summary>
+            Gets the 3D world position sampled at given SURFACE coordinates.
+            </summary>
+            <param name="surfaceColumn">The surface column.</param>
+            <param name="surfaceRow">The surface row.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.HeightLayer.SetValue(Sceelix.Mathematics.Data.Coordinate,System.Object)">
+            <summary>
+            Sets the absolute height value at given LAYER coordinates.
+            </summary>
+            <param name="layerColumn">The layer column.</param>
+            <param name="layerRow">The layer row.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="T:Sceelix.Surfaces.Data.SurfaceEntity">
+            <summary>
+            The surface is an entity that defines a uniform, grid-based set of vertices, all of which have a certain height and can have any kind of properties.
+            A surface has its Y coordinate 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Data.SurfaceEntity._cellSize">
+            <summary>
+            Distance between the points of the grid.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Data.SurfaceEntity._material">
+            <summary>
+            Material that defines show to render this 
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.BoundingBox">
+            <summary>
+            Gets the axis-oriented boundingbox that fully encloses the surface.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.BoundingRectangle">
+            <summary>
+            2D Rectangle that encompasses the surface.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.CellSize">
+            <summary>
+            Distance between vertices of the surface grid.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.Height">
+            <summary>
+            Total height of the surface (= the maximum relative position of the surface).
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.Length">
+            <summary>
+            Size of the surface in the Y direction
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.Material">
+            <summary>
+            Material applied to the surface.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.NumColumns">
+            <summary>
+            Vertex count in X.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.NumRows">
+            <summary>
+            Vertex count in Y.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.Origin">
+            <summary>
+            Bottom-left position of the surface, on the XY-Plane.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.SurfaceEntity.Width">
+            <summary>
+            Size of the surface in the X direction
+            </summary>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.AddLayer``1(``0)">
+            <summary>
+            Adds the layer to the surface and initializes it.
+            </summary>
+            <param name="surfaceLayer">The surface layer.</param>
+            <returns>The same layer that was added, after initialization.</returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.Contains(Sceelix.Mathematics.Data.Coordinate)">
+            <summary>
+            Determines whether this surface contains the given coordinates.
+            </summary>
+            <param name="column">The column.</param>
+            <param name="row">The row.</param>
+            <returns>
+              <c>true</c> if this surface contains the specified (column,row) coordinates; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.Contains(Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Determines whether this surface contains the given world position.
+            </summary>
+            <param name="worldPosition">The world position.</param>
+            <returns>
+              <c>true</c> if this surface contains the specified world position; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.DeepClone">
+            <summary>
+            Creates a deep clone of the surface.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.GetLayer``1">
+            <summary>
+            Gets the first layer of the give type T that it can find.
+            </summary>
+            <typeparam name="T">Type of the  layer to look for.</typeparam>
+            <returns> The first layer of the given type T that is found, or null if no layer of the given type exists.</returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.GetLayers``1">
+            <summary>
+            Gets all the layers of the indicated type T.
+            </summary>
+            <typeparam name="T">Type of the  layer to look for.</typeparam>
+            <returns>The layers of type T in this surface.</returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.RemoveLayer(Sceelix.Surfaces.Data.SurfaceLayer)">
+            <summary>
+            Removes the layer from the surface.
+            </summary>
+            <param name="layer">The layer.</param>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.ToCoordinates(Sceelix.Mathematics.Data.Vector2D,System.Boolean,Sceelix.Surfaces.Data.RoundingMethod)">
+            <summary>
+            Converts the given 2D world coordinates to set of surface coordinates.
+            </summary>
+            <param name="worldPosition">The world position.</param>
+            <param name="clamp">indicates if the coordinates should be clamped to the surface bounds.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceEntity.ToWorldPosition(Sceelix.Mathematics.Data.Coordinate)">
+            <summary>
+            Converts the given surface coordinates to a 2D world position.
+            </summary>
+            <param name="column">The column.</param>
+            <param name="row">The row.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.GenericSurfaceLayer`1.NumColumns">
+            <summary>
+            Number of columns of the internal array. May not be coincident with the NumColumns property from surface.
+            </summary>
+        </member>
+        <member name="P:Sceelix.Surfaces.Data.GenericSurfaceLayer`1.NumRows">
+            <summary>
+            Number of rows of the internal array. May not be coincident with the NumRows property from surface.
+            </summary>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.GenericSurfaceLayer`1.DeepClone">
+             <summary>
+             Performs a deep clone, following the memberwiseClone of the base class.
+            
+             Should be overriden in derived layers if either the array values are of reference type,
+             or if it contains other fields that would be otherwise be shallow cloned.
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Data.SurfaceLayer.Contains(Sceelix.Mathematics.Data.Coordinate)">
+            <summary>
+            Determines whether this layer contains the given layer coordinates.
+            </summary>
+            <param name="column">The column.</param>
+            <param name="row">The row.</param>
+            <returns>
+              <c>true</c> if this layer contains the specified (column,row) coordinates; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Extensions.SurfaceBlendExtensions.ToColorArray(System.Collections.Generic.IEnumerable{Sceelix.Surfaces.Data.BlendLayer},System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Builds a color array from a set of blend layers.
+            </summary>
+            <remarks>The blend layers are ordered by their texture id before the array is extracted.</remarks>
+            <param name="blendLayers">The blend layers.</param>
+            <param name="numColumns">The number of columns of the returned array.</param>
+            <param name="numRows">The number of rows of the returned array.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Extensions.SurfaceHeightExtensions.SafeGetHeight(Sceelix.Surfaces.Data.HeightLayer,Sceelix.Mathematics.Data.Coordinate)">
+            <summary>
+            Gets the height value at the given column/row, or 0 if the heightlayer is null.
+            </summary>
+            <param name="heightLayer">The height layer.</param>
+            <param name="surfaceColumn">The surface column.</param>
+            <param name="surfaceRow">The surface row.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Extensions.SurfaceHeightExtensions.SafeGetHeight(Sceelix.Surfaces.Data.HeightLayer,Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Gets the height value at the given position, or 0 if the heightlayer is null.
+            </summary>
+            <param name="heightLayer">The height layer.</param>
+            <param name="position">The position.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Surfaces.Extensions.SurfaceNormalExtensions.CalculateNormal(Sceelix.Surfaces.Data.HeightLayer,Sceelix.Mathematics.Data.Coordinate)">
+            <summary>
+            Calculates the normal from a heightlayer and surface coordinates.
+            </summary>
+            <param name="heightLayer">The height layer. If null, the default (0,0,1) vector will be returned.</param>
+            <param name="surfaceColumn">The surface column.</param>
+            <param name="surfaceRow">The surface row.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Surfaces.Extensions.SurfaceUVExtensions">
+            <summary>
+            Performs UV calculation for surfaces.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Parameters.SurfacePropertyParameter">
+            <summary>
+            Reads/calculates properties from surface entities.
+            </summary>
+            <seealso cref="T:Sceelix.Core.Procedures.PropertyProcedure.PropertyParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfacePropertyParameter._input">
+            <summary>
+            Surface entity from which to read the properties.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfacePropertyParameter._output">
+            <summary>
+            Surface entity from which the properties were read.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfacePropertyParameter._parameterCellSize">
+            <summary>
+            Size of the each surface (square) cell.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfacePropertyParameter._parameterNumColumns">
+            <summary>
+            Number of columns of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfacePropertyParameter._parameterNumRows">
+            <summary>
+            Number of rows of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfacePropertyParameter._parameterNumLayers">
+            <summary>
+            Number of layers in the surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Parameters.FromSurfaceMeshParameter">
+            <summary>
+            Creates a mesh from a given surface.
+            </summary>
+            <seealso cref="T:Sceelix.Meshes.Procedures.MeshCreateProcedure.PrimitiveMeshParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.FromSurfaceMeshParameter._input">
+            <summary>
+            Surface to be transformed to a mesh.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Parameters.SurfaceSeparateParameter">
+            <summary>
+            Separation options.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfaceSeparateParameter._parameterAttributes">
+            <summary>
+            Defines what the attributes of the individual surfaces should be:
+            if they should take the attributes of the parent, use the ones of the layer
+            or mix both.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Parameters.SurfaceSeparateParameter._parameterResolution">
+            <summary>
+            Indicates if the resolution of the resulting surfaceEntity should match the one from the original surface
+            of should retain the one from the layer.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.EmptySurfaceParameter">
+            <summary>
+            Creates a empty, flat surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.EmptySurfaceParameter._parameterWidth">
+            <summary>
+            Width (size in the X-Axis of the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.EmptySurfaceParameter._parameterLength">
+            <summary>
+            Length in the Y-Axis of the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.EmptySurfaceParameter._parameterCellSize">
+            <summary>
+            Square size of each terrain cell. Should be a multiple of both Width and Length.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.EmptySurfaceParameter._parameterSurfaceInterpolation">
+            <summary>
+            The type of height data interpolation. Because surfaces are often rendered as triangle or quad meshes, there is more than one possible setup.
+            Different target platforms may use different setups, which could affect, for instance, the positioning of the objects on the surface.<br/>
+            <b>Top Left</b> means that the quads are split from the top left corner to the bottom right corner.<br/>
+            <b>Top Right</b> means that the quads are split from the top right corner to the bottom left corner.<br/>
+            <b>Bilinear</b> assumes that the quad is not split and the height values are bilinearly interpolated.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.FromMeshSurfaceParameter">
+            <summary>
+            Creates a surface from a mesh by sampling it uniformly in the XY plane.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FromMeshSurfaceParameter._input">
+            <summary>
+            Mesh to be transformed to a surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FromMeshSurfaceParameter._parameterCellSize">
+            <summary>
+            Square size of each terrain cell. Should be a multiple of both Width and Length.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FromMeshSurfaceParameter._parameterSurfaceInterpolation">
+            <summary>
+            The type of interpolation.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter">
+            <summary>
+            Creates a random-looking surface using the perlin noise algorithm.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterWidth">
+            <summary>
+            Width (size in X) of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterLength">
+            <summary>
+            Length (size in Y) of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterHeightScale">
+            <summary>
+            The scale of the surface height values (in Z).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterCellSize">
+            <summary>
+            Square size of each terrain cell. Should be a multiple of both Width and Length.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterSurfaceInterpolation">
+            <summary>
+            The type of height data interpolation. Because surfaces are often rendered as triangle or quad meshes, there is more than one possible setup.
+            Different target platforms may use different setups, which could affect, for instance, the positioning of the objects on the surface.<br/>
+            <b>Top Left</b> means that the quads are split from the top left corner to the bottom right corner.<br/>
+            <b>Top Right</b> means that the quads are split from the top right corner to the bottom left corner.<br/>
+            <b>Bilinear</b> assumes that the quad is not split and the height values are bilinearly interpolated.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterFrequency">
+            <summary>
+            Frequency of the noise function. Smaller values result in tighter "mountains" while greater
+            values result in wider ones.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterRoughness">
+            <summary>
+            Roughness of the surface. Lower values result in smoother surfaces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterSeed">
+            <summary>
+            Seed of the random generator, which controls the "randomness" look of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.PerlinSurfaceParameter._parameterOffset">
+            <summary>
+            Offset of the noise function. One can see this as a "translation" of the function.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.RampSurfaceParameter">
+            <summary>
+            Creates a ramp-looking surface, which can follow different shapes, methods and directions.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterWidth">
+            <summary>
+            Width (size in X) of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterLength">
+            <summary>
+            Length (size in Y) of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterHeightScale">
+            <summary>
+            The scale of the surface height values (in Z).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterCellSize">
+            <summary>
+            Square size of each terrain cell. Should be a multiple of both Width and Length.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterSurfaceInterpolation">
+            <summary>
+            The type of interpolation.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterShape">
+            <summary>
+            Shape of the surface ramp.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterMethod">
+            <summary>
+            Method used for defining the ramp curve.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterInvert">
+            <summary>
+            Indicates if the shape should be vertically inverted. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterOffset">
+            <summary>
+            The offset of the ramp, relative to the surface size. 0.5 would mean an offset equal to the half the size of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterSize">
+            <summary>
+            The size of the ramp, relative to the surface size. 0.5 would mean half the size of the surface, 2 would mean twice the size.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.RampSurfaceParameter._parameterContinuity">
+            <summary>
+            How the pattern should behave after the ramp boundaries (repeating, mirroring, etc.) 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.TileableSurfaceParameter">
+            <summary>
+            Creates a random-looking surface that is repeatable/tileable, 
+            meaning that the height values one edge match the ones at the
+            opposite edge, which can be used to create circular worlds.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterWidth">
+            <summary>
+            Width (size in X) of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterLength">
+            <summary>
+            Length (size in Y) of the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterHeightScale">
+            <summary>
+            The scale of the surface height values (in Z).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterCellSize">
+            <summary>
+            Square size of each terrain cell. Should be a multiple of both Width and Length.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterSurfaceInterpolation">
+            <summary>
+            The type of interpolation.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterFrequency">
+            <summary>
+            Frequency of the noise function. Smaller values result in tighter "mountains" while greater
+            values result in wider ones.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.TileableSurfaceParameter._parameterSeed">
+            <summary>
+            Seed of the random generator, which controls the "randomness" look of the surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.BlendColorSurfaceMaterialParameter">
+            <summary>
+            Renders the surface with the colors corresponding to the first 4 blend layers as RGBA components.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.ColorSurfaceMaterialParameter">
+            <summary>
+            Renders the surface with one color.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceMaterialParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.ColorSurfaceMaterialParameter._parameterColor">
+            <summary>
+            The color to render the surface with.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.DefaultSurfaceMaterialParameter">
+            <summary>
+            The default material, which simply renders the surface with a grid pattern. Simple for surface visualization.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceMaterialParameter" />
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter">
+            <summary>
+            Sets a fur-looking effect to a surface. Useful to simulate grass or otherwise furry materials.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceMaterialParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._textureParameter">
+            <summary>
+            The underlying texture to set on the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._mappingMultiplierParameter">
+            <summary>
+            The UV sizing coordinates for texture mapping.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._absoluteSizingParameter">
+            <summary>
+            Indicates if the defined UV coordinates represent an absolute size in world space, or relative to the surface size.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._furDensityParameter">
+            <summary>
+            Density of the fur effect of the material.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._jitterMapScaleParameter">
+            <summary>
+            The jitter map scale of the material effect.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._maxFurLengthParameter">
+            <summary>
+            The maximum length of each fur hair.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.FurTextureSurfaceMaterialParameter._selfShadowStrengthParameter">
+            <summary>
+            The strength of the self shadowing effect.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.MultiTextureSurfaceMaterialParameter">
+            <summary>
+            Sets a multi-layer material, whereas its textures are chosen and interpolated based on the defined splatmap (defined, for instance, through the surface painting node).
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceMaterialParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MultiTextureSurfaceMaterialParameter._parameterTextures">
+            <summary>
+            The textures of the material
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MultiTextureSurfaceMaterialParameter._mappingMultiplierParameter">
+            <summary>
+            The UV sizing coordinates for texture mapping.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MultiTextureSurfaceMaterialParameter._absoluteSizingParameter">
+            <summary>
+            Indicates if the defined UV coordinates represent an absolute size in world space, or relative to the surface size.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SingleTextureSurfaceMaterialParameter">
+            <summary>
+            Sets a single texture as the default diffuse texture of the terrain.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceMaterialParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SingleTextureSurfaceMaterialParameter._parameterDiffuseTexture">
+            <summary>
+            The diffuse texture to set on the terrain.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SingleTextureSurfaceMaterialParameter._parameterMappingMultiplier">
+            <summary>
+            The UV sizing coordinates for texture mapping.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SingleTextureSurfaceMaterialParameter._parameterAbsoluteSizing">
+            <summary>
+            Indicates if the defined UV coordinates represent an absolute size in world space, or relative to the surface size.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceMaterialProcedure">
+            <summary>
+            Applies rendering materials to surfaces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceMaterialProcedure._parameterSurfaceMaterial">
+            <summary>
+            The type of material to apply to this surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceCropProcedure">
+            <summary>
+            Resizes surfaces by removing peripheral areas or by adding new ones according to a selected pattern.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCropProcedure._input">
+            <summary>
+            The surface to be cropped.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCropProcedure._output">
+            <summary>
+            The cropped surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCropProcedure._parameterAnchor">
+            <summary>
+            The anchor corner/location from which the surface will be resized.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCropProcedure._parameterMethod">
+            <summary>
+            The sampling method/pattern to apply when enlarging the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCropProcedure._parameterWidth">
+            <summary>
+            The new width of the resulting surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCropProcedure._parameterHeight">
+            <summary>
+            The new height of the resulting surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure">
+            <summary>
+            Divides surface layers into new surfaces according to specific criteria.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure._input">
+            <summary>
+            The surface to be divided.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure._output">
+            <summary>
+            The divided surfaces, according to the defined groups.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure._parameterDivideGroups">
+            <summary>
+            Criteria by which the surface should be divided. If none is indicated, the whole set of layers will be considered.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure._parameterSeparate">
+            <summary>
+            if true, each one of the layers of the surface will be placed into a separate surface entity.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure.SurfaceDivideAttributeSetParameter">
+            <summary>
+            Divides the layers by attribute value, i.e. building sets of layers that share the same value.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure.SurfaceDivideAttributeSetParameter._parameterValue">
+            <summary>
+            Value to divide the surfaces by.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceDivideProcedure.SurfaceDivideTypeSetParameter">
+            <summary>
+            Divides the surfaces into sets of layers that share the same type.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure">
+            <summary>
+            Allows the definition of the splat map, which will handle the application of textures on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure._parameterInput">
+            <summary>
+            The type of input port. <br/>
+            Setting a <b>Single</b> (circle) input means that the node will be executed once per surface. <br/>
+            Setting a <b>Collective</b> (square) input means that the node will be executed once for all surfaces. Especially useful when actors are to be painted on the surfaces, but it would be complex to match with the right surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure._output">
+            <summary>
+            The surface that was painted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure._parameterDesigns">
+            <summary>
+            Painting designs to be applied.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfacePaintingParameter.ParameterTextureIndex">
+            <summary>
+            The zero-based index of the texture to paint on the surface, as listed in a defined Multi Texture material.
+            This will create a new blend texture for the given index, if one does not yet exist.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.UniformPaintingParameter">
+            <summary>
+            Paints the surface with a uniform value.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfacePaintingParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.UniformPaintingParameter._parameterValue">
+            <summary>
+            Uniform value to paint.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.DirectionPaintingParameter">
+            <summary>
+            Paints the surface sections based on the direction of their normals.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfacePaintingParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.DirectionPaintingParameter._parameterDirection">
+            <summary>
+            The normal direction to compare to. The intensity of the texture at a surface point will depend of the how its normal differs from this one.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.DirectionPaintingParameter._parameterAngle">
+            <summary>
+            The maximum angle to perform the comparison between the indicated surface normal and the normal at each point.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.DirectionPaintingParameter._parameterHeightFunction">
+            <summary>
+            Intensity function to apply. Useful to define smoothing effects.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfaceOnSurfacePainting">
+            <summary>
+            Paints layers from other surfaces on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfaceOnSurfacePainting._inputSurface">
+            <summary>
+            The surface that is to be painted on the main surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfaceOnSurfacePainting._outputSurface">
+            <summary>
+            The surface that was painted on the main surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfaceOnSurfacePainting._parameterLayerIndex">
+            <summary>
+            Index of the layer which contains the intensity information. Should be a floating-point based layer, such as a height or blend layer.<br/>
+            By default, the index 0 means the height layer.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfaceOnSurfacePainting._parameterHeightFunction">
+            <summary>
+            Intensity function to apply. Useful to define smoothing effects.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.ConstFunctionParameter">
+            <summary>
+            The same value will be applied, regardless of input.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.HeightFunctionParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.ConstFunctionParameter._parameterValue">
+            <summary>
+            Value to be returned.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.LinearFunctionParameter">
+            <summary>
+            The value will vary linearly between the defined values.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.HeightFunctionParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.LinearFunctionParameter._parameterStartValue">
+            <summary>
+            The start value.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.LinearFunctionParameter._parameterEndValue">
+            <summary>
+            The end value.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.AbsoluteLimitsParameter">
+            <summary>
+            Defines limits in absolute values.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.HeightLimitsParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.AbsoluteLimitsParameter._parameterStart">
+            <summary>
+            The starting height where to paint the texture.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.AbsoluteLimitsParameter._parameterEnd">
+            <summary>
+            The ending height where to paint the texture.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.RelativeLimitsParameter">
+            <summary>
+            Defines limits in surface-relative values (between 0 and 1).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.RelativeLimitsParameter._parameterStart">
+            <summary>
+            The starting height where to paint the texture.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.RelativeLimitsParameter._parameterEnd">
+            <summary>
+            The ending height where to paint the texture.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.HeightPaintingParameter">
+            <summary>
+            Paints the surface sections based on their height. 
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.SurfacePaintingParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.HeightPaintingParameter._parameterHeightLimits">
+            <summary>
+            The height limits between which the painting should occur.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePaintProcedure.HeightPaintingParameter._parameterHeightFunction">
+            <summary>
+            Intensity function to apply. Useful to define smoothing effects.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure">
+            <summary>
+            Performs sampling/extraction of surface layer data, such as height, color 
+            or normals, storing this information as attributes the actors placed in the same area. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure._parameterInput">
+            <summary>
+            The surface(s) to be sampled. <br/>
+            Setting a <b>Single</b> (circle) input means that the node will be executed once per surface. <br/>
+            Setting a <b>Collective</b> (square) input means that the node will be executed once for all surfaces. Especially useful when actors are to be placed on the surfaces, but it would be complex to match with the right surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure._inputActor">
+            <summary>
+            The actor whose position is to be used for sampling.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure._outputSurface">
+            <summary>
+            Surface that was sampled.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure._outputActor">
+            <summary>
+            The actor whose position was used for sampling.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure._parameterSurfaceSample">
+            <summary>
+            The surface layer from which the data should be sampled.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.SurfaceSampleParameter.AttributeResult">
+            <summary>
+            Attribute where the sampled data should be stored to.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.HeightsSampleParameter">
+            <summary>
+            Samples height information from the surface.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.SurfaceSampleParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.HeightsSampleParameter._parameterSampling">
+            <summary>
+            The sampling method. Since there may be several values corresponding to the area of the actor, there are
+            several ways to keep the sampled data:<br/>
+            <b>First</b> means that the first value will be chosen.<br/>
+            <b>Average</b> means that the values will be averaged.<br/>
+            <b>Last</b> means that the last value will be chosen.<br/>
+            <b>List</b> means that all the values will be returned as a list.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.NormalsSampleParameter">
+            <summary>
+            Samples normal information from the surface.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.SurfaceSampleParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.NormalsSampleParameter._parameterSampling">
+            <summary>
+            The sampling method. Since there may be several values corresponding to the area of the actor, there are
+            several ways to keep the sampled data:<br/>
+            <b>First</b> means that the first value will be chosen.<br/>
+            <b>Average</b> means that the values will be averaged.<br/>
+            <b>Last</b> means that the last value will be chosen.<br/>
+            <b>List</b> means that all the values will be returned as a list.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.ColorsSampleParameter">
+            <summary>
+            Samples color information from the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSampleProcedure.ColorsSampleParameter._parameterSampling">
+            <summary>
+            The sampling method. Since there may be several values corresponding to the area of the actor, there are
+            several ways to keep the sampled data:<br/>
+            <b>First</b> means that the first value will be chosen.<br/>
+            <b>Average</b> means that the values will be averaged.<br/>
+            <b>Last</b> means that the last value will be chosen.<br/>
+            <b>List</b> means that all the values will be returned as a list.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure">
+            <summary>
+            Splits the input surface into several slices according
+            to specific constraints.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure._input">
+            <summary>
+            Surface that is meant to be split.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure._parameterAxis">
+            <summary>
+            The planes/axes that define the direction of the splitting.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure._parameterInvert">
+            <summary>
+            Indicates if the cut should start from right to left (in case the chosen axis is "X") or from top to bottom (in the case of "Y")
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure._parameterSplits">
+            <summary>
+            List of slices to split.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure._attributeIndex">
+            <summary>
+            Attribute where the index of the surface slice will be stored.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure._attributeCount">
+            <summary>
+            Attribute where the total number of surface slices will be stored. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure.RepetitiveSliceParameter">
+            <summary>
+            Splits the meshes repeatedly while there is available spacing.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure.SliceParameter">
+            <summary>
+            Splits a mesh piece with a given size.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure.SliceParameter.Output">
+            <summary>
+            The mesh section that was split.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure.SliceParameter.SizeParameter">
+            <summary>
+            Size of the slice.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure.SliceParameter.SizingParameter">
+            <summary>
+            If "Absolute", the value of "Amount" will be considered as an absolute value, if "Relative", the value will be a percentage. (0 - 1)
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSplitProcedure.SliceParameter.FlexibleParameter">
+            <summary>
+            If checked, the size of this slice will be adjusted according to the available space.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure">
+            <summary>
+            Selects a subset of layers from a given surface
+            creating new surfaces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure._input">
+            <summary>
+            The surface which to apply the subselection to.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure._parameterSurfaceSelection">
+            <summary>
+            The surface selections to apply.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.SurfaceSelectionParameter.Output">
+            <summary>
+            The surface resulting from the layers that matched the respective selection.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.SurfaceSelectionParameter.ParameterSeparate">
+            <summary>
+            if true, each one of the layers of the surface will be placed into a separate surface entity.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.IndexSelectionParameter">
+            <summary>
+            Selects layers from the surface by their index.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.IndexSelectionParameter.ParameterIndex">
+            <summary>
+            Index of the layer to select.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.CustomSelectionParameter">
+            <summary>
+            Selects layers by a custom condition.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.CustomSelectionParameter._parameterCondition">
+            <summary>
+            Condition to evaluate for each layer. If true, the layer will be included in the resulting surface.
+            Can access the attributes of each layer using the @@attributeName notation.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSubselectProcedure.AllSelectionParameter">
+            <summary>
+            Selects all (remaining) layers.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter">
+            <summary>
+            Adjusts the surface around meshes.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceAdjustParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter._inputMesh">
+            <summary>
+            Mesh entities around which the surface should be adjusted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter._outputMesh">
+            <summary>
+            Mesh entities around which the surface was adjusted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter._parameterHeightOffset">
+            <summary>
+            Indicates how much below the meshes the surface should be adjusted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter._parameterCreateBase">
+            <summary>
+            Indicates if a base should be created on the meshes. Such bases are horizontal faces that connect the meshes to the surface, so as
+            to avoid having the meshes flying above the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter._attributeSection">
+            <summary>
+            Attribute where to store the type of geometry created. Possible values are "Original" (which correspond
+            to the placed geometry) and "Base" (which correspond to the side based, if created).
+            </summary>
+        </member>
+        <member name="M:Sceelix.Surfaces.Procedures.MeshOnSurfaceAdjustParameter.PointInPolygon(System.Collections.Generic.List{Sceelix.Mathematics.Data.Vector2D},Sceelix.Mathematics.Data.Vector2D)">
+            <summary>
+            Algorithm from http://alienryderflex.com/polygon/
+            </summary>
+            <param name="polygon"></param>
+            <param name="point"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceAdjustProcedure">
+            <summary>
+            Adjusts surfaces to entities lying on top of them.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceAdjustProcedure._parameterInput">
+            <summary>
+            The surface(s) to be adjusted. <br/>
+            Setting a <b>Single</b> (circle) input means that the node will be executed once per surface. <br/>
+            Setting a <b>Collective</b> (square) input means that the node will be executed once for all surfaces. Especially useful when actors are to be placed on the surfaces, but it would be complex to match with the right surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceAdjustProcedure._output">
+            <summary>
+            The surface that was adjusted.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceAdjustProcedure._parameterEntity">
+            <summary>
+            The type of entity that the surface should adjust to.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceCombineProcedure">
+            <summary>
+            Performs data combination - addition, subtraction and set - between two overlapping surfaces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCombineProcedure._input">
+            <summary>
+            The type of input port. <br/>
+            Setting a <b>Single</b> (square) input means that the node will be executed once for all surfaces. Useful to combine any collection of surfaces at once. <br/>
+            Setting a <b>Dual</b> (circles) input means that the node will be executed once for each pair of surfaces. Useful to combine exactly two surfaces at once.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCombineProcedure._output">
+            <summary>
+            A new surfaces whose size encompasses the bounding area of all the input surfaces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCombineProcedure._parameterOperation">
+            <summary>
+            The surface operation to perform:<br/>
+            <b>Add</b> means that the values from the surface A will be added to the ones from surface B for the overlapping areas.<br/>
+            <b>Set</b> means that the values from the surface A will be set to the ones from surface B for the overlapping areas.<br/>
+            <b>Subtract</b> means that the values from the surface B will be subtracted from the ones at surface A (i.e. the result is A - B).<br/>
+            <b>Average</b> means that the values from the surface A will be averaged with the ones from surface B for the overlapping areas.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCombineProcedure._parameterResult">
+            <summary>
+            Determines what the resulting surface should be:<br/>
+            <b>First</b> means that the result will have the position and dimensions of the first surface and the data operations will apply to this area only.<br/>
+            <b>Intersection</b> means that the result will have the position and dimensions of the area corresponding to the intersections between all surfaces. The data operations will apply to this area only.<br/>
+            <b>Union</b> means that the result will have the position and dimensions of the whole bounding area. The data operations will apply to the whole area, meaning that some data may be set to the default (such as zero values).
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceCreateProcedure">
+            <summary>
+            Creates or loads Surfaces with particular characteristics.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCreateProcedure._output">
+            <summary>
+            Surface created according to the defined parameters and/or inputs.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceCreateProcedure._parameterCreateSurface">
+            <summary>
+            Type of surface pattern/method to create.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceDecomposeProcedure">
+            <summary>
+            Decomposes a Surface into layers, all without 
+            destroying the links between the surface parts.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDecomposeProcedure._input">
+            <summary>
+            Surface to be decomposed.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDecomposeProcedure._output">
+            <summary>
+            Surface subentities - the layers.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceDecomposeProcedure._outputOriginal">
+            <summary>
+            The original surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure">
+            <summary>
+            Loads surface layers from disk from standard image formats.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure._output">
+            <summary>
+            The loaded surface entity.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure._parameterCellSize">
+            <summary>
+            Square size of each terrain cell.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure._parameterLayers">
+            <summary>
+            Images to be loaded into layers. Images with different resolutions can be loaded, whereas the surface resolution will be determined by the first.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.HeightmapSurfaceLoadParameter">
+            <summary>
+            Loads a height map image into a height layer.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.SurfaceLoadParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.HeightmapSurfaceLoadParameter._parameterHeightmap">
+            <summary>
+            Image with the heights of the surface. A grayscale image is expected, or else only the red component will be used.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.HeightmapSurfaceLoadParameter._parameterHeightScale">
+            <summary>
+            Scale of the height values. Since the images value will be in the 0-1 range, this indicates the multiplication factor.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.HeightmapSurfaceLoadParameter._parameterSurfaceInterpolation">
+            <summary>
+            The type of height data interpolation. Because surfaces are often rendered as triangle or quad meshes, there is more than one possible setup.
+            Different target platforms may use different setups, which could affect, for instance, the positioning of the objects on the surface.<br/>
+            <b>Top Left</b> means that the quads are split from the top left corner to the bottom right corner.<br/>
+            <b>Top Right</b> means that the quads are split from the top right corner to the bottom left corner.<br/>
+            <b>Bilinear</b> assumes that the quad is not split and the height values are bilinearly interpolated.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.SplatmapSurfaceLoadParameter">
+            <summary>
+            Loads a splat map image into four blend layers.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.SurfaceLoadParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.SplatmapSurfaceLoadParameter._parameterSplatMap">
+            <summary>
+            Image with the colors of the surface (used for coloring or splat mapping). A color image is expected, whereas each component will be mapped into a different blend layer, in the RGBA order.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.SplatmapSurfaceLoadParameter._parameterTextureIndex">
+            <summary>
+            The starting texture index that these blend maps apply to.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.NormalSurfaceLoadParameter">
+            <summary>
+            Loads a normal map image into a normal layer.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.NormalSurfaceLoadParameter._parameterNormalMap">
+            <summary>
+            Image with surface normals.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.BlendMapSurfaceLoadParameter">
+            <summary>
+            Loads a blend map into a blend layer.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.BlendMapSurfaceLoadParameter._parameterFile">
+            <summary>
+            Image with the blend values. A grayscale image is expected, or else only the red component will be used.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceLoadProcedure.BlendMapSurfaceLoadParameter._parameterTextureIndex">
+            <summary>
+            The index of the texture that this blend map applies to.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceMergeProcedure">
+            <summary>
+            Merges multiple surfaces and their layers into a single one.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceMergeProcedure._input">
+            <summary>
+            The type of input port. <br/>
+            Setting a <b>Single</b> (square) input means that the node will be executed once for all surfaces. Useful to merge any collection of surfaces at once. <br/>
+            Setting a <b>Dual</b> (circles) input means that the node will be executed once for each pair of surfaces. Useful to merge exactly two surfaces at once.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceMergeProcedure._output">
+            <summary>
+            The merged surfaces, according to the defined criteria.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceMergeProcedure._parameterCriteria">
+            <summary>
+            Criteria on which to group the surfaces. If none is defined, all the surfaces will be merged into one.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure">
+            <summary>
+            Allows the placement of entities on top of surfaces.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure._parameterInput">
+            <summary>
+            The type of input port. <br/>
+            Setting a <b>Single</b> (circle) input means that the node will be executed once per surface. <br/>
+            Setting a <b>Collective</b> (square) input means that the node will be executed once for all surfaces. Especially useful when actors are to be placed on the surfaces, but it would be complex to match with the right surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure._output">
+            <summary>
+            Surface on which the entities where placed.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure._parameterEntity">
+            <summary>
+            Entities to place on the surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.ActorPlacementParameter">
+            <summary>
+            Places actors on the surface.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.SurfacePlacementParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.ActorPlacementParameter._input">
+            <summary>
+            Actors to be placed on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.ActorPlacementParameter._output">
+            <summary>
+            Actors that were placed on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.ActorPlacementParameter._parameterSampleLocation">
+            <summary>
+            Location to use as placement reference.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.MeshPlacementParameter">
+            <summary>
+            Places meshes on the surface.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.SurfacePlacementParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.MeshPlacementParameter._input">
+            <summary>
+            Meshes to be placed on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.MeshPlacementParameter._output">
+            <summary>
+            Meshes that were placed on the surface.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfacePlaceProcedure.MeshPlacementParameter._parameterKeepPlanar">
+            <summary>
+            Indicates if the meshes adapt all their vertices on the terrain, of if they should be forced to remain planar 
+            Enforcing planarity could mean that not all vertices would be lying on the terrain.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure">
+            <summary>
+            Applies modifications to the given input Surface.
+            </summary>
+            <remarks>Contains several operations.</remarks>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure._input">
+            <summary>
+            The surface to be modified.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure._output">
+            <summary>
+            The surface that has been modified.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.ParameterOperations">
+            <summary>
+            The operation to be applied to the surface.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceSmoothModify">
+            <summary>
+            Applies a 3x3 averaging matrix on the surface, creating a smoothing effect that can be applied several times.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceModifyParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceSmoothModify._parameterLayerIndex">
+            <summary>
+            Index of the layer to convert.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceSmoothModify._parameterIntensity">
+            <summary>
+            Intensity of the smoothing. Higher values will result in a smoother effect.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceSmoothModify._parameterIterations">
+            <summary>
+            Number of smooth iterations. Higher values will result in a smoother effect.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceSmoothModify._parameterSkip">
+            <summary>
+            Number of cells to skip when sampling. Higher values will result in greater smoothness at no performance cost, but sometimes
+            can result in a pixelated effect.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceSmoothModify._parameterBorder">
+            <summary>
+            Number of border cells to skip in the smoothing process. This will avoid discontinuities when several surfaces are placed next to another.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceInvertModify">
+            <summary>
+            Inverts the values of the surface's height layer, turning the highest values into the lowest ones and lowest into the highest.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceModifyParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceInvertModify._parameterLayerIndex">
+            <summary>
+            Index of the layer to convert.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceStepifyModify">
+            <summary>
+            Performs value quantization on height layers, creating a "step-like" effect.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceModifyParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceStepifyModify._parameterLayerIndex">
+            <summary>
+            Index of the layer to convert.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceStepifyModify._parameterStepSize">
+            <summary>
+            The size of each step.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceCalculateNormalsModify">
+            <summary>
+            Recalculates the normals of the surface based on the height layer, so as to create a steady, smooth effect.
+            </summary>
+            <remarks>Creates a normal layer, if one does not yet exist.</remarks>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.CellSizeModify">
+            <summary>
+            Changes the cell size of the surface, but maintaining the overall size.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.CellSizeModify._parameterCellSize">
+            <summary>
+            New square size of each terrain cell. Using a higher value, multiple of the current cell size can be delivered quickly.
+            Should be a multiple of the surface total Width and Length.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.ResolutionModify">
+            <summary>
+            Changes the number of vertex columns or rows (by changing the cell size, internally), but maintaining the overall size.
+            Especially useful to enforce certain resolutions before saving 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.ResolutionModify._parameterResolution">
+            <summary>
+            The vertex count to enforce for the chosen target (i.e. columns or rows)
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.ResolutionModify._parameterChoiceTarget">
+            <summary>
+            The dimension to be changed. The other dimension will be changed accordingly to maintain the size.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.HeightToBlendLayerConversion">
+            <summary>
+            Converts a height layer to a blend layer.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.HeightToBlendLayerConversion._parameterTextureIndex">
+            <summary>
+            The texture index of the newly created blend layer.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.BlendToHeightLayerConversion">
+            <summary>
+            Converts a blend layer to a height layer.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.BlendToHeightLayerConversion._parameterScale">
+            <summary>
+            The scale to multiply the blend layer.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.LayerConvertModify">
+            <summary>
+            Converts layers between different types.
+            </summary>
+            <seealso cref="T:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.SurfaceModifyParameter" />
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.LayerConvertModify._parameterLayerIndex">
+            <summary>
+            Index of the layer to convert.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceModifyProcedure.LayerConvertModify._parameterSelectConversionType">
+            <summary>
+            Type of conversion (origin layer and destination layer) to perform.
+            </summary> 
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure">
+            <summary>
+            Saves surfaces to disk.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure._parameterSurfaceSave">
+            <summary>
+            The files to export to the surface to.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.HeightSaveParameter">
+            <summary>
+            Saves the surface height layer as a height map to an image file.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.HeightSaveParameter._parameterFile">
+            <summary>
+            Location where to store the file.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.HeightSaveParameter._parameterResolution">
+            <summary>
+            Indicates which resolution (image size in columns/rows) the file should take. This choice is not important if the resolution of the layer and surface are the same.<br/>
+            <b>Surface</b> means that the surface resolution will be used. The values of the layer will be interpolated according to the defined interpolation.<br/>
+            <b>Layer</b> means that the layer resolution will be used. 
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.HeightSaveParameter._parameterBaseHeight">
+            <summary>
+            Indicates how the relative height values should be stored.<br/>
+            <b>Minimum</b> means that the stored height values will be relative to the surface minimum height value. Essential if the surface has negative height values.<br/>
+            <b>World</b> means that the stored height values will be relative to the world's zero plane. Makes import easier, as it stored absolute values, without the need for extra offset information. Cannot store negative values, though. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.SplatSaveParameter">
+            <summary>
+            Saves the surface height layer as a height map to an image file.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.SplatSaveParameter._parameterFile">
+            <summary>
+            Location where to store the file.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.SplatSaveParameter._parameterResolution">
+            <summary>
+            Indicates which resolution (image size in columns/rows) the file should take. This choice is not important if the resolution of the layer and surface are the same.<br/>
+            <b>Surface</b> means that the surface resolution will be used. The values of the layer will be interpolated according to the defined interpolation.
+            <b>Layer</b> means that the layer resolution will be used. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.NormalSaveParameter">
+            <summary>
+            Saves the surface height layer as a height map to an image file.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.NormalSaveParameter._parameterFile">
+            <summary>
+            Location where to store the file.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.NormalSaveParameter._parameterResolution">
+            <summary>
+            Indicates which resolution (image size in columns/rows) the file should take. This choice is not important if the resolution of the layer and surface are the same.<br/>
+            <b>Surface</b> means that the surface resolution will be used. The values of the layer will be interpolated according to the defined interpolation.
+            <b>Layer</b> means that the layer resolution will be used. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.BlendSaveParameter">
+            <summary>
+            Saves the surface blend layers to a image files.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.BlendSaveParameter._parameterFile">
+            <summary>
+            Location where to store the file. The index of the blendlayer will be appended to the file name.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.BlendSaveParameter._parameterResolution">
+            <summary>
+            Indicates which resolution (image size in columns/rows) the file should take. This choice is not important if the resolution of the layer and surface are the same.<br/>
+            <b>Surface</b> means that the surface resolution will be used. The values of the layer will be interpolated according to the defined interpolation.<br/>
+            <b>Layer</b> means that the layer resolution will be used. 
+            </summary>
+        </member>
+        <member name="T:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.MetaSaveParameter">
+            <summary>
+            Saves the surface metainformation (translation, grid size, etc.).
+            </summary>
+        </member>
+        <member name="F:Sceelix.Surfaces.Procedures.SurfaceSaveProcedure.MetaSaveParameter._parameterFile">
+            <summary>
+            Location where to store the file.
+            </summary>
+        </member>
+    </members>
+</doc>

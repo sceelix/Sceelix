@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Designer.Meshes</name>
+    </assembly>
+    <members>
+        <member name="F:Sceelix.Designer.Meshes.Controls.ModelViewer3DSettings.RenderWireframe">
+            <summary>
+            If enabled, renders a wireframe version of the model.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Designer.Meshes.Controls.ModelViewer3DSettings.ShowAxis">
+            <summary>
+            Toggles axis arrow drawing on the world's origin (0,0,0).
+            </summary>
+        </member>
+        <member name="M:Sceelix.Designer.Meshes.SceneNodes.MeshRenderNode.Dispose(System.Boolean,System.Boolean)">
+            <summary>
+            Releases the unmanaged resources used by an instance of the DigitalRune.Graphics.SceneGraph.SceneNode class and optionally releases the managed resources.
+            </summary>
+            <param name="disposing"> true to release both managed and unmanaged resources; false to release only unmanaged resources.</param>
+            <param name="disposeData"> true to dispose scene nodes including data objects; false to dispose only scene nodes but preserve the data objects.</param>
+        </member>
+        <member name="M:Sceelix.Designer.Meshes.Translators.Materials.MeshMaterialTranslator`1.PrepareVertex(Sceelix.Actors.Data.Material,Sceelix.Meshes.Data.Face,Sceelix.Meshes.Data.Vertex)">
+            <summary>
+            Converts the given Sceelix vertex to a vertex of type TR.
+            
+            To be overriden in the subclasses.
+            </summary>
+            <param name="sceelixMaterial"></param>
+            <param name="face"></param>
+            <param name="vertex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Designer.Meshes.Translators.Materials.MeshMaterialTranslator`1.CreateMaterial(Sceelix.Designer.Renderer3D.Loading.ContentLoader,Sceelix.Actors.Data.Material)">
+            <summary>
+            Converts the given Sceelix material to a Digitalrune material
+            To be overriden in the subclasses.
+            </summary>
+            <param name="contentLoader"></param>
+            <param name="sceelixMaterial"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Designer.Meshes.Translators.MeshTranslator.CollisionViewing(Sceelix.Meshes.Data.MeshEntity)">
+            <summary>
+            We may to need this code is the future for collision tests, so keep this
+            </summary>
+            <param name="sceelixMeshEntity"></param>
+        </member>
+        <member name="M:Sceelix.Designer.Meshes.Components.MeshDrawComponent.ToXnaColorOrDefault(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="defaultColor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sceelix.Designer.Meshes.Components.MeshDrawComponent.Draw(DigitalRune.Graphics.RenderContext)">
+            <summary>
+            Draw the points and their descriptions.
+            </summary>
+            <param name="renderContext"></param>
+        </member>
+        <member name="T:Sceelix.Designer.Meshes.Components.MeshDrawComponent.PointData">
+            <summary>
+            Simple structure to spare some repeated CPU processing.
+            </summary>
+        </member>
+    </members>
+</doc>

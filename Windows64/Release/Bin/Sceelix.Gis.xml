@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sceelix.Gis</name>
+    </assembly>
+    <members>
+        <member name="T:Sceelix.Gis.Parameters.ProjectionSelectParameter">
+            <summary>
+            Selection of data projection.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Gis.Procedures.GisLoadProcedure">
+            <summary>
+            Loads features from Esri Shapefiles into point, path or mesh entities.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.GisLoadProcedure._output">
+            <summary>
+            Actors that were loaded. Depending on the file, it could return points, paths, meshes or a combination of all.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.GisLoadProcedure._parameterFile">
+            <summary>
+            Shape file from which to load the Gis data.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.GisLoadProcedure._parameterReproject">
+            <summary>
+            If checked, the data will be reprojected to the indicated coordinate system.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.GisLoadProcedure._attributeProjection">
+            <summary>
+            Attribute where to store the original coordinate projection.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.GisLoadProcedure._attributeData">
+            <summary>
+            Attribute where to store the list/row of data associated to each feature.
+            </summary>
+        </member>
+        <member name="T:Sceelix.Gis.Procedures.OsmLoadProcedure">
+            <summary>
+            Loads features from OpenStreetMap files into point, path or mesh entities.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.OsmLoadProcedure._output">
+            <summary>
+            Actors that were loaded. Depending on the file, it could return points, paths, meshes or a combination of all.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.OsmLoadProcedure._parameterFile">
+            <summary>
+            The OpenStreetMap file to be loaded. OpenStreeMap files can be downloaded from http://www.openstreetmap.org/ by choosing the
+            "Export" section on the top menu of the site.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.OsmLoadProcedure._parameterCenterResults">
+            <summary>
+            Indicates if the loaded data should be centered on the origin (0,0,0) or not. Easier for data manipulation and to reduce precision errors.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.OsmLoadProcedure._attributeTags">
+            <summary>
+            The attribute where tag information associated to each Openstreetmap feature is stored.
+            </summary>
+        </member>
+        <member name="F:Sceelix.Gis.Procedures.OsmLoadProcedure._attributeMeta">
+            <summary>
+            The attribute where meta information (id, author, etc.) associated to each Openstreetmap feature is stored.
+            </summary>
+        </member>
+    </members>
+</doc>
