@@ -70,7 +70,12 @@ namespace Sceelix.Core.Procedures
             /// Otherwise, the entity will pass on to the next condition.
             /// </summary>
             private readonly ListParameter _parameterConditions = new ListParameter("Conditions",
-                () => new BoolParameter("If", false) {IsExpression = true, SubOutputs = new OutputCollection(new Output<IEntity>("If") {Description = "Output through which the entity will come if the condition is true."})});
+                () => new BoolParameter("If", false)
+                {
+                    IsExpression = true, 
+                    Description = "Condition to be evaluation",
+                    SubOutputs = new OutputCollection(new Output<IEntity>("If") {Description = "Output through which the entity will come if the condition is true."})
+                });
 
             /// <summary>
             /// If none of the conditions are true, the entity will be sent to this "Else" output.

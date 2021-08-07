@@ -24,6 +24,7 @@ namespace Sceelix.Documentation
             }
             
             //load the assemblies
+            SceelixDomain.LoadFromCurrentDomain();
             SceelixDomain.LoadAssembliesFrom(binFolder);
 
             //initialize the engine
