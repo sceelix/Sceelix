@@ -1,4 +1,10 @@
-# Attributes
+# Properties and Attributes
+
+Entities area complex objects, featuring various properties. The color of a vertex, the scale or a surface or the position of a mesh are all examples of properties. While some of them are explicitly stored in the entity, others are result of calculations - such as area, volume or number of vertices in a mesh - and hence are not stored unless requested. 
+
+Different entities have different sets of properties, depending on their nature. Paths have length (the sum of all lengths of all edges), but no volume nor area, unlike meshes do.
+ 
+A property ranges from character
 
 It is possible to assign and read custom data to entities in the form of **attributes**. Attributes that have been assigned to an entity can be viewed on the Data Explorer.
 
