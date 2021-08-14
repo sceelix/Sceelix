@@ -99,7 +99,7 @@ Task("FullBuildAndTest")
 
 Task("WebsiteDev")
 .Does(() => {
-	Yarn.FromPath("../Website").RunScript("start");
+	Yarn.FromPath("../Website").RunScript("start --port 3987");
 });
 
 Task("SetVersion")
