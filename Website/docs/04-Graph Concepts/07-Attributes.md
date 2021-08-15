@@ -5,7 +5,7 @@ Entities area complex objects, featuring various properties. The color of a vert
 
 Different entities have different sets of properties, depending on their nature. Paths have length (the sum of all lengths of all edges), but no volume nor area, unlike meshes do.
  
-A property does not need to be a number, it can be of other types as well, like those of [parameters](Parameters#types).
+A property does not need to be a number, it can be of other types as well - the same as those of [parameters](Parameters#types).
 
 You can consult the list of available properties of a generated entity in the Data Explorer.
 
@@ -14,29 +14,18 @@ You can consult the list of available properties of a generated entity in the Da
 
 ## Attributes
 
-Users can assign custom properties to entities, which are called **attributes**. Attributes that have been assigned to an entity can be viewed on the Data Explorer as well.
+Users can assign custom properties to entities, which are called **attributes**. Attributes that have been assigned to an entity can be viewed on the Data Explorer as well. You can create new attributes using the [Attribute](../Nodes/Nodes/Basic/Sceelix-Core-Procedures-AttributeProcedure_b3ee6334-f7cb-435c-ab3b-3802fc835e0a) node. Here, you define what value to assign and what will be the name of the attribute.
+
+![Attribute Node](images/AttributeNode.png)
 
 
-It is possible to assign and read custom data to entities in the form of **attributes**. 
 
-[Image of Data explorer with several attributes set]
+Many other nodes can also create attributes. The [Copy](../Nodes/Nodes/Basic/Sceelix-Core-Procedures-CopyProcedure_50c9a7c0-6f52-470d-8bb7-2c8b663c94b8) node, which creates copies of entities, can save an index of the copy to an attribute, if you specify a name in the 'index' parameter. Likewise, the [Random](../Nodes/Nodes/Basic/Sceelix-Core-Procedures-RandomProcedure_92d65cb9-ef76-40fa-ad69-32707b893e36) node assigns its random generated values to attributes, and the [GIS Load](../Nodes/Nodes/GIS/Sceelix-Gis-Procedures-GisLoadProcedure_a7c10a2b-5554-4210-a0d9-36ad20fc8795) procedure can store metadata of each loaded geometry to an attribute. 
 
-You can create new attributes using the 'Attribute' Node. Here, you define what value to assign and what will be the name of the attribute.
+![Attribute Node](images/CopyNode.png)
 
-[Image of Attribute node, showing also the inspector on the node and its view on the data explorer]
-
-Many other nodes can also create attributes. The 'Copy', which creates copies of entities, can save an index of the copy to an attribute, if you specify a name.
-
-[Image of the copy node, the inspector parameters and the data explorer]
-
-Likewise, the random node assigns its random generated values to attributes.
-
-[Image of the random node]
 
 You can use attributes within expressions of parameters so as to achieve different transformations for each entity. In the example below, we are making use of the mesh split node's ability to assign the index of the splitted part to the mesh. We then use this value to extrude each mesh with a different value, creating a staircase.
 
-[Image of splitted rectangle forming a staircase]  
+![Attribute Staircase Example](images/AttributeStaircaseExample.png)
 
-Depending on its type, each entity will have particular **properties** which are tied to their nature (area, material, position). To access them, you must assign them to attributes first. In the case below, we calculate the perimeter of the input meshes and depending if they are bigger than a certain value, we will choose upon what material to use.
-
-[Image that reflects the case above]   
