@@ -11,7 +11,7 @@ function Feature({size, image, title, description}) {
         <img alt={title} src={image} />
       </div>
       <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+              <h3 style={{paddingTop:'15px'}}>{title}</h3>
         <p>{description}</p>
       </div>
     </div>
