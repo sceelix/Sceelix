@@ -7,7 +7,7 @@ using Sceelix.Mathematics.Spatial;
 namespace Sceelix.Mathematics.Data
 {
     /// <summary>
-    /// The BoxScope is used for keeping track of the location, adation and size of entities.
+    /// The BoxScope is used for keeping track of the location, direction and size of entities.
     /// 
     /// Note: Due to being a struct, all the axes, sizes and translation are initialized
     /// with Zero vectors when the default BoxScope() constructor is used. For most practical

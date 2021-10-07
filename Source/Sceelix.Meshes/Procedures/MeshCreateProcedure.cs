@@ -415,7 +415,6 @@ namespace Sceelix.Meshes.Procedures
                 faces.Add(new Face(vE, vA, vB, vC, vD));
 
                 var mesh = new MeshEntity(faces, BoxScope.Identity);
-                mesh.AdjustScope();
                 return mesh;
             }
 
@@ -532,7 +531,7 @@ namespace Sceelix.Meshes.Procedures
                 foreach (Vertex vertex in face.Vertices)
                     vertex.Normal = vertex.Position;
 
-                MeshEntity meshEntity = new MeshEntity(faces, new BoxScope(MeshEntity.GetBoundingBox(faces)));
+                MeshEntity meshEntity = new MeshEntity(faces, BoxScope.Identity);
 
                 //ResetToOriginProcedure.ResetToOrigin(MeshEntity,true);
                 //TranslateShapeProcedure.Translate(MeshEntity, new Vector3D(radius, radius,radius), false);

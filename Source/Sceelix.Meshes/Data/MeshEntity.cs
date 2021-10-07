@@ -37,10 +37,14 @@ namespace Sceelix.Meshes.Data
         /// </summary>
         /// <param name="faces">Face enumeration with the faces</param>
         /// <param name="scope">(Optional) Explicit boxscope. If not defined, the standard scope calculation will be performed.</param>
-        public MeshEntity(IEnumerable<Face> faces, BoxScope? scope = null)
+        /// <param name="adjustScope">(Optional)Indicates if, given the explicit boxscope, if it should be adjusted to the mesh dimensions. Default is true.</param>
+        public MeshEntity(IEnumerable<Face> faces, BoxScope? scope = null, bool adjustScope = true)
         {
             _faces = new List<Face>(faces);
             _boxScope = scope ?? Face.GetAlignedScope(_faces);
+
+            if(scope != null && adjustScope)
+                AdjustScope();
         }
 
 
