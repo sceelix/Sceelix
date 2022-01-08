@@ -57,7 +57,7 @@ module.exports = {
       ],
     },
     algolia: {
-        apiKey: 'b7385d3870d994c74e1493fb1cc324e0',
+        apiKey: '949eb5f2719a750741991bbce82a8970',
         indexName: 'sceelix',
 
         // Optional: see doc section below
