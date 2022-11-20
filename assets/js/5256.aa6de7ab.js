@@ -1,1 +1,0 @@
-(self.webpackChunksceelix=self.webpackChunksceelix||[]).push([[5256],{5256:function(e,s,c){"use strict";c.r(s)}}]);

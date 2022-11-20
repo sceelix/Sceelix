@@ -1,1 +1,0 @@
-(self.webpackChunksceelix=self.webpackChunksceelix||[]).push([[1713],{7485:function(e){"use strict";e.exports=JSON.parse('{"news":{"allTagsPath":"/blog/tags","slug":"news","name":"news","count":2,"permalink":"/blog/tags/news"}}')}}]);

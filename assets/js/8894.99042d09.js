@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksceelix=self.webpackChunksceelix||[]).push([[8894],{8894:(e,s,c)=>{c.r(s)}}]);

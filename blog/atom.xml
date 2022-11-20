@@ -13,6 +13,12 @@
         <link href="https://sceelix.github.io/blog/node-reference-is-available"/>
         <updated>2021-07-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[As planned for some time, a node reference is now available!]]></summary>
+        <content type="html"><![CDATA[<p>As planned for some time, a <a href="/docs/Nodes/Nodes/ReferenceStructure">node reference</a> is now available!</p><p><img loading="lazy" alt="Node Doc Example" src="/assets/images/NodeDocExample-e8c33b6794424a23c07b73a45fd47080.gif" width="619" height="395" class="img_ev3q"></p><p>This new set of documentation entries describe the available node operations you can use in Sceelix. Their usage, structure and organization is described in the <a href="/docs/Nodes/NodeOverview">node introductory section</a>, so make sure to read it first.</p><p>The process has been automated in the sense that each node page is generated from its code (and respective code comments). This means that future releases should always be accompanied by an update to the docs in a consistent manner.</p><p>Hopefully, this novelty will shed some better light on how to use Sceelix. </p><p>More is to come!</p>]]></content>
+        <author>
+            <name>Pedro Silva</name>
+            <uri>https://github.com/pabsilva</uri>
+        </author>
+        <category label="news" term="news"/>
     </entry>
     <entry>
         <title type="html"><![CDATA[Sceelix is now open source!]]></title>
@@ -20,5 +26,13 @@
         <link href="https://sceelix.github.io/blog/sceelix-open-source"/>
         <updated>2021-05-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Is has been a long journey developing Sceelix.]]></summary>
+        <content type="html"><![CDATA[<p>Is has been a long journey developing Sceelix.</p><p>Sceelix started out as a Portuguese Startup company by three founders: André Cardoso, Francisco Andrade and, myself, Pedro Silva. With Francisco handling the business side and André the infrastructure, I focused on developing the Sceelix system.</p><p>Sceelix was first launched in April 2016 as a commercial product. Our intent was to grow organically with our user community. By selling an Early Access version for a lower price, we hoped to gather support and feedback from the users, keeping development in the right path and focusing on what the community really wanted. Despite having learned much in this process, our sales haven’t allowed us to achieve the necessary financial sustainability to keep it going as it was.</p><p>In January 2018 we had to close down the business, but decided to distribute Sceelix for free, and my intention was to keep working on it on my spare time, while being available for hire for related development, support and consultancy services. But as other job opportunities arose, it became harder and harder to keep working on it. But it felt like a waste not to make more of it, given its potential.</p><p>As the popular saying goes "If you love something, set it free".</p><p> <em>And so Sceelix goes open source.</em></p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="a-new-version">A New Version<a class="hash-link" href="#a-new-version" title="Direct link to heading">​</a></h3><p>In the scope of this change, Sceelix has officially moved from Early Access to version (1.0.0) to a new versioning nature. The login/account system has been dropped, libraries and resources were updated to match open source licenses and old, deprecated nodes were removed. You can grab it from the <a href="https://github.com/Sceelix/Sceelix/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">downloads page</a>.</p><p>The website/forum parts has been switched to open source alternatives as well, namely GitHub and GitHub Pages. The license server is soon to be disabled, so the login and registration for older versions will no longer be functional.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="moving-forward">Moving forward!<a class="hash-link" href="#moving-forward" title="Direct link to heading">​</a></h3><p>If you ever wondered how Sceelix works, this is your chance!<br>
+If you ever want to add this or that feature, this is the time!<br>
+If you ever wished to fix some of its nasty bugs, come help out!</p><p><strong>Everyone is invited!</strong></p>]]></content>
+        <author>
+            <name>Pedro Silva</name>
+            <uri>https://github.com/pabsilva</uri>
+        </author>
+        <category label="news" term="news"/>
     </entry>
 </feed>

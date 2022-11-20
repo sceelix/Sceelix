@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksceelix=self.webpackChunksceelix||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Node reference is now available","permalink":"/blog/node-reference-is-available"},{"title":"Sceelix is now open source!","permalink":"/blog/sceelix-open-source"}]}')}}]);
