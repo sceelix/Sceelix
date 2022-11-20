@@ -14,10 +14,10 @@ jobs:
           node-version: '12.x'
       - uses: cschleiden/replace-tokens@v1
         with:
-          files: '["**/docusaurus.config.js.js"]'
+          files: '["**/docusaurus.config.js"]'
         env:
           ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
-          ALGOLIA_API_KEY: ${{ secrets.ALGOLIA_API_KEY }}
+          ALGOLIA_SEARCH_API_KEY: ${{ secrets.ALGOLIA_SEARCH_API_KEY }}
       - name: Run the build and run doc generation (Windows64)
         uses: cake-build/cake-action@v1
         with:

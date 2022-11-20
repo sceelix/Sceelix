@@ -58,7 +58,7 @@ module.exports = {
     },
       algolia: {
         appId: '#{ALGOLIA_APP_ID}#',
-        apiKey: '#{ALGOLIA_API_KEY}#',
+        apiKey: '#{ALGOLIA_SEARCH_API_KEY}#',
         indexName: 'sceelix',
 
         // Optional: see doc section below

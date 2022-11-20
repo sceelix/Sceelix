@@ -115,6 +115,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sceelix.Tests", "Sceelix.Tests\Sceelix.Tests.csproj", "{0F21E7D8-8A14-4071-8285-80918FD05B60}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{658B1D18-D08F-4134-AEA7-82713FDC128A}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "..\Website\", "{95CE4511-8092-45EB-B796-6848D6D32E5D}"
 	ProjectSection(WebsiteProperties) = preProject
