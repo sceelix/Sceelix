@@ -34,8 +34,8 @@ jobs:
           cd Website
           git config --global user.email "actions@github.com"
           git config --global user.name "gh-actions"          
-          npm ci
-          npm run build
+          yarn install
+          yarn run build
       - name: Release to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
