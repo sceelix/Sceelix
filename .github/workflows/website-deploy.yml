@@ -3,7 +3,8 @@ name: Website deploy with docusaurus
 on:
   push:
     branches: [ main ]
-
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: windows-2019
